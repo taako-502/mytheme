@@ -1,1 +1,1 @@
-# wp-theme_test
+# mytheme
