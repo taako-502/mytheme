@@ -6,8 +6,9 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">    
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/mystyle.css">
- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <?php wp_enqueue_script('jquery'); ?>
+ <?php wp_enqueue_script('bootstrap-js','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',array('jquery')); ?>
+ <?php wp_head(); ?>
 </head>
 <body>
  <header>
@@ -30,7 +31,7 @@
    </div>
  </nav>
  <div id="top-vg">
- <img src="images/top.jpeg" alt="トップページ画像" >
+ <img src="<?php echo get_template_directory_uri(); ?>/images/top.jpeg" alt="トップページ画像" >
  </div>
  </header>
  <section id="content">
@@ -45,13 +46,13 @@
  </p>
  <div class="row">
  <div class="col-md-6">
- <p><img src="images/pc-wood.jpg" alt="6ヶ月コース画像"></p>
+ <p><img src="<?php echo get_template_directory_uri(); ?>/images/pc-wood.jpg" alt="6ヶ月コース画像"></p>
  <h2 class="text-center">しっかり6ヶ月コース</h2>
  <p>ホームページ作成からWeb集客まで一通り習得して売上拡大したい方向けのコース</p>
  
  </div>
  <div class="col-md-6">
- <p><img src="images/pc-leaf.jpg" alt="1ヶ月コース画像"></p>
+ <p><img src="<?php echo get_template_directory_uri(); ?>/images/pc-leaf.jpg" alt="1ヶ月コース画像"></p>
  <h2 class="text-center">お試し1ヶ月コース</h2>
  <p>特定範囲のみ習いたい・まずは試しに受講してみたい方向けのコース</p>
  </div>
@@ -67,13 +68,13 @@
  <section id="wordpress-seminar">
  <h2>WordPress入門セミナー</h2>
  <p>
- <img src="images/seminar-wordpress.png" alt="ワードプレスセミナー画像">
+ <img src="<?php echo get_template_directory_uri(); ?>/images/seminar-wordpress.png" alt="ワードプレスセミナー画像">
  </p> 
  </section>
  <section id="seo-seminar">
  <h2>SEO入門セミナー</h2>
  <p>
- <img src="images/seminar-seo.png" alt="SEOセミナー画像">
+ <img src="<?php echo get_template_directory_uri(); ?>/images/seminar-seo.png" alt="SEOセミナー画像">
  </p> 
  </section>
  </div>
@@ -84,5 +85,6 @@
  <p class="text-center">Copyright © Webst8 All Rights Reserved.</p>
  </div>
  </footer> 
+ <?php wp_footer(); ?>
 </body>
 </html>
