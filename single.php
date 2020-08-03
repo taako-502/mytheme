@@ -2,6 +2,7 @@
 <section id="content">
 <div id="content-wrap" class="container">
 <div id="main" class="col-md-9" >
+  <?php the_post_thumbnail('single'); ?>
   <?php
     if ( have_posts() ) :
       while ( have_posts() ) : the_post();
