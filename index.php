@@ -5,7 +5,7 @@
   <h1 class="text-center">個人事業主向けWebスクール ウェブストエイト</h1>
   <p>
   ウェブストエイトは自分でホームページ制作・Web集客したい方向けの
-  少人数制個別指導のスクール・塾です。 
+  少人数制個別指導のスクール・塾です。
   <br><br>
   継続6ヶ月コースとお試し1ヶ月コースから選択して受講できます。
   </p>
@@ -26,6 +26,36 @@
    お申し込みは<a href="https://webst8.com">こちらから</a>
    <br><br>
   </p>
+  <div id="posts">
+    <h1>記事一覧</h1>
+    <hr>
+    <?php
+      if ( have_posts() ) {
+        while ( have_posts() ) {
+          the_post();
+          ?>
+          <h2><?php the_time('Y年n月j日'); ?>&nbsp;&nbsp;
+            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+          </h2>
+          <?php
+        }
+      }
+     ?>
+     <h1>投稿一覧</h1>
+     <hr>
+     <?php
+       if ( have_posts() ) {
+         while ( have_posts() ) {
+           the_post();
+           ?>
+           <h2><?php the_title(); ?>&nbsp;&nbsp;
+            <a href="<?php echo get_permalink(); ?>"><?php the_content(); ?></a>
+           </h2>
+           <?php
+         }
+       }
+      ?>
+  </div>
  </div>
  <div id="sidebar" class="col-md-3">
   <?php get_sidebar(); ?>
