@@ -3,7 +3,7 @@
 <head>
  <meta charset="utf-8">
  <title>mytheme</title>
- <meta name="viewport" content="width=device-width, initial-scale=1">    
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/mystyle.css">
  <?php wp_enqueue_script('jquery'); ?>
@@ -22,12 +22,13 @@
      </button>
    </div>
    <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
-     <ul class="nav navbar-nav">
-       <li><a href="#">HOME</a></li>
-       <li><a href="#">PROFILE</a></li>
-       <li><a href="#">BLOG</a></li>
-       <li><a href="#">CONTACT</a></li>
-     </ul>
+     <?php
+       $args = array(
+         'menu_class' => 'nav navbar-nav' ,
+         'container' => false,
+       );
+       wp_nav_menu($args);
+      ?>
    </div>
  </nav>
  <div id="top-vg">
