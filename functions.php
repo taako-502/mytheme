@@ -28,8 +28,8 @@ function add_admin(){
  */
 function add_custom_admin(){
   // mytheme専用管理画面呼び出し
-  if (locate_template('/mytheme-admin.php') !== '') {
-    require_once locate_template('/mytheme-admin.php');
+  if (locate_template('/admin.php') !== '') {
+    require_once locate_template('/admin.php');
   }
 }
 
