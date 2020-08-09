@@ -6,7 +6,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/mystyle.css">
- <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/mythemecss.php" /> 
+ <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/mythemecss.php" />
  <?php wp_enqueue_script('jquery'); ?>
  <?php wp_enqueue_script('bootstrap-js','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',array('jquery')); ?>
  <?php wp_head(); ?>
@@ -14,13 +14,8 @@
 <body>
  <header>
  <nav class="navbar navbar-default" style="margin-bottom:0;">
-   <div class="navbar-header">
-     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-       <span class="sr-only">メニュー</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
+   <div>
+     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
    </div>
    <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
      <?php

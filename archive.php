@@ -11,10 +11,6 @@
     <h2>
       <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
     </h2>
-    <section>
-      <p>作成日時：<?php the_time('Y年n月j日'); ?></p>
-      <a href="<?php echo get_permalink(); ?>"><?php the_excerpt(); ?></a>
-    </section>
     <hr>
   <?php
       endwhile;
