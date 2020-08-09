@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section id="content">
 <div id="content-wrap" class="container">
-<div id="main" class="col-md-9" >
+<div id="main" class="col-md-9 entry-content" >
   <?php
     if ( have_posts() ) :
       while ( have_posts() ) : the_post();
