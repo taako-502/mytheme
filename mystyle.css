@@ -13,12 +13,7 @@ img{ max-width:100%;  }
   background-color: white;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
-#sidebar{ text-align: center;}
-footer{ background-color: #222; }
-footer p{
-  padding:15px 0;
-  color: white;
-}
+/* ブログタイトル */
 div#title{
   margin-top: 5px;
   margin-left: 30px;
@@ -33,4 +28,40 @@ div#title a:hover {
 }
 div#title a:visited {
   color:#333;
+}
+/* サイドバー */
+#sidebar{ text-align: center;}
+footer{ background-color: #222; }
+footer p {
+  padding:15px 0;
+  color: white;
+}
+h2.widgettitle {
+  text-align:left;
+  border-bottom: solid 3px black;
+}
+.widget_sidebar li {
+  text-align:left;
+  list-style: none;
+  margin-top: 0.3em;
+  margin-bottom: : 0.3em;
+}
+.widget_sidebar input[type="submit"]{
+  display: block;
+  margin: 0.3em 0 0 auto;
+  border-radius : 5%;          /* 角丸       */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 5px 5px;   /* 余白       */
+  background    : #333333;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 3px 3px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #333333;    /* 枠の指定 */
+}
+.widget_sidebar input[type="submit"]:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #333333;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
 }
