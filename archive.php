@@ -15,18 +15,19 @@
                 continue;
               }
           ?>
-          <h2>
-            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-          </h2>
-          <?php
-              if ( has_post_thumbnail() ) {
-                the_post_thumbnail('articlelist');
-              }
-              else {
-                echo '<img width="288" height="162" src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
-              }
-          ?>
-          <hr>
+          <div class="article-card">
+            <?php
+                if ( has_post_thumbnail() ) {
+                  the_post_thumbnail('articlelist');
+                }
+                else {
+                  echo '<img width="288" height="162" src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
+                }
+            ?>
+            <h2>
+              <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
+          </div>
         <?php
             }
           }
@@ -42,18 +43,19 @@
                 continue;
               }
           ?>
-          <h2>
-            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-          </h2>
-          <?php
-              if ( has_post_thumbnail() ) {
-                the_post_thumbnail('articlelist');
-              }
-              else {
-                echo '<img width="288" height="162" src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
-              }
-          ?>
-          <hr>
+          <div class="article-card">
+            <?php
+                if ( has_post_thumbnail() ) {
+                  the_post_thumbnail('articlelist');
+                }
+                else {
+                  echo '<img width="288" height="162" src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
+                }
+            ?>
+            <h2>
+              <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
+          </div>
         <?php
             }
           }
