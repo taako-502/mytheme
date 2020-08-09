@@ -25,23 +25,22 @@ if(isset($_POST['save'])) {
   <p>この画面は、簡単にmythemeのデザインを設定できる画面です。</p>
   <h2>基本構成</h2>
   <form method="post">
-  <div style="display:table;">
-    <div style="display:table-row;">
-      <div style="display:table-cell;"><b>pタグ</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</div>
+    <div style="display:table;">
+      <div style="display:table-row;">
+        <div style="display:table-cell;"><b>pタグ</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</div>
       </div>
-    <div style="display:table-row;">
-      <div style="display:table-cell"><b>h2タグ</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</div>
+      <div style="display:table-row;">
+        <div style="display:table-cell"><b>h2タグ</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell"><b>h3タグ</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell"><b>h4タグ</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</div>
+      </div>
     </div>
-    <div style="display:table-row;">
-      <div style="display:table-cell"><b>h3タグ</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</div>
-    </div>
-    <div style="display:table-row;">
-      <div style="display:table-cell"><b>h4タグ</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</div>
-    </div>
-  </div>
-  <p>
-
+    <p>
       <input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary">
-    </form>
-  </p>
+    </p>
+  </form>
 </div>
