@@ -54,6 +54,16 @@ function add_custom_widget(){
 add_action('after_setup_theme','mytheme_setup');
 add_action('wp_dashboard_setup','add_widget');
 add_action('admin_menu','add_admin');
+add_action(
+	'widgets_init',
+	function(){
+		register_sidebar(array(
+			'id' => 'widget_sidebar001',
+			'name' => 'サイドバー',
+			'description' => 'サイドバーのウィジェット',
+		));
+	}
+);
 // 記事の冒頭に表示するアイキャッチ画像
 add_image_size('single',800,450,false);
 add_image_size('articlelist',288,162,false);
