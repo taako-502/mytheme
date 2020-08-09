@@ -48,9 +48,7 @@
          while ( have_posts() ) {
            the_post();
            ?>
-           <h2><?php the_title(); ?>&nbsp;&nbsp;
-            <a href="<?php echo get_permalink(); ?>"><?php the_content(); ?></a>
-           </h2>
+           <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>&nbsp;&nbsp;</h2>
            <?php
          }
        }

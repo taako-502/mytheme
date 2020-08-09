@@ -7,6 +7,12 @@
   <?php
     if ( have_posts() ) :
       while ( have_posts() ) : the_post();
+        if ( has_post_thumbnail() ) {
+          the_post_thumbnail();
+        }
+        else {
+          echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
+        }
   ?>
     <h2>
       <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
