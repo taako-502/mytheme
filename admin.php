@@ -1,17 +1,18 @@
 <?php
 /* 外部ファイル読み込み */
-//include(“dbutil.php”);
-require get_template_directory() . '/dbutil.php';
+require get_template_directory() . '/utility.php';
 //wp_optionsテーブルから設定値を取得
 $psize = get_option('p-size','');
-$h2size = get_option('h2-size','10');
-$h3size = get_option('h3-size','10');
-$h4size = get_option('h4-size','10');
+$h1size = get_option('h1-size','');
+$h2size = get_option('h2-size','');
+$h3size = get_option('h3-size','');
+$h4size = get_option('h4-size','');
 
 //ボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータを更新
   $psize = updaeteOptionPost('p-size',$_POST['p-size']);
+  $h1size = updaeteOptionPost('h1-size',$_POST['h1-size']);
   $h2size = updaeteOptionPost('h2-size',$_POST['h2-size']);
   $h3size = updaeteOptionPost('h3-size',$_POST['h3-size']);
   $h4size = updaeteOptionPost('h4-size',$_POST['h4-size']);
@@ -28,6 +29,9 @@ if(isset($_POST['save'])) {
     <div style="display:table;">
       <div style="display:table-row;">
         <div style="display:table-cell;"><b>pタグ</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell;"><b>h1タグ</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</div>
       </div>
       <div style="display:table-row;">
         <div style="display:table-cell"><b>h2タグ</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</div>

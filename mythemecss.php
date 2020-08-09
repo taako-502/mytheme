@@ -1,23 +1,37 @@
 <?php
 /**
- * カスタマイザー用CSS (CSS)
+* カスタマイザー用CSS (CSS)
  */
- header('Content-Type: text/css; charset=utf-8');
-//  include_once( 'config.php' ); //必要？
-
-$pfontsize = ( isset($GLOBALS['stdata302']) && trim($GLOBALS['stdata302']) !== '' ) ? (int)$GLOBALS['stdata302'] : 30 ;
+/* 外部ファイル読み込み */
+require 'utility.php';
+/*cssファイル設定 */
+header('Content-Type: text/css; charset=utf-8');
+// 管理画面で設定した
+echo "test_test1";
+echo $GLOBALS['psize'];
+echo "test_test2";
+$pfontsize = setNumData($GLOBALS['psize'],100);
+$h1fontsize = setNumData($GLOBALS['h1size'],100);
+$h2fontsize = setNumData($GLOBALS['h2size'],19);
+$h3fontsize = setNumData($GLOBALS['h3size'],18);
+$h4fontsize = setNumData($GLOBALS['h4size'],17);
 ?>
-p {
-  font-size: 100px;
+.entry-content p {
+  font-size: <?php $pfontsize ?>px;
 }
 
+.entry-content h1 {
+  font-size: <?php $h1fontsize ?>px;
+}
 
+.entry-content h2 {
+  font-size: <?php $h2fontsize ?>px;
+}
 
-.post .entry-content h6 {
-    <?php if( isset($GLOBALS['stdata301']) && trim($GLOBALS['stdata301']) !== '' ): ?>
-        font-size: <?php echo $st_sp_p_fontsize; ?>px;
-    <?php endif; ?>
-    <?php if ( isset($GLOBALS['stdata302']) && trim($GLOBALS['stdata302']) !== '' ): ?>
-        line-height: <?php echo $st_sp_p_lineheight; ?>px;
-    <?php endif; ?>
+.entry-content h3 {
+  font-size: <?php $h3fontsize ?>px;
+}
+
+.entry-content h4 {
+  font-size: <?php $h4fontsize ?>px;
 }
