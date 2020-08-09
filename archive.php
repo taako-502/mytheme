@@ -8,10 +8,10 @@
     if ( have_posts() ) :
       while ( have_posts() ) : the_post();
         if ( has_post_thumbnail() ) {
-          the_post_thumbnail();
+          the_post_thumbnail('articlelist');
         }
         else {
-          echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
+          echo '<img width="288" height="162" src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
         }
   ?>
     <h2>
