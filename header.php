@@ -14,7 +14,7 @@
 <body>
  <header>
  <nav class="navbar navbar-default" style="margin-bottom:0;">
-   <div>
+   <div id="title">
      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
    </div>
    <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
