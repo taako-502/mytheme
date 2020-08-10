@@ -3,6 +3,8 @@
   <div id="content-wrap" class="container">
     <div id="main" class="col-md-9" >
       <h1>記事一覧</h1>
+      <p>test</p>
+      <p><?php echo substr("abcdef", -1); ?></p>
       <hr>
       <div class="article-list">
         <?php
@@ -20,7 +22,16 @@
               }
           ?>
           <h2>
-            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+            <a href="<?php echo get_permalink(); ?>">
+              <?php
+              $title = the_title( '' , '' , false );
+              if(mb_strlen($title) <= 45 ){
+                echo $title;
+              } else {
+                echo mb_substr($title,0,38) . "...";
+              }
+              ?>
+            </a>
           </h2>
         </div>
         <?php
