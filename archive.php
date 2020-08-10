@@ -25,7 +25,7 @@
             <a href="<?php echo get_permalink(); ?>">
               <?php
               $title = the_title( '' , '' , false );
-              if(mb_strlen($title) <= 45 ){
+              if(mb_strlen($title) <= 38 ){
                 echo $title;
               } else {
                 echo mb_substr($title,0,38) . "...";
