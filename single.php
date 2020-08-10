@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section id="content">
 <div id="content-wrap" class="container">
-<div id="main" class="col-md-9" >
+<div id="main" class="col-md-9 entry-content" >
   <?php the_post_thumbnail('single'); ?>
   <?php
     if ( have_posts() ) :
