@@ -47,6 +47,24 @@ div#title a:visited {
   margin-top:2em;
   margin-bottom:2em;
 }
+.wp-embedded-content {
+	max-width: 100%;
+}
+.breadcrumb ul{
+  list-style: none;
+  font-size: .8em;
+}
+.breadcrumb li{
+  display: inline;
+}
+.breadcrumb li a{
+  color: inherit;
+  text-decoration: none;
+}
+.breadcrumb li + li:before{
+  content: ">";
+  margin-right:.3em;
+}
 /* サイドバー */
 #sidebar{ text-align: center;}
 footer{ background-color: #222; }

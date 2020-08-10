@@ -64,6 +64,17 @@ add_action(
 		));
 	}
 );
+// アーカイブの余計なタイトルを削除
+add_filter( 'get_the_archive_title', function ($title) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_month() ) {
+        $title = single_month_title( '', false );
+    }
+    return $title;
+});
 // 記事の冒頭に表示するアイキャッチ画像
 add_image_size('single',800,450,false);
 add_image_size('articlelist',288,162,false);

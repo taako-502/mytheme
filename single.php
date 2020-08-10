@@ -1,7 +1,11 @@
-<?php get_header(); ?>
+<?php
+  require get_template_directory() . '/utility.php';
+  get_header();
+?>
 <section id="content">
 <div id="content-wrap" class="container">
 <div id="main" class="col-md-9 entry-content" >
+<?php breadcrumb(); ?>
   <?php the_post_thumbnail('single'); ?>
   <?php
     if ( have_posts() ) :
