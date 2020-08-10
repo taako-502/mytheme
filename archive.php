@@ -3,8 +3,6 @@
   <div id="content-wrap" class="container">
     <div id="main" class="col-md-9" >
       <h1>記事一覧</h1>
-      <p>test</p>
-      <p><?php echo substr("abcdef", -1); ?></p>
       <hr>
       <div class="article-list">
         <?php
