@@ -11,6 +11,8 @@
             while ( have_posts() ) { the_post();
               include(get_template_directory() ."/articlecard.php");
             }
+          } else {
+            echo "<p>まだ記事がありません。</p>";
           }
         ?>
       </div>

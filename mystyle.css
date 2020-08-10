@@ -68,6 +68,7 @@ h2.widgettitle {
 /* 記事一覧(archive.php) */
 .article-card{
   width:288px;
+  height:262px;
   padding-bottom:5px;
   margin:15px;
   box-shadow: 3px 10px 10px #666666;  /* 影の設定 */
