@@ -3,7 +3,7 @@
 * カスタマイザー用CSS (CSS)
  */
 /* 外部ファイル読み込み */
-require './utility.php';
+require '../utility.php';
 /*cssファイル設定 */
 header('Content-Type: text/css; charset=utf-8');
 // 管理画面で設定した

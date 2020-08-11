@@ -5,13 +5,15 @@
   font-style: normal;
   font-weight: normal;
 }
-body{ font-size: 16px; }
+body{
+  background: whitesmoke;
+  font-size: 16px;
+}
 h1{ font-size:28px; font-weight: bold;}
 h2{ font-size:20px;}
 h3{ font-size:18px;}
 img{ max-width:100%;  }
 #content{
-  background:url(images/pattern-diamond.png);
   padding-top:20px;
   padding-bottom:20px;
 }
@@ -36,6 +38,9 @@ div#title a:visited {
   color:#333;
 }
 /* 投稿記事・固定記事 */
+div.entry-content {
+  padding-top:10px;
+}
 .entry-content H2{
   font-size:24px;
   border-bottom: solid 3px skyblue;
@@ -70,6 +75,9 @@ div#title a:visited {
 .breadcrumb li + li:before{
   content: ">";
   margin-right:.3em;
+}
+div.breadcrumb{
+  background-color: white;
 }
 /* サイドバー */
 #sidebar{ text-align: center;}
