@@ -20,8 +20,8 @@ if(isset($_POST['save'])) {
   $copyright = updaeteOptionPost('copyright',$_POST['copyright']);
   echo "データを更新しました。";
 }
-
- ?>
+?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/admin.css">
 <div class="main">
   <h1>mythemeカスタマイズ画面</h1>
   <h2>画面説明</h2>
@@ -29,23 +29,11 @@ if(isset($_POST['save'])) {
   <h2>基本構成</h2>
   <form method="post">
     <div common="foundation">
-      <div style="display:table;">
-        <div style="display:table-row;">
-          <div style="display:table-cell;"><b>pタグ</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</div>
-        </div>
-        <div style="display:table-row;">
-          <div style="display:table-cell;"><b>h1タグ</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</div>
-        </div>
-        <div style="display:table-row;">
-          <div style="display:table-cell"><b>h2タグ</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</div>
-        </div>
-        <div style="display:table-row;">
-          <div style="display:table-cell"><b>h3タグ</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</div>
-        </div>
-        <div style="display:table-row;">
-          <div style="display:table-cell"><b>h4タグ</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</div>
-        </div>
-      </div>
+      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</p>
+      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</p>
+      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</p>
+      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</p>
+      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</p>
     </div>
     <div class="footer">
       <h2>フッター</h2>
