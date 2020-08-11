@@ -78,6 +78,13 @@ div.entry-content {
 }
 div.breadcrumb{
   background-color: white;
+  margin-bottom: 0px;
+}
+div.category {
+  margin: 5px 10px 18px 10px;
+  padding: 5px 10px;
+  display:inline-block;
+  background-color: whitesmoke;
 }
 /* サイドバー */
 #sidebar{ text-align: center;}
