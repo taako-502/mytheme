@@ -1,5 +1,11 @@
 @charset "UTF-8";
-body{  font-size: 16px; }
+* {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+body{ font-size: 16px; }
 h1{ font-size:28px; font-weight: bold;}
 h2{ font-size:20px;}
 h3{ font-size:18px;}
@@ -115,7 +121,7 @@ h2.widgettitle {
   margin: 5px 7px;
 }
 .article-list{
-  width:98%%;
+  width:98%;
   padding: 10px;
   overflow:hidden;
   display: flex;
