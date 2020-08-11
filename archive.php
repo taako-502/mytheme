@@ -3,6 +3,11 @@
   <div id="content-wrap" class="container">
     <div id="main" class="col-md-9" >
       <h1>記事一覧</h1>
+      <?php
+        $category_name = get_the_category()[0]->cat_name;
+        $category_link = get_category_link(get_the_category()[0]->cat_ID);
+        echo "<div class=\"category\"><a href=\"$category_link\">".$category_name."</a></div>";
+      ?>
       <hr>
       <div class="article-list">
         <?php
