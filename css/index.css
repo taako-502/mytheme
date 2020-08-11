@@ -1,24 +1,29 @@
 @charset "UTF-8";
 div.recommend-left {
-  width: 33%;
-  height: 150px;
+  width: 30%;
+  min-width: 288px;
+  height: auto;
+  margin: 2px;
   background-color: blue;
 }
 
 div.recommend-center {
-  width: 33%;
-  height: 150px;
+  width: 30%;
+  min-width: 288px;
+  height: auto;
+  margin: 2px;
   background-color: yellow;
 }
-
 div.recommend-right {
-  width: 33%;
-  height: 150px;
+  width: 30%;
+  min-width: 288px;
+  height: auto;
+  margin: 2px;
   background-color: red;
 }
 div.recommend-article{
   width: 100%;
-  background-color: gray;
+  overflow:hidden;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -57,7 +62,6 @@ div.recommend-article{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color:tomato;
 }
 /* トップページの画像 */
 div.topimage{
