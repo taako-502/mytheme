@@ -36,4 +36,4 @@
     </div>
   </div>
 </section>
-<?php get_footer('test'); ?>
+<?php get_footer(); ?>

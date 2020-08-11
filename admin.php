@@ -7,6 +7,7 @@ $h1size = get_option('h1-size','');
 $h2size = get_option('h2-size','');
 $h3size = get_option('h3-size','');
 $h4size = get_option('h4-size','');
+$copyright = get_option('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 
 //ボタンを押したときの処理
 if(isset($_POST['save'])) {
@@ -16,6 +17,7 @@ if(isset($_POST['save'])) {
   $h2size = updaeteOptionPost('h2-size',$_POST['h2-size']);
   $h3size = updaeteOptionPost('h3-size',$_POST['h3-size']);
   $h4size = updaeteOptionPost('h4-size',$_POST['h4-size']);
+  $copyright = updaeteOptionPost('copyright',$_POST['copyright']);
   echo "データを更新しました。";
 }
 
@@ -26,25 +28,35 @@ if(isset($_POST['save'])) {
   <p>この画面は、簡単にmythemeのデザインを設定できる画面です。</p>
   <h2>基本構成</h2>
   <form method="post">
-    <div style="display:table;">
-      <div style="display:table-row;">
-        <div style="display:table-cell;"><b>pタグ</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</div>
-      </div>
-      <div style="display:table-row;">
-        <div style="display:table-cell;"><b>h1タグ</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</div>
-      </div>
-      <div style="display:table-row;">
-        <div style="display:table-cell"><b>h2タグ</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</div>
-      </div>
-      <div style="display:table-row;">
-        <div style="display:table-cell"><b>h3タグ</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</div>
-      </div>
-      <div style="display:table-row;">
-        <div style="display:table-cell"><b>h4タグ</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</div>
+    <div common="foundation">
+      <div style="display:table;">
+        <div style="display:table-row;">
+          <div style="display:table-cell;"><b>pタグ</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</div>
+        </div>
+        <div style="display:table-row;">
+          <div style="display:table-cell;"><b>h1タグ</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</div>
+        </div>
+        <div style="display:table-row;">
+          <div style="display:table-cell"><b>h2タグ</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</div>
+        </div>
+        <div style="display:table-row;">
+          <div style="display:table-cell"><b>h3タグ</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</div>
+        </div>
+        <div style="display:table-row;">
+          <div style="display:table-cell"><b>h4タグ</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</div>
+        </div>
       </div>
     </div>
-    <p>
-      <input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary">
-    </p>
+    <div class="footer">
+      <h2>フッター</h2>
+      <div>
+        <p><label for="copyright">Copyright<br>
+        </label><textarea id="copyright" name="copyright" cols="40"><?php echo $copyright; ?></textarea>
+      </P>
+      </div>
+      <p>
+        <input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary">
+      </p>
+    </div>
   </form>
 </div>
