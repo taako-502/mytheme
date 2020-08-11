@@ -8,6 +8,7 @@ $h2size = get_option('h2-size','');
 $h3size = get_option('h3-size','');
 $h4size = get_option('h4-size','');
 $copyright = get_option('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
+$analytics = get_option('analytics','');
 
 //ボタンを押したときの処理
 if(isset($_POST['save'])) {
@@ -18,6 +19,7 @@ if(isset($_POST['save'])) {
   $h3size = updaeteOptionPost('h3-size',$_POST['h3-size']);
   $h4size = updaeteOptionPost('h4-size',$_POST['h4-size']);
   $copyright = updaeteOptionPost('copyright',$_POST['copyright']);
+  $analytics = updaeteOptionPost('analytics',$_POST['analytics']);
   echo "データを更新しました。";
 }
 ?>
@@ -28,23 +30,34 @@ if(isset($_POST['save'])) {
   <p>この画面は、簡単にmythemeのデザインを設定できる画面です。</p>
   <h2>基本構成</h2>
   <form method="post">
-    <div common="foundation">
+    <div class="setting">
       <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</p>
       <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</p>
       <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</p>
       <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</p>
       <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</p>
     </div>
-    <div class="footer">
+    <div class="setting">
+      <h2>トップ</h2>
+      <div>
+        <h3>トップページのおすすめ記事に設定する画像</h3>
+        <p>左おすすめ記事</p>
+        <p>中央おすすめ記事</p>
+        <p>右おすすめ記事</p>
+      </div>
+    </div>
+    <div class="setting">
       <h2>フッター</h2>
       <div>
         <p><label for="copyright">Copyright<br>
         </label><textarea id="copyright" name="copyright" cols="40"><?php echo $copyright; ?></textarea>
       </P>
       </div>
-      <p>
-        <input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary">
-      </p>
+      <div class="setting">
+        <h2>アナリティクス</h2>
+        <p>トラッキングコード：<input type="text" name="analytics" value="<?php echo $analytics ?>"></p>
+      </div>
+      <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
     </div>
   </form>
 </div>
