@@ -4,7 +4,6 @@ div.recommend-left {
   min-width: 288px;
   height: auto;
   margin: 2px;
-  background-color: blue;
 }
 
 div.recommend-center {
@@ -12,14 +11,12 @@ div.recommend-center {
   min-width: 288px;
   height: auto;
   margin: 2px;
-  background-color: yellow;
 }
 div.recommend-right {
   width: 30%;
   min-width: 288px;
   height: auto;
   margin: 2px;
-  background-color: red;
 }
 div.recommend-article{
   width: 100%;
