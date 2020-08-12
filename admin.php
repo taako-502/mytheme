@@ -9,10 +9,12 @@ $h3size = get_option('h3-size','');
 $h4size = get_option('h4-size','');
 $copyright = get_option('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 $analytics = get_option('analytics','');
-$recoleft = get_option('reco-left','');
-$recocenter = get_option('reco-center','');
-$recoright = get_option('reco-right','');
-
+$recoleftimg = get_option('reco-left-img','');
+$recolefturl = get_option('reco-left-url','');
+$recocenterimg = get_option('reco-center-img','');
+$recocenterurl = get_option('reco-center-url','');
+$recorightimg = get_option('reco-right-img','');
+$recorighturl = get_option('reco-right-url','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータを更新
@@ -23,9 +25,12 @@ if(isset($_POST['save'])) {
   $h4size = updaeteOptionPost('h4-size',$_POST['h4-size']);
   $copyright = updaeteOptionPost('copyright',$_POST['copyright']);
   $analytics = updaeteOptionPost('analytics',$_POST['analytics']);
-  $recoleft = updaeteOptionPost('reco-left',$_POST['reco-left']);
-  $recocenter = updaeteOptionPost('reco-center',$_POST['reco-center']);
-  $recoright = updaeteOptionPost('reco-right',$_POST['reco-right']);
+  $recoleftimg = updaeteOptionPost('reco-left-img',$_POST['reco-left-img']);
+  $recolefturl = updaeteOptionPost('reco-left-url',$_POST['reco-left-url']);
+  $recocenterimg = updaeteOptionPost('reco-center-img',$_POST['reco-center-img']);
+  $recocenterurl = updaeteOptionPost('reco-center-url',$_POST['reco-center-url']);
+  $recorightimg = updaeteOptionPost('reco-right-img',$_POST['reco-right-img']);
+  $recorighturl = updaeteOptionPost('reco-right-url',$_POST['reco-right-url']);
   echo "データを更新しました。";
 }
 ?>
@@ -48,12 +53,14 @@ if(isset($_POST['save'])) {
       <div>
         <h3>トップページのおすすめ記事に設定する画像</h3>
         <p><b>左おすすめ記事</b></p>
-        <p><label for="reco-left">画像URL：</label><input id="reco-left" type="text" name="reco-left" value="<?php echo $recoleft ?>"></p>
-        <?php generate_upload_image_tag('home_image_url', get_option('home_image_url')); ?>
+        <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>
+        <p><label for="reco-left-url">記事URL：</label><input type="text" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
         <p><b>中央おすすめ記事</b></p>
-        <p><label for="reco-center">画像URL：</label><input id="reco-center" type="text" name="reco-center" value="<?php echo $recocenter ?>"></p>
+        <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', get_option('reco-center-img')); ?></p>
+        <p><label for="reco-center-url">記事URL：</label><input type="text" name="reco-center-url" value="<?php echo $recolefturl; ?>"></p>
         <p><b>右おすすめ記事</b></p>
-        <p><label for="reco-right">画像URL：</label><input id="reco-right" type="text" name="reco-right" value="<?php echo $recoright ?>"></p>
+        <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', get_option('reco-right-img')); ?></p>
+        <p><label for="reco-right-url">記事URL：</label><input type="text" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
       </div>
     </div>
     <div class="setting">

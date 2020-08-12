@@ -1,5 +1,14 @@
 <?php
 /**
+ * 引数がnullか空白か判定
+ * @param  [type]  $val [description]
+ * @return boolean      nullか空白ならtrueを返却
+ */
+function isNullOrEmpty($val){
+  return is_null($val) || $val== '';
+}
+
+/**
  * wp_optionsテーブルの設定値を更新
  * @param  [type] $key       キー
  * @param  [type] $value     値
@@ -82,6 +91,17 @@ function breadcrumb() {
   }
   echo "</ul>";
   echo '</div>';
+}
+
+/**
+ * wp_optionsテーブルから取得した値が、空白かnullならデフォルト値を設定
+ * @param  [type]  $key     [description]
+ * @param  [type]  $default [description]
+ * @return boolean          [description]
+ */
+function get_option_isBlank($key,$default){
+  $value = get_option($key,$default);
+  return isNullOrEmpty(trim($value)) ? $default : $value;
 }
 
 ?>
