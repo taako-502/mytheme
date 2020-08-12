@@ -9,8 +9,11 @@ $h3size = get_option('h3-size','');
 $h4size = get_option('h4-size','');
 $copyright = get_option('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 $analytics = get_option('analytics','');
+$recoleft = get_option('reco-left','');
+$recocenter = get_option('reco-center','');
+$recoright = get_option('reco-right','');
 
-//ボタンを押したときの処理
+//saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータを更新
   $psize = updaeteOptionPost('p-size',$_POST['p-size']);
@@ -20,6 +23,9 @@ if(isset($_POST['save'])) {
   $h4size = updaeteOptionPost('h4-size',$_POST['h4-size']);
   $copyright = updaeteOptionPost('copyright',$_POST['copyright']);
   $analytics = updaeteOptionPost('analytics',$_POST['analytics']);
+  $recoleft = updaeteOptionPost('reco-left',$_POST['reco-left']);
+  $recocenter = updaeteOptionPost('reco-center',$_POST['reco-center']);
+  $recoright = updaeteOptionPost('reco-right',$_POST['reco-right']);
   echo "データを更新しました。";
 }
 ?>
@@ -41,9 +47,13 @@ if(isset($_POST['save'])) {
       <h2>トップ</h2>
       <div>
         <h3>トップページのおすすめ記事に設定する画像</h3>
-        <p>左おすすめ記事</p>
-        <p>中央おすすめ記事</p>
-        <p>右おすすめ記事</p>
+        <p><b>左おすすめ記事</b></p>
+        <p><label for="reco-left">画像URL：</label><input id="reco-left" type="text" name="reco-left" value="<?php echo $recoleft ?>"></p>
+        <?php generate_upload_image_tag('home_image_url', get_option('home_image_url')); ?>
+        <p><b>中央おすすめ記事</b></p>
+        <p><label for="reco-center">画像URL：</label><input id="reco-center" type="text" name="reco-center" value="<?php echo $recocenter ?>"></p>
+        <p><b>右おすすめ記事</b></p>
+        <p><label for="reco-right">画像URL：</label><input id="reco-right" type="text" name="reco-right" value="<?php echo $recoright ?>"></p>
       </div>
     </div>
     <div class="setting">
@@ -55,7 +65,7 @@ if(isset($_POST['save'])) {
       </div>
       <div class="setting">
         <h2>アナリティクス</h2>
-        <p>トラッキングコード：<input type="text" name="analytics" value="<?php echo $analytics ?>"></p>
+        <label for="analytics">トラッキングコード：</label><input id="analytics" type="text" name="analytics" value="<?php echo $analytics ?>">
       </div>
       <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
     </div>
