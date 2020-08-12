@@ -119,6 +119,19 @@ function my_admin_scripts() {
   wp_enqueue_media();
 }
 
+//メニューの<li>からID除去
+function setMenuId( $id ){
+    return $id = array();
+}
+
+//メニューの<li>からクラス除去
+function setMenuClass( $classes, $item, $args) {
+  $classes = array();
+  if(isset($args->add_li_class)) {
+      $classes[] = $args->add_li_class;
+  }
+  return $classes;}
+
 // フック処理
 add_action('after_setup_theme','mytheme_setup');
 add_action('wp_dashboard_setup','add_widget');
@@ -145,6 +158,8 @@ add_filter( 'get_the_archive_title', function ($title) {
     }
     return $title;
 });
+add_filter('nav_menu_item_id', 'setMenuId', 10);
+add_filter('nav_menu_css_class', 'setMenuClass', 1, 3 );
 // 記事の冒頭に表示するアイキャッチ画像
 add_image_size('single',800,450,false);
 add_image_size('articlelist',288,162,false);
