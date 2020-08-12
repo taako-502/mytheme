@@ -132,6 +132,15 @@ function setMenuClass( $classes, $item, $args) {
   }
   return $classes;}
 
+/**
+ * ナビバー以下にあるaタグのクラスを変更
+ * @param [type] $item_output [description]
+ * @param [type] $item        [description]
+ */
+function add_class_on_link($item_output, $item){
+  return preg_replace('/(<a.*?)/', '$1' . " class='nav-link'", $item_output);
+}
+
 // フック処理
 add_action('after_setup_theme','mytheme_setup');
 add_action('wp_dashboard_setup','add_widget');
@@ -160,6 +169,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 add_filter('nav_menu_item_id', 'setMenuId', 10);
 add_filter('nav_menu_css_class', 'setMenuClass', 1, 3 );
+add_filter('walker_nav_menu_start_el', 'add_class_on_link', 10, 4);
 // 記事の冒頭に表示するアイキャッチ画像
 add_image_size('single',800,450,false);
 add_image_size('articlelist',288,162,false);
