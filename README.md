@@ -6,7 +6,7 @@
 
 管理画面に「mytheme設定」という画面があり、そこからWordpressの見た目をカスタマイズすることができます。
 
-## デモサイトはこちらです。
+## デモサイト
 https://www.mytheme.taako-biz.com/
 
 ## twitter
