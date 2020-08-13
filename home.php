@@ -12,37 +12,41 @@ get_header('top');
 <div class="topimage"></div>
 <section id="content">
   <div id="content-wrap" class="container">
-    <div class="col-md-12">
-      <h2>おすすめ記事</h2>
-      <div class="recommend-article col-md-12">
-        <div class="recommend-left">
-          <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
-        </div>
-        <div class="recommend-center">
-          <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
-        </div>
-        <div class="recommend-right">
-          <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>おすすめ記事</h2>
+        <div class="recommend-article col-md-12">
+          <div class="recommend-left">
+            <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
+          </div>
+          <div class="recommend-center">
+            <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
+          </div>
+          <div class="recommend-right">
+            <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
+          </div>
         </div>
       </div>
     </div>
-    <div id="main" class="col-md-9">
-      <h2>新着記事</h2>
-      <div class="article-list-one-column col-md-12">
-        <?php
-          /* 記事一覧 */
-          if ( have_posts() ) {
-            while ( have_posts() ) { the_post();
-              include(get_template_directory() ."/articlecard.php");
+    <div class="row">
+      <div id="main" class="col-md-9">
+        <h2>新着記事</h2>
+        <div class="article-list-one-column col-md-12">
+          <?php
+            /* 記事一覧 */
+            if ( have_posts() ) {
+              while ( have_posts() ) { the_post();
+                include(get_template_directory() ."/articlecard.php");
+              }
+            } else {
+              echo "<p>まだ記事がありません。</p>";
             }
-          } else {
-            echo "<p>まだ記事がありません。</p>";
-          }
-        ?>
+          ?>
+        </div>
       </div>
-    </div>
-    <div id="sidebar" class="col-md-3">
-      <?php get_sidebar(); ?>
+      <div id="sidebar" class="col-md-3">
+        <?php get_sidebar(); ?>
+      </div>
     </div>
   </div>
 </section>

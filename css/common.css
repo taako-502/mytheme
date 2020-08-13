@@ -87,7 +87,9 @@ div.category {
   background-color: whitesmoke;
 }
 /* サイドバー */
-#sidebar{ text-align: center;}
+#sidebar{
+  text-align: center;
+}
 footer{ background-color: #222; }
 footer p {
   padding:15px 0;
