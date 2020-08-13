@@ -6,11 +6,11 @@
 
 管理画面に「mytheme設定」という画面があり、そこからWordpressの見た目をカスタマイズすることができます。
 
-デモサイトはこちらです。
+## デモサイトはこちらです。
 https://www.mytheme.taako-biz.com/
 
-twitter
+## twitter
 https://twitter.com/taakobiz
 
-TAAKOのブログ
+## TAAKOのブログ
 https://taako-biz.com/
