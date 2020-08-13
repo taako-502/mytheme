@@ -88,25 +88,40 @@ h2.widgettitle {
   margin-top: 0.3em;
   margin-bottom: : 0.3em;
 }
-.widget_sidebar input[type="submit"]{
-  display: block;
-  margin: 0.3em 0 0 auto;
-  border-radius : 5%;          /* 角丸       */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  padding       : 5px 5px;     /* 余白       */
-  background    : #333333;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 3px 3px 3px #666666;  /* 影の設定 */
-  border        : 2px solid #333333;    /* 枠の指定 */
+/* 検索フォーム */
+.searchform {
+  position: relative;
 }
-.widget_sidebar input[type="submit"]:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  color         : #333333;     /* 背景色     */
-  background    : #ffffff;     /* 文字色     */
+
+.searchfield {
+  font-size: 14px;
+  width: 90%;
+  margin: 3px;
+  padding: 10px;
+  border: solid 1px #bbb;
+  border-radius: 4px;
+  background-color: #efefef;
 }
+
+.searchsubmit {
+  font-family: FontAwesome;
+  font-size: 1.4em;
+  position: absolute;
+  top: 0;
+  right: 12%;
+  margin-top: 10px;
+  padding: 0;
+  cursor: pointer;
+  color: #6297f5;
+  border: none;
+  background: transparent;
+}
+
+.searchsubmit:hover {
+  opacity: .6;
+}
+
+
 /****** 記事一覧(archive.php) ******/
 /* ブログカード */
 .article-card{
