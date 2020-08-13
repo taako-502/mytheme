@@ -57,7 +57,7 @@ if(isset($_POST['save'])) {
         <p><label for="reco-left-url">記事URL：</label><input type="text" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
         <p><b>中央おすすめ記事</b></p>
         <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', get_option('reco-center-img')); ?></p>
-        <p><label for="reco-center-url">記事URL：</label><input type="text" name="reco-center-url" value="<?php echo $recolefturl; ?>"></p>
+        <p><label for="reco-center-url">記事URL：</label><input type="text" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
         <p><b>右おすすめ記事</b></p>
         <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', get_option('reco-right-img')); ?></p>
         <p><label for="reco-right-url">記事URL：</label><input type="text" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
