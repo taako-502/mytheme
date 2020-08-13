@@ -1,4 +1,4 @@
-![MY THEME](https://user-images.githubusercontent.com/36348377/90158316-d3cfd700-ddc9-11ea-8a6c-ece15a219631.jpg)
+![MY THEME](https://user-images.githubusercontent.com/36348377/90158553-185b7280-ddca-11ea-827a-1b8d4d2f20dc.jpg)
 
 # mytheme
 アフィ○ガーJET風のトップページです。
