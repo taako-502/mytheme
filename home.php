@@ -7,7 +7,10 @@ $recocenterimg = get_option_isBlank('reco-center-img', get_template_directory_ur
 $recocenterurl = get_option_isBlank('reco-center-url','#');
 $recorightimg = get_option_isBlank('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recorighturl = get_option_isBlank('reco-right-url','#');
-get_header('top');
+// 読み込み
+global $page_title;
+$page_title = "home";
+get_header();
 ?>
 <div class="topimage"></div>
 <section id="content">

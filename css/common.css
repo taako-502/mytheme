@@ -21,8 +21,8 @@ img{ max-width:100%;}
   background-color: white;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
-/* ブログタイトル */
-div#title{
+/* ヘッダー */
+a#title{
   margin-top: 5px;
   margin-left: 30px;
   font-size: 20px;
@@ -31,10 +31,10 @@ div#title{
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
 }
-div#title a:hover {
+a#title:hover {
   text-decoration: none;/*下線を消す*/
 }
-div#title a:visited {
+a#title:visited {
   color:#333;
 }
 /* 投稿記事・固定記事 */
