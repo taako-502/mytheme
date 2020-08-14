@@ -14,6 +14,10 @@
           echo "<div class=\"category\"><a href=\"$category_link\">".$category_name."</a></div>";
           // サムネイル
           the_post_thumbnail('single');
+          // 本文
+        ?>
+          <div id="main-text">
+        <?php
           if ( have_posts() ) :
             while ( have_posts() ) : the_post();
         ?>
@@ -25,6 +29,7 @@
             endwhile;
           endif;
         ?>
+        </div>
       </div>
       <div id="sidebar" class="col-md-3">
         <?php get_sidebar(); ?>
