@@ -17,7 +17,11 @@ img{ max-width:100%;}
   padding-top:20px;
   padding-bottom:20px;
 }
-#content-wrap{
+div#main{
+  background-color: white;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+}
+div#sidebar{
   background-color: white;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
@@ -278,6 +282,13 @@ h2.widgettitle {
 }
 .searchsubmit:hover {
   opacity: .6;
+}
+/* ウィジェット */
+li.widget {
+  margin:20px 7px 0 0;
+}
+.widget:not(:first-child) {
+  margin-top:20px;
 }
 /****** 記事一覧(archive.php) ******/
 /* ブログカード */
