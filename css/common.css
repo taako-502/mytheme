@@ -47,18 +47,72 @@ div.entry-content {
 	max-width: 100%;
 }
 /* 見出し */
-.entry-content H2{
-  font-size:24px;
+#main-text H2{
+  font-size:25px;
+  margin: 1.5em 0;
   border-bottom: solid 3px skyblue;
   position: relative;
 }
-.entry-content H2:after {
+#main-text H2:after {
   position: absolute;
   content: " ";
   display: block;
   border-bottom: solid 3px #ffc778;
   bottom: -3px;
   width: 30%;
+}
+#main-text H3{
+  font-size:24px;
+  margin: 1.2em 0;
+  /*線の種類（二重線）太さ 色*/
+  border-bottom: double 4px #FFC778;
+}
+#main-text H4{
+  margin: 1.2em 0;
+  font-size:23px;
+  /*線の種類（実線） 太さ 色*/
+  border-bottom: solid 1.5px  #FFC778;
+}
+#main-text H5{
+  margin: 1.2em 0;
+  font-size:22px;
+  position: relative;
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;
+}
+#main-text H5:before {
+  font-family: FontAwesome;
+  content: "\f00c";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+  font-weight: 900;
+}
+#main-text H6{
+  margin: 1.2em 0;
+  font-size:21px;
+  position: relative;
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;
+}
+#main-text H6:before {
+  font-family: FontAwesome;
+  content: "\f00c";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+  font-weight: 900;
+}
+/* pタグ　*/
+.entry-content p:not([class]){
+  margin-top:2em;
+  margin-bottom:2em;
 }
 /* リスト */
 #main-text ul {
@@ -71,7 +125,6 @@ div.entry-content {
   padding: 0.5em 0;
   list-style-type: none!important;/*ポチ消す*/
 }
-
 #main-text ul li:before {
   font-family: FontAwesome; /* 旧Verの書き方 */
   content: "\f00c";
@@ -118,11 +171,6 @@ div.entry-content {
 }
 #main-text ol li:last-of-type {
   border-bottom: none; /*最後のliの線だけ消す*/
-}
-/* pタグ　*/
-.entry-content p:not([class]){
-  margin-top:2em;
-  margin-bottom:2em;
 }
 /* サムネイル */
 img.size-single{
@@ -206,7 +254,6 @@ h2.widgettitle {
 .searchform {
   position: relative;
 }
-
 .searchfield {
   font-size: 14px;
   width: 90%;
@@ -216,7 +263,6 @@ h2.widgettitle {
   border-radius: 4px;
   background-color: #efefef;
 }
-
 .searchsubmit {
   font-family: FontAwesome;
   font-size: 1.4em;
@@ -230,12 +276,9 @@ h2.widgettitle {
   border: none;
   background: transparent;
 }
-
 .searchsubmit:hover {
   opacity: .6;
 }
-
-
 /****** 記事一覧(archive.php) ******/
 /* ブログカード */
 .article-card{
@@ -245,10 +288,16 @@ h2.widgettitle {
   margin:15px;
   box-shadow: 3px 10px 10px #666666;  /* 影の設定 */
   background-color: white;
+  border-radius:5px;
 }
 .article-card a.apermalink{
   display: block;
   margin: 5px 7px;
+  color:#333;
+}
+.article-card img{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .article-list{
   width:98%;
