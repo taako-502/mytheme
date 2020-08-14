@@ -235,6 +235,10 @@ img.size-single{
     color: #888888;
     font-size: 0.9em;
 }
+/* 画像 */
+#main-text img{
+  height:auto;
+}
 /****** サイドバー ******/
 #sidebar{
   text-align: center;
@@ -288,7 +292,7 @@ li.widget {
   margin:20px 7px 0 0;
 }
 .widget:not(:first-child) {
-  margin-top:20px;
+  margin-top:30px;
 }
 /****** 記事一覧(archive.php) ******/
 /* ブログカード */
