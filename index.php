@@ -1,63 +1,56 @@
-<?php get_header(); ?>
- <section id="content">
- <div id="content-wrap" class="container">
- <div id="main" class="col-md-9">
-  <h1 class="text-center">個人事業主向けWebスクール ウェブストエイト</h1>
-  <p>
-  ウェブストエイトは自分でホームページ制作・Web集客したい方向けの
-  少人数制個別指導のスクール・塾です。
-  <br><br>
-  継続6ヶ月コースとお試し1ヶ月コースから選択して受講できます。
-  </p>
-  <div class="row">
-   <div class="col-md-6">
-    <p><img src="<?php echo get_template_directory_uri(); ?>/images/pc-wood.jpg" alt="6ヶ月コース画像"></p>
-    <h2 class="text-center">しっかり6ヶ月コース</h2>
-    <p>ホームページ作成からWeb集客まで一通り習得して売上拡大したい方向けのコース</p>
-   </div>
-   <div class="col-md-6">
-    <p><img src="<?php echo get_template_directory_uri(); ?>/images/pc-leaf.jpg" alt="1ヶ月コース画像"></p>
-    <h2 class="text-center">お試し1ヶ月コース</h2>
-    <p>特定範囲のみ習いたい・まずは試しに受講してみたい方向けのコース</p>
-   </div>
-  </div>
-  <p class="text-center">
-   <br>
-   お申し込みは<a href="https://webst8.com">こちらから</a>
-   <br><br>
-  </p>
-  <div id="posts">
-    <h1>記事一覧</h1>
-    <hr>
-    <?php
-      if ( have_posts() ) {
-        while ( have_posts() ) {
-          the_post();
-          ?>
-          <h2><?php the_time('Y年n月j日'); ?>&nbsp;&nbsp;
-            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-          </h2>
+<?php
+require get_template_directory() . '/utility.php';
+//-wp_optionsテーブルから設定値を取得
+$recoleftimg = get_option_isBlank('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
+$recolefturl = get_option_isBlank('reco-left-url','#');
+$recocenterimg = get_option_isBlank('reco-center-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
+$recocenterurl = get_option_isBlank('reco-center-url','#');
+$recorightimg = get_option_isBlank('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
+$recorighturl = get_option_isBlank('reco-right-url','#');
+// 読み込み
+global $page_title;
+$page_title = "home";
+get_header();
+?>
+<div class="topimage"></div>
+<section id="content">
+  <div id="content-wrap" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>おすすめ記事</h2>
+        <div class="recommend-article col-md-12">
+          <div class="recommend-left">
+            <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
+          </div>
+          <div class="recommend-center">
+            <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
+          </div>
+          <div class="recommend-right">
+            <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="main" class="col-md-9">
+        <h2>新着記事</h2>
+        <div class="article-list-one-column col-md-12">
           <?php
-        }
-      }
-     ?>
-     <h1>投稿一覧</h1>
-     <hr>
-     <?php
-       if ( have_posts() ) {
-         while ( have_posts() ) {
-           the_post();
-           ?>
-           <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>&nbsp;&nbsp;</h2>
-           <?php
-         }
-       }
-      ?>
+            /* 記事一覧 */
+            if ( have_posts() ) {
+              while ( have_posts() ) { the_post();
+                include(get_template_directory() ."/articlecard.php");
+              }
+            } else {
+              echo "<p>まだ記事がありません。</p>";
+            }
+          ?>
+        </div>
+      </div>
+      <div id="sidebar" class="col-md-3">
+        <?php get_sidebar(); ?>
+      </div>
+    </div>
   </div>
- </div>
- <div id="sidebar" class="col-md-3">
-  <?php get_sidebar(); ?>
- </div>
- </div>
- </section>
+</section>
 <?php get_footer(); ?>
