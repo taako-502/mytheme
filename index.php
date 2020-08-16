@@ -16,16 +16,16 @@ get_header();
 <section id="content">
   <div id="content-wrap" class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h2>おすすめ記事</h2>
-        <div class="recommend-article col-md-12">
-          <div class="recommend-left">
+      <div id="recommend" class="col-md-12">
+        <h2 class="article-heading">おすすめ記事</h2>
+        <div class="recommend-area row">
+          <div class="reco-article recommend-left col-md-4">
             <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
           </div>
-          <div class="recommend-center">
+          <div class="reco-article recommend-center col-md-4">
             <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
           </div>
-          <div class="recommend-right">
+          <div class="reco-article recommend-right col-md-4">
             <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
           </div>
         </div>
@@ -33,7 +33,7 @@ get_header();
     </div>
     <div class="row">
       <div id="main" class="col-md-9">
-        <h2>新着記事</h2>
+        <h2 class="article-heading">新着記事</h2>
         <div class="article-list-one-column col-md-12">
           <?php
             /* 記事一覧 */
