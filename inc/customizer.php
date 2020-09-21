@@ -8,7 +8,7 @@ function my_customize( $wp_customize ) {
 
   // ナビゲーションバー
   $wp_customize->add_panel(
-    'my_panel',
+    'nav',
     array(
       'title'    => 'ナビゲーションメニュー',
       'priority' => 21,
@@ -16,23 +16,23 @@ function my_customize( $wp_customize ) {
   );
 
   $wp_customize->add_section(
-    'my_section',
+    'nav-color',
     array(
       'title'    => 'カラー',
-      'panel'    => 'my_panel',
+      'panel'    => 'nav',
       'priority' => 1,
     )
   );
 
-  $wp_customize->add_setting( 'my_setting_colorpicker' );
+  $wp_customize->add_setting( 'nav_setting_colorpicker' );
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
-      'my_control_colorpicker',
+      'nav_control_colorpicker',
       array(
         'label'    => 'ナビバーの背景色',
-        'section'  => 'my_section',
-        'settings' => 'my_setting_colorpicker',
+        'section'  => 'nav-color',
+        'settings' => 'nav_setting_colorpicker',
       )
     )
   );
