@@ -5,6 +5,8 @@
  * @package mytheme
  */
 function my_customize( $wp_customize ) {
+
+  // ナビゲーションバー
   $wp_customize->add_panel(
     'my_panel',
     array(
@@ -22,16 +24,15 @@ function my_customize( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'my_setting' );
+  $wp_customize->add_setting( 'my_setting_colorpicker' );
   $wp_customize->add_control(
-    new WP_Customize_Control(
+    new WP_Customize_Color_Control(
       $wp_customize,
-      'my_control',
+      'my_control_colorpicker',
       array(
-        'label'    => 'コントロールの見出し',
+        'label'    => 'ナビバーの背景色',
         'section'  => 'my_section',
-        'settings' => 'my_setting',
-        'priority' => 1,
+        'settings' => 'my_setting_colorpicker',
       )
     )
   );
