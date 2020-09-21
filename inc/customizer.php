@@ -5,7 +5,7 @@
  * @package mytheme
  */
 function my_customize( $wp_customize ) {
-
+  // ナビゲーションバー
   // ナビゲーションバー
   $wp_customize->add_panel(
     'nav',
