@@ -17,7 +17,11 @@
 </head>
 <body>
   <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;">
+    <?php /* 取得側 */
+    $test = get_theme_mod('nav_setting_colorpicker', __('#212529', 'テーマID') );
+    echo esc_html($test);
+    ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo get_theme_mod('nav_setting_colorpicker','#212529') ?>!important">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
