@@ -5,8 +5,8 @@
 /* おすすめ記事 */
 div#recommend{
   background-color: white;
-  margin:5px 0 25px 0;
-  padding:10px 0;
+  margin: 5px 0 25px 0;
+  padding: 10px 0;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
 .reco-article img {
