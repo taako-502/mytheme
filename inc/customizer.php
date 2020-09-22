@@ -38,3 +38,8 @@ function my_customize( $wp_customize ) {
   );
 }
 add_action( 'customize_register', 'my_customize' );
+
+/**
+ * ラッパー
+ */
+function getCusNavColor(){return get_theme_mod('nav_setting_colorpicker','#212529');}
