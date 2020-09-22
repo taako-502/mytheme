@@ -10,7 +10,7 @@ function my_customize( $wp_customize ) {
   $wp_customize->add_panel(
     'nav',
     array(
-      'title'    => 'ナビゲーションメニュー',
+      'title'    => 'ナビゲーション',
       'priority' => 21,
     )
   );
