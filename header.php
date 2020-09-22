@@ -17,11 +17,11 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo getCusNavColor() ?>!important">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a id="title" class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+    <a id="title" class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:<?php echo getCusNavLogoColor() ?>!important"><?php bloginfo( 'name' ); ?></a>
     <div class="collapse navbar-collapse" id="navbarNav">
        <?php
        $args = array(
