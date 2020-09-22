@@ -19,13 +19,13 @@ get_header();
       <div id="recommend" class="col-md-12">
         <h2 class="article-heading">おすすめ記事</h2>
         <div class="recommend-area row">
-          <div class="reco-article recommend-left col-md-4">
+          <div class="reco-article recommend-left col-sm-12 col-md-12 col-lg-4">
             <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
           </div>
-          <div class="reco-article recommend-center col-md-4">
+          <div class="reco-article recommend-left col-sm-12 col-md-6 col-lg-4">
             <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
           </div>
-          <div class="reco-article recommend-right col-md-4">
+          <div class="reco-article recommend-left col-sm-12 col-md-6 col-lg-4">
             <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
           </div>
         </div>
