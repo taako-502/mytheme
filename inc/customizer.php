@@ -4,8 +4,25 @@
  *
  * @package mytheme
  */
-function my_customize( $wp_customize ) {
-  // ナビゲーションバー
+function mytheme_customize( $wp_customize ) {
+  // ナビゲーションバーのカスタマイザ
+  cusNav($wp_customize);
+}
+add_action( 'customize_register', 'mytheme_customize' );
+
+/**
+ * ラッパー
+ */
+function getCusNavLogoColor(){return get_theme_mod('nav_logo_color','white');}
+function getCusNavMenuColor(){return get_theme_mod('nav_menu_color','white');}
+function getCusNavBackColor(){return get_theme_mod('nav_background_color','#212529');}
+
+/* プライベートメソッド */
+/**
+ * ナビゲーションのカスタマイズを行うメソッド
+ * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
+ */
+function cusNav( $wp_customize ) {
   // ナビゲーションバーの色設定
   $wp_customize->add_panel(
     'nav',
@@ -63,11 +80,3 @@ function my_customize( $wp_customize ) {
     )
   );
 }
-add_action( 'customize_register', 'my_customize' );
-
-/**
- * ラッパー
- */
-function getCusNavLogoColor(){return get_theme_mod('nav_logo_color','#333');}
-function getCusNavMenuColor(){return get_theme_mod('nav_menu_color','#333');}
-function getCusNavBackColor(){return get_theme_mod('nav_background_color','#212529');}
