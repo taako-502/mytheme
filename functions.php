@@ -24,6 +24,7 @@ function mytheme_setup(){
   // メニュー機能をON
   add_theme_support('menus');
 }
+add_action('after_setup_theme','mytheme_setup');
 
 /**
 * ダッシュボードにウィジェット追加
@@ -34,6 +35,7 @@ function add_widget(){
     'テーマ設定',
     'add_custom_widget');
 }
+add_action('wp_dashboard_setup','add_widget');
 
 /**
 * 追加ウィジェットの実装
@@ -112,8 +114,6 @@ function my_admin_scripts() {
 }
 
 // フック処理
-add_action('after_setup_theme','mytheme_setup');
-add_action('wp_dashboard_setup','add_widget');
 add_action(
 	'widgets_init',
 	function(){
