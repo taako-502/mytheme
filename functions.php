@@ -6,6 +6,16 @@
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * ナビゲーションメニュー設定
+ */
+require get_template_directory() . '/inc/func-menu.php';
+
+/**
+ * 管理画面設定
+ */
+require get_template_directory() . '/inc/func-admin.php';
+
+/**
 * テーマのセットアップメソッド
 */
 function mytheme_setup(){
@@ -13,30 +23,6 @@ function mytheme_setup(){
   add_theme_support('post-thumbnails');
   // メニュー機能をON
   add_theme_support('menus');
-}
-
-/**
-* 管理メニューに管理画面追加
-*/
-function add_admin(){
-  add_menu_page(
-    'mythemeの簡単設定',
-    'mytheme設定',
-    'manage_options',
-    'mytheme-admin',
-    'add_custom_admin',
-    'dashicons-store',
-    59);
-}
-
-/**
- * 追加管理画面の実装
- */
-function add_custom_admin(){
-  // mytheme専用管理画面呼び出し
-  if (locate_template('/admin.php') !== '') {
-    require_once locate_template('/admin.php');
-  }
 }
 
 /**
@@ -125,32 +111,9 @@ function my_admin_scripts() {
   wp_enqueue_media();
 }
 
-//メニューの<li>からID除去
-function setMenuId( $id ){
-    return $id = array();
-}
-
-//メニューの<li>からクラス除去
-function setMenuClass( $classes, $item, $args) {
-  $classes = array();
-  if(isset($args->add_li_class)) {
-      $classes[] = $args->add_li_class;
-  }
-  return $classes;}
-
-/**
- * ナビバー以下にあるaタグのクラスを変更
- * @param [type] $item_output [description]
- * @param [type] $item        [description]
- */
-function add_class_on_link($item_output, $item){
-  return preg_replace('/(<a.*?)/', '$1' . " class='nav-link'", $item_output);
-}
-
 // フック処理
 add_action('after_setup_theme','mytheme_setup');
 add_action('wp_dashboard_setup','add_widget');
-add_action('admin_menu','add_admin');
 add_action(
 	'widgets_init',
 	function(){
@@ -173,9 +136,6 @@ add_filter( 'get_the_archive_title', function ($title) {
     }
     return $title;
 });
-add_filter('nav_menu_item_id', 'setMenuId', 10);
-add_filter('nav_menu_css_class', 'setMenuClass', 1, 3 );
-add_filter('walker_nav_menu_start_el', 'add_class_on_link', 10, 4);
 // 記事の冒頭に表示するアイキャッチ画像
 add_image_size('single',800,450,false);
 add_image_size('articlelist',288,162,false);
