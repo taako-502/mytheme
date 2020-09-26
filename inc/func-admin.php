@@ -1,7 +1,13 @@
 <?php
 /**
-* 管理メニューに管理画面追加
-*/
+ * 管理メニュー
+ *
+ * @package mytheme
+ */
+
+/**
+ * 管理メニューに追加
+ */
 function add_admin(){
   add_menu_page(
     'mythemeの簡単設定',

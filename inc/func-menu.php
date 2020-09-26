@@ -1,5 +1,14 @@
 <?php
-//メニューの<li>からID除去
+/**
+ * ナビゲーションメニュー
+ *
+ * @package mytheme
+ */
+
+/**
+ * メニューの<li>からID除去
+ * @param [type] $id [description]
+ */
 function setMenuId( $id ){
     return $id = array();
 }
