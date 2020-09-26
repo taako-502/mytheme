@@ -13,7 +13,7 @@
  <?php wp_enqueue_script('jquery'); ?>
  <?php wp_enqueue_script('bootstrap-js','https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',array('jquery')); ?>
  <?php wp_head(); ?>
- <?php include ("analyticsTracking.php"); ?>
+ <?php include ("template-parts/analyticsTracking.php"); ?>
 </head>
 <body>
   <header>
