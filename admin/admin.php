@@ -2,35 +2,35 @@
 /* 外部ファイル読み込み */
 require get_template_directory() . '/utility.php';
 //wp_optionsテーブルから設定値を取得
-$psize = get_option('p-size','');
-$h1size = get_option('h1-size','');
-$h2size = get_option('h2-size','');
-$h3size = get_option('h3-size','');
-$h4size = get_option('h4-size','');
-$copyright = get_option('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
-$analytics = get_option('analytics','');
-$recoleftimg = get_option('reco-left-img','');
-$recolefturl = get_option('reco-left-url','');
-$recocenterimg = get_option('reco-center-img','');
-$recocenterurl = get_option('reco-center-url','');
-$recorightimg = get_option('reco-right-img','');
-$recorighturl = get_option('reco-right-url','');
+$psize = get_theme_mod('p-size','');
+$h1size = get_theme_mod('h1-size','');
+$h2size = get_theme_mod('h2-size','');
+$h3size = get_theme_mod('h3-size','');
+$h4size = get_theme_mod('h4-size','');
+$copyright = get_theme_mod('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
+$analytics = get_theme_mod('analytics','');
+$recoleftimg = get_theme_mod('reco-left-img','');
+$recolefturl = get_theme_mod('reco-left-url','');
+$recocenterimg = get_theme_mod('reco-center-img','');
+$recocenterurl = get_theme_mod('reco-center-url','');
+$recorightimg = get_theme_mod('reco-right-img','');
+$recorighturl = get_theme_mod('reco-right-url','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータを更新
-  $psize = updaeteOptionPost('p-size',$_POST['p-size']);
-  $h1size = updaeteOptionPost('h1-size',$_POST['h1-size']);
-  $h2size = updaeteOptionPost('h2-size',$_POST['h2-size']);
-  $h3size = updaeteOptionPost('h3-size',$_POST['h3-size']);
-  $h4size = updaeteOptionPost('h4-size',$_POST['h4-size']);
-  $copyright = updaeteOptionPost('copyright',$_POST['copyright']);
-  $analytics = updaeteOptionPost('analytics',$_POST['analytics']);
-  $recoleftimg = updaeteOptionPost('reco-left-img',$_POST['reco-left-img']);
-  $recolefturl = updaeteOptionPost('reco-left-url',$_POST['reco-left-url']);
-  $recocenterimg = updaeteOptionPost('reco-center-img',$_POST['reco-center-img']);
-  $recocenterurl = updaeteOptionPost('reco-center-url',$_POST['reco-center-url']);
-  $recorightimg = updaeteOptionPost('reco-right-img',$_POST['reco-right-img']);
-  $recorighturl = updaeteOptionPost('reco-right-url',$_POST['reco-right-url']);
+  $psize = set_theme_mod('p-size',$_POST['p-size']);
+  $h1size = set_theme_mod('h1-size',$_POST['h1-size']);
+  $h2size = set_theme_mod('h2-size',$_POST['h2-size']);
+  $h3size = set_theme_mod('h3-size',$_POST['h3-size']);
+  $h4size = set_theme_mod('h4-size',$_POST['h4-size']);
+  $copyright = set_theme_mod('copyright',$_POST['copyright']);
+  $analytics = set_theme_mod('analytics',$_POST['analytics']);
+  $recoleftimg = set_theme_mod('reco-left-img',$_POST['reco-left-img']);
+  $recolefturl = set_theme_mod('reco-left-url',$_POST['reco-left-url']);
+  $recocenterimg = set_theme_mod('reco-center-img',$_POST['reco-center-img']);
+  $recocenterurl = set_theme_mod('reco-center-url',$_POST['reco-center-url']);
+  $recorightimg = set_theme_mod('reco-right-img',$_POST['reco-right-img']);
+  $recorighturl = set_theme_mod('reco-right-url',$_POST['reco-right-url']);
   echo "データを更新しました。";
 }
 ?>
@@ -56,10 +56,10 @@ if(isset($_POST['save'])) {
         <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>
         <p><label for="reco-left-url">記事URL：</label><input type="text" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
         <p><b>中央おすすめ記事</b></p>
-        <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', get_option('reco-center-img')); ?></p>
+        <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', get_theme_mod('reco-center-img')); ?></p>
         <p><label for="reco-center-url">記事URL：</label><input type="text" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
         <p><b>右おすすめ記事</b></p>
-        <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', get_option('reco-right-img')); ?></p>
+        <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', get_theme_mod('reco-right-img')); ?></p>
         <p><label for="reco-right-url">記事URL：</label><input type="text" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
       </div>
     </div>
