@@ -6,12 +6,19 @@ require get_template_directory() . '/utility.php';
 /*cssファイル設定 */
 header('Content-Type: text/css; charset=utf-8');
 // wp_optionsテーブルからデータを取得
-$pfontsize = get_theme_mod('p-size','100');
-$h1fontsize = get_theme_mod('h1-size','100');
-$h2fontsize = get_theme_mod('h2-size','19');
+$pfontsize = get_theme_mod('p-size','16');
+$h1fontsize = get_theme_mod('h1-size','28');
+$h2fontsize = get_theme_mod('h2-size','20');
 $h3fontsize = get_theme_mod('h3-size','18');
 $h4fontsize = get_theme_mod('h4-size','17');
 ?>
+
+/* 文字サイズ */
+section p { font-size: <?php echo $pfontsize; ?>px!important; }
+section h1 { font-size: <?php echo $h1fontsize; ?>px!important; }
+section h2 { font-size: <?php echo $h2fontsize; ?>px!important; }
+section h3 { font-size: <?php echo $h3fontsize; ?>px!important; }
+section h4 { font-size: <?php echo $h4fontsize; ?>px!important; }
 
 /* ナビゲーションバー */
 /* メニュー色設定 */
