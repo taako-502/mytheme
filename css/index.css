@@ -63,7 +63,7 @@ div.topimage{
 }
 H2.article-heading{
   font-size:25px;
-  margin: 1.5em 0;
+  margin: 1.5em 0 1.5em 0.5em;
   border-bottom: solid 3px skyblue;
   position: relative;
 }
