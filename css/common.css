@@ -300,8 +300,7 @@ li.widget {
 /****** 記事一覧(archive.php) ******/
 /* ブログカード */
 .article-card{
-  width:288px;
-  height:262px;
+  width: 100%;
   padding-bottom:5px;
   margin:15px;
   box-shadow: 3px 10px 10px #666666;  /* 影の設定 */
@@ -314,6 +313,8 @@ li.widget {
   color:#333;
 }
 .article-card img{
+  width: 100%;
+  height: auto;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }

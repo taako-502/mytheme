@@ -34,7 +34,7 @@ get_header();
     <div class="row">
       <div id="main" class="col-md-9">
         <h2 class="article-heading">新着記事</h2>
-        <div class="article-list-one-column col-md-12">
+        <div class="article-list-one-column col-md-12 row">
           <?php
             /* 記事一覧 */
             if ( have_posts() ) {

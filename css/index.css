@@ -33,27 +33,6 @@ div.recommend-area {
 .btn-flat-logo:hover {
   background: #1ec7bb;
 }
-/* 新着記事 */
-.article-card {
-  width:288px;
-  height:262px;
-  padding-bottom:5px;
-  margin:15px;
-  box-shadow: 3px 10px 10px #666666;  /* 影の設定 */
-  background-color: white;
-}
-.article-card a.apermalink {
-  display: block;
-  margin: 5px 7px;
-}
-.article-list-one-column {
-  width:98%%;
-  padding: 10px;
-  overflow:hidden;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 /* トップページの画像 */
 div.topimage{
   width: 100vw;
