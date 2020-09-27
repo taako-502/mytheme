@@ -39,7 +39,7 @@ get_header();
             /* 記事一覧 */
             if ( have_posts() ) {
               while ( have_posts() ) { the_post();
-                include(get_template_directory() ."/articlecard.php");
+                include(get_template_directory() ."/template-parts/articlecard.php");
               }
             } else {
               echo "<p>まだ記事がありません。</p>";
