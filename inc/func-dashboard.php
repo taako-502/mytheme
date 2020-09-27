@@ -37,7 +37,10 @@ function add_widget(){
   add_meta_box(
     'readme_widget',
     'Read Me !!',
-    'add_readme_widget');
+    'add_readme_widget',
+    'dashboard',
+    'side',
+    'high');
 
   // Global the $wp_meta_boxes variable (this will allow us to alter the array).
   global $wp_meta_boxes;
