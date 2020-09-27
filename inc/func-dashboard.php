@@ -34,24 +34,19 @@ add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
  * ダッシュボードにウィジェット追加
  */
 function add_widget(){
-  wp_add_dashboard_widget(
+  add_meta_box(
     'readme_widget',
     'Read Me !!',
     'add_readme_widget');
 
-  /* 追加したウィジェットを一番上に持ってくる処理 */
-  //メタボックス配列をグローバライズする。これには wp-admin のすべてのウィジェットが含まれる。
+  // Global the $wp_meta_boxes variable (this will allow us to alter the array).
   global $wp_meta_boxes;
-  //通常のダッシュボードウィジェット配列を取得
-  //(最後に新しいウィジェットが追加されている)
-  $normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
-  //バックアップして新しいダッシュボードウィジェットを配列の最後から削除
-  $readme_widget_backup = array( 'readme_widget' => $normal_dashboard['readme_widget'] );
-  unset( $normal_dashboard['readme_widget'] );
-  //2つの配列を統合して新しいウィジェットが最初にくるようにする
-  $sorted_dashboard = array_merge( $readme_widget_backup, $normal_dashboard );
-  //並べ替えた配列を元のメタボックスに保存し直す
-  $wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
+  // Then we make a backup of your widget.
+  $my_widget = $wp_meta_boxes['dashboard']['normal']['core']['readme_widget'];
+  // We then unset that part of the array.
+  unset($wp_meta_boxes['dashboard']['normal']['core']['readme_widget']);
+  // Now we just add your widget back in.
+  $wp_meta_boxes['dashboard']['side']['core']['readme_widget'] = $my_widget;
 }
 add_action('wp_dashboard_setup','add_widget');
 
@@ -59,5 +54,14 @@ add_action('wp_dashboard_setup','add_widget');
  * 追加ウィジェットの実装
  */
  function add_readme_widget(){
-   echo '<div class="custom_widget"><p>Hello World</p></div>';
+   //echo '<div class="readme_widget"><p>Hello World</p></div>';
+   ?>
+   <div class="readme_widget">
+     <h2>FAQ</h2>
+     よくある質問は<a href="#">こちら</a>をご覧ください。
+     <h2>制作者の連絡先</h2>
+     <p>下記の問い合わせフォームからご連絡ください。</p>
+     <a href="https://taako-biz.com/inquiry/">問い合わせフォーム</a>
+   </div>
+   <?php
  }
