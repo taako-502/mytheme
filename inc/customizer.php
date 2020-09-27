@@ -17,7 +17,6 @@ function getCusNavLogoColor(){return get_theme_mod('nav_logo_color','white');}
 function getCusNavMenuColor(){return get_theme_mod('nav_menu_color','white');}
 function getCusNavBackColor(){return get_theme_mod('nav_background_color','#212529');}
 
-/* プライベートメソッド */
 /**
  * ナビゲーションのカスタマイズを行うメソッド
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
