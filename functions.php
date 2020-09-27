@@ -1,18 +1,11 @@
 <?php
-
-/**
- * カスタマイザー
- */
+//ダッシュボード
+ require get_template_directory() . '/inc/func-dashboard.php';
+//カスタマイザー
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * ナビゲーションメニュー設定
- */
+//ナビゲーションメニュー設定
 require get_template_directory() . '/inc/func-menu.php';
-
-/**
- * 管理画面設定
- */
+//管理画面設定
 require get_template_directory() . '/inc/func-admin.php';
 
 /**
@@ -25,24 +18,6 @@ function mytheme_setup(){
   add_theme_support('menus');
 }
 add_action('after_setup_theme','mytheme_setup');
-
-/**
-* ダッシュボードにウィジェット追加
-*/
-function add_widget(){
-  wp_add_dashboard_widget(
-    'custom_widget',
-    'テーマ設定',
-    'add_custom_widget');
-}
-add_action('wp_dashboard_setup','add_widget');
-
-/**
-* 追加ウィジェットの実装
-*/
-function add_custom_widget(){
-  echo '<div class="custom_widget"><p>Hello World</p></div>';
-}
 
 /**
  * 画像アップロード用のタグを出力する
