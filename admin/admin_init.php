@@ -20,7 +20,7 @@ $recorightimg = get_theme_mod('reco-right-img','');
 $recorighturl = get_theme_mod('reco-right-url','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
-  //admin.php画面からpostされたデータを更新
+  //admin.php画面からpostされたデータで、データベースと画面設定値を更新
   $pc_psize = $_POST['pc-p-size'];
   set_theme_mod('pc-p-size',$pc_psize);
   $pc_h1size = $_POST['pc-h1-size'];
