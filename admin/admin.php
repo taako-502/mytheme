@@ -1,6 +1,4 @@
 <?php
-/* 外部ファイル読み込み */
-require get_template_directory() . '/utility.php';
 //wp_optionsテーブルから設定値を取得
 $pc_psize = get_theme_mod('pc-p-size','');
 $pc_h1size = get_theme_mod('pc-h1-size','');
