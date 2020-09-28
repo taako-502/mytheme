@@ -80,16 +80,4 @@ function breadcrumb() {
   echo "</ul>";
   echo '</div>';
 }
-
-/**
- * wp_optionsテーブルから取得した値が、空白かnullならデフォルト値を設定
- * @param  [type]  $key     [description]
- * @param  [type]  $default [description]
- * @return boolean          [description]
- */
-function get_option_isBlank($key,$default){
-  $value = get_option($key,$default);
-  return isNullOrEmpty(trim($value)) ? $default : $value;
-}
-
 ?>

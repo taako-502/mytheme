@@ -2,11 +2,11 @@
 /* 外部ファイル読み込み */
 require get_template_directory() . '/utility.php';
 //wp_optionsテーブルから設定値を取得
-$psize = get_theme_mod('p-size','');
-$h1size = get_theme_mod('h1-size','');
-$h2size = get_theme_mod('h2-size','');
-$h3size = get_theme_mod('h3-size','');
-$h4size = get_theme_mod('h4-size','');
+$pc_psize = get_theme_mod('pc-p-size','');
+$pc_h1size = get_theme_mod('pc-h1-size','');
+$pc_h2size = get_theme_mod('pc-h2-size','');
+$pc_h3size = get_theme_mod('pc-h3-size','');
+$pc_h4size = get_theme_mod('pc-h4-size','');
 $copyright = get_theme_mod('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 $analytics = get_theme_mod('analytics','');
 $recoleftimg = get_theme_mod('reco-left-img','');
@@ -18,11 +18,11 @@ $recorighturl = get_theme_mod('reco-right-url','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータを更新
-  $psize = set_theme_mod('p-size',$_POST['p-size']);
-  $h1size = set_theme_mod('h1-size',$_POST['h1-size']);
-  $h2size = set_theme_mod('h2-size',$_POST['h2-size']);
-  $h3size = set_theme_mod('h3-size',$_POST['h3-size']);
-  $h4size = set_theme_mod('h4-size',$_POST['h4-size']);
+  $pc_psize = set_theme_mod('pc-p-size',$_POST['pc-p-size']);
+  $pc_h1size = set_theme_mod('pc-h1-size',$_POST['pc-h1-size']);
+  $pc_h2size = set_theme_mod('pc-h2-size',$_POST['pc-h2-size']);
+  $pc_h3size = set_theme_mod('pc-h3-size',$_POST['pc-h3-size']);
+  $pc_h4size = set_theme_mod('pc-h4-size',$_POST['pc-h4-size']);
   $copyright = set_theme_mod('copyright',$_POST['copyright']);
   $analytics = set_theme_mod('analytics',$_POST['analytics']);
   $recoleftimg = set_theme_mod('reco-left-img',$_POST['reco-left-img']);
@@ -42,11 +42,11 @@ if(isset($_POST['save'])) {
   <h2>基本構成</h2>
   <form method="post">
     <div class="setting">
-      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="p-size" value="<?php echo $psize; ?>"> px</p>
-      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="h1-size" value="<?php echo $h1size; ?>"> px</p>
-      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="h2-size" value="<?php echo $h2size; ?>"> px</p>
-      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="h3-size" value="<?php echo $h3size; ?>"> px</p>
-      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="h4-size" value="<?php echo $h4size; ?>"> px</p>
+      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc-p-size" value="<?php echo $pc_psize; ?>"> px</p>
+      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="pc-h1-size" value="<?php echo $pc_h1size; ?>"> px</p>
+      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="pc-h2-size" value="<?php echo $pc_h2size; ?>"> px</p>
+      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="pc-h3-size" value="<?php echo $pc_h3size; ?>"> px</p>
+      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="pc-h4-size" value="<?php echo $pc_h4size; ?>"> px</p>
     </div>
     <div class="setting">
       <h2>トップ</h2>
@@ -56,10 +56,10 @@ if(isset($_POST['save'])) {
         <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>
         <p><label for="reco-left-url">記事URL：</label><input type="text" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
         <p><b>中央おすすめ記事</b></p>
-        <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', get_theme_mod('reco-center-img')); ?></p>
+        <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', $recocenterimg); ?></p>
         <p><label for="reco-center-url">記事URL：</label><input type="text" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
         <p><b>右おすすめ記事</b></p>
-        <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', get_theme_mod('reco-right-img')); ?></p>
+        <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', $recorightimg); ?></p>
         <p><label for="reco-right-url">記事URL：</label><input type="text" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
       </div>
     </div>

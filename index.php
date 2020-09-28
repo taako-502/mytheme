@@ -1,12 +1,12 @@
 <?php
 require get_template_directory() . '/utility.php';
 //-wp_optionsテーブルから設定値を取得
-$recoleftimg = get_option_isBlank('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
-$recolefturl = get_option_isBlank('reco-left-url','#');
-$recocenterimg = get_option_isBlank('reco-center-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
-$recocenterurl = get_option_isBlank('reco-center-url','#');
-$recorightimg = get_option_isBlank('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
-$recorighturl = get_option_isBlank('reco-right-url','#');
+$recoleftimg = get_theme_mod('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
+$recolefturl = get_theme_mod('reco-left-url','#');
+$recocenterimg = get_theme_mod('reco-center-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
+$recocenterurl = get_theme_mod('reco-center-url','#');
+$recorightimg = get_theme_mod('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
+$recorighturl = get_theme_mod('reco-right-url','#');
 // 読み込み
 global $page_title;
 $page_title = "home";
