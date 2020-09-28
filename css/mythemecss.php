@@ -5,23 +5,42 @@
 /* 外部ファイル読み込み */
 // CSSファイルからの相対パスで wp-load.php の読み込みを指定
 include_once(dirname( __FILE__ ) . '/../../../../wp-load.php');
+include get_template_directory() . '/admin/admin_init.php';
 require get_template_directory() . '/utility.php';
 /*cssファイル設定 */
 header('Content-Type: text/css; charset=utf-8');
-// wp_optionsテーブルからデータを取得
-$pfontsize = get_theme_mod('pc-p-size','16');
-$h1fontsize = get_theme_mod('pc-h1-size','28');
-$h2fontsize = get_theme_mod('pc-h2-size','20');
-$h3fontsize = get_theme_mod('pc-h3-size','18');
-$h4fontsize = get_theme_mod('pc-h4-size','17');
 ?>
 
-/* 文字サイズ */
-section p { font-size: <?php echo $pfontsize; ?>px!important; }
-section h1 { font-size: <?php echo $h1fontsize; ?>px!important; }
-section h2 { font-size: <?php echo $h2fontsize; ?>px!important; }
-section h3 { font-size: <?php echo $h3fontsize; ?>px!important; }
-section h4 { font-size: <?php echo $h4fontsize; ?>px!important; }
+/* 文字サイズ（PC） */
+section p { font-size: <?php echo $pc_psize; ?>px!important; }
+section h1 { font-size: <?php echo $pc_h1size; ?>px!important; }
+section h2 { font-size: <?php echo $pc_h2size; ?>px!important; }
+section h3 { font-size: <?php echo $pc_h3size; ?>px!important; }
+section h4 { font-size: <?php echo $pc_h4size; ?>px!important; }
+section h5 { font-size: <?php echo $pc_h5size; ?>px!important; }
+section h6 { font-size: <?php echo $pc_h6size; ?>px!important; }
+
+/* 文字サイズ（タブレット） */
+@media screen and (max-width:980px) {
+  section p { font-size: <?php echo $td_psize; ?>px!important; }
+  section h1 { font-size: <?php echo $td_h1size; ?>px!important; }
+  section h2 { font-size: <?php echo $td_h2size; ?>px!important; }
+  section h3 { font-size: <?php echo $td_h3size; ?>px!important; }
+  section h4 { font-size: <?php echo $td_h4size; ?>px!important; }
+  section h5 { font-size: <?php echo $td_h5size; ?>px!important; }
+  section h6 { font-size: <?php echo $td_h6size; ?>px!important; }
+}
+
+/* 文字サイズ（スマートフォン） */
+@media (max-width:768px) {
+  section p { font-size: <?php echo $sm_psize; ?>px!important; }
+  section h1 { font-size: <?php echo $sm_h1size; ?>px!important; }
+  section h2 { font-size: <?php echo $sm_h2size; ?>px!important; }
+  section h3 { font-size: <?php echo $sm_h3size; ?>px!important; }
+  section h4 { font-size: <?php echo $sm_h4size; ?>px!important; }
+  section h5 { font-size: <?php echo $sm_h5size; ?>px!important; }
+  section h6 { font-size: <?php echo $sm_h6size; ?>px!important; }
+}
 
 /* ナビゲーションバー */
 /* メニュー色設定 */
