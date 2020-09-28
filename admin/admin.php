@@ -18,19 +18,32 @@ $recorighturl = get_theme_mod('reco-right-url','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータを更新
-  $pc_psize = set_theme_mod('pc-p-size',$_POST['pc-p-size']);
-  $pc_h1size = set_theme_mod('pc-h1-size',$_POST['pc-h1-size']);
-  $pc_h2size = set_theme_mod('pc-h2-size',$_POST['pc-h2-size']);
-  $pc_h3size = set_theme_mod('pc-h3-size',$_POST['pc-h3-size']);
-  $pc_h4size = set_theme_mod('pc-h4-size',$_POST['pc-h4-size']);
-  $copyright = set_theme_mod('copyright',$_POST['copyright']);
-  $analytics = set_theme_mod('analytics',$_POST['analytics']);
-  $recoleftimg = set_theme_mod('reco-left-img',$_POST['reco-left-img']);
-  $recolefturl = set_theme_mod('reco-left-url',$_POST['reco-left-url']);
-  $recocenterimg = set_theme_mod('reco-center-img',$_POST['reco-center-img']);
-  $recocenterurl = set_theme_mod('reco-center-url',$_POST['reco-center-url']);
-  $recorightimg = set_theme_mod('reco-right-img',$_POST['reco-right-img']);
-  $recorighturl = set_theme_mod('reco-right-url',$_POST['reco-right-url']);
+  $pc_psize = $_POST['pc-p-size'];
+  set_theme_mod('pc-p-size',$pc_psize);
+  $pc_h1size = $_POST['pc-h1-size'];
+  set_theme_mod('pc-h1-size',$pc_h1size);
+  $pc_h2size = $_POST['pc-h2-size'];
+  set_theme_mod('pc-h2-size',$pc_h2size);
+  $pc_h3size = $_POST['pc-h3-size'];
+  set_theme_mod('pc-h3-size',$pc_h3size);
+  $pc_h4size = $_POST['pc-h4-size'];
+  set_theme_mod('pc-h4-size',$pc_h4size);
+  $copyright = $_POST['copyright'];
+  set_theme_mod('copyright',$copyright);
+  $analytics = $_POST['analytics'];
+  set_theme_mod('analytics',$analytics);
+  $recoleftimg = $_POST['reco-left-img'];
+  set_theme_mod('reco-left-img',$recoleftimg);
+  $recolefturl = $_POST['reco-left-url'];
+  set_theme_mod('reco-left-url',$recolefturl);
+  $recocenterimg = $_POST['reco-center-img'];
+  set_theme_mod('reco-center-img',$recocenterimg);
+  $recocenterurl = $_POST['reco-center-url'];
+  set_theme_mod('reco-center-url',$recocenterurl);
+  $recorightimg = $_POST['reco-right-img'];
+  set_theme_mod('reco-right-img',$recorightimg);
+  $recorighturl = $_POST['reco-right-url'];
+  set_theme_mod('reco-right-url',$recorighturl);
   echo "データを更新しました。";
 }
 ?>
