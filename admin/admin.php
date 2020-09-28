@@ -21,23 +21,23 @@ include "admin_init.php";
     </div>
     <div class="setting">
       <h3>タブレット閲覧時（768px～979px）</h3>
-      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="tb-p-size" value="<?php echo $tb_psize; ?> placeholder="20""> px</p>
-      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="tb-h1-size" value="<?php echo $tb_h1size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="tb-h2-size" value="<?php echo $tb_h2size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="tb-h3-size" value="<?php echo $tb_h3size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="tb-h4-size" value="<?php echo $tb_h4size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="tb-h5-size" value="<?php echo $tb_h5size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="tb-h6-size" value="<?php echo $tb_h6size; ?>" placeholder="20"> px</p>
+      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="tb-p-size" value="<?php echo $tb_psize; ?>" placeholder="<?php echo $tb_psize_def; ?>"> px</p>
+      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="tb-h1-size" value="<?php echo $tb_h1size; ?>" placeholder="<?php echo $tb_h1size_def; ?>"> px</p>
+      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="tb-h2-size" value="<?php echo $tb_h2size; ?>" placeholder="<?php echo $tb_h2size_def; ?>"> px</p>
+      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="tb-h3-size" value="<?php echo $tb_h3size; ?>" placeholder="<?php echo $tb_h3size_def; ?>"> px</p>
+      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="tb-h4-size" value="<?php echo $tb_h4size; ?>" placeholder="<?php echo $tb_h4size_def; ?>"> px</p>
+      <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="tb-h5-size" value="<?php echo $tb_h5size; ?>" placeholder="<?php echo $tb_h5size_def; ?>"> px</p>
+      <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="tb-h6-size" value="<?php echo $tb_h6size; ?>" placeholder="<?php echo $tb_h6size_def; ?>"> px</p>
     </div>
     <div class="setting">
       <h3>スマートフォン閲覧時(~768px)</h3>
-      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="sm-p-size" value="<?php echo $sm_psize; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="sm-h1-size" value="<?php echo $sm_h1size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="sm-h2-size" value="<?php echo $sm_h2size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="sm-h3-size" value="<?php echo $sm_h3size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="sm-h4-size" value="<?php echo $sm_h4size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="sm-h5-size" value="<?php echo $sm_h5size; ?>" placeholder="20"> px</p>
-      <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="sm-h6-size" value="<?php echo $sm_h6size; ?>" placeholder="20"> px</p>
+      <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="sm-p-size" value="<?php echo $sm_psize; ?>" placeholder="<?php echo $sm_psize_def; ?>"> px</p>
+      <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="sm-h1-size" value="<?php echo $sm_h1size; ?>" placeholder="<?php echo $sm_h1size_def; ?>"> px</p>
+      <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="sm-h2-size" value="<?php echo $sm_h2size; ?>" placeholder="<?php echo $sm_h2size_def; ?>"> px</p>
+      <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="sm-h3-size" value="<?php echo $sm_h3size; ?>" placeholder="<?php echo $sm_h3size_def; ?>"> px</p>
+      <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="sm-h4-size" value="<?php echo $sm_h4size; ?>" placeholder="<?php echo $sm_h4size_def; ?>"> px</p>
+      <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="sm-h5-size" value="<?php echo $sm_h5size; ?>" placeholder="<?php echo $sm_h5size_def; ?>"> px</p>
+      <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="sm-h6-size" value="<?php echo $sm_h6size; ?>" placeholder="<?php echo $sm_h6size_def; ?>"> px</p>
     </div>
     <div class="setting">
       <h2>トップ</h2>
