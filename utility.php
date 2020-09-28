@@ -19,6 +19,16 @@ function setNumData($num,$default){
 }
 
 /**
+ * 値を取得。空白ならデフォルト値を返却する
+ * @param  String $val     設定値
+ * @param  String $default デフォルト値
+ * @return String          値（空白の場合デフォルト値）
+ */
+function getValOrDef( $val, $default){
+  return empty(trim($var)) ? $default : $var ;
+}
+
+/**
  * パンくずリスト
  * @return [type] パンくずリストを返却
  */

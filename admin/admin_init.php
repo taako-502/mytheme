@@ -4,6 +4,7 @@
  * @package mytheme
  */
 //デフォルト値設定
+//設定値がない場合のCSSや、管理画面のプレースホルダに使用
 $pc_psize_def = "17";
 $pc_h1size_def = "25";
 $pc_h2size_def = "24";
