@@ -10,7 +10,7 @@ include "admin_init.php";
   <h2>基本構成</h2>
   <form method="post">
     <div class="setting">
-      <h3>PC閲覧時</h3>
+      <h3>PC閲覧時（980px～）</h3>
       <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc-p-size" value="<?php echo $pc_psize; ?>"> px</p>
       <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="pc-h1-size" value="<?php echo $pc_h1size; ?>"> px</p>
       <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="pc-h2-size" value="<?php echo $pc_h2size; ?>"> px</p>
@@ -20,7 +20,7 @@ include "admin_init.php";
       <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="pc-h6-size" value="<?php echo $pc_h6size; ?>"> px</p>
     </div>
     <div class="setting">
-      <h3>タブレット閲覧時</h3>
+      <h3>タブレット閲覧時（768px～979px）</h3>
       <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="tb-p-size" value="<?php echo $tb_psize; ?>"> px</p>
       <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="tb-h1-size" value="<?php echo $tb_h1size; ?>"> px</p>
       <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="tb-h2-size" value="<?php echo $tb_h2size; ?>"> px</p>
@@ -30,7 +30,7 @@ include "admin_init.php";
       <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="tb-h6-size" value="<?php echo $tb_h6size; ?>"> px</p>
     </div>
     <div class="setting">
-      <h3>スマートフォン閲覧時</h3>
+      <h3>スマートフォン閲覧時(~768px)</h3>
       <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="sm-p-size" value="<?php echo $sm_psize; ?>"> px</p>
       <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="sm-h1-size" value="<?php echo $sm_h1size; ?>"> px</p>
       <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="sm-h2-size" value="<?php echo $sm_h2size; ?>"> px</p>
