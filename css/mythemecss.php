@@ -22,13 +22,13 @@ section h6 { font-size: <?php echo $pc_h6size; ?>px!important; }
 
 /* 文字サイズ（タブレット） */
 @media screen and (max-width:980px) {
-  section p { font-size: <?php echo $td_psize; ?>px!important; }
-  section h1 { font-size: <?php echo $td_h1size; ?>px!important; }
-  section h2 { font-size: <?php echo $td_h2size; ?>px!important; }
-  section h3 { font-size: <?php echo $td_h3size; ?>px!important; }
-  section h4 { font-size: <?php echo $td_h4size; ?>px!important; }
-  section h5 { font-size: <?php echo $td_h5size; ?>px!important; }
-  section h6 { font-size: <?php echo $td_h6size; ?>px!important; }
+  section p { font-size: <?php echo $tb_psize; ?>px!important; }
+  section h1 { font-size: <?php echo $tb_h1size; ?>px!important; }
+  section h2 { font-size: <?php echo $tb_h2size; ?>px!important; }
+  section h3 { font-size: <?php echo $tb_h3size; ?>px!important; }
+  section h4 { font-size: <?php echo $tb_h4size; ?>px!important; }
+  section h5 { font-size: <?php echo $tb_h5size; ?>px!important; }
+  section h6 { font-size: <?php echo $tb_h6size; ?>px!important; }
 }
 
 /* 文字サイズ（スマートフォン） */
