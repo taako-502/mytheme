@@ -7,6 +7,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/func-menu.php';
 //管理画面設定
 require get_template_directory() . '/inc/func-admin.php';
+//ブロックパターン
+require get_template_directory() . '/inc/func-blockpattern.php';
 
 /**
 * テーマのセットアップメソッド
