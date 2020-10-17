@@ -353,3 +353,9 @@ div.category {
   display:inline-block;
   background-color: whitesmoke;
 }
+
+/* コンポーネント */
+.p-student-voice {
+  background-color: lightgray;
+  padding: 3px;
+}
