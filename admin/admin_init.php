@@ -57,6 +57,8 @@ $recocenterimg = get_theme_mod('reco-center-img','');
 $recocenterurl = get_theme_mod('reco-center-url','');
 $recorightimg = get_theme_mod('reco-right-img','');
 $recorighturl = get_theme_mod('reco-right-url','');
+$recorighturl = get_theme_mod('ogp-fb-adminid','');
+$recorighturl = get_theme_mod('ogp-fb-appid','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータで、データベースと画面設定値を更新
@@ -118,6 +120,10 @@ if(isset($_POST['save'])) {
   set_theme_mod('reco-right-img',$recorightimg);
   $recorighturl = $_POST['reco-right-url'];
   set_theme_mod('reco-right-url',$recorighturl);
+  $ogpFbAdminId = $_POST['ogp-fb-adminid'];
+  set_theme_mod('ogp-fb-adminid',$ogpFbAdminId);
+  $ogpFbAppId = $_POST['ogp-fb-appid'];
+  set_theme_mod('ogp-fb-appid',$ogpFbAppId);
   echo "データを更新しました。";
 }
 

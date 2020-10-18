@@ -1,5 +1,4 @@
 <?php
-require get_template_directory() . '/utility.php';
 //-wp_optionsテーブルから設定値を取得
 $recoleftimg = get_theme_mod('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recolefturl = get_theme_mod('reco-left-url','#');

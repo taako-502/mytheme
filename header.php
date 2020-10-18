@@ -1,4 +1,11 @@
-<?php global $page_title; ?>
+<?php
+require get_template_directory() . '/utility.php';
+//-wp_optionsテーブルから設定値を取得
+$ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
+$ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
+//ページ読み込み
+global $page_title;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -21,7 +28,7 @@
     //単一記事ページの場合
     if(have_posts()): while(have_posts()): the_post();
       //抜粋を表示
-      echo '<meta property="og:description" content="'.get_post_meta($post->ID, _aioseop_description, true).'">';echo "\n";
+      echo '<meta property="og:description" content="'.get_post_meta($post->ID, '_aioseop_description', true).'">';echo "\n";
     endwhile; endif;
     //単一記事タイトルを表示
     echo '<meta property="og:title" content="'; the_title(); echo '">';echo "\n";
@@ -59,8 +66,8 @@
   }
   ?>
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
-  <meta property="fb:admins" content="管理者ID">
-  <meta property="fb:app_id" content="アプリID">
+  <meta property="fb:admins" content="<?php echo $ogpFbAdminId; ?>">
+  <meta property="fb:app_id" content="<?php echo $ogpFbAppId; ?>">
   <!-- ここまでOGP -->
 </head>
 <body>

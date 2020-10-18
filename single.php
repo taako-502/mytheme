@@ -1,7 +1,4 @@
-<?php
-  require get_template_directory() . '/utility.php';
-  get_header();
-?>
+<?php get_header(); ?>
 <section id="content">
   <div id="content-wrap" class="container">
     <div class="row">

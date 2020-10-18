@@ -68,4 +68,11 @@ include "admin_init.php";
       <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
     </div>
   </form>
+  <h2>OGP設定</h2>
+  <form class="" action="index.html" method="post">
+    <h3>facebook</h3>
+    <label for="ogp-fb-adminid">管理者ID</label><input id="ogp-fb-adminid" type="text" name="ogp-fb-adminid" value=""><br  >
+    <label for="ogp-fb-appid">アプリID</label><input id="ogp-fb-appid" type="text" name="ogp-fb-appid" value="">
+    <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
+  </form>
 </div>
