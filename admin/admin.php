@@ -7,8 +7,8 @@ include "admin_init.php";
   <h1>mythemeカスタマイズ画面</h1>
   <h2>画面説明</h2>
   <p>この画面は、簡単にmythemeのデザインを設定できる画面です。</p>
-  <h2>基本構成</h2>
   <form method="post">
+    <h2>基本構成</h2>
     <div class="setting">
       <h3>PC閲覧時（980px～）</h3>
       <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc-p-size" value="<?php echo $pc_psize; ?>" placeholder="<?php echo $pc_psize_def; ?>"> px</p>
@@ -65,14 +65,16 @@ include "admin_init.php";
         <h2>アナリティクス</h2>
         <label for="analytics">トラッキングコード：</label><input id="analytics" type="text" name="analytics" value="<?php echo $analytics ?>">
       </div>
-      <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
     </div>
+    <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
   </form>
   <h2>OGP設定</h2>
-  <form class="" action="index.html" method="post">
+  <form method="post">
     <h3>facebook</h3>
-    <label for="ogp-fb-adminid">管理者ID</label><input id="ogp-fb-adminid" type="text" name="ogp-fb-adminid" value=""><br  >
-    <label for="ogp-fb-appid">アプリID</label><input id="ogp-fb-appid" type="text" name="ogp-fb-appid" value="">
+    <p><label for="ogp-fb-adminid">管理者ID</label><input id="ogp-fb-adminid" type="text" name="ogp-fb-adminid" value="<?php echo $ogpFbAdminId; ?>"></p>
+    <p><label for="ogp-fb-appid">アプリID</label><input id="ogp-fb-appid" type="text" name="ogp-fb-appid" value="<?php echo $ogpFbAppId; ?>"></p>
+    <p><label for="ogp-fb-img-article">投稿ページ／記事ページ用OGP画像</label><?php generate_upload_image_tag('ogp-fb-img-article', $ogpFbImgArticle); ?></p>
+    <p><label for="ogp-fb-img-top">投稿ページ／記事ページ以外用OGP画像</label><?php generate_upload_image_tag('ogp-fb-img-top', $ogpFbImgTop); ?></p>
     <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
   </form>
 </div>

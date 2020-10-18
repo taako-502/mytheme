@@ -3,6 +3,8 @@ require get_template_directory() . '/utility.php';
 //-wp_optionsテーブルから設定値を取得
 $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
+$ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
+$ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
 //ページ読み込み
 global $page_title;
 ?>
@@ -58,11 +60,11 @@ global $page_title;
       echo '<meta property="og:image" content="'.$imgurl[2].'">';echo "\n";
     } else {
       //投稿にサムネイルも画像も無い場合の処理
-      echo '<meta property="og:image" content="画像URL">';echo "\n";
+      echo '<meta property="og:image" content="'. $ogpFbImgArticle .'">';echo "\n";
     }
   } else {
     //単一記事ページページ以外の場合（アーカイブページやホームなど）
-    echo '<meta property="og:image" content="画像URL">';echo "\n";
+    echo '<meta property="og:image" content="'. $ogpFbImgTop .'">';echo "\n";
   }
   ?>
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>">

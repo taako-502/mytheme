@@ -57,8 +57,10 @@ $recocenterimg = get_theme_mod('reco-center-img','');
 $recocenterurl = get_theme_mod('reco-center-url','');
 $recorightimg = get_theme_mod('reco-right-img','');
 $recorighturl = get_theme_mod('reco-right-url','');
-$recorighturl = get_theme_mod('ogp-fb-adminid','');
-$recorighturl = get_theme_mod('ogp-fb-appid','');
+$ogpFbAdminId = get_theme_mod('ogp-fb-adminid','');
+$ogpFbAppId = get_theme_mod('ogp-fb-appid','');
+$ogpFbImgArticle = get_theme_mod('ogp-fb-img-article','');
+$ogpFbImgTop = get_theme_mod('ogp-fb-img-top','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータで、データベースと画面設定値を更新
@@ -124,6 +126,10 @@ if(isset($_POST['save'])) {
   set_theme_mod('ogp-fb-adminid',$ogpFbAdminId);
   $ogpFbAppId = $_POST['ogp-fb-appid'];
   set_theme_mod('ogp-fb-appid',$ogpFbAppId);
+  $ogpFbImgArticle = $_POST['ogp-fb-img-article'];
+  set_theme_mod('ogp-fb-img-article',$ogpFbImgArticle);
+  $ogpFbImgTop = $_POST['ogp-fb-img-top'];
+  set_theme_mod('ogp-fb-img-top',$ogpFbImgTop);
   echo "データを更新しました。";
 }
 
