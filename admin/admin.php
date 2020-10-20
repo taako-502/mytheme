@@ -68,15 +68,14 @@ include "admin_init.php";
         <label for="gtm-id">Googleタグマネージャ：</label><input id="gtm-id" type="text" name="gtm-id" value="<?php echo $gtmId ?>">
       </div>
     </div>
-    <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
-  </form>
-  <h2>OGP設定</h2>
-  <form method="post">
-    <h3>facebook</h3>
-    <p><label for="ogp-fb-adminid">管理者ID</label><input id="ogp-fb-adminid" type="text" name="ogp-fb-adminid" value="<?php echo $ogpFbAdminId; ?>"></p>
-    <p><label for="ogp-fb-appid">アプリID</label><input id="ogp-fb-appid" type="text" name="ogp-fb-appid" value="<?php echo $ogpFbAppId; ?>"></p>
-    <p><label for="ogp-fb-img-article">投稿ページ／記事ページ用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp-fb-img-article', $ogpFbImgArticle); ?></p>
-    <p><label for="ogp-fb-img-top">投稿ページ／記事ページ以外用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp-fb-img-top', $ogpFbImgTop); ?></p>
-    <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
+    <div class="setting">
+      <h2>OGP設定</h2>
+      <h3>facebook</h3>
+      <p><label for="ogp-fb-adminid">管理者ID</label><input id="ogp-fb-adminid" type="text" name="ogp-fb-adminid" value="<?php echo $ogpFbAdminId; ?>"></p>
+      <p><label for="ogp-fb-appid">アプリID</label><input id="ogp-fb-appid" type="text" name="ogp-fb-appid" value="<?php echo $ogpFbAppId; ?>"></p>
+      <p><label for="ogp-fb-img-article">投稿ページ／記事ページ用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp-fb-img-article', $ogpFbImgArticle); ?></p>
+      <p><label for="ogp-fb-img-top">投稿ページ／記事ページ以外用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp-fb-img-top', $ogpFbImgTop); ?></p>
+      <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
+    </div>
   </form>
 </div>
