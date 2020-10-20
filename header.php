@@ -5,20 +5,14 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
-$gtmId = get_theme_mod('gtm-id', '');
 //ページ読み込み
 global $page_title;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','<?php echo $gtmId; ?>');</script>
-  <!-- End Google Tag Manager -->
+  <?php include ("template-parts/analyticsTracking.php"); ?>
+  <?php include ("template-parts/googleTagManager-head.php"); ?>
   <meta charset="utf-8">
   <title>mytheme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +24,6 @@ global $page_title;
   <?php wp_enqueue_script('jquery'); ?>
   <?php wp_enqueue_script('bootstrap-js','https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',array('jquery')); ?>
   <?php wp_head(); ?>
-  <?php include ("template-parts/analyticsTracking.php"); ?>
   <!-- ここからOGP -->
   <meta property="og:type" content="blog">
   <?php
