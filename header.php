@@ -5,6 +5,7 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
+$gtmId = get_theme_mod('gtm-id', '');
 //ページ読み込み
 global $page_title;
 ?>
@@ -74,10 +75,7 @@ global $page_title;
   <!-- ここまでOGP -->
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtmId; ?>"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <?php include ("template-parts/googleTagManager-body.php"); ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
