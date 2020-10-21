@@ -1,6 +1,3 @@
-<?php
-$analytics_code = get_option("analytics","");
-?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $analytics_code; ?>"></script>
 <script>

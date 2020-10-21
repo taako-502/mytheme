@@ -5,6 +5,7 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
+$analytics_code = get_theme_mod("analytics","");
 $gtmId = get_theme_mod('gtm-id', '');
 //ページ読み込み
 global $page_title;
@@ -12,8 +13,8 @@ global $page_title;
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <?php include ("template-parts/analyticsTracking.php"); ?>
-  <?php include ("template-parts/googleTagManager-head.php"); ?>
+  <?php if(!isNullOrEmpty(trim($analytics_code))){ include ("template-parts/analyticsTracking.php"); } ?>
+  <?php if(!isNullOrEmpty(trim($gtmId))){ include ("template-parts/googleTagManager-head.php"); } ?>
   <meta charset="utf-8">
   <title>mytheme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,7 +76,7 @@ global $page_title;
   <!-- ここまでOGP -->
 </head>
 <body>
-  <?php include ("template-parts/googleTagManager-body.php"); ?>
+  <?php if(!isNullOrEmpty(trim($gtmId))){ include ("template-parts/googleTagManager-body.php");} ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
