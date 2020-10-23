@@ -9,6 +9,9 @@ require get_template_directory() . '/inc/func-menu.php';
 require get_template_directory() . '/inc/func-admin.php';
 //ブロックパターン
 require get_template_directory() . '/inc/func-blockpattern.php';
+//OGP設定
+get_template_part( '/inc/func-ogp' );
+
 
 /**
 * テーマのセットアップメソッド
