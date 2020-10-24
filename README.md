@@ -52,6 +52,9 @@ https://nldot.info/add-class-to-the-li-element-of-the-wp_nav_menu/
 aタグにクラスを追加<br>
 https://webutubutu.com/webdesign/3692
 
+## エディタについて
+[「使いやすい」と言われたい！WordPressの編集画面にメタボックスを追加する方法](https://www.webprofessional.jp/adding-meta-boxes-post-types-wordpress/)
+
 ### cssデザインについて
 #### 見出し
 https://saruwakakun.com/html-css/reference/h-design

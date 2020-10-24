@@ -55,6 +55,5 @@ function save_global_ogp_title_meta_box_data( $post_id ) {
   }
 }
 
-
 add_action( 'save_post', 'save_global_ogp_title_meta_box_data' );
 ?>
