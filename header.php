@@ -26,7 +26,7 @@ global $page_title;
   <?php wp_enqueue_script('jquery'); ?>
   <?php wp_enqueue_script('bootstrap-js','https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',array('jquery')); ?>
   <?php wp_head(); ?>
-  <?php include ("template-parts/ogp.php"); ?>
+  <?php get_template_part( 'template-parts/content', 'ogp' ); ?>
 </head>
 <body>
   <?php if(!isNullOrEmpty(trim($gtmId))){ include ("template-parts/googleTagManager-body.php");} ?>
