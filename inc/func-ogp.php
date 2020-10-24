@@ -24,12 +24,14 @@ add_action( 'add_meta_boxes', 'ogp_meta_box' );
 function ogp_meta_box_callback( $post ) {
   $ogpTitle = get_post_meta( $post->ID, '_individual_title', true );
   $ogpDescription = get_post_meta( $post->ID, '_individual_description', true );
+  $ogpImg = get_post_meta( $post->ID, '_individual_img', true );
   ?>
   <p>OGPタイトル</p>
   <input type="text" name="individual_title" value='<?php echo $ogpTitle; ?>'>
   <p>OGPディスクリプション</p>
-  <textarea name="individual_description" rows="40" columns="4"><?php echo $ogpDescription; ?></textarea>
-  <?php
+  <textarea name="individual_description" rows="4"><?php echo $ogpDescription; ?></textarea>
+	<p>画像URL</p><?php 
+	generate_upload_image_tag('individual_img', $ogpImg);
 }
 
 /**
@@ -52,6 +54,9 @@ function save_global_individual_title_meta_box_data( $post_id ) {
   }
   if(isset($_POST['individual_description'])){
     update_post_meta( $post_id , '_individual_description', $_POST['individual_description'] );
+  }
+	if(isset($_POST['individual_img'])){
+    update_post_meta( $post_id , '_individual_img', $_POST['individual_img'] );
   }
 }
 

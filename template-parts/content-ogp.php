@@ -25,7 +25,11 @@ $str = $post->post_content;
 $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
 if (is_single()){
   //単一記事ページの場合
-  if (has_post_thumbnail()){
+  $individual_img = get_post_meta($post->ID, '_individual_img', true);
+  if(! isNullOrEmpty(trim($individual_img))){
+    //個別に設定したOGP画像がある場合
+    echo '<meta property="og:image" content="'.$individual_img.'">';echo "\n";
+  } else if (has_post_thumbnail()){
     //投稿にサムネイルがある場合の処理
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
