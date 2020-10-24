@@ -14,7 +14,7 @@ global $page_title;
 <html lang="ja">
 <head>
   <?php if(!isNullOrEmpty(trim($analytics_code))){ include ("template-parts/analyticsTracking.php"); } ?>
-  <?php if(!isNullOrEmpty(trim($gtmId))){ include ("template-parts/googleTagManager-head.php"); } ?>
+  <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
   <meta charset="utf-8">
   <title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@ global $page_title;
   <?php get_template_part( 'template-parts/content', 'ogp' ); ?>
 </head>
 <body>
-  <?php if(!isNullOrEmpty(trim($gtmId))){ include ("template-parts/googleTagManager-body.php");} ?>
+  <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'body' ); } ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
