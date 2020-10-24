@@ -53,6 +53,7 @@ aタグにクラスを追加<br>
 https://webutubutu.com/webdesign/3692
 
 ## エディタについて
+エディタのサイドバーなどに、フォームを追加<br>
 [「使いやすい」と言われたい！WordPressの編集画面にメタボックスを追加する方法](https://www.webprofessional.jp/adding-meta-boxes-post-types-wordpress/)
 
 ### cssデザインについて
