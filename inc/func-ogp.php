@@ -1,51 +1,60 @@
 <?php
 
+/**
+ * メタボックス設定
+ * @return [type] [description]
+ */
 function ogp_meta_box() {
-	global $dp_options;
-
 	add_meta_box(
 		'ogp_meta_box', // ID of meta box
-		__( 'OGPの個別設定', 'tcd-w' ), // label
-		'show_ogp_meta_box', // callback function
-		array( 'post', 'page', $dp_options['information_slug'], $dp_options['works_slug'] ), // post type
+		'OGPの個別設定', // label
+		'ogp_meta_box_callback', // callback function
+		array( 'post', 'page' ), // post type
 		'side', // context
 		'default' // priority
 	);
 }
 add_action( 'add_meta_boxes', 'ogp_meta_box' );
 
-function show_ogp_meta_box( $post ) {
-	global $post;
-
-	echo '<input type="hidden" name="ogp_meta_box_nonce" value="' . wp_create_nonce( basename( __FILE__ ) ) . '" />';
-
-	// サイドコンテンツの設定
-	$modal_cta = array(
-		'name' => __( 'Modal CTA setting', 'tcd-w' ),
-		'id' => 'modal_cta',
-		'type' => 'radio',
-		'std' => '',
-		'options' => array(
-			array(
-				'name' => __( 'Use theme option setting', 'tcd-w' ),
-				'value' => ''
-			),
-			array(
-				'name' => __( 'Display Modal CTA', 'tcd-w' ),
-				'value' => 'show'
-			),
-			array(
-				'name' => __( 'Hide Modal CTA', 'tcd-w' ),
-				'value' => 'hide'
-			)
-		)
-	);
-	$modal_cta_meta = $post->modal_cta ? $post->modal_cta : $modal_cta['std'];
-
-	echo '<p>' . __( '記事ごとにOGPを設定', 'tcd-w' ) . '</p>' . "\n";
-
-	foreach ( $modal_cta['options'] as $modal_cta_option ) {
-		?><input type="text"><?php
-	}
+/**
+ * OGP設定のhtml部分
+ * @param  [type] $post [description]
+ * @return [type]       [description]
+ */
+function ogp_meta_box_callback( $post ) {
+  $ogpTitle = get_post_meta( $post->ID, '_ogp_title', true );
+  $ogpDescription = get_post_meta( $post->ID, '_ogp_description', true );
+  ?>
+  <p>OGPタイトル</p>
+  <input type="text" name="ogp_title" value='<?php echo $ogpTitle; ?>'>
+  <p>OGPディスクリプション</p>
+  <textarea name="ogp_description" rows="40" columns="4"><?php echo $ogpDescription; ?></textarea>
+  <?php
 }
+
+/**
+ * 投稿画面で更新を推したときに、画面で入力したOGP情報をwp_postmetaテーブルに更新する処理
+ *
+ * @param int $post_id
+ */
+function save_global_ogp_title_meta_box_data( $post_id ) {
+  // 権限チェック
+  if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+    if ( ! current_user_can( 'edit_page', $post_id ) ) { return; }
+  } else {
+    if ( ! current_user_can( 'edit_post', $post_id ) ) { return; }
+  }
+  // 自動保存の時は、なにもしない
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return; }
+  // 更新処理
+  if(isset($_POST['ogp_title'])){
+    update_post_meta( $post_id , '_ogp_title', $_POST['ogp_title'] );
+  }
+  if(isset($_POST['ogp_description'])){
+    update_post_meta( $post_id , '_ogp_description', $_POST['ogp_description'] );
+  }
+}
+
+
+add_action( 'save_post', 'save_global_ogp_title_meta_box_data' );
 ?>
