@@ -48,7 +48,4 @@ add_filter( 'get_the_archive_title', function ($title) {
     }
     return $title;
 });
-// 記事の冒頭に表示するアイキャッチ画像
-add_image_size('single',800,450,false);
-add_image_size('articlelist',288,162,false);
 ?>
