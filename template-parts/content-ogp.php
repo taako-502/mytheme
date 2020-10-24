@@ -1,23 +1,24 @@
 <meta property="og:type" content="blog">
 <?php
 if (is_single()){
+  $title = get_post_meta($post->ID, '_individual_title', true);
+  $description = get_post_meta($post->ID,  '_individual_description', true);
+  $description = isNullOrEmpty($description) ? get_post_meta($post->ID, '_aioseop_description', true) : $description;
   //単一記事ページの場合
   if(have_posts()): while(have_posts()): the_post();
-    //抜粋を表示
-    echo '<meta property="og:description" content="'.get_post_meta($post->ID, '_aioseop_description', true).'">';echo "\n";
+    echo '<meta property="og:description" content="'. $description .'">';echo "\n";
   endwhile; endif;
-  //単一記事タイトルを表示
-  echo '<meta property="og:title" content="'; the_title(); echo '">';echo "\n";
-  //単一記事URLを表示
-  echo '<meta property="og:url" content="'; the_permalink(); echo '">';echo "\n";
+  ?>
+  <meta property="og:title" content="<?php if(isNullOrEmpty(trim($title))){ the_title(); } else { echo $title; } ?>">
+  <meta property="og:url" content="<?php the_permalink(); ?>">
+  <?php
 } else {
   //単一記事ページページ以外の場合（アーカイブページやホームなど）
-  //「一般設定」管理画面で指定したブログの説明文を表示
-  echo '<meta property="og:description" content="'; bloginfo('description'); echo '">';echo "\n";
-  //「一般設定」管理画面で指定したブログのタイトルを表示
-  echo '<meta property="og:title" content="'; bloginfo('name'); echo '">';echo "\n";
-  //「一般設定」管理画面で指定したブログのURLを表示
-  echo '<meta property="og:url" content="'; bloginfo('url'); echo '">';echo "\n";
+  ?>
+  <meta property="og:description" content="<?php echo bloginfo('description'); ?>">
+  <meta property="og:title" content="<?php echo bloginfo('name'); ?>">
+  <meta property="og:url" content="<?php echo bloginfo('url'); ?>">
+  <?php
 }
 $str = $post->post_content;
 //投稿にイメージがあるか調べる
@@ -41,6 +42,10 @@ if (is_single()){
   echo '<meta property="og:image" content="'. $ogpFbImgTop .'">';echo "\n";
 }
 ?>
-<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
-<meta property="fb:admins" content="<?php echo $ogpFbAdminId; ?>">
-<meta property="fb:app_id" content="<?php echo $ogpFbAppId; ?>">
+  <meta property="og:site_name" content="<?php bloginfo('name'); ?>"><?php
+if( !isNullOrEmpty(trim($ogpFbAdminId))){
+  ?><meta property="fb:admins" content="<?php echo $ogpFbAdminId; ?>"><?php
+}
+if( !isNullOrEmpty(trim($ogpFbAppId))){
+  ?><meta property="fb:app_id" content="<?php echo $ogpFbAppId; ?>"><?php
+}
