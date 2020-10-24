@@ -1,18 +1,18 @@
 <?php
 //ダッシュボード
- require get_template_directory() . '/inc/func-dashboard.php';
+get_template_part('/inc/func','dashboard');
 //カスタマイザー
-require get_template_directory() . '/inc/customizer.php';
+get_template_part('/inc/func','customizer');
 //ナビゲーションメニュー設定
-require get_template_directory() . '/inc/func-menu.php';
+get_template_part('/inc/func','menu');
 //管理画面設定
-require get_template_directory() . '/inc/func-admin.php';
+get_template_part('/inc/func','admin');
 //ブロックパターン
-require get_template_directory() . '/inc/func-blockpattern.php';
+get_template_part('/inc/func','blockpattern');
 //OGP設定
-get_template_part( '/inc/func', 'ogp' );
+get_template_part('/inc/func', 'ogp');
 //画像アップローダ設定
-get_template_part( '/inc/func', 'img' );
+get_template_part('/inc/func', 'img');
 
 /**
 * テーマのセットアップメソッド
