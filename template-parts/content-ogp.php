@@ -26,10 +26,10 @@ $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
 if (is_single()){
   //単一記事ページの場合
   $individual_img = get_post_meta($post->ID, '_individual_img', true);
-  if(! isNullOrEmpty(trim($individual_img))){
+  if(! isNullOrEmpty(trim($individual_img))) {
     //個別に設定したOGP画像がある場合
     echo '<meta property="og:image" content="'.$individual_img.'">';echo "\n";
-  } else if (has_post_thumbnail()){
+  } else if (has_post_thumbnail()) {
     //投稿にサムネイルがある場合の処理
     $image_id = get_post_thumbnail_id();
     $image = wp_get_attachment_image_src( $image_id, 'full');
@@ -39,17 +39,21 @@ if (is_single()){
     echo '<meta property="og:image" content="'.$imgurl[2].'">';echo "\n";
   } else {
     //投稿にサムネイルも画像も無い場合の処理
-    echo '<meta property="og:image" content="'. $ogpFbImgArticle .'">';echo "\n";
+    if(isset($ogpFbImgArticle)) {
+      echo '<meta property="og:image" content="'. $ogpFbImgArticle .'">';echo "\n";
+    }
   }
 } else {
   //単一記事ページページ以外の場合（アーカイブページやホームなど）
-  echo '<meta property="og:image" content="'. $ogpFbImgTop .'">';echo "\n";
+  if(isset($ogpFbImgTop)) {
+    echo '<meta property="og:image" content="'. $ogpFbImgTop .'">';echo "\n";
+  }
 }
 ?>
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>"><?php
-if( !isNullOrEmpty(trim($ogpFbAdminId))){
+if(isset($ogpFbAdminId)) {
   ?><meta property="fb:admins" content="<?php echo $ogpFbAdminId; ?>"><?php
 }
-if( !isNullOrEmpty(trim($ogpFbAppId))){
+if(isset($ogpFbAppId)) {
   ?><meta property="fb:app_id" content="<?php echo $ogpFbAppId; ?>"><?php
 }

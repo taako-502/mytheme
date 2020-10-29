@@ -5,7 +5,7 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
-$analytics_code = get_theme_mod("analytics","");
+$analytics_code = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
 //ページ読み込み
 global $page_title;
