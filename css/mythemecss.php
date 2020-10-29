@@ -5,8 +5,8 @@
 /* 外部ファイル読み込み */
 // CSSファイルからの相対パスで wp-load.php の読み込みを指定
 include_once(dirname( __FILE__ ) . '/../../../../wp-load.php');
-include get_template_directory() . '/admin/admin_init.php';
-require get_template_directory() . '/utility.php';
+get_template_part('admin/admin','init');
+get_template_part('utility/utility');
 /*cssファイル設定 */
 header('Content-Type: text/css; charset=utf-8');
 ?>

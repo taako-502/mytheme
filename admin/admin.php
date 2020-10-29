@@ -1,6 +1,5 @@
 <?php
-//初期処理
-include "admin_init.php";
+include 'admin-init.php';
 ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/admin/admin.css">
 <div class="main">
