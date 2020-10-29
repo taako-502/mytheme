@@ -1,5 +1,5 @@
 <?php
-require get_template_directory() . '/utility.php';
+get_template_part('utility/utility');
 //-wp_optionsテーブルから設定値を取得
 $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
