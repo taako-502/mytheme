@@ -1,6 +1,6 @@
 <?php
 /**
- * mytheme Theme Customizer
+ * カスタマイザー
  *
  * @package mytheme
  */
