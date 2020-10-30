@@ -15,7 +15,7 @@
             /* 記事一覧 */
             if ( have_posts() ) {
               while ( have_posts() ) { the_post();
-                include(get_template_directory() ."/template-parts/articlecard.php");
+                get_template_part('/template-parts/articlecard');
               }
             } else {
               echo "<p>まだ記事がありません。</p>";
