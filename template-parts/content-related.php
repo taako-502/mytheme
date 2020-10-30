@@ -24,9 +24,7 @@
           if ( has_post_thumbnail() ) {
             the_post_thumbnail('medium');
           } else {
-            ?>
-            <img width="300" height="300" src="<?php echo get_template_directory_uri() ?>/images/thumbnail-default.jpg" class="attachment-medium size-medium wp-post-image" alt="デフォルトのサムネイル">
-            <?php
+            echo '<img width="300" height="300" src="' . get_template_directory_uri() . '/images/thumbnail-default.jpg" class="attachment-medium size-medium wp-post-image" alt="デフォルトのサムネイル">';
           } ?>
           <div class="text">
           <?php the_title(); ?>
