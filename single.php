@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * 記事ページ
+ * 
+ * @package mytheme
+ */
+get_header();
+?>
 <section id="content">
   <div id="content-wrap" class="container">
     <div class="row">

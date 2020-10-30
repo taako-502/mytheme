@@ -2,6 +2,8 @@
 /**
  * Template Name: 1カラムテンプレート
  * Description: 1カラムレイアウト用のテンプレート
+ *
+ * @package mytheme
  */
 ?>
 <?php get_header(); ?>
