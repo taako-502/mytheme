@@ -11,6 +11,8 @@ get_template_part('/inc/func','admin');
 get_template_part('/inc/func','blockpattern');
 //OGP設定
 get_template_part('/inc/func', 'ogp');
+//構造化マークアップ
+get_template_part('/inc/func', 'schema');
 //画像アップローダ設定
 get_template_part('/inc/func', 'img');
 
