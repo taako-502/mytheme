@@ -23,10 +23,13 @@ global $page_title;
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/common.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/index.css">
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/mythemecss.php" />
-  <?php wp_enqueue_script('jquery'); ?>
-  <?php wp_enqueue_script('bootstrap-js','https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',array('jquery')); ?>
-  <?php wp_head(); ?>
-  <?php get_template_part( 'template-parts/content', 'ogp' ); ?>
+  <?php
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('bootstrap-js','https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',array('jquery'));
+  wp_head();
+  get_template_part( 'template-parts/content', 'ogp' );
+  get_template_part( 'template-parts/content', 'schema' );
+  ?>
 </head>
 <body>
   <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'body' ); } ?>
