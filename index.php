@@ -6,6 +6,10 @@ $recocenterimg = get_theme_mod('reco-center-img', get_template_directory_uri() .
 $recocenterurl = get_theme_mod('reco-center-url','#');
 $recorightimg = get_theme_mod('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recorighturl = get_theme_mod('reco-right-url','#');
+//画像がなかった場合にデフォルトを設定
+$recoleftimg = isset($recoleftimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recoleftimg;
+$recocenterimg = isset($recocenterimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recocenterimg;
+$recorightimg = isset($recorightimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recorightimg;
 // 読み込み
 global $page_title;
 $page_title = "home";
