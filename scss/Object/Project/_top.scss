@@ -11,7 +11,7 @@
   border-bottom: solid 3px skyblue;
   position: relative;
 
-  :after {
+  &:after {
     position: absolute;
     content: " ";
     display: block;
