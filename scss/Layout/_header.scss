@@ -1,0 +1,15 @@
+a#title{
+  margin-top: 5px;
+  margin-left: 30px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
+  :hover {
+    text-decoration: none;/*下線を消す*/
+  }
+  :visited {
+    color:#333;
+  }
+}

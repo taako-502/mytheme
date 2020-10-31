@@ -1,0 +1,57 @@
+/****** サイドバー ******/
+#sidebar{
+  text-align: center;
+}
+h2{
+  .widgettitle {
+    text-align:left;
+    border-bottom: solid 3px black;
+  }
+}
+.widget_sidebar{
+  li {
+    text-align:left;
+    list-style: none;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+  }
+}
+
+/* 検索フォーム */
+.searchform {
+  position: relative;
+}
+.searchfield {
+  font-size: 14px;
+  width: 90%;
+  margin: 3px;
+  padding: 10px;
+  border: solid 1px #bbb;
+  border-radius: 4px;
+  background-color: #efefef;
+}
+.searchsubmit {
+  font-family: FontAwesome;
+  font-size: 1.4em;
+  position: absolute;
+  top: 0;
+  right: 12%;
+  margin-top: 10px;
+  padding: 0;
+  cursor: pointer;
+  color: #6297f5;
+  border: none;
+  background: transparent;
+}
+.searchsubmit:hover {
+  opacity: .6;
+}
+/* ウィジェット */
+li {
+  .widget {
+    margin:20px 7px 0 0;
+  }
+  .widget:not(:first-child) {
+    margin-top:30px;
+  }
+}
