@@ -17,42 +17,38 @@ get_header();
 ?>
 <div class="p-top--img"></div>
 <section id="content">
-  <div id="content-wrap" class="container">
-    <div class="row">
-      <div class="p-recommend col-md-12">
-        <h2 class="p-top--h2">おすすめ記事</h2>
-        <div class="p-recommend-area row">
-          <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
-            <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
-          </div>
-          <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
-            <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
-          </div>
-          <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
-            <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
-          </div>
-        </div>
+  <div class="p-recommend">
+    <h2 class="p-top--h2">おすすめ記事</h2>
+    <div class="p-recommend-area row">
+      <div class="p-recommend--img">
+        <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
+      </div>
+      <div class="p-recommend--img">
+        <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
+      </div>
+      <div class="p-recommend--img">
+        <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
       </div>
     </div>
-    <div class="row">
-      <div id="main" class="col-md-9">
-        <h2 class="p-top--h2">新着記事</h2>
-        <div class="article-list-one-column col-md-12 row">
-          <?php
-            /* 記事一覧 */
-            if ( have_posts() ) {
-              while ( have_posts() ) { the_post();
-                include(get_template_directory() ."/template-parts/articlecard.php");
-              }
-            } else {
-              echo "<p>まだ記事がありません。</p>";
+  </div>
+  <div class="p-articles">
+    <div class="p-top-main">
+      <h2 class="p-top--h2">新着記事</h2>
+      <div class="p-top--list">
+        <?php
+          /* 記事一覧 */
+          if ( have_posts() ) {
+            while ( have_posts() ) { the_post();
+              get_template_part('/template-parts/content','article');
             }
-          ?>
-        </div>
+          } else {
+            echo "<p>まだ記事がありません。</p>";
+          }
+        ?>
       </div>
-      <div class="l-sidebar col-md-3">
-        <?php get_sidebar(); ?>
-      </div>
+    </div>
+    <div class="l-sidebar">
+      <?php get_sidebar(); ?>
     </div>
   </div>
 </section>
