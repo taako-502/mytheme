@@ -30,7 +30,7 @@ https://www.mytheme.taako-biz.com/
 - ナビバーの実装<br>
   [Navbar](https://getbootstrap.jp/docs/4.2/components/navbar/)
 - liやidの無駄なクラスを削除<br>
-  [WordPress : カスタムメニューの<li>タグのムダなid/classを除去する](https://hacknote.jp/archives/36137/)
+  [WordPress : カスタムメニューの\<li\>タグのムダなid/classを除去する](https://hacknote.jp/archives/36137/)
 - liタグにクラスを追加<br>
   [wp_nav_menuのli要素にclassを追加する](https://nldot.info/add-class-to-the-li-element-of-the-wp_nav_menu/)
 - aタグにクラスを追加<br>
@@ -43,7 +43,7 @@ https://www.mytheme.taako-biz.com/
 ## スタイルシートについて
 - CSSアーキテクチャについて
   - [FLOCSS](https://github.com/hiloki/flocss)
-  - [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+  - [BEM(MindBEMding)によるCSS設計](https://github.com/manabuyasuda/styleguide/blob/master/how-to-bem.md)
 - デザインについて
   - [CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選](https://saruwakakun.com/html-css/reference/h-design)
   - [コピペで使えるリストデザイン34選：CSSで箇条書きをおしゃれに](https://saruwakakun.com/html-css/reference/ul-ol-li-design)
