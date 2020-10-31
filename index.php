@@ -50,7 +50,7 @@ get_header();
           ?>
         </div>
       </div>
-      <div id="sidebar" class="col-md-3">
+      <div class="l-sidebar col-md-3">
         <?php get_sidebar(); ?>
       </div>
     </div>
