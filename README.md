@@ -1,16 +1,12 @@
 ![MY THEME](https://user-images.githubusercontent.com/36348377/90158553-185b7280-ddca-11ea-827a-1b8d4d2f20dc.jpg)
 
 # mytheme
-アフィ○ガーJET風のトップページです。
+本テーマのコンセプトです。
+- SEO対策済
+- モバイルフレンドリー
 
 ## デモサイト
 https://www.mytheme.taako-biz.com/
-
-## twitter
-https://twitter.com/taakobiz
-
-## TAAKOのブログ
-https://taako-biz.com/
 
 ## 本テーマを作成するにあたって、参考にしたサイト
 ### WordPressテーマ開発の基礎
@@ -35,23 +31,21 @@ http://crea.tokyo/install_wp_media_into_front/
 https://plusers.net/wordpress_search
 
 ### ヘッダーの実装
-ナビゲーションバーはliタグやaタグに適切なクラスを設定する必要があるのですが、ナビゲーションバーを表示するWordPressの標準メソッドにはその機能がないので詰まりました。以下の記事を見て何とか解決したので、参考になったらと思います。
+ナビゲーションバーはliタグやaタグに適切なクラスを設定する必要があるのですが、ナビゲーションバーを表示するWordPressの標準メソッドにはその機能がないので詰まりました。<br>
+以下の記事を見て何とか解決したので、参考になったらと思います。
 
-ナビバーの実装<br>
-https://getbootstrap.jp/docs/4.2/components/navbar/
-
-liやidの無駄なクラスを削除<br>
-https://hacknote.jp/archives/36137/
-
-liタグにクラスを追加<br>
-https://nldot.info/add-class-to-the-li-element-of-the-wp_nav_menu/
-
-aタグにクラスを追加<br>
-https://webutubutu.com/webdesign/3692
+- ナビバーの実装<br>
+  [Navbar](https://getbootstrap.jp/docs/4.2/components/navbar/)
+- liやidの無駄なクラスを削除<br>
+  [WordPress : カスタムメニューの<li>タグのムダなid/classを除去する](https://hacknote.jp/archives/36137/)
+- liタグにクラスを追加<br>
+  [wp_nav_menuのli要素にclassを追加する](https://nldot.info/add-class-to-the-li-element-of-the-wp_nav_menu/)
+- aタグにクラスを追加<br>
+  [WordPressのカスタムメニューのaタグに任意のクラスを付ける:メモ](https://webutubutu.com/webdesign/3692)
 
 ### ダッシュボードについて
-ダッシュボードウィジェット API<br>
-https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88_API
+[ダッシュボードウィジェット API](https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88_API)
+
 
 ## スタイルシートについて
 - CSSアーキテクチャについて
@@ -66,7 +60,7 @@ https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3
 
 ### SEOについて
 #### 構造化マークアップ
-- 記事の情報を構造化
+- 記事の情報を構造化<br>
   [WordPress 構造化データを動的に出力する方法](https://hirashimatakumi.com/blog/3192.html)
 - パンくずリストの参考にした記事<br>
   ⇒[WordPressで構造化データ用のパンくずを生成する](https://gimmicklog.com/wordpress/810/)
@@ -95,3 +89,9 @@ https://nobuntu.jp/wordpress-add-theme-update-checker/
 
 ## Sassの環境構築
 [WindowsにSassを導入する手順【インストール】と【コンパイル】](https://bsj-k.com/sass-installation-windows/)
+
+## twitter
+https://twitter.com/taakobiz
+
+## TAAKOのブログ
+https://taako-biz.com/
