@@ -1,46 +1,17 @@
-.p-recommend {
-  background-color: white;
-  margin: 5px 0 25px 0;
-  padding: 10px 0;
-  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
-}
-.reco-articl--img {
-  width: 100%;
-  height: auto;
-  margin: 2px auto;
-}
-div.recommend-area {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* ボタン */
-.btn-flat-logo {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  color: #FFF;
-  background: #00bcd4;
-  transition: .4s;
-  :hover {
-    background: #1ec7bb;
-  }
-}
-/* トップページの画像 */
-div.topimage{
+.p-top--img {
   width: 100vw;
   height: auto;
-  background-image: url("../images/top-default.jpg") ;
+  background-image: url("../images/top-default.jpg");
   background-size: cover;
 }
-H2.article-heading{
-  font-size:25px;
+
+.p-top--h2 {
+  font-size: 25px;
   margin: 1.5em 0 1.5em 0.5em;
   border-bottom: solid 3px skyblue;
   position: relative;
-  .article-heading:after {
+
+  :after {
     position: absolute;
     content: " ";
     display: block;
@@ -48,4 +19,23 @@ H2.article-heading{
     bottom: -3px;
     width: 30%;
   }
+}
+
+.p-recommend {
+  background-color: white;
+  margin: 5px 0 25px;
+  padding: 10px 0;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+}
+
+.reco-area {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-recommend--img {
+  width: 100%;
+  height: auto;
+  margin: 2px auto;
 }

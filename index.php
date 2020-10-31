@@ -15,20 +15,20 @@ global $page_title;
 $page_title = "home";
 get_header();
 ?>
-<div class="topimage"></div>
+<div class="p-top--img"></div>
 <section id="content">
   <div id="content-wrap" class="container">
     <div class="row">
       <div class="p-recommend col-md-12">
-        <h2 class="article-heading">おすすめ記事</h2>
-        <div class="recommend-area row">
-          <div class="reco-articl--img recommend-left col-sm-12 col-md-4">
+        <h2 class="p-top--h2">おすすめ記事</h2>
+        <div class="reco-area row">
+          <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
             <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
           </div>
-          <div class="reco-articl--img recommend-left col-sm-12 col-md-4">
+          <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
             <a href="<?php echo $recocenterurl; ?>"><img src="<?php echo $recocenterimg; ?>" alt="fuga"></a>
           </div>
-          <div class="reco-articl--img recommend-left col-sm-12 col-md-4">
+          <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
             <a href="<?php echo $recorighturl; ?>"><img src="<?php echo $recorightimg; ?>" alt="fuga"></a>
           </div>
         </div>
@@ -36,7 +36,7 @@ get_header();
     </div>
     <div class="row">
       <div id="main" class="col-md-9">
-        <h2 class="article-heading">新着記事</h2>
+        <h2 class="p-top--h2">新着記事</h2>
         <div class="article-list-one-column col-md-12 row">
           <?php
             /* 記事一覧 */
