@@ -1,10 +1,8 @@
 <?php
 $copyright = get_option('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 ?>
-  <footer>
-    <div class="container">
-      <p class="text-center"><?php echo $copyright ?></p>
-    </div>
+  <footer class="l-footer">
+    <p class="l-footer--center"><?php echo $copyright ?></p>
   </footer>
 <?php wp_footer(); ?>
 </body>

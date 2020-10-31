@@ -257,11 +257,6 @@ img.size-single{
 #sidebar{
   text-align: center;
 }
-footer{ background-color: #222; }
-footer p {
-  padding:15px 0;
-  color: white;
-}
 h2.widgettitle {
   text-align:left;
   border-bottom: solid 3px black;
