@@ -21,7 +21,7 @@ get_header();
     <div class="row">
       <div class="p-recommend col-md-12">
         <h2 class="p-top--h2">おすすめ記事</h2>
-        <div class="reco-area row">
+        <div class="p-recommend-area row">
           <div class="p-recommend--img recommend-left col-sm-12 col-md-4">
             <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
           </div>
