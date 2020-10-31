@@ -64,15 +64,13 @@ https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3
 エディタのサイドバーなどに、フォームを追加<br>
 [「使いやすい」と言われたい！WordPressの編集画面にメタボックスを追加する方法](https://www.webprofessional.jp/adding-meta-boxes-post-types-wordpress/)
 
-### CSSデザインについて
-#### 見出し
-https://saruwakakun.com/html-css/reference/h-design
-
-#### リスト
-https://saruwakakun.com/html-css/reference/ul-ol-li-design
-
-#### 引用
-https://saruwakakun.com/html-css/reference/blockquote
+## スタイルシートについて
+- CSSアーキテクチャについて
+  - [FLOCSS](https://github.com/hiloki/flocss)
+- デザインについて
+  - [CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選](https://saruwakakun.com/html-css/reference/h-design)
+  - [コピペで使えるリストデザイン34選：CSSで箇条書きをおしゃれに](https://saruwakakun.com/html-css/reference/ul-ol-li-design)
+  - [CSSで作る！魅力的な引用デザインのサンプル30（blockquote）](https://saruwakakun.com/html-css/reference/blockquote)
 
 ### コメントルール
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
@@ -91,3 +89,6 @@ https://saruwakakun.com/html-css/reference/blockquote
 ### リリース方法
 テーマのアップデート方法<br>
 https://nobuntu.jp/wordpress-add-theme-update-checker/
+
+## Sassの環境構築
+[WindowsにSassを導入する手順【インストール】と【コンパイル】](https://bsj-k.com/sass-installation-windows/)
