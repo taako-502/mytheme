@@ -12,27 +12,20 @@ https://www.mytheme.taako-biz.com/
 ### WordPressテーマ開発の基礎
 基礎的な部分は以下を参考にしました。
 
-WORDPRESS Codex日本語版<br>
-https://wpdocs.osdn.jp/Main_Page
-
-【テーマ自作】WordPress オリジナルテーマの作り方と基本<br>
-https://webst8.com/blog/wordpress-theme-howto-make/
-
-functions.phpファイルを分割する<br>
-https://wpqw.jp/wordpress/themes/functions-split/
-
-アナリティクストラッキングコード.phpの設置方法<br>
-https://ykgraph.com/happytrails/archives/17
-
-画像のアップローダの実装<br>
-http://crea.tokyo/install_wp_media_into_front/
-
-検索フォームの変更<br>
-https://plusers.net/wordpress_search
+- 公式ドキュメント<br>
+  [WORDPRESS Codex日本語版](https://wpdocs.osdn.jp/Main_Page)
+- [【テーマ自作】WordPress オリジナルテーマの作り方と基本](https://webst8.com/blog/wordpress-theme-howto-make/)
+- functions.phpファイルを分割する<br>
+  https://wpqw.jp/wordpress/themes/functions-split/
+- アナリティクストラッキングコード.phpの設置方法<br>
+  https://ykgraph.com/happytrails/archives/17
+- 画像のアップローダの実装<br>
+  http://crea.tokyo/install_wp_media_into_front/
+- 検索フォームの変更<br>
+  https://plusers.net/wordpress_search
 
 ### ヘッダーの実装
-ナビゲーションバーはliタグやaタグに適切なクラスを設定する必要があるのですが、ナビゲーションバーを表示するWordPressの標準メソッドにはその機能がないので詰まりました。<br>
-以下の記事を見て何とか解決したので、参考になったらと思います。
+ナビゲーションバーはliタグやaタグに適切なクラスを設定する必要があるのですが、ナビゲーションバーを表示するWordPressの標準メソッドにはその機能がないので詰まりました。以下の記事を見て何とか解決したので、参考になったらと思います。
 
 - ナビバーの実装<br>
   [Navbar](https://getbootstrap.jp/docs/4.2/components/navbar/)
@@ -50,6 +43,7 @@ https://plusers.net/wordpress_search
 ## スタイルシートについて
 - CSSアーキテクチャについて
   - [FLOCSS](https://github.com/hiloki/flocss)
+  - [MindBEMding](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 - デザインについて
   - [CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選](https://saruwakakun.com/html-css/reference/h-design)
   - [コピペで使えるリストデザイン34選：CSSで箇条書きをおしゃれに](https://saruwakakun.com/html-css/reference/ul-ol-li-design)
