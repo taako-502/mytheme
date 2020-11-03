@@ -9,10 +9,9 @@
         <?php the_content(); ?>
       </section>
       <?php
-        //関連記事
-        get_template_part( 'template-parts/content', 'related' );
       endwhile;
     endif;
   ?>
   </div>
+  <?php get_template_part( 'template-parts/content', 'related' ); ?>
 </section>

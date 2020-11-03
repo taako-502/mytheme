@@ -1,4 +1,4 @@
-<aside class="relatedkiji">
+<aside class="p-related">
   <h4>関連記事</h4>
   <ul>
     <?php

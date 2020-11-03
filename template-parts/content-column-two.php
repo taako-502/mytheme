@@ -20,12 +20,14 @@
           <?php the_content(); ?>
         </section>
         <?php
-          //関連記事
-          get_template_part( 'template-parts/content', 'related' );
         endwhile;
       endif;
     ?>
     </article>
+    <?php
+    //関連記事
+    get_template_part( 'template-parts/content', 'related' );
+    ?>
   </div>
   <?php get_sidebar(); ?>
 </section>

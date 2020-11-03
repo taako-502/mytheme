@@ -1,0 +1,32 @@
+.p-related {
+  padding: 2px;
+
+  H4 {
+    margin: 1.2em 0;
+    font-size: 23px;
+    border-bottom: solid 1.5px #FFC778;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    width: 48%;
+    margin: 1%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text {
+    display: inline-block;
+    color: black;
+    padding: 3px;
+  }
+}

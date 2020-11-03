@@ -1,0 +1,23 @@
+.c-breadcrumb {
+  background-color: white;
+  margin-bottom: 0;
+
+  ul {
+    list-style: none;
+    font-size: 0.8em;
+  }
+
+  li {
+    display: inline;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    & + li:before {
+      content: ">";
+      margin-right: 0.3em;
+    }
+  }
+}
