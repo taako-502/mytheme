@@ -18,7 +18,7 @@ get_header();
 <div class="p-top--img"></div>
 <section class="contents">
   <div class="p-recommend">
-    <h2 class="p-top--h2">おすすめ記事</h2>
+    <h2 class="p-aritcle--h2">おすすめ記事</h2>
     <div class="p-recommend-area">
       <div class="p-recommend--img">
         <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
@@ -32,8 +32,8 @@ get_header();
     </div>
   </div>
   <div class="l-main">
-    <h2 class="p-top--h2">新着記事</h2>
-    <div class="p-top--list">
+    <h2 class="p-aritcle--h2">新着記事</h2>
+    <div class="p-news--list">
       <?php
         /* 記事一覧 */
         if ( have_posts() ) {
@@ -46,8 +46,6 @@ get_header();
       ?>
     </div>
   </div>
-  <div class="l-sidebar">
-    <?php get_sidebar(); ?>
-  </div>
+  <?php get_sidebar(); ?>
 </section>
 <?php get_footer(); ?>

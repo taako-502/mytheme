@@ -1,4 +1,4 @@
-<aside>
+<aside class="l-sidebar">
   <div class="widget_sidebar">
   	<?php
     if(is_active_sidebar('widget_sidebar001')) {

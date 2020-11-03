@@ -1,4 +1,4 @@
-<div class="p-article-card">
+<div class="p-news-card">
   <a href="<?php echo get_permalink(); ?>">
     <?php
         if ( has_post_thumbnail() ) {
@@ -10,7 +10,7 @@
     ?>
   </a>
   <h2>
-    <a class="apermalink" href="<?php echo get_permalink(); ?>">
+    <a class="p-news-card--a" href="<?php echo get_permalink(); ?>">
       <?php
         $title = the_title( '' , '' , false );
         // タイトルが長い場合、省略
