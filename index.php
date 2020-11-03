@@ -16,7 +16,7 @@ $page_title = "home";
 get_header();
 ?>
 <div class="p-top--img"></div>
-<section id="content">
+<section class="contents">
   <div class="p-recommend">
     <h2 class="p-top--h2">おすすめ記事</h2>
     <div class="p-recommend-area row">
@@ -31,25 +31,23 @@ get_header();
       </div>
     </div>
   </div>
-  <div class="p-articles">
-    <div class="p-top-main">
-      <h2 class="p-top--h2">新着記事</h2>
-      <div class="p-top--list">
-        <?php
-          /* 記事一覧 */
-          if ( have_posts() ) {
-            while ( have_posts() ) { the_post();
-              get_template_part('/template-parts/content','article');
-            }
-          } else {
-            echo "<p>まだ記事がありません。</p>";
+  <div class="p-top-main">
+    <h2 class="p-top--h2">新着記事</h2>
+    <div class="p-top--list">
+      <?php
+        /* 記事一覧 */
+        if ( have_posts() ) {
+          while ( have_posts() ) { the_post();
+            get_template_part('/template-parts/content','article');
           }
-        ?>
-      </div>
+        } else {
+          echo "<p>まだ記事がありません。</p>";
+        }
+      ?>
     </div>
-    <div class="l-sidebar">
-      <?php get_sidebar(); ?>
-    </div>
+  </div>
+  <div class="l-sidebar">
+    <?php get_sidebar(); ?>
   </div>
 </section>
 <?php get_footer(); ?>

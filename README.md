@@ -56,6 +56,8 @@ https://www.mytheme.taako-biz.com/
   - [CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選](https://saruwakakun.com/html-css/reference/h-design)
   - [コピペで使えるリストデザイン34選：CSSで箇条書きをおしゃれに](https://saruwakakun.com/html-css/reference/ul-ol-li-design)
   - [CSSで作る！魅力的な引用デザインのサンプル30（blockquote）](https://saruwakakun.com/html-css/reference/blockquote)
+- SCSSについて
+  - [https://qiita.com/one-a/items/2758511326c09200fded](https://qiita.com/one-a/items/2758511326c09200fded)
 
 ### SEOについて
 #### 構造化マークアップ
