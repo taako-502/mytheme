@@ -2,12 +2,18 @@
   @include max-width-content(27%);
   background-color: white;
   margin: 1% 2% 2% 1%;
+  padding-left: 1.5%;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
   text-align: center;
 
+  li {
+    list-style: none;
+  }
+
   .widget {
     margin: 20px 7px 0 0;
-    :not(:first-child) {
+
+    &:not(:first-child) {
       margin-top: 30px;
     }
   }
@@ -17,9 +23,8 @@
     border-bottom: solid 3px black;
   }
 
-  li.widget_sidebar {
+  .widget_sidebar {
     text-align: left;
-    list-style: none;
     margin-top: 0.3em;
     margin-bottom: 0.3em;
   }
@@ -30,8 +35,7 @@
 
   .searchfield {
     font-size: 14px;
-    width: 90%;
-    margin: 3px;
+    width: 97%;
     padding: 10px;
     border: solid 1px #bbb;
     border-radius: 4px;
