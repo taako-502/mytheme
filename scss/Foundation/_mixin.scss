@@ -11,3 +11,19 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+
+@mixin articleHeading($font-size) {
+  position: relative;
+  font-size: $font-size;
+  margin-bottom: 15px;
+  border-bottom: solid 3px skyblue;
+  &:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #ffc778;
+    bottom: -3px;
+    width: 30%;
+  }
+}

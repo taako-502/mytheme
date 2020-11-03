@@ -10,7 +10,7 @@
     the_post_thumbnail('single');
     // 本文
     ?>
-    <div id="main-text">
+    <article class="p-article">
       <?php
       if ( have_posts() ) :
         while ( have_posts() ) : the_post();
@@ -25,7 +25,7 @@
         endwhile;
       endif;
     ?>
-    </div>
+    </article>
   </div>
   <?php get_sidebar(); ?>
 </section>

@@ -48,6 +48,9 @@ https://www.mytheme.taako-biz.com/
 ### ダッシュボードについて
 - [ダッシュボードウィジェット API](https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88_API)
 
+## マークアップについて
+- [SEOに重要な全HTMLタグと構造化マークアップテンプレート](https://www.cloudeffects.com/seo/html-structured-markup)
+
 ## スタイルシートについて
 - CSSアーキテクチャについて
   - [FLOCSS](https://github.com/hiloki/flocss)
