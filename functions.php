@@ -1,4 +1,11 @@
 <?php
+/**
+ *  開発用
+ *  リリースするときは、コメントアウトすること
+ */
+// WP-SCSS：ページをロードするたびにscssファイルを強制的にコンパイル
+define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
+
 //ダッシュボード
 get_template_part('/inc/func','dashboard');
 //カスタマイザー

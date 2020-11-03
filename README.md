@@ -8,12 +8,17 @@
 ## デモサイト
 https://www.mytheme.taako-biz.com/
 
+## アーキテクチャ
+- FROCSS
+- SCSS
+
+<hr>
+
 ## 本テーマを作成するにあたって、参考にしたサイト
 ### WordPressテーマ開発の基礎
 基礎的な部分は以下を参考にしました。
 
-- 公式ドキュメント<br>
-  [WORDPRESS Codex日本語版](https://wpdocs.osdn.jp/Main_Page)
+- [WORDPRESS Codex日本語版](https://wpdocs.osdn.jp/Main_Page)
 - [【テーマ自作】WordPress オリジナルテーマの作り方と基本](https://webst8.com/blog/wordpress-theme-howto-make/)
 - functions.phpファイルを分割する<br>
   https://wpqw.jp/wordpress/themes/functions-split/
@@ -36,9 +41,12 @@ https://www.mytheme.taako-biz.com/
 - aタグにクラスを追加<br>
   [WordPressのカスタムメニューのaタグに任意のクラスを付ける:メモ](https://webutubutu.com/webdesign/3692)
 
-### ダッシュボードについて
-[ダッシュボードウィジェット API](https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88_API)
+## フック関連
+### エディタのサイドバーなどに、フォームを追加<br>
+- [「使いやすい」と言われたい！WordPressの編集画面にメタボックスを追加する方法](https://www.webprofessional.jp/adding-meta-boxes-post-types-wordpress/)
 
+### ダッシュボードについて
+- [ダッシュボードウィジェット API](https://wpdocs.osdn.jp/%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A3%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88_API)
 
 ## スタイルシートについて
 - CSSアーキテクチャについて
@@ -48,9 +56,6 @@ https://www.mytheme.taako-biz.com/
   - [CSSのコピペだけ！おしゃれな見出しのデザイン例まとめ68選](https://saruwakakun.com/html-css/reference/h-design)
   - [コピペで使えるリストデザイン34選：CSSで箇条書きをおしゃれに](https://saruwakakun.com/html-css/reference/ul-ol-li-design)
   - [CSSで作る！魅力的な引用デザインのサンプル30（blockquote）](https://saruwakakun.com/html-css/reference/blockquote)
-- Sass環境構築
-  - [WindowsにSassを導入する手順【インストール】と【コンパイル】](https://bsj-k.com/sass-installation-windows/)
-  - [WindowsのAtomで自動コンパイルしてくれるSassの環境を構築する](https://helog.jp/development/nodejs-atom-sass/)
 
 ### SEOについて
 #### 構造化マークアップ
@@ -58,10 +63,6 @@ https://www.mytheme.taako-biz.com/
   [WordPress 構造化データを動的に出力する方法](https://hirashimatakumi.com/blog/3192.html)
 - パンくずリストの参考にした記事<br>
   ⇒[WordPressで構造化データ用のパンくずを生成する](https://gimmicklog.com/wordpress/810/)
-
-## エディタについて
-エディタのサイドバーなどに、フォームを追加<br>
-[「使いやすい」と言われたい！WordPressの編集画面にメタボックスを追加する方法](https://www.webprofessional.jp/adding-meta-boxes-post-types-wordpress/)
 
 ### コメントルール
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
@@ -81,13 +82,17 @@ https://www.mytheme.taako-biz.com/
 テーマのアップデート方法<br>
 https://nobuntu.jp/wordpress-add-theme-update-checker/
 
-## Sassの環境構築
-### Windowsの場合
-[WindowsにSassを導入する手順【インストール】と【コンパイル】](https://bsj-k.com/sass-installation-windows/)
+## 開発環境
+### エディタ
+- [Atom](https://atom.io/)
 
-### Macの場合
-- [atomでsass-autocompileを使用する方法](https://qiita.com/ryo-ishii/items/a840550e7e339ce69eb2)
+### WordPress
+- [Local](https://local.getflywheel.com/)
 
+### WordPressの開発用プラグイン
+- [[WordPress]SCSSをコンパイルするプラグイン「WP-SCSS」の使い方](https://qiita.com/super-mana-chan/items/42b207ad2e216ac6a638)
+
+<hr>
 
 ## twitter
 https://twitter.com/taakobiz
