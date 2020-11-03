@@ -24,7 +24,7 @@ img {
 }
 
 .contents {
-  @include max-width-content();
+  @include max-width-content($MAX-WIDTH-CONTENT);
   @include blockAndStaticCenter();
   display: flex;
   flex-wrap: wrap;

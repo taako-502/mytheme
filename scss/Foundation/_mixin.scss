@@ -1,8 +1,8 @@
 /* mixin
    ----------------------------------------------------------------- */
 /* コンテンツの横幅を設定 */
-@mixin max-width-content() {
-  max-width: $MAX-WIDTH-CONTENT;
+@mixin max-width-content($max-width: $MAX-WIDTH-CONTENT) {
+  max-width: $max-width;
   width: 100%;
 }
 

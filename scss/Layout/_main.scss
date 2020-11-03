@@ -1,7 +1,8 @@
 .l-main {
-  max-width: 600px;
-  width: 100%;
+  @include max-width-content(67%);
   background-color: white;
+  margin: 1% 1% 2% 2%;
+  padding: 10px 20px;
 }
 
 div.entry-content {
