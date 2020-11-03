@@ -3,9 +3,9 @@
 */
 
 .p-recommend {
-  @include blockAndStaticCenter();
-  width: 100%;
-  padding: 10px 0;
+  width: 96%;
+  margin: 10px 2%;
+  padding: 10px 20px;
   background-color: white;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
@@ -18,10 +18,10 @@
 }
 
 .p-top--h2 {
-  font-size: 25px;
-  margin: 1.5em 0 1.5em 0.5em;
-  border-bottom: solid 3px skyblue;
   position: relative;
+  font-size: 25px;
+  margin-bottom: 15px;
+  border-bottom: solid 3px skyblue;
 
   &:after {
     position: absolute;
@@ -34,16 +34,15 @@
 }
 
 .p-recommend-area {
+  @include blockAndStaticCenter();
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
 }
 
 .p-recommend--img {
   width: 30%;
   height: auto;
-  margin: 2px auto;
+  margin: 0 auto;
 }
 
 .p-top--list {

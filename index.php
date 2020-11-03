@@ -19,7 +19,7 @@ get_header();
 <section class="contents">
   <div class="p-recommend">
     <h2 class="p-top--h2">おすすめ記事</h2>
-    <div class="p-recommend-area row">
+    <div class="p-recommend-area">
       <div class="p-recommend--img">
         <a href="<?php echo $recolefturl; ?>"><img src="<?php echo $recoleftimg; ?>" alt="hoge"></a>
       </div>
