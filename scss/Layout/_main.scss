@@ -7,20 +7,6 @@
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
 
-div.entry-content {
-  padding-top: 10px;
-}
-
 .wp-embedded-content {
   max-width: 100%;
-}
-
-/* サムネイル */
-img.size-single {
-  height: auto;
-}
-/* pタグ　*/
-.entry-content p:not([class]) {
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
