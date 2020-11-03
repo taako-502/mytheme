@@ -82,7 +82,12 @@ https://www.mytheme.taako-biz.com/
 https://nobuntu.jp/wordpress-add-theme-update-checker/
 
 ## Sassの環境構築
+### Windowsの場合
 [WindowsにSassを導入する手順【インストール】と【コンパイル】](https://bsj-k.com/sass-installation-windows/)
+
+### Macの場合
+- [atomでsass-autocompileを使用する方法](https://qiita.com/ryo-ishii/items/a840550e7e339ce69eb2)
+
 
 ## twitter
 https://twitter.com/taakobiz
