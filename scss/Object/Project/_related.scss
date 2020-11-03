@@ -14,6 +14,7 @@
   }
 
   li {
+    @include articleShadow();
     display: inline-block;
     width: 48%;
     margin: 1%;

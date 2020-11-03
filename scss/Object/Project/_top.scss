@@ -3,11 +3,11 @@
 */
 
 .p-recommend {
+  @include areaShadow();
   width: 96%;
   margin: 2% 2% 1% 2%;
   padding: 10px 20px;
   background-color: white;
-  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
 
 .p-top--img {
@@ -20,10 +20,12 @@
 .p-recommend-area {
   @include blockAndStaticCenter();
   width: 100%;
+  padding-bottom: 2em;
   display: flex;
 }
 
 .p-recommend--img {
+  @include articleShadow();
   width: 30%;
   height: auto;
   margin: 0 auto;
@@ -36,10 +38,10 @@
 }
 
 .p-news-card {
+  @include articleShadow();
   width: 47%;
   padding-bottom:5px;
   margin: 1.5%;
-  box-shadow: 3px 10px 10px #666666;  /* 影の設定 */
   background-color: white;
   border-radius:5px;
   img {
