@@ -1,6 +1,13 @@
 /* mixin
    ----------------------------------------------------------------- */
-@mixin col-1-width() {
-  max-width: $MAX-WIDTH-COL1;
+/* コンテンツの横幅を設定 */
+@mixin max-width-content() {
+  max-width: $MAX-WIDTH-CONTENT;
   width: 100%;
+}
+
+/* Staticなブロック要素を中央揃え */
+@mixin blockAndStaticCenter() {
+  margin-left: auto;
+  margin-right: auto;
 }

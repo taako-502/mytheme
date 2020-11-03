@@ -1,3 +1,9 @@
+.l-main {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+}
+
 div.entry-content {
   padding-top: 10px;
 }
@@ -5,6 +11,7 @@ div.entry-content {
 .wp-embedded-content {
   max-width: 100%;
 }
+
 /* 見出し */
 #main-text H2 {
   font-size: 25px;

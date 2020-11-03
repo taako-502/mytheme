@@ -31,7 +31,7 @@ get_header();
       </div>
     </div>
   </div>
-  <div class="p-top-main">
+  <div class="l-main">
     <h2 class="p-top--h2">新着記事</h2>
     <div class="p-top--list">
       <?php

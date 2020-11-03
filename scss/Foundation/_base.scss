@@ -23,9 +23,12 @@ img {
   max-width: 100%;
 }
 
-#content {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.contents {
+  @include max-width-content();
+  @include blockAndStaticCenter();
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 div {

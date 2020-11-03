@@ -3,9 +3,8 @@
 */
 
 .p-recommend {
-  @include col-1-width();
-  margin-left: auto;
-  margin-right: auto;
+  @include blockAndStaticCenter();
+  width: 100%;
   padding: 10px 0;
   background-color: white;
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);

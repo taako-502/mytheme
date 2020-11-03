@@ -1,4 +1,4 @@
-<section id="content">
+<section class="contents">
   <div id="content-wrap" class="container">
     <div id="main" class="col-md-12" >
       <?php
