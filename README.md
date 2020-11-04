@@ -96,6 +96,13 @@ https://nobuntu.jp/wordpress-add-theme-update-checker/
 
 ### WordPressの開発用プラグイン
 - [[WordPress]SCSSをコンパイルするプラグイン「WP-SCSS」の使い方](https://qiita.com/super-mana-chan/items/42b207ad2e216ac6a638)
+  - WP-SCSSの設定
+    - SCSS Location: /scss/
+    - CSS Location: /css/
+    - Compiling Mode: Compressed
+    - Source Map Mode: none
+    - Error Display: Show in Header
+    - Enqueue Stylesheets: チェックを入れない
 
 <hr>
 
