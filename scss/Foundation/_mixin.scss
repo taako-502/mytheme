@@ -1,7 +1,15 @@
 /* mixin
    ----------------------------------------------------------------- */
+
+/* メディアクエリー */
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 /* コンテンツの横幅を設定 */
-@mixin max-width-content($max-width: $MAX-WIDTH-CONTENT) {
+@mixin max-width-content($max-width: $layout-width-inner) {
   max-width: $max-width;
   width: 100%;
 }
