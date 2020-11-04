@@ -27,6 +27,10 @@
   width: 100%;
   padding-bottom: 2em;
   display: flex;
+
+  @include mq("sp"){
+    display: block;
+  }
 }
 
 .p-recommend--img {
@@ -34,6 +38,11 @@
   width: 30%;
   height: auto;
   margin: 0 auto;
+
+  @include mq("sp"){
+    width: 96%;
+    margin: 2% 2% 1% 2%;
+  }
 }
 
 .p-news--list {
@@ -49,6 +58,12 @@
   margin: 1.5%;
   background-color: white;
   border-radius:5px;
+
+  @include mq("sp"){
+    width: 96%;
+    margin: 2% 2% 1% 2%;
+  }
+
   img {
     width: 100%;
     height: auto;

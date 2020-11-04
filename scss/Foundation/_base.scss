@@ -28,4 +28,8 @@ img {
   @include blockAndStaticCenter();
   display: flex;
   flex-wrap: wrap;
+
+  @include mq("sp") {
+    display: block;
+  }
 }
