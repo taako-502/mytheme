@@ -1,11 +1,33 @@
 <?php
-/**
- * 引数がnullか空白か判定
- * @param  [type]  $val [description]
- * @return boolean      nullか空白ならtrueを返却
- */
-function isNullOrEmpty($val){
-  return is_null($val) || $val== '';
+if (!function_exists('isNullOrEmpty')) {
+  /**
+  * 引数がnullか空白か判定
+  * @param  [type]  $val [description]
+  * @return boolean      nullか空白ならtrueを返却
+  */
+  function isNullOrEmpty($obj) {
+    if($obj === 0 || $obj === "0") {
+      return false;
+    }
+    return empty($obj);
+  }
+}
+
+if (!function_exists('is_nullorwhitespace')) {
+  /**
+   * 引数がnullかスペースか判定
+   * @param  [type]  $obj [description]
+   * @return boolean      nullかスペースならtrueを返却
+   */
+  function is_nullorwhitespace($obj) {
+    if(is_nullorempty($obj) === true){
+      return true;
+    }
+    if(is_string($obj) && mb_ereg_match("^(\s|　)+$", $obj)){
+      return true;
+    }
+    return false;
+  }
 }
 
 /**
