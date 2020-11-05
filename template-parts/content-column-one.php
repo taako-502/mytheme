@@ -1,5 +1,5 @@
 <section class="contents">
-  <div class="l-main">
+  <div class="l-main__col-1">
     <?php
     if ( have_posts() ) :
       while ( have_posts() ) : the_post();
@@ -13,5 +13,4 @@
     endif;
   ?>
   </div>
-  <?php get_template_part( 'template-parts/content', 'related' ); ?>
 </section>

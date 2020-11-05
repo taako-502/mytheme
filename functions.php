@@ -38,13 +38,13 @@ get_template_part('/inc/func', 'img');
 
 // アーカイブの余計なタイトルを削除
 add_filter( 'get_the_archive_title', function ($title) {
-    if ( is_category() ) {
-        $title = single_cat_title( '', false );
-    } elseif ( is_tag() ) {
-        $title = single_tag_title( '', false );
-    } elseif ( is_month() ) {
-        $title = single_month_title( '', false );
-    }
-    return $title;
+  if ( is_category() ) {
+    $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) {
+    $title = single_tag_title( '', false );
+  } elseif ( is_month() ) {
+    $title = single_month_title( '', false );
+  }
+  return $title;
 });
 ?>

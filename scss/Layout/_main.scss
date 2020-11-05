@@ -12,6 +12,11 @@
   }
 }
 
+.l-main__col-1 {
+  @extend .l-main;
+  @include max-width-content(100%);
+}
+
 .wp-embedded-content {
   max-width: 100%;
 }
