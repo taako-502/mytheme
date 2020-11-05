@@ -69,11 +69,14 @@ https://www.mytheme.taako-biz.com/
 - パンくずリストの参考にした記事<br>
   ⇒[WordPressで構造化データ用のパンくずを生成する](https://gimmicklog.com/wordpress/810/)
 
+### AMPについて
+- [【WordPress】プラグインなしでAMP対応！プログラム書けなくてもできた。](https://gk2.jp/amppage-support-without-plug-in-i-could-do-it-without-writing-program/)
+
 ### コメントルール
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
 
 ## テストについて
-### 構造化マークアップのテスト
+### 構造化マークアップ
 - [リッチリザルトテスト](https://search.google.com/test/rich-results)
 - [構造化データのテスト](https://search.google.com/structured-data/testing-tool/u/0/)
 
@@ -82,6 +85,9 @@ https://www.mytheme.taako-biz.com/
   [Twitterカードの確認](https://cards-dev.twitter.com/validator)
 - facebook<br>
   [FACEBOOK DEVELOPERS シェアデバッガー](https://developers.facebook.com/tools/debug/)
+
+### AMP
+- [AMPテスト](https://search.google.com/test/amp?hl=ja)
 
 ### リリース方法
 テーマのアップデート方法<br>
