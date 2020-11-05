@@ -5,7 +5,7 @@
     echo breadcrumb();
     $category_name = get_the_category()[0]->cat_name;
     $category_link = get_category_link(get_the_category()[0]->cat_ID);
-    echo "<div class=\"category\"><a href=\"$category_link\">".$category_name."</a></div>";
+    echo "<div class=\"category\"><a href=\"$category_link\">".$category_name."</a></div><br>";
     // サムネイル
     the_post_thumbnail('single');
     // 本文
