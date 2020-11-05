@@ -52,8 +52,6 @@ global $page_title;
   <?php
     if(strcmp($page_title , "home")){
   ?>
-  <p class="cus-header-area">
-    <?php the_header_image_tag("class=cus-header-img"); ?>
-  </p>
+  <?php the_header_image_tag("class=l-header__img"); ?>
   <?php } ?>
 </header>
