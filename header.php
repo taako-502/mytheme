@@ -52,8 +52,8 @@ global $page_title;
   <?php
     if(strcmp($page_title , "home")){
   ?>
-  <div id="top-vg">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/top.jpeg" alt="トップページ画像" >
-  </div>
+  <p class="cus-header-area">
+    <?php the_header_image_tag("class=cus-header-img"); ?>
+  </p>
   <?php } ?>
 </header>
