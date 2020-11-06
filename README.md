@@ -76,6 +76,15 @@ https://www.mytheme.taako-biz.com/
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
 
 ## テストについて
+### デバッグモード
+wp-config.phpに下記のような設定を行い、エラーが発生しないこと。
+```
+define('WP_DEBUG',true);
+```
+
+### テスト用プラグイン
+[THeme Check](https://ja.wordpress.org/plugins/theme-check/)をインストールし、エラーが発生しないことを確認すること。
+
 ### 構文チェック
 - HTMLの構文チェック<br>[Markup Validation Service](http://validator.w3.org/)
 - CSSの構文チェック<br>[CSS Validation Service](http://jigsaw.w3.org/css-validator/)
