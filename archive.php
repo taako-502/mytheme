@@ -12,9 +12,11 @@
         <?php
         /* 記事一覧 */
         if ( have_posts() ) {
-          while ( have_posts() ) { the_post();
+          while ( have_posts() ) {
+            the_post();
             get_template_part('/template-parts/content','article');
           }
+          the_posts_navigation();
         } else {
           echo "<p>まだ記事がありません。</p>";
         }
