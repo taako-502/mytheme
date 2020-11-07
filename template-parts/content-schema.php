@@ -32,7 +32,7 @@
       "name": "<?php bloginfo('name'); ?>",
       "logo": {
         "@type": "ImageObject",
-        "url": "<?php echo get_template_directory_uri(); ?>/img/publisher-logo.png",
+        "url": "<?php echo esc_url(get_template_directory_uri() . '/img/publisher-logo.png'; ?>",
         "width": 600,
         "height": 60
       }
