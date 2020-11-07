@@ -1,4 +1,5 @@
 <?php
+wp_head();
 get_template_part('utility/utility');
 //-wp_optionsテーブルから設定値を取得
 $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
@@ -24,7 +25,6 @@ global $page_title;
   <?php
   wp_enqueue_script('jquery');
   wp_enqueue_script('bootstrap-js','https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',array('jquery'));
-  wp_head();
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
   ?>
@@ -49,8 +49,8 @@ global $page_title;
     </div>
   </nav>
   <?php
-    if(strcmp($page_title , "home")){
+  if(strcmp($page_title , "home")){
+    the_header_image_tag("class=l-header__img");
+  }
   ?>
-  <?php the_header_image_tag("class=l-header__img"); ?>
-  <?php } ?>
 </header>

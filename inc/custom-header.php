@@ -21,7 +21,7 @@ function mytheme_custom_header_setup() {
 		apply_filters(
 			'mytheme_custom_header_args',
 			array(
-				'default-image'      => get_template_directory_uri() . '/images/top.png',
+				'default-image'      => get_template_directory_uri() . '/images/top.jpg',
 				'default-text-color' => '000000',
 				'width'              => 1370,
 				'height'             => 300,
