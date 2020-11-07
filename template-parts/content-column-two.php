@@ -9,8 +9,6 @@
       $category_link = get_category_link(get_the_category()[0]->cat_ID);
       echo "<div class=\"category\"><a href=\"$category_link\">".$category_name."</a></div><br>";
     }
-    // サムネイル
-    the_post_thumbnail('single');
     ?>
     <article class="p-article">
       <?php
@@ -18,6 +16,7 @@
         while ( have_posts() ) : the_post();
         ?>
         <h1><?php the_title();?></h1>
+        <?php the_post_thumbnail(); ?>
         <section>
           <?php the_content(); ?>
         </section>

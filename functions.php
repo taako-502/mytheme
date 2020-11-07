@@ -7,6 +7,14 @@
 define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
 
 /**
+ * コンテンツ幅設定
+ * @var [type]
+ */
+if ( ! isset( $content_width ) ) {
+  $content_width = 900;
+}
+
+/**
 * 初期処理
 */
 function mytheme_setup(){
