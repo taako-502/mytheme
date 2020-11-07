@@ -44,12 +44,14 @@ function add_widget(){
 
   // Global the $wp_meta_boxes variable (this will allow us to alter the array).
   global $wp_meta_boxes;
-  // Then we make a backup of your widget.
-  $my_widget = $wp_meta_boxes['dashboard']['normal']['core']['readme_widget'];
-  // We then unset that part of the array.
-  unset($wp_meta_boxes['dashboard']['normal']['core']['readme_widget']);
-  // Now we just add your widget back in.
-  $wp_meta_boxes['dashboard']['side']['core']['readme_widget'] = $my_widget;
+  if(!is_null($wp_meta_boxes['dashboard']['normal']['core']['readme_widget'])) {
+    // Then we make a backup of your widget.
+    $my_widget = $wp_meta_boxes['dashboard']['normal']['core']['readme_widget'];
+    // We then unset that part of the array.
+    unset($wp_meta_boxes['dashboard']['normal']['core']['readme_widget']);
+    // Now we just add your widget back in.
+    $wp_meta_boxes['dashboard']['side']['core']['readme_widget'] = $my_widget;
+  }
 }
 add_action('wp_dashboard_setup','add_widget');
 
