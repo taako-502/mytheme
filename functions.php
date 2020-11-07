@@ -24,8 +24,6 @@ get_template_part('/inc/func','dashboard');
 get_template_part('/inc/func','customizer');
 //ナビゲーションメニュー設定
 get_template_part('/inc/func','menu');
-//ナビゲーションメニュー設定
-get_template_part('/inc/func','pagenation');
 //管理画面設定
 get_template_part('/inc/func','admin');
 //ブロックパターン
