@@ -44,7 +44,7 @@ function add_widget(){
 
   // Global the $wp_meta_boxes variable (this will allow us to alter the array).
   global $wp_meta_boxes;
-  if(!is_null($wp_meta_boxes['dashboard']['normal']['core']['readme_widget'])) {
+  if(!empty($wp_meta_boxes['dashboard']['normal']['core']['readme_widget'])) {
     // Then we make a backup of your widget.
     $my_widget = $wp_meta_boxes['dashboard']['normal']['core']['readme_widget'];
     // We then unset that part of the array.
@@ -59,7 +59,6 @@ add_action('wp_dashboard_setup','add_widget');
  * 追加ウィジェットの実装
  */
  function add_readme_widget(){
-   //echo '<div class="readme_widget"><p>Hello World</p></div>';
    ?>
    <div class="readme_widget">
      <h2>FAQ</h2>
