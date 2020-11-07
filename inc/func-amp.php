@@ -11,18 +11,21 @@ function change_amp_template($single_template){
     if(!empty($amp_template)){
       $change_template = $amp_template;
     }
-    add_filter( 'the_content', 'the_content_filter', 12 );
 
+    /**
+     * AMP用の投稿記事の処理
+     * @param  [type] $content [description]
+     * @return [type]          [description]
+     */
     function the_content_filter( $content ) {
-      /* AMP用の投稿記事の処理 開始 */
       //投稿記事内の<img>を<amp-img>へ書き換え
       $content = preg_replace('/<img (.*?)>/i', '<amp-img $1></amp-img>', $content);
       $content = preg_replace('/<img (.*?) \/>/i', '<amp-img $1></amp-img>', $content);
       // border属性を削除
       $content = preg_replace('#\s+?border\s*=\s*[\"|\'].*?[\"|\']#i', '', $content);
-      /* AMP用の投稿記事の処理 終了*/
       return $content;
     }
+    add_filter( 'the_content', 'the_content_filter', 12 );
 
   }
   return $change_template;
