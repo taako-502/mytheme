@@ -12,7 +12,8 @@
 function breadcrumb() {
   global $post;
   $str ='';
-  $url = $http .'://'. $_SERVER["HTTP_HOST"] . htmlspecialchars($_SERVER["REQUEST_URI"], ENT_QUOTES, 'UTF-8');
+  $http = is_ssl() ? 'https' : 'http' . '://';
+  $url = $http . $_SERVER["HTTP_HOST"] . htmlspecialchars($_SERVER["REQUEST_URI"], ENT_QUOTES, 'UTF-8');
   if(!is_home() && !is_admin()) {
     $str.= '<ul class="c-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
     $str.= '<a href="'.home_url().'" itemprop="item"><span itemprop="name">'.'TOP'.'</span></a><meta itemprop="position" content="1" /></li>';
