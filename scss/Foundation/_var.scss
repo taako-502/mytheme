@@ -7,3 +7,4 @@ $breakpoints: (
   "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
   "pc": "screen and (min-width: #{$layout-width-inner})",
 );
+$FOOTER-HEIGHT: 120px;

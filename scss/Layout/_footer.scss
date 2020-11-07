@@ -1,8 +1,14 @@
 .l-footer {
+  width: 100%;
   background-color: #222;
+
+  //フッターを下に固定
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
 }
 
 .l-footer--center {
+  text-align: center;
   padding:15px 0;
   color: white;
 }
