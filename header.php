@@ -29,7 +29,8 @@ global $page_title;
   get_template_part( 'template-parts/content', 'schema' );
   ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
   <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'body' ); } ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
