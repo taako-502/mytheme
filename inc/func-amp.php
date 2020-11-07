@@ -46,9 +46,11 @@ add_action('wp_head', 'amp_link_tag');
  * @return [type]       [description]
  */
 function otherImg( $html ){
+  if(isset($_GET['amp']) && $_GET['amp'] == 1) {
     $html = preg_replace('/<img/', '<amp-img layout="responsive"', $html);
     $html = $html.'</amp-img>';
-    return $html;
+  }
+  return $html;
 }
 add_filter( 'post_thumbnail_html', 'otherImg' );
 
