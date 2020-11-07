@@ -5,7 +5,7 @@
           the_post_thumbnail('articlelist');
         } else {
           // アイキャッチが設定されていない場合、デフォルトのアイキャッチを使用
-          echo '<img width="288" height="162" src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/thumbnail-default.jpg" />';
+          echo '<img width="288" height="162" src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.jpg" />';
         }
     ?>
   </a>

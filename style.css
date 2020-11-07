@@ -5,8 +5,12 @@ Theme URI: https://github.com/taako-502/mytheme
 Description:test
 Author: taako
 Author URI: https://taako-biz.com/
-Tags: custom-header, custom-menu
 Text Domain: test
 Version: 20201104
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-header, custom-menu
 Requires PHP: 7.4.1
 */
+.wp-caption , .wp-caption-text , .sticky , .gallery-caption , .bypostauthor , .alignright , .alignleft , .aligncenter , .screen-reader-text {}
+  
