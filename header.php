@@ -12,7 +12,7 @@ $gtmId = get_theme_mod('gtm-id', '');
 global $page_title;
 ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>
 <head>
   <?php if(!isNullOrEmpty(trim($analytics_code))){ get_template_part('template-parts','analyticsTracking'); } ?>
   <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
