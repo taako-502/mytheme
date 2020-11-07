@@ -10,10 +10,9 @@ define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
 * 初期処理
 */
 function mytheme_setup(){
-  // アイキャッチ画像をON
   add_theme_support('post-thumbnails');
-  // メニュー機能をON
   add_theme_support('menus');
+  add_theme_support( 'title-tag' );
 }
 add_action('after_setup_theme','mytheme_setup');
 

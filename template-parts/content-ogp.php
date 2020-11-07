@@ -17,7 +17,7 @@ if (is_single()){
   ?>
   <meta property="og:description" content="<?php echo bloginfo('description'); ?>">
   <meta property="og:title" content="<?php echo bloginfo('name'); ?>">
-  <meta property="og:url" content="<?php echo bloginfo('url'); ?>">
+  <meta property="og:url" content="<?php  echo esc_url( home_url() ); ?>">
   <?php
 }
 $str = $post->post_content;

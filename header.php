@@ -16,7 +16,6 @@ global $page_title;
   <?php if(!isNullOrEmpty(trim($analytics_code))){ include ("template-parts/analyticsTracking.php"); } ?>
   <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
   <meta charset="utf-8">
-  <title><?php bloginfo('name'); wp_title('|', true, 'left'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
