@@ -5,7 +5,7 @@
       // カテゴリー表示
       $category_name = get_the_category()[0]->cat_name;
       $category_link = get_category_link(get_the_category()[0]->cat_ID);
-      echo "<div class=\"category\"><a href=\"$category_link\">".$category_name."</a></div><br>";
+      echo "<div class=\"p-category\"><a href=\"$category_link\">".$category_name."</a></div><br>";
     }
     if ( have_posts() ) :
       while ( have_posts() ) : the_post();
