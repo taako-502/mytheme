@@ -37,6 +37,7 @@
   //transform: translateY(-100%);
   //transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
   list-style: none;
+  display: none;
 
   @media (min-width: $MAX-WIDTH-SP) {
     display: flex;
@@ -61,10 +62,11 @@
     }
   }
 
-  .active {
+  &.active {
     /*中身を表示（右へスライド）*/
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
+    //-webkit-transform: translateY(0%);
+    //transform: translateY(0%);
+    display: block;
   }
 }
 
@@ -72,7 +74,7 @@
   display: block;
   position: absolute;
   right: 2%;
-  top: 34px;
+  top: 2px;
   width: 50px;
   height: 43px;
   cursor: pointer;
