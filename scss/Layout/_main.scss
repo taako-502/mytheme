@@ -9,6 +9,7 @@
   @include mq("tab") {
     @include max-width-content(100%);
     margin: 2% 0 1% 0;
+    padding: 10px 0;
   }
 }
 
