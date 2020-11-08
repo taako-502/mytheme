@@ -37,7 +37,7 @@ add_filter('single_template', 'change_amp_template');
  * @return [type] [description]
  */
 function amp_link_tag() {
-  if(is_singular('post')) {
+  if(is_single()) {
     echo '<link rel="amphtml" href="'.esc_url(get_permalink()).'?amp=1">'."\n";
   }
 }
