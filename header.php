@@ -1,5 +1,4 @@
 <?php
-wp_head();
 get_template_part('utility/utility');
 //-wp_optionsテーブルから設定値を取得
 $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
@@ -23,6 +22,7 @@ global $page_title;
   <?php
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
+  wp_head();
   ?>
 </head>
 <body <?php body_class(); ?>>
