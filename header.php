@@ -42,15 +42,10 @@ global $page_title;
         ?>
       </div>
     </nav>
-    <a class="l-hamburger only-block-sp" aria-controls="primary-menu" aria-expanded="false">
+    <div class="l-hamburger only-block-sp" aria-controls="primary-menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </a>
+    </div>
     <?php if(strcmp($page_title , "home")){ the_header_image_tag("class=l-header__img"); } ?>
   </header>
-  <a class="l-hamburger only-block-sp" style="position: static;" aria-controls="primary-menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </a>
