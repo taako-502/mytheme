@@ -59,4 +59,16 @@ add_filter( 'get_the_archive_title', function ($title) {
   }
   return $title;
 });
+
+/**
+ * javascript読み込み
+ * @return [type] [description]
+ */
+function main_enqueue_scripts() {
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
+  //wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), false, true );
+
+}
+add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
 ?>

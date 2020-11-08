@@ -21,7 +21,6 @@ global $page_title;
   <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/app.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/customcss.php'); ?>" />
   <?php
-  wp_enqueue_script('jquery');
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
   ?>
@@ -41,11 +40,11 @@ global $page_title;
         );
         wp_nav_menu($args);
         ?>
-        <div class="l-hamburger only-block-sp" aria-controls="primary-menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      </div>
+      <div class="l-hamburger only-block-sp" aria-controls="primary-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </nav>
     <?php if(strcmp($page_title , "home")){ the_header_image_tag("class=l-header__img"); } ?>
