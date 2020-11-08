@@ -36,16 +36,10 @@
   //background: rgba(0,0,0,.6);
   //transform: translateY(-100%);
   //transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  list-style: none;
+
   @media (min-width: $MAX-WIDTH-SP) {
-    display: inline-block;
-  }
-
-  ul {
-    list-style: none;
-
-    @media (min-width: $MAX-WIDTH-SP) {
-      display: flex;
-    }
+    display: flex;
   }
 
   li {
@@ -75,7 +69,6 @@
 }
 
 .l-hamburger {
-  background-color: red;
   display: block;
   position: absolute;
   right: 2%;

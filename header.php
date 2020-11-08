@@ -22,6 +22,7 @@ global $page_title;
   <?php
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
+  wp_enqueue_script('jquery');
   wp_head();
   ?>
 </head>
@@ -31,16 +32,14 @@ global $page_title;
   <header class="l-header">
     <nav class="l-nav" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
       <a class="l-nav-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:<?php echo getCusNavLogoColor() ?>!important"><?php bloginfo( 'name' ); ?></a>
-      <div class="l-nav-menu">
-        <?php
-        $args = array (
-          'menu_class' => 'nav navbar-nav' ,
-          'container' => false,
-          'add_li_class' => 'nav-item'
-        );
-        wp_nav_menu($args);
-        ?>
-      </div>
+      <?php
+      $args = array (
+        'menu_class' => 'l-nav-menu' ,
+        'container' => false,
+        'add_li_class' => 'nav-item'
+      );
+      wp_nav_menu($args);
+      ?>
     </nav>
     <div class="l-hamburger only-block-sp" aria-controls="primary-menu" aria-expanded="false">
       <span></span>
