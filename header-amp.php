@@ -11,12 +11,12 @@ $gtmId = get_theme_mod('gtm-id', '');
 global $page_title;
 ?>
 <!DOCTYPE html>
-<html lang="ja">
+<html amp <?php language_attributes(); ?>
 <head>
   <?php //if(!isNullOrEmpty(trim($analytics_code))){ get_template_part('template-parts','analyticsTracking'); } ?>
   <?php //if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
   <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>">
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -29,6 +29,7 @@ global $page_title;
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
   ?>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
 <body>
   <?php //if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'body' ); } ?>
