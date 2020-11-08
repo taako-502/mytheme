@@ -1,4 +1,4 @@
-.l-title {
+.l-nav-title {
   margin-top: 5px;
   margin-left: 30px;
   font-size: 20px;
@@ -17,4 +17,139 @@
 
 .l-header__img {
   width: 100%;
+}
+
+.l-hamburger {
+  display: block;
+  position: absolute;
+  right: 9%;
+  top: 12px;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  z-index: 3;
+
+  span {
+    display: block;
+    position: absolute;
+    width: 50px;
+    border-bottom: solid 4px white;
+    /*変化の速度を指定*/
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: 5px;
+  }
+
+  span:nth-child(2) {
+    top: 18px;
+  }
+
+  span:nth-child(3) {
+    top: 32px;
+  }
+
+  .active span:nth-child(1) {
+    top: 18px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .active span:nth-child(2),
+  .active span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+header#masthead {
+  background-color: #333;
+  padding-top: 0.2em;
+}
+
+div.site-branding {
+  display: flex;
+}
+
+div.site-info-header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* サイトタイトル */
+h1.site-title_test a {
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  color: white;
+}
+
+h1.site-title_test {
+  text-align: center;
+  min-width: 300px;
+}
+
+p.site-description_test {
+  text-align: center;
+}
+
+/* メニュー */
+div.main-menu {
+  /* margin: 0 0 0 auto; */
+  z-index: 1;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.6);
+  transform: translateX(-100%);
+  transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+div.main-menu ul {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+div.main-menu li {
+  background-color: #333;
+  border: 1.5px solid white;
+  border-radius: 1px;
+}
+
+.main-menu ul li a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.main-menu ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: orange;
+}
+
+div.main-menu {
+  text-align: center;
+}
+
+/*OPEN時の動き*/
+.main-menu.open {
+  /*中身を表示（右へスライド）*/
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
 }

@@ -2,8 +2,9 @@
    ----------------------------------------------------------------- */
 
 $layout-width-inner: 1180px;
+$MAX-WIDTH-SP: 767px;
 $breakpoints: (
-  "sp": "screen and (max-width: 767px)",
+  "sp": "screen and (max-width: #{$MAX-WIDTH-SP})",
   "tab": "screen and (max-width: #{$layout-width-inner - 1px})",
   "pc": "screen and (min-width: #{$layout-width-inner})",
 );
