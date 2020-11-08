@@ -1,6 +1,12 @@
+.l-header {
+  z-index: 999;
+  width: 100%;
+}
+
 .l-nav {
   padding: 5px 0 0 30px;
   background-color: #333;
+  z-index: 10;
 }
 
 .l-nav-title {
@@ -77,10 +83,10 @@
   width: 50px;
   height: 43px;
   cursor: pointer;
-  z-index: 0;
+  z-index:111;
 
   span {
-    display: block;
+    display: inline-block;
     position: absolute;
     width: 50px;
     border-bottom: solid 4px white;
