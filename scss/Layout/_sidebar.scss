@@ -1,9 +1,9 @@
 .l-sidebar {
-  @include max-width-content(27%);
+  @include max-width-content(28%);
   @include areaShadow();
   background-color: white;
-  margin: 1% 2% 2% 1%;
-  padding-left: 1.5%;
+  margin: 1% 0 2% 1%;
+  padding-left: 1%;
   text-align: center;
 
   @include mq("tab") {
@@ -41,7 +41,7 @@
 
   .searchfield {
     font-size: 14px;
-    width: 97%;
+    //width: 97%;
     padding: 10px;
     border: solid 1px #bbb;
     border-radius: 4px;
