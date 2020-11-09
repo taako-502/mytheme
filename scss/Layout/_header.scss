@@ -1,152 +1,129 @@
 .l-header {
-  z-index: 999;
   width: 100%;
 }
 
+/*　ハンバーガーボタン　*/
+.l-hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 13px;
+  top   : 12px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: 0.5s all;
+  -moz-transition   : 0.5s all;
+  transition        : 0.5s all;
+}
+.l-hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+}
+.l-hamburger span:nth-child(1) {
+  top: 10px;
+}
+.l-hamburger span:nth-child(2) {
+  top: 20px;
+}
+.l-hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.l-hamburger.active{
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.l-hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+.l-hamburger.active span:nth-child(2) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+.l-hamburger.active span:nth-child(3) {
+  opacity: 0;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active{
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+.hamburger.active span:nth-child(2) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+.hamburger.active span:nth-child(3) {
+  opacity: 0;
+}
+
 .l-nav {
-  padding: 5px 0 0 30px;
-  background-color: #333;
-  z-index: 10;
-}
-
-.l-nav-title {
-  font-size: 28px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
-  &:hover {
-    text-decoration: none;
-  }
-  &:visited {
-    color:#333;
-  }
-}
-
-.l-nav-menu {
-  //position: fixed;
-  //overflow: auto;
-  //top: 0;
-  //left: 0;
-  //width: 250px;
-  //height: 100%;
-  //margin: 0;
-  //padding: 10px;
-  //box-sizing: border-box;
-  //background: rgba(0,0,0,.6);
-  //transform: translateY(-100%);
-  //transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
-  list-style: none;
-  display: none;
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  transform: translateX(100%);
+  transition: all 0.6s;
+  width: 100%;
 
   @media (min-width: $MAX-WIDTH-SP) {
-    display: flex;
-  }
-
-  li {
-    @media (min-width: $MAX-WIDTH-SP) {
-      display: inline-block;
-    }
-
-    a {
-      color: white;
-      display: block;
-      font-weight: bold;
-      padding: 5px;
-      text-decoration: none;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: orange;
-      }
-    }
+    transform: translateX(0%);
   }
 
   &.active {
-    /*中身を表示（右へスライド）*/
-    //-webkit-transform: translateY(0%);
-    //transform: translateY(0%);
-    display: block;
+    transform: translateX(0%);
   }
 }
 
-.l-hamburger {
+nav.l-nav ul {
+  background: #ccc;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.l-nav ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+nav.l-nav ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+nav.l-nav ul li:hover{
+  background :#ddd;
+}
+
+nav.l-nav ul li a {
   display: block;
-  position: absolute;
-  right: 2%;
-  top: 2px;
-  width: 50px;
-  height: 43px;
-  cursor: pointer;
-  z-index:111;
-
-  span {
-    display: inline-block;
-    position: absolute;
-    width: 50px;
-    border-bottom: solid 4px white;
-    /*変化の速度を指定*/
-    //-webkit-transition: .35s ease-in-out;
-    //-moz-transition: .35s ease-in-out;
-    //transition: .35s ease-in-out;
-
-    &:nth-child(1) {
-      top: 5px;
-    }
-
-    &:nth-child(2) {
-      top: 18px;
-    }
-
-    &:nth-child(3) {
-      top: 32px;
-    }
-  }
-
-  .active span:nth-child(1) {
-    top: 18px;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-  .active span:nth-child(2),
-  .active span:nth-child(3) {
-    top: 18px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+  color: #000;
+  padding: 1em 0;
+  text-decoration :none;
 }
-
-/*
-header#masthead {
-  background-color: #333;
-  padding-top: 0.2em;
-}
-
-div.site-branding {
-  display: flex;
-}
-
-div.site-info-header {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1.site-title_test a {
-  text-decoration: none;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 24px;
-  color: white;
-}
-
-h1.site-title_test {
-  text-align: center;
-  min-width: 300px;
-}
-
-p.site-description_test {
-  text-align: center;
-}
-*/
