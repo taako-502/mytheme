@@ -86,6 +86,7 @@
   transition: all 0.6s;
   width: 100%;
   @media (min-width: $MAX-WIDTH-SP) {
+    position: static;
     display: flex;
     transform: translateX(0%);
     padding: 16px 0 0 30px;
