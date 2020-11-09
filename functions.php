@@ -65,7 +65,11 @@ add_filter( 'get_the_archive_title', function ($title) {
  * @return [type] [description]
  */
 function main_enqueue_scripts() {
-  //wp_enqueue_script('jquery');
+  if(isset($_GET['amp']) && $_GET['amp'] == 1){
+    //AMPはJavaScriptが使えない
+    return;
+  }
+  wp_enqueue_script('jquery');
   wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
   //wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), false, true );
 

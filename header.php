@@ -22,7 +22,6 @@ global $page_title;
   <?php
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
-  wp_enqueue_script('jquery');
   wp_head();
   ?>
 </head>
