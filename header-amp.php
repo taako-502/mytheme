@@ -17,12 +17,12 @@ global $page_title;
   <?php //if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-  <!-- link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" -->
+  <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" >
   <style amp-custom>
     {% include "/css/app.css" %}
   </style>
   <?php
-  wp_head();// 使えないはず…？
+  //wp_head();// ampでは使用不可
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
   ?>
