@@ -22,7 +22,7 @@ global $page_title;
     {% include "/css/app.css" %}
   </style>
   <?php
-  //wp_head();// 使えないはず
+  wp_head();// 使えないはず…？
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
   ?>
