@@ -18,10 +18,11 @@ global $page_title;
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
   <!-- link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" -->
-  <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/app.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/customcss.php'); ?>" />
+  <style amp-custom>
+    {% include "/css/app.css" %}
+  </style>
   <?php
-  wp_head();
+  //wp_head();// 使えないはず
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );
   ?>
