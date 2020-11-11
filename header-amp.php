@@ -19,7 +19,7 @@ global $page_title;
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
   <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" >
   <style amp-custom>
-    {% include "/css/app.css" %}
+    <?php include( __DIR__ ."/css/amp.css") ; ?>
   </style>
   <?php
   //wp_head();// ampでは使用不可
