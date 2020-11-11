@@ -51,7 +51,7 @@ global $page_title;
   </nav>
   <?php
   if(strcmp($page_title , "home")){
-    the_header_image_tag("class=l-header__img");
+    //echo preg_replace('/<img (.*?) \/>/i', '<amp-img $1></amp-img>', get_header_image_tag("class=l-header__img"));
   }
   ?>
 </header>
