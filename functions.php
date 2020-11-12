@@ -20,7 +20,7 @@ if ( ! isset( $content_width ) ) {
 function mytheme_setup(){
   add_theme_support('post-thumbnails');
   add_theme_support('menus');
-  add_theme_support( 'title-tag' );
+  add_theme_support('title-tag' );
 }
 add_action('after_setup_theme','mytheme_setup');
 
@@ -34,8 +34,8 @@ get_template_part('/inc/func','customizer');
 get_template_part('/inc/func','menu');
 //管理画面設定
 get_template_part('/inc/func','admin');
-//ブロックパターン
-get_template_part('/inc/func','blockpattern');
+//ブロックエディタ
+get_template_part('/inc/func','gutenberg');
 //OGP設定
 get_template_part('/inc/func', 'ogp');
 //構造化マークアップ
