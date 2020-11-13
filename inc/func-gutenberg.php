@@ -60,7 +60,6 @@ add_action( 'init', function() {
  		[
  			'name' => 'ligthblue-bg',
  			'label' => '薄い青背景',
- 			'inline_style' => '.is-style-black-bg { background: #f8f9ff; }',
  		]
  	);
  } );
