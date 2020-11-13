@@ -41,7 +41,7 @@ register_block_pattern(
  * カスタムエディタ追加
  */
 function add_block_editor() {
-  wp_enqueue_style( 'gutenberg-style', get_stylesheet_directory_uri() . '/css/gutenberg.css' );
+  wp_enqueue_style( 'gutenberg-style', get_stylesheet_directory_uri() . '/css/editor.css' );
   wp_enqueue_script( 'gutenberg-custom', get_stylesheet_directory_uri() . '/js/editor.js',array(), "", true);
 }
 add_action( 'enqueue_block_editor_assets', 'add_block_editor' );
