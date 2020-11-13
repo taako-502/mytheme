@@ -1,10 +1,27 @@
 <?php
 /**
- * ブロックパターン追加
+ * Gutenberg
  *
  * @package mytheme
  */
- $pattern = '<!-- wp:group -->
+
+ /**
+  * カスタムエディタ
+  */
+ function add_block_editor() {
+   wp_enqueue_style( 'gutenberg-style', get_stylesheet_directory_uri() . '/css/editor.css' );
+   wp_enqueue_script( 'gutenberg-custom', get_stylesheet_directory_uri() . '/js/editor.js',array(), "", true);
+ }
+ add_action( 'enqueue_block_editor_assets', 'add_block_editor' );
+
+/**
+ * ブロックパターン
+ * @var [type]
+ */
+//デフォルトのテーマ削除
+remove_theme_support( 'core-block-patterns' );
+//生徒の声追加
+$pattern = '<!-- wp:group -->
 <div class="wp-block-group p-student-voice"><div class="wp-block-group__inner-container"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":64,"sizeSlug":"large"} -->
@@ -27,7 +44,6 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div></div>
 <!-- /wp:group -->';
-
 register_block_pattern(
   'my-pattern/test',
  	array(
@@ -38,23 +54,10 @@ register_block_pattern(
 );
 
 /**
- * カスタムエディタ追加
- */
-function add_block_editor() {
-  wp_enqueue_style( 'gutenberg-style', get_stylesheet_directory_uri() . '/css/editor.css' );
-  wp_enqueue_script( 'gutenberg-custom', get_stylesheet_directory_uri() . '/js/editor.js',array(), "", true);
-}
-add_action( 'enqueue_block_editor_assets', 'add_block_editor' );
-
-
-add_theme_support( 'align-wide' );
-
-/**
- * ブロックスタイルを追加
+ * ブロックスタイル
  * @var [type]
  */
 add_action( 'init', function() {
-
  	register_block_style(
  		'core/list',
  		[
