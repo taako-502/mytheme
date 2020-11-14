@@ -41,6 +41,7 @@ global $page_title;
     <div class="collapse navbar-collapse" id="navbarNav">
       <?php
       wp_nav_menu(array (
+        'theme_location'=>'header-menu',
         'menu_class' => 'l-nav-menu' ,
         'container' => false,
         'add_li_class' => 'nav-item'
