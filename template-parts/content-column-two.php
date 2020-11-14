@@ -20,7 +20,6 @@
           <section>
             <?php
             the_content();
-            get_template_part('content');
             if( is_singular('post') ) {
               comments_template();
             }
