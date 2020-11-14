@@ -13,7 +13,13 @@
       <h1><?php the_title();?></h1>
       <?php the_post_thumbnail(); ?>
       <section>
-        <?php the_content(); ?>
+        <?php
+        the_content();
+        get_template_part('content');
+        if( is_singular('post') ) {
+          comments_template();
+        }
+        ?>
       </section>
       <?php
       endwhile;
