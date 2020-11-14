@@ -40,7 +40,10 @@ function cusNav( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'nav_logo_color' );
+  $wp_customize->add_setting( 'nav_logo_color' , array(
+    'default'    => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
@@ -53,7 +56,10 @@ function cusNav( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'nav_background_color' );
+  $wp_customize->add_setting( 'nav_background_color' , array(
+    'default'    => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
@@ -66,7 +72,10 @@ function cusNav( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'nav_menu_color' );
+  $wp_customize->add_setting( 'nav_menu_color' , array(
+    'default'    => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
