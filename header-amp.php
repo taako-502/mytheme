@@ -39,13 +39,12 @@ global $page_title;
     </button>
     <a class="l-title navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:<?php echo getCusNavLogoColor() ?>!important"><?php bloginfo( 'name' ); ?></a>
     <div class="collapse navbar-collapse" id="navbarNav">
-       <?php
-       $args = array(
-         'menu_class' => 'nav navbar-nav' ,
-         'container' => false,
-         'add_li_class' => 'nav-item'
-       );
-       wp_nav_menu($args);
+      <?php
+      wp_nav_menu(array (
+        'menu_class' => 'l-nav-menu' ,
+        'container' => false,
+        'add_li_class' => 'nav-item'
+      ));
       ?>
     </div>
   </nav>

@@ -32,12 +32,11 @@ global $page_title;
     <nav class="l-nav" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
       <a class="l-nav-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:<?php echo getCusNavLogoColor() ?>!important"><?php bloginfo( 'name' ); ?></a>
       <?php
-      $args = array (
+      wp_nav_menu(array (
         'menu_class' => 'l-nav-menu' ,
         'container' => false,
         'add_li_class' => 'nav-item'
-      );
-      wp_nav_menu($args);
+      ));
       ?>
     </nav>
     <div class="l-hamburger only-block-sp" aria-controls="primary-menu" aria-expanded="false">
