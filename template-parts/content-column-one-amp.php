@@ -18,7 +18,10 @@
           <h1><?php the_title();?></h1>
           <?php the_post_thumbnail(); ?>
           <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <?php the_content(); ?>
+            <?php
+            the_content();
+            wp_link_pages('before=<div class="pagination">&after=</div>');
+             ?>
           </section>
           <?php
         endwhile;
