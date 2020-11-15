@@ -6,6 +6,6 @@
  * @package mytheme
  */
 get_header();
-get_template_part( 'template-parts/content', 'column-one' );
+get_template_part( 'template-parts/content', 'col-one' );
 get_footer();
 ?>
