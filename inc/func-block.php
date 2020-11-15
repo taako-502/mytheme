@@ -1,18 +1,18 @@
 <?php
 /**
- * Gutenberg
+ * block
  *
  * @package mytheme
  */
 
- /**
-  * カスタムエディタ
-  */
- function add_block_editor() {
-   wp_enqueue_style( 'gutenberg-style', get_stylesheet_directory_uri() . '/css/editor.css' );
-   wp_enqueue_script( 'gutenberg-custom', get_stylesheet_directory_uri() . '/js/editor.js',array(), "", true);
- }
- add_action( 'enqueue_block_editor_assets', 'add_block_editor' );
+/**
+ * カスタムエディタ
+ */
+function add_block_editor() {
+ wp_enqueue_style( 'block-style', get_stylesheet_directory_uri() . '/css/editor.css' );
+ wp_enqueue_script( 'block-custom', get_stylesheet_directory_uri() . '/js/editor.js',array(), "", true);
+}
+add_action( 'enqueue_block_editor_assets', 'add_block_editor' );
 
 /**
  * ブロックパターン
@@ -61,8 +61,18 @@ add_action( 'init', function() {
  	register_block_style(
  		'core/list',
  		[
- 			'name' => 'ligthblue-bg',
+ 			'name' => 'bg__ligthblue',
  			'label' => '薄い青背景',
  		]
  	);
  } );
+
+add_action( 'init', function() {
+  register_block_style(
+    'mytheme/box',
+  	[
+  	   'name' => 'line__dot',
+  	    'label' => '点線ブロック',
+  	]
+  );
+});

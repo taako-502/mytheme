@@ -36,7 +36,7 @@ get_template_part('/inc/func','menu');
 //管理画面設定
 get_template_part('/inc/func','admin');
 //ブロックエディタ
-get_template_part('/inc/func','gutenberg');
+get_template_part('/inc/func','block');
 //OGP設定
 get_template_part('/inc/func', 'ogp');
 //構造化マークアップ
