@@ -8,7 +8,7 @@
     RichText = wp.editor.RichText;
 
   // ボックス
-  blocks.registerBlockType('mytheme/box', {
+  blocks.registerBlockType('custom/box', {
     title: 'ボックス',
     icon: 'admin-page',
     category: 'layout',
@@ -16,14 +16,14 @@
       content: {
         type: 'array',
         source: 'children',
-        selector: 'div',
+        selector: 'p',
       },
     },
     edit: function(props) {
       var nowContent = props.attributes.content;
       return el(
         RichText, {
-          tagName: 'div',
+          tagName: 'p',
           className: "box",
           value: nowContent,
           onChange: function(changedContent) {
@@ -37,7 +37,7 @@
     save: function(props) {
       return el(RichText.Content, {
         tagName: 'p',
-        className: "custom-box",
+        className: "box",
         value: props.attributes.content,
       });
     },

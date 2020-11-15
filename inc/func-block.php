@@ -65,14 +65,11 @@ add_action( 'init', function() {
  			'label' => '薄い青背景',
  		]
  	);
- } );
-
-add_action( 'init', function() {
   register_block_style(
-    'mytheme/box',
-  	[
-  	   'name' => 'line__dot',
-  	    'label' => '点線ブロック',
-  	]
+    'custom/box',
+    [
+      'name' => 'line__dot',
+      'label' => '点線ブロック',
+    ]
   );
-});
+ } );
