@@ -47,4 +47,3 @@ global $page_title;
     </div>
     <?php if(strcmp($page_title , "home")){ the_header_image_tag("class=l-header__img"); } ?>
   </header>
-  　
