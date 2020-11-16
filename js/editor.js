@@ -12,6 +12,7 @@
     title: 'ボックス',
     icon: 'admin-page',
     category: 'layout',
+    keywords: [ 'box' ],
     attributes: {
       content: {
         type: 'array',
