@@ -78,6 +78,11 @@ https://www.mytheme.taako-biz.com/
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
 
 ## テストについて
+自動テストツールを使用し、テストを行う。<br>
+参考文献:
+- [WordPressのテーマ開発におけるテストツールまとめ【2020年度／随時更新】](https://taako-biz.com/wp-test-tool/)
+- [WordPress公式のテーマに承認されるために通すべきテスト](https://haniwaman.com/wp-theme-test/#Theme_Unit_Test)
+
 ### デバッグモード
 wp-config.phpに下記のような設定を行い、エラーが発生しないこと。
 ```
