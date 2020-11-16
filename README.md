@@ -8,9 +8,15 @@
 ## デモサイト
 https://www.mytheme.taako-biz.com/
 
+## リポジトリ
+テーマとブロックエディタのリポジトリについて。
+- [テーマ本体](https://github.com/taako-502/mytheme)
+- [ブロックエディタ（Gutenberg）](https://github.com/taako-502/mytheme-block)
+
 ## アーキテクチャ
-- FROCSS
 - SCSS
+  - BEM
+  - FROCSS
 
 <hr>
 
