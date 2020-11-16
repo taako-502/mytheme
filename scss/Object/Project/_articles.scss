@@ -191,17 +191,17 @@
       font-weight: 900;
     }
 
-    p {
-      padding: 0;
-      margin: 10px 0;
-      line-height: 1.7;
-    }
+  }
+  p {
+    //padding: 0;
+    margin: 20px 0;
+    line-height: 1.7;
+  }
 
-    cite {
-      display: block;
-      text-align: right;
-      color: #888888;
-      font-size: 0.9em;
-    }
+  cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
   }
 }
