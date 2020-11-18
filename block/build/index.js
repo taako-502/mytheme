@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/block/block.js":
-/*!****************************!*\
-  !*** ./src/block/block.js ***!
-  \****************************/
+/***/ "./src/block/custom-box.js":
+/*!*********************************!*\
+  !*** ./src/block/custom-box.js ***!
+  \*********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -206,6 +206,65 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 
 /***/ }),
 
+/***/ "./src/block/demo-lastpost.js":
+/*!************************************!*\
+  !*** ./src/block/demo-lastpost.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/**
+ * 最新の投稿のリンクを表示するブロック
+ * @param  {[type]} gutenberg [description]
+ * @param  {[type]} title     [description]
+ * @param  {[type]} icon      [description]
+ * @param  {[type]} category  [description]
+ * @param  {[type]} edit      [description]
+ * @param  {[type]} posts     [description]
+ * @return {[type]}           [description]
+ */
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('gutenberg-examples/example-dynamic', {
+  title: 'Example: last post',
+  icon: 'megaphone',
+  category: 'widgets',
+  edit: Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["withSelect"])(function (select) {
+    return {
+      posts: select('core').getEntityRecords('postType', 'post')
+    };
+  })(function (_ref) {
+    var posts = _ref.posts,
+        className = _ref.className;
+
+    if (!posts) {
+      return 'Loading...';
+    }
+
+    if (posts && posts.length === 0) {
+      return 'No posts';
+    }
+
+    var post = posts[0];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("a", {
+      className: className,
+      href: post.link
+    }, post.title.rendered);
+  })
+});
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -215,7 +274,8 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _block_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/block.js */ "./src/block/block.js");
+/* harmony import */ var _block_demo_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/demo-lastpost.js */ "./src/block/demo-lastpost.js");
+/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
 /**
  * Gutenberg Blocks
  *
@@ -226,6 +286,7 @@ __webpack_require__.r(__webpack_exports__);
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+
 
 
 /***/ }),
@@ -249,6 +310,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["components"]; }());
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!***************************************!*\
+  !*** external {"this":["wp","data"]} ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["data"]; }());
 
 /***/ }),
 
