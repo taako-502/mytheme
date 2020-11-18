@@ -160,14 +160,17 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       initialOpen: true
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["ColorPalette"], {
       colors: [{
-        name: 'red',
-        color: '#f00'
-      }, {
         name: 'white',
-        color: '#fff'
+        color: '#fff '
+      }, {
+        name: 'orange',
+        color: '#f0bc68'
+      }, {
+        name: 'green',
+        color: '#c4d7d1 '
       }, {
         name: 'blue',
-        color: '#00f'
+        color: '#dde1f8 '
       }],
       value: attributes.color,
       onChange: function onChange(color) {

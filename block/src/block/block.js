@@ -62,9 +62,10 @@ registerBlockType('custom/box',{
             <PanelRow>
               <ColorPalette
                 colors={ [
-                    { name: 'red', color: '#f00' },
-                    { name: 'white', color: '#fff' },
-                    { name: 'blue', color: '#00f' },
+                    { name: 'white', color: '#fff ' },
+                    { name: 'orange', color: '#f0bc68' },
+                    { name: 'green', color: '#c4d7d1 ' },
+                    { name: 'blue', color: '#dde1f8 ' },
                    ] }
                 value={ attributes.color }
                 onChange={ ( color ) => setAttributes( { color } ) }
