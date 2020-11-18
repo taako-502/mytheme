@@ -92,15 +92,3 @@ registerBlockType('custom/box',{
     );
   }
 } );
-
-/**
- * テストブロック
- */
-registerBlockType( 'wdl/test-theme-block', {
-  title: 'Test Theme Sample Block',
-  key: ['test'],
-  icon: 'smiley',
-  category: 'layout',
-  edit: () => <div>Hello Theme! (Edit)</div>,
-  save: () => <div>Hello Theme! (Save)</div>,
-} );

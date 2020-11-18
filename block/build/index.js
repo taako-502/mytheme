@@ -200,22 +200,6 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
     });
   }
 });
-/**
- * テストブロック
- */
-
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('wdl/test-theme-block', {
-  title: 'Test Theme Sample Block',
-  key: ['test'],
-  icon: 'smiley',
-  category: 'layout',
-  edit: function edit() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Hello Theme! (Edit)");
-  },
-  save: function save() {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "Hello Theme! (Save)");
-  }
-});
 
 /***/ }),
 
