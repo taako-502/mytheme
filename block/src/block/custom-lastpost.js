@@ -11,7 +11,7 @@ import { withSelect } from '@wordpress/data';
  * @param  {[type]} posts     [description]
  * @return {[type]}           [description]
  */
-registerBlockType( 'custom/example-dynamic', {
+registerBlockType( 'custom/last-post', {
     title: 'Last Post',
     icon: 'megaphone',
     category: 'widgets',

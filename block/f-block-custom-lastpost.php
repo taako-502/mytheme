@@ -5,7 +5,7 @@
 * Plugin Name: Gutenberg examples dynamic
 */
 
-function gutenberg_examples_dynamic_render_callback( $block_attributes, $content ) {
+function custom_lastpost_dynamic_render_callback( $block_attributes, $content ) {
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => 1,
       'post_status' => 'publish',
@@ -22,21 +22,21 @@ function gutenberg_examples_dynamic_render_callback( $block_attributes, $content
   );
 }
 
-function gutenberg_examples_dynamic() {
+function custom_lastpost_dynamic() {
   // automatically load dependencies and version
   $asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
   wp_register_script(
-      'gutenberg-examples-dynamic',
+      'custom-last-post',
       plugins_url( 'build/block.js', __FILE__ ),
       $asset_file['dependencies'],
       $asset_file['version']
   );
 
-  register_block_type( 'gutenberg-examples/example-dynamic', array(
-      'editor_script' => 'gutenberg-examples-dynamic',
-      'render_callback' => 'gutenberg_examples_dynamic_render_callback'
+  register_block_type( 'custom/last-post', array(
+      'editor_script' => 'custom-last-post',
+      'render_callback' => 'custom_lastpost_dynamic_render_callback'
   ) );
 
 }
-add_action( 'init', 'gutenberg_examples_dynamic' );
+add_action( 'init', 'custom_lastpost_dynamic' );
