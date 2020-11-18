@@ -206,10 +206,10 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 
 /***/ }),
 
-/***/ "./src/block/demo-lastpost.js":
-/*!************************************!*\
-  !*** ./src/block/demo-lastpost.js ***!
-  \************************************/
+/***/ "./src/block/custom-lastpost.js":
+/*!**************************************!*\
+  !*** ./src/block/custom-lastpost.js ***!
+  \**************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -235,10 +235,11 @@ __webpack_require__.r(__webpack_exports__);
  * @return {[type]}           [description]
  */
 
-Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('gutenberg-examples/example-dynamic', {
-  title: 'Example: last post',
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('custom/example-dynamic', {
+  title: 'Last Post',
   icon: 'megaphone',
   category: 'widgets',
+  keywords: ['last', 'post', 'last-post'],
   edit: Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["withSelect"])(function (select) {
     return {
       posts: select('core').getEntityRecords('postType', 'post')
@@ -274,7 +275,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('gut
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _block_demo_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/demo-lastpost.js */ "./src/block/demo-lastpost.js");
+/* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
 /* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
 /**
  * Gutenberg Blocks

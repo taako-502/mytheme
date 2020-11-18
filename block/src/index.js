@@ -9,5 +9,5 @@
  * Webpack is compiling as the input file.
  */
 
-import './block/demo-lastpost.js';
+import './block/custom-lastpost.js';
 import './block/custom-box.js';

@@ -11,10 +11,11 @@ import { withSelect } from '@wordpress/data';
  * @param  {[type]} posts     [description]
  * @return {[type]}           [description]
  */
-registerBlockType( 'gutenberg-examples/example-dynamic', {
-    title: 'Example: last post',
+registerBlockType( 'custom/example-dynamic', {
+    title: 'Last Post',
     icon: 'megaphone',
     category: 'widgets',
+    keywords: ['last','post','last-post'],
 
     edit: withSelect( ( select ) => {
         return {
