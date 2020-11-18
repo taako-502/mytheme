@@ -23,4 +23,19 @@
       border: 2px dotted;
     }
   }
+
+  .p-blogcard {
+    border: 1px solid;
+  }
+
+  .p-blogcard__title {
+    display: inline-block;
+    font-weight: bold;
+    width: 70%;
+  }
+
+  .p-blogcard__discription {
+    display: inline-block;
+    color: dimgray;
+  }
 }
