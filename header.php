@@ -33,7 +33,7 @@ global $page_title;
       <a class="l-nav-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:<?php echo getCusNavLogoColor() ?>!important"><?php bloginfo( 'name' ); ?></a>
       <?php
       wp_nav_menu(array (
-        'theme_location'=>'header-menu',
+        'theme_location'=>'header-nav',
         'menu_class' => 'l-nav-menu' ,
         'container' => false,
         'add_li_class' => 'nav-item'
