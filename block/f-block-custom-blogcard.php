@@ -5,7 +5,7 @@
 * Plugin Name: Gutenberg examples dynamic
 */
 
-function custom_lastpost_dynamic_render_callback( $block_attributes, $content ) {
+function custom_blogcard_dynamic_render_callback( $block_attributes, $content ) {
   $recent_posts = wp_get_recent_posts( array(
       'numberposts' => 1,
       'post_status' => 'publish',
@@ -31,7 +31,7 @@ function custom_lastpost_dynamic_render_callback( $block_attributes, $content ) 
   );
 }
 
-function custom_lastpost_dynamic() {
+function custom_blogcard_dynamic() {
   // automatically load dependencies and version
   $asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
@@ -44,8 +44,8 @@ function custom_lastpost_dynamic() {
 
   register_block_type( 'custom/last-post', array(
       'editor_script' => 'custom-last-post',
-      'render_callback' => 'custom_lastpost_dynamic_render_callback'
+      'render_callback' => 'custom_blogcard_dynamic_render_callback'
   ) );
 
 }
-add_action( 'init', 'custom_lastpost_dynamic' );
+add_action( 'init', 'custom_blogcard_dynamic' );

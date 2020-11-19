@@ -10,4 +10,5 @@
  */
 
 import './block/custom-lastpost.js';
+import './block/custom-blogcard.js';
 import './block/custom-box.js';
