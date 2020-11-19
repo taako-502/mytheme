@@ -26,16 +26,32 @@
 
   .p-blogcard {
     border: 1px solid;
+    height: 150px;
+
+    a {
+      height: 150px;
+      display: flex;
+    }
+  }
+
+  .p-blogcard__child {
+    width: calc(100% - 150px);
+    padding: 10px 2em;
   }
 
   .p-blogcard__title {
     display: inline-block;
     font-weight: bold;
-    width: 70%;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    width: 100%;
   }
 
   .p-blogcard__discription {
     display: inline-block;
     color: dimgray;
+    margin: 0 0 10px 0;
   }
 }

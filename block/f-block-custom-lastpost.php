@@ -17,13 +17,16 @@ function custom_lastpost_dynamic_render_callback( $block_attributes, $content ) 
   $post_id = $post['ID'];
   return sprintf(
     '<div class="p-blogcard">
-      <a class="wp-block-my-plugin-latest-post" href="%1$s">'
-        . get_the_post_thumbnail($post_id,'thumbnail') .
-        '<p class="p-blogcard__title">%2$s</p>
-        <p class="p-blogcard__discription">ディスクリプション</p>
+      <a class="wp-block-my-plugin-latest-post" href="%1$s">
+        %2$s
+        <div class="p-blogcard__child">
+          <p class="p-blogcard__title">%3$s</p>
+          <p class="p-blogcard__discription">ディスクリプション</p>
+        </div>
       </a>
     </div>',
     esc_url( get_permalink( $post_id ) ),
+    get_the_post_thumbnail( $post_id , 'thumbnail' ),
     esc_html( get_the_title( $post_id ) )
   );
   return $post_id . get_the_post_thumbnail($post_id,'thumbnail') .$post_id;
