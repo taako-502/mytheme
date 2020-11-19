@@ -1,5 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { withSelect } from '@wordpress/data';
+import { RichText } from '@wordpress/editor';
 
 /**
  * 最新の投稿のリンクを表示するブロック
@@ -12,28 +12,28 @@ import { withSelect } from '@wordpress/data';
  * @return {[type]}           [description]
  */
 registerBlockType( 'custom/blogcard', {
-    title: 'Blog Card',
-    icon: 'megaphone',
-    category: 'widgets',
-    keywords: ['blogcard','link','card'],
+  title: 'Blog Card',
+  icon: 'megaphone',
+  category: 'widgets',
+  keywords: ['blogcard','link','card'],
+  attributes: {
+    url_custom_blogcard: {
+      source: 'html',
+      selector: 'div',
+    }
+  },
 
-    edit: withSelect( ( select ) => {
-        return {
-            posts: select( 'core' ).getEntityRecords( 'postType', 'post' ),
-        };
-    } )( ( { posts, className } ) => {
-        if ( ! posts ) {
-            return 'Loading...';
-        }
-
-        if ( posts && posts.length === 0 ) {
-            return 'No posts';
-        }
-
-        const post = posts[ 0 ];
-
-        return <a className={ className } href={ post.link }>
-            { post.title.rendered }
-        </a>;
-    } ),
-} );
+  edit({ className , setAttributes , attributes }) {
+    //const { attributes: { url_blogcard }, setAttributes } = props;
+    return (
+      <div class='p-blogcard__editor'>
+        <p>内部リンクのURLを入力してください</p>
+        <RichText
+          tagName='div'
+          onChange={ ( val ) => setAttributes( { url_blogcard: val } ) }
+          value={ attributes.url_blogcard }
+        />
+      </div>
+    );
+  },
+});

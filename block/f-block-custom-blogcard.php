@@ -6,15 +6,9 @@
 */
 
 function custom_blogcard_dynamic_render_callback( $block_attributes, $content ) {
-  $recent_posts = wp_get_recent_posts( array(
-      'numberposts' => 1,
-      'post_status' => 'publish',
-  ) );
-  if ( count( $recent_posts ) === 0 ) {
-      return 'No posts';
-  }
-  $post = $recent_posts[ 0 ];
-  $post_id = $post['ID'];
+  $post_id = $attr['url_blogcard'];
+  //$post_id = $url_to_postid($attr['url_blogcard']);
+  return $post_id;
   return sprintf(
     '<div class="p-blogcard">
       <a class="wp-block-my-plugin-latest-post" href="%1$s">
