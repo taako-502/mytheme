@@ -17,21 +17,21 @@ registerBlockType( 'custom/blogcard', {
   category: 'widgets',
   keywords: ['blogcard','link','card'],
   attributes: {
-    url_custom_blogcard: {
+    url: {
       source: 'html',
       selector: 'div',
     }
   },
 
   edit({ className , setAttributes , attributes }) {
-    //const { attributes: { url_blogcard }, setAttributes } = props;
     return (
       <div class='p-blogcard__editor'>
         <p>内部リンクのURLを入力してください</p>
         <RichText
           tagName='div'
-          onChange={ ( val ) => setAttributes( { url_blogcard: val } ) }
-          value={ attributes.url_blogcard }
+          className={ className }
+          onChange={ ( url ) => setAttributes( { url } ) }
+          value={ attributes.url }
         />
       </div>
     );

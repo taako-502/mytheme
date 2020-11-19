@@ -5,8 +5,8 @@
 * Plugin Name: Gutenberg examples dynamic
 */
 
-function custom_blogcard_dynamic_render_callback( $block_attributes, $content ) {
-  $post_id = $attr['url_blogcard'];
+function custom_blogcard_dynamic_render_callback( $attr, $content ) {
+  $post_id = $attr['url'];
   //$post_id = $url_to_postid($attr['url_blogcard']);
   return $post_id;
   return sprintf(
@@ -30,14 +30,14 @@ function custom_blogcard_dynamic() {
   $asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
   wp_register_script(
-      'custom-last-post',
+      'custom-blogcard',
       plugins_url( 'build/block.js', __FILE__ ),
       $asset_file['dependencies'],
       $asset_file['version']
   );
 
-  register_block_type( 'custom/last-post', array(
-      'editor_script' => 'custom-last-post',
+  register_block_type( 'custom/blogcard', array(
+      'editor_script' => 'custom-blogcard',
       'render_callback' => 'custom_blogcard_dynamic_render_callback'
   ) );
 

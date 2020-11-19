@@ -121,7 +121,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   category: 'widgets',
   keywords: ['blogcard', 'link', 'card'],
   attributes: {
-    url_custom_blogcard: {
+    url: {
       source: 'html',
       selector: 'div'
     }
@@ -130,17 +130,17 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
     var className = _ref.className,
         setAttributes = _ref.setAttributes,
         attributes = _ref.attributes;
-    //const { attributes: { url_blogcard }, setAttributes } = props;
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       class: "p-blogcard__editor"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "\u5185\u90E8\u30EA\u30F3\u30AF\u306EURL\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
       tagName: "div",
-      onChange: function onChange(val) {
+      className: className,
+      onChange: function onChange(url) {
         return setAttributes({
-          url_blogcard: val
+          url: url
         });
       },
-      value: attributes.url_blogcard
+      value: attributes.url
     }));
   }
 });
