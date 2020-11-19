@@ -6,9 +6,9 @@
 */
 
 function custom_blogcard_dynamic_render_callback( $attr, $content ) {
-  $post_id = $attr['url'];
+  $post_id = $attr['url_blogcard'];
   //$post_id = $url_to_postid($attr['url_blogcard']);
-  return $post_id;
+  //return $post_id . 'aaa';
   return sprintf(
     '<div class="p-blogcard">
       <a class="wp-block-my-plugin-latest-post" href="%1$s">

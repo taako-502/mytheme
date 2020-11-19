@@ -16,8 +16,9 @@ registerBlockType( 'custom/blogcard', {
   icon: 'megaphone',
   category: 'widgets',
   keywords: ['blogcard','link','card'],
-  attributes: {
-    url: {
+  attributes:{
+    url_blogcard: {
+      //type: 'string',
       source: 'html',
       selector: 'div',
     }
@@ -30,10 +31,17 @@ registerBlockType( 'custom/blogcard', {
         <RichText
           tagName='div'
           className={ className }
-          onChange={ ( url ) => setAttributes( { url } ) }
-          value={ attributes.url }
+          onChange={ ( url_blogcard ) => setAttributes( { url_blogcard } ) }
+          value={ attributes.url_blogcard }
         />
       </div>
     );
   },
+  save({ attributes }) {
+    return (
+      <RichText.Content
+        tagName='div'
+        value={ attributes.url_blogcard }
+      />
+    );}
 });
