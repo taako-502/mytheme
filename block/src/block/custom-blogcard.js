@@ -18,9 +18,9 @@ registerBlockType( 'custom/blogcard', {
   keywords: ['blogcard','link','card'],
   attributes:{
     url_blogcard: {
-      //type: 'string',
-      source: 'html',
-      selector: 'div',
+      type: 'string',
+      default: '',
+      selector: 'div.p-blogcard__url'
     }
   },
 
@@ -30,7 +30,7 @@ registerBlockType( 'custom/blogcard', {
         <p>内部リンクのURLを入力してください</p>
         <RichText
           tagName='div'
-          className={ className }
+          className='p-blogcard__url'
           onChange={ ( url_blogcard ) => setAttributes( { url_blogcard } ) }
           value={ attributes.url_blogcard }
         />
@@ -38,10 +38,5 @@ registerBlockType( 'custom/blogcard', {
     );
   },
   save({ attributes }) {
-    return (
-      <RichText.Content
-        tagName='div'
-        value={ attributes.url_blogcard }
-      />
-    );}
+    return ( null );}
 });

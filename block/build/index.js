@@ -122,9 +122,9 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   keywords: ['blogcard', 'link', 'card'],
   attributes: {
     url_blogcard: {
-      //type: 'string',
-      source: 'html',
-      selector: 'div'
+      type: 'string',
+      default: '',
+      selector: 'div.p-blogcard__url'
     }
   },
   edit: function edit(_ref) {
@@ -135,7 +135,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       class: "p-blogcard__editor"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "\u5185\u90E8\u30EA\u30F3\u30AF\u306EURL\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
       tagName: "div",
-      className: className,
+      className: "p-blogcard__url",
       onChange: function onChange(url_blogcard) {
         return setAttributes({
           url_blogcard: url_blogcard
@@ -146,10 +146,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   },
   save: function save(_ref2) {
     var attributes = _ref2.attributes;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
-      tagName: "div",
-      value: attributes.url_blogcard
-    });
+    return null;
   }
 });
 
