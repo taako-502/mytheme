@@ -7,6 +7,12 @@ $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
 $analytics_code = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
+//メタディスクリプションの設定
+$description = $post->post_content;
+$description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$description);
+$description = wp_strip_all_tags($description);
+$description = preg_replace('/\[.*\]/','',$description);
+$description = mb_strimwidth($description,0,220,"...");
 //ページ読み込み
 global $page_title;
 ?>
@@ -16,6 +22,7 @@ global $page_title;
   <?php if(!isNullOrEmpty(trim($analytics_code))){ get_template_part('template-parts','analyticsTracking'); } ?>
   <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
   <meta charset="utf-8">
+  <meta name="description" content="<?php echo $description; ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/app.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/customcss.php'); ?>" />
