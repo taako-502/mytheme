@@ -4,24 +4,23 @@
 /**
 * Plugin Name: Gutenberg examples dynamic
 */
-
 function custom_blogcard_dynamic_render_callback( $attr, $content ) {
   $post_id = url_to_postid($attr['url_blogcard']);
-  //$post_id = $attr['url_blogcard'];
-  //return $post_id;
+  $description = getDiscription(get_post($post_id)->post_content,50);
   return sprintf(
     '<div class="p-blogcard">
       <a class="wp-block-my-plugin-latest-post" href="%1$s">
         %2$s
         <div class="p-blogcard__child">
           <p class="p-blogcard__title">%3$s</p>
-          <p class="p-blogcard__discription">ディスクリプション</p>
+          <p class="p-blogcard__discription">%4$s</p>
         </div>
       </a>
     </div>',
     esc_url( get_permalink( $post_id ) ),
     get_the_post_thumbnail( $post_id , 'thumbnail' ),
-    esc_html( get_the_title( $post_id ) )
+    esc_html( get_the_title( $post_id ) ),
+    $description
   );
 }
 

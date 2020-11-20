@@ -5,6 +5,7 @@
  */
 // WP-SCSS：ページをロードするたびにscssファイルを強制的にコンパイル
 define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
+get_template_part('utility/utility');
 
 /**
  * コンテンツ幅設定
