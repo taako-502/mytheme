@@ -49,4 +49,18 @@ function setNumData($num,$default){
 function getValOrDef( $val, $default){
   return empty(trim($var)) ? $default : $var ;
 }
+
+/**
+ * 記事情報をディスクリプションに変換
+ * @param  String  $content 記事情報
+ * @param  Integer $len     文字数
+ * @return String           ディスクリプション
+ */
+function getDiscription($content,$len){
+  $description = $content;
+  $description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$content);
+  $description = wp_strip_all_tags($description);
+  $description = preg_replace('/\[.*\]/','',$description);
+  return mb_strimwidth($description,0,$len,"...");
+}
 ?>

@@ -8,11 +8,7 @@ $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
 $analytics_code = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
 //メタディスクリプションの設定
-$description = $post->post_content;
-$description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$description);
-$description = wp_strip_all_tags($description);
-$description = preg_replace('/\[.*\]/','',$description);
-$description = mb_strimwidth($description,0,220,"...");
+$description = getDiscription($post->post_content,220);
 //ページ読み込み
 global $page_title;
 ?>
