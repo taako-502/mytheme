@@ -437,6 +437,147 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 
 /***/ }),
 
+/***/ "./src/block/test.js":
+/*!***************************!*\
+  !*** ./src/block/test.js ***!
+  \***************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+ //import './editor.scss';
+//import './style.scss';
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('wdl/my-images', {
+  title: 'My Images',
+  description: 'Example block written with ESNext',
+  category: 'widgets',
+  icon: 'smiley',
+  keywords: ['test'],
+  //属性を設定
+  attributes: {
+    //MediaUpload の value の値
+    mediaID: {
+      type: 'number',
+      default: 0
+    },
+    //img の src に指定する URL
+    imageUrl: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'src',
+      selector: '.card_image'
+    },
+    //img の alt 属性の値
+    imageAlt: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'alt',
+      selector: '.card_image'
+    }
+  },
+  edit: function edit(props) {
+    //分割代入を使って props 経由でプロパティを変数に代入
+    var className = props.className,
+        attributes = props.attributes,
+        setAttributes = props.setAttributes; //選択された画像の情報（alt 属性、URL、ID）を更新する関数
+
+    var onSelectImage = function onSelectImage(media) {
+      setAttributes({
+        imageAlt: media.alt,
+        imageUrl: media.url,
+        mediaID: media.id
+      });
+    }; //メディアライブラリを開くボタンをレンダリングする関数
+
+
+    var getImageButton = function getImageButton(open) {
+      if (attributes.imageUrl) {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+          src: attributes.imageUrl,
+          onClick: open,
+          className: "image",
+          alt: ""
+        });
+      } else {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+          className: "button-container"
+        }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+          onClick: open,
+          className: "button button-large"
+        }, "\u753B\u50CF\u3092\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9"));
+      }
+    }; //画像を削除する（メディアをリセットする）関数
+
+
+    var removeMedia = function removeMedia() {
+      setAttributes({
+        mediaID: 0,
+        imageUrl: '',
+        imageAlt: ''
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: className
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUpload"], {
+      onSelect: onSelectImage,
+      allowedTypes: ['image'],
+      value: attributes.mediaID,
+      render: function render(_ref) {
+        var open = _ref.open;
+        return getImageButton(open);
+      }
+    })), attributes.mediaID != 0 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+      onClick: removeMedia,
+      isLink: true,
+      isDestructive: true,
+      className: "removeImage"
+    }, "\u753B\u50CF\u3092\u524A\u9664")));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+
+    //画像をレンダリングする関数
+    var getImagesSave = function getImagesSave(src, alt) {
+      if (!src) return null;
+
+      if (alt) {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+          className: "card_image",
+          src: src,
+          alt: alt
+        });
+      }
+
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+        className: "card_image",
+        src: src,
+        alt: "",
+        "aria-hidden": "true"
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "card"
+    }, getImagesSave(attributes.imageUrl, attributes.imageAlt));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -450,6 +591,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
 /* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
 /* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
+/* harmony import */ var _block_test_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block/test.js */ "./src/block/test.js");
 /**
  * Gutenberg Blocks
  *
@@ -464,6 +606,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!**********************************************!*\
+  !*** external {"this":["wp","blockEditor"]} ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["blockEditor"]; }());
 
 /***/ }),
 
