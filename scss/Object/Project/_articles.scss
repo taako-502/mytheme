@@ -193,8 +193,8 @@
 
   }
   p {
-    //padding: 0;
     margin: 20px 0;
+    @include paragraphMargin();
     line-height: 1.7;
   }
 

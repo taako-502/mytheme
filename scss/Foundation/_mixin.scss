@@ -36,10 +36,14 @@
   }
 }
 
-@mixin areaShadow(){
+@mixin areaShadow() {
   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
 
 @mixin articleShadow() {
   box-shadow: 3px 5px 5px #666666;
+}
+
+@mixin paragraphMargin() {
+  margin: 20px 0;
 }
