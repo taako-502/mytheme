@@ -56,9 +56,9 @@ function getValOrDef( $val, $default){
  * @param  Integer $len     文字数
  * @return String           ディスクリプション
  */
-function getDiscription($content,$len){
-  $description = $content;
-  $description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$content);
+function getDiscription($id,$len){
+  $description = get_post($id)->post_content;
+  $description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$description);
   $description = wp_strip_all_tags($description);
   $description = preg_replace('/\[.*\]/','',$description);
   return mb_strimwidth($description,0,$len,"...");
