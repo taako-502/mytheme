@@ -370,11 +370,11 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   attributes: {
     speech: {
       source: 'html',
-      selector: 'p'
+      selector: 'p-balloon__speech'
     },
     name: {
       source: 'html',
-      selector: 'p'
+      selector: 'p.p-balloon__name'
     }
   },
   edit: function edit(_ref) {
@@ -390,33 +390,48 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       class: "p-balloon__people"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
       src: "#"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "text")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "p-balloon__tail"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      class: "p-balloon__speech"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
       tagName: "p",
-      className: className,
-      style: {
-        background: attributes.color
-      },
-      onChange: function onChange(content) {
+      className: "p-balloon__name",
+      default: "name",
+      onChange: function onChange(name) {
         return setAttributes({
-          content: content
+          name: name
         });
       },
-      value: attributes.content
-    }))));
+      value: attributes.name
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon__tail"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+      tagName: "p",
+      className: "p-balloon__speech",
+      onChange: function onChange(speech) {
+        return setAttributes({
+          speech: speech
+        });
+      },
+      value: attributes.speech
+    })));
   },
   save: function save(_ref2) {
     var attributes = _ref2.attributes;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon__people"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: "#"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
       tagName: "p",
-      style: {
-        background: attributes.color
-      },
-      value: attributes.content
-    });
+      className: "p-balloon__name",
+      value: attributes.name
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon__tail"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+      tagName: "p",
+      className: "p-balloon__speech",
+      value: attributes.speech
+    }));
   }
 });
 

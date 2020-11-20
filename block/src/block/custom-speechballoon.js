@@ -29,11 +29,11 @@ registerBlockType('custom/speechballoon',{
   attributes:{
     speech: {
       source: 'html',
-      selector: 'p',
+      selector: 'p-balloon__speech',
     },
 		name:{
 			source: 'html',
-			selector: 'p'
+			selector: 'p.p-balloon__name'
 		}
   },
   edit({ className , setAttributes , attributes }) {
@@ -49,33 +49,51 @@ registerBlockType('custom/speechballoon',{
 				<div class="p-balloon">
 					<div class="p-balloon__people">
 						<img src="#" />
-						<p>text</p>
+						<RichText
+							tagName='p'
+							className='p-balloon__name'
+							default='name'
+							onChange={ ( name ) => setAttributes( { name } ) }
+							value={ attributes.name }
+						/>
 					</div>
 					<div class="p-balloon__tail">
 						<span />
 						<span />
 						<span />
 					</div>
-					<div class="p-balloon__speech">
-		        <RichText
-		          tagName='p'
-		          className={ className }
-		          style={{ background:attributes.color }}
-		          onChange={ ( content ) => setAttributes( { content } ) }
-		          value={ attributes.content }
-		        />
-					</div>
+		      <RichText
+		      	tagName='p'
+		        className='p-balloon__speech'
+		        onChange={ ( speech ) => setAttributes( { speech } ) }
+		        value={ attributes.speech }
+					/>
 				</div>
       </React.Fragment>
     );
   },
   save({ attributes }) {
     return (
-      <RichText.Content
-        tagName='p'
-        style={{ background:attributes.color }}
-        value={ attributes.content }
-      />
+			<div class="p-balloon">
+				<div class="p-balloon__people">
+					<img src="#" />
+					<RichText.Content
+						tagName='p'
+						className='p-balloon__name'
+						value={ attributes.name }
+					/>
+				</div>
+				<div class="p-balloon__tail">
+					<span />
+					<span />
+					<span />
+				</div>
+				<RichText.Content
+					tagName='p'
+					className='p-balloon__speech'
+					value={ attributes.speech }
+				/>
+			</div>
     );
   }
 } );
