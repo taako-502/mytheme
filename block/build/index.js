@@ -368,7 +368,11 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   category: 'layout',
   keywords: ['speechballoon', 'speechbubbles', 'speech', 'balloon', 'bubbles'],
   attributes: {
-    content: {
+    speech: {
+      source: 'html',
+      selector: 'p'
+    },
+    name: {
       source: 'html',
       selector: 'p'
     }
@@ -377,40 +381,20 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
     var className = _ref.className,
         setAttributes = _ref.setAttributes,
         attributes = _ref.attributes;
-    var colors = [{
-      name: 'red',
-      color: '#f00'
-    }, {
-      name: 'white',
-      color: '#fff'
-    }, {
-      name: 'blue',
-      color: '#00f'
-    }];
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(React.Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelBody"], {
       title: "\u80CC\u666F\u8272",
       initialOpen: true
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["ColorPalette"], {
-      colors: [{
-        name: 'white',
-        color: '#fff '
-      }, {
-        name: 'orange',
-        color: '#f0bc68'
-      }, {
-        name: 'green',
-        color: '#c4d7d1 '
-      }, {
-        name: 'blue',
-        color: '#dde1f8 '
-      }],
-      value: attributes.color,
-      onChange: function onChange(color) {
-        return setAttributes({
-          color: color
-        });
-      }
-    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon__people"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+      src: "#"
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "text")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon__tail"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      class: "p-balloon__speech"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
       tagName: "p",
       className: className,
       style: {
@@ -422,7 +406,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
         });
       },
       value: attributes.content
-    }));
+    }))));
   },
   save: function save(_ref2) {
     var attributes = _ref2.attributes;

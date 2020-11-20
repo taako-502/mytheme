@@ -27,17 +27,16 @@ registerBlockType('custom/speechballoon',{
   category: 'layout',
   keywords: ['speechballoon','speechbubbles','speech','balloon','bubbles'],
   attributes:{
-    content: {
+    speech: {
       source: 'html',
       selector: 'p',
     },
+		name:{
+			source: 'html',
+			selector: 'p'
+		}
   },
   edit({ className , setAttributes , attributes }) {
-    const colors = [
-        { name: 'red', color: '#f00' },
-        { name: 'white', color: '#fff' },
-        { name: 'blue', color: '#00f' },
-       ];
     return (
       <React.Fragment>
         <InspectorControls>
@@ -45,27 +44,28 @@ registerBlockType('custom/speechballoon',{
             title="背景色"
             initialOpen={true}
           >
-            <PanelRow>
-              <ColorPalette
-                colors={ [
-                    { name: 'white', color: '#fff ' },
-                    { name: 'orange', color: '#f0bc68' },
-                    { name: 'green', color: '#c4d7d1 ' },
-                    { name: 'blue', color: '#dde1f8 ' },
-                   ] }
-                value={ attributes.color }
-                onChange={ ( color ) => setAttributes( { color } ) }
-              />
-            </PanelRow>
           </PanelBody>
         </InspectorControls>
-        <RichText
-          tagName='p'
-          className={ className }
-          style={{ background:attributes.color }}
-          onChange={ ( content ) => setAttributes( { content } ) }
-          value={ attributes.content }
-        />
+				<div class="p-balloon">
+					<div class="p-balloon__people">
+						<img src="#" />
+						<p>text</p>
+					</div>
+					<div class="p-balloon__tail">
+						<span />
+						<span />
+						<span />
+					</div>
+					<div class="p-balloon__speech">
+		        <RichText
+		          tagName='p'
+		          className={ className }
+		          style={{ background:attributes.color }}
+		          onChange={ ( content ) => setAttributes( { content } ) }
+		          value={ attributes.content }
+		        />
+					</div>
+				</div>
       </React.Fragment>
     );
   },

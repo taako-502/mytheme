@@ -69,4 +69,23 @@
       background-color: white;
     }
   }
+
+  .p-balloon {
+    display: flex;
+  }
+
+  .p-balloon__people {
+    width: 150px;
+  }
+
+  .p-balloon__tail {
+    &:nth-child(1) {
+      border: 2px solid;
+    }
+  }
+
+  .p-balloon__speech {
+    border: 2px solid;
+    width: calc(100% - 150px);
+  }
 }
