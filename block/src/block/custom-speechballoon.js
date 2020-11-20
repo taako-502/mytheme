@@ -7,13 +7,6 @@ import {
 } from '@wordpress/editor';
 import {
   PanelBody,
-  PanelRow,
-  ToggleControl,
-  SelectControl,
-  CheckboxControl,
-  RadioControl,
-  ColorPicker,
-  ColorPalette
 } from '@wordpress/components';
 
 /**
