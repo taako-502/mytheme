@@ -332,6 +332,112 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 
 /***/ }),
 
+/***/ "./src/block/custom-speechballoon.js":
+/*!*******************************************!*\
+  !*** ./src/block/custom-speechballoon.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/editor */ "@wordpress/editor");
+/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+/**
+ * ボックスブロック追加
+ * @type {String}
+ */
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('custom/speechballoon', {
+  title: 'Speech Balloons',
+  description: 'ふきだしです。',
+  icon: 'testimonial',
+  category: 'layout',
+  keywords: ['speechballoon', 'speechbubbles', 'speech', 'balloon', 'bubbles'],
+  attributes: {
+    content: {
+      source: 'html',
+      selector: 'p'
+    }
+  },
+  edit: function edit(_ref) {
+    var className = _ref.className,
+        setAttributes = _ref.setAttributes,
+        attributes = _ref.attributes;
+    var colors = [{
+      name: 'red',
+      color: '#f00'
+    }, {
+      name: 'white',
+      color: '#fff'
+    }, {
+      name: 'blue',
+      color: '#00f'
+    }];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(React.Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelBody"], {
+      title: "\u80CC\u666F\u8272",
+      initialOpen: true
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["ColorPalette"], {
+      colors: [{
+        name: 'white',
+        color: '#fff '
+      }, {
+        name: 'orange',
+        color: '#f0bc68'
+      }, {
+        name: 'green',
+        color: '#c4d7d1 '
+      }, {
+        name: 'blue',
+        color: '#dde1f8 '
+      }],
+      value: attributes.color,
+      onChange: function onChange(color) {
+        return setAttributes({
+          color: color
+        });
+      }
+    })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+      tagName: "p",
+      className: className,
+      style: {
+        background: attributes.color
+      },
+      onChange: function onChange(content) {
+        return setAttributes({
+          content: content
+        });
+      },
+      value: attributes.content
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+      tagName: "p",
+      style: {
+        background: attributes.color
+      },
+      value: attributes.content
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -343,7 +449,8 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
 /* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
-/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
+/* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
+/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
 /**
  * Gutenberg Blocks
  *
@@ -354,6 +461,7 @@ __webpack_require__.r(__webpack_exports__);
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+
 
 
 
