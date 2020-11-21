@@ -351,6 +351,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
@@ -375,22 +379,89 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
     name: {
       source: 'html',
       selector: 'p.p-balloon__name'
+    },
+    //MediaUpload の value の値
+    mediaID: {
+      type: 'number',
+      default: 0
+    },
+    //img の src に指定する URL
+    imageUrl: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'src',
+      selector: '.card_image'
+    },
+    //img の alt 属性の値
+    imageAlt: {
+      type: 'string',
+      source: 'attribute',
+      attribute: 'alt',
+      selector: '.card_image'
     }
   },
-  edit: function edit(_ref) {
-    var className = _ref.className,
-        setAttributes = _ref.setAttributes,
-        attributes = _ref.attributes;
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(React.Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["InspectorControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["PanelBody"], {
-      title: "\u80CC\u666F\u8272",
-      initialOpen: true
-    })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+  edit: function edit(props) {
+    //分割代入を使って props 経由でプロパティを変数に代入
+    var className = props.className,
+        attributes = props.attributes,
+        setAttributes = props.setAttributes; //選択された画像の情報（alt 属性、URL、ID）を更新する関数
+
+    var onSelectImage = function onSelectImage(media) {
+      setAttributes({
+        imageAlt: media.alt,
+        imageUrl: media.url,
+        mediaID: media.id
+      });
+    }; //メディアライブラリを開くボタンをレンダリングする関数
+
+
+    var getImageButton = function getImageButton(open) {
+      if (attributes.imageUrl) {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+          src: attributes.imageUrl,
+          onClick: open,
+          className: "image",
+          alt: ""
+        });
+      } else {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+          className: "button-container"
+        }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+          onClick: open,
+          className: "button button-large"
+        }, "\u753B\u50CF\u3092\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9"));
+      }
+    }; //画像を削除する（メディアをリセットする）関数
+
+
+    var removeMedia = function removeMedia() {
+      setAttributes({
+        mediaID: 0,
+        imageUrl: '',
+        imageAlt: ''
+      });
+    };
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       class: "p-balloon"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       class: "p-balloon__people"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
-      src: "#"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: className
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUpload"], {
+      onSelect: onSelectImage,
+      allowedTypes: ['image'],
+      value: attributes.mediaID,
+      render: function render(_ref) {
+        var open = _ref.open;
+        return getImageButton(open);
+      }
+    })), attributes.mediaID != 0 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+      onClick: removeMedia,
+      isLink: true,
+      isDestructive: true,
+      className: "removeImage"
+    }, "\u753B\u50CF\u3092\u524A\u9664"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
       tagName: "p",
       className: "p-balloon__name",
       default: "name",
@@ -411,7 +482,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
         });
       },
       value: attributes.speech
-    })));
+    }));
   },
   save: function save(_ref2) {
     var attributes = _ref2.attributes;

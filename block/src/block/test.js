@@ -57,8 +57,7 @@ registerBlockType( 'wdl/my-images', {
             alt=""
           />
         );
-      }
-      else {
+      } else {
         return (
           <div className="button-container">
             <Button
