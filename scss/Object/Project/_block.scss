@@ -111,6 +111,7 @@
   .p-balloon__speech {
     position: relative;
     display: inline-block;
+    padding: 15px 15px;
     left: 25px;
     width: calc(100% - 60px);
     min-height: $BALLOON-IMG-SIZE;
