@@ -9,6 +9,10 @@ import {
   PanelBody,
 } from '@wordpress/components';
 
+import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
+
+
 /**
  * ボックスブロック追加
  * @type {String}
@@ -27,7 +31,26 @@ registerBlockType('custom/speechballoon',{
 		name:{
 			source: 'html',
 			selector: 'p.p-balloon__name'
-		}
+		},
+		//MediaUpload の value の値
+		mediaID: {
+			type: 'number',
+			default: 0
+		},
+		//img の src に指定する URL
+		imageUrl: {
+			type: 'string',
+			source: 'attribute',
+			attribute: 'src',
+			selector: '.card_image'
+		},
+		//img の alt 属性の値
+		imageAlt: {
+			type: 'string',
+			source: 'attribute',
+			attribute: 'alt',
+			selector: '.card_image'
+		},
   },
   edit({ className , setAttributes , attributes }) {
     return (
