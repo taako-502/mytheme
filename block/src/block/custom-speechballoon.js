@@ -26,7 +26,7 @@ registerBlockType('custom/speechballoon',{
   attributes:{
     speech: {
       source: 'html',
-      selector: 'p-balloon__speech',
+      selector: 'p.p-balloon__speech',
     },
     name:{
       source: 'html',

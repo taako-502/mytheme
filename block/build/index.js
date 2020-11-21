@@ -374,7 +374,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   attributes: {
     speech: {
       source: 'html',
-      selector: 'p-balloon__speech'
+      selector: 'p.p-balloon__speech'
     },
     name: {
       source: 'html',
