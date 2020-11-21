@@ -98,23 +98,12 @@
   .p-balloon__balloon {
     position: relative;
     width: calc(100% - #{$BALLOON-IMG-SIZE});
-    background-color: pink;
   }
 
   .p-balloon__tail {
-    position: absolute;
-
+    display:none;
     span {
-      display: block;
       &:nth-child(1) {
-        display: inline-block;
-        position: absolute;
-        top: 3px;
-        left: 128px;
-        border: 8px solid transparent;
-        border-right: 18px solid #edf1ee;
-        -webkit-transform: rotate(35deg);
-        transform: rotate(35deg);
       }
     }
   }
@@ -124,8 +113,6 @@
     display: inline-block;
     width: calc(100% - #{$BALLOON-IMG-SIZE});
     min-height: $BALLOON-IMG-SIZE;
-    //margin: 1.5em 0 1.5em 15px;
-    //padding: 7px 10px;
     color: #555;
     font-size: 16px;
     background: #FFF;
