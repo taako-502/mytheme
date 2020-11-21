@@ -106,25 +106,52 @@
 
     span {
       display: block;
-      display: none;
-      top: 10px;
-      left: 6px;
-
       &:nth-child(1) {
-        border-style: solid;
-        border-width: 0 0 163px 208px;
-        border-color: transparent transparent #007bff transparent;
-        z-index: 100;
+        display: inline-block;
+        position: absolute;
+        top: 3px;
+        left: 128px;
+        border: 8px solid transparent;
+        border-right: 18px solid #edf1ee;
+        -webkit-transform: rotate(35deg);
+        transform: rotate(35deg);
       }
     }
   }
 
   .p-balloon__speech {
-    @include blockAndStaticCenter;
-    border: 2px solid;
-    padding: 9px 16px;
-    width: 90%;
+    position: relative;
+    display: inline-block;
+    width: calc(100% - #{$BALLOON-IMG-SIZE});
     min-height: $BALLOON-IMG-SIZE;
-    background: white;
+    //margin: 1.5em 0 1.5em 15px;
+    //padding: 7px 10px;
+    color: #555;
+    font-size: 16px;
+    background: #FFF;
+    border: solid 3px #555;
+    box-sizing: border-box;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -24px;
+      margin-top: -12px;
+      border: 12px solid transparent;
+      border-right: 12px solid #FFF;
+      z-index: 2;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      margin-top: -14px;
+      border: 14px solid transparent;
+      border-right: 14px solid #555;
+      z-index: 1;
+    }
   }
 }
