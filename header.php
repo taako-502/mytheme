@@ -7,7 +7,7 @@ $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
 $analytics_code = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
 //メタディスクリプションの設定
-$description = getDiscription($post->ID,220);
+$description = getDescription($post->ID,220);
 //ページ読み込み
 global $page_title;
 ?>

@@ -56,7 +56,7 @@ function getValOrDef( $val, $default){
  * @param  Integer $len     文字数
  * @return String           ディスクリプション
  */
-function getDiscription($id,$len){
+function getDescription($id,$len){
   $description = get_post($id)->post_content;
   $description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$description);
   $description = wp_strip_all_tags($description);

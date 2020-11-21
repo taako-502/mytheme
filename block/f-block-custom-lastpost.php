@@ -2,7 +2,7 @@
 <?php
 
 /**
-* Plugin Name: Gutenberg examples dynamic
+* 最新記事カード（バナータイプ）
 */
 
 function custom_lastpost_dynamic_render_callback( $block_attributes, $content ) {
