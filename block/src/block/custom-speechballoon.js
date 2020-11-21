@@ -129,17 +129,19 @@ registerBlockType('custom/speechballoon',{
             value={ attributes.name }
           />
         </div>
-      <div class="p-balloon__tail">
-        <span />
-        <span />
-        <span />
-      </div>
-      <RichText
-        tagName='p'
-        className='p-balloon__speech'
-        onChange={ ( speech ) => setAttributes( { speech } ) }
-        value={ attributes.speech }
-      />
+        <div class="p-balloon__balloon">
+          <div class="p-balloon__tail">
+            <span />
+            <span />
+            <span />
+          </div>
+          <RichText
+            tagName='p'
+            className='p-balloon__speech'
+            onChange={ ( speech ) => setAttributes( { speech } ) }
+            value={ attributes.speech }
+          />
+        </div>
       </div>
     );
   },
@@ -176,16 +178,18 @@ registerBlockType('custom/speechballoon',{
             value={ attributes.name }
           />
         </div>
-        <div class="p-balloon__tail">
-          <span />
-          <span />
-          <span />
+        <div class="p-balloon__balloon">
+          <div class="p-balloon__tail">
+            <span />
+            <span />
+            <span />
+          </div>
+          <RichText.Content
+            tagName='p'
+            className='p-balloon__speech'
+            value={ attributes.speech }
+          />
         </div>
-        <RichText.Content
-          tagName='p'
-          className='p-balloon__speech'
-          value={ attributes.speech }
-        />
       </div>
     );
   }
