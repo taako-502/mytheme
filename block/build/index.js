@@ -390,14 +390,14 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       type: 'string',
       source: 'attribute',
       attribute: 'src',
-      selector: '.card_image'
+      selector: '.p-balloon__img'
     },
     //img の alt 属性の値
     imageAlt: {
       type: 'string',
       source: 'attribute',
       attribute: 'alt',
-      selector: '.card_image'
+      selector: '.p-balloon__img'
     }
   },
   edit: function edit(props) {
@@ -428,7 +428,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
           className: "button-container"
         }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__["Button"], {
           onClick: open,
-          className: "button button-large"
+          className: "p-balloon__btn"
         }, "\u753B\u50CF\u3092\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9"));
       }
     }; //画像を削除する（メディアをリセットする）関数
@@ -446,10 +446,9 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       class: "p-balloon"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       class: "p-balloon__people"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-      className: className
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUpload"], {
       onSelect: onSelectImage,
+      className: className,
       allowedTypes: ['image'],
       value: attributes.mediaID,
       render: function render(_ref) {
@@ -461,7 +460,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       isLink: true,
       isDestructive: true,
       className: "removeImage"
-    }, "\u753B\u50CF\u3092\u524A\u9664"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+    }, "\u753B\u50CF\u3092\u524A\u9664")), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
       tagName: "p",
       className: "p-balloon__name",
       default: "name",
@@ -486,13 +485,32 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
   },
   save: function save(_ref2) {
     var attributes = _ref2.attributes;
+
+    //画像をレンダリングする関数
+    var getImagesSave = function getImagesSave(src, alt) {
+      if (!src) return null;
+
+      if (alt) {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+          className: "p-balloon__img",
+          src: src,
+          alt: alt
+        });
+      }
+
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+        className: "p-balloon__img",
+        src: src,
+        alt: "",
+        "aria-hidden": "true"
+      });
+    };
+
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       class: "p-balloon"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
       class: "p-balloon__people"
-    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
-      src: "#"
-    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
+    }, getImagesSave(attributes.imageUrl, attributes.imageAlt), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"].Content, {
       tagName: "p",
       className: "p-balloon__name",
       value: attributes.name

@@ -42,14 +42,14 @@ registerBlockType('custom/speechballoon',{
       type: 'string',
       source: 'attribute',
       attribute: 'src',
-      selector: '.card_image'
+      selector: '.p-balloon__img'
     },
     //img の alt 属性の値
     imageAlt: {
       type: 'string',
       source: 'attribute',
       attribute: 'alt',
-      selector: '.card_image'
+      selector: '.p-balloon__img'
     },
   },
 
@@ -82,7 +82,7 @@ registerBlockType('custom/speechballoon',{
           <div className="button-container">
             <Button
               onClick={ open }
-              className="button button-large"
+              className="p-balloon__btn"
             >
               画像をアップロード
             </Button>
@@ -103,26 +103,25 @@ registerBlockType('custom/speechballoon',{
     return (
       <div class="p-balloon">
         <div class="p-balloon__people">
-          <div className={ className }>
+          <MediaUploadCheck>
+            <MediaUpload
+              onSelect={ onSelectImage }
+              className={ className }
+              allowedTypes={ ['image'] }
+              value={ attributes.mediaID }
+              render={ ({ open }) => getImageButton( open ) }
+            />
+          </MediaUploadCheck>
+          { attributes.mediaID != 0  &&
             <MediaUploadCheck>
-              <MediaUpload
-                onSelect={ onSelectImage }
-                allowedTypes={ ['image'] }
-                value={ attributes.mediaID }
-                render={ ({ open }) => getImageButton( open ) }
-              />
+              <Button
+                onClick={removeMedia}
+                isLink
+                isDestructive
+                className="removeImage">画像を削除
+              </Button>
             </MediaUploadCheck>
-            { attributes.mediaID != 0  &&
-              <MediaUploadCheck>
-                <Button
-                  onClick={removeMedia}
-                  isLink
-                  isDestructive
-                  className="removeImage">画像を削除
-                </Button>
-              </MediaUploadCheck>
-            }
-          </div>
+          }
           <RichText
             tagName='p'
             className='p-balloon__name'
@@ -146,10 +145,32 @@ registerBlockType('custom/speechballoon',{
     );
   },
   save({ attributes }) {
+    //画像をレンダリングする関数
+    const getImagesSave = (src, alt) => {
+      if(!src) return null;
+      if(alt) {
+        return (
+          <img
+            className="p-balloon__img"
+            src={ src }
+            alt={ alt }
+          />
+        );
+      }
+      return (
+        <img
+          className="p-balloon__img"
+          src={ src }
+          alt=""
+          aria-hidden="true"
+        />
+      );
+    };
+
     return (
       <div class="p-balloon">
         <div class="p-balloon__people">
-          <img src="#" />
+          { getImagesSave(attributes.imageUrl, attributes.imageAlt) }
           <RichText.Content
             tagName='p'
             className='p-balloon__name'
