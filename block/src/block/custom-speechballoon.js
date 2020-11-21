@@ -73,7 +73,7 @@ registerBlockType('custom/speechballoon',{
           <img
             src={ attributes.imageUrl }
             onClick={ open }
-            className="image"
+            className="p-balloon__img"
             alt=""
           />
         );
@@ -106,7 +106,6 @@ registerBlockType('custom/speechballoon',{
           <MediaUploadCheck>
             <MediaUpload
               onSelect={ onSelectImage }
-              className={ className }
               allowedTypes={ ['image'] }
               value={ attributes.mediaID }
               render={ ({ open }) => getImageButton( open ) }

@@ -420,7 +420,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
         return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
           src: attributes.imageUrl,
           onClick: open,
-          className: "image",
+          className: "p-balloon__img",
           alt: ""
         });
       } else {
@@ -448,7 +448,6 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
       class: "p-balloon__people"
     }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUploadCheck"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["MediaUpload"], {
       onSelect: onSelectImage,
-      className: className,
       allowedTypes: ['image'],
       value: attributes.mediaID,
       render: function render(_ref) {
