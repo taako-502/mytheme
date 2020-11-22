@@ -9,7 +9,7 @@ const MyDropdown = () => <BlockFormatControls>
 				{ fills => <DropdownMenu
 					           icon='admin-customizer'
 					           position="bottom left"
-					           label='dropdown'
+					           label='フォント'
 					           controls={ fills.map( ( [ { props } ] ) => props ) }
 				            />
         }

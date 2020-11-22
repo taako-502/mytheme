@@ -804,7 +804,7 @@ var MyDropdown = function MyDropdown() {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(DropdownMenu, {
       icon: "admin-customizer",
       position: "bottom left",
-      label: "dropdown",
+      label: "\u30D5\u30A9\u30F3\u30C8",
       controls: fills.map(function (_ref) {
         var _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref, 1),
             props = _ref2[0].props;
@@ -885,19 +885,16 @@ __webpack_require__.r(__webpack_exports__);
 var registerFormatType = wp.richText.registerFormatType;
 
 
-[// メイリオ
-{
-  name: 'Meirio',
+[{
+  name: 'メイリオ',
   className: 'meirio',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
-}, //游ゴシック
-{
-  name: 'Yu Gothic',
+}, {
+  name: '游ゴシック',
   className: 'yu-gothic',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
-}, //游明朝
-{
-  name: 'Yu Mincho',
+}, {
+  name: '游明朝',
   className: 'yu-mincho',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }].forEach(function (_ref, index) {
