@@ -842,15 +842,11 @@ var PLUGIN_NAME = 'my-dropdown';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
-/* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
-/* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
-/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./src/utils/index.js");
-
-
+/* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
+/* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
+/* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
+/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
+/* harmony import */ var _toolbar_custom_font_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./toolbar/custom-font.js */ "./src/toolbar/custom-font.js");
 /**
  * Gutenberg Blocks
  *
@@ -865,25 +861,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* リッチテキストエディタ */
 
+
+/***/ }),
+
+/***/ "./src/toolbar/custom-font.js":
+/*!************************************!*\
+  !*** ./src/toolbar/custom-font.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../utils */ "./src/utils/index.js");
+
+
+/* リッチテキストエディタ */
 var registerFormatType = wp.richText.registerFormatType;
 
 [{
-  name: 'test1',
-  create: _utils__WEBPACK_IMPORTED_MODULE_5__["createToolbarButton"]
+  name: 'a',
+  create: _utils__WEBPACK_IMPORTED_MODULE_1__["createToolbarButton"]
 }, {
-  name: 'test2',
-  create: _utils__WEBPACK_IMPORTED_MODULE_5__["createToolbarButton"]
+  name: 'b',
+  create: _utils__WEBPACK_IMPORTED_MODULE_1__["createToolbarButton"]
 }, {
-  name: 'test3',
-  create: _utils__WEBPACK_IMPORTED_MODULE_5__["createToolbarButton"]
+  name: 'c',
+  create: _utils__WEBPACK_IMPORTED_MODULE_1__["createToolbarButton"]
 }].forEach(function (_ref, index) {
   var name = _ref.name,
       create = _ref.create,
       _ref$setting = _ref.setting,
       setting = _ref$setting === void 0 ? {} : _ref$setting;
-  return registerFormatType.apply(void 0, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Object(_utils__WEBPACK_IMPORTED_MODULE_5__["getRichTextSetting"])({
+  return registerFormatType.apply(void 0, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Object(_utils__WEBPACK_IMPORTED_MODULE_1__["getRichTextSetting"])({
     name: name,
     create: create,
     setting: setting
