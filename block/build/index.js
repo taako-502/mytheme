@@ -876,27 +876,33 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../utils */ "./src/utils/index.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../utils */ "./src/utils/index.js");
 
 
 /* リッチテキストエディタ */
 var registerFormatType = wp.richText.registerFormatType;
 
-[{
-  name: 'a',
-  create: _utils__WEBPACK_IMPORTED_MODULE_1__["createToolbarButton"]
-}, {
-  name: 'b',
-  create: _utils__WEBPACK_IMPORTED_MODULE_1__["createToolbarButton"]
-}, {
-  name: 'c',
-  create: _utils__WEBPACK_IMPORTED_MODULE_1__["createToolbarButton"]
+
+[// メイリオ
+{
+  name: 'meirio',
+  create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
+}, //游ゴシック
+{
+  name: 'yugothic',
+  create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
+}, //游明朝
+{
+  name: 'yumincho',
+  create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }].forEach(function (_ref, index) {
   var name = _ref.name,
       create = _ref.create,
       _ref$setting = _ref.setting,
       setting = _ref$setting === void 0 ? {} : _ref$setting;
-  return registerFormatType.apply(void 0, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Object(_utils__WEBPACK_IMPORTED_MODULE_1__["getRichTextSetting"])({
+  return registerFormatType.apply(void 0, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getRichTextSetting"])({
     name: name,
     create: create,
     setting: setting
