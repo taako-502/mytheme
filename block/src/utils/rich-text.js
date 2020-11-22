@@ -11,7 +11,7 @@ import { MyDropdown, MyDropdownControls } from '../components';
  * @returns {array} setting
  */
 export const getRichTextSetting = ( { name, className, create, setting = {} }, index ) => {
-	const formatName = PLUGIN_NAME + '/' + name;
+	const formatName = PLUGIN_NAME + '/' + className;
 	const component = args => <MyDropdownControls>
 		{ create( { args, name, className, formatName } ) }
 	</MyDropdownControls>;

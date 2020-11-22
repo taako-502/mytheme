@@ -887,17 +887,17 @@ var registerFormatType = wp.richText.registerFormatType;
 
 [// メイリオ
 {
-  name: 'meirio',
+  name: 'Meirio',
   className: 'meirio',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }, //游ゴシック
 {
-  name: 'yugothic',
+  name: 'Yu Gothic',
   className: 'yu-gothic',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }, //游明朝
 {
-  name: 'yumincho',
+  name: 'Yu Mincho',
   className: 'yu-mincho',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }].forEach(function (_ref, index) {
@@ -968,7 +968,7 @@ var getRichTextSetting = function getRichTextSetting(_ref, index) {
       create = _ref.create,
       _ref$setting = _ref.setting,
       setting = _ref$setting === void 0 ? {} : _ref$setting;
-  var formatName = _constant__WEBPACK_IMPORTED_MODULE_1__["PLUGIN_NAME"] + '/' + name;
+  var formatName = _constant__WEBPACK_IMPORTED_MODULE_1__["PLUGIN_NAME"] + '/' + className;
 
   var component = function component(args) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_2__["MyDropdownControls"], null, create({
