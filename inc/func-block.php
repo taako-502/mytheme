@@ -42,8 +42,8 @@ function add_block_editor() {
 add_action( 'enqueue_block_editor_assets', 'add_block_editor' );
 
 //ブロックエディタ
-get_template_part('/block/f-block','custom-lastpost');//最新記事
-get_template_part('/block/f-block','custom-blogcard');//ブログカード
+//get_template_part('/block/f-block','custom-lastpost');//最新記事
+//get_template_part('/block/f-block','custom-blogcard');//ブログカード
 //ブロックパターン
 get_template_part('/block/f-block','pattern');
 //ブロックエディタ
