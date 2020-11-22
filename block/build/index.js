@@ -86,6 +86,210 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+
+module.exports = _arrayWithoutHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableSpread;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+
+/***/ }),
+
 /***/ "./src/block/custom-blogcard.js":
 /*!**************************************!*\
   !*** ./src/block/custom-blogcard.js ***!
@@ -670,6 +874,106 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('wdl
 
 /***/ }),
 
+/***/ "./src/components/index.js":
+/*!*********************************!*\
+  !*** ./src/components/index.js ***!
+  \*********************************/
+/*! exports provided: MyDropdown, MyDropdownControls */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _my_dropdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./my-dropdown */ "./src/components/my-dropdown.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MyDropdown", function() { return _my_dropdown__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _my_dropdown_controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./my-dropdown-controls */ "./src/components/my-dropdown-controls.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MyDropdownControls", function() { return _my_dropdown_controls__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/components/my-dropdown-controls.js":
+/*!************************************************!*\
+  !*** ./src/components/my-dropdown-controls.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var createSlotFill = wp.components.createSlotFill;
+
+var _createSlotFill = createSlotFill('MyDropdownControls'),
+    Fill = _createSlotFill.Fill,
+    Slot = _createSlotFill.Slot;
+
+var MyDropdownControls = Fill;
+MyDropdownControls.Slot = Slot;
+/* harmony default export */ __webpack_exports__["default"] = (MyDropdownControls);
+
+/***/ }),
+
+/***/ "./src/components/my-dropdown.js":
+/*!***************************************!*\
+  !*** ./src/components/my-dropdown.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _my_dropdown_controls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./my-dropdown-controls */ "./src/components/my-dropdown-controls.js");
+
+
+var BlockFormatControls = wp.editor.BlockFormatControls;
+var _wp$components = wp.components,
+    Toolbar = _wp$components.Toolbar,
+    DropdownMenu = _wp$components.DropdownMenu;
+
+
+var MyDropdown = function MyDropdown() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(BlockFormatControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "editor-format-toolbar block-editor-format-toolbar"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(Toolbar, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_my_dropdown_controls__WEBPACK_IMPORTED_MODULE_2__["default"].Slot, null, function (fills) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(DropdownMenu, {
+      icon: "admin-customizer",
+      position: "bottom left",
+      label: "dropdown",
+      controls: fills.map(function (_ref) {
+        var _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_ref, 1),
+            props = _ref2[0].props;
+
+        return props;
+      })
+    });
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MyDropdown);
+
+/***/ }),
+
+/***/ "./src/constant.js":
+/*!*************************!*\
+  !*** ./src/constant.js ***!
+  \*************************/
+/*! exports provided: PLUGIN_NAME */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PLUGIN_NAME", function() { return PLUGIN_NAME; });
+var PLUGIN_NAME = 'my-dropdown';
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -679,11 +983,16 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('wdl
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
-/* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
-/* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
-/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
-/* harmony import */ var _block_test_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block/test.js */ "./src/block/test.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
+/* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
+/* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
+/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
+/* harmony import */ var _block_test_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block/test.js */ "./src/block/test.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils */ "./src/utils/index.js");
+
+
 /**
  * Gutenberg Blocks
  *
@@ -699,6 +1008,168 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/* リッチテキストエディタ */
+
+var registerFormatType = wp.richText.registerFormatType;
+
+[{
+  name: 'test1',
+  create: _utils__WEBPACK_IMPORTED_MODULE_6__["createToolbarButton"]
+}, {
+  name: 'test2',
+  create: _utils__WEBPACK_IMPORTED_MODULE_6__["createToolbarButton"]
+}, {
+  name: 'test3',
+  create: _utils__WEBPACK_IMPORTED_MODULE_6__["createToolbarButton"]
+}].forEach(function (_ref, index) {
+  var name = _ref.name,
+      create = _ref.create,
+      _ref$setting = _ref.setting,
+      setting = _ref$setting === void 0 ? {} : _ref$setting;
+  return registerFormatType.apply(void 0, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Object(_utils__WEBPACK_IMPORTED_MODULE_6__["getRichTextSetting"])({
+    name: name,
+    create: create,
+    setting: setting
+  }, index)));
+});
+
+/***/ }),
+
+/***/ "./src/utils/index.js":
+/*!****************************!*\
+  !*** ./src/utils/index.js ***!
+  \****************************/
+/*! exports provided: createToolbarButton, getRichTextSetting */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _toolbar_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toolbar-button */ "./src/utils/toolbar-button.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createToolbarButton", function() { return _toolbar_button__WEBPACK_IMPORTED_MODULE_0__["createToolbarButton"]; });
+
+/* harmony import */ var _rich_text__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rich-text */ "./src/utils/rich-text.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getRichTextSetting", function() { return _rich_text__WEBPACK_IMPORTED_MODULE_1__["getRichTextSetting"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./src/utils/rich-text.js":
+/*!********************************!*\
+  !*** ./src/utils/rich-text.js ***!
+  \********************************/
+/*! exports provided: getRichTextSetting */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRichTextSetting", function() { return getRichTextSetting; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constant */ "./src/constant.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./src/components/index.js");
+
+var Fragment = wp.element.Fragment;
+
+
+/**
+ * @param {string} name name
+ * @param {number} index index
+ * @param {function} create create component function
+ * @param {object} setting setting
+ * @returns {array} setting
+ */
+
+var getRichTextSetting = function getRichTextSetting(_ref, index) {
+  var name = _ref.name,
+      create = _ref.create,
+      _ref$setting = _ref.setting,
+      setting = _ref$setting === void 0 ? {} : _ref$setting;
+  var formatName = _constant__WEBPACK_IMPORTED_MODULE_1__["PLUGIN_NAME"] + '/' + name;
+
+  var component = function component(args) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_2__["MyDropdownControls"], null, create({
+      args: args,
+      name: name,
+      formatName: formatName
+    }));
+  };
+
+  setting.title = setting.title || name;
+  setting.tagName = setting.tagName || 'span';
+  setting.className = setting.className || name;
+
+  setting.edit = function (args) {
+    if (!index) {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, component(args), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_2__["MyDropdown"], null));
+    }
+
+    return component(args);
+  };
+
+  return [formatName, setting];
+};
+
+/***/ }),
+
+/***/ "./src/utils/toolbar-button.js":
+/*!*************************************!*\
+  !*** ./src/utils/toolbar-button.js ***!
+  \*************************************/
+/*! exports provided: createToolbarButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createToolbarButton", function() { return createToolbarButton; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+var toggleFormat = wp.richText.toggleFormat;
+var ToolbarButton = wp.components.ToolbarButton;
+/**
+ * @param {object} args args
+ * @param {string} name name
+ * @param {string} formatName format name
+ * @returns {{onClick: onClick, icon: *, title: *, isActive: boolean}} toolbar button properties
+ */
+
+var getToolbarButtonProps = function getToolbarButtonProps(_ref) {
+  var args = _ref.args,
+      name = _ref.name,
+      formatName = _ref.formatName;
+  return {
+    icon: 'admin-customizer',
+    title: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: name
+    }, name),
+    onClick: function onClick() {
+      args.onChange(toggleFormat(args.value, {
+        type: formatName
+      }));
+    },
+    isActive: args.isActive
+  };
+};
+/**
+ * @param {object} args args
+ * @param {string} name name
+ * @param {string} formatName format name
+ * @returns {*} toolbar button
+ */
+
+
+var createToolbarButton = function createToolbarButton(_ref2) {
+  var args = _ref2.args,
+      name = _ref2.name,
+      formatName = _ref2.formatName;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ToolbarButton, getToolbarButtonProps({
+    args: args,
+    name: name,
+    formatName: formatName
+  }));
+};
 
 /***/ }),
 
