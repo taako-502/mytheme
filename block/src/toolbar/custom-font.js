@@ -6,10 +6,13 @@ import { createToolbarButton, getRichTextSetting } from './../utils';
 
 
 [ // メイリオ
-  {  name: 'meirio', create: createToolbarButton,},
+  {  name: 'meirio', className:'meirio', create: createToolbarButton,},
   //游ゴシック
-	{	name: 'yugothic', create: createToolbarButton, },
+	{	name: 'yugothic', className:'yu-gothic', create: createToolbarButton, },
   //游明朝
-	{ name: 'yumincho', create: createToolbarButton,	},
-].forEach( ( { name, create, setting = {} }, index ) =>
-  registerFormatType( ...getRichTextSetting( { name, create, setting }, index ) ) );
+	{ name: 'yumincho', className:'yu-mincho', create: createToolbarButton,	},
+].forEach( ( { name, className ,create, setting = {} }, index ) =>
+  registerFormatType(
+    ...getRichTextSetting( { name, className, create, setting }, index )
+  )
+);

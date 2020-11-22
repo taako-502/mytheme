@@ -888,22 +888,27 @@ var registerFormatType = wp.richText.registerFormatType;
 [// メイリオ
 {
   name: 'meirio',
+  className: 'meirio',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }, //游ゴシック
 {
   name: 'yugothic',
+  className: 'yu-gothic',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }, //游明朝
 {
   name: 'yumincho',
+  className: 'yu-mincho',
   create: _utils__WEBPACK_IMPORTED_MODULE_2__["createToolbarButton"]
 }].forEach(function (_ref, index) {
   var name = _ref.name,
+      className = _ref.className,
       create = _ref.create,
       _ref$setting = _ref.setting,
       setting = _ref$setting === void 0 ? {} : _ref$setting;
   return registerFormatType.apply(void 0, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getRichTextSetting"])({
     name: name,
+    className: className,
     create: create,
     setting: setting
   }, index)));
@@ -959,6 +964,7 @@ var Fragment = wp.element.Fragment;
 
 var getRichTextSetting = function getRichTextSetting(_ref, index) {
   var name = _ref.name,
+      className = _ref.className,
       create = _ref.create,
       _ref$setting = _ref.setting,
       setting = _ref$setting === void 0 ? {} : _ref$setting;
@@ -968,13 +974,14 @@ var getRichTextSetting = function getRichTextSetting(_ref, index) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components__WEBPACK_IMPORTED_MODULE_2__["MyDropdownControls"], null, create({
       args: args,
       name: name,
+      className: className,
       formatName: formatName
     }));
   };
 
   setting.title = setting.title || name;
   setting.tagName = setting.tagName || 'span';
-  setting.className = setting.className || name;
+  setting.className = setting.className || className;
 
   setting.edit = function (args) {
     if (!index) {

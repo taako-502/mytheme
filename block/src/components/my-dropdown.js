@@ -7,11 +7,12 @@ const MyDropdown = () => <BlockFormatControls>
 		<Toolbar>
 			<MyDropdownControls.Slot>
 				{ fills => <DropdownMenu
-					icon='admin-customizer'
-					position="bottom left"
-					label='dropdown'
-					controls={ fills.map( ( [ { props } ] ) => props ) }
-				/> }
+					           icon='admin-customizer'
+					           position="bottom left"
+					           label='dropdown'
+					           controls={ fills.map( ( [ { props } ] ) => props ) }
+				            />
+        }
 			</MyDropdownControls.Slot>
 		</Toolbar>
 	</div>
