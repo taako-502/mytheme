@@ -15,7 +15,8 @@ function add_admin(){
     'manage_options',
     'mytheme-admin',
     'add_custom_admin',
-    get_template_directory_uri() . '/images/logo-mini.png',
+    //get_template_directory_uri() . '/images/logo-mini.png',
+    get_template_directory_uri() . '/images/logo-mini.svg',
     59);
 }
 add_action('admin_menu','add_admin');
