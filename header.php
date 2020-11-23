@@ -31,8 +31,8 @@ global $page_title;
   <?php wp_body_open(); ?>
   <?php if(!isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'body' ); } ?>
   <header class="l-header">
-    <nav class="l-nav" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important">
-      <a class="l-nav-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="color:<?php echo getCusNavLogoColor() ?>!important"><?php bloginfo( 'name' ); ?></a>
+    <nav class="l-nav" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important;color:<?php echo getCusNavTextColor() ?>!important;">
+      <a class="l-nav-title" href="<?php echo esc_url( home_url( '/' ) ); ?>""><?php bloginfo( 'name' ); ?></a>
       <?php
       wp_nav_menu(array (
         'theme_location'=>'header-nav',

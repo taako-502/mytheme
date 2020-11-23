@@ -13,9 +13,8 @@ add_action( 'customize_register', 'mytheme_customize' );
 /**
  * ラッパー
  */
-function getCusNavLogoColor(){return get_theme_mod('nav_logo_color','white');}
-function getCusNavMenuColor(){return get_theme_mod('nav_menu_color','white');}
-function getCusNavBackColor(){return get_theme_mod('nav_background_color','#212529');}
+function getCusNavTextColor(){ return get_theme_mod('nav_text_color','#FFF'); }
+function getCusNavBackColor(){ return get_theme_mod('nav_background_color','#212529'); }
 
 /**
  * ナビゲーションのカスタマイズを行うメソッド
@@ -40,18 +39,18 @@ function cusNav( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'nav_logo_color' , array(
-    'default'    => '#333',
+  $wp_customize->add_setting( 'nav_text_color' , array(
+    'default'    => '#FFF',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
-      'ctl_nav_logo_color',
+      'ctl_nav_text_color',
       array(
-        'label'    => 'ロゴの色',
+        'label'    => 'ナビの文字色',
         'section'  => 'nav-color',
-        'settings' => 'nav_logo_color',
+        'settings' => 'nav_text_color',
       )
     )
   );
@@ -68,22 +67,6 @@ function cusNav( $wp_customize ) {
         'label'    => 'ナビバーの背景色',
         'section'  => 'nav-color',
         'settings' => 'nav_background_color',
-      )
-    )
-  );
-
-  $wp_customize->add_setting( 'nav_menu_color' , array(
-    'default'    => '#333',
-    'sanitize_callback' => 'sanitize_hex_color',
-  ));
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'ctl_nav_menu_color',
-      array(
-        'label'    => 'メニューの文字色',
-        'section'  => 'nav-color',
-        'settings' => 'nav_menu_color',
       )
     )
   );
