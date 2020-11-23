@@ -78,43 +78,42 @@
   }
   /* リスト */
   > ul {
-    @include paragraphMargin();
-    border: solid 2px #ffb03f;
-    padding: 0.5em 1em 0.5em 2.3em;
     position: relative;
+    @include paragraphMargin();
+    padding: calc(0.5em + #{$LIST-LINE-SPACE}) 1em 0.5em 0;
+    border: solid 2px #ffb03f;
 
     li {
-      line-height: 1.5;
-      padding: 0.5em 0;
-      list-style-type: none;
-      /*ポチ消す*/
+      margin: 0 0 $LIST-LINE-SPACE 2.3em;
+
       &:before {
-        font-family: FontAwesome;
-        /* 旧Verの書き方 */
-        content: "\f00c";
         position: absolute;
         left: 1em;
-        /*左端からのアイコンまで*/
         color: #ffb03f;
-        /*アイコン色*/
+      }
+
+      &> ul {
+        margin-top: $LIST-LINE-SPACE;
       }
     }
   }
 
   > ol {
     @include paragraphMargin();
+    padding: calc(0.5em + #{$LIST-LINE-SPACE}) 1em 0.5em 0;
     counter-reset: number;
-    /*数字をリセット*/
     list-style-type: none;
-    /*数字を一旦消す*/
-    padding: 0.3em 0.8em;
     border: solid 2px #ffb107;
 
     li {
-      border-bottom: dashed 1px orange;
       position: relative;
+      margin: 0 0 $LIST-LINE-SPACE 2.3em;
       padding: 0.5em 0.5em 0.5em 30px;
-      line-height: 1.5em;
+      border-bottom: dashed 1px orange;
+
+      &> ol {
+        margin-top: $LIST-LINE-SPACE;
+      }
 
       &:before {
         /* 以下数字をつける */

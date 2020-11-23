@@ -9,3 +9,5 @@ $breakpoints: (
   "pc": "screen and (min-width: #{$layout-width-inner})",
 );
 $FOOTER-HEIGHT: 120px;
+// リストの要素の行間
+$LIST-LINE-SPACE: 10px;
