@@ -5,6 +5,16 @@
  * @package mytheme
  */
 
+ /**
+ * 追加管理画面の実装
+ */
+ function add_custom_admin(){
+   // mytheme専用管理画面呼び出し
+   if (locate_template('admin/admin.php') !== '') {
+     require_once locate_template('admin/admin.php');
+   }
+ }
+
 /**
  * 管理メニューに追加
  */
@@ -22,11 +32,15 @@ function add_admin(){
 add_action('admin_menu','add_admin');
 
 /**
- * 追加管理画面の実装
+ * 管理画面共通のCSS読み込み
+ * @return [type] [description]
  */
-function add_custom_admin(){
-  // mytheme専用管理画面呼び出し
-  if (locate_template('admin/admin.php') !== '') {
-    require_once locate_template('admin/admin.php');
-  }
+function admin_enqure_style() {
+  ?><style>
+    .wp-menu-image.dashicons-before img {
+      width: 20px;
+      height: 20px;
+    }
+	</style><?php
 }
+add_action('admin_head','admin_enqure_style');
