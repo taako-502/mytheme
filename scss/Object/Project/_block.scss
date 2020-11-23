@@ -1,20 +1,6 @@
 //記事の装飾は.p-articleで囲むこと
 .editor-styles-wrapper,
-.p-article {
-  ul.is-style-bg__ligthblue {
-    border: dashed 2px #668ad8;
-    background-color: #f8f9ff;
-    padding: 0.5em 0.5em 0.5em 2em;
-    list-style-type: none;
-    /*ポチ消す*/
-    li {
-      &:before {
-        content: "・";
-        color: black;
-      }
-    }
-  }
-
+.p-section {
   .wp-block-custom-box {
     border: 2px solid;
     padding: 0.9em 1.3em;
