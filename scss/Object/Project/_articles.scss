@@ -5,7 +5,7 @@
   background-color: whitesmoke;
 }
 
-.p-article {
+.p-section {
   H2 {
     @include articleHeading(25px);
   }
@@ -77,7 +77,8 @@
     }
   }
   /* リスト */
-  ul {
+  > ul {
+    @include paragraphMargin();
     border: solid 2px #ffb03f;
     padding: 0.5em 1em 0.5em 2.3em;
     position: relative;
@@ -100,7 +101,8 @@
     }
   }
 
-  ol {
+  > ol {
+    @include paragraphMargin();
     counter-reset: number;
     /*数字をリセット*/
     list-style-type: none;

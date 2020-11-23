@@ -17,7 +17,7 @@
           ?>
           <h1><?php the_title();?></h1>
           <?php the_post_thumbnail(); ?>
-          <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <section id="post-<?php the_ID(); ?>" <?php post_class("p-section"); ?>>
             <?php
             the_content();
             wp_link_pages('before=<div class="pagination">&after=</div>');
