@@ -6,7 +6,6 @@
 // CSSファイルからの相対パスで wp-load.php の読み込みを指定
 include_once(dirname( __FILE__ ) . '/../../../../wp-load.php');
 get_template_part('admin/admin','init');
-get_template_part('utility/utility');
 /*cssファイル設定 */
 header('Content-Type: text/css; charset=utf-8');
 ?>
