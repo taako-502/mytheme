@@ -1,4 +1,7 @@
 <?php
+//カスタムヘッダー
+get_template_part('/inc/custom', 'header');
+
 /**
  * カスタマイザー
  *
@@ -7,6 +10,7 @@
 function mytheme_customize( $wp_customize ) {
   // ナビゲーションバーのカスタマイザ
   cusNav($wp_customize);
+  $wp_customize->remove_section('colors');
 }
 add_action( 'customize_register', 'mytheme_customize' );
 

@@ -46,9 +46,6 @@ get_template_part('/inc/func', 'schema');
 get_template_part('/inc/func', 'amp');
 //画像アップローダ設定
 get_template_part('/inc/func', 'img');
-//カスタマイザー
-get_template_part('/inc/custom', 'header');
-
 
 // アーカイブの余計なタイトルを削除
 add_filter( 'get_the_archive_title', function ($title) {
