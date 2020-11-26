@@ -34,6 +34,7 @@ https://www.mytheme.taako-biz.com/
   http://crea.tokyo/install_wp_media_into_front/
 - 検索フォームの変更<br>
   https://plusers.net/wordpress_search
+- [WordPressにメールフォームを自力で実装する](http://wordpress.ad5.jp/column/develop-mailform-for-wordpress/)
 
 ### ヘッダーの実装
 ナビゲーションバーはliタグやaタグに適切なクラスを設定する必要があるのですが、ナビゲーションバーを表示するWordPressの標準メソッドにはその機能がないので詰まりました。以下の記事を見て何とか解決したので、参考になったらと思います。
