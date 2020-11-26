@@ -1,8 +1,6 @@
 <?php
 function form_init() {
-  echo "test";
-
-  if ( ! is_page( 'inquiry' ) ) {
+  if ( ! is_page( 'contact' ) ) {
     return;
   }
 
