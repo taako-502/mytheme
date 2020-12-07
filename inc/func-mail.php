@@ -1,4 +1,25 @@
 <?php
+/**
+ * ショートコードの登録
+ * @var [type]
+ */
+add_shortcode( 'mailForm', 'salcodes_mailform' );
+function mailform_init(){
+  function salcodes_mailform() {
+    //return get_template_part('template-parts/content','mailform');
+    //return include( __DIR__ ."/../template-parts/content-mailform.php");
+    $retHTML = '';
+    $retHTML  = get_permalink();
+    print "text";
+    return $retHTML;
+  }
+}
+add_action('init', 'mailform_init');
+
+/**
+ * 送信ボタン押下時の処理
+ * @return [type] [description]
+ */
 function form_init() {
   if ( ! is_page( 'contact' ) ) {
     return;

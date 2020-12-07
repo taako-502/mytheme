@@ -7,6 +7,10 @@
 define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
 get_template_part('utility/utility');
 
+//グローバル変数
+global $value;
+global $error;
+
 /**
  * コンテンツ幅設定
  * @var [type]
