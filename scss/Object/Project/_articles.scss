@@ -1,3 +1,6 @@
+@use 'Foundation/vars';
+@use 'Foundation/mixin';
+
 .p-category {
   margin: 5px 10px 18px;
   padding: 5px 10px;
@@ -7,7 +10,7 @@
 
 .p-section {
   H2 {
-    @include articleHeading(25px);
+    @include mixin.articleHeading(25px);
   }
 
   H3 {
@@ -79,12 +82,12 @@
   /* リスト */
   > ul {
     position: relative;
-    @include paragraphMargin();
-    padding: calc(0.5em + #{$LIST-LINE-SPACE}) 1em 0.5em 0;
+    @include mixin.paragraphMargin();
+    padding: calc(0.5em + #{vars.$LIST-LINE-SPACE}) 1em 0.5em 0;
     border: solid 2px #ffb03f;
 
     li {
-      margin: 0 0 $LIST-LINE-SPACE 2.3em;
+      margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
 
       &:before {
         position: absolute;
@@ -93,26 +96,26 @@
       }
 
       &> ul {
-        margin-top: $LIST-LINE-SPACE;
+        margin-top: vars.$LIST-LINE-SPACE;
       }
     }
   }
 
   > ol {
-    @include paragraphMargin();
-    padding: calc(0.5em + #{$LIST-LINE-SPACE}) 1em 0.5em 0;
+    @include mixin.paragraphMargin();
+    padding: calc(0.5em + #{vars.$LIST-LINE-SPACE}) 1em 0.5em 0;
     counter-reset: number;
     list-style-type: none;
     border: solid 2px #ffb107;
 
     li {
       position: relative;
-      margin: 0 0 $LIST-LINE-SPACE 2.3em;
+      margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
       padding: 0.5em 0.5em 0.5em 30px;
       border-bottom: dashed 1px orange;
 
       &> ol {
-        margin-top: $LIST-LINE-SPACE;
+        margin-top: vars.$LIST-LINE-SPACE;
       }
 
       &:before {
@@ -201,7 +204,7 @@
   }
   p {
     margin: 20px 0;
-    @include paragraphMargin();
+    @include mixin.paragraphMargin();
     line-height: 1.7;
   }
 

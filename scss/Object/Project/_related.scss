@@ -1,3 +1,5 @@
+@use 'Foundation/mixin';
+
 .p-related {
   padding: 2px;
 
@@ -12,18 +14,18 @@
     flex-wrap: wrap;
     list-style: none;
 
-    @include mq("sp"){
+    @include mixin.mq("sp"){
       display: block;
     }
   }
 
   li {
-    @include articleShadow();
+    @include mixin.articleShadow();
     display: inline-block;
     width: 48%;
     margin: 1%;
 
-    @include mq("sp"){
+    @include mixin.mq("sp"){
       width: 96%;
       margin: 2% 2% 1% 2%;
     }

@@ -1,16 +1,17 @@
 /*
  * トップページ
 */
+@use 'Foundation/mixin';
 
 .p-recommend {
-  @include areaShadow();
+  @include mixin.areaShadow();
   width: 100%;
   margin: 1% 0 1% 0;
   padding: 10px 20px;
   background-color: white;
 
-  @include mq("tab") {
-    @include max-width-content(100%);
+  @include mixin.mq("tab") {
+    @include mixin.max-width-content(100%);
     margin: 2% 0 1% 0;
     padding: 10px 0;
   }
@@ -24,23 +25,23 @@
 }
 
 .p-recommend-area {
-  @include blockAndStaticCenter();
+  @include mixin.blockAndStaticCenter();
   width: 100%;
   padding-bottom: 2em;
   display: flex;
 
-  @include mq("sp"){
+  @include mixin.mq("sp"){
     display: block;
   }
 }
 
 .p-recommend--img {
-  @include articleShadow();
+  @include mixin.articleShadow();
   width: 30%;
   height: auto;
   margin: 0 auto;
 
-  @include mq("sp"){
+  @include mixin.mq("sp"){
     width: 96%;
     margin: 2% 2% 1% 2%;
   }
@@ -53,14 +54,14 @@
 }
 
 .p-news-card {
-  @include articleShadow();
+  @include mixin.articleShadow();
   width: 47%;
   padding-bottom:5px;
   margin: 1.5%;
   background-color: white;
   border-radius:5px;
 
-  @include mq("sp"){
+  @include mixin.mq("sp"){
     width: 96%;
     margin: 2% 2% 1% 2%;
   }

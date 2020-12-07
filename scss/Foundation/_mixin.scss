@@ -1,15 +1,14 @@
-/* mixin
-   ----------------------------------------------------------------- */
+@use 'Foundation/vars';
 
 /* メディアクエリー */
 @mixin mq($breakpoint: sp) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map-get(vars.$breakpoints, $breakpoint)} {
     @content;
   }
 }
 
 /* コンテンツの横幅を設定 */
-@mixin max-width-content($max-width: $layout-width-inner) {
+@mixin max-width-content($max-width: vars.$layout-width-inner) {
   max-width: $max-width;
   width: 100%;
 }

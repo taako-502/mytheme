@@ -1,3 +1,5 @@
+@use 'Foundation/mixin';
+
 //記事の装飾は.p-articleで囲むこと
 .editor-styles-wrapper,
 .p-section {
@@ -11,7 +13,7 @@
   }
 
   .p-blogcard {
-    @include paragraphMargin();
+    @include mixin.paragraphMargin();
     border: 1px solid;
     height: 150px;
 

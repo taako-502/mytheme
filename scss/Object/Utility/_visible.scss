@@ -1,7 +1,9 @@
+@use 'Foundation/vars';
+
 .only-block-sp {
   display: none;
 
-  @media (max-width: $MAX-WIDTH-SP) {
+  @media (max-width: vars.$MAX-WIDTH-SP) {
     display: block;
   }
 }

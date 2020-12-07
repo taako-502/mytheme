@@ -1,3 +1,5 @@
+@use 'Foundation/vars';
+
 .l-header {
   width: 100%;
 }
@@ -82,7 +84,7 @@
   transform: translateX(100%);
   transition: all 0.6s;
   width: 100%;
-  @media (min-width: $MAX-WIDTH-SP) {
+  @media (min-width: vars.$MAX-WIDTH-SP) {
     position: static;
     display: flex;
     transition: none;
@@ -101,7 +103,7 @@
   margin: 0 auto;
   padding: 0;
   width: 100%;
-  @media (min-width: $MAX-WIDTH-SP) {
+  @media (min-width: vars.$MAX-WIDTH-SP) {
     display: flex;
   }
 
@@ -110,7 +112,7 @@
     padding: 0;
     width: 100%;
     border-bottom: 1px solid #fff;
-    @media (min-width: $MAX-WIDTH-SP) {
+    @media (min-width: vars.$MAX-WIDTH-SP) {
       display: inline-block;
       border: none;
       width: auto;
@@ -132,7 +134,7 @@
     padding: 1em 0;
     text-decoration: none;
 
-    @media (min-width: $MAX-WIDTH-SP) {
+    @media (min-width: vars.$MAX-WIDTH-SP) {
       padding: 12px 6px;
     }
   }

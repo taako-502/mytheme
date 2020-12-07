@@ -1,13 +1,15 @@
+@use 'Foundation/mixin';
+
 .l-main {
-  @include max-width-content(67%);
-  @include areaShadow();
+  @include mixin.max-width-content(67%);
+  @include mixin.areaShadow();
   background-color: white;
   margin: 1% 1% 2% 0;
   padding: 10px 1%;
   background-color: white;
 
-  @include mq("tab") {
-    @include max-width-content(100%);
+  @include mixin.mq("tab") {
+    @include mixin.max-width-content(100%);
     margin: 2% 0 1% 0;
     padding: 10px 0;
   }
@@ -15,7 +17,7 @@
 
 .l-main__col-1 {
   @extend .l-main;
-  @include max-width-content(100%);
+  @include mixin.max-width-content(100%);
 }
 
 .wp-embedded-content {
