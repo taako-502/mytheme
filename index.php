@@ -31,7 +31,7 @@ $page_title = "home";
       </div>
     </div>
   </div>
-  <div class="l-main">
+  <main class="l-main">
     <h2 class="c-aritcle--h2">新着記事</h2>
     <div class="p-news--list">
       <?php
@@ -47,7 +47,7 @@ $page_title = "home";
         }
       ?>
     </div>
-  </div>
+  </main>
   <?php get_sidebar(); ?>
 </section>
 <?php get_footer(); ?>
