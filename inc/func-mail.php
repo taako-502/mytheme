@@ -11,8 +11,28 @@ function mailform_init(){
   	$post_obj = get_queried_object();
 
     $html = '
-    <form action="' . get_permalink(get_queried_object()->ID) . '" method="post">
-      <input type="text"></input>
+    <form action="' . get_permalink($post_obj->ID) . '" method="post">
+      <dl>
+        <dt>お名前</dt>
+      	<dd>';
+    $html .= ! empty( $error['username'] ) ? '<p>' . $error['username'] .'</p>' : '';
+    $html .= '
+        <input type="text" name="username" value="' . $value['username'] . '" />
+      	</dd>
+      	<dt>メールアドレス</dt>
+      	<dd>';
+    $html .= ! empty( $error['email'] ) ? '<p>' . $error['email'] .'</p>' : '';
+    $html .= '
+        <input type="email" name="email" value="' . $value['email'] . '" />
+      	</dd>
+      	<dt>お問合せ内容</dt>
+      	<dd>';
+    $html .= ! empty( $error['content'] ) ? '<p>' . $error['content'] .'</p>' : '';
+    $html .= '
+        <textarea name="content">' . $value['content'] . '</textarea>
+      	</dd>
+      </dl>
+      <button type="submit">送信する</button>
     </form>';
     return $html;
   }
