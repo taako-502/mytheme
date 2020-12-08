@@ -6,12 +6,15 @@
 add_shortcode( 'mailForm', 'salcodes_mailform' );
 function mailform_init(){
   function salcodes_mailform() {
-    //return get_template_part('template-parts/content','mailform');
-    //return include( __DIR__ ."/../template-parts/content-mailform.php");
-    $retHTML = '';
-    $retHTML  = get_permalink();
-    print "text";
-    return $retHTML;
+  	global $value;
+  	global $error;
+  	$post_obj = get_queried_object();
+
+    $html = '
+    <form action="' . get_permalink(get_queried_object()->ID) . '" method="post">
+      <input type="text"></input>
+    </form>';
+    return $html;
   }
 }
 add_action('init', 'mailform_init');
