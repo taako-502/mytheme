@@ -1,5 +1,5 @@
 <section class="contents">
-  <div class="l-main">
+  <main class="l-main">
     <?php
     // パンくずリスト
     echo breadcrumb();
@@ -35,6 +35,6 @@
     //関連記事
     get_template_part( 'template-parts/content', 'related' );
     ?>
-  </div>
+  </main>
   <?php get_sidebar(); ?>
 </section>

@@ -1,5 +1,5 @@
 <section class="contents">
-  <div class="l-main__col-1">
+  <main class="l-main__col-1">
     <?php
     if(is_single()) {
       // カテゴリー表示
@@ -25,5 +25,5 @@
       endwhile;
     endif;
   ?>
-  </div>
+  </main>
 </section>
