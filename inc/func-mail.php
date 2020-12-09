@@ -10,8 +10,9 @@ function mailform_init(){
   	global $error;
   	$post_obj = get_queried_object();
 
-    $html = '
-    <form action="' . get_permalink($post_obj->ID) . '" method="post">
+    $html = '<form action="' . get_permalink($post_obj->ID) . '" method="post">';
+    $html .= wp_nonce_field( 'my-form', 'myform_nonce' , true , false ) ;
+    $html .= '
       <dl>
         <dt>お名前</dt>
       	<dd>';
