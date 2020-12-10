@@ -6,36 +6,51 @@
 add_shortcode( 'mailForm', 'salcodes_mailform' );
 function mailform_init(){
   function salcodes_mailform() {
-  	global $value;
-  	global $error;
-  	$post_obj = get_queried_object();
-
-    $html = '<form action="' . get_permalink($post_obj->ID) . '" method="post">';
-    $html .= wp_nonce_field( 'my-form', 'myform_nonce' , true , false ) ;
-    $html .= '
-      <dl>
-        <dt>お名前</dt>
-      	<dd>';
-    $html .= ! empty( $error['username'] ) ? '<p>' . $error['username'] .'</p>' : '';
-    $html .= '
-        <input type="text" name="username" value="' . $value['username'] . '" />
-      	</dd>
-      	<dt>メールアドレス</dt>
-      	<dd>';
-    $html .= ! empty( $error['email'] ) ? '<p>' . $error['email'] .'</p>' : '';
-    $html .= '
-        <input type="email" name="email" value="' . $value['email'] . '" />
-      	</dd>
-      	<dt>お問合せ内容</dt>
-      	<dd>';
-    $html .= ! empty( $error['content'] ) ? '<p>' . $error['content'] .'</p>' : '';
-    $html .= '
-        <textarea name="content">' . $value['content'] . '</textarea>
-      	</dd>
-      </dl>
-      <button type="submit">送信する</button>
-    </form>';
-    return $html;
+    //エラー文字列セット
+    global $error;
+    if(isset($error['username'])){
+      $err_username = empty( $error['username'] ) ? '<p>' . $error['username'] .'</p>' : '';
+    }
+    if(isset($error['email'])){
+      $err_email = empty( $error['email'] ) ? '<p>' . $error['email'] .'</p>' : '';
+    }
+    if(isset($error['content'])){
+      $err_content = empty( $error['content'] ) ? '<p>' . $error['content'] .'</p>' : '';
+    }
+    //問い合わせフォームのHTML構成
+    $post_obj = get_queried_object();
+    global $value;
+    return sprintf(
+      '<form action="%1$s" method="post">
+        %2$s
+        <dl>
+          <dt>お名前</dt>
+        	<dd>
+            %3$s
+            <input type="text" name="username" value="%4$s" />
+        	</dd>
+        	<dt>メールアドレス</dt>
+        	<dd>
+            %5$s
+            <input type="email" name="email" value="%6$s" />
+        	</dd>
+        	<dt>お問合せ内容</dt>
+        	<dd>
+            %7$s
+            <textarea name="content">%8$s</textarea>
+        	</dd>
+        </dl>
+        <button type="submit">送信する</button>
+      </form>'
+      ,get_permalink($post_obj->ID)
+      ,wp_nonce_field( 'my-form', 'myform_nonce' , true , false )
+      ,$err_username
+      ,$value['username']
+      ,$err_email
+      ,$value['email']
+      ,$err_content
+      ,$value['content']
+    );
   }
 }
 add_action('init', 'mailform_init');
