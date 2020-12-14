@@ -1,5 +1,15 @@
 <?php
 /**
+ * テーマの最新バージョンがないか確認する
+ */
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/taako-502/mytheme/blob/master/theme-update.json',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'mytheme'
+);
+
+/**
  *  開発用
  *  リリースするときは、コメントアウトすること
  */
