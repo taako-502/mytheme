@@ -117,9 +117,8 @@ define('WP_DEBUG',true);
 ### AMP
 - [AMPテスト](https://search.google.com/test/amp?hl=ja)
 
-### リリース方法
-テーマのアップデート方法<br>
-https://nobuntu.jp/wordpress-add-theme-update-checker/
+### テーマの自動更新
+PUC([plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker))を使用して、プラグインの自動更新を行う。
 
 ## 開発環境
 ### エディタ
