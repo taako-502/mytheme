@@ -70,18 +70,6 @@ https://www.mytheme.taako-biz.com/
 - SCSSについて
   - [https://qiita.com/one-a/items/2758511326c09200fded](https://qiita.com/one-a/items/2758511326c09200fded)
 
-### SEOについて
-#### 構造化マークアップ
-- 記事の情報を構造化<br>
-  [WordPress 構造化データを動的に出力する方法](https://hirashimatakumi.com/blog/3192.html)
-- パンくずリストの参考にした記事<br>
-  ⇒[WordPressで構造化データ用のパンくずを生成する](https://gimmicklog.com/wordpress/810/)
-
-### AMPについて
-- [AMP（公式）](https://amp.dev/ja/)
-- [【WordPress】プラグインなしでAMP対応！プログラム書けなくてもできた。](https://gk2.jp/amppage-support-without-plug-in-i-could-do-it-without-writing-program/)
-- [AMP ページにアナリティクスを追加する](https://developers.google.com/analytics/devguides/collection/amp-analytics/?hl=ja)
-
 ### コメントルール
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
 
