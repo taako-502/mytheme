@@ -1,7 +1,7 @@
 <?php
 include 'admin-init.php';
 ?>
-<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/admin/admin.css'); ?>">
+<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/css/admin.css'); ?>">
 <div class="main">
   <h1>mythemeカスタマイズ画面</h1>
   <h2>画面説明</h2>

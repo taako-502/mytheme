@@ -9,14 +9,16 @@ h2 {
 h3 {
   font-size: 1.1em;
 }
+
+p.fontsize {
+  margin: 0.1em 0 0.1em 1.0em;
+
+  &input::placeholder{
+    color: lightgray;
+  }
+}
+
 .uploded-thumbnail img{
   width: 250px;
   margin-left:20px;
-}
-p.fontsize {
-  margin: 0.1em 0 0.1em 1.0em;
-}
-
-p.fontsize input::placeholder{
-  color: lightgray;
 }
