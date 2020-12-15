@@ -85,23 +85,6 @@ https://www.mytheme.taako-biz.com/
 ### コメントルール
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
 
-## 開発環境
-### エディタ
-- [Atom](https://atom.io/)
-
-### WordPress
-- [Local](https://local.getflywheel.com/)
-
-### WordPressの開発用プラグイン
-- [[WordPress]SCSSをコンパイルするプラグイン「WP-SCSS」の使い方](https://qiita.com/super-mana-chan/items/42b207ad2e216ac6a638)
-  - WP-SCSSの設定
-    - SCSS Location: /scss/
-    - CSS Location: /css/
-    - Compiling Mode: Compressed
-    - Source Map Mode: none
-    - Error Display: Show in Header
-    - Enqueue Stylesheets: チェックを入れない
-
 ## テーマのリリースについて
 PUC([plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker))を使用して、プラグインの自動更新を行う。
 
