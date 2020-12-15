@@ -85,42 +85,6 @@ https://www.mytheme.taako-biz.com/
 ### コメントルール
 [【PhpDoc】コメントの書き方のまとめ](https://blog.flavacube.com/2010/04/%E3%80%90phpdoc%E3%80%91%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81/)
 
-## テストについて
-自動テストツールを使用し、テストを行う。<br>
-参考文献:
-- [WordPressのテーマ開発におけるテストツールまとめ【2020年度／随時更新】](https://taako-biz.com/wp-test-tool/)
-- [WordPress公式のテーマに承認されるために通すべきテスト](https://haniwaman.com/wp-theme-test/#Theme_Unit_Test)
-
-### デバッグモード
-wp-config.phpに下記のような設定を行い、エラーが発生しないこと。
-```
-define('WP_DEBUG',true);
-```
-
-### テスト用プラグイン
-[THeme Check](https://ja.wordpress.org/plugins/theme-check/)をインストールし、エラーが発生しないことを確認すること。
-
-### 構文チェック
-- HTMLの構文チェック<br>[Markup Validation Service](http://validator.w3.org/)
-- CSSの構文チェック<br>[CSS Validation Service](http://jigsaw.w3.org/css-validator/)
-- JavaScriptのエラーチェック　⇒　ブラウザの開発者モードなど
-
-### 構造化マークアップ
-- [リッチリザルトテスト](https://search.google.com/test/rich-results)
-- [構造化データのテスト](https://search.google.com/structured-data/testing-tool/u/0/)
-
-### OGP
-- twitter<br>
-  [Twitterカードの確認](https://cards-dev.twitter.com/validator)
-- facebook<br>
-  [FACEBOOK DEVELOPERS シェアデバッガー](https://developers.facebook.com/tools/debug/)
-
-### AMP
-- [AMPテスト](https://search.google.com/test/amp?hl=ja)
-
-### テーマの自動更新
-PUC([plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker))を使用して、プラグインの自動更新を行う。
-
 ## 開発環境
 ### エディタ
 - [Atom](https://atom.io/)
@@ -137,6 +101,9 @@ PUC([plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker
     - Source Map Mode: none
     - Error Display: Show in Header
     - Enqueue Stylesheets: チェックを入れない
+
+## テーマのリリースについて
+PUC([plugin-update-checker](https://github.com/YahnisElsts/plugin-update-checker))を使用して、プラグインの自動更新を行う。
 
 <hr>
 
