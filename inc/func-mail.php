@@ -119,12 +119,61 @@ function add_admin_mail(){
 add_action('admin_menu','add_admin_mail');
 
 /**
-* 追加管理画面の実装
+* メールボックスの読込
 */
 function add_custom_mailbox(){
   // mytheme専用管理画面呼び出し
   if (locate_template('admin/admin.php') !== '') {
     require_once locate_template('admin/mailbox.php');
   }
+}
+
+global $jal_db_version;
+$jal_db_version = '1.0';
+/**
+ * テーブル作成
+ * @return [type] [description]
+ */
+function jal_install() {
+  global $wpdb;
+  global $jal_db_version;
+
+  $table_name = $wpdb->prefix . 'mailbox';
+
+  $charset_collate = $wpdb->get_charset_collate();
+
+  $sql = "CREATE TABLE $table_name (
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+    name tinytext NOT NULL,
+    text text NOT NULL,
+    url varchar(55) DEFAULT '' NOT NULL,
+    UNIQUE KEY id (id)
+  ) $charset_collate;";
+
+  require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+  dbDelta( $sql );
+
+  add_option( 'jal_db_version', $jal_db_version );
+}
+add_action('after_switch_theme','jal_install');
+
+
+function jal_install_data() {
+  global $wpdb;
+
+  $welcome_name = 'Wordpress さん';
+  $welcome_text = 'おめでとうございます、インストールに成功しました！';
+
+  $table_name = $wpdb->prefix . 'mailbox';
+
+  $wpdb->insert(
+    $table_name,
+    array(
+      'time' => current_time( 'mysql' ),
+      'name' => $welcome_name,
+      'text' => $welcome_text,
+    )
+  );
 }
 ?>
