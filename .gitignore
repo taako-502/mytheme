@@ -3,4 +3,5 @@ error_log.log
 prepros.config
 package-lock.json
 package.json
+page-phpinfo.php
 .DS_Store
