@@ -13,7 +13,7 @@
       'post_type' => 'post',
       'posts_per_page' => '4',
       'post__not_in' =>array( $post->ID ),
-      'category__in' => $catkwds,
+      'category__in' => isset($catkwds) ? $catkwds : "",
       'orderby' => 'rand'
     );
     $my_query = new WP_Query( $args );
