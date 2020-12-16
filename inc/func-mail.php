@@ -44,12 +44,12 @@ function mailform_init(){
       </form>'
       ,get_permalink($post_obj->ID)
       ,wp_nonce_field( 'my-form', 'myform_nonce' , true , false )
-      ,$err_username
-      ,$value['username']
-      ,$err_email
-      ,$value['email']
-      ,$err_content
-      ,$value['content']
+      ,isset($err_username)? $err_username: ""
+      ,isset($value['username'])? $value['username'] : ""
+      ,isset($err_email)? $err_email: ""
+      ,isset($value['email'])? $value['email'] : ""
+      ,isset($err_content)? $err_content: ""
+      ,isset($value['content'])? $value['content'] : ""
     );
   }
 }
