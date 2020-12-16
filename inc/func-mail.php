@@ -128,20 +128,20 @@ function add_custom_mailbox(){
   }
 }
 
-global $jal_db_version;
-$jal_db_version = '1.0';
+
 /**
  * テーブル作成
  * @return [type] [description]
  */
-function jal_install() {
+function mailbox_create_table() {
   global $wpdb;
-  global $jal_db_version;
-
   $table_name = $wpdb->prefix . 'mailbox';
+  //すでにテーブルが存在する場合は、終了
+  if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") == $table_name) {
+    return;
+  }
 
   $charset_collate = $wpdb->get_charset_collate();
-
   $sql = "CREATE TABLE $table_name (
     id mediumint(9) NOT NULL AUTO_INCREMENT,
     time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
@@ -150,16 +150,22 @@ function jal_install() {
     url varchar(55) DEFAULT '' NOT NULL,
     UNIQUE KEY id (id)
   ) $charset_collate;";
-
   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+  //dbDeltaメソッドは、制約が多いため気をつけること（詳細はcodex参照）
   dbDelta( $sql );
 
+  //バージョン情報を付加するとのちに便利になる
+  global $jal_db_version;
+  $jal_db_version = '1.0';
   add_option( 'jal_db_version', $jal_db_version );
 }
-add_action('after_switch_theme','jal_install');
+add_action('after_switch_theme','mailbox_create_table');
 
-
-function jal_install_data() {
+/**
+ * 未検証ソース
+ * @return [type] [description]
+ */
+function mailbox_data() {
   global $wpdb;
 
   $welcome_name = 'Wordpress さん';
