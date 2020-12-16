@@ -106,16 +106,25 @@ add_action( 'template_redirect', 'form_init' );
 /**
  * 管理メニューに追加
  */
-function add_admin(){
+function add_admin_mail(){
   add_menu_page(
-    'mythemeの簡単設定',
-    'mytheme設定',
-    'manage_options',
-    'mytheme-admin',
-    'add_custom_admin',
-    //get_template_directory_uri() . '/images/logo-mini.png',
-    get_template_directory_uri() . '/images/logo-mini.svg',
-    59);
+    'メール確認画面',//タイトル
+    'メールボックス',//メニュー名
+    'manage_options',//権限
+    'mailbox',//スラッグ
+    'add_custom_mailbox',//
+    'dashicons-email',
+    57);
 }
-add_action('admin_menu','add_admin');
+add_action('admin_menu','add_admin_mail');
+
+/**
+* 追加管理画面の実装
+*/
+function add_custom_mailbox(){
+  // mytheme専用管理画面呼び出し
+  if (locate_template('admin/admin.php') !== '') {
+    require_once locate_template('admin/mailbox.php');
+  }
+}
 ?>
