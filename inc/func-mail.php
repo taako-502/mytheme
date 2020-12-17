@@ -90,6 +90,13 @@ function form_init() {
       $fromname = "My Test Site";
       $from = "sendonly@example.com";
       $headers = "From: {$fromname} <{$from}>" . "\r\n";
+      //メールの内容をデータベースに登録
+      try {
+        insertMailbox($value['username'],$value['email'],$value['content']);
+      } catch( Exception $e ) {
+        echo "システム障害が発生しました。時間を置いてリトライするか、WordPressテーマ作成者までご連絡ください。";
+        return;
+      }
       //メール送信
       if(MAIL_TEST_FLG){
         //テストフラグがtrueなら、trueを返す
@@ -149,6 +156,7 @@ function mailbox_create_table() {
     name text NOT NULL,
     mail_address text NOT NULL,
     content text,
+    sdatetime datetime DEFAULT CURRENT_TIMESTAMP,
     UNIQUE KEY id (id)
   ) $charset_collate;";
   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -163,23 +171,18 @@ function mailbox_create_table() {
 add_action('after_switch_theme','mailbox_create_table');
 
 /**
- * 未検証ソース
+ * wp_mailboxに受信したメッセージを保存する
  * @return [type] [description]
  */
-function mailbox_data() {
+function insertMailbox($name,$mailaddress,$content) {
   global $wpdb;
-
-  $welcome_name = 'Wordpress さん';
-  $welcome_text = 'おめでとうございます、インストールに成功しました！';
-
   $table_name = $wpdb->prefix . 'mailbox';
-
   $wpdb->insert(
     $table_name,
     array(
-      'time' => current_time( 'mysql' ),
-      'name' => $welcome_name,
-      'text' => $welcome_text,
+      'name' => $name,
+      'mail_address' => $mailaddress,
+      'content' => $content,
     )
   );
 }
