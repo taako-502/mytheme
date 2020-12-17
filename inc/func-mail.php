@@ -60,10 +60,6 @@ add_action('init', 'mailform_init');
  * @return [type] [description]
  */
 function form_init() {
-  if ( ! is_page( 'contact' ) ) {
-    return;
-  }
-
   global $value, $error;
   $value = array( 'username' => '', 'email' => '', 'content' => '' );
   $error = array();
@@ -94,9 +90,16 @@ function form_init() {
       $fromname = "My Test Site";
       $from = "sendonly@example.com";
       $headers = "From: {$fromname} <{$from}>" . "\r\n";
-      $res = wp_mail( $to, $subject, $body , $headers );
+      //メール送信
+      if(MAIL_TEST_FLG){
+        //テストフラグがtrueなら、trueを返す
+        $res = true;
+      } else {
+        $res = wp_mail( $to, $subject, $body , $headers );
+      }
       if ( $res ) {
-        wp_safe_redirect( get_page_link( get_page_by_path( 'inquiry/thanks' )->ID ) );
+        //サンクスページにリダイレクトする処理
+        //wp_safe_redirect( get_page_link( get_page_by_path( 'inquiry/thanks' )->ID ) );
       }
     }
   }
@@ -128,9 +131,8 @@ function add_custom_mailbox(){
   }
 }
 
-
 /**
- * テーブル作成
+ * テーマ有効時にテーブル作成
  * @return [type] [description]
  */
 function mailbox_create_table() {

@@ -1,4 +1,9 @@
 <?php
+get_template_part('utility/utility');
+//グローバル変数
+global $value;
+global $error;
+
 /**
  * テーマの最新バージョンがないか確認する
  */
@@ -8,18 +13,6 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	__FILE__,
 	'mytheme'
 );
-
-/**
- *  開発用
- *  リリースするときは、コメントアウトすること
- */
-// WP-SCSS：ページをロードするたびにscssファイルを強制的にコンパイル
-define( 'WP_SCSS_ALWAYS_RECOMPILE', true );
-get_template_part('utility/utility');
-
-//グローバル変数
-global $value;
-global $error;
 
 /**
  * コンテンツ幅設定
@@ -40,6 +33,8 @@ function mytheme_setup(){
 }
 add_action('after_setup_theme','mytheme_setup');
 
+//テスト設定
+get_template_part('/inc/func','test');
 //ウィジェット
 get_template_part('/inc/func','widgets');
 //ダッシュボード
