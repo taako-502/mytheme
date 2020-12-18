@@ -19,8 +19,6 @@ global $page_title;
   <meta charset="utf-8">
   <meta name="description" content="<?php echo $description; ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/app.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri() . '/css/customcss.php'); ?>" />
   <?php
   get_template_part( 'template-parts/content', 'ogp' );
   get_template_part( 'template-parts/content', 'schema' );

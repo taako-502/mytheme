@@ -71,20 +71,25 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 /**
- * javascript読み込み
+ * CSS、javascript読み込み
  * @return [type] [description]
  */
 function main_enqueue_scripts() {
-  if(isset($_GET['amp']) && $_GET['amp'] == 1){
-    //AMPはJavaScriptが使えない
+	$amp_flg = isset($_GET['amp']) && $_GET['amp'] == 1;
+  if($amp_flg) {
+    //AMPページ
     return;
+  } else {
+		//CSS
+		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
+		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
+		//JavaScript
+  	wp_enqueue_script('jquery');
+  	wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
+  	if ( is_singular() ) {
+    	wp_enqueue_script( 'comment-reply' );
+		}
   }
-  wp_enqueue_script('jquery');
-  wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
-  if ( is_singular() ) {
-    wp_enqueue_script( 'comment-reply' );
-  }
-  //wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
 ?>
