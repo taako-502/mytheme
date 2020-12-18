@@ -15,8 +15,7 @@ class SchemaClass {
     $src = isset($image) ? get_stylesheet_directory_uri() . '/images/thumbnail-default.jpg' : $image[0];    // URL
     $width = isset($image) ? 900 : $image[1];  // 横幅
     $height = isset($image) ? 450 : $image[2]; // 高さ
-    $dateModified = get_the_date() != get_the_modified_time() ? "the_modified_date(DATE_ISO8601)" : get_the_date(DATE_ISO8601);
-    return "
+    return printf("
       <script type=\"application/ld+json\">
       {
         \"@context\": \"http://schema.org\",
@@ -28,9 +27,9 @@ class SchemaClass {
         \"headline\": \"". get_the_title() ."\",
         \"image\": {
           \"@type\": \"ImageObject\",
-          \"url\": \"". $src ."\",
-          \"height\":". $height .",
-          \"width\":". $width ."
+          \"url\": \"%s\",
+          \"height\":%d,
+          \"width\":%d
         },
         \"datePublished\": \"" . get_the_date(DATE_ISO8601) . "\",
         \"dateModified\": \"%s\",
@@ -50,7 +49,12 @@ class SchemaClass {
         },
         \"description\": \"". get_the_excerpt() ."\"
       }
-      </script>";
+      </script>"
+      ,$src
+      ,$height
+      ,$width
+      ,get_the_date() != get_the_modified_time() ? "the_modified_date(DATE_ISO8601)" : get_the_date(DATE_ISO8601)
+    );
   }
 
   /**

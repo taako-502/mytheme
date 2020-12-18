@@ -46,7 +46,7 @@ function main_enqueue_scripts() {
   } else {
 		//構造化マークアップ
 		$sc = new SchemaClass;
-		echo $sc->getStructuredData();
+		$sc->getStructuredData();
 		//CSS
 		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
 		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
