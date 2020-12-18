@@ -30,7 +30,7 @@ function ogp_meta_box_callback( $post ) {
   <input type="text" name="individual_title" value='<?php echo $ogpTitle; ?>'>
   <p>OGPディスクリプション</p>
   <textarea name="individual_description" rows="4"><?php echo $ogpDescription; ?></textarea>
-	<p>画像URL</p><?php 
+	<p>画像URL</p><?php
 	generate_upload_image_tag('individual_img', $ogpImg);
 }
 
@@ -59,6 +59,5 @@ function save_global_individual_title_meta_box_data( $post_id ) {
     update_post_meta( $post_id , '_individual_img', $_POST['individual_img'] );
   }
 }
-
 add_action( 'save_post', 'save_global_individual_title_meta_box_data' );
 ?>

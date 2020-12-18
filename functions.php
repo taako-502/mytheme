@@ -1,6 +1,7 @@
 <?php
 get_template_part('utility/utility');
 require_once( plugin_dir_path(__FILE__) . "biz/SchemaClass.php");
+require_once( plugin_dir_path(__FILE__) . "biz/OgpClass.php");
 //グローバル変数
 global $value;
 global $error;
@@ -43,6 +44,9 @@ function main_enqueue_scripts() {
     //AMPページ
     return;
   } else {
+		//OGP
+		$oc = new OgpClass;
+		echo $oc->getOgpMeta();
 		//構造化マークアップ
 		$sc = new SchemaClass;
 		$sc->getStructuredData();
