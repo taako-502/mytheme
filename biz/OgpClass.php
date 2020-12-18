@@ -9,6 +9,7 @@ class OgpClass{
    */
   public function getOgpMeta(){
     global $post;
+    $url = "";
     $result = "<meta property=\"og:type\" content=\"blog\">"."\n";
     if (is_single()){
       $description = get_post_meta($post->ID,  '_individual_description', true);
@@ -19,16 +20,17 @@ class OgpClass{
       endwhile; endif;
       $title = get_post_meta($post->ID, '_individual_title', true);
       $title = ut\isNullOrEmpty(trim($title)) ? get_the_title() : $title;
-      $result .= "<meta property=\"og:title\" content=\"". $title ."\">"."\n";
-      $result .= "<meta property=\"og:url\" content=\"". get_the_permalink() ."\">"."\n";
+      $url = get_the_permalink();
     } else {
       //単一記事ページページ以外の場合（アーカイブページやホームなど）
-      $result .= "<meta property=\"og:description\" content=\"". bloginfo('description') ."\">"."\n";
-      $result .= "<meta property=\"og:title\" content=\"". bloginfo('name') ."\">"."\n";
-      $result .= "<meta property=\"og:url\" content=\"". esc_url( home_url() ) ."\">"."\n";
+      $result .= "<meta property=\"og:description\" content=\"". get_bloginfo('description') ."\">"."\n";
+      $title = get_bloginfo('name');
+      $url = esc_url(home_url());
     }
-    $str = $post->post_content;
+    $result .= "<meta property=\"og:title\" content=\"". $title ."\">"."\n";
+    $result .= "<meta property=\"og:url\" content=\"".$url."\">"."\n";
     //投稿にイメージがあるか調べる
+    $str = $post->post_content;
     $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
     if (is_single()){
       //単一記事ページの場合
