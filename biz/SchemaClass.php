@@ -8,6 +8,7 @@ class SchemaClass {
    * @var [type]
    */
   public function getStructuredData(){
+    global $post;
     // image（画像）の指定のためにアイキャッチ画像の情報を取得します
     $thumbnail_id = get_post_thumbnail_id($post->ID); // アタッチメントIDの取得
     $image = wp_get_attachment_image_src( $thumbnail_id, 'full' ); // アイキャッチの情報を取得
@@ -23,15 +24,15 @@ class SchemaClass {
           \"@type\":\"WebPage\",
           \"@id\":\"<?php the_permalink(); ?>\"
         },
-        \"headline\": \"<?php echo get_the_title(); ?>\",
+        \"headline\": \"". get_the_title() ."\",
         \"image\": {
           \"@type\": \"ImageObject\",
           \"url\": \"%s\",
           \"height\":%d,
           \"width\":%d
         },
-        \"datePublished\": \"<?php echo get_the_date(DATE_ISO8601); ?>\",
-        \"dateModified\": \"<?php if ( get_the_date() != get_the_modified_time() ){ the_modified_date(DATE_ISO8601); } else { echo get_the_date(DATE_ISO8601); } ?>\",
+        \"datePublished\": \"" . get_the_date(DATE_ISO8601) . "\",
+        \"dateModified\": \"%s\",
         \"author\": {
           \"@type\": \"Person\",
           \"name\": \"<?php the_author_meta('nickname'); ?>\"
@@ -41,17 +42,18 @@ class SchemaClass {
           \"name\": \"<?php bloginfo('name'); ?>\",
           \"logo\": {
             \"@type\": \"ImageObject\",
-            \"url\": \"<?php echo esc_url(get_template_directory_uri() . '/img/publisher-logo.png'); ?>\",
+            \"url\": \"". esc_url(get_template_directory_uri() . '/img/publisher-logo.png') ."\",
             \"width\": 600,
             \"height\": 60
           }
         },
-        \"description\": \"<?php echo get_the_excerpt(); ?>\"
+        \"description\": \"". get_the_excerpt() ."\"
       }
       </script>"
       ,$src
       ,$height
       ,$width
+      ,get_the_date() != get_the_modified_time() ? "the_modified_date(DATE_ISO8601)" : get_the_date(DATE_ISO8601)
       );
   }
 
