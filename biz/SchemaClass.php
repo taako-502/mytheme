@@ -22,27 +22,27 @@ class SchemaClass {
         \"@type\": \"NewsArticle\",
         \"mainEntityOfPage\":{
           \"@type\":\"WebPage\",
-          \"@id\":\"<?php the_permalink(); ?>\"
+          \"@id\":\"%s\"
         },
-        \"headline\": \"". get_the_title() ."\",
+        \"headline\": \"%s\",
         \"image\": {
           \"@type\": \"ImageObject\",
           \"url\": \"%s\",
           \"height\":%d,
           \"width\":%d
         },
-        \"datePublished\": \"" . get_the_date(DATE_ISO8601) . "\",
+        \"datePublished\": \"%s\",
         \"dateModified\": \"%s\",
         \"author\": {
           \"@type\": \"Person\",
-          \"name\": \"<?php the_author_meta('nickname'); ?>\"
+          \"name\": \"%s\"
         },
         \"publisher\": {
           \"@type\": \"Organization\",
-          \"name\": \"<?php bloginfo('name'); ?>\",
+          \"name\": \"%s\",
           \"logo\": {
             \"@type\": \"ImageObject\",
-            \"url\": \"". esc_url(get_template_directory_uri() . '/img/publisher-logo.png') ."\",
+            \"url\": \"%s\",
             \"width\": 600,
             \"height\": 60
           }
@@ -50,10 +50,16 @@ class SchemaClass {
         \"description\": \"". get_the_excerpt() ."\"
       }
       </script>"
+      ,get_permalink()
+      ,get_the_title()
       ,$src
       ,$height
       ,$width
-      ,get_the_date() != get_the_modified_time() ? "the_modified_date(DATE_ISO8601)" : get_the_date(DATE_ISO8601)
+      ,get_the_date(DATE_ISO8601)
+      ,get_the_date() != get_the_modified_time() ? get_the_modified_date(DATE_ISO8601) : get_the_date(DATE_ISO8601)
+      ,get_the_author_meta('nickname')
+      ,get_bloginfo('name')
+      ,esc_url(get_template_directory_uri() . '/img/publisher-logo.png')
     );
   }
 
