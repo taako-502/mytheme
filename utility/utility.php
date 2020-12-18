@@ -1,4 +1,6 @@
 <?php
+namespace ut;
+
 if (!function_exists('isNullOrEmpty')) {
   /**
   * 引数がnullか空白か判定
@@ -28,16 +30,6 @@ if (!function_exists('is_nullorwhitespace')) {
     }
     return false;
   }
-}
-
-/**
- * 引数で受け取った数値が空白でないなら、数値を返却、そうでなければデフォルト値を返却
- * @param [type] $num     数値
- * @param [type] $default デフォルト値
- */
-function setNumData($num,$default){
-  return 1;
-  //return ( isset($num) && trim($num) !== '' ) ? (int)$num : $default ;
 }
 
 /**

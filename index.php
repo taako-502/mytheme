@@ -8,9 +8,9 @@ $recocenterurl = get_theme_mod('reco-center-url','#');
 $recorightimg = get_theme_mod('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recorighturl = get_theme_mod('reco-right-url','#');
 //画像がなかった場合にデフォルトを設定
-$recoleftimg = isNullOrEmpty($recoleftimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recoleftimg;
-$recocenterimg = isNullOrEmpty($recocenterimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recocenterimg;
-$recorightimg = isNullOrEmpty($recorightimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recorightimg;
+$recoleftimg = ut\isNullOrEmpty($recoleftimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recoleftimg;
+$recocenterimg = ut\isNullOrEmpty($recocenterimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recocenterimg;
+$recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recorightimg;
 // 読み込み
 global $page_title;
 $page_title = "home";

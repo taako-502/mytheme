@@ -3,13 +3,13 @@
 if (is_single()){
   $title = get_post_meta($post->ID, '_individual_title', true);
   $description = get_post_meta($post->ID,  '_individual_description', true);
-  $description = isNullOrEmpty($description) ? get_post_meta($post->ID, '_aioseop_description', true) : $description;
+  $description = ut\isNullOrEmpty($description) ? get_post_meta($post->ID, '_aioseop_description', true) : $description;
   //単一記事ページの場合
   if(have_posts()): while(have_posts()): the_post();
     echo '<meta property="og:description" content="'. $description .'">';echo "\n";
   endwhile; endif;
   ?>
-  <meta property="og:title" content="<?php if(isNullOrEmpty(trim($title))){ the_title(); } else { echo $title; } ?>">
+  <meta property="og:title" content="<?php if(ut\isNullOrEmpty(trim($title))){ the_title(); } else { echo $title; } ?>">
   <meta property="og:url" content="<?php the_permalink(); ?>">
   <?php
 } else {
@@ -26,7 +26,7 @@ $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
 if (is_single()){
   //単一記事ページの場合
   $individual_img = get_post_meta($post->ID, '_individual_img', true);
-  if(! isNullOrEmpty(trim($individual_img))) {
+  if(! ut\isNullOrEmpty(trim($individual_img))) {
     //個別に設定したOGP画像がある場合
     echo '<meta property="og:image" content="'.$individual_img.'">';echo "\n";
   } else if (has_post_thumbnail()) {

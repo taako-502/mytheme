@@ -5,7 +5,7 @@
 */
 function custom_blogcard_dynamic_render_callback( $attr, $content ) {
   $post_id = url_to_postid($attr['url_blogcard']);
-  $description = getDescription($post_id,50);
+  $description = ut\getDescription($post_id,50);
   return sprintf(
     '<div class="p-blogcard">
       <a class="wp-block-my-plugin-latest-post" href="%1$s">
