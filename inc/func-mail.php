@@ -1,4 +1,6 @@
 <?php
+require_once( plugin_dir_path(__FILE__) . "../biz/MailClass.php");
+
 /**
  * ショートコードの登録
  * @var [type]
@@ -91,12 +93,8 @@ function form_init() {
       $from = "sendonly@example.com";
       $headers = "From: {$fromname} <{$from}>" . "\r\n";
       //メールの内容をデータベースに登録
-      try {
-        insertMailbox($value['username'],$value['email'],$value['content']);
-      } catch( Exception $e ) {
-        echo "システム障害が発生しました。時間を置いてリトライするか、WordPressテーマ作成者までご連絡ください。";
-        return;
-      }
+      $mc = new MailClass;
+      $mc->insertMailbox($value['username'],$value['email'],$value['content']);
       //メール送信
       if(MAIL_TEST_FLG){
         //テストフラグがtrueなら、trueを返す
@@ -143,47 +141,13 @@ function add_custom_mailbox(){
  * @return [type] [description]
  */
 function mailbox_create_table() {
-  global $wpdb;
-  $table_name = $wpdb->prefix . 'mailbox';
-  //すでにテーブルが存在する場合は、終了
-  if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") == $table_name) {
-    return;
-  }
-
-  $charset_collate = $wpdb->get_charset_collate();
-  $sql = "CREATE TABLE $table_name (
-    id mediumint(6) NOT NULL AUTO_INCREMENT,
-    name text NOT NULL,
-    mail_address text NOT NULL,
-    content text,
-    sdatetime datetime DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE KEY id (id)
-  ) $charset_collate;";
-  require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-  //dbDeltaメソッドは、制約が多いため気をつけること（詳細はcodex参照）
-  dbDelta( $sql );
-
-  //バージョン情報を付加するとのちに便利になる
+  $mc = new MailClass;
+  $mc->createTableMailbox();
+  //バージョン情報を付加
   global $jal_db_version;
-  $jal_db_version = '1.0';
-  add_option( 'jal_db_version', $jal_db_version );
+  $mailbox_db_version = '1.0';
+  add_option( 'mailbox_db_version', $mailbox_db_version );
 }
 add_action('after_switch_theme','mailbox_create_table');
 
-/**
- * wp_mailboxに受信したメッセージを保存する
- * @return [type] [description]
- */
-function insertMailbox($name,$mailaddress,$content) {
-  global $wpdb;
-  $table_name = $wpdb->prefix . 'mailbox';
-  $wpdb->insert(
-    $table_name,
-    array(
-      'name' => $name,
-      'mail_address' => $mailaddress,
-      'content' => $content,
-    )
-  );
-}
 ?>
