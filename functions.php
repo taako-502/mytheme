@@ -33,6 +33,29 @@ function mytheme_setup(){
 }
 add_action('after_setup_theme','mytheme_setup');
 
+/**
+ * CSS、javascript読み込み
+ * @return [type] [description]
+ */
+function main_enqueue_scripts() {
+	$amp_flg = isset($_GET['amp']) && $_GET['amp'] == 1;
+  if($amp_flg) {
+    //AMPページ
+    return;
+  } else {
+		//CSS
+		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
+		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
+		//JavaScript
+  	wp_enqueue_script('jquery');
+  	wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
+  	if ( is_singular() ) {
+    	wp_enqueue_script( 'comment-reply' );
+		}
+  }
+}
+add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
+
 //テスト設定
 get_template_part('/inc/func','test');
 //ウィジェット
@@ -69,27 +92,4 @@ add_filter( 'get_the_archive_title', function ($title) {
   }
   return $title;
 });
-
-/**
- * CSS、javascript読み込み
- * @return [type] [description]
- */
-function main_enqueue_scripts() {
-	$amp_flg = isset($_GET['amp']) && $_GET['amp'] == 1;
-  if($amp_flg) {
-    //AMPページ
-    return;
-  } else {
-		//CSS
-		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
-		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
-		//JavaScript
-  	wp_enqueue_script('jquery');
-  	wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
-  	if ( is_singular() ) {
-    	wp_enqueue_script( 'comment-reply' );
-		}
-  }
-}
-add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
 ?>
