@@ -1,5 +1,6 @@
 <?php
 get_template_part('utility/utility');
+require_once( plugin_dir_path(__FILE__) . "biz/SchemaClass.php");
 //グローバル変数
 global $value;
 global $error;
@@ -43,6 +44,9 @@ function main_enqueue_scripts() {
     //AMPページ
     return;
   } else {
+		//構造化マークアップ
+		$sc = new SchemaClass;
+		echo $sc->getStructuredData();
 		//CSS
 		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
 		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
@@ -72,8 +76,6 @@ get_template_part('/inc/func','admin');
 get_template_part('/inc/func','block');
 //OGP設定
 get_template_part('/inc/func', 'ogp');
-//構造化マークアップ
-get_template_part('/inc/func', 'schema');
 //AMP設定
 get_template_part('/inc/func', 'amp');
 //画像アップローダ設定

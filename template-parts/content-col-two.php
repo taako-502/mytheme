@@ -2,7 +2,8 @@
   <main class="l-main">
     <?php
     // パンくずリスト
-    echo breadcrumb();
+    $sc = New SchemaClass;
+    echo $sc->getBreadcrumb();
     if(is_single()) {
       // カテゴリー表示
       $category_name = get_the_category()[0]->cat_name;
