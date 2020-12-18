@@ -5,7 +5,6 @@
 class SchemaClass {
   /**
    * 構造家データを返却
-   * @var [type]
    */
   public function getStructuredData(){
     global $post;

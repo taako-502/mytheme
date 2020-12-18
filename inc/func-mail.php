@@ -3,7 +3,6 @@ require_once( plugin_dir_path(__FILE__) . "../biz/MailClass.php");
 
 /**
  * ショートコードの登録
- * @var [type]
  */
 add_shortcode( 'mailForm', 'salcodes_mailform' );
 function mailform_init(){

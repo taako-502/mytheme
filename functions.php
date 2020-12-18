@@ -17,7 +17,6 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 
 /**
  * コンテンツ幅設定
- * @var [type]
  */
 if ( ! isset( $content_width ) ) {
   $content_width = 900;

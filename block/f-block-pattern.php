@@ -1,7 +1,6 @@
 <?php
 /**
  * ブロックパターン
- * @var [type]
  */
 //デフォルトのテーマ削除
 remove_theme_support( 'core-block-patterns' );

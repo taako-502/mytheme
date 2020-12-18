@@ -1,7 +1,6 @@
 <?php
 /**
  * ブロックスタイル
- * @var [type]
  */
 add_action( 'init', function() {
  	register_block_style(

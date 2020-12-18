@@ -59,6 +59,5 @@ add_filter( 'post_thumbnail_html', 'otherImg' );
 
 /**
  * srcset属性の削除
- * @var [type]
  */
 add_filter('wp_calculate_image_srcset_meta', '__return_null');
