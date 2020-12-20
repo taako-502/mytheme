@@ -22,7 +22,7 @@
             <?php
             the_content();
             wp_link_pages('before=<div class="pagination">&after=</div>');
-            the_tags("",",","");
+            the_tags("<span class=\"tag\">","</span><span class=\"tag\">","</span>");
             if( is_singular('post') ) {
               comments_template();
             }
