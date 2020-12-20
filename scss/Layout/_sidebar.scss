@@ -9,13 +9,19 @@
   text-align: center;
 
   @include mixin.mq("tab") {
+    box-sizing: border-box;
     @include mixin.max-width-content(100%);
     margin: 2% 0 1% 0;
-    padding-left: 0;
+    padding: 18px 3%;
   }
 
   li {
     list-style: none;
+    margin-bottom: 5px;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .widget {
@@ -29,6 +35,7 @@
   .widgettitle {
     text-align: left;
     border-bottom: solid 3px black;
+    margin-bottom: 10px;
   }
 
   .widget_sidebar {
@@ -42,12 +49,19 @@
   }
 
   .searchfield {
+    display: block;
     font-size: 14px;
-    //width: 97%;
+    width: 91%;
     padding: 10px;
     border: solid 1px #bbb;
     border-radius: 4px;
     background-color: #efefef;
+
+    @include mixin.mq("tab") {
+      @include mixin.blockAndStaticCenter();
+      box-sizing: border-box;
+      width: 100%;
+    }
   }
 
   .searchsubmit {
