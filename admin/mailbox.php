@@ -6,7 +6,7 @@ $results = $mc->selectMailboxAll();
 <main>
   <h2>メール受信箱</h2>
   <p>問い合わせフォームから送信されたメッセージを表示します。</p>
-  <p>問い合わせフォームは、ショートコードとして<code>mailForm</code>を設置することで、表示することができます。</p>
+  <p>問い合わせフォームは、ショートコードとして<code>[mailForm]</code>を設置することで、表示することができます。</p>
   <table>
     <thead>
       <tr>
