@@ -55,6 +55,7 @@
 
 .p-news-card {
   @include mixin.articleShadow();
+  position:relative;
   width: 47%;
   padding-bottom:5px;
   margin: 1.5%;
@@ -71,6 +72,20 @@
     height: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+  }
+}
+
+.p-news-card--category {
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 6px;
+  right :6px;
+  padding: 0 5px;
+
+  span {
+    font-size: 14px;
   }
 }
 
