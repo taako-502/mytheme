@@ -216,6 +216,7 @@
   }
 
   .tag {
+    @include mixin.paragraphMargin();
     display: inline-block;
     background: whitesmoke;
     text-decoration: none;
