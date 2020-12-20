@@ -83,14 +83,16 @@
   top: 6px;
   right :6px;
   padding: 0 5px;
+  color: dimgray;
 
   span {
     font-size: 14px;
   }
 }
 
-.p-news-card--a {
+.p-news-card--title {
   display: block;
+  text-decoration: none;
   margin: 5px 7px;
   color:#333;
 }

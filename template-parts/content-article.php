@@ -1,10 +1,14 @@
 <div class="p-news-card">
   <?php
   $category = get_the_category();
-  $cat_name = $category[0]->cat_name;
-  $cat_link = get_category_link($category[0]->term_id);
-  ?>
+  if(isset($category[0])){
+    $cat_name = $category[0]->cat_name;
+    $cat_link = get_category_link($category[0]->term_id);
+    ?>
   <a class="p-news-card--category" href="<?php echo $cat_link; ?>"><span><?php echo $cat_name; ?></span></a>
+    <?php
+  }
+  ?>
   <a href="<?php echo get_permalink(); ?>">
     <?php
         if ( has_post_thumbnail() ) {
@@ -16,7 +20,7 @@
     ?>
   </a>
   <h2>
-    <a class="p-news-card--a" href="<?php echo get_permalink(); ?>">
+    <a class="p-news-card--title" href="<?php echo get_permalink(); ?>">
       <?php
         $title = get_the_title();
         // タイトルが長い場合、省略
