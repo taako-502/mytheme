@@ -37,7 +37,9 @@
 
 .p-recommend--img {
   @include mixin.articleShadow();
-  width: 30%;
+  display: block;
+  @include mixin.blockAndStaticCenter();
+  width: 95%;
   height: auto;
   margin: 0 auto;
 
