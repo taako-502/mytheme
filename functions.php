@@ -51,6 +51,7 @@ function main_enqueue_scripts() {
 		$sc = new SchemaClass;
 		$sc->getStructuredData();
 		//CSS
+		wp_enqueue_style( 'font-awesom', esc_url(get_template_directory_uri() . '/lib/fontawesome/css/all.min.css'));
 		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
 		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
 		//JavaScript
