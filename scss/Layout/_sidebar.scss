@@ -65,7 +65,9 @@
   }
 
   .searchsubmit {
-    //font-family: FontAwesome;
+    content: "\f0e0";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
     font-size: 1.4em;
     position: absolute;
     top: 0;
