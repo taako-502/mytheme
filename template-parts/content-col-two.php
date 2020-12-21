@@ -20,9 +20,11 @@
           <?php the_post_thumbnail(); ?>
           <section id="post-<?php the_ID(); ?>" <?php post_class("p-section"); ?>>
             <?php
+
             the_content();
             wp_link_pages('before=<div class="pagination">&after=</div>');
-            the_tags("<span class=\"tag\">","</span><span class=\"tag\">","</span>");
+            ?><i class="fas fa-tags p-tags--icon"></i><?php
+            the_tags("<span class=\"p-tags--tag\">","</span><span class=\"tag\">","</span>");
             if( is_singular('post') ) {
               comments_template();
             }

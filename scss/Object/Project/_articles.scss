@@ -216,7 +216,12 @@
     font-size: 0.9em;
   }
 
-  .tag {
+  .p-tags--icon {
+    color: dimgray;
+    margin-left: 1px;
+  }
+
+  .p-tags--tag {
     @include mixin.paragraphMargin();
     display: inline-block;
     background: whitesmoke;
