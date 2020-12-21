@@ -23,8 +23,10 @@
 
             the_content();
             wp_link_pages('before=<div class="pagination">&after=</div>');
-            ?><i class="fas fa-tags p-tags--icon"></i><?php
-            the_tags("<span class=\"p-tags--tag\">","</span><span class=\"tag\">","</span>");
+            if(has_tag()){
+              ?><i class="fas fa-tags p-tags--icon"></i><?php
+              the_tags("<span class=\"p-tags--tag\">","</span><span class=\"p-tags--tag\">","</span>");
+            }
             if( is_singular('post') ) {
               comments_template();
             }
