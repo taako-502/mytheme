@@ -90,6 +90,10 @@
     li {
       margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
 
+      @include mixin.mq("sp") {
+        margin-left: 1.9em;
+      }
+
       &:before {
         position: absolute;
         left: 1em;
@@ -114,6 +118,11 @@
       margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
       padding: 0.5em 0.5em 0.5em 30px;
       border-bottom: dashed 1px orange;
+
+      @include mixin.mq("sp") {
+        margin-left: 1em;
+      }
+
 
       &> ol {
         margin-top: vars.$LIST-LINE-SPACE;
@@ -167,6 +176,11 @@
     color: #464646;
     border: solid 3px #72ccf4;
 
+    @include mixin.mq("sp") {
+      margin-left: 20px;
+      padding: 6px 10px;
+    }
+
     &:before {
       display: inline-block;
       position: absolute;
@@ -183,6 +197,12 @@
       color: #FFF;
       font-size: 22px;
       font-weight: 900;
+
+      @include mixin.mq("sp") {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+      }
     }
 
     &:after {
@@ -201,6 +221,12 @@
       color: #FFF;
       font-size: 22px;
       font-weight: 900;
+
+      @include mixin.mq("sp") {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+      }
     }
 
   }
@@ -224,6 +250,10 @@
     display: block;
     background: #efefef;
     padding: 9px 11px;
+
+    @include mixin.mq("sp") {
+      margin-left: 0;
+    }
   }
 }
 
@@ -244,4 +274,9 @@
   margin-left:4px;
   padding: 3px 12px;
   border-radius: 34%;
+
+  @include mixin.mq("sp") {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
