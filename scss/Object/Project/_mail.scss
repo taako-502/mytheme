@@ -1,0 +1,30 @@
+@use 'Foundation/mixin';
+
+.p-mailform {
+  dt {
+    margin-top: 20px;
+  }
+  dd {
+    margin-bottom: 20px;
+  }
+}
+
+.p-mailform--name,
+.p-mailform--email{
+  padding: 4px 6px;
+  width: 50%;
+}
+
+.p-mailform--contact {
+  box-sizing: border-box;
+  padding: 4px 6px;
+  width: 100%;
+  height: 75px;
+}
+
+.p-mailform--submit {
+  background: lightgray;
+  border: none;
+  width: 100%;
+  height: 45px;
+}

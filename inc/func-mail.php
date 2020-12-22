@@ -22,26 +22,26 @@ function mailform_init(){
     $post_obj = get_queried_object();
     global $value;
     return sprintf(
-      '<form action="%1$s" method="post">
+      '<form class="p-mailform" action="%1$s" method="post">
         %2$s
         <dl>
           <dt>お名前</dt>
         	<dd>
             %3$s
-            <input type="text" name="username" value="%4$s" />
+            <input class="p-mailform--name" type="text" name="username" value="%4$s" />
         	</dd>
         	<dt>メールアドレス</dt>
         	<dd>
             %5$s
-            <input type="email" name="email" value="%6$s" />
+            <input class="p-mailform--email" type="email" name="email" value="%6$s" />
         	</dd>
         	<dt>お問合せ内容</dt>
         	<dd>
             %7$s
-            <textarea name="content">%8$s</textarea>
+            <textarea class="p-mailform--contact" name="content">%8$s</textarea>
         	</dd>
         </dl>
-        <button type="submit">送信する</button>
+        <button class="p-mailform--submit" type="submit">送信する</button>
       </form>'
       ,get_permalink($post_obj->ID)
       ,wp_nonce_field( 'my-form', 'myform_nonce' , true , false )
