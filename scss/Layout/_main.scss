@@ -10,8 +10,14 @@
 
   @include mixin.mq("tab") {
     @include mixin.max-width-content(100%);
+    box-sizing: border-box;
     margin: 2% 0 1% 0;
-    padding: 10px 0;
+    padding: 10px 5.2em;
+  }
+
+  @include mixin.mq("sp") {
+    box-sizing: border-box;
+    padding: 10px 1.2em;
   }
 }
 
