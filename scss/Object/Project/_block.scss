@@ -17,15 +17,36 @@
     border: 1px solid;
     height: 150px;
 
+    @include mixin.mq("sp") {
+      height: 100px;
+    }
+
     a {
       height: 150px;
       display: flex;
+
+      @include mixin.mq("sp") {
+        height: 100px;
+      }
+
+      img {
+        object-fit: cover;
+
+        @include mixin.mq("sp") {
+          width: 100px;
+          height: 100px;
+        }
+      }
     }
   }
 
   .p-blogcard__child {
     width: calc(100% - 150px);
     padding: 10px 2em;
+
+    @include mixin.mq("sp") {
+      padding: 3px 5px;
+    }
   }
 
   .p-blogcard__title {

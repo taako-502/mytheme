@@ -6,6 +6,9 @@
 function custom_blogcard_dynamic_render_callback( $attr, $content ) {
   $post_id = url_to_postid($attr['url_blogcard']);
   $description = ut\getDescription($post_id,50);
+  $thumbnail_url = has_post_thumbnail()
+                  ? get_the_post_thumbnail( $post_id , 'thumbnail' )
+                  : "<img width=\"150\" height=\"150\" src=\"" . get_stylesheet_directory_uri() . "/images/thumbnail-default.jpg\" />";
   return sprintf(
     '<div class="p-blogcard">
       <a class="wp-block-my-plugin-latest-post" href="%1$s">
@@ -17,7 +20,7 @@ function custom_blogcard_dynamic_render_callback( $attr, $content ) {
       </a>
     </div>',
     esc_url( get_permalink( $post_id ) ),
-    get_the_post_thumbnail( $post_id , 'thumbnail' ),
+    $thumbnail_url,
     esc_html( get_the_title( $post_id ) ),
     $description
   );
