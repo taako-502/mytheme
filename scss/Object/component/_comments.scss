@@ -1,3 +1,4 @@
+@use 'Foundation/vars';
 @use 'Foundation/mixin';
 
 .comment-form {
@@ -75,11 +76,11 @@ $comment_mrg_btm: 7px;
     text-decoration: none;
     text-align: center;
     color: #fff;
-    background-color: #0693e3;
+    background-color: vars.$BLUE;
 
     &:hover {
       color: #fff;
-      background: #f56500;
+      background: vars.$BLUE-HOVER;
     }
   }
 

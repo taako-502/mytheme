@@ -1,3 +1,4 @@
+@use 'Foundation/vars';
 @use 'Foundation/mixin';
 
 .pagination {
@@ -20,7 +21,7 @@
   display: table-cell;
   width: 40px;
   height: 40px;
-  background: #0078ba;
+  background: vars.$BLUE;
   border-radius: 10px;
   color: white;
   text-decoration: none;
@@ -31,6 +32,6 @@
   }
 
   &:hover {
-    background: #a1d8e2;
+    background: vars.$BLUE-HOVER;
   }
 }
