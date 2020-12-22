@@ -1,3 +1,5 @@
+@use 'Foundation/mixin';
+
 .comment-form {
   .comment-form-comment label,
   .comment-form-author label,
@@ -86,5 +88,9 @@ $comment_mrg_btm: 7px;
     border-left: 2px solid #c7c7f7;
     padding-left: 1em;
     margin-bottom: $comment_mrg_btm;
+
+    @include mixin.mq("sp") {
+      margin-left: 0.5em;
+    }
   }
 }
