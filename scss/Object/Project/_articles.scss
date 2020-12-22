@@ -215,6 +215,14 @@
     color: #888888;
     font-size: 0.9em;
   }
+
+  code {
+    @include mixin.paragraphMargin();
+    margin-left: 1.5em;
+    display: inline-block;
+    background: #efefef;
+    padding: 9px 11px;
+  }
 }
 
 .p-tags--icon {
