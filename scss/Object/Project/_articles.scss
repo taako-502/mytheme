@@ -235,31 +235,6 @@
   border-radius: 34%;
 }
 
-.nav-links {
-  display: table;
-  border-spacing: 8px 0;
-  text-align: center;
-}
-
-.page-numbers {
-  display: table-cell;
-  width: 40px;
-  height: 40px;
-  background: #0078ba;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  vertical-align: middle;
-
-  &.next {
-    width: 50px;
-  }
-
-  &:hover {
-    background: #a1d8e2;
-  }
-}
-
 .comment-form {
   .comment-form-comment label {
     display: none;

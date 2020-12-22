@@ -1,20 +1,36 @@
 @use 'Foundation/mixin';
 
 .pagination {
+  @include mixin.paragraphMargin();
   width: 100%;
+}
 
-  .screen-reader-text {
-    display: none;
+.screen-reader-text {
+  display: none;
+}
+
+.nav-links {
+  @include mixin.blockAndStaticCenter;
+  display: table;
+  border-spacing: 8px 0;
+  text-align: center;
+}
+
+.page-numbers {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  background: #0078ba;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  vertical-align: middle;
+
+  &.next {
+    width: 50px;
   }
 
-  .nav-links {
-    @include mixin.blockAndStaticCenter;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-
-  .page-numbers {
-    margin-left: 8px;
-    margin-right: 8px;
+  &:hover {
+    background: #a1d8e2;
   }
 }
