@@ -60,6 +60,7 @@
 
   // ふきだしに使う画像のサイズ
   $BALLOON-IMG-SIZE: 150px;
+  $BALLOON-IMG-SIZE_SP: 100px;
   .p-balloon {
     display: flex;
   }
@@ -77,10 +78,18 @@
     width:  $BALLOON-IMG-SIZE;       /* ※縦横を同値に */
     height: $BALLOON-IMG-SIZE;       /* ※縦横を同値に */
     object-fit: cover;
+
+    @include mixin.mq("sp") {
+      width:  $BALLOON-IMG-SIZE_SP;       /* ※縦横を同値に */
+      height: $BALLOON-IMG-SIZE_SP;       /* ※縦横を同値に */
+    }
   }
 
   .p-balloon__name {
     text-align: center;
+    @include mixin.mq("sp") {
+      width:  $BALLOON-IMG-SIZE_SP;       /* ※縦横を同値に */
+    }
   }
 
   .p-balloon__balloon {
@@ -108,6 +117,11 @@
     background: #FFF;
     border: solid 3px #555;
     box-sizing: border-box;
+
+    @include mixin.mq("sp") {
+      left: -36px;
+      width: calc(100% + 20px);
+    }
 
     &:before {
       content: "";

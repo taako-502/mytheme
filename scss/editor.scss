@@ -1,6 +1,6 @@
-@import "foundation/_var";
-@import "foundation/_mixin";
-@import "object/project/_block";
+@use 'foundation/vars';
+@use 'foundation/mixin';
+@use 'object/project/block';
 
 .p-balloon__name {
   border: 1px solid;
