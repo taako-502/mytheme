@@ -45,5 +45,5 @@
 
 /* 記事ページの余白設定 */
 @mixin paragraphMargin() {
-  margin: 20px 0;
+  margin: vars.$PARAGRAPH-MARGIN 0;
 }
