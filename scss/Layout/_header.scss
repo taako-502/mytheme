@@ -140,6 +140,30 @@
   }
 }
 
+.l-nav-menu > li{
+  position: relative;
+
+  > ul {
+    position: absolute;
+    display: none;
+
+    > li {
+      > ul {
+        position: absolute;
+        display: none;
+      }
+
+      &:hover > ul {
+        display: inline-block;
+      }
+    }
+  }
+
+  &:hover > ul {
+    display: inline-block;
+  }
+}
+
 .l-header__img {
   width:100%;
 }
