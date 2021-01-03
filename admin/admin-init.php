@@ -62,6 +62,12 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid','');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid','');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article','');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top','');
+/* 回遊 */
+$relevanceSelect = get_theme_mod('relevance-select','');
+$relevanceUrl1 = get_theme_mod('relevance-url1','');
+$relevanceUrl2 = get_theme_mod('relevance-url2','');
+$relevanceUrl3 = get_theme_mod('relevance-url3','');
+$relevanceUrl4 = get_theme_mod('relevance-url4','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータで、データベースと画面設定値を更新
@@ -133,6 +139,17 @@ if(isset($_POST['save'])) {
   set_theme_mod('ogp-fb-img-article',$ogpFbImgArticle);
   $ogpFbImgTop = $_POST['ogp-fb-img-top'];
   set_theme_mod('ogp-fb-img-top',$ogpFbImgTop);
+  /* 回遊 */
+  $relevanceSelect = $_POST['relevance-select'];
+  set_theme_mod('relevance-select',$relevanceSelect);
+  $relevanceUrl1 = $_POST['relevance-url1'];
+  set_theme_mod('relevance-url1',$relevanceUrl1);
+  $relevanceUrl2 = $_POST['relevance-url2'];
+  set_theme_mod('relevance-url2',$relevanceUrl2);
+  $relevanceUrl3 = $_POST['relevance-url3'];
+  set_theme_mod('relevance-url3',$relevanceUrl3);
+  $relevanceUrl4 = $_POST['relevance-url4'];
+  set_theme_mod('relevance-url4',$relevanceUrl4);
   echo "データを更新しました。";
 }
 

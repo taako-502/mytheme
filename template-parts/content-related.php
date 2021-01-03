@@ -1,4 +1,5 @@
 <?php
+//カテゴリをキーに関連記事を取得する処理
 if(has_category() ) {
   $cats =get_the_category();
   $catkwds = array();
@@ -37,7 +38,8 @@ if(! $my_query->have_posts()){
           </div>
         </a>
       </li>
-    <?php endwhile; ?>
-  <?php wp_reset_postdata(); ?>
+    <?php
+    endwhile;
+    wp_reset_postdata(); ?>
   </ul>
 </aside>
