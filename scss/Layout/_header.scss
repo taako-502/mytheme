@@ -168,6 +168,10 @@
 
         li.nav-item {
           width: 100%;
+
+          &:hover > .sub-menu {
+            display: inline-block;
+          }
         }
       }
 
