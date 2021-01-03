@@ -3,10 +3,15 @@
   <main class="l-main">
     <h1>記事一覧</h1>
     <?php
-    $category_name = get_the_category()[0]->cat_name;
-    $category_link = get_category_link(get_the_category()[0]->cat_ID);
-    ?>
-    <div class="p-category"><a href="<?php echo $category_link ?>"><?php echo $category_name; ?></a></div>
+    if(isset(get_the_category()[0])){
+      $category_name = get_the_category()[0]->cat_name;
+      $category_link = get_category_link(get_the_category()[0]->cat_ID);
+      ?>
+      <div class="p-category">
+        <a href="<?php echo $category_link; ?>"><?php echo $category_name; ?></a>
+      </div>
+      <?php
+    } ?>
     <div class="p-news--list">
       <?php
       /* 記事一覧 */
