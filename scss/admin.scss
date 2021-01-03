@@ -11,18 +11,27 @@ h3 {
   font-size: 1.1em;
 }
 
-p.fontsize {
-  margin: 0.1em 0 0.1em 1.0em;
+.setting > p {
+  margin: 0.3em 0 0.3em 1.0em;
+}
 
-  &input::placeholder {
-    color: lightgray;
-  }
+.setting__detail p {
+  margin: 0.1em 0 0.1em 2.0em;
+}
+
+.fontsize input::placeholder {
+  color: lightgray;
 }
 
 .uploded-thumbnail img {
   width: 250px;
   margin-left: 20px;
 }
+
+.relevance__url {
+  display: none;
+}
+
 /**
  * タブの設定
  */

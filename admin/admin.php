@@ -2,6 +2,7 @@
 include 'admin-init.php';
 ?>
 <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/css/admin.css'); ?>">
+<script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . '/js/admin.js'); ?>"></script>
 <main>
   <h1>mythemeカスタマイズ画面</h1>
   <h2>画面説明</h2>
@@ -13,7 +14,7 @@ include 'admin-init.php';
     	<input type="radio" name="cp_tab" id="tab2_2" aria-controls="second_tab02">
     	<label for="tab2_2">SEO</label>
     	<input type="radio" name="cp_tab" id="tab2_3" aria-controls="third_tab02">
-    	<label for="tab2_3">Third Tab</label>
+    	<label for="tab2_3">サイト回遊</label>
     	<input type="radio" name="cp_tab" id="tab2_4" aria-controls="force_tab02">
     	<label for="tab2_4">Force Tab</label>
     	<div class="cp_tabpanels">
@@ -93,8 +94,25 @@ include 'admin-init.php';
           </div>
     		</div>
     		<div class="cp_tabpanel">
-      		<h2>Third Tab</h2>
-      		<p>Third Tab text</p>
+      		<h2>サイト回遊</h2>
+      		<p>サイトの回遊率を向上させる設定。</p>
+          <div class="setting">
+            <h2>関連記事</h2>
+            <p>
+              <lavel for="relevance--select">関連性</lavel>
+              <select id="relevance--select" class="relevance--select" name="relevance">
+                <option value="category">カテゴリ</option>
+                <option value="tag">タグ</option>
+                <option value="url">記事指定（４記事）</option>
+              </select>
+            </p>
+            <div class="setting__detail relevance__url">
+              <p><lavel for="relevance--url1">関連記事①</lavel><input id="relevance--url1" type="text" name="relevance-url1"></p>
+              <p><lavel for="relevance--url2">関連記事②</lavel><input id="relevance--url2" type="text" name="relevance-url2"></p>
+              <p><lavel for="relevance--url3">関連記事③</lavel><input id="relevance--url3" type="text" name="relevance-url3"></p>
+              <p><lavel for="relevance--url4">関連記事④</lavel><input id="relevance--url4" type="text" name="relevance-url4"></p>
+            </div>
+          </div>
     		</div>
     		<div class="cp_tabpanel">
       		<h2>Force Tab</h2>
