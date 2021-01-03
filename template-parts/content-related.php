@@ -3,36 +3,27 @@ require_once( plugin_dir_path(__FILE__) . "../admin/admin-init.php");
 $args = array();
 switch($relevanceSelect){
   case "category":
-    //カテゴリをキーに関連記事を取得する処理
-    $catkwds = array();
-    if(has_category() ) {
-      $cats =get_the_category();
-      foreach($cats as $cat){
-        $catkwds[] = $cat->term_id;
-      }
-    }
-    $args = array(
-      'post_type' => 'post',
-      'posts_per_page' => '4',
-      'post__not_in' =>array( $post->ID ),
-      'category__in' => isset($catkwds) ? $catkwds : "",
-      'orderby' => 'rand'
-    );
-    break;
   case "tag":
-    //タグをキーに関連記事を取得する処理
-    $tagkwds = array();
-    if(has_tag()) {
-      $tags = get_the_tags();
-      foreach($tags as $tag){
-        $tagkwds[] = $tag->term_id;
+    $kwds = array(); $key_param = ""; $keys = array();
+    if($relevanceSelect == "category") {
+      $key_param = 'category__in';
+      if(has_category() ) {
+        $keys =get_the_category();
       }
+    } else {
+      $key_param = 'tag__in';
+      if(has_tag()) {
+        $keys = get_the_tags();
+      }
+    }
+    foreach($keys as $key){
+      $kwds[] = $key->term_id;
     }
     $args = array(
       'post_type' => 'post',
       'posts_per_page' => '4',
       'post__not_in' =>array( $post->ID ),
-      'tag__in' => isset($tagkwds) ? $tagkwds : "",
+      $key_param => isset($kwds) ? $kwds : "",
       'orderby' => 'rand'
     );
     break;
