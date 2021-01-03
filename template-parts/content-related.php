@@ -28,7 +28,17 @@ switch($relevanceSelect){
     );
     break;
   case "url":
-    $kwds[] = "";
+    $kwds[0] = isset($relevanceUrl1) ? url_to_postid($relevanceUrl1) : "";
+    $kwds[1] = isset($relevanceUrl2) ? url_to_postid($relevanceUrl2) : "";
+    $kwds[2] = isset($relevanceUrl3) ? url_to_postid($relevanceUrl3) : "";
+    $kwds[3] = isset($relevanceUrl4) ? url_to_postid($relevanceUrl4) : "";
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => '4',
+      'post__not_in' =>array( $post->ID ),
+      'post__in' => isset($kwds) ? $kwds : "",
+      'orderby' => 'post_name__in' //配列の順番通り
+    );
     break;
   default:
     //設定がない場合、処理終了
