@@ -4,20 +4,20 @@ $args = array();
 switch($relevanceSelect){
   case "category":
   case "tag":
-    $kwds = array(); $key_param = ""; $keys = array();
+    $kwds = array(); $key_param = ""; $taxonomies = array();
     if($relevanceSelect == "category") {
       $key_param = 'category__in';
       if(has_category() ) {
-        $keys =get_the_category();
+        $taxonomies =get_the_category();
       }
     } else {
       $key_param = 'tag__in';
       if(has_tag()) {
-        $keys = get_the_tags();
+        $taxonomies = get_the_tags();
       }
     }
-    foreach($keys as $key){
-      $kwds[] = $key->term_id;
+    foreach($taxonomies as $taxonomy){
+      $kwds[] = $taxonomy->term_id;
     }
     $args = array(
       'post_type' => 'post',
@@ -28,7 +28,7 @@ switch($relevanceSelect){
     );
     break;
   case "url":
-    // あとで処理追加
+    $kwds[] = "";
     break;
   default:
     //設定がない場合、処理終了
