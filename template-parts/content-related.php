@@ -1,22 +1,28 @@
+<?php
+if(has_category() ) {
+  $cats =get_the_category();
+  $catkwds = array();
+  foreach($cats as $cat){
+    $catkwds[] = $cat->term_id;
+  }
+}
+$args = array(
+  'post_type' => 'post',
+  'posts_per_page' => '4',
+  'post__not_in' =>array( $post->ID ),
+  'category__in' => isset($catkwds) ? $catkwds : "",
+  'orderby' => 'rand'
+);
+$my_query = new WP_Query( $args );
+//関連記事が存在しない場合、関連記事を表示しない
+if(! $my_query->have_posts()){
+  return;
+}
+?>
 <aside class="p-related">
   <h4>関連記事</h4>
   <ul>
     <?php
-    if(has_category() ) {
-      $cats =get_the_category();
-      $catkwds = array();
-      foreach($cats as $cat){
-        $catkwds[] = $cat->term_id;
-      }
-    }
-    $args = array(
-      'post_type' => 'post',
-      'posts_per_page' => '4',
-      'post__not_in' =>array( $post->ID ),
-      'category__in' => isset($catkwds) ? $catkwds : "",
-      'orderby' => 'rand'
-    );
-    $my_query = new WP_Query( $args );
     while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
       <li>
         <a href="<?php the_permalink(); ?>">
