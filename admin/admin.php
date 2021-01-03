@@ -57,13 +57,13 @@ include 'admin-init.php';
               <h3>トップページのおすすめ記事に設定する画像</h3>
               <p><b>左おすすめ記事</b></p>
               <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>
-              <p><label for="reco-left-url">記事URL：</label><input type="text" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
+              <p><label for="reco-left-url">記事URL：</label><input type="url" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
               <p><b>中央おすすめ記事</b></p>
               <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', $recocenterimg); ?></p>
-              <p><label for="reco-center-url">記事URL：</label><input type="text" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
+              <p><label for="reco-center-url">記事URL：</label><input type="url" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
               <p><b>右おすすめ記事</b></p>
               <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', $recorightimg); ?></p>
-              <p><label for="reco-right-url">記事URL：</label><input type="text" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
+              <p><label for="reco-right-url">記事URL：</label><input type="url" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
             </div>
           </div>
     		</div>
@@ -107,10 +107,10 @@ include 'admin-init.php';
               </select>
             </p>
             <div class="setting__detail relevance__url-set <?php echo $relevanceSelect != "url" ? "u-display__none" : ""; ?>">
-              <p><lavel for="relevance--url1">関連記事①</lavel><input id="relevance--url1" type="text" name="relevance-url1" value="<?php echo $relevanceUrl1;?>"></p>
-              <p><lavel for="relevance--url2">関連記事②</lavel><input id="relevance--url2" type="text" name="relevance-url2" value="<?php echo $relevanceUrl2;?>"></p>
-              <p><lavel for="relevance--url3">関連記事③</lavel><input id="relevance--url3" type="text" name="relevance-url3" value="<?php echo $relevanceUrl3;?>"></p>
-              <p><lavel for="relevance--url4">関連記事④</lavel><input id="relevance--url4" type="text" name="relevance-url4" value="<?php echo $relevanceUrl4;?>"></p>
+              <p><lavel for="relevance--url1">関連記事①</lavel><input id="relevance--url1" type="url" name="relevance-url1" value="<?php echo $relevanceUrl1;?>"></p>
+              <p><lavel for="relevance--url2">関連記事②</lavel><input id="relevance--url2" type="url" name="relevance-url2" value="<?php echo $relevanceUrl2;?>"></p>
+              <p><lavel for="relevance--url3">関連記事③</lavel><input id="relevance--url3" type="url" name="relevance-url3" value="<?php echo $relevanceUrl3;?>"></p>
+              <p><lavel for="relevance--url4">関連記事④</lavel><input id="relevance--url4" type="url" name="relevance-url4" value="<?php echo $relevanceUrl4;?>"></p>
             </div>
           </div>
     		</div>
