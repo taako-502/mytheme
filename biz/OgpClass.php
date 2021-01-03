@@ -7,27 +7,24 @@ class OgpClass{
    * OGPタグを返却
    * @return String OGPタグ
    */
-  public function getOgpMeta(){
-    global $post;
+  public function getOgpMeta($id){
+    $post = get_post($id);
     $url = "";
     $result = "<meta property=\"og:type\" content=\"blog\">"."\n";
-    if (is_single()){
-      $description = get_post_meta($post->ID,  '_individual_description', true);
-      $description = ut\isNullOrEmpty($description) ? get_post_meta($post->ID, '_aioseop_description', true) : $description;
-      //単一記事ページの場合
-      if(have_posts()): while(have_posts()): the_post();
-        $result .= "<meta property=\"og:description\" content=\"". $description ."\">"."\n";
-      endwhile; endif;
-      $title = get_post_meta($post->ID, '_individual_title', true);
+    if (is_singular()){
+      //記事ページと固定ページ
+      $title = get_post_meta($post->ID, '_individual_title', true);　//手入力
       $title = ut\isNullOrEmpty(trim($title)) ? get_the_title() : $title;
+      $description = get_post_meta($post->ID,  '_individual_description', true); 　//手入力
+      $description = ut\isNullOrEmpty($description) ? ut\getDescription($post->ID,90) : $description;
       $url = get_the_permalink();
     } else {
-      //単一記事ページページ以外の場合（アーカイブページやホームなど）
-      $result .= "<meta property=\"og:description\" content=\"". get_bloginfo('description') ."\">"."\n";
       $title = get_bloginfo('name');
+      $description = get_bloginfo('description');
       $url = esc_url(home_url());
     }
     $result .= "<meta property=\"og:title\" content=\"". $title ."\">"."\n";
+    $result .= "<meta property=\"og:description\" content=\"". $description ."\">"."\n";
     $result .= "<meta property=\"og:url\" content=\"".$url."\">"."\n";
     //投稿にイメージがあるか調べる
     $str = $post->post_content;

@@ -39,6 +39,7 @@ add_action('after_setup_theme','mytheme_setup');
  * @return [type] [description]
  */
 function main_enqueue_scripts() {
+	global $post;
 	$amp_flg = isset($_GET['amp']) && $_GET['amp'] == 1;
   if($amp_flg) {
     //AMPページ
@@ -46,7 +47,7 @@ function main_enqueue_scripts() {
   } else {
 		//OGP
 		$oc = new OgpClass;
-		echo $oc->getOgpMeta();
+		echo $oc->getOgpMeta($post->ID);
 		//構造化マークアップ
 		$sc = new SchemaClass;
 		$sc->getStructuredData();
