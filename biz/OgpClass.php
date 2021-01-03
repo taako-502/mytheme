@@ -28,8 +28,8 @@ class OgpClass{
     //投稿にイメージがあるか調べる
     $str = $post->post_content;
     $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
-    if (is_single()){
-      //単一記事ページの場合
+    if (is_singular()){
+      //記事ページと固定ページ
       $individual_img = get_post_meta($post->ID, '_individual_img', true);
       if(! ut\isNullOrEmpty(trim($individual_img))) {
         //個別に設定したOGP画像がある場合
@@ -49,7 +49,6 @@ class OgpClass{
         }
       }
     } else {
-      //単一記事ページページ以外の場合（アーカイブページやホームなど）
       if(isset($ogpFbImgTop)) {
         $result .= "<meta property=\"og:image\" content=\"". $ogpFbImgTop ."\">"."\n";
       }
