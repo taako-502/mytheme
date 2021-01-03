@@ -35,7 +35,7 @@ function mytheme_setup(){
 add_action('after_setup_theme','mytheme_setup');
 
 /**
- * CSS、javascript読み込み
+ * <head>読み込み
  * @return [type] [description]
  */
 function main_enqueue_scripts() {
@@ -45,12 +45,14 @@ function main_enqueue_scripts() {
     //AMPページ
     return;
   } else {
-		//OGP
-		$oc = new OgpClass;
-		echo $oc->getOgpMeta($post->ID);
-		//構造化マークアップ
-		$sc = new SchemaClass;
-		$sc->getStructuredData();
+		if(isset($post->ID)){
+			//OGP
+			$oc = new OgpClass;
+			echo $oc->getOgpMeta($post->ID);
+			//構造化マークアップ
+			$sc = new SchemaClass;
+			$sc->getStructuredData($post->ID);
+		}
 		//CSS
 		wp_enqueue_style( 'font-awesom', esc_url(get_template_directory_uri() . '/lib/fontawesome/css/all.min.css'));
 		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));

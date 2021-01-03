@@ -6,8 +6,8 @@ class SchemaClass {
   /**
    * 構造家データを返却
    */
-  public function getStructuredData(){
-    global $post;
+  public function getStructuredData($id){
+    $post = get_post($id);
     // image（画像）の指定のためにアイキャッチ画像の情報を取得します
     $thumbnail_id = get_post_thumbnail_id($post->ID); // アタッチメントIDの取得
     $image = wp_get_attachment_image_src( $thumbnail_id, 'full' ); // アイキャッチの情報を取得
