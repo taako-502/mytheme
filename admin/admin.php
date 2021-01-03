@@ -106,7 +106,7 @@ include 'admin-init.php';
                 <option <?php echo $relevanceSelect == "url" ? "selected " : ""; ?>value="url">記事指定（４記事）</option>
               </select>
             </p>
-            <div class="setting__detail relevance__url">
+            <div class="setting__detail relevance__url-set <?php echo $relevanceSelect != "url" ? "u-display__none" : ""; ?>">
               <p><lavel for="relevance--url1">関連記事①</lavel><input id="relevance--url1" type="text" name="relevance-url1" value="<?php echo $relevanceUrl1;?>"></p>
               <p><lavel for="relevance--url2">関連記事②</lavel><input id="relevance--url2" type="text" name="relevance-url2" value="<?php echo $relevanceUrl2;?>"></p>
               <p><lavel for="relevance--url3">関連記事③</lavel><input id="relevance--url3" type="text" name="relevance-url3" value="<?php echo $relevanceUrl3;?>"></p>

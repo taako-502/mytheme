@@ -8,9 +8,9 @@ jQuery(document).ready(function($) {
     jQuery(".relevance--select").change(function() {
     	var val = jQuery(".relevance--select").val();
     	if(val == "url") {
-    		jQuery('.relevance__url').css('display', 'inline');
+        jQuery('.relevance__url-set').removeClass('u-display__none');
     	} else {
-    		jQuery('.relevance__url').css('display', 'none');
+        jQuery('.relevance__url-set').addClass('u-display__none');
     	}
     });
   })(jQuery);
