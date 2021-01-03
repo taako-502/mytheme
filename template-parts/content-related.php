@@ -1,19 +1,48 @@
 <?php
-//カテゴリをキーに関連記事を取得する処理
-if(has_category() ) {
-  $cats =get_the_category();
-  $catkwds = array();
-  foreach($cats as $cat){
-    $catkwds[] = $cat->term_id;
-  }
+require_once( plugin_dir_path(__FILE__) . "../admin/admin-init.php");
+$args = array();
+switch($relevanceSelect){
+  case "category":
+    //カテゴリをキーに関連記事を取得する処理
+    $catkwds = array();
+    if(has_category() ) {
+      $cats =get_the_category();
+      foreach($cats as $cat){
+        $catkwds[] = $cat->term_id;
+      }
+    }
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => '4',
+      'post__not_in' =>array( $post->ID ),
+      'category__in' => isset($catkwds) ? $catkwds : "",
+      'orderby' => 'rand'
+    );
+    break;
+  case "tag":
+    //タグをキーに関連記事を取得する処理
+    $tagkwds = array();
+    if(has_tag()) {
+      $tags = get_the_tags();
+      foreach($tags as $tag){
+        $tagkwds[] = $tag->term_id;
+      }
+    }
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => '4',
+      'post__not_in' =>array( $post->ID ),
+      'tag__in' => isset($tagkwds) ? $tagkwds : "",
+      'orderby' => 'rand'
+    );
+    break;
+  case "url":
+    // あとで処理追加
+    break;
+  default:
+    //設定がない場合、処理終了
+    return;
 }
-$args = array(
-  'post_type' => 'post',
-  'posts_per_page' => '4',
-  'post__not_in' =>array( $post->ID ),
-  'category__in' => isset($catkwds) ? $catkwds : "",
-  'orderby' => 'rand'
-);
 $my_query = new WP_Query( $args );
 //関連記事が存在しない場合、関連記事を表示しない
 if(! $my_query->have_posts()){
