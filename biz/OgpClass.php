@@ -9,13 +9,12 @@ class OgpClass{
    */
   public function getOgpMeta($id){
     $post = get_post($id);
-    $url = "";
     $result = "<meta property=\"og:type\" content=\"blog\">"."\n";
     if (is_singular()){
       //記事ページと固定ページ
-      $title = get_post_meta($post->ID, '_individual_title', true);　//手入力
+      $title = get_post_meta($post->ID, '_individual_title', true); //手入力
       $title = ut\isNullOrEmpty(trim($title)) ? get_the_title() : $title;
-      $description = get_post_meta($post->ID,  '_individual_description', true); 　//手入力
+      $description = get_post_meta($post->ID,  '_individual_description', true); //手入力
       $description = ut\isNullOrEmpty($description) ? ut\getDescription($post->ID,90) : $description;
       $url = get_the_permalink();
     } else {
