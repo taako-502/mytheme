@@ -33,7 +33,7 @@
     width: 30px;
     height: 2px;
     left: 6px;
-    background: #555;
+    background: vars.$BLACK_5;
 
     &:nth-child(1) {
       top: 10px;
@@ -148,7 +148,7 @@
   > .sub-menu {
     position: absolute;
     display: none;
-    background-color: #333;
+    background-color: vars.$BLACK_3;
     font-size: 14px;
     color: white;
     left: 0;
@@ -160,7 +160,7 @@
       .sub-menu {
         position: absolute;
         display: none;
-        background-color: #333;
+        background-color: vars.$BLACK_3;
         width: 100%;
         color: white;
         right: -100%;
