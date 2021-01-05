@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @use 'object/utility/visible';
+@use 'Foundation/vars';
 /**
  * 管理画面用のCSS
  */
@@ -62,7 +63,7 @@ input[type="url"] {
   .cp_tabpanel {
     display: none;
     padding: 0.5em 1em;
-    border-left: 1px solid #cccccc;
+    border-left: 1px solid vars.$BLACK_C;
     min-height: 320px;
   }
 
@@ -94,7 +95,7 @@ input[type="url"] {
       margin-bottom: 1px;
       padding: 15px;
       cursor: pointer;
-      border: 1px solid #cccccc;
+      border: 1px solid vars.$BLACK_C;
       border-right: 0;
       border-radius: 6px 0 0 6px;
 
@@ -110,8 +111,8 @@ input[type="url"] {
   }
 
   > input:checked + label {
-    border-color: #cccccc;
-    border-right: 1px solid #ffffff;
+    border-color: vars.$BLACK_C;
+    border-right: 1px solid vars.$WHITE_F;
     /*背景色と同じ*/
   }
   @media (max-width: 480px) {
