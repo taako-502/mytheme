@@ -112,7 +112,7 @@
     list-style-type: none;
     padding: 0;
     width: 100%;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid vars.$WHITE_F;
 
     @media (min-width: vars.$MAX-WIDTH-SP) {
       display: inline-block;

@@ -75,11 +75,11 @@ $comment_mrg_btm: 7px;
     border-radius: 7px;
     text-decoration: none;
     text-align: center;
-    color: #fff;
+    color: vars.$WHITE_F;
     background-color: vars.$BLUE;
 
     &:hover {
-      color: #fff;
+      color: vars.$WHITE_F;
       background: vars.$BLUE-HOVER;
     }
   }
