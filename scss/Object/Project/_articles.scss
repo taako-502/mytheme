@@ -48,7 +48,7 @@
       /*アイコンの位置*/
       top: 0;
       /*アイコンの位置*/
-      color: #5ab9ff;
+      color: vars.$INTENSE_BLUE;
       /*アイコン色*/
       font-weight: 900;
     }
@@ -75,7 +75,7 @@
       /*アイコンの位置*/
       top: 0;
       /*アイコンの位置*/
-      color: #5ab9ff;
+      color: vars.$INTENSE_BLUE;
       /*アイコン色*/
       font-weight: 900;
     }
@@ -85,7 +85,7 @@
     position: relative;
     @include mixin.paragraphMargin();
     padding: calc(0.5em + #{vars.$LIST-LINE-SPACE}) 1em 0.5em 0;
-    border: solid 2px #ffb03f;
+    border: solid 2px vars.$INTENSE_ORANGE;
 
     li {
       margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
@@ -97,7 +97,7 @@
       &:before {
         position: absolute;
         left: 1em;
-        color: #ffb03f;
+        color: vars.$INTENSE_ORANGE;
       }
 
       &> ul {
@@ -167,7 +167,7 @@
     padding: 7px 16px;
     box-sizing: border-box;
     font-style: italic;
-    color: #464646;
+    color: vars.$BLACK_5;
     border: solid 3px vars.$LIGHT_CYAN;
 
     @include mixin.mq("sp") {
@@ -234,7 +234,7 @@
   cite {
     display: block;
     text-align: right;
-    color: #888888;
+    color: vars.$BLACK_5;
     font-size: 0.9em;
   }
 
