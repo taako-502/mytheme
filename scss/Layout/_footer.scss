@@ -1,6 +1,8 @@
+@use 'Foundation/vars';
+
 .l-footer {
   width: 100%;
-  background-color: #222;
+  background-color: vars.$BLACK_2;
 
   //フッターを下に固定
   position: absolute;/*←絶対位置*/

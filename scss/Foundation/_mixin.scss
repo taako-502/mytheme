@@ -40,7 +40,7 @@
 }
 
 @mixin articleShadow() {
-  box-shadow: 3px 5px 5px #666666;
+  box-shadow: 3px 5px 5px vars.$GRAY_6;
 }
 
 /* 記事ページの余白設定 */

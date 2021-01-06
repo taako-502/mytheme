@@ -248,7 +248,7 @@
     margin-left: 1.5em;
     max-width: 700px;
     display: block;
-    background: #efefef;
+    background: vars.$GRAY_EF;
     padding: 9px 11px;
 
     @include mixin.mq("sp") {
