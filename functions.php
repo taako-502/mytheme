@@ -89,6 +89,8 @@ get_template_part('/inc/func', 'amp');
 get_template_part('/inc/func', 'img');
 //メールフォーム
 get_template_part('/inc/func','mail');
+//もくじ
+get_template_part('/inc/func','content-table');
 
 // アーカイブの余計なタイトルを削除
 add_filter( 'get_the_archive_title', function ($title) {
