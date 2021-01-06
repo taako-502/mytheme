@@ -19,13 +19,16 @@
         }
     ?>
   </a>
-  <h2>
-    <a class="p-news-card--title" href="<?php echo get_permalink(); ?>">
-      <?php
-        $title = get_the_title();
-        // タイトルが長い場合、省略
-        echo mb_strlen($title) <= 38 ? $title : mb_substr($title,0,38) . "...";
-      ?>
-    </a>
-  </h2>
+  <a class="p-news-card--content" href="<?php echo get_permalink(); ?>">
+    <h2 class="p-news-card--title">
+        <?php
+          $title = get_the_title();
+          // タイトルが長い場合、省略
+          echo mb_strlen($title) <= 38 ? $title : mb_substr($title,0,38) . "...";
+        ?>
+    </h2>
+    <p class="p-news-card--description">
+        <?php echo ut\getDescription( $post->ID, 120); ?>
+    </p>
+  </a>
 </div>
