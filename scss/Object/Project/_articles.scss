@@ -160,12 +160,6 @@
     }
   }
 
-  //ブロックスタイル
-  .is-style-bg__ligthblue {
-    border: dashed 2px #668ad8;
-    background-color: #f8f9ff;
-  }
-
   blockquote {
     position: relative;
     max-width: 90%;
@@ -230,6 +224,7 @@
     }
 
   }
+
   p {
     margin: 20px 0;
     @include mixin.paragraphMargin();
