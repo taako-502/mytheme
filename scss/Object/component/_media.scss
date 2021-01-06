@@ -9,6 +9,11 @@
     padding-top: 56.25%; // 9:16
   }
 
+  &:hover {
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+  }
+
   img {
     position: absolute;
     display: block;
