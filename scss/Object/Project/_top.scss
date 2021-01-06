@@ -121,7 +121,7 @@
   margin-bottom: 0.5em;
 
   &:hover {
-    color: blue;
+    color: vars.$BLUE_CHAR_HOVER;
   }
 }
 
@@ -130,7 +130,7 @@
   font-size: 14px;
 
   &:hover {
-    color: blue;
+    color: vars.$BLUE_CHAR_HOVER;
   }
 }
 
