@@ -107,7 +107,7 @@ input[type="url"] {
 
   > label:hover,
   > input:focus + label {
-    color: vars.$BLUE;
+    color: vars.$BLUE_BUTTON;
   }
 
   > input:checked + label {

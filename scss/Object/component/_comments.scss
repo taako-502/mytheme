@@ -76,11 +76,11 @@ $comment_mrg_btm: 7px;
     text-decoration: none;
     text-align: center;
     color: vars.$WHITE_F;
-    background-color: vars.$BLUE;
+    background-color: vars.$BLUE_BUTTON;
 
     &:hover {
       color: vars.$WHITE_F;
-      background: vars.$BLUE-HOVER;
+      background: vars.$BLUE_BUTTON_HOVER;
     }
   }
 

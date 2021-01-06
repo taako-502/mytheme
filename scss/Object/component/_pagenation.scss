@@ -21,7 +21,7 @@
   display: table-cell;
   width: 40px;
   height: 40px;
-  background: vars.$BLUE;
+  background: vars.$BLUE_BUTTON;
   border-radius: 10px;
   color: white;
   text-decoration: none;
@@ -32,6 +32,6 @@
   }
 
   &:hover {
-    background: vars.$BLUE-HOVER;
+    background: vars.$BLUE_BUTTON_HOVER;
   }
 }

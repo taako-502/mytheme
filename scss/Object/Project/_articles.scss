@@ -18,13 +18,13 @@
     @include mixin.paragraphMargin();
     font-size: 24px;
     /*線の種類（二重線）太さ 色*/
-    border-bottom: double 4px #FFC778;
+    border-bottom: double 4px vars.$LIGHT_ORANGE;
   }
 
   H4 {
     @include mixin.paragraphMargin();
     font-size: 23px;
-    border-bottom: solid 1.5px #FFC778;
+    border-bottom: solid 1.5px vars.$LIGHT_ORANGE;
   }
 
   H5 {
@@ -111,7 +111,7 @@
     padding: calc(0.5em + #{vars.$LIST-LINE-SPACE}) 1em 0.5em 0;
     counter-reset: number;
     list-style-type: none;
-    border: solid 2px #ffb107;
+    border: solid 2px vars.$VIVID_ORANGE;
 
     li {
       position: relative;
@@ -135,7 +135,7 @@
         content: counter(number);
         /*数字のデザイン変える*/
         display: inline-block;
-        background: #ffb107;
+        background: vars.$VIVID_ORANGE;
         color: white;
         font-family: 'Avenir','Arial Black','Arial',sans-serif;
         font-weight: bold;
@@ -174,7 +174,7 @@
     box-sizing: border-box;
     font-style: italic;
     color: #464646;
-    border: solid 3px #72ccf4;
+    border: solid 3px vars.$LIGHT_CYAN;
 
     @include mixin.mq("sp") {
       margin-left: 20px;
@@ -193,7 +193,7 @@
       text-align: center;
       content: "\f10d";
       font-family: "Font Awesome 5 Free";
-      background: #72ccf4;
+      background: vars.$LIGHT_CYAN;
       color: vars.$WHITE_F;
       font-size: 22px;
       font-weight: 900;
@@ -217,7 +217,7 @@
       text-align: center;
       content: "\f10e";
       font-family: "Font Awesome 5 Free";
-      background: #72ccf4;
+      background: vars.$LIGHT_CYAN;
       color: vars.$WHITE_F;
       font-size: 22px;
       font-weight: 900;
