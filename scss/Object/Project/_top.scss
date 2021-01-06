@@ -44,6 +44,10 @@
 .p-recommend--a {
   width: 33.333%;
 
+  &:hover img {
+    @include mixin.hoverImg();
+  }
+
   &:not(:last-child){
     margin-right: 1.4em;
   }
@@ -73,6 +77,10 @@
   margin: 1.5%;
   background-color: white;
   border-radius:5px;
+
+  &:hover img {
+    @include mixin.hoverImg();
+  }
 
   @include mixin.mq("sp"){
     width: 96%;
