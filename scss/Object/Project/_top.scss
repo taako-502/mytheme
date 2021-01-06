@@ -42,35 +42,16 @@
 }
 
 .p-recommend--a {
-  position: relative;
-  display: block;
   width: 33.333%;
-  overflow: hidden;
 
   &:not(:last-child){
     margin-right: 1.4em;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 56.25%; // 9:16
   }
 }
 
 .p-recommend--img {
   @include mixin.articleShadow();
   @include mixin.blockAndStaticCenter();
-  position: absolute;
-  display: block;
-  height: auto;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  object-fit: cover;
 
   @include mixin.mq("sp"){
     width: 96%;

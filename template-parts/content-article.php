@@ -9,7 +9,7 @@
     <?php
   }
   ?>
-  <a href="<?php echo get_permalink(); ?>">
+  <a class="c-aspect-9-16" href="<?php echo get_permalink(); ?>">
     <?php
         if ( has_post_thumbnail() ) {
           the_post_thumbnail('articlelist');

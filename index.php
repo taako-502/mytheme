@@ -20,13 +20,13 @@ $page_title = "home";
   <div class="p-recommend">
     <h2 class="c-aritcle--h2">おすすめ記事</h2>
     <div class="p-recommend-area">
-      <a class="p-recommend--a" href="<?php echo $recolefturl; ?>">
+      <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recolefturl; ?>">
         <img class="p-recommend--img" src="<?php echo $recoleftimg; ?>" alt="hoge">
       </a>
-      <a class="p-recommend--a" href="<?php echo $recocenterurl; ?>">
+      <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recocenterurl; ?>">
         <img class="p-recommend--img" src="<?php echo $recocenterimg; ?>" alt="fuga">
       </a>
-      <a class="p-recommend--a" href="<?php echo $recorighturl; ?>">
+      <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recorighturl; ?>">
         <img class="p-recommend--img" src="<?php echo $recorightimg; ?>" alt="fuga">
       </a>
     </div>
