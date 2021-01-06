@@ -1,7 +1,7 @@
 @use 'foundation/vars';
 
 //ブロックスタイル
-.is-style-bg__ligthblue {
-  border: dashed 2px vars.$SOFT_BLUE;
-  background-color: vars.$BORDER_BLUE;
+.p-section>ul.is-style-bg__ligthblue {
+  border: dashed 2px vars.$BORDER_BLUE;
+  background-color: vars.$BG_BLUE;
 }
