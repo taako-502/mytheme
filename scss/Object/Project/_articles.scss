@@ -275,3 +275,18 @@
     margin-bottom: 5px;
   }
 }
+
+.nav-previous {
+  margin-top: 1em;
+
+  a {
+    text-decoration: none;
+    margin-top: 1em;
+    color: vars.$BLACK_3;
+    border-bottom: 1px dashed vars.$BLACK_3;
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
+    }
+  }
+}
