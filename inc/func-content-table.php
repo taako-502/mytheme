@@ -11,7 +11,7 @@ function insert_table_of_contents($the_content){
       $idpattern = '/id *\= *["\'](.+?)["\']/i'; //見出しタグにidが定義されているか検索するパターン
       $table_of_contents = '
       <div class="p-content-table">
-        <p class="p-content-table--title">＜目次＞</p>
+        <p class="p-content-table--title">目次</p>
         <ul>';
       $idnum = 1;
       $nest = 0;
