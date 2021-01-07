@@ -55,17 +55,15 @@ if(! $my_query->have_posts()){
   <ul>
     <?php
     while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-      <li>
-        <a href="<?php the_permalink(); ?>">
+      <li class="p-related--item">
+        <a class="c-aspect-9-16" href="<?php the_permalink(); ?>">
           <?php
           if ( has_post_thumbnail() ) {
             the_post_thumbnail('medium');
           } else {
             echo '<img width="300" height="300" src="' . get_template_directory_uri() . '/images/thumbnail-default.jpg" class="attachment-medium size-medium wp-post-image" alt="デフォルトのサムネイル">';
           } ?>
-          <div class="text">
-          <?php the_title(); ?>
-          </div>
+          <p class="p-related--title"><?php the_title(); ?></p>
         </a>
       </li>
     <?php

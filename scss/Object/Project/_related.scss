@@ -20,11 +20,15 @@
     }
   }
 
-  li {
+  .p-related--item {
     @include mixin.articleShadow();
     display: inline-block;
     width: 48%;
     margin: 1%;
+
+    &:hover img {
+      @include mixin.hoverImg();
+    }
 
     @include mixin.mq("sp"){
       width: 96%;
@@ -33,13 +37,17 @@
   }
 
   img {
-    width: 100%;
-    height: auto;
+    margin: 0;
   }
 
-  .text {
+  .p-related--title {
     display: inline-block;
     color: black;
     padding: 3px;
+
+
+    &:hover{
+      color: vars.$BLUE_CHAR_HOVER;
+    }
   }
 }
