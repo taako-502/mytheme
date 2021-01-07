@@ -13,6 +13,10 @@
       &:visited {
         color: inherit;
       }
+
+      &:hover {
+        color: vars.$BLUE_CHAR_HOVER;
+      }
   }
 
   li {
