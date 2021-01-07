@@ -6,6 +6,19 @@
   padding: 5px 10px;
   display: inline-block;
   background-color: whitesmoke;
+
+  a {
+    text-decoration: none;
+    color: dimgray;
+
+    &:visited {
+      color: dimgray;
+    }
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
+    }
+  }
 }
 
 .p-section {
