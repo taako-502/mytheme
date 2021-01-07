@@ -101,9 +101,10 @@
 }
 
 .l-nav .l-nav-menu {
-  margin: 0 auto;
+  margin: 0 2em 0 auto;
   padding: 0;
-  width: 100%;
+  width: auto;
+
   @media (min-width: vars.$MAX-WIDTH-SP) {
     display: flex;
   }
