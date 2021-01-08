@@ -11,8 +11,13 @@
 
 .p-mailform--name,
 .p-mailform--email{
+  box-sizing: border-box;
   padding: 4px 6px;
   width: 50%;
+
+  @include mixin.mq("tab") {
+    width: 100%;
+  }
 }
 
 .p-mailform--contact {
