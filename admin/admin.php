@@ -3,20 +3,20 @@ include 'admin-init.php';
 ?>
 <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/css/admin.css'); ?>">
 <script type="text/javascript" src="<?php echo esc_url(get_template_directory_uri() . '/js/admin.js'); ?>"></script>
-<main>
+<main class="main">
   <h1>mythemeカスタマイズ画面</h1>
   <h2>画面説明</h2>
   <p>この画面は、簡単にmythemeのデザインを設定できる画面です。</p>
   <form method="post">
     <div class="cp_tab">
+      <!-- タブの設定 -->
     	<input type="radio" name="cp_tab" id="tab2_1" aria-controls="first_tab02" checked>
     	<label for="tab2_1">文字</label>
     	<input type="radio" name="cp_tab" id="tab2_2" aria-controls="second_tab02">
     	<label for="tab2_2">SEO</label>
     	<input type="radio" name="cp_tab" id="tab2_3" aria-controls="third_tab02">
     	<label for="tab2_3">サイト回遊</label>
-    	<input type="radio" name="cp_tab" id="tab2_4" aria-controls="force_tab02">
-    	<label for="tab2_4">Force Tab</label>
+      <!-- コンテンツ -->
     	<div class="cp_tabpanels">
     		<div class="cp_tabpanel">
       		<h2>基本設定</h2>
@@ -113,10 +113,6 @@ include 'admin-init.php';
               <p><lavel for="relevance--url4">関連記事④</lavel><input id="relevance--url4" type="url" name="relevance-url4" value="<?php echo $relevanceUrl4;?>"></p>
             </div>
           </div>
-    		</div>
-    		<div class="cp_tabpanel">
-      		<h2>Force Tab</h2>
-      		<p>Force Tab text</p>
     		</div>
     	</div>
     </div>
