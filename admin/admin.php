@@ -8,17 +8,16 @@ include 'admin-init.php';
   <h2>画面説明</h2>
   <p>この画面は、簡単にmythemeのデザインを設定できる画面です。</p>
   <form method="post">
-    <div class="cp_tab">
+    <div class="p-tab">
       <!-- タブの設定 -->
-    	<input type="radio" name="cp_tab" id="tab2_1" aria-controls="first_tab02" checked>
-    	<label for="tab2_1">文字</label>
-    	<input type="radio" name="cp_tab" id="tab2_2" aria-controls="second_tab02">
-    	<label for="tab2_2">SEO</label>
-    	<input type="radio" name="cp_tab" id="tab2_3" aria-controls="third_tab02">
-    	<label for="tab2_3">サイト回遊</label>
+      <ul class="p-tab--headline">
+        <li class="current">文字</li>
+        <li>SEO</li>
+        <li>サイト回遊</li>
+      </ul>
       <!-- コンテンツ -->
-    	<div class="cp_tabpanels">
-    		<div class="cp_tabpanel">
+    	<ul class="p-tab--content">
+    		<li class="current">
       		<h2>基本設定</h2>
       		<p>文字の設定</p>
           <div class="setting">
@@ -51,8 +50,8 @@ include 'admin-init.php';
             <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="sm-h5-size" value="<?php echo $sm_h5size; ?>" placeholder="<?php echo $sm_h5size_def; ?>"> px</p>
             <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="sm-h6-size" value="<?php echo $sm_h6size; ?>" placeholder="<?php echo $sm_h6size_def; ?>"> px</p>
           </div>
-    		</div>
-    		<div class="cp_tabpanel">
+    		</li>
+    		<li>
       		<h2>SEO</h2>
       		<p>Second Tab text</p>
           <div class="setting">
@@ -77,8 +76,8 @@ include 'admin-init.php';
             <p><label for="ogp-fb-img-article">投稿ページ／記事ページ用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp-fb-img-article', $ogpFbImgArticle); ?></p>
             <p><label for="ogp-fb-img-top">投稿ページ／記事ページ以外用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp-fb-img-top', $ogpFbImgTop); ?></p>
           </div>
-    		</div>
-    		<div class="cp_tabpanel">
+    		</li>
+        <li>
       		<h2>サイト回遊</h2>
       		<p>サイトの回遊率を向上させる設定。</p>
           <div class="setting">
@@ -113,8 +112,8 @@ include 'admin-init.php';
               <p><lavel for="relevance--url4">関連記事④</lavel><input id="relevance--url4" type="url" name="relevance-url4" value="<?php echo $relevanceUrl4;?>"></p>
             </div>
           </div>
-    		</div>
-    	</div>
+    		</li>
+    	</ul>
     </div>
     <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>
   </form>

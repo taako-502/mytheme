@@ -37,94 +37,47 @@ input[type="url"] {
 /**
  * タブの設定
  */
-.cp_tab *,
-.cp_tab *:after,
-.cp_tab *:before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.p_tab {
+  display: flex;
 }
 
-.cp_tab {
-  margin: 1em auto;
-  position: relative;
+ul.p-tab--headline {
+  display: block;
+  width: 100px;
+  //margin: 10px 0px 0 0;
+  padding: 0;
 
-  input[type='radio'] {
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    outline: none;
-    background: none;
-    -webkit-appearance: none;
-    appearance: none;
-    display: none;
-  }
-
-  .cp_tabpanel {
-    display: none;
-    padding: 0.5em 1em;
-    border-left: 1px solid vars.$GRAY_C;
-    min-height: 320px;
-  }
-
-  .cp_tabpanels {
-    position: absolute;
-    top: 0;
-    left: 10em;
-    display: block;
-    height: 320px;
-  }
-
-  > input {
-    &:first-child:checked ~ .cp_tabpanels > .cp_tabpanel:first-child,
-    &:nth-child(3):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(2),
-    &:nth-child(5):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(3),
-    &:nth-child(7):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(4),
-    &:nth-child(9):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(5),
-    &:nth-child(11):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(6) {
-      display: block;
-    }
-
-    + label {
-      position: relative;
-      z-index: 100;
-      top: -15px;
-      left: 1px;
-      display: block;
-      width: 10em;
-      margin-bottom: 1px;
-      padding: 15px;
-      cursor: pointer;
-      border: 1px solid vars.$GRAY_C;
-      border-right: 0;
-      border-radius: 6px 0 0 6px;
-
-      &:last-of-type {
-        margin-bottom: 100px;
-      }
-    }
-  }
-
-  > label:hover,
-  > input:focus + label {
-    color: vars.$BLUE_BUTTON;
-  }
-
-  > input:checked + label {
-    border-color: vars.$GRAY_C;
-    border-right: 1px solid vars.$WHITE_F;
-    /*背景色と同じ*/
-  }
-  @media (max-width: 480px) {
+  li {
+    display: inline-block;
     width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    background-color: #AAA;
+    text-align: center;
+    cursor: pointer;
 
-    > input + label {
-      font-size: 0.7em;
+    &.current {
+      background-color: #FFF;
     }
+  }
+}
 
-    .cp_tabpanels {
-      left: 7em;
-      min-width: 7em;
+ul.p-tab--content {
+  display: block;
+  width: 70%;
+  //margin: 10px 0 0 0px;
+  padding: 0;
+
+  li {
+    display: none;
+    vertical-align: top;
+    background-color: #FFF;
+    padding: 5%;
+    z-index: 2;
+
+    &.current {
+      display: block;
     }
   }
 }
