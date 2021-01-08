@@ -37,11 +37,11 @@ input[type="url"] {
 /**
  * タブの設定
  */
-.p_tab {
+.p-tab {
   display: flex;
 }
 
-ul.p-tab--headline {
+.p-tab--headline {
   display: block;
   width: 100px;
   //margin: 10px 0px 0 0;
@@ -53,17 +53,21 @@ ul.p-tab--headline {
     height: 30px;
     line-height: 30px;
     margin: 0;
-    background-color: #AAA;
+    background-color: vars.$GRAY_C;
     text-align: center;
     cursor: pointer;
 
     &.current {
-      background-color: #FFF;
+      background-color: vars.$WHITE_F;
+    }
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
     }
   }
 }
 
-ul.p-tab--content {
+.p-tab--content {
   display: block;
   width: 70%;
   //margin: 10px 0 0 0px;
@@ -72,12 +76,16 @@ ul.p-tab--content {
   li {
     display: none;
     vertical-align: top;
-    background-color: #FFF;
+    background-color: vars.$WHITE_F;
     padding: 5%;
     z-index: 2;
 
     &.current {
       display: block;
+    }
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
     }
   }
 }
