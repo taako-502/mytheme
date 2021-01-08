@@ -85,7 +85,7 @@
   transition: all 0.6s;
   width: 100%;
   @media (min-width: vars.$MAX-WIDTH-SP) {
-    position: static;
+    position: relative;
     display: flex;
     transition: none;
     transform: translateX(0%);
