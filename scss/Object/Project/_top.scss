@@ -43,8 +43,14 @@
 
 a.p-recommend--a {
   width: 33.333%;
+  border-radius:5px;
+
   @include mixin.articleShadow();
   @include mixin.blockAndStaticCenter();
+
+  .p-recommend--img {
+    border-radius:5px;
+  }
 
   @include mixin.mq("sp"){
     width: 100%;
