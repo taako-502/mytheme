@@ -18,6 +18,7 @@ input[type="url"] {
 }
 
 .setting > p {
+  color: vars.$BLACK_3;
   margin: 0.3em 0 0.3em 1.0em;
 }
 
@@ -44,7 +45,6 @@ input[type="url"] {
 .p-tab--headline {
   display: block;
   width: 100px;
-  //margin: 10px 0px 0 0;
   padding: 0;
 
   li {
@@ -70,7 +70,6 @@ input[type="url"] {
 .p-tab--content {
   display: block;
   width: 70%;
-  //margin: 10px 0 0 0px;
   padding: 0;
 
   li {
@@ -82,10 +81,6 @@ input[type="url"] {
 
     &.current {
       display: block;
-    }
-
-    &:hover {
-      color: vars.$BLUE_CHAR_HOVER;
     }
   }
 }

@@ -98,7 +98,7 @@ include 'admin-init.php';
           <div class="setting">
             <h2>関連記事</h2>
             <p>
-              <lavel for="relevance--select">関連性</lavel>
+              <label for="relevance--select">関連性：</label>
               <select id="relevance--select" class="relevance--select" name="relevance-select">
                 <option <?php echo $relevanceSelect == "category" ? "selected " : ""; ?>value="category">カテゴリ</option>
                 <option <?php echo $relevanceSelect == "tag" ? "selected " : ""; ?>value="tag">タグ</option>
@@ -106,10 +106,10 @@ include 'admin-init.php';
               </select>
             </p>
             <div class="setting__detail relevance__url-set <?php echo $relevanceSelect != "url" ? "u-display__none" : ""; ?>">
-              <p><lavel for="relevance--url1">関連記事①</lavel><input id="relevance--url1" type="url" name="relevance-url1" value="<?php echo $relevanceUrl1;?>"></p>
-              <p><lavel for="relevance--url2">関連記事②</lavel><input id="relevance--url2" type="url" name="relevance-url2" value="<?php echo $relevanceUrl2;?>"></p>
-              <p><lavel for="relevance--url3">関連記事③</lavel><input id="relevance--url3" type="url" name="relevance-url3" value="<?php echo $relevanceUrl3;?>"></p>
-              <p><lavel for="relevance--url4">関連記事④</lavel><input id="relevance--url4" type="url" name="relevance-url4" value="<?php echo $relevanceUrl4;?>"></p>
+              <p><label for="relevance--url1">関連記事①：</label><input id="relevance--url1" type="url" name="relevance-url1" value="<?php echo $relevanceUrl1;?>"></p>
+              <p><label for="relevance--url2">関連記事②：</label><input id="relevance--url2" type="url" name="relevance-url2" value="<?php echo $relevanceUrl2;?>"></p>
+              <p><label for="relevance--url3">関連記事③：</label><input id="relevance--url3" type="url" name="relevance-url3" value="<?php echo $relevanceUrl3;?>"></p>
+              <p><label for="relevance--url4">関連記事④：</label><input id="relevance--url4" type="url" name="relevance-url4" value="<?php echo $relevanceUrl4;?>"></p>
             </div>
           </div>
     		</li>
