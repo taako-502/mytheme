@@ -4,18 +4,6 @@
   width: 100%;
 }
 
-.l-nav-title {
-  display: none;
-  text-decoration: none;
-  margin-right: 21px;
-  color: inherit;
-  font-size: 26px;
-  text-align: left;
-  @media (min-width: vars.$MAX-WIDTH-SP) {
-    display: inline-block;
-  }
-}
-
 .l-hamburger {
   display: block;
   position: fixed;
@@ -106,23 +94,26 @@
   }
 }
 
-.l-nav .l-nav-menu {
+.l-nav-title {
+  display: none;
+  text-decoration: none;
+  margin-right: 21px;
+  color: inherit;
+  font-size: 26px;
+  text-align: left;
+  @media (min-width: vars.$MAX-WIDTH-SP) {
+    display: inline-block;
+  }
+}
+
+.l-nav-menu {
   margin: 0 2em 0 auto;
   padding: 4em 0 0 0;
   width: auto;
 
   @media (min-width: vars.$MAX-WIDTH-SP) {
     padding: 0;
-  }
-
-  //サブメニューの設定
-  //初期表示では、サブメニューは非表示にしておく
-  .sub-menu {
-    position: absolute;
-    display: none;
-    background-color: vars.$BLACK_3;
-    width: 100%;
-    color: white;
+    display: flex;
   }
 
   //サブメニューの設定
@@ -143,50 +134,57 @@
       }
     }
   }
+}
 
-  .nav-item {
-    //サブメニューは.nav-itemを起点に位置を調整するため、position:relativeにする
-    position: relative;
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-    border-bottom: 1px solid vars.$WHITE_F;
-    @media (min-width: vars.$MAX-WIDTH-SP) {
-      display: inline-block;
-      border: none;
-      width: auto;
-    }
+//サブメニューの設定
+//初期表示では、サブメニューは非表示にしておく
+.sub-menu {
+  position: absolute;
+  display: none;
+  background-color: vars.$BLACK_3;
+  width: 100%;
+  color: white;
+}
 
-    &:last-child {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    &:hover {
-      background: vars.$GRAY_D;
-      color: vars.$BLUE_CHAR_HOVER;
-
-      //メニューをホバーすると、サブメニューを再表示
-      > .sub-menu {
-        display: inline-block;
-      }
-    }
-  }
+.nav-item {
+  //サブメニューは.nav-itemを起点に位置を調整するため、position:relativeにする
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid vars.$WHITE_F;
   @media (min-width: vars.$MAX-WIDTH-SP) {
-    display: flex;
+    display: inline-block;
+    border: none;
+    width: auto;
   }
 
-  .nav-link {
-    display: block;
-    color: inherit;
-    text-align: left;
-    margin-left: 4em;
-    padding: 1em 0;
-    text-decoration: none;
-    @media (min-width: vars.$MAX-WIDTH-SP) {
-      padding: 0.6em 0.8em;
-      margin-left: 0;
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: vars.$GRAY_D;
+    color: vars.$BLUE_CHAR_HOVER;
+
+    //メニューをホバーすると、サブメニューを再表示
+    > .sub-menu {
+      display: inline-block;
     }
+  }
+}
+
+.nav-link {
+  display: block;
+  color: inherit;
+  text-align: left;
+  margin-left: 4em;
+  padding: 1em 0;
+  text-decoration: none;
+  @media (min-width: vars.$MAX-WIDTH-SP) {
+    padding: 0.6em 0.8em;
+    margin-left: 0;
   }
 }
 
