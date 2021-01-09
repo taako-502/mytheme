@@ -5,12 +5,15 @@
 }
 
 .l-nav-title {
-  display: inline-block;
+  display: none;
   text-decoration: none;
   margin-right: 21px;
   color: inherit;
   font-size: 26px;
   text-align: left;
+  @media (min-width: vars.$MAX-WIDTH-SP) {
+    display: inline-block;
+  }
 }
 
 .l-hamburger {
@@ -81,9 +84,11 @@
   top: 0;
   left: 0;
   text-align: center;
+  transition: none;
   transform: translateX(100%);
-  transition: all 0.6s;
   width: 100%;
+  min-height: 100vw;
+
   @media (min-width: vars.$MAX-WIDTH-SP) {
     position: relative;
     display: flex;
@@ -92,17 +97,23 @@
     padding: 16px 0 0 30px;
     z-index: 900;
     width: auto;
+    min-height: auto;
   }
 
   &.active {
-    transform: translateX(0%);
+    transition: all 0.6s;
+    transform: translateX(15%);
   }
 }
 
 .l-nav .l-nav-menu {
   margin: 0 2em 0 auto;
-  padding: 0;
+  padding: 4em 0 0 0;
   width: auto;
+
+  @media (min-width: vars.$MAX-WIDTH-SP) {
+    padding: 0;
+  }
 
   //サブメニューの設定
   //初期表示では、サブメニューは非表示にしておく
@@ -165,13 +176,16 @@
     display: flex;
   }
 
-  a {
+  .nav-link {
     display: block;
     color: inherit;
+    text-align: left;
+    margin-left: 4em;
     padding: 1em 0;
     text-decoration: none;
     @media (min-width: vars.$MAX-WIDTH-SP) {
       padding: 0.6em 0.8em;
+      margin-left: 0;
     }
   }
 }
