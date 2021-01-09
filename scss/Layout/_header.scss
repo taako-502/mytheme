@@ -104,7 +104,38 @@
   padding: 0;
   width: auto;
 
+  //サブメニューの設定
+  //初期表示では、サブメニューは非表示にしておく
+  .sub-menu {
+    position: absolute;
+    display: none;
+    background-color: vars.$BLACK_3;
+    width: 100%;
+    color: white;
+  }
+
+  //サブメニューの設定
+  & > .nav-item > .sub-menu {
+    left: 0;
+    width: 240px;
+
+    > li.nav-item {
+      width: 100%;
+
+      .sub-menu {
+        right: -100%;
+        top: 0;
+
+        li.nav-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .nav-item {
+    //サブメニューは.nav-itemを起点に位置を調整するため、position:relativeにする
+    position: relative;
     list-style-type: none;
     padding: 0;
     width: 100%;
@@ -122,48 +153,16 @@
 
     &:hover {
       background: vars.$GRAY_D;
-    }
-  }
+      color: vars.$BLUE_CHAR_HOVER;
 
-  & > .nav-item {
-    position: relative;
-
-    > .sub-menu {
-      left: 0;
-      width: 240px;
-
-      > li.nav-item {
-        width: 100%;
-
-        .sub-menu {
-          right: -100%;
-          top: 0;
-
-          li.nav-item {
-            width: 100%;
-          }
-        }
+      //メニューをホバーすると、サブメニューを再表示
+      > .sub-menu {
+        display: inline-block;
       }
-    }
-
-    &:hover .sub-menu {
-      display: inline-block;
     }
   }
   @media (min-width: vars.$MAX-WIDTH-SP) {
     display: flex;
-  }
-
-  .sub-menu {
-    position: absolute;
-    display: none;
-    background-color: vars.$BLACK_3;
-    width: 100%;
-    color: white;
-
-    &:hover .sub-menu {
-      display: inline-block;
-    }
   }
 
   a {
