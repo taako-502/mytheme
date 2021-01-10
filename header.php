@@ -41,7 +41,8 @@ global $page_title;
           </div>
         </div>
       </div>
-      <nav class="l-nav" style="margin-bottom:0;background-color:<?php echo getCusNavBackColor() ?>!important;color:<?php echo getCusNavTextColor() ?>!important;">
+      <!--nav class="l-nav" style="margin-bottom:0;background-color:<?php //echo getCusNavBackColor(); ?>!important;color:<?php //echo getCusNavTextColor(); ?>!important;" -->
+      <nav class="l-nav">
         <?php
         wp_nav_menu(array (
           'theme_location'=>'header-nav',
