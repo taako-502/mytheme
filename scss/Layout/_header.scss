@@ -64,8 +64,6 @@
   position: fixed;
   display: flex;
   z-index: 900;
-  top: 0;
-  left: 0;
   text-align: center;
   transition: none;
   width: 100%;
@@ -79,9 +77,8 @@
   @include mixin.mq("sp") {
     position: absolute;
     /* 開いてないときは画面外に配置 */
-    top: -500px;
-    //right: -100%; //横からスライドさせる場合
-    background: #333;
+    right: -200%; //横からスライドさせる場合
+    background: inherit;
     width: 100%;
     text-align: center;
     padding: 10px 0;
@@ -92,11 +89,14 @@
 
   .l-nav-menu {
     margin: 0 2em 0 auto;
+    display: flex;
     padding: 4em 0 0;
     width: auto;
-    @media (min-width: vars.$MAX-WIDTH-SP) {
+    @include mixin.mq("sp") {
+      display: block;
       padding: 0;
-      display: flex;
+      margin: 0;
+      width: 85%;
     }
     //サブメニューの設定
     & > .nav-item > .sub-menu {
@@ -129,7 +129,6 @@
   width: auto;
   padding: 0;
   display: flex;
-
   @include mixin.mq("sp") {
     padding: 4em 0 0;
     list-style: none;
@@ -138,7 +137,6 @@
     bottom: 0;
     font-size: 14px;
   }
-
   //サブメニューの設定
   & > .nav-item > .sub-menu {
     left: 0;
@@ -257,12 +255,9 @@
     /* .l-nav スライドアニメーション */
     .l-nav {
       /* .l-nav top + .l-header--mobile height */
-      -moz-transform: translateY(556px);
-      -webkit-transform: translateY(556px);
-      transform: translateY(556px);
-      //-moz-transform: translateX(-85%);//横からスライドさせる場合
-      //-webkit-transform: translateX(-85%);//横からスライドさせる場合
-      //transform: translateX(-85%);//横からスライドさせる場合
+      -moz-transform: translateX(-185%); //横からスライドさせる場合
+      -webkit-transform: translateX(-185%); //横からスライドさせる場合
+      transform: translateX(-185%); //横からスライドさせる場合
     }
   }
 }
@@ -297,7 +292,6 @@
   width: 100%;
   border-bottom: 1px solid vars.$WHITE_F;
   float: left;
-
   @include mixin.mq("sp") {
     float: none;
     position: static;
