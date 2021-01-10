@@ -1,7 +1,6 @@
 @use 'Foundation/mixin';
 @use 'Foundation/vars';
 
-
 .l-header {
   top: -100px;
   position: absolute;
@@ -11,8 +10,7 @@
   line-height: 1;
   z-index: 999;
   background: #333;
-
-  @include mixin.mq("sp"){
+  @include mixin.mq("sp") {
     top: 0;
     position: fixed;
     margin-top: 0;
@@ -63,7 +61,22 @@
 }
 
 .l-nav {
-  @include mixin.mq("sp"){
+  position: fixed;
+  display: flex;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  text-align: center;
+  transition: none;
+  width: 100%;
+  min-height: 100vw;
+  @media (min-width: vars.$MAX-WIDTH-SP) {
+    position: relative;
+    padding: 16px 0 0 30px;
+    width: auto;
+    min-height: auto;
+  }
+  @include mixin.mq("sp") {
     position: absolute;
     /* 開いてないときは画面外に配置 */
     top: -500px;
@@ -77,14 +90,41 @@
     transition: 0.5s ease-in-out;
   }
 
-  ul {
+  .l-nav-menu {
+    margin: 0 2em 0 auto;
+    padding: 4em 0 0;
+    width: auto;
+    @media (min-width: vars.$MAX-WIDTH-SP) {
+      padding: 0;
+      display: flex;
+    }
+    //サブメニューの設定
+    & > .nav-item > .sub-menu {
+      left: 0;
+      width: 240px;
+
+      > li.nav-item {
+        width: 100%;
+
+        .sub-menu {
+          right: -100%;
+          top: 0;
+
+          li.nav-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .l-nav-menu {
     list-style: none;
     position: absolute;
     right: 0;
     bottom: 0;
     font-size: 14px;
-
-    @include mixin.mq("sp"){
+    @include mixin.mq("sp") {
       list-style: none;
       position: static;
       right: 0;
@@ -92,15 +132,43 @@
       font-size: 14px;
     }
 
-    li {
+    .nav-item {
       float: left;
-      @include mixin.mq("sp"){
-      float: none;
-      position: static;
-    }
+      @include mixin.mq("sp") {
+        float: none;
+        position: static;
+      }
 
-      a {
+      .nav-link {
         padding: 0 30px;
+      }
+    }
+  }
+}
+
+.l-nav-menu {
+  margin: 0 2em 0 auto;
+  padding: 4em 0 0;
+  width: auto;
+  @media (min-width: vars.$MAX-WIDTH-SP) {
+    padding: 0;
+    display: flex;
+  }
+  //サブメニューの設定
+  & > .nav-item > .sub-menu {
+    left: 0;
+    width: 240px;
+
+    > li.nav-item {
+      width: 100%;
+
+      .sub-menu {
+        right: -100%;
+        top: 0;
+
+        li.nav-item {
+          width: 100%;
+        }
       }
     }
   }
@@ -144,10 +212,9 @@
     }
   }
 }
-
-@include mixin.mq("sp"){
-  .l-header--inner,
-  .l-header {
+@include mixin.mq("sp") {
+  .l-header,
+  .l-header--inner {
     width: 100%;
     padding: 0;
   }
@@ -215,28 +282,6 @@
   }
 }
 
-.l-nav {
-  position: fixed;
-  z-index: 900;
-  top: 0;
-  left: 0;
-  text-align: center;
-  transition: none;
-  transform: translateX(100%);
-  width: 100%;
-  min-height: 100vw;
-
-  @media (min-width: vars.$MAX-WIDTH-SP) {
-    position: relative;
-    display: flex;
-    transition: none;
-    transform: translateX(0%);
-    padding: 16px 0 0 30px;
-    width: auto;
-    min-height: auto;
-  }
-}
-
 .l-header--logo {
   display: none;
   text-decoration: none;
@@ -248,39 +293,9 @@
     display: inline-block;
   }
 }
-
-.l-nav-menu {
-  margin: 0 2em 0 auto;
-  padding: 4em 0 0 0;
-  width: auto;
-
-  @media (min-width: vars.$MAX-WIDTH-SP) {
-    padding: 0;
-    display: flex;
-  }
-
-  //サブメニューの設定
-  & > .nav-item > .sub-menu {
-    left: 0;
-    width: 240px;
-
-    > li.nav-item {
-      width: 100%;
-
-      .sub-menu {
-        right: -100%;
-        top: 0;
-
-        li.nav-item {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
 //サブメニューの設定
 //初期表示では、サブメニューは非表示にしておく
+
 .sub-menu {
   position: absolute;
   display: none;
@@ -310,7 +325,6 @@
   &:hover {
     background: vars.$GRAY_D;
     color: vars.$BLUE_CHAR_HOVER;
-
     //メニューをホバーすると、サブメニューを再表示
     > .sub-menu {
       display: inline-block;
@@ -334,7 +348,6 @@
 .l-header__img {
   width: 100%;
 }
-
 
 .l-header--inner {
   //width: 980px;
