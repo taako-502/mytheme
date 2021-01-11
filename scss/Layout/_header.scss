@@ -20,6 +20,10 @@
     }
   }
 
+  a:hover {
+    color: vars.$BLUE_CHAR_HOVER;
+  }
+
   /* Fixed */
   &.fixed {
     margin-top: 0;
@@ -69,16 +73,6 @@
 
   @include mixin.mq("sp") {
     display: none;
-  }
-
-  &:hover {
-    color: vars.$BLUE_CHAR_HOVER;
-  }
-}
-
-.l-header--description {
-  &:hover {
-    color: vars.$BLUE_CHAR_HOVER;
   }
 }
 
@@ -290,7 +284,6 @@
 
   &:hover {
     background: vars.$GRAY_D;
-    color: vars.$BLUE_CHAR_HOVER;
     //メニューをホバーすると、サブメニューを再表示
     > .sub-menu {
       display: inline-block;
