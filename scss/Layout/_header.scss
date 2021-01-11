@@ -60,8 +60,23 @@
 }
 
 .l-header--logo {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 0 10px 20px;
+  color: inherit;
   font-size: 28px;
+  text-align: left;
 
+  @include mixin.mq("sp") {
+    display: none;
+  }
+
+  &:hover {
+    color: vars.$BLUE_CHAR_HOVER;
+  }
+}
+
+.l-header--description {
   &:hover {
     color: vars.$BLUE_CHAR_HOVER;
   }
@@ -262,17 +277,6 @@
   }
 }
 
-.l-header--logo {
-  display: none;
-  text-decoration: none;
-  margin: 0 0 10px 20px;
-  color: inherit;
-  font-size: 26px;
-  text-align: left;
-  @media (min-width: vars.$MAX-WIDTH-SP) {
-    display: inline-block;
-  }
-}
 //サブメニューの設定
 //初期表示では、サブメニューは非表示にしておく
 

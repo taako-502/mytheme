@@ -33,6 +33,7 @@ global $page_title;
     <div class="l-header--inner">
       <div class="l-header--mobile">
         <a class="l-header--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+        <a class="l-header--description" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'description' ); ?></a>
         <div class="l-header--toggle">
           <div>
             <span></span>
