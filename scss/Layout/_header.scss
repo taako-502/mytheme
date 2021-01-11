@@ -71,8 +71,8 @@
   position: static;
   width: auto;
   min-height: auto;
-  display: inline-block;
-  margin: 0 2em 0 auto;
+  display: block;
+  text-align: right;
 
   @include mixin.mq("sp") {
     position: fixed;
@@ -91,7 +91,7 @@
   }
 
   .l-nav-menu {
-    display: flex;
+    display: inline-block;
     width: auto;
     @include mixin.mq("sp") {
       display: block;
