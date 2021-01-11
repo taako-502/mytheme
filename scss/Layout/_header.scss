@@ -104,50 +104,24 @@
     -moz-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
   }
-
-  .l-nav-menu {
-    display: inline-block;
-    width: auto;
-    @include mixin.mq("sp") {
-      display: block;
-      padding: 0;
-      margin: 0;
-      width: 85%;
-    }
-    //サブメニューの設定
-    & > .nav-item > .sub-menu {
-      left: 0;
-      width: 240px;
-
-      > li.nav-item {
-        width: 100%;
-
-        .sub-menu {
-          right: -100%;
-          top: 0;
-
-          li.nav-item {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
 }
 
 .l-nav-menu {
-  list-style: none;
   position: static;
+  display: inline-block;
+  width: auto;
+  padding: 0;
   right: 0;
   bottom: 0;
   font-size: 14px;
-  width: auto;
-  padding: 0;
-  display: flex;
+  list-style: none;
   @include mixin.mq("sp") {
+    position: static;
+    display: block;
+    width: 85%;
+    margin: 0;
     padding: 4em 0 0;
     list-style: none;
-    position: static;
     right: 0;
     bottom: 0;
     font-size: 14px;
@@ -180,7 +154,7 @@
   width: 34px;
   height: 36px;
   cursor: pointer;
-  z-index: 101;
+  z-index: 900;
 
   div {
     position: relative;
@@ -221,7 +195,7 @@
     background: #fff;
     width: 100%;
     height: 56px;
-    z-index: 999;
+    z-index: 900;
     position: relative;
   }
 
@@ -286,6 +260,7 @@
   background-color: vars.$BLACK_3;
   width: 100%;
   color: white;
+  z-index: 900;
 }
 
 .nav-item {
