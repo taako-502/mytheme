@@ -107,9 +107,8 @@
   @include mixin.mq("sp") {
     position: fixed;
     display: flex;
-    z-index: 900;
     /* 開いてないときは画面外に配置 */
-    right: -200%; //横からスライドさせる場合
+    right: -200%;
     width: 100%;
     min-height: 100vw;
     text-align: center;
@@ -118,6 +117,7 @@
     -webkit-transition: 0.5s ease-in-out;
     -moz-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
+    z-index: 900;
   }
 }
 
@@ -325,7 +325,7 @@
   }
 }
 
-.l-header__img {
+.l-header--img {
   width: 100%;
 }
 
