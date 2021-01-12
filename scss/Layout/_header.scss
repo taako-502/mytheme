@@ -129,7 +129,7 @@
   //サブメニューの設定
   & > .nav-item > .sub-menu {
     left: 0;
-    width: 240px;
+    width: 100%;
 
     > li.nav-item {
       width: 100%;
@@ -261,6 +261,10 @@
   width: 100%;
   color: white;
   z-index: 900;
+
+  .nav-link {
+    font-size: 12px;
+  }
 }
 
 .nav-item {
