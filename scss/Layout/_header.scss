@@ -58,10 +58,14 @@
         width: auto;
         display: inline-block;
       }
+
+      .sub-menu {
+        background: inherit;
+      }
     }
 
     .sub-menu {
-      background: inherit;
+      background: #333;
       color: inherit;
     }
 
@@ -271,7 +275,7 @@
 .sub-menu {
   position: absolute;
   display: none;
-  background-color: vars.$BLACK_3;
+  background: vars.$BLACK_3;
   width: 100%;
   color: white;
   z-index: 900;
@@ -288,6 +292,7 @@
   width: auto;
   padding: 0;
   border: none;
+  background-color: inherit;
   @include mixin.mq("sp") {
     position: static;
     display: block;
