@@ -9,6 +9,7 @@
   box-sizing: border-box;
   line-height: 1;
   z-index: 900;
+  color: #fff;
   background: #333;
   @include mixin.mq("sp") {
     top: 0;
@@ -21,8 +22,11 @@
     }
   }
 
-  a:hover {
-    color: vars.$BLUE_CHAR_HOVER;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
+    }
   }
 
   /* Fixed */
@@ -32,6 +36,7 @@
     position: fixed;
     padding-top: 10px;
     height: 55px;
+    color: vars.$BLACK_3;
     background: #fff;
     background: rgba(255,255,255,.7);
     transition: top 0.65s ease-in;
@@ -40,12 +45,24 @@
 
     .l-header--logo {
       font-size: 24px;
-      color: #333;
     }
 
-    .l-nav ul li a {
-      color: #333;
-      padding: 0 20px;
+    .l-header--description {
+      display: none;
+    }
+
+    .l-nav {
+      width: auto;
+      display: inline-block;
+    }
+
+    .sub-menu {
+      background: inherit;
+      color: inherit;
+    }
+
+    a:hover {
+      color: vars.$BLUE_CHAR_HOVER;
     }
   }
 }
@@ -66,12 +83,6 @@
 .l-header--description {
   display: block;
   margin-top: 0.5em;
-}
-
-.l-header,
-.l-header a {
-  color: #fff;
-  text-decoration: none;
 }
 
 .l-header--inner {
