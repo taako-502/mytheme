@@ -24,9 +24,13 @@
   li {
     list-style: none;
     margin-bottom: 5px;
+  }
 
-    a {
-      text-decoration: none;
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
     }
   }
 
