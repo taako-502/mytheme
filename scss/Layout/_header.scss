@@ -24,11 +24,11 @@
 
   a {
     text-decoration: none;
+
     &:hover {
       color: vars.$BLUE_CHAR_HOVER;
     }
   }
-
   /* Fixed */
   &.fixed {
     margin-top: 0;
@@ -74,7 +74,6 @@
   color: inherit;
   font-size: 28px;
   text-align: left;
-
   @include mixin.mq("sp") {
     display: none;
   }
@@ -100,7 +99,6 @@
   min-height: auto;
   display: block;
   text-align: right;
-
   @include mixin.mq("sp") {
     position: fixed;
     display: flex;
@@ -263,10 +261,8 @@
     }
   }
 }
-
-//サブメニューの設定
-//初期表示では、サブメニューは非表示にしておく
-
+/* サブメニューの設定
+  初期表示では、サブメニューは非表示にしておく */
 .sub-menu {
   position: absolute;
   display: none;
