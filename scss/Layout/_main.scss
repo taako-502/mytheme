@@ -18,6 +18,7 @@
   @include mixin.mq("sp") {
     box-sizing: border-box;
     padding: 10px 1.2em;
+    /* スマホのヘッダーのサイズを56pxにしている */
     margin-top: 62px;
   }
 }
