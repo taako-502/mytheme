@@ -111,6 +111,10 @@ a.p-recommend--a {
   span {
     font-size: 14px;
   }
+
+  &:hover {
+    color: vars.$BLUE_CHAR_HOVER;
+  }
 }
 
 .p-news-card--content {
