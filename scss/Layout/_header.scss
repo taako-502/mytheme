@@ -9,12 +9,13 @@
   box-sizing: border-box;
   line-height: 1;
   z-index: 900;
-  color: #fff;
-  background: #333;
+  color: vars.$WHITE_F;
+  background: vars.$BLACK_3;
   @include mixin.mq("sp") {
     top: 0;
     position: fixed;
     margin-top: 0;
+    background: vars.$WHITE_F;
     /* Fixed reset */
     &.fixed {
       padding-top: 0;
@@ -37,7 +38,7 @@
     padding-top: 10px;
     height: 55px;
     color: vars.$BLACK_3;
-    background: #fff;
+    background: vars.$WHITE_F;
     background: rgba(255,255,255,.7);
     transition: top 0.65s ease-in;
     -webkit-transition: top 0.65s ease-in;
@@ -74,15 +75,16 @@
   color: inherit;
   font-size: 28px;
   text-align: left;
-  @include mixin.mq("sp") {
-    display: none;
-  }
 }
 
 .l-header--description {
   display: block;
   color: inherit;
   margin-top: 0.5em;
+
+  @include mixin.mq("sp") {
+    display: none;
+  }
 }
 
 .l-header--inner {
@@ -176,7 +178,7 @@
     position: absolute;
     height: 4px;
     width: 100%;
-    background: #666;
+    background: vars.$GRAY_6;
     left: 0;
     -webkit-transition: 0.35s ease-in-out;
     -moz-transition: 0.35s ease-in-out;
@@ -203,7 +205,7 @@
   }
 
   .l-header--mobile {
-    background: #fff;
+    background: vars.$WHITE_F;
     width: 100%;
     height: 56px;
     z-index: 900;
@@ -215,7 +217,7 @@
     position: absolute;
     left: 13px;
     top: 13px;
-    color: #333;
+    color: inherit;
     font-size: 26px;
   }
 
@@ -223,7 +225,7 @@
   .l-header.fixed .l-nav ul li a {
     width: 100%;
     display: block;
-    color: #fff;
+    color: vars.$WHITE_F;
     padding: 18px 0;
   }
 
