@@ -5,7 +5,7 @@
   top: -100px;
   position: static;
   width: 100%;
-  padding: 1em 0 0 1em;
+  padding: 1.4em 0 0 1em;
   box-sizing: border-box;
   line-height: 1;
   z-index: 900;
@@ -75,24 +75,24 @@
   }
 }
 
-.l-header--logo {
-  display: inline-block;
-  text-decoration: none;
-  margin-bottom: 5px;
-  color: inherit;
-  font-size: 28px;
-  text-align: left;
-}
-
 .l-header--description {
   display: block;
   color: inherit;
-  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 13px;
 
   @include mixin.mq("sp") {
     display: none;
   }
 }
+
+.l-header--logo {
+  display: inline-block;
+  color: inherit;
+  font-size: 28px;
+  text-align: left;
+}
+
 
 .l-header--inner {
   position: static;
