@@ -41,6 +41,9 @@
       height: 55px;
       color: vars.$BLACK_3;
       background: rgba(255,255,255,.7);
+      transition: top 0.65s ease-in;
+      -webkit-transition: top 0.65s ease-in;
+      -moz-transition: top 0.65s ease-in;
 
       .l-header--logo {
         font-size: 24px;

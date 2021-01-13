@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
     var $header = jQuery('.l-header');
     var $contents = jQuery('.contents');
     var $footer = jQuery('.l-footer');
+    var $topScrollBtn = jQuery('.c-top-scroll-btn');
 
     /**
      * 下にスクロールすると、画面上部にメニューを表示する
@@ -15,8 +16,10 @@ jQuery(document).ready(function($) {
     jQuery(window).scroll(function() {
       if (jQuery(window).scrollTop() > 350) {
         $header.addClass('fixed');
+        $topScrollBtn.addClass('fixed');
       } else {
         $header.removeClass('fixed');
+        $topScrollBtn.removeClass('fixed');
       }
     });
 
