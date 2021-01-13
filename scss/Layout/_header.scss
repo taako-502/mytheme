@@ -105,7 +105,7 @@
   @include mixin.mq("sp") {
     position: fixed;
     display: flex;
-    top:0;
+    top: 0;
     min-height: 100vh;
     max-height: 100vh;
     /* 開いてないときは画面外に配置 */
@@ -124,11 +124,9 @@
   right: 0;
   bottom: 0;
   width: auto;
-  padding: 0;
   font-size: 14px;
   list-style: none;
   @include mixin.mq("sp") {
-    position: static;
     display: block;
     right: 0;
     bottom: 0;
@@ -136,9 +134,26 @@
     height: 100vh;
     margin: 0;
     padding: 4em 0 0;
+    overflow-x: hidden;
     overflow-y: auto;
     list-style: none;
     font-size: 14px;
+
+    .sub-menu {
+      padding-left: 2.8em;
+    }
+
+    > .nav-item {
+      background: inherit;
+
+      .sub-menu {
+        background: #666;
+
+        .sub-menu {
+          background: #999;
+        }
+      }
+    }
   }
   //サブメニューの設定
   & > .nav-item > .sub-menu {
@@ -223,18 +238,9 @@
     font-size: 26px;
   }
 
-  .l-header .l-nav ul li a,
-  .l-header.fixed .l-nav ul li a {
-    width: 100%;
-    display: block;
-    color: vars.$WHITE_F;
-    padding: 18px 0;
-  }
-
   .l-header--toggle {
     display: block;
   }
-
   /* コンテンツのスライドアニメーション */
   .contents,
   .l-footer,
@@ -249,7 +255,6 @@
       transform: translateX(-85%); //横からスライドさせる場合
     }
   }
-
   /* .l-header--toggle 切り替えアニメーション */
   .open {
     .l-header--toggle span {
@@ -283,6 +288,10 @@
   width: 100%;
   color: white;
   z-index: 900;
+  @include mixin.mq("sp") {
+    position: static;
+    display: block;
+  }
 
   .nav-link {
     font-size: 12px;
@@ -310,6 +319,9 @@
 
   &:hover {
     background: vars.$GRAY_D;
+    @include mixin.mq("sp") {
+      background: inherit;
+    }
     //メニューをホバーすると、サブメニューを再表示
     > .sub-menu {
       display: inline-block;
@@ -331,6 +343,15 @@
   @include mixin.mq("sp") {
     padding: 1em 0;
     margin-left: 4em;
+    width: 100%;
+    display: block;
+    color: vars.$WHITE_F;
+    padding: 18px 0;
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
+      background: vars.$GRAY_D;
+    }
   }
 }
 
