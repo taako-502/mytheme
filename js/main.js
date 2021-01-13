@@ -29,5 +29,14 @@ jQuery(document).ready(function($) {
       $footer.toggleClass('open');
     });
 
+    /**
+     * ハンバーガメニューを閉じる処理
+     */
+     jQuery('.l-overlay').click(function() {
+       $header.removeClass('open');
+       $contents.removeClass('open');
+       $footer.removeClass('open');
+     });
+
   })(jQuery);
 });

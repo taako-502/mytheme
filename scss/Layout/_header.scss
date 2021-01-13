@@ -118,6 +118,21 @@
   }
 }
 
+.open .l-overlay {
+  transition: background 0.35s;
+  display: none;
+  @include mixin.mq("sp") {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 901;
+  }
+}
+
 .l-nav-menu {
   position: static;
   display: inline-block;
