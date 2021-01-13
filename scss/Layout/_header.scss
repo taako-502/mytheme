@@ -111,7 +111,6 @@
     /* 開いてないときは画面外に配置 */
     right: -100%;
     width: 100%;
-    min-height: 100vw;
     text-align: center;
     padding: 10px 0;
     background: vars.$BLACK_3;
@@ -131,12 +130,14 @@
   @include mixin.mq("sp") {
     position: static;
     display: block;
-    width: 85%;
-    margin: 0;
-    padding: 4em 0 0;
-    list-style: none;
     right: 0;
     bottom: 0;
+    width: 85%;
+    height: 100vh;
+    margin: 0;
+    padding: 4em 0 0;
+    overflow-y: auto;
+    list-style: none;
     font-size: 14px;
   }
   //サブメニューの設定
