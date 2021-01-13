@@ -41,5 +41,12 @@ jQuery(document).ready(function($) {
        $footer.removeClass('open');
      });
 
+     // ◇ボタンをクリックしたら、スクロールして上に戻る
+    $topScrollBtn.click(function(){
+      jQuery('body,html').animate({
+        scrollTop: 0},500);
+        return false;
+    });
+
   })(jQuery);
 });
