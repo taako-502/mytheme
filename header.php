@@ -54,6 +54,20 @@ global $page_title;
         ?>
       </nav>
     </div>
+    <div class="l-fixed-header">
+      <a class="l-header--description" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'description' ); ?></a>
+      <a class="l-header--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+      <nav class="l-nav">
+        <?php
+        wp_nav_menu(array (
+          'theme_location'=>'header-nav',
+          'menu_class' => 'l-nav-menu' ,
+          'container' => false,
+          'add_li_class' => 'nav-item'
+        ));
+        ?>
+      </nav>
+    </div>
     <?php if(strcmp($page_title , "home")){ the_header_image_tag("class=l-header--img"); } ?>
     <div class="l-overlay"></div>
   </header>

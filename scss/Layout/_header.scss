@@ -34,32 +34,35 @@
   @include mixin.mq("pc") {
     /* Fixed */
     &.fixed {
-      margin-top: 0;
-      top: 0;
-      position: fixed;
-      padding-top: 10px;
-      height: 55px;
-      color: vars.$BLACK_3;
-      background: rgba(255,255,255,.7);
-      transition: top 0.65s ease-in;
-      -webkit-transition: top 0.65s ease-in;
-      -moz-transition: top 0.65s ease-in;
+      .l-fixed-header {
+        position: fixed;
+        display: block;
+        margin-top: 0;
+        top: 0;
+        padding-top: 10px;
+        height: 55px;
+        color: vars.$BLACK_3;
+        background: rgba(255,255,255,.7);
+        transition: top 0.65s ease-in;
+        -webkit-transition: top 0.65s ease-in;
+        -moz-transition: top 0.65s ease-in;
 
-      .l-header--logo {
-        font-size: 24px;
-      }
+        .l-header--logo {
+          font-size: 24px;
+        }
 
-      .l-header--description {
-        display: none;
-      }
+        .l-header--description {
+          display: none;
+        }
 
-      .l-nav {
-        width: auto;
-        display: inline-block;
-      }
+        .l-nav {
+          width: auto;
+          display: inline-block;
+        }
 
-      .sub-menu {
-        background: inherit;
+        .sub-menu {
+          background: inherit;
+        }
       }
     }
 
@@ -72,6 +75,10 @@
       color: vars.$BLUE_CHAR_HOVER;
     }
   }
+}
+
+.l-fixed-header {
+  display: none;
 }
 
 .l-header--description {
