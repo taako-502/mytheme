@@ -112,7 +112,7 @@
     right: -100%;
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 0 3em 0;
     background: vars.$BLACK_3;
     z-index: 900;
   }
@@ -309,7 +309,6 @@
   @include mixin.mq("sp") {
     position: static;
     display: block;
-    border-bottom: 1px solid vars.$WHITE_F;
   }
 
   &:last-child {
