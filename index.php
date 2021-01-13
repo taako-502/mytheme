@@ -15,8 +15,8 @@ $recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() .
 global $page_title;
 $page_title = "home";
 ?>
-<div class="p-top--img"></div>
 <section class="contents">
+  <div class="p-top--img"></div>
   <div class="p-recommend">
     <h2 class="c-aritcle--h2">おすすめ記事</h2>
     <div class="p-recommend-area">
