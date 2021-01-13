@@ -31,7 +31,6 @@
       color: vars.$BLUE_CHAR_HOVER;
     }
   }
-
   @include mixin.mq("pc") {
     /* Fixed */
     &.fixed {
@@ -42,9 +41,9 @@
       height: 55px;
       color: vars.$BLACK_3;
       background: rgba(255,255,255,.7);
-      transition: top 0.65s ease-in;
-      -webkit-transition: top 0.65s ease-in;
-      -moz-transition: top 0.65s ease-in;
+      transition: right 0.65s ease-in;
+      -webkit-transition: right 0.65s ease-in;
+      -moz-transition: right 0.65s ease-in;
 
       .l-header--logo {
         font-size: 24px;
@@ -80,7 +79,6 @@
   color: inherit;
   margin-bottom: 0.5em;
   font-size: 13px;
-
   @include mixin.mq("sp") {
     display: none;
   }
@@ -92,7 +90,6 @@
   font-size: 28px;
   text-align: left;
 }
-
 
 .l-header--inner {
   position: static;
@@ -111,8 +108,11 @@
   @include mixin.mq("sp") {
     position: fixed;
     display: flex;
+    top:0;
+    min-height: 100vh;
+    max-height: 100vh;
     /* 開いてないときは画面外に配置 */
-    right: -200%;
+    right: -100%;
     width: 100%;
     min-height: 100vw;
     text-align: center;
@@ -128,10 +128,10 @@
 .l-nav-menu {
   position: static;
   display: inline-block;
-  width: auto;
-  padding: 0;
   right: 0;
   bottom: 0;
+  width: auto;
+  padding: 0;
   font-size: 14px;
   list-style: none;
   @include mixin.mq("sp") {
@@ -239,6 +239,22 @@
   .l-header--toggle {
     display: block;
   }
+
+  /* コンテンツのスライドアニメーション */
+  .contents,
+  .l-footer,
+  .l-header {
+    -webkit-transition: 0.35s ease-in-out;
+    -moz-transition: 0.35s ease-in-out;
+    transition: 0.35s ease-in-out;
+
+    &.open {
+      -moz-transform: translateX(-85%); //横からスライドさせる場合
+      -webkit-transform: translateX(-85%); //横からスライドさせる場合
+      transform: translateX(-85%); //横からスライドさせる場合
+    }
+  }
+
   /* .l-header--toggle 切り替えアニメーション */
   .open {
     .l-header--toggle span {
@@ -260,13 +276,6 @@
         -moz-transform: rotate(-315deg);
         transform: rotate(-315deg);
       }
-    }
-    /* .l-nav スライドアニメーション */
-    .l-nav {
-      /* .l-nav top + .l-header--mobile height */
-      -moz-transform: translateX(-185%); //横からスライドさせる場合
-      -webkit-transform: translateX(-185%); //横からスライドさせる場合
-      transform: translateX(-185%); //横からスライドさせる場合
     }
   }
 }

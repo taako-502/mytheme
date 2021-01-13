@@ -6,6 +6,8 @@
 jQuery(document).ready(function($) {
   (function($) {
     var $header = jQuery('.l-header');
+    var $contents = jQuery('.contents');
+    var $footer = jQuery('.l-footer');
 
     /**
      * 下にスクロールすると、画面上部にメニューを表示する
@@ -23,6 +25,8 @@ jQuery(document).ready(function($) {
      */
     jQuery('.l-header--toggle').click(function() {
       $header.toggleClass('open');
+      $contents.toggleClass('open');
+      $footer.toggleClass('open');
     });
 
   })(jQuery);
