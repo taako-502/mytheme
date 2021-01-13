@@ -36,24 +36,10 @@
     &.fixed {
       .l-fixed-header {
         display: block;
-        margin-top: 0;
         top: 0;
-        padding-top: 10px;
-        height: 55px;
-        color: vars.$BLACK_3;
-        background: rgba(255,255,255,.7);
         transition: top 0.65s ease-in;
         -webkit-transition: top 0.65s ease-in;
         -moz-transition: top 0.65s ease-in;
-
-        .l-nav {
-          width: auto;
-          display: inline-block;
-        }
-
-        .sub-menu {
-          background: inherit;
-        }
       }
     }
 
@@ -71,7 +57,23 @@
 .l-fixed-header {
   position: fixed;
   top: -50%;
-  color: inherit;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin-xztop: 0;
+  padding: 10px 0 10px 2em;
+  color: vars.$BLACK_3;
+  background: rgba(255,255,255,.7);
+  z-index: 900;
+
+  .l-nav {
+    width: auto;
+    display: inline-block;
+  }
+
+  .sub-menu {
+    background: inherit;
+  }
 }
 
 .l-fixed-header--logo {
