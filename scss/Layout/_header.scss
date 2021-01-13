@@ -41,9 +41,6 @@
       height: 55px;
       color: vars.$BLACK_3;
       background: rgba(255,255,255,.7);
-      transition: right 0.65s ease-in;
-      -webkit-transition: right 0.65s ease-in;
-      -moz-transition: right 0.65s ease-in;
 
       .l-header--logo {
         font-size: 24px;
@@ -118,9 +115,6 @@
     text-align: center;
     padding: 10px 0;
     background: vars.$BLACK_3;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
     z-index: 900;
   }
 }
