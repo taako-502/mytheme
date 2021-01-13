@@ -55,8 +55,7 @@ global $page_title;
       </nav>
     </div>
     <div class="l-fixed-header">
-      <a class="l-header--description" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'description' ); ?></a>
-      <a class="l-header--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+      <a class="l-fixed-header--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
       <nav class="l-nav">
         <?php
         wp_nav_menu(array (

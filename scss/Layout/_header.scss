@@ -35,7 +35,6 @@
     /* Fixed */
     &.fixed {
       .l-fixed-header {
-        position: fixed;
         display: block;
         margin-top: 0;
         top: 0;
@@ -46,14 +45,6 @@
         transition: top 0.65s ease-in;
         -webkit-transition: top 0.65s ease-in;
         -moz-transition: top 0.65s ease-in;
-
-        .l-header--logo {
-          font-size: 24px;
-        }
-
-        .l-header--description {
-          display: none;
-        }
 
         .l-nav {
           width: auto;
@@ -78,7 +69,14 @@
 }
 
 .l-fixed-header {
-  display: none;
+  position: fixed;
+  top: -50%;
+  color: inherit;
+}
+
+.l-fixed-header--logo {
+  font-size: 24px;
+  color: inherit;
 }
 
 .l-header--description {
