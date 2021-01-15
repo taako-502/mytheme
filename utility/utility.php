@@ -15,14 +15,14 @@ if (!function_exists('isNullOrEmpty')) {
   }
 }
 
-if (!function_exists('is_nullorwhitespace')) {
+if (!function_exists('isNullOrWhitespace')) {
   /**
    * 引数がnullかスペースか判定
    * @param  [type]  $obj [description]
    * @return boolean      nullかスペースならtrueを返却
    */
-  function is_nullorwhitespace($obj) {
-    if(is_nullorempty($obj) === true){
+  function isNullOrWhitespace($obj) {
+    if(isNullOrEmpty($obj) === true){
       return true;
     }
     if(is_string($obj) && mb_ereg_match("^(\s|　)+$", $obj)){

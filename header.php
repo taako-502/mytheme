@@ -4,7 +4,6 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
-$analytics_code = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
 //メタディスクリプションの設定
 if(isset($post->ID)){
@@ -16,8 +15,10 @@ global $page_title;
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-  <?php if(!ut\isNullOrEmpty(trim($analytics_code))){ get_template_part('template-parts','analyticsTracking'); } ?>
-  <?php if(!ut\isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); } ?>
+  <?php
+  get_template_part( 'template-parts/analyticsTracking' );
+  if(!ut\isNullOrWhitespace(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); }
+  ?>
   <meta charset="utf-8">
   <meta name="description" content="<?php echo $description; ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
