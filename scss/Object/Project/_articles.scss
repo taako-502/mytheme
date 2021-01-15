@@ -271,10 +271,14 @@
     }
   }
 
-  figure figcaption {
-    font-size: 13px;
+  figure {
     text-align: center;
-    color: vars.$BLACK_5;
+
+    figcaption {
+      font-size: 13px;
+      text-align: center;
+      color: vars.$BLACK_5;
+    }
   }
 }
 
