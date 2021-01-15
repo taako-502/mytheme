@@ -173,7 +173,7 @@
     }
   }
 
-  blockquote {
+  blockquote.wp-block-quote {
     position: relative;
     max-width: 90%;
     margin: calc(#{vars.$PARAGRAPH-MARGIN} + 20px) 0 calc(#{vars.$PARAGRAPH-MARGIN} + 20px) 2em;
