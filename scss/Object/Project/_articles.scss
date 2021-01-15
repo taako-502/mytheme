@@ -183,6 +183,13 @@
     color: vars.$BLACK_5;
     border: solid 3px vars.$LIGHT_CYAN;
 
+    a {
+      text-decoration: none;
+      &:hover {
+        color: vars.$BLUE_CHAR_HOVER;
+      }
+    }
+
     @include mixin.mq("sp") {
       margin-left: 20px;
       padding: 6px 10px;
