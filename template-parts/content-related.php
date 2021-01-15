@@ -63,6 +63,8 @@ if(! $my_query->have_posts()){
           } else {
             echo '<img width="300" height="300" src="' . get_template_directory_uri() . '/images/thumbnail-default.jpg" class="attachment-medium size-medium wp-post-image" alt="デフォルトのサムネイル">';
           } ?>
+        </a>
+        <a href="<?php the_permalink(); ?>">
           <p class="p-related--title"><?php the_title(); ?></p>
         </a>
       </li>
