@@ -270,6 +270,12 @@
       margin-left: 0;
     }
   }
+
+  figure figcaption {
+    font-size: 13px;
+    text-align: center;
+    color: vars.$BLACK_5;
+  }
 }
 
 .p-tags--icon {
