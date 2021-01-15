@@ -4,7 +4,6 @@ $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
-$gtmId = get_theme_mod('gtm-id', '');
 //メタディスクリプションの設定
 if(isset($post->ID)){
   $description = ut\getDescription($post->ID,220);
@@ -17,7 +16,7 @@ global $page_title;
 <head>
   <?php
   get_template_part( 'template-parts/analyticsTracking' );
-  if(!ut\isNullOrWhitespace(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'head' ); }
+  get_template_part( 'template-parts/googleTagManager', 'head' );
   ?>
   <meta charset="utf-8">
   <meta name="description" content="<?php echo $description; ?>">
@@ -29,7 +28,7 @@ global $page_title;
 </head>
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <?php if(!ut\isNullOrEmpty(trim($gtmId))){ get_template_part( 'template-parts/googleTagManager', 'body' ); } ?>
+  <?php  get_template_part( 'template-parts/googleTagManager', 'body' ); ?>
   <header class="l-header">
     <div class="l-header--inner">
       <div class="l-header--mobile">
