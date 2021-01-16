@@ -102,7 +102,6 @@
 
     li {
       margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
-
       @include mixin.mq("sp") {
         margin-left: 1.9em;
       }
@@ -113,7 +112,7 @@
         color: vars.$INTENSE_ORANGE;
       }
 
-      &> ul {
+      & > ul {
         margin-top: vars.$LIST-LINE-SPACE;
       }
     }
@@ -131,13 +130,11 @@
       margin: 0 0 vars.$LIST-LINE-SPACE 2.3em;
       padding: 0.5em 0.5em 0.5em 30px;
       border-bottom: dashed 1px orange;
-
       @include mixin.mq("sp") {
         margin-left: 1em;
       }
 
-
-      &> ol {
+      & > ol {
         margin-top: vars.$LIST-LINE-SPACE;
       }
 
@@ -185,11 +182,11 @@
 
     a {
       text-decoration: none;
+
       &:hover {
         color: vars.$BLUE_CHAR_HOVER;
       }
     }
-
     @include mixin.mq("sp") {
       margin-left: 20px;
       padding: 6px 10px;
@@ -211,7 +208,6 @@
       color: vars.$WHITE_F;
       font-size: 22px;
       font-weight: 900;
-
       @include mixin.mq("sp") {
         width: 30px;
         height: 30px;
@@ -235,20 +231,26 @@
       color: vars.$WHITE_F;
       font-size: 22px;
       font-weight: 900;
-
       @include mixin.mq("sp") {
         width: 30px;
         height: 30px;
         font-size: 15px;
       }
     }
-
   }
 
   p {
     margin: 20px 0;
     @include mixin.paragraphMargin();
     line-height: 1.7;
+  }
+
+  > p > a {
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
+    }
   }
 
   cite {
@@ -265,19 +267,39 @@
     display: block;
     background: vars.$GRAY_EF;
     padding: 9px 11px;
-
     @include mixin.mq("sp") {
       margin-left: 0;
     }
   }
 
-  figure.wp-block-image {
-    text-align: center;
+  figure {
+    /* 表ブロック */
+    &.wp-block-table {
+      table {
+        border-collapse: collapse;
+      }
 
-    figcaption {
-      font-size: 13px;
+      td,
+      th {
+        box-sizing: border-box;
+        border: 1px solid;
+        padding: 0.5em;
+      }
+
+      th {
+        border-bottom: 2px solid;
+        font-weight: bold;
+      }
+    }
+    /* 画像ブロック */
+    &.wp-block-image {
       text-align: center;
-      color: vars.$BLACK_5;
+
+      figcaption {
+        font-size: 13px;
+        text-align: center;
+        color: vars.$BLACK_5;
+      }
     }
   }
 }
@@ -295,11 +317,10 @@
   text-decoration: none;
   color: black;
   size: 15px;
-  margin-right:4px;
-  margin-left:4px;
+  margin-right: 4px;
+  margin-left: 4px;
   padding: 3px 12px;
   border-radius: 34%;
-
   @include mixin.mq("sp") {
     margin-top: 5px;
     margin-bottom: 5px;

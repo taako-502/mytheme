@@ -2,8 +2,8 @@
 @use 'Foundation/mixin';
 
 .comment-form {
-  .comment-form-comment label,
   .comment-form-author label,
+  .comment-form-comment label,
   .comment-form-email label,
   .comment-form-url label {
     //display: none;
@@ -22,15 +22,19 @@
     padding: 4px 6px;
   }
 
-  input[type="submit"]{
+  input[type="submit"] {
     background: lightgray;
     border: none;
     width: 100%;
     height: 45px;
+
+    &:hover {
+      background: gray;
+    }
   }
 }
-
 $comment_mrg_btm: 7px;
+
 #comments {
   .comment:not(:last-child) {
     border-bottom: 1px dotted;
@@ -89,7 +93,6 @@ $comment_mrg_btm: 7px;
     border-left: 2px solid vars.$CLEAR_BLUISH_PURPLE;
     padding-left: 1em;
     margin-bottom: $comment_mrg_btm;
-
     @include mixin.mq("sp") {
       margin-left: 0.5em;
     }
