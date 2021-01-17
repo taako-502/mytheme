@@ -12,9 +12,9 @@ class OgpClass{
     $result = "<meta property=\"og:type\" content=\"blog\">"."\n";
     if (is_singular()){
       //記事ページと固定ページ
-      $title = get_post_meta($post->ID, '_individual_title', true); //手入力
+      $title = get_post_meta($post->ID, '_ogp_title', true); //手入力
       $title = ut\isNullOrEmpty(trim($title)) ? get_the_title() : $title;
-      $description = get_post_meta($post->ID,  '_individual_description', true); //手入力
+      $description = get_post_meta($post->ID,  '_ogp_description', true); //手入力
       $description = ut\isNullOrEmpty($description) ? ut\getDescription($post->ID,90) : $description;
       $url = get_the_permalink();
     } else {
@@ -30,10 +30,10 @@ class OgpClass{
     $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
     if (is_singular()){
       //記事ページと固定ページ
-      $individual_img = get_post_meta($post->ID, '_individual_img', true);
-      if(! ut\isNullOrEmpty(trim($individual_img))) {
+      $ogp_img = get_post_meta($post->ID, '_ogp_img', true);
+      if(! ut\isNullOrEmpty(trim($ogp_img))) {
         //個別に設定したOGP画像がある場合
-        $result .= '<meta property="og:image" content="'.$individual_img.'">'."\n";
+        $result .= '<meta property="og:image" content="'.$ogp_img.'">'."\n";
       } else if (has_post_thumbnail()) {
         //投稿にサムネイルがある場合の処理
         $image_id = get_post_thumbnail_id();

@@ -82,7 +82,7 @@ get_template_part('/inc/func','admin');
 //ブロックエディタ
 get_template_part('/inc/func','block');
 //OGP設定
-get_template_part('/inc/func', 'ogp');
+get_template_part('/inc/func', 'metabox');
 //AMP設定
 get_template_part('/inc/func', 'amp');
 //画像アップローダ設定

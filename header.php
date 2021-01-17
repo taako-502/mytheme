@@ -6,7 +6,8 @@ $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
 //メタディスクリプションの設定
 if(isset($post->ID)){
-  $description = ut\getDescription($post->ID,220);
+  $description = get_post_meta($post->ID, '_meta_description', true);
+  $description = ut\isNullOrEmpty($description) ? ut\getDescription($post->ID,220) : $description;
 }
 //ページ読み込み
 global $page_title;
