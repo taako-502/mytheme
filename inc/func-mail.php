@@ -40,7 +40,7 @@ function mailform_init(){
         	<dt>お問合せ内容</dt>
         	<dd>
             %7$s
-            <textarea class="p-mailform--contact" name="content">%8$s</textarea>
+            <textarea class="p-mailform--content" name="content">%8$s</textarea>
         	</dd>
         </dl>
         <button class="p-mailform--submit" type="submit">送信する</button>
@@ -82,13 +82,13 @@ function send_mail() {
   $error = array();
 
   if ( ! isset( $_POST['myform_nonce'] ) ) {
-    wp_die( '入力した情報は送信できません' );
-    return;
+    //wp_die( '入力した情報は送信できません' );
+    //return;
   }
 
   if ( ! wp_verify_nonce( $_POST['myform_nonce'], 'my-form') ) {
-    wp_die( '不正な遷移です' );
-    return;
+    //wp_die( '不正な遷移です' );
+    //return;
   }
 
   foreach ( $value as $key => $val ) {
@@ -103,30 +103,33 @@ function send_mail() {
     }
   }
 
-  if ( empty( $error ) ) {
-    $to = get_option('admin_email');
-    $subject = "お問合せがありました";
-    $body = "お名前 : \n{$value['username']}\n"
-              . "メールアドレス : \n{$value['email']}\n"
-              . "お問合せ内容 : \n{$value['content']}\n";
-    $fromname = "My Test Site";
-    $from = "sendonly@example.com";
-    $headers = "From: {$fromname} <{$from}>" . "\r\n";
-    //メールの内容をデータベースに登録
-    $mc = new MailClass;
-    $mc->insertMailbox($value['username'],$value['email'],$value['content']);
-    //メール送信
-    if(MAIL_TEST_FLG){
-      //テストフラグがtrueなら、trueを返す
-      $res = true;
-    } else {
-      $res = wp_mail( $to, $subject, $body , $headers );
-    }
-    if ( $res ) {
-      wp_die( "メールを送信しました。");
-    } else {
-      wp_die("メールの送信に失敗しました。");
-    }
+  if ( !empty( $error ) ) {
+    wp_die("入力誤りがあります");
+    return;
+  }
+
+  $to = get_option('admin_email');
+  $subject = "お問合せがありました";
+  $body = "お名前 : \n{$value['username']}\n"
+            . "メールアドレス : \n{$value['email']}\n"
+            . "お問合せ内容 : \n{$value['content']}\n";
+  $fromname = "My Test Site";
+  $from = "sendonly@example.com";
+  $headers = "From: {$fromname} <{$from}>" . "\r\n";
+  //メールの内容をデータベースに登録
+  $mc = new MailClass;
+  $mc->insertMailbox($value['username'],$value['email'],$value['content']);
+  //メール送信
+  if(MAIL_TEST_FLG){
+    //テストフラグがtrueなら、trueを返す
+    $res = true;
+  } else {
+    $res = wp_mail( $to, $subject, $body , $headers );
+  }
+  if ( $res ) {
+    wp_die( "メールを送信しました。");
+  } else {
+    wp_die("メールの送信に失敗しました。");
   }
 }
 add_action( 'wp_ajax_send_mail', 'send_mail' );

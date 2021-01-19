@@ -25,6 +25,9 @@ jQuery(document).ready(function($) {
         url: ajaxurl,
         data: {
           'action': 'send_mail',
+          'username': $('.p-mailform--name').val(),
+          'email': $('.p-mailform--email').val(),
+          'content': $('.p-mailform--content').val(),
         },
         success: function(response) {
           alert(response);
