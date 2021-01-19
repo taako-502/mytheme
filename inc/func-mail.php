@@ -76,59 +76,56 @@ add_action( 'wp_head', 'add_my_ajaxurl', 1 );
  * @return [type] [description]
  */
 function send_mail() {
-  echo "test";
-  die();
-  return;
 
   global $value, $error;
   $value = array( 'username' => '', 'email' => '', 'content' => '' );
   $error = array();
 
-  if ( isset( $_POST['myform_nonce'] ) ) {
-    if ( ! wp_verify_nonce( $_POST['myform_nonce'], 'my-form') ) {
-      echo "不正な遷移です";
-      wp_die( '不正な遷移です' );
+  if ( ! isset( $_POST['myform_nonce'] ) ) {
+    wp_die( '入力した情報は送信できません' );
+    return;
+  }
+
+  if ( ! wp_verify_nonce( $_POST['myform_nonce'], 'my-form') ) {
+    wp_die( '不正な遷移です' );
+    return;
+  }
+
+  foreach ( $value as $key => $val ) {
+    if ( isset( $_POST[$key] ) ) {
+      $value[$key] = $_POST[$key];
     }
 
-    foreach ( $value as $key => $val ) {
-      if ( isset( $_POST[$key] ) ) {
-        $value[$key] = $_POST[$key];
-      }
-
-      if ( $value[$key] === "" ) {
-        echo "必須項目です";
-        $error[$key] = '必須項目です';
-      } else if ( $key == "email" && ! is_email( $value[$key] ) ) {
-        echo "メールアドレスの形式が間違っています";
-        $error[$key] = 'メールアドレスの形式が間違っています';
-      }
+    if ( $value[$key] === "" ) {
+      $error[$key] = '必須項目です';
+    } else if ( $key == "email" && ! is_email( $value[$key] ) ) {
+      $error[$key] = 'メールアドレスの形式が間違っています';
     }
+  }
 
-    if ( empty( $error ) ) {
-      $to = get_option('admin_email');
-      $subject = "お問合せがありました";
-      $body = "お名前 : \n{$value['username']}\n"
-                . "メールアドレス : \n{$value['email']}\n"
-                . "お問合せ内容 : \n{$value['content']}\n";
-      $fromname = "My Test Site";
-      $from = "sendonly@example.com";
-      $headers = "From: {$fromname} <{$from}>" . "\r\n";
-      //メールの内容をデータベースに登録
-      $mc = new MailClass;
-      $mc->insertMailbox($value['username'],$value['email'],$value['content']);
-      //メール送信
-      if(MAIL_TEST_FLG){
-        //テストフラグがtrueなら、trueを返す
-        $res = true;
-      } else {
-        $res = wp_mail( $to, $subject, $body , $headers );
-      }
-      if ( $res ) {
-        echo "メールを送信しました。";
-      } else {
-        echo "メールの送信に失敗しました。";
-      }
-      die();
+  if ( empty( $error ) ) {
+    $to = get_option('admin_email');
+    $subject = "お問合せがありました";
+    $body = "お名前 : \n{$value['username']}\n"
+              . "メールアドレス : \n{$value['email']}\n"
+              . "お問合せ内容 : \n{$value['content']}\n";
+    $fromname = "My Test Site";
+    $from = "sendonly@example.com";
+    $headers = "From: {$fromname} <{$from}>" . "\r\n";
+    //メールの内容をデータベースに登録
+    $mc = new MailClass;
+    $mc->insertMailbox($value['username'],$value['email'],$value['content']);
+    //メール送信
+    if(MAIL_TEST_FLG){
+      //テストフラグがtrueなら、trueを返す
+      $res = true;
+    } else {
+      $res = wp_mail( $to, $subject, $body , $headers );
+    }
+    if ( $res ) {
+      wp_die( "メールを送信しました。");
+    } else {
+      wp_die("メールの送信に失敗しました。");
     }
   }
 }
