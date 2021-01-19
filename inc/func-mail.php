@@ -1,5 +1,5 @@
 <?php
-require_once( plugin_dir_path(__FILE__) . "../biz/MailClass.php");
+require_once( plugin_dir_path(__FILE__) . "../class/MailClass.php");
 
 /**
  * ショートコードの登録
