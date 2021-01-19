@@ -3,6 +3,7 @@ require_once( plugin_dir_path(__FILE__) . "../class/MailClass.php");
 $mc = new MailClass;
 $results = $mc->selectMailboxAll();
 ?>
+<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/css/admin.css'); ?>">
 <main>
   <h2>メール受信箱</h2>
   <p>問い合わせフォームから送信されたメッセージを表示します。</p>
@@ -13,7 +14,7 @@ $results = $mc->selectMailboxAll();
         <th>ID</th>
         <th>名前</th>
         <th>メーアドレス</th>
-        <th>本文</th>
+        <th style="width: 300px">本文</th>
         <th>受信日時</th>
       </tr>
     </thead>
