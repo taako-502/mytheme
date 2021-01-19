@@ -18,6 +18,8 @@ function mailform_init(){
     if(isset($error['content'])){
       $err_content = empty( $error['content'] ) ? '<p>' . $error['content'] .'</p>' : '';
     }
+    //メール送信制御用のJavaScriptファイルを読み込み
+    wp_enqueue_script('mail',get_template_directory_uri() . '/js/mail.js');
     //問い合わせフォームのHTML構成
     $post_obj = get_queried_object();
     global $value;
@@ -42,7 +44,8 @@ function mailform_init(){
         	</dd>
         </dl>
         <button class="p-mailform--submit" type="submit">送信する</button>
-      </form>'
+      </form>
+      <div class="p-maiilform--response" aria-hidden="true"></div>'
       ,get_permalink($post_obj->ID)
       ,wp_nonce_field( 'my-form', 'myform_nonce' , true , false )
       ,isset($err_username)? $err_username: ""
@@ -55,6 +58,29 @@ function mailform_init(){
   }
 }
 add_action('init', 'mailform_init');
+
+/**
+ * Ajaxを使用するための準備
+ */
+function add_my_ajaxurl() {
+ ?>
+     <script>
+         var ajaxurl = '<?php echo admin_url( 'admin-ajax.php'); ?>';
+     </script>
+ <?php
+}
+add_action( 'wp_head', 'add_my_ajaxurl', 1 );
+
+/**
+ * 送信ボタン押下時の処理(Ajax版)
+ * @return [type] [description]
+ */
+function view_sitename(){
+    echo "メールを送信しました";
+    die();
+}
+add_action( 'wp_ajax_view_sitename', 'view_sitename' );
+add_action( 'wp_ajax_nopriv_view_sitename', 'view_sitename' );
 
 /**
  * 送信ボタン押下時の処理
