@@ -16,7 +16,7 @@ h3 {
 table {
   border-collapse: collapse;
 
-  td,th {
+  th,td {
     box-sizing: border-box;
     border: 1px solid;
     padding: 0.5em;
@@ -25,6 +25,12 @@ table {
   th {
     border-bottom: 2px solid;
     font-weight: bold;
+    background: vars.$BLUE_TABLE_HEADER;
+    color: white;
+  }
+
+  td {
+    background: white;
   }
 }
 
