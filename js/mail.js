@@ -8,13 +8,6 @@ jQuery(document).ready(function($) {
     var $response = $('.p-mailform--submit');
 
     /**
-     * メール送信時の処理
-     */
-    $response.submit(function(event) {
-
-    });
-
-    /**
      * サンプル
      * @return {[type]} [description]
      */
@@ -30,7 +23,12 @@ jQuery(document).ready(function($) {
           'content': $('.p-mailform--content').val(),
         },
         success: function(response) {
-          alert(response);
+          //メッセージを表示
+          $('.p-maiilform--response').text(response);
+          //入力した中身をクリア
+          $('.p-mailform--name').val("");
+          $('.p-mailform--email').val("");
+          $('.p-mailform--content').val("");
         }
       });
       return false;

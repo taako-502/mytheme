@@ -25,29 +25,27 @@ function mailform_init(){
     global $value;
     return sprintf(
       '<form class="p-mailform" action="%1$s" method="post">
-        %2$s
+        <div class="p-maiilform--response" aria-hidden="true"></div>
         <dl>
           <dt>お名前</dt>
         	<dd>
-            %3$s
-            <input class="p-mailform--name" type="text" name="username" value="%4$s" />
+            %2$s
+            <input class="p-mailform--name" type="text" name="username" value="%3$s" />
         	</dd>
         	<dt>メールアドレス</dt>
         	<dd>
-            %5$s
-            <input class="p-mailform--email" type="email" name="email" value="%6$s" />
+            %4$s
+            <input class="p-mailform--email" type="email" name="email" value="%5$s" />
         	</dd>
         	<dt>お問合せ内容</dt>
         	<dd>
-            %7$s
-            <textarea class="p-mailform--content" name="content">%8$s</textarea>
+            %6$s
+            <textarea class="p-mailform--content" name="content">%7$s</textarea>
         	</dd>
         </dl>
         <button class="p-mailform--submit" type="submit">送信する</button>
-      </form>
-      <div class="p-maiilform--response" aria-hidden="true"></div>'
+      </form>'
       ,get_permalink($post_obj->ID)
-      ,wp_nonce_field( 'my-form', 'myform_nonce' , true , false )
       ,isset($err_username)? $err_username: ""
       ,isset($value['username'])? $value['username'] : ""
       ,isset($err_email)? $err_email: ""
@@ -81,16 +79,7 @@ function send_mail() {
   $value = array( 'username' => '', 'email' => '', 'content' => '' );
   $error = array();
 
-  if ( ! isset( $_POST['myform_nonce'] ) ) {
-    //wp_die( '入力した情報は送信できません' );
-    //return;
-  }
-
-  if ( ! wp_verify_nonce( $_POST['myform_nonce'], 'my-form') ) {
-    //wp_die( '不正な遷移です' );
-    //return;
-  }
-
+  //入力チェック
   foreach ( $value as $key => $val ) {
     if ( isset( $_POST[$key] ) ) {
       $value[$key] = $_POST[$key];
@@ -102,12 +91,11 @@ function send_mail() {
       $error[$key] = 'メールアドレスの形式が間違っています';
     }
   }
-
   if ( !empty( $error ) ) {
     wp_die("入力誤りがあります");
     return;
   }
-
+  //メール送信処理
   $to = get_option('admin_email');
   $subject = "お問合せがありました";
   $body = "お名前 : \n{$value['username']}\n"
