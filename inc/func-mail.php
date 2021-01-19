@@ -72,27 +72,21 @@ function add_my_ajaxurl() {
 add_action( 'wp_head', 'add_my_ajaxurl', 1 );
 
 /**
- * 送信ボタン押下時の処理(Ajax版)
- * @return [type] [description]
- */
-function view_sitename(){
-    echo "メールを送信しました";
-    die();
-}
-add_action( 'wp_ajax_view_sitename', 'view_sitename' );
-add_action( 'wp_ajax_nopriv_view_sitename', 'view_sitename' );
-
-/**
  * 送信ボタン押下時の処理
  * @return [type] [description]
  */
-function form_init() {
+function send_mail() {
+  echo "test";
+  die();
+  return;
+
   global $value, $error;
   $value = array( 'username' => '', 'email' => '', 'content' => '' );
   $error = array();
 
   if ( isset( $_POST['myform_nonce'] ) ) {
     if ( ! wp_verify_nonce( $_POST['myform_nonce'], 'my-form') ) {
+      echo "不正な遷移です";
       wp_die( '不正な遷移です' );
     }
 
@@ -102,8 +96,10 @@ function form_init() {
       }
 
       if ( $value[$key] === "" ) {
+        echo "必須項目です";
         $error[$key] = '必須項目です';
       } else if ( $key == "email" && ! is_email( $value[$key] ) ) {
+        echo "メールアドレスの形式が間違っています";
         $error[$key] = 'メールアドレスの形式が間違っています';
       }
     }
@@ -128,13 +124,16 @@ function form_init() {
         $res = wp_mail( $to, $subject, $body , $headers );
       }
       if ( $res ) {
-        //サンクスページにリダイレクトする処理
-        //wp_safe_redirect( get_page_link( get_page_by_path( 'inquiry/thanks' )->ID ) );
+        echo "メールを送信しました。";
+      } else {
+        echo "メールの送信に失敗しました。";
       }
+      die();
     }
   }
 }
-add_action( 'template_redirect', 'form_init' );
+add_action( 'wp_ajax_send_mail', 'send_mail' );
+add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
 
 /**
  * 管理メニューに追加

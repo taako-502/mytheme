@@ -19,19 +19,19 @@ jQuery(document).ready(function($) {
      * @return {[type]} [description]
      */
     //$( '#submit' ).on( 'click', function(){
-    $response.on( 'click', function(){
-    $.ajax({
+    $response.on('click', function() {
+      $.ajax({
         type: 'POST',
         url: ajaxurl,
         data: {
-            'action' : 'view_sitename',
+          'action': 'send_mail',
         },
-        success: function( response ){
-            alert( response );
+        success: function(response) {
+          alert(response);
         }
+      });
+      return false;
     });
-    return false;
-});
 
   })(jQuery);
 });
