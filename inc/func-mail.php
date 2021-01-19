@@ -7,17 +7,6 @@ require_once( plugin_dir_path(__FILE__) . "../biz/MailClass.php");
 add_shortcode( 'mailForm', 'salcodes_mailform' );
 function mailform_init(){
   function salcodes_mailform() {
-    //エラー文字列セット
-    global $error;
-    if(isset($error['username'])){
-      $err_username = empty( $error['username'] ) ? '<p>' . $error['username'] .'</p>' : '';
-    }
-    if(isset($error['email'])){
-      $err_email = empty( $error['email'] ) ? '<p>' . $error['email'] .'</p>' : '';
-    }
-    if(isset($error['content'])){
-      $err_content = empty( $error['content'] ) ? '<p>' . $error['content'] .'</p>' : '';
-    }
     //メール送信制御用のJavaScriptファイルを読み込み
     wp_enqueue_script('mail',get_template_directory_uri() . '/js/mail.js');
     //問い合わせフォームのHTML構成
@@ -26,31 +15,29 @@ function mailform_init(){
     return sprintf(
       '<form class="p-mailform" action="%1$s" method="post">
         <div class="p-maiilform--response" aria-hidden="true"></div>
+        <div class="p-maiilform--err-msg c_errmsg" aria-hidden="true"></div>
         <dl>
           <dt>お名前</dt>
         	<dd>
-            %2$s
-            <input class="p-mailform--name" type="text" name="username" value="%3$s" />
+            <div class="p-maiilform--name-err-msg c_errmsg" aria-hidden="true"></div>
+            <input class="p-mailform--name" type="text" name="name" value="%2$s" />
         	</dd>
         	<dt>メールアドレス</dt>
         	<dd>
-            %4$s
-            <input class="p-mailform--email" type="email" name="email" value="%5$s" />
+            <div class="p-maiilform--email-err-msg c_errmsg" aria-hidden="true"></div>
+            <input class="p-mailform--email" type="email" name="email" value="%3$s" />
         	</dd>
         	<dt>お問合せ内容</dt>
         	<dd>
-            %6$s
-            <textarea class="p-mailform--content" name="content">%7$s</textarea>
+            <div class="p-maiilform--content-err-msg c_errmsg" aria-hidden="true"></div>
+            <textarea class="p-mailform--content" name="content">%4$s</textarea>
         	</dd>
         </dl>
         <button class="p-mailform--submit" type="submit">送信する</button>
       </form>'
       ,get_permalink($post_obj->ID)
-      ,isset($err_username)? $err_username: ""
-      ,isset($value['username'])? $value['username'] : ""
-      ,isset($err_email)? $err_email: ""
+      ,isset($value['name'])? $value['name'] : ""
       ,isset($value['email'])? $value['email'] : ""
-      ,isset($err_content)? $err_content: ""
       ,isset($value['content'])? $value['content'] : ""
     );
   }
@@ -76,8 +63,8 @@ add_action( 'wp_head', 'add_my_ajaxurl', 1 );
 function send_mail() {
 
   global $value, $error;
-  $value = array( 'username' => '', 'email' => '', 'content' => '' );
-  $error = array();
+  $value = array( 'name' => '', 'email' => '', 'content' => '' );
+  $error = false;
 
   //入力チェック
   foreach ( $value as $key => $val ) {
@@ -86,19 +73,32 @@ function send_mail() {
     }
 
     if ( $value[$key] === "" ) {
-      $error[$key] = '必須項目です';
+      $json[$key] = array(
+        'msg' => '必須項目です',
+        'res' => '-1'
+      );
+      $error = true;
     } else if ( $key == "email" && ! is_email( $value[$key] ) ) {
-      $error[$key] = 'メールアドレスの形式が間違っています';
+      $json[$key] = array(
+        'msg' => 'メールアドレスの形式が間違っています',
+        'res' => '-1'
+      );
+      $error = true;
     }
   }
-  if ( !empty( $error ) ) {
-    wp_die("入力誤りがあります");
+  if($error){
+    $json['result'] = array(
+      'msg' => '入力誤りがあります',
+      'res' => '-1'
+    );
+    echo json_encode( $json );
+    wp_die();
     return;
   }
   //メール送信処理
   $to = get_option('admin_email');
   $subject = "お問合せがありました";
-  $body = "お名前 : \n{$value['username']}\n"
+  $body = "お名前 : \n{$value['name']}\n"
             . "メールアドレス : \n{$value['email']}\n"
             . "お問合せ内容 : \n{$value['content']}\n";
   $fromname = "My Test Site";
@@ -106,7 +106,7 @@ function send_mail() {
   $headers = "From: {$fromname} <{$from}>" . "\r\n";
   //メールの内容をデータベースに登録
   $mc = new MailClass;
-  $mc->insertMailbox($value['username'],$value['email'],$value['content']);
+  $mc->insertMailbox($value['name'],$value['email'],$value['content']);
   //メール送信
   if(MAIL_TEST_FLG){
     //テストフラグがtrueなら、trueを返す
@@ -115,10 +115,19 @@ function send_mail() {
     $res = wp_mail( $to, $subject, $body , $headers );
   }
   if ( $res ) {
-    wp_die( "メールを送信しました。");
+    $json['result'] = array(
+      'msg' => 'メールを送信しました。',
+      'res' => '0'
+    );
   } else {
-    wp_die("メールの送信に失敗しました。");
+    $json['result'] = array(
+      'msg' => 'メールの送信に失敗しました。',
+      'res' => '-1'
+    );
   }
+
+  echo json_encode( $json );
+  wp_die();
 }
 add_action( 'wp_ajax_send_mail', 'send_mail' );
 add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
