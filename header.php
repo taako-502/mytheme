@@ -68,6 +68,6 @@ global $page_title;
         ?>
       </nav>
     </div>
-    <?php if(strcmp($page_title , "home")){ the_header_image_tag("class=l-header--img"); } ?>
     <div class="l-overlay"></div>
   </header>
+  <?php if(strcmp($page_title , "home")){ the_header_image_tag("class=l-header--img"); } ?>
