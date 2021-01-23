@@ -16,7 +16,6 @@ global $page_title;
 $page_title = "home";
 ?>
 <section class="contents">
-  <div class="p-top--img"></div>
   <div class="p-recommend">
     <h2 class="c-aritcle--h2">おすすめ記事</h2>
     <div class="p-recommend-area">

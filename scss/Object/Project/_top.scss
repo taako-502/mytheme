@@ -4,13 +4,6 @@
 @use 'Foundation/mixin';
 @use 'Foundation/vars';
 
-.p-top--img {
-  width: 100vw;
-  height: auto;
-  background-image: url("../images/top-default.jpg");
-  background-size: cover;
-}
-
 .p-recommend {
   @include mixin.areaShadow();
   width: 100%;
