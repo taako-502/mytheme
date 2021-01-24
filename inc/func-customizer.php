@@ -1,4 +1,5 @@
 <?php
+require_once( plugin_dir_path(__FILE__) . "../class/WP_Customize_Range.php");
 // ファイルの読み込み
 get_template_part('/inc/custom/custom', 'header');
 get_template_part('/inc/custom/custom', 'nav');

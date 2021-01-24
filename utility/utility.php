@@ -59,4 +59,24 @@ if (!function_exists('getDescription')) {
     return mb_strimwidth($description,0,$len,"...");
   }
 }
+
+/**
+ * カラーコードをrgbaに変換
+ * @param  [type]  $color_code [description]
+ * @param  integer $alpha      [description]
+ * @return [type]              [description]
+ */
+if (!function_exists('getConversionRgba')) {
+  function getConversionRgba($color_code, $alpha = 1) {
+    $color_code = preg_replace('/#/', '', $color_code);
+
+    $rgba_code['red']   = hexdec(substr($color_code, 0, 2));
+    $rgba_code['green'] = hexdec(substr($color_code, 2, 2));
+    $rgba_code['blue']  = hexdec(substr($color_code, 4, 2));
+    $rgba_code['alpha'] = $alpha;
+    $rgba_code['full']  = implode(',', $rgba_code);
+
+    return $rgba_code;
+  }
+}
 ?>

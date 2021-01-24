@@ -30,6 +30,13 @@ function mytheme_customize_css(){
       background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;
     }
 
+    .l-main, .l-sidebar , .p-recommend {
+      background-color: rgba(<?php echo ut\getConversionRgba(get_theme_mod('section_bg_color',$bg_color_def),get_theme_mod('section_bg_opacity',$section_bg_opacity_def))['full'];?>%);
+      <?php $section_shadow_len = get_theme_mod('section_shadow_len','2')."px";?>
+      box-shadow: <?php echo $section_shadow_len ?> <?php echo $section_shadow_len ?> <?php echo $section_shadow_len ?> rgb(0 0 0 / <?php echo get_theme_mod('section_shadow_opacity','30') ?>%);
+    }
+
+
     /* 文字サイズ（PC） */
     section p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
     section h1 { font-size: <?php echo ut\getValOrDef($pc_h1size,$pc_h1size_def); ?>px!important; }
