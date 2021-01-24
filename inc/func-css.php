@@ -17,9 +17,14 @@ function mytheme_customize_css(){
   require_once( plugin_dir_path(__FILE__) . "../utility/variable.php");
   ?>
   <style type="text/css">
-    h1 {
-      color:<?php echo get_theme_mod('header_color', '#000000'); ?>;
+    /* ヘッダー */
+    header {
+      background-color: <?php echo get_theme_mod( 'nav_bg_color', "#333"); ?>!important;
     }
+    header a {
+      color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
+    }
+
     /* 文字サイズ（PC） */
     section p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
     section h1 { font-size: <?php echo ut\getValOrDef($pc_h1size,$pc_h1size_def); ?>px!important; }
@@ -49,15 +54,6 @@ function mytheme_customize_css(){
       section h4 { font-size: <?php echo ut\getValOrDef($sm_h4size,$sm_h4size_def); ?>px!important; }
       section h5 { font-size: <?php echo ut\getValOrDef($sm_h5size,$sm_h5size_def); ?>px!important; }
       section h6 { font-size: <?php echo ut\getValOrDef($sm_h6size,$sm_h6size_def); ?>px!important; }
-    }
-
-    /* ナビゲーションバー */
-    /* メニュー色設定 */
-    a.nav-link {
-      color: <?php echo get_theme_mod( 'header_color', $nav_txt_color_def); ?>!important;
-    }
-    button.navbar-toggler{
-      border-color: <?php echo get_theme_mod( 'header_color', "#333"); ?>!important;
     }
   </style>
 
