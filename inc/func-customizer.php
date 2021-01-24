@@ -1,5 +1,5 @@
 <?php
-//カスタムヘッダー
+// ファイルの読み込み
 get_template_part('/inc/custom', 'header');
 get_template_part('/inc/custom', 'nav');
 
@@ -19,8 +19,6 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
 
 /**
  * カスタマイザー
- *
- * @package mytheme
  */
 function mytheme_customize( $wp_customize ) {
   // ナビゲーションバーのカスタマイザ
@@ -28,9 +26,3 @@ function mytheme_customize( $wp_customize ) {
   $wp_customize->remove_section('colors');
 }
 add_action( 'customize_register', 'mytheme_customize' );
-
-/**
- * ラッパー
- */
-function getCusNavTextColor(){ return get_theme_mod('nav_text_color','#FFF'); }
-function getCusNavBackColor(){ return get_theme_mod('nav_background_color','#212529'); }

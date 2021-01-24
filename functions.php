@@ -56,7 +56,7 @@ function main_enqueue_scripts() {
 		//CSS
 		wp_enqueue_style( 'font-awesom', esc_url(get_template_directory_uri() . '/lib/fontawesome/css/all.min.css'));
 		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
-		wp_enqueue_style( 'custom_style', esc_url(get_template_directory_uri() . '/css/customcss.php'));
+		get_template_part('/inc/func','css');
 		//JavaScript
   	wp_enqueue_script('jquery');
   	wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
