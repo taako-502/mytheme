@@ -70,9 +70,15 @@ if (!function_exists('getConversionRgba')) {
   function getConversionRgba($color_code, $alpha = 1) {
     $color_code = preg_replace('/#/', '', $color_code);
 
-    $rgba_code['red']   = hexdec(substr($color_code, 0, 2));
-    $rgba_code['green'] = hexdec(substr($color_code, 2, 2));
-    $rgba_code['blue']  = hexdec(substr($color_code, 4, 2));
+    if(mb_strlen($color_code) == 6){
+      $rgba_code['red']   = hexdec(substr($color_code, 0, 2));
+      $rgba_code['green'] = hexdec(substr($color_code, 2, 2));
+      $rgba_code['blue']  = hexdec(substr($color_code, 4, 2));
+    } else {
+      $rgba_code['red']   = hexdec(substr($color_code, 0, 1).substr($color_code, 0, 1));
+      $rgba_code['green'] = hexdec(substr($color_code, 1, 1).substr($color_code, 1, 1));
+      $rgba_code['blue']  = hexdec(substr($color_code, 2, 1).substr($color_code, 2, 1));
+    }
     $rgba_code['alpha'] = $alpha;
     $rgba_code['full']  = implode(',', $rgba_code);
 
