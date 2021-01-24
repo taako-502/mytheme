@@ -19,10 +19,15 @@ function mytheme_customize_css(){
   <style type="text/css">
     /* ヘッダー */
     header {
-      background-color: <?php echo get_theme_mod( 'nav_bg_color', "#333"); ?>!important;
+      background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
     }
     header a {
       color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
+    }
+
+    /* 背景色 */
+    body {
+      background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;
     }
 
     /* 文字サイズ（PC） */

@@ -26,6 +26,7 @@ $sm_h3size_def = "19";
 $sm_h4size_def = "18";
 $sm_h5size_def = "18";
 $sm_h6size_def = "18";
+$header_bg_color_def = "#333";
 $nav_txt_color_def = "#FFF";
-$nav_bg_color_def = "#212529";
+$bg_color_def = "#FFF";
  ?>
