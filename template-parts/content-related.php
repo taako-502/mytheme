@@ -1,6 +1,11 @@
 <?php
-require_once( plugin_dir_path(__FILE__) . "../admin/admin-init.php");
+//require_once( plugin_dir_path(__FILE__) . "../admin/admin-init.php");
 $args = array();
+$relevanceSelect = get_theme_mod('relevance-select','category');
+$relevanceUrl1 = get_theme_mod('relevance-url1','');
+$relevanceUrl2 = get_theme_mod('relevance-url2','');
+$relevanceUrl3 = get_theme_mod('relevance-url3','');
+$relevanceUrl4 = get_theme_mod('relevance-url4','');
 switch($relevanceSelect){
   case "category":
   case "tag":

@@ -42,7 +42,7 @@ $ogpFbAppId = get_theme_mod('ogp-fb-appid','');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article','');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top','');
 /* 回遊 */
-$relevanceSelect = get_theme_mod('relevance-select','');
+$relevanceSelect = get_theme_mod('relevance-select','category');
 $relevanceUrl1 = get_theme_mod('relevance-url1','');
 $relevanceUrl2 = get_theme_mod('relevance-url2','');
 $relevanceUrl3 = get_theme_mod('relevance-url3','');
