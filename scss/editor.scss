@@ -1,7 +1,13 @@
 @use 'foundation/vars';
 @use 'foundation/mixin';
 @use 'object/project/block';
+@use 'object/project/blockpattern';
+@use 'object/project/blockstyle';
 
 .p-balloon__name {
   border: 1px solid;
+}
+
+.editor-styles-wrapper .is-root-container > ul {
+  padding: 1em 3em;
 }
