@@ -27,8 +27,11 @@
  function metainfo_callback( $post ){
    $metaDescription = get_post_meta( $post->ID, '_meta_description', true );
 	 echo '
-   <p>メタディスクリプション</p>
-   <textarea name="meta_description" rows="4">'.$metaDescription.'</textarea>';
+   <p>
+    メタディスクリプション<br>
+    文字数：<span id="meta-description-len">0</span>文字（90〜120文字推奨）
+   </p>
+   <textarea id="meta-description-textarea" name="meta_description" rows="4">'.$metaDescription.'</textarea>';
  }
 
 /**
@@ -58,8 +61,11 @@ function ogp_callback( $post ) {
   $ogpImg = get_post_meta( $post->ID, '_ogp_img', true );
   echo '<p>OGPタイトル</p>
   <input type="text" name="ogp_title" value="'.$ogpTitle.'">
-  <p>OGPディスクリプション</p>
-  <textarea name="ogp_description" rows="4">'.$ogpDescription.'</textarea>
+  <p>
+   OGPディスクリプション<br>
+   文字数：<span id="ogp-description-len">0</span>文字（90〜120文字推奨）
+  </p>
+  <textarea id="ogp-description-textarea" name="ogp_description" rows="4">'.$ogpDescription.'</textarea>
 	<p>画像URL</p>';
 	generate_upload_image_tag('ogp_img', $ogpImg);
 }
