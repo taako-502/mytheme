@@ -1,5 +1,5 @@
 <aside class="l-sidebar">
-  <div class="l-sidebar--widgets">
+  <div class="l-sidebar--widgets c-widgets">
   	<?php
     if(is_active_sidebar('widget_sidebar001')) {
   		dynamic_sidebar('widget_sidebar001');

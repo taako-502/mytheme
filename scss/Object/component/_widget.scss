@@ -1,0 +1,19 @@
+@use 'Foundation/vars';
+
+ .c-widgets {
+   a {
+     text-decoration: none;
+
+     &:hover {
+       color: vars.$BLUE_BUTTON_HOVER;
+     }
+   }
+
+   h4 {
+     font-size: 21px;
+   }
+
+   li {
+     list-style: none;
+   }
+ }

@@ -14,3 +14,19 @@
   padding:15px 0;
   color: white;
 }
+
+.l-footer--widgets {
+  display: flex;
+
+  a {
+    color: white;
+  }
+
+  h4 {
+    color: white;
+  }
+
+  .l-footer--widget {
+    width: 30%;
+  }
+}
