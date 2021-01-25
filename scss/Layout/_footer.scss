@@ -37,7 +37,7 @@
   }
 
   .l-footer--widget {
-    width: calc(33.333% - 4em);
+    width: calc(33.333% - ((2em + 2em) / 3));
     margin: 1em 0;
 
     @include mixin.mq("sp"){
