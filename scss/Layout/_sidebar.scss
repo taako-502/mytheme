@@ -8,6 +8,7 @@
   margin: 1% 0 2% 1%;
   padding-left: 1%;
   text-align: center;
+  color: vars.$BLACK_3;
 
   @include mixin.mq("tab") {
     @include mixin.max-width-content(100%);
@@ -32,26 +33,6 @@
     &:hover {
       color: vars.$BLUE_CHAR_HOVER;
     }
-  }
-
-  .widget {
-    margin: 20px 7px 0 0;
-
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
-  }
-
-  .widgettitle {
-    text-align: left;
-    border-bottom: solid 3px black;
-    margin-bottom: 10px;
-  }
-
-  .widget_sidebar {
-    text-align: left;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
   }
 
   .searchform {
@@ -92,5 +73,26 @@
     &:hover {
       opacity: 0.6;
     }
+  }
+}
+
+.l-sidebar--widgets {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  text-align: left;
+
+  .l-sidebar--widget {
+    margin: 20px 7px 0 0;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  .l-sidebar--widgettitle {
+    margin-bottom: 10px;
+    border-bottom: solid 3px vars.$BLACK_3;
+    font-size: 21px;
+    text-align: left;
   }
 }
