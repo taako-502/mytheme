@@ -1,7 +1,10 @@
+@use 'Foundation/mixin';
 @use 'Foundation/vars';
 
 .l-footer {
   width: 100%;
+  box-sizing: border-box;
+  padding: 1.7em 1em 0;
   background-color: vars.$BLACK_2;
 
   //フッターを下に固定
@@ -17,6 +20,13 @@
 
 .l-footer--widgets {
   display: flex;
+  flex-wrap: wrap;
+  width: vars.$layout-width-inner;
+  @include mixin.blockAndStaticCenter();
+
+  @include mixin.mq("tab"){
+    width: 100%;
+  }
 
   a {
     color: white;
@@ -27,6 +37,19 @@
   }
 
   .l-footer--widget {
-    width: 30%;
+    width: calc(33.333% - 4em);
+    margin: 1em 0;
+
+    @include mixin.mq("sp"){
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      margin-left: 2em;
+    }
+  }
+
+  .l-footer--widgettitle {
+    margin-bottom: 0.5em;
   }
 }
