@@ -9,5 +9,4 @@ add_action(
 		));
 	}
 );
-add_action( 'admin_print_scripts', 'my_admin_scripts' );
 ?>
