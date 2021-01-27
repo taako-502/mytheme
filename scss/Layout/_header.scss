@@ -350,7 +350,8 @@
   }
 }
 
-.nav-item {
+.nav-item,
+.page_item {
   //サブメニューは.nav-itemを起点に位置を調整するため、position:relativeにする
   position: relative;
   display: inline-block;
@@ -384,7 +385,8 @@
   }
 }
 
-.nav-link {
+.nav-link,
+.page_item a {
   display: block;
   color: inherit;
   text-align: left;

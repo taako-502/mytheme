@@ -25,6 +25,11 @@ function mytheme_customize_css(){
       color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
     }
 
+    .l-header--inner a:hover {
+      /* 画面から設定できるようにすること */
+      color: #3E9FD2!important;
+    }
+
     /* 背景色 */
     body {
       background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;
