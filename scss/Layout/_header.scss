@@ -47,10 +47,6 @@
       background: #333;
       color: inherit;
     }
-
-    a:hover {
-      color: vars.$BLUE_CHAR_HOVER;
-    }
   }
 }
 
@@ -76,6 +72,18 @@
 
   .sub-menu {
     background: inherit;
+  }
+
+  .page_item {
+    list-style: none;
+  }
+
+  a {
+    color: #333;
+
+    &:hover {
+      color: vars.$BLUE_CHAR_HOVER;
+    }
   }
 }
 

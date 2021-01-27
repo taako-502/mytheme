@@ -18,10 +18,10 @@ function mytheme_customize_css(){
   ?>
   <style type="text/css">
     /* ヘッダー */
-    header {
+    .l-header--inner  {
       background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
     }
-    header a {
+    .l-header--inner a {
       color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
     }
 
