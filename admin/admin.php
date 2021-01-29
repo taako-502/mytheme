@@ -118,10 +118,15 @@ include 'admin-init.php';
           <h2>アドセンス</h2>
           <p>アドセンスの設定</p>
           <div class="setting">
+            <h2>自動広告</h2>
+            <p>
+              <label for="adsCd-auto">アドセンスコード（自動広告）</label><br>
+              <textarea id="adsCd-auto" name="adsCd-auto" rows="8" cols="80"><?php echo stripslashes($adsCdAuto); ?></textarea>
+            </p>
             <h2>目次上</h2>
             <p>
-              <label for="adsCd-on-content-table">アドセンスコード</label><br>
-              <textarea id="adsCd-on-content-table" name="adsCd-on-content-table" rows="8" cols="80"><?php echo $adsCdOnContentTable; ?></textarea>
+              <label for="adsCd-on-content-table">アドセンスコード（もくじ上）</label><br>
+              <textarea id="adsCd-on-content-table" name="adsCd-on-content-table" rows="8" cols="80"><?php echo stripslashes($adsCdOnContentTable); ?></textarea>
             </p>
           </div>
         </li>

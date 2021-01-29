@@ -63,6 +63,9 @@ function main_enqueue_scripts() {
   	if ( is_singular() ) {
     	wp_enqueue_script( 'comment-reply' );
 		}
+		//アドセンスコード
+		$adsCdAuto = get_theme_mod('adsCd-auto','');
+		echo $adsCdAuto;
   }
 }
 add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );

@@ -62,6 +62,7 @@ $relevanceUrl2 = get_theme_mod('relevance-url2','');
 $relevanceUrl3 = get_theme_mod('relevance-url3','');
 $relevanceUrl4 = get_theme_mod('relevance-url4','');
 /* アドセンス */
+$adsCdAuto = get_theme_mod('adsCd-auto','');
 $adsCdOnContentTable = get_theme_mod('adsCd-on-content-table','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
@@ -146,6 +147,8 @@ if(isset($_POST['save'])) {
   $relevanceUrl4 = $_POST['relevance-url4'];
   set_theme_mod('relevance-url4',$relevanceUrl4);
   /* アドセンス */
+  $adsCdAuto = $_POST['adsCd-auto'];
+  set_theme_mod('adsCd-auto',$adsCdAuto);
   $adsCdOnContentTable = $_POST['adsCd-on-content-table'];
   set_theme_mod('adsCd-on-content-table',$adsCdOnContentTable);
   echo "データを更新しました。";
