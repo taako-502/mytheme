@@ -21,7 +21,7 @@ function gen_table_of_contents($the_content,$ads_cd = ""){
     if (preg_match_all($tag, $the_content, $tags)) { //本文中に見出しタグが含まれていれば
       $idpattern = '/id *\= *["\'](.+?)["\']/i'; //見出しタグにidが定義されているか検索するパターン
       //もくじ上にアドセンスコードを貼る場合
-      $table_of_contents = $ads_cd;//アドセンスコードがある場合は、もくじの直前に挿入
+      $table_of_contents = stripslashes($ads_cd);//アドセンスコードがある場合は、もくじの直前に挿入
       $table_of_contents .= '
       <div class="p-content-table">
         <p class="p-content-table--title">目次</p>
