@@ -1,15 +1,28 @@
 <?php
 /**
- * もくじの自動挿入
- * @param  [type] $the_content [description]
- * @return [type]              [description]
- */
+* もくじの自動挿入
+* @param  [type] $the_content 本文
+* @return [type]              もくじ情報を付加した本文
+*/
 function insert_table_of_contents($the_content){
+  $adsCdOnContentTable = get_theme_mod('adsCd-on-content-table','');
+  return gen_table_of_contents($the_content, $adsCdOnContentTable);
+}
+
+/**
+ * [gen_table_of_contents description]
+ * @param  [type] $the_content 本文
+ * @param  [type] $ads_cd      もくじの直前に挿入するアドセンスコード
+ * @return [type]              もくじ情報を付加した本文
+ */
+function gen_table_of_contents($the_content,$ads_cd = ""){
   if (is_single()) {  //投稿ページの場合
     $tag = '/^<h[2-6].*?>(.+?)<\/h[2-6]>$/im'; //見出しタグの検索パターン
     if (preg_match_all($tag, $the_content, $tags)) { //本文中に見出しタグが含まれていれば
       $idpattern = '/id *\= *["\'](.+?)["\']/i'; //見出しタグにidが定義されているか検索するパターン
-      $table_of_contents = '
+      //もくじ上にアドセンスコードを貼る場合
+      $table_of_contents = $ads_cd;//アドセンスコードがある場合は、もくじの直前に挿入
+      $table_of_contents .= '
       <div class="p-content-table">
         <p class="p-content-table--title">目次</p>
         <ul>';

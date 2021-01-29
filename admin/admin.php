@@ -14,6 +14,7 @@ include 'admin-init.php';
         <li class="current">文字</li>
         <li>SEO</li>
         <li>サイト回遊</li>
+        <li>アドセンス</li>
       </ul>
       <!-- コンテンツ -->
     	<ul class="p-tab--content">
@@ -113,6 +114,17 @@ include 'admin-init.php';
             </div>
           </div>
     		</li>
+        <li>
+          <h2>アドセンス</h2>
+          <p>アドセンスの設定</p>
+          <div class="setting">
+            <h2>目次上</h2>
+            <p>
+              <label for="adsCd-on-content-table">アドセンスコード</label><br>
+              <textarea id="adsCd-on-content-table" name="adsCd-on-content-table" rows="8" cols="80"><?php echo $adsCdOnContentTable; ?></textarea>
+            </p>
+          </div>
+        </li>
     	</ul>
     </div>
     <p><input type="submit" name="save" value="<?php echo esc_attr( __('save','default')); ?>" class="button button-primary"></p>

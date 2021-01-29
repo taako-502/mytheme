@@ -4,6 +4,20 @@
  * @package mytheme
  */
 
+/**
+ * テーマの設定値をデータベースから取得する。
+ * 空白ならデフォルト値を返却する
+ * @param  String $key     設定値キー
+ * @param  String $default デフォルト値
+ * @return String          テーマの設定値（または、デフォルト値）
+ */
+if (!function_exists('get_theme_mod_orDef')) {
+  function get_theme_mod_orDef( $key, $default){
+    $var = get_theme_mod( $key, $default);
+    return empty(trim($var)) ? $default : $var ;
+  }
+}
+
 //デフォルト変数読み込み
 require_once( plugin_dir_path(__FILE__) . "../utility/variable.php");
 //wp_optionsテーブルから設定値を取得
@@ -47,6 +61,8 @@ $relevanceUrl1 = get_theme_mod('relevance-url1','');
 $relevanceUrl2 = get_theme_mod('relevance-url2','');
 $relevanceUrl3 = get_theme_mod('relevance-url3','');
 $relevanceUrl4 = get_theme_mod('relevance-url4','');
+/* アドセンス */
+$adsCdOnContentTable = get_theme_mod('adsCd-on-content-table','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータで、データベースと画面設定値を更新
@@ -129,18 +145,9 @@ if(isset($_POST['save'])) {
   set_theme_mod('relevance-url3',$relevanceUrl3);
   $relevanceUrl4 = $_POST['relevance-url4'];
   set_theme_mod('relevance-url4',$relevanceUrl4);
+  /* アドセンス */
+  $adsCdOnContentTable = $_POST['adsCd-on-content-table'];
+  set_theme_mod('adsCd-on-content-table',$adsCdOnContentTable);
   echo "データを更新しました。";
-}
-
-/**
- * テーマの設定値をデータベースから取得する。
- * 空白ならデフォルト値を返却する
- * @param  String $key     設定値キー
- * @param  String $default デフォルト値
- * @return String          テーマの設定値（または、デフォルト値）
- */
-function get_theme_mod_orDef( $key, $default){
-  $var = get_theme_mod( $key, $default);
-  return empty(trim($var)) ? $default : $var ;
 }
 ?>
