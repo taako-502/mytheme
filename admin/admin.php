@@ -54,7 +54,7 @@ include 'admin-init.php';
     		</li>
     		<li>
       		<h2>SEO</h2>
-      		<p>Second Tab text</p>
+      		<p class="p-admin_description">SEOに関する設定</p>
           <div class="setting">
             <h2>フッター</h2>
             <div>
@@ -127,7 +127,7 @@ include 'admin-init.php';
             <h2>トップページ（カード型）</h2>
             <p class="p-admin_description">
               カード型記事一覧に溶け込むように、アドセンス広告を表示します。<br>
-              この設定を行う場合、「設定＞表示設定＞1ページに表示する最大投稿数」が初期状態が10件となっているため、奇数に変更することを推奨します。
+              この設定を行う場合、<a href="<?php echo get_template_directory_uri() . '/../../../wp-admin/options-reading.php'; ?>">「設定＞表示設定＞1ページに表示する最大投稿数」</a>を奇数に変更することを推奨します。
             </p>
             <p>
               <label for="adsCd-top-card">アドセンスコード（カード型）</label><br>
