@@ -63,6 +63,7 @@ $relevanceUrl3 = get_theme_mod('relevance-url3','');
 $relevanceUrl4 = get_theme_mod('relevance-url4','');
 /* アドセンス */
 $adsCdAuto = get_theme_mod('adsCd-auto','');
+$adsTopCard = get_theme_mod('adsCd-top-card','');
 $adsCdOnContentTable = get_theme_mod('adsCd-on-content-table','');
 $adsBelowPost = get_theme_mod('adsCd-below-post','');
 //saveボタンを押したときの処理
@@ -150,6 +151,8 @@ if(isset($_POST['save'])) {
   /* アドセンス */
   $adsCdAuto = $_POST['adsCd-auto'];
   set_theme_mod('adsCd-auto',$adsCdAuto);
+  $adsTopCard = $_POST['adsCd-top-card'];
+  set_theme_mod('adsCd-top-card',$adsTopCard);
   $adsCdOnContentTable = $_POST['adsCd-on-content-table'];
   set_theme_mod('adsCd-on-content-table',$adsCdOnContentTable);
   $adsBelowPost = $_POST['adsCd-below-post'];

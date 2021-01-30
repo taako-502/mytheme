@@ -124,6 +124,15 @@ include 'admin-init.php';
               <label for="adsCd-auto">アドセンスコード（自動広告）</label><br>
               <textarea id="adsCd-auto" name="adsCd-auto" rows="8" cols="80"><?php echo stripslashes($adsCdAuto); ?></textarea>
             </p>
+            <h2>トップページ（カード型）</h2>
+            <p class="p-admin_description">
+              カード型記事一覧に溶け込むように、アドセンス広告を表示します。<br>
+              この設定を行う場合、「設定＞表示設定＞1ページに表示する最大投稿数」が初期状態が10件となっているため、奇数に変更することを推奨します。
+            </p>
+            <p>
+              <label for="adsCd-top-card">アドセンスコード（カード型）</label><br>
+              <textarea id="adsCd-top-card" name="adsCd-top-card" rows="8" cols="80"><?php echo stripslashes($adsTopCard); ?></textarea>
+            </p>
             <h2>もくじ上</h2>
             <p class="p-admin_description">もくじの上にアドセンス広告を表示します。もくじがない画面では表示されません。</p>
             <p>

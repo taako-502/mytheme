@@ -35,10 +35,17 @@ $page_title = "home";
     <div class="p-news--list">
       <?php
         /* 記事一覧 */
+        $cnt = 0;
         if ( have_posts() ) {
           while ( have_posts() ) {
             the_post();
             get_template_part('/template-parts/content','article');
+            if($cnt % 10 == 2){
+              //広告を挿入
+              $adsTopCard = get_theme_mod('adsCd-top-card','');;
+              echo stripslashes($adsTopCard);
+            }
+            $cnt++;
           }
           the_posts_pagination();
         } else {
