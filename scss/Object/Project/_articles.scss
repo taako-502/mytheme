@@ -168,6 +168,7 @@
         /*最後のliの線だけ消す*/
       }
     }
+
   }
 
   blockquote.wp-block-quote {
@@ -301,6 +302,12 @@
         color: vars.$BLACK_5;
       }
     }
+  }
+
+  //アドセンス広告
+  .adsbygoogle {
+    margin-top: vars.$PARAGRAPH-MARGIN;
+    margin-bottom: vars.$PARAGRAPH-MARGIN;
   }
 }
 
