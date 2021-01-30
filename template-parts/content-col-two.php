@@ -28,6 +28,10 @@
               the_tags("<span class=\"p-tags--tag\">","</span><span class=\"p-tags--tag\">","</span>");
             }
             if( is_singular('post') ) {
+              //アドセンスコードがある場合、アドセンス広告を表示
+              $adsBelowPost = get_theme_mod('adsCd-below-post','');
+              echo stripslashes($adsBelowPost);
+              //コメント
               comments_template();
             }
             ?>

@@ -20,7 +20,7 @@ include 'admin-init.php';
     	<ul class="p-tab--content">
     		<li class="current">
       		<h2>基本設定</h2>
-      		<p>文字の設定</p>
+      		<p class="p-admin_description">文字の設定</p>
           <div class="setting">
             <h3>PC閲覧時（980px～）</h3>
             <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc-p-size" value="<?php echo $pc_psize; ?>" placeholder="<?php echo $pc_psize_def; ?>"> px</p>
@@ -80,7 +80,7 @@ include 'admin-init.php';
     		</li>
         <li>
       		<h2>サイト回遊</h2>
-      		<p>サイトの回遊率を向上させる設定。</p>
+      		<p class="p-admin_description">サイトの回遊率を向上させる設定。</p>
           <div class="setting">
             <h2>トップ</h2>
             <div>
@@ -116,17 +116,25 @@ include 'admin-init.php';
     		</li>
         <li>
           <h2>アドセンス</h2>
-          <p>アドセンスの設定</p>
+          <p class="p-admin_description">アドセンスの設定</p>
           <div class="setting">
             <h2>自動広告</h2>
+            <p class="p-admin_description">アドセンスの自動広告用のコードを&lt;head&gt;タグ内に挿入します。</p>
             <p>
               <label for="adsCd-auto">アドセンスコード（自動広告）</label><br>
               <textarea id="adsCd-auto" name="adsCd-auto" rows="8" cols="80"><?php echo stripslashes($adsCdAuto); ?></textarea>
             </p>
-            <h2>目次上</h2>
+            <h2>もくじ上</h2>
+            <p class="p-admin_description">もくじの上にアドセンス広告を表示します。もくじがない画面では表示されません。</p>
             <p>
               <label for="adsCd-on-content-table">アドセンスコード（もくじ上）</label><br>
               <textarea id="adsCd-on-content-table" name="adsCd-on-content-table" rows="8" cols="80"><?php echo stripslashes($adsCdOnContentTable); ?></textarea>
+            </p>
+            <h2>記事下</h2>
+            <p class="p-admin_description">記事の下、コメントエリアの上にアドセンス広告を表示します。</p>
+            <p>
+              <label for="adsCd-below-post">アドセンスコード（記事下）</label><br>
+              <textarea id="adsCd-below-post" name="adsCd-below-post" rows="8" cols="80"><?php echo stripslashes($adsBelowPost); ?></textarea>
             </p>
           </div>
         </li>

@@ -64,6 +64,7 @@ $relevanceUrl4 = get_theme_mod('relevance-url4','');
 /* アドセンス */
 $adsCdAuto = get_theme_mod('adsCd-auto','');
 $adsCdOnContentTable = get_theme_mod('adsCd-on-content-table','');
+$adsBelowPost = get_theme_mod('adsCd-below-post','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータで、データベースと画面設定値を更新
@@ -151,6 +152,8 @@ if(isset($_POST['save'])) {
   set_theme_mod('adsCd-auto',$adsCdAuto);
   $adsCdOnContentTable = $_POST['adsCd-on-content-table'];
   set_theme_mod('adsCd-on-content-table',$adsCdOnContentTable);
+  $adsBelowPost = $_POST['adsCd-below-post'];
+  set_theme_mod('adsCd-below-post',$adsBelowPost);
   echo "データを更新しました。";
 }
 ?>

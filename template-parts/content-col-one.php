@@ -17,6 +17,10 @@
         the_content();
         wp_link_pages('before=<div class="pagination">&after=</div>');
         if( is_singular('post') ) {
+          //アドセンスコードがある場合、アドセンス広告を表示
+          $adsBelowPost = get_theme_mod('adsCd-below-post','');
+          echo stripslashes($adsBelowPost);
+          //コメント
           comments_template();
         }
         ?>
