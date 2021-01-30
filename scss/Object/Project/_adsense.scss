@@ -1,0 +1,10 @@
+@use 'Foundation/vars';
+
+.adsbygoogle {
+  overflow: scroll;
+}
+
+.p-section .adsbygoogle {
+  margin-top: vars.$PARAGRAPH-MARGIN;
+  margin-bottom: vars.$PARAGRAPH-MARGIN;
+}
