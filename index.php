@@ -43,7 +43,11 @@ $page_title = "home";
             if($cnt % 10 == 2){
               //広告を挿入
               $adsTopCard = get_theme_mod('adsCd-top-card','');;
-              echo stripslashes($adsTopCard);
+              ?>
+              <div class="p-news-card">
+                <?php echo stripslashes($adsTopCard); ?>
+              </div>
+              <?php
             }
             $cnt++;
           }
