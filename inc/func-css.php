@@ -17,12 +17,14 @@ function mytheme_customize_css(){
   require_once( plugin_dir_path(__FILE__) . "../utility/variable.php");
   ?>
   <style type="text/css">
-    /* ヘッダー */
-    .l-header--inner  {
-      background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
-    }
-    .l-header--inner a {
-      color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
+    @media screen and (min-width: 767px) {
+      /* ヘッダー */
+      .l-header--inner  {
+        background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
+      }
+      .l-header--inner a {
+        color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
+      }
     }
 
     .l-header--inner a:hover {

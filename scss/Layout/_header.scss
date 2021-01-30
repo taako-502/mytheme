@@ -17,6 +17,7 @@
     margin-top: 0;
     background: vars.$WHITE_F;
     color: vars.$BLACK_3;
+    //text-align: center;
     /* Fixed reset */
     &.fixed {
       padding-top: 0;
@@ -97,9 +98,6 @@
   color: inherit;
   margin-bottom: 0.5em;
   font-size: 13px;
-  @include mixin.mq("sp") {
-    display: none;
-  }
 }
 
 .l-header--logo {
@@ -107,6 +105,11 @@
   color: inherit;
   font-size: 28px;
   text-align: left;
+  @include mixin.mq("sp") {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
 }
 
 .l-header--inner {
@@ -115,6 +118,9 @@
 
 .l-header--mobile {
   display: inline-block;
+  @include mixin.mq("sp") {
+    text-align: center;
+  }
 }
 
 .l-nav {
