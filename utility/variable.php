@@ -29,5 +29,6 @@ $sm_h6size_def = "18";
 $header_bg_color_def = "#333";
 $nav_txt_color_def = "#FFF";
 $bg_color_def = "#FFF";
+$section_bg_color_def = "100";
 $section_bg_opacity_def = "100";
  ?>
