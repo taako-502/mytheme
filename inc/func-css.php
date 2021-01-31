@@ -19,6 +19,7 @@ function mytheme_customize_css(){
   <style type="text/css">
     @media screen and (min-width: 767px) {
       /* ヘッダー */
+      .l-header,
       .l-header--inner  {
         background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
       }

@@ -120,6 +120,7 @@
   display: inline-block;
   @include mixin.mq("sp") {
     text-align: center;
+    top: -3px;
   }
 }
 
