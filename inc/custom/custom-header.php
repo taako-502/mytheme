@@ -9,7 +9,7 @@ function cusNav( $wp_customize ) {
     'nav',
     array(
       'title'    => 'ヘッダー',
-      'priority' => 21,
+      'priority' => 30,
     )
   );
 
