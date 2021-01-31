@@ -17,26 +17,4 @@
       $('a.l-header--description').html(newval);
     });
   });
-
-  // リアルタイムにサイトタイトルの色を変更
-  //wp.customize('header_textcolor', function(value) {
-  //  value.bind(function(newval) {
-  //    $('header a').css('color', newval);
-  //  });
-  //});
-
-  // リアルタイムに背景色を変更
-  //wp.customize('background_color', function(value) {
-  //  value.bind(function(newval) {
-  //    $('body').css('background-color', newval);
-  //  });
-  //});
-
-  // リアルタイムにリンク色を変更
-  //wp.customize('mytheme_options[link_textcolor]', function(value) {
-  //  value.bind(function(newval) {
-  //    $('a').css('color', newval);
-  //  });
-  //});
-
 })(jQuery);
