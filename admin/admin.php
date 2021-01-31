@@ -82,22 +82,25 @@ include 'admin-init.php';
       		<h2>サイト回遊</h2>
       		<p class="p-admin_description">サイトの回遊率を向上させる設定。</p>
           <div class="setting">
-            <h2>トップ</h2>
-            <div>
-              <h3>トップページのおすすめ記事に設定する画像</h3>
-              <p><b>左おすすめ記事</b></p>
-              <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>
-              <p><label for="reco-left-url">記事URL：</label><input type="url" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
-              <p><b>中央おすすめ記事</b></p>
-              <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', $recocenterimg); ?></p>
-              <p><label for="reco-center-url">記事URL：</label><input type="url" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
-              <p><b>右おすすめ記事</b></p>
-              <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', $recorightimg); ?></p>
-              <p><label for="reco-right-url">記事URL：</label><input type="url" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
-            </div>
+            <h2>トップページ</h2>
+            <p class="p-admin_description">トップページの設定。</p>
+            <h3>おすすめ記事表示有無</h3>
+            <p><input id="reco-disp-visibe" type="radio" name="reco-disp" value="visible" <?php echo $recoDisp == "visible" ? "checked" : ""; ?>><label for="reco-disp-visibe">表示</label></p>
+            <p><input id="reco-disp-hidden" type="radio" name="reco-disp" value="hidden" <?php echo $recoDisp == "hidden" ? "checked" : ""; ?>><label for="reco-disp-hidden">非表示</label></p>
+            <h3>トップページのおすすめ記事に設定する画像</h3>
+            <p><b>左おすすめ記事</b></p>
+            <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>
+            <p><label for="reco-left-url">記事URL：</label><input type="url" name="reco-left-url" value="<?php echo $recolefturl; ?>"></p>
+            <p><b>中央おすすめ記事</b></p>
+            <p><label for="reco-center-img">画像URL：</label><?php generate_upload_image_tag('reco-center-img', $recocenterimg); ?></p>
+            <p><label for="reco-center-url">記事URL：</label><input type="url" name="reco-center-url" value="<?php echo $recocenterurl; ?>"></p>
+            <p><b>右おすすめ記事</b></p>
+            <p><label for="reco-right-img">画像URL：</label><?php generate_upload_image_tag('reco-right-img', $recorightimg); ?></p>
+            <p><label for="reco-right-url">記事URL：</label><input type="url" name="reco-right-url" value="<?php echo $recorighturl; ?>"></p>
           </div>
           <div class="setting">
             <h2>関連記事</h2>
+            <p class="p-admin_description">記事下に表示する関連記事の設定。</p>
             <p>
               <label for="relevance--select">関連性：</label>
               <select id="relevance--select" class="relevance--select" name="relevance-select">

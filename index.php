@@ -1,6 +1,7 @@
 <?php
 get_header();
 //-wp_optionsテーブルから設定値を取得
+$recoDisp = get_theme_mod('reco-disp','visible');
 $recoleftimg = get_theme_mod('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recolefturl = get_theme_mod('reco-left-url','#');
 $recocenterimg = get_theme_mod('reco-center-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
@@ -16,6 +17,8 @@ global $page_title;
 $page_title = "home";
 ?>
 <section class="contents">
+  <?php
+  if($recoDisp == "visible"){ ?>
   <div class="p-recommend">
     <h2 class="c-aritcle--h2">おすすめ記事</h2>
     <div class="p-recommend-area">
@@ -30,6 +33,8 @@ $page_title = "home";
       </a>
     </div>
   </div>
+  <?php
+  } ?>
   <main class="l-main">
     <h2 class="c-aritcle--h2">新着記事</h2>
     <div class="p-news--list">

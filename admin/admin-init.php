@@ -45,17 +45,18 @@ $sm_h6size = get_theme_mod_orDef('sm-h6-size','');
 $copyright = get_theme_mod('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 $analytics = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
+$ogpFbAdminId = get_theme_mod('ogp-fb-adminid','');
+$ogpFbAppId = get_theme_mod('ogp-fb-appid','');
+$ogpFbImgArticle = get_theme_mod('ogp-fb-img-article','');
+$ogpFbImgTop = get_theme_mod('ogp-fb-img-top','');
+/* サイト回遊 */
+$recoDisp = get_theme_mod('reco-disp','visible');
 $recoleftimg = get_theme_mod('reco-left-img','');
 $recolefturl = get_theme_mod('reco-left-url','');
 $recocenterimg = get_theme_mod('reco-center-img','');
 $recocenterurl = get_theme_mod('reco-center-url','');
 $recorightimg = get_theme_mod('reco-right-img','');
 $recorighturl = get_theme_mod('reco-right-url','');
-$ogpFbAdminId = get_theme_mod('ogp-fb-adminid','');
-$ogpFbAppId = get_theme_mod('ogp-fb-appid','');
-$ogpFbImgArticle = get_theme_mod('ogp-fb-img-article','');
-$ogpFbImgTop = get_theme_mod('ogp-fb-img-top','');
-/* 回遊 */
 $relevanceSelect = get_theme_mod('relevance-select','category');
 $relevanceUrl1 = get_theme_mod('relevance-url1','');
 $relevanceUrl2 = get_theme_mod('relevance-url2','');
@@ -117,6 +118,17 @@ if(isset($_POST['save'])) {
   set_theme_mod('analytics',$analytics);
   $gtmId = trim($_POST['gtm-id']);
   set_theme_mod('gtm-id', $gtmId);
+  $ogpFbAdminId = $_POST['ogp-fb-adminid'];
+  set_theme_mod('ogp-fb-adminid',$ogpFbAdminId);
+  $ogpFbAppId = $_POST['ogp-fb-appid'];
+  set_theme_mod('ogp-fb-appid',$ogpFbAppId);
+  $ogpFbImgArticle = $_POST['ogp-fb-img-article'];
+  set_theme_mod('ogp-fb-img-article',$ogpFbImgArticle);
+  $ogpFbImgTop = $_POST['ogp-fb-img-top'];
+  set_theme_mod('ogp-fb-img-top',$ogpFbImgTop);
+  /* サイト回遊 */
+  $recoDisp = $_POST['reco-disp'];
+  set_theme_mod('reco-disp',$recoDisp);
   $recoleftimg = $_POST['reco-left-img'];
   set_theme_mod('reco-left-img',$recoleftimg);
   $recolefturl = $_POST['reco-left-url'];
@@ -129,15 +141,6 @@ if(isset($_POST['save'])) {
   set_theme_mod('reco-right-img',$recorightimg);
   $recorighturl = $_POST['reco-right-url'];
   set_theme_mod('reco-right-url',$recorighturl);
-  $ogpFbAdminId = $_POST['ogp-fb-adminid'];
-  set_theme_mod('ogp-fb-adminid',$ogpFbAdminId);
-  $ogpFbAppId = $_POST['ogp-fb-appid'];
-  set_theme_mod('ogp-fb-appid',$ogpFbAppId);
-  $ogpFbImgArticle = $_POST['ogp-fb-img-article'];
-  set_theme_mod('ogp-fb-img-article',$ogpFbImgArticle);
-  $ogpFbImgTop = $_POST['ogp-fb-img-top'];
-  set_theme_mod('ogp-fb-img-top',$ogpFbImgTop);
-  /* 回遊 */
   $relevanceSelect = $_POST['relevance-select'];
   set_theme_mod('relevance-select',$relevanceSelect);
   $relevanceUrl1 = $_POST['relevance-url1'];
