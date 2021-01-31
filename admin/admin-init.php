@@ -21,6 +21,9 @@ if (!function_exists('get_theme_mod_orDef')) {
 //デフォルト変数読み込み
 require_once( plugin_dir_path(__FILE__) . "../utility/variable.php");
 //wp_optionsテーブルから設定値を取得
+/* 全体設定 */
+$topCol = get_theme_mod('top-col', '');
+/* 基本設定 */
 $pc_psize = get_theme_mod_orDef('pc-p-size','');
 $pc_h1size = get_theme_mod_orDef('pc-h1-size','');
 $pc_h2size = get_theme_mod_orDef('pc-h2-size','');
@@ -70,6 +73,10 @@ $adsBelowPost = get_theme_mod('adsCd-below-post','');
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
   //admin.php画面からpostされたデータで、データベースと画面設定値を更新
+  /* 全体設定 */
+  $topCol = $_POST['top-col'];
+  set_theme_mod('top-col',$topCol);
+  /* 基本設定　*/
   $pc_psize = $_POST['pc-p-size'];
   set_theme_mod('pc-p-size',$pc_psize);
   $pc_h1size = $_POST['pc-h1-size'];
