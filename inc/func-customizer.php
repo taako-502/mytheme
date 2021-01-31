@@ -33,6 +33,10 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
  * 追加CSS・・・200
  */
 function mytheme_customize( $wp_customize ) {
+  $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
   // ナビゲーションバーのカスタマイザ
   cusNav($wp_customize);
   // 背景の設定
