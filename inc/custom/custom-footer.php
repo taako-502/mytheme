@@ -14,11 +14,35 @@ function cusFooter( $wp_customize ) {
   );
 
   $wp_customize->add_section(
+    'footer_content',
+    array(
+      'title'    => 'コンテンツ',
+      'panel'    => 'footer',
+      'priority' => 1,
+    )
+  );
+
+  $wp_customize->add_setting( 'footer_content_copyright',array(
+    'default' => null,
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_footer_content_copyright',
+    array(
+      'label' => 'コピーライト',
+      'section' => 'footer_content',
+      'settings' => 'footer_content_copyright',
+      'type' => 'text',
+    )
+  );
+
+  $wp_customize->add_section(
     'footer-color',
     array(
       'title'    => 'カラー',
       'panel'    => 'footer',
-      'priority' => 1,
+      'priority' => 2,
     )
   );
 

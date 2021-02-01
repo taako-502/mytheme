@@ -17,4 +17,9 @@
       $('a.l-header--description').html(newval);
     });
   });
+  wp.customize('footer_content_copyright', function(value) {
+    value.bind(function(newval) {
+      $('.l-footer--center').html(newval);
+    });
+  });
 })(jQuery);

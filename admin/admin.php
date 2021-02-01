@@ -68,12 +68,6 @@ include 'admin-init.php';
       		<h2>SEO</h2>
       		<p class="p-admin_description">SEOに関する設定</p>
           <div class="setting">
-            <h2>フッター</h2>
-            <div>
-              <p><label for="copyright">Copyright<br>
-              </label><textarea id="copyright" name="copyright" cols="40"><?php echo $copyright; ?></textarea>
-            </P>
-            </div>
             <div class="setting">
               <h2>アナリティクス</h2>
               <label for="analytics">トラッキングコード：</label><input id="analytics" type="text" name="analytics" value="<?php echo $analytics ?>">

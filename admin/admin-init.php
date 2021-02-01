@@ -45,7 +45,6 @@ $sm_h3size = get_theme_mod_orDef('sm-h3-size','');
 $sm_h4size = get_theme_mod_orDef('sm-h4-size','');
 $sm_h5size = get_theme_mod_orDef('sm-h5-size','');
 $sm_h6size = get_theme_mod_orDef('sm-h6-size','');
-$copyright = get_theme_mod('copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME.");
 $analytics = get_theme_mod('analytics','');
 $gtmId = get_theme_mod('gtm-id', '');
 $ogpFbAdminId = get_theme_mod('ogp-fb-adminid','');
@@ -119,8 +118,6 @@ if(isset($_POST['save'])) {
   set_theme_mod('sm-h5-size',$sm_h5size);
   $sm_h6size = $_POST['sm-h6-size'];
   set_theme_mod('sm-h6-size',$sm_h6size);
-  $copyright = $_POST['copyright'];
-  set_theme_mod('copyright',$copyright);
   $analytics = trim($_POST['analytics']);
   set_theme_mod('analytics',$analytics);
   $gtmId = trim($_POST['gtm-id']);
