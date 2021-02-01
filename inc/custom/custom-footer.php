@@ -22,8 +22,25 @@ function cusFooter( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'footer_widget_bg_color' , array(
+  $wp_customize->add_setting( 'footer_widget_text_color' , array(
     'default'    => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_footer_widget_text_color',
+      array(
+        'label'    => 'フッター上ウィジェットの文字色',
+        'section'  => 'footer-color',
+        'settings' => 'footer_widget_text_color',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'footer_widget_bg_color' , array(
+    'default'    => '#FFF',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
 
@@ -35,6 +52,23 @@ function cusFooter( $wp_customize ) {
         'label'    => 'フッター上ウィジェットの背景色',
         'section'  => 'footer-color',
         'settings' => 'footer_widget_bg_color',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'footer_text_color' , array(
+    'default'    => '#FFF',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_footer_text_color',
+      array(
+        'label'    => 'フッターの文字色',
+        'section'  => 'footer-color',
+        'settings' => 'footer_text_color',
       )
     )
   );

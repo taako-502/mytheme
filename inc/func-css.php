@@ -48,8 +48,18 @@ function mytheme_customize_css(){
       background-color: <?php echo get_theme_mod('footer_bg_color','#333') ?>;
     }
 
+    .l-footer,
+    .l-footer a {
+      color: <?php echo get_theme_mod('footer_text_color','#FFF') ?>;
+    }
+
     .l-footer--widgets {
       background-color: <?php echo get_theme_mod('footer_widget_bg_color','#333') ?>;
+    }
+
+    .l-footer--widgets,
+    .l-footer--widgets a {
+      color: <?php echo get_theme_mod('footer_widget_text_color','#FFF') ?>;
     }
 
     /* 文字サイズ（PC） */

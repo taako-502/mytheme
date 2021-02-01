@@ -70,7 +70,6 @@ img {
 .l-footer--center {
   text-align: center;
   padding: 15px 0;
-  color: white;
 }
 
 .l-footer--widgets {
@@ -82,12 +81,6 @@ img {
   .l-footer--widgets {
     width: 100%;
   }
-}
-.l-footer--widgets a {
-  color: white;
-}
-.l-footer--widgets h4 {
-  color: white;
 }
 .l-footer--widgets .l-footer--widget {
   width: calc(33.333% - ((2em + 2em) / 3));

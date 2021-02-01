@@ -10,7 +10,6 @@
 .l-footer--center {
   text-align: center;
   padding:15px 0;
-  color: white;
 }
 
 .l-footer--widgets {
@@ -19,14 +18,6 @@
 
   @include mixin.mq("tab"){
     width: 100%;
-  }
-
-  a {
-    color: white;
-  }
-
-  h4 {
-    color: white;
   }
 
   .l-footer--widget {
