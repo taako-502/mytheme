@@ -3,8 +3,8 @@
  * ナビゲーションのカスタマイズを行うメソッド
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
-function cusNav( $wp_customize ) {
-  // ナビゲーションバーの色設定
+function cusHeader( $wp_customize ) {
+  // ヘッダー
   $wp_customize->add_panel(
     'nav',
     array(
