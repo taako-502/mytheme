@@ -58,8 +58,9 @@
 
 //@use 'object/utility/align';
 //@use 'object/utility/clearfix';
-//@use 'object/utility/margin';
+@use 'object/utility/margin';
 //@use 'object/utility/position';
-//@use 'object/utility/size';
+@use 'object/utility/size';
 //@use 'object/utility/text';
 @use 'object/utility/visible';
+@use 'object/utility/flex';

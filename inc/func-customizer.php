@@ -4,6 +4,7 @@ require_once( plugin_dir_path(__FILE__) . "../class/WP_Customize_Range.php");
 get_template_part('/inc/custom/custom', 'header');
 get_template_part('/inc/custom/custom', 'header-img');
 get_template_part('/inc/custom/custom', 'bg');
+get_template_part('/inc/custom/custom', 'footer');
 
 /**
  * JavaScript のエンキュー
@@ -22,11 +23,11 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
 /**
  * カスタマイザー
  * サイト基本情報・・・20
- * ナビゲーション・・・21
- * 色・・・40
+ * ヘッダー・・・30
  * ヘッダー画像・・・60
  * 背景画像・・・80
  * 背景・・・81
+ * フッター・・・90
  * メニュー・・・100
  * ウィジェット・・・110
  * ホームページ設定・・・120
@@ -40,7 +41,10 @@ function mytheme_customize( $wp_customize ) {
   // ナビゲーションバーのカスタマイザ
   cusNav($wp_customize);
   // 背景の設定
+  // 背景
   cusBg($wp_customize);
+  // フッター
+  cusFooter($wp_customize);
   $wp_customize->remove_section('colors');
 }
 add_action( 'customize_register', 'mytheme_customize' );

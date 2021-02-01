@@ -4,12 +4,7 @@
 .l-footer {
   width: 100%;
   box-sizing: border-box;
-  padding: 1.7em 1em 0;
   background-color: vars.$BLACK_2;
-
-  //フッターを下に固定
-  //position: absolute;/*←絶対位置*/
-  //bottom: 0; /*下に固定*/
 }
 
 .l-footer--center {
@@ -19,9 +14,7 @@
 }
 
 .l-footer--widgets {
-  display: flex;
-  flex-wrap: wrap;
-  width: vars.$layout-width-inner;
+  width: 100vw;
   @include mixin.blockAndStaticCenter();
 
   @include mixin.mq("tab"){

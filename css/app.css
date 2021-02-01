@@ -64,7 +64,6 @@ img {
 .l-footer {
   width: 100%;
   box-sizing: border-box;
-  padding: 1.7em 1em 0;
   background-color: #222;
 }
 
@@ -75,9 +74,7 @@ img {
 }
 
 .l-footer--widgets {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1180px;
+  width: 100vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1692,6 +1689,15 @@ p.p-content-table--title {
   border-top-right-radius: 5px;
 }
 
+.u-margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-width-inner {
+  width: 1180px;
+}
+
 .only-block-sp {
   display: none;
 }
@@ -1703,4 +1709,9 @@ p.p-content-table--title {
 
 .u-display__none {
   display: none;
+}
+
+.u-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }

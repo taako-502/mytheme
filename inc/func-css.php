@@ -44,6 +44,13 @@ function mytheme_customize_css(){
       box-shadow: <?php echo $section_shadow_len ?> <?php echo $section_shadow_len ?> <?php echo $section_shadow_len ?> rgb(0 0 0 / <?php echo get_theme_mod('section_shadow_opacity','30') ?>%);
     }
 
+    .l-footer {
+      background-color: <?php echo get_theme_mod('footer_bg_color','#333') ?>;
+    }
+
+    .l-footer--widgets {
+      background-color: <?php echo get_theme_mod('footer_widget_bg_color','#333') ?>;
+    }
 
     /* 文字サイズ（PC） */
     article.p-article p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }

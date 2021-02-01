@@ -1,0 +1,5 @@
+@use 'Foundation/mixin';
+
+.u-margin-center {
+  @include mixin.blockAndStaticCenter();
+}
