@@ -5,6 +5,7 @@
  * jQuery を使ってページに変更を反映します。
  */
 (function($) {
+  /* ヘッダー */
   // リアルタイムにサイトタイトルを変更
   wp.customize('blogname', function(value) {
     value.bind(function(newval) {
@@ -17,6 +18,18 @@
       $('a.l-header--description').html(newval);
     });
   });
+  /* フロントページ */
+  wp.customize('front_text_reco', function(value) {
+    value.bind(function(newval) {
+      $('.p-recommend--h2').html(newval);
+    });
+  });
+  wp.customize('front_text_news', function(value) {
+    value.bind(function(newval) {
+      $('.p-news--h2').html(newval);
+    });
+  });
+  /* フッター */
   wp.customize('footer_content_copyright', function(value) {
     value.bind(function(newval) {
       $('.l-footer--center').html(newval);

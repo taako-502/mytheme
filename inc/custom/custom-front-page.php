@@ -1,0 +1,54 @@
+<?php
+/**
+ * ナビゲーションのカスタマイズを行うメソッド
+ * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
+ */
+function cusFront( $wp_customize ) {
+  // ヘッダー
+  $wp_customize->add_panel(
+    'front',
+    array(
+      'title'    => 'トップページ（フロントページ）',
+      'priority' => 25,
+    )
+  );
+
+  $wp_customize->add_section(
+    'front_text',
+    array(
+      'title'    => 'テキスト',
+      'panel'    => 'front',
+      'priority' => 1,
+    )
+  );
+
+  $wp_customize->add_setting( 'front_text_reco' , array(
+    'default' => 'おすすめ記事',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_text_reco',
+    array(
+      'label' => 'おすすめ記事の見出し',
+      'section' => 'front_text',
+      'settings' => 'front_text_reco',
+      'type' => 'text',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_text_news' , array(
+    'default' => '新着記事',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_text_news',
+    array(
+      'label' => '新着記事の見出し',
+      'section' => 'front_text',
+      'settings' => 'front_text_news',
+      'type' => 'text',
+    )
+  );
+}

@@ -1,6 +1,9 @@
+/**
+ * 見出し
+ */
 @use 'Foundation/mixin';
 
-.c-aritcle--h2 {
+.c-heading--main {
   @include mixin.articleHeading(25px);
   margin-bottom: 15px;
 }

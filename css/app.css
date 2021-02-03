@@ -789,14 +789,17 @@ img {
   background: #3E9FD2;
 }
 
-.c-aritcle--h2 {
+/**
+ * 見出し
+ */
+.c-heading--main {
   position: relative;
   font-size: 25px;
   margin-bottom: 15px;
   border-bottom: solid 3px skyblue;
   margin-bottom: 15px;
 }
-.c-aritcle--h2:after {
+.c-heading--main:after {
   position: absolute;
   content: " ";
   display: block;
