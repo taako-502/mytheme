@@ -1,6 +1,7 @@
 <?php
 require_once( plugin_dir_path(__FILE__) . "../class/WP_Customize_Range.php");
 // ファイルの読み込み
+get_template_part('/inc/custom/custom', 'architect');
 get_template_part('/inc/custom/custom', 'header');
 get_template_part('/inc/custom/custom', 'header-img');
 get_template_part('/inc/custom/custom', 'front-page');
@@ -24,6 +25,7 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
 /**
  * カスタマイザー
  * サイト基本情報・・・20
+ * 全体構成・・・22
  * フロントページ・・・25
  * ヘッダー・・・30
  * ヘッダー画像・・・60
@@ -40,6 +42,8 @@ function mytheme_customize( $wp_customize ) {
   $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
   $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+  //全体構成
+  cusArchitect($wp_customize);
   //フロントページ
   cusFront($wp_customize);
   // ヘッダー

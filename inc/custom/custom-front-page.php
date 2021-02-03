@@ -32,8 +32,6 @@ function cusFront( $wp_customize ) {
       'label' => 'おすすめ記事の表示',
       'section' => 'front_architect',
       'settings' => 'front_architect_reco_disp',
-      'type' => 'radio',
-      'label' => 'コントロールの見出し',
       'type'     => 'radio',
       'choices'  => array(
         'visible' => '表示',

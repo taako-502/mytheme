@@ -11,8 +11,7 @@ include 'admin-init.php';
     <div class="p-tab">
       <!-- タブの設定 -->
       <ul class="p-tab--headline">
-        <li class="current">全体設定</li>
-        <li>基本設定</li>
+        <li class="current">基本設定</li>
         <li>SEO</li>
         <li>サイト回遊</li>
         <li>アドセンス</li>
@@ -20,17 +19,6 @@ include 'admin-init.php';
       <!-- コンテンツ -->
     	<ul class="p-tab--content">
         <li class="current">
-          <h2>全体設定</h2>
-          <p class="p-admin_description">全体的な設定</p>
-          <div class="setting">
-            <h2>トップページ</h2>
-            <p class="p-admin_description">トップページのレイアウト設定</p>
-            <h3>トップページカラム数</h3>
-            <p><input id="top-col-one" type="radio" name="top-col" value="one" <?php echo $topCol == "one" ? "checked" : ""; ?>><label for="top-col-one">１カラム（サイドバーなし）</label></p>
-            <p><input id="top-col-two" type="radio" name="top-col" value="two" <?php echo $topCol == "two" ? "checked" : ""; ?>><label for="top-col-two">２カラム</label></p>
-          </div>
-        </li>
-    		<li>
       		<h2>基本設定</h2>
       		<p class="p-admin_description">文字の設定</p>
           <div class="setting">

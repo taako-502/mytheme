@@ -1,7 +1,6 @@
 <?php
 get_header();
 //-wp_optionsテーブルから設定値を取得
-$topCol = get_theme_mod('top-col', '');
 $recoleftimg = get_theme_mod('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recolefturl = get_theme_mod('reco-left-url','#');
 $recocenterimg = get_theme_mod('reco-center-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
@@ -64,7 +63,7 @@ $page_title = "home";
     </div>
   </main>
   <?php
-  if($topCol == "two"){
+  if(get_theme_mod('architect_layout_col','two-col') == 'two-col'){
     //管理画面で2カラムを設定した場合、サイドバーを表示
     get_sidebar();
   }
