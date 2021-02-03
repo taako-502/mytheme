@@ -78,8 +78,8 @@ a.p-recommend--a {
   }
 
   @include mixin.mq("sp"){
-    width: 96%;
-    margin: 2% 2% 1% 2%;
+    width: 100%;
+    margin: 2% 0 1% 0;
   }
 
   img {

@@ -1,5 +1,6 @@
 @use 'Foundation/vars';
 
 .u-width-inner {
-  width: vars.$layout-width-inner;
+  width: 100%;
+  max-width: vars.$layout-width-inner;
 }

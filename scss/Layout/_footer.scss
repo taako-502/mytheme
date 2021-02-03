@@ -4,7 +4,6 @@
 .l-footer {
   width: 100%;
   box-sizing: border-box;
-  background-color: vars.$BLACK_2;
 }
 
 .l-footer--center {
@@ -18,11 +17,23 @@
 
   @include mixin.mq("tab"){
     width: 100%;
+    padding-left: 5.2em;
+    padding-right: 5.2em;
+  }
+
+  @include mixin.mq("sp"){
+    padding-left: 1.2em;
+    padding-right: 1.2em;
   }
 
   .l-footer--widget {
     width: calc(33.333% - ((2em + 2em) / 3));
     margin: 1em 0;
+
+    @include mixin.mq("tab"){
+      width: 100%;
+      margin-left: 0;
+    }
 
     @include mixin.mq("sp"){
       width: 100%;
@@ -30,6 +41,10 @@
 
     &:not(:first-child) {
       margin-left: 2em;
+
+      @include mixin.mq("tab"){
+        margin-left: 0;
+      }
     }
   }
 
