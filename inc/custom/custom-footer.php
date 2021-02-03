@@ -37,6 +37,10 @@ function cusFooter( $wp_customize ) {
     )
   );
 
+  $wp_customize->selective_refresh->add_partial( 'footer_content_copyright', array(
+  	'selector' => '.l-footer--center',
+  ) );
+
   $wp_customize->add_section(
     'footer-color',
     array(

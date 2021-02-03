@@ -66,6 +66,10 @@ function cusFront( $wp_customize ) {
     )
   );
 
+  $wp_customize->selective_refresh->add_partial( 'front_text_reco', array(
+    'selector' => '.p-recommend--h2',
+  ) );
+
   $wp_customize->add_setting( 'front_text_news' , array(
     'default' => '新着記事',
     'transport' => 'postMessage',
@@ -80,4 +84,8 @@ function cusFront( $wp_customize ) {
       'type' => 'text',
     )
   );
+
+  $wp_customize->selective_refresh->add_partial( 'front_text_news', array(
+    'selector' => '.p-news--h2',
+  ) );
 }
