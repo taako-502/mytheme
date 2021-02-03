@@ -52,7 +52,6 @@ $ogpFbAppId = get_theme_mod('ogp-fb-appid','');
 $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article','');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top','');
 /* サイト回遊 */
-$recoDisp = get_theme_mod('reco-disp','visible');
 $recoleftimg = get_theme_mod('reco-left-img','');
 $recolefturl = get_theme_mod('reco-left-url','');
 $recocenterimg = get_theme_mod('reco-center-img','');
@@ -131,8 +130,6 @@ if(isset($_POST['save'])) {
   $ogpFbImgTop = $_POST['ogp-fb-img-top'];
   set_theme_mod('ogp-fb-img-top',$ogpFbImgTop);
   /* サイト回遊 */
-  $recoDisp = $_POST['reco-disp'];
-  set_theme_mod('reco-disp',$recoDisp);
   $recoleftimg = $_POST['reco-left-img'];
   set_theme_mod('reco-left-img',$recoleftimg);
   $recolefturl = $_POST['reco-left-url'];

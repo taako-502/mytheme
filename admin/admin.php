@@ -90,9 +90,6 @@ include 'admin-init.php';
           <div class="setting">
             <h2>トップページ</h2>
             <p class="p-admin_description">トップページの設定。</p>
-            <h3>おすすめ記事表示有無</h3>
-            <p><input id="reco-disp-visibe" type="radio" name="reco-disp" value="visible" <?php echo $recoDisp == "visible" ? "checked" : ""; ?>><label for="reco-disp-visibe">表示</label></p>
-            <p><input id="reco-disp-hidden" type="radio" name="reco-disp" value="hidden" <?php echo $recoDisp == "hidden" ? "checked" : ""; ?>><label for="reco-disp-hidden">非表示</label></p>
             <h3>トップページのおすすめ記事に設定する画像</h3>
             <p><b>左おすすめ記事</b></p>
             <p><label for="reco-left-img">画像URL：</label><?php generate_upload_image_tag('reco-left-img', $recoleftimg); ?></p>

@@ -14,11 +14,40 @@ function cusFront( $wp_customize ) {
   );
 
   $wp_customize->add_section(
+    'front_architect',
+    array(
+      'title'    => '構成',
+      'panel'    => 'front',
+      'priority' => 1,
+    )
+  );
+
+  $wp_customize->add_setting( 'front_architect_reco_disp' , array(
+    'default' => 'visible',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_architect_reco_disp',
+    array(
+      'label' => 'おすすめ記事の表示',
+      'section' => 'front_architect',
+      'settings' => 'front_architect_reco_disp',
+      'type' => 'radio',
+      'label' => 'コントロールの見出し',
+      'type'     => 'radio',
+      'choices'  => array(
+        'visible' => '表示',
+        'hidden' => '非表示',
+      ),
+    )
+  );
+
+  $wp_customize->add_section(
     'front_text',
     array(
       'title'    => 'テキスト',
       'panel'    => 'front',
-      'priority' => 1,
+      'priority' => 2,
     )
   );
 
