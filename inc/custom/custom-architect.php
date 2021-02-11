@@ -24,6 +24,7 @@ function cusArchitect( $wp_customize ) {
 
   $wp_customize->add_setting( 'architect_content_width' , array(
     'default' => '1180',
+    'transport' => 'postMessage',
   ));
 
   $wp_customize->add_control(
@@ -56,6 +57,7 @@ function cusArchitect( $wp_customize ) {
 
   $wp_customize->add_setting( 'architect_col_one_width' , array(
     'default' => '100',
+    'transport' => 'postMessage',
   ));
 
   $wp_customize->add_control(

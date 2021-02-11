@@ -31,6 +31,16 @@
         $('.p-news--h2').html(newval);
       });
     });
+    wp.customize('architect_content_width', function(value) {
+      value.bind(function(newval) {
+        $('.contents').css('max-width',newval + "px");
+      });
+    });
+    wp.customize('architect_col_one_width', function(value) {
+      value.bind(function(newval) {
+        $('.l-main.p-front').css('max-width',newval + "%");
+      });
+    });
     /* フッター */
     wp.customize('footer_content_copyright', function(value) {
       value.bind(function(newval) {

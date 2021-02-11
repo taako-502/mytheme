@@ -35,7 +35,7 @@ function mytheme_customize_css(){
 
     /* コンテナー幅 */
     .contents {
-      width: <?php echo get_theme_mod('architect_content_width','1180'); ?>px;
+      max-width: <?php echo get_theme_mod('architect_content_width','1180'); ?>px;
     }
 
     /* メイン */
