@@ -33,6 +33,20 @@ function mytheme_customize_css(){
       color: #3E9FD2!important;
     }
 
+    /* コンテナー幅 */
+    .contents {
+      width: <?php echo get_theme_mod('architect_content_width','1180'); ?>px;
+    }
+
+    /* メイン */
+    .l-main.p-front {
+      <?php if(get_theme_mod('architect_layout_col','two-col') == "one-col"){ ?>
+        margin-left: auto;
+        margin-right: auto;
+        max-width: <?php echo get_theme_mod('architect_col_one_width','67'); ?>%;
+      <?php } ?>
+    }
+
     /* 背景色 */
     body {
       background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;
