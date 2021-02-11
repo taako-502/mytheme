@@ -37,21 +37,5 @@
         $('.l-footer--center').html(newval);
       });
     });
-
-    //alert(jQuery(".accordion-section-title").val());
-    jQuery(".p-recommend--h2").text("hoge");
-    jQuery("h3.accordion-section-title").text("hoge");
-    jQuery("#customize-controls").css('background-color','red');
-    jQuery("#customize-preview").css('background-color','red');
-    /* 活性制御 */
-    /* ワンカラムの時のみ活性 */
-    $('#accordion-section-title_tagline').click(function() {
-      alert("test");
-      if ($('input[name=lang]:checked').val() === 'one-col') {
-        alert("hoge");
-      } else {
-        alert("fuga");
-      }
-    });
   })(jQuery);
 });
