@@ -34,6 +34,10 @@ function cusArchitect( $wp_customize ) {
       'section' => 'architect_layout',
       'settings' => 'architect_content_width',
       'type' => 'number',
+      'input_attrs' => array(
+        'step' => '20',
+        'min'  => '400',
+      ),
     )
   );
 
