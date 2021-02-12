@@ -18,6 +18,11 @@ function mytheme_customize_css(){
   ?>
   <style type="text/css">
     @media screen and (min-width: 767px) {
+      /* ベース　*/
+      .contents p {
+        color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
+      }
+
       /* ヘッダー */
       .l-header,
       .l-header--inner  {

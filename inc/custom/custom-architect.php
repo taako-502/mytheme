@@ -73,4 +73,28 @@ function cusArchitect( $wp_customize ) {
       'type' => 'number',
     )
   );
+
+  $wp_customize->add_section(
+    'architect_text',
+    array(
+      'title'    => 'テキスト',
+      'panel'    => 'architect',
+      'priority' => 1,
+    )
+  );
+  $wp_customize->add_setting( 'architect_text_color' , array(
+    'default' => '#333',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_architect_text_color',
+      array(
+        'label'    => 'テキストの文字色',
+        'section'  => 'architect_text',
+        'settings' => 'architect_text_color',
+      )
+    )
+  );
 }
