@@ -1,7 +1,6 @@
 @use 'Foundation/mixin';
 
 .l-main {
-  @include mixin.max-width-content(67%);
   @include mixin.areaShadow();
   background-color: white;
   margin: 1% 1% 2% 0;
@@ -19,11 +18,6 @@
     box-sizing: border-box;
     padding: 10px 1.2em;
   }
-}
-
-.l-main__col-1 {
-  @extend .l-main;
-  @include mixin.max-width-content(100%);
 }
 
 .wp-embedded-content {

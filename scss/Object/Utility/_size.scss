@@ -1,6 +1,15 @@
+@use 'Foundation/mixin';
 @use 'Foundation/vars';
 
 .u-width-inner {
   width: 100%;
   max-width: vars.$layout-width-inner;
+}
+
+.u-width-col-1 {
+  @include mixin.max-width-content(100%);
+}
+
+.u-width-col-2 {
+  @include mixin.max-width-content(67%);
 }

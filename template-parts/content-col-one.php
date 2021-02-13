@@ -1,5 +1,5 @@
 <section class="contents">
-  <main class="l-main__col-1">
+  <main class="l-main u-width-col-1">
     <?php
     // パンくずリスト
     $sc = New SchemaClass;

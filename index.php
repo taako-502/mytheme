@@ -34,7 +34,7 @@ $page_title = "home";
   </div>
   <?php
   } ?>
-  <main class="l-main p-front">
+  <main class="l-main p-front u-width-col-2">
     <h2 class="p-news--h2 c-heading--main"><?php echo get_theme_mod("front_text_news","新着記事"); ?></h2>
     <div class="p-news--list">
       <?php

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="contents">
-  <main class="l-main">
+  <main class="l-main u-width-col-2">
     <h1>記事一覧</h1>
     <?php
     $cat_id = get_query_var('cat');
