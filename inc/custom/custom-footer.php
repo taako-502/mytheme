@@ -23,7 +23,7 @@ function cusFooter( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'footer_content_copyright',array(
-    'default' => null,
+    'default' => 'Copyright © 2020 ホームページ名 Powered by 管理者.',
     'transport' => 'postMessage',
   ));
 
@@ -51,7 +51,7 @@ function cusFooter( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'footer_widget_text_color' , array(
-    'default'    => '#333',
+    'default'    => '#FFF',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
 
@@ -68,7 +68,7 @@ function cusFooter( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'footer_widget_bg_color' , array(
-    'default'    => '#FFF',
+    'default'    => '#333',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
 
