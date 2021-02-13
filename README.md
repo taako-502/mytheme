@@ -16,7 +16,7 @@ https://www.mytheme.taako-biz.com/
 - SCSS
   - Dart Sass
   - BEM
-  - FROCSS
+  - [FROCSS](https://github.com/hiloki/flocss)
 
 <hr>
 
