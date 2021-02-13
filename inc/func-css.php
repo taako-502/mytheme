@@ -29,8 +29,11 @@ function mytheme_customize_css(){
       color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
     }
 
+    .l-sidebar--widget a,
+    .comment-body a,
+    .c-breadcrumb a,
     .contents p a {
-      color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
+      color: <?php echo get_theme_mod('architect_text_link_color','#04C'); ?>
     }
 
     .u-color-hover:hover,
@@ -72,7 +75,7 @@ function mytheme_customize_css(){
     }
 
     .l-main, .l-sidebar , .p-recommend {
-      background-color: rgba(<?php echo ut\getConversionRgba(get_theme_mod('section_bg_color',$section_bg_color_def),get_theme_mod('section_bg_opacity',$section_bg_opacity_def))['full'];?>%);
+      background-color: rgba(<?php echo ut\getConversionRgba(get_theme_mod('section_bg_color','#FFF'),get_theme_mod('section_bg_opacity',$section_bg_opacity_def))['full'];?>%);
       <?php $section_shadow_len = get_theme_mod('section_shadow_len','2')."px";?>
       box-shadow: <?php echo $section_shadow_len ?> <?php echo $section_shadow_len ?> <?php echo $section_shadow_len ?> rgb(0 0 0 / <?php echo get_theme_mod('section_shadow_opacity','30') ?>%);
     }
@@ -127,12 +130,6 @@ function mytheme_customize_css(){
       article.p-article h4 { font-size: <?php echo ut\getValOrDef($sm_h4size,$sm_h4size_def); ?>px!important; }
       article.p-article h5 { font-size: <?php echo ut\getValOrDef($sm_h5size,$sm_h5size_def); ?>px!important; }
       article.p-article h6 { font-size: <?php echo ut\getValOrDef($sm_h6size,$sm_h6size_def); ?>px!important; }
-    }
-
-    .l-sidebar--widget a,
-    .comment-body a,
-    .c-breadcrumb a {
-      color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
     }
 
     .p-related .p-related--item .p-related--title:hover,

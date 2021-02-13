@@ -99,7 +99,7 @@ function cusArchitect( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'architect_text_link_color' , array(
-    'default' => '#333',
+    'default' => '#04C',
   ));
 
   $wp_customize->add_control(
