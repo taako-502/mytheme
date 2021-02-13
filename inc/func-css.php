@@ -29,6 +29,8 @@ function mytheme_customize_css(){
       color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
     }
 
+    .l-sidebar--widget a,
+    .comment-body a,
     .contents p a {
       color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
     }
