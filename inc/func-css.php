@@ -29,8 +29,6 @@ function mytheme_customize_css(){
       color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
     }
 
-    .l-sidebar--widget a,
-    .comment-body a,
     .contents p a {
       color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
     }
@@ -129,6 +127,12 @@ function mytheme_customize_css(){
       article.p-article h4 { font-size: <?php echo ut\getValOrDef($sm_h4size,$sm_h4size_def); ?>px!important; }
       article.p-article h5 { font-size: <?php echo ut\getValOrDef($sm_h5size,$sm_h5size_def); ?>px!important; }
       article.p-article h6 { font-size: <?php echo ut\getValOrDef($sm_h6size,$sm_h6size_def); ?>px!important; }
+    }
+
+    .l-sidebar--widget a,
+    .comment-body a,
+    .c-breadcrumb a {
+      color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
     }
 
     .p-related .p-related--item .p-related--title:hover,
