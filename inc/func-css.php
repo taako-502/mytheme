@@ -23,6 +23,15 @@ function mytheme_customize_css(){
         color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
       }
 
+      .contents a {
+        color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
+      }
+
+      .u-color-hover:hover,
+      .contents a:hover {
+        color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>
+      }
+
       /* ヘッダー */
       .l-header,
       .l-header--inner  {

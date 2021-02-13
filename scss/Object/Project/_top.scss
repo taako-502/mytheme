@@ -104,10 +104,6 @@ a.p-recommend--a {
   span {
     font-size: 14px;
   }
-
-  &:hover {
-    color: vars.$BLUE_CHAR_HOVER;
-  }
 }
 
 .p-news-card--content {
@@ -118,18 +114,10 @@ a.p-recommend--a {
   .p-news-card--title {
     color:vars.$BLACK_3;
     margin-bottom: 0.5em;
-
-    &:hover {
-      color: vars.$BLUE_CHAR_HOVER;
-    }
   }
 
   .p-news-card--description {
     color: vars.$GRAY_6;
     font-size: 14px;
-
-    &:hover {
-      color: vars.$BLUE_CHAR_HOVER;
-    }
   }
 }

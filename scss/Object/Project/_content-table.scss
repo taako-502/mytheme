@@ -5,18 +5,14 @@
   padding: 1.5em 0 1.5em 1.5em;
   color: vars.$BLACK_3;
   background: vars.$GRAY_EF;
-  border-radius:8px;
+  border-radius: 8px;
 
   a {
-      text-decoration: none;
+    text-decoration: none;
 
-      &:visited {
-        color: inherit;
-      }
-
-      &:hover {
-        color: vars.$BLUE_CHAR_HOVER;
-      }
+    &:visited {
+      color: inherit;
+    }
   }
 
   li {
@@ -25,7 +21,7 @@
 }
 
 p.p-content-table--title {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.5em;
   font-size: 18px;
   font-weight: bold;
 }

@@ -13,12 +13,7 @@
     display: inline;
 
     a {
-      color: inherit;
       text-decoration: none;
-
-      &:hover {
-        color: vars.$BLUE_CHAR_HOVER;
-      }
     }
 
     & + li:before {

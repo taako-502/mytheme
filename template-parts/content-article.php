@@ -20,14 +20,14 @@
     ?>
   </a>
   <a class="p-news-card--content" href="<?php echo get_permalink(); ?>">
-    <h2 class="p-news-card--title">
+    <h2 class="p-news-card--title u-color__333 u-color-hover">
         <?php
           $title = get_the_title();
           // タイトルが長い場合、省略
           echo mb_strlen($title) <= 38 ? $title : mb_substr($title,0,38) . "...";
         ?>
     </h2>
-    <p class="p-news-card--description">
+    <p class="p-news-card--description u-color__666 u-color-hover">
         <?php echo ut\getDescription( $post->ID, 120); ?>
     </p>
   </a>

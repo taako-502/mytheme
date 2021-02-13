@@ -14,10 +14,6 @@
     &:visited {
       color: dimgray;
     }
-
-    &:hover {
-      color: vars.$BLUE_CHAR_HOVER;
-    }
   }
 }
 
@@ -248,10 +244,6 @@
 
   > p > a {
     text-decoration: none;
-
-    &:hover {
-      color: vars.$BLUE_CHAR_HOVER;
-    }
   }
 
   cite {
