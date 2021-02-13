@@ -20,8 +20,13 @@
     }
   }
 
+  img {
+    margin: 0;
+  }
+
   .p-related--item {
     @include mixin.articleShadow();
+    background-color: white;
     display: inline-block;
     width: 48%;
     margin: 1%;
@@ -34,20 +39,15 @@
       width: 96%;
       margin: 2% 2% 1% 2%;
     }
-  }
 
-  img {
-    margin: 0;
-  }
+    .p-related--title {
+      display: inline-block;
+      color: black;
+      padding: 3px;
 
-  .p-related--title {
-    display: inline-block;
-    color: black;
-    padding: 3px;
-
-
-    &:hover{
-      color: vars.$BLUE_CHAR_HOVER;
+      &:hover{
+        color: vars.$BLUE_CHAR_HOVER;
+      }
     }
   }
 }
