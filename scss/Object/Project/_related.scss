@@ -40,10 +40,10 @@
       margin: 2% 2% 1% 2%;
     }
 
-    .p-related--title {
+    p.p-related--title {
       display: inline-block;
-      color: black;
       padding: 3px;
+      color: vars.$BLACK_3;
     }
   }
 }

@@ -17,22 +17,32 @@ function mytheme_customize_css(){
   require_once( plugin_dir_path(__FILE__) . "../utility/variable.php");
   ?>
   <style type="text/css">
+    /* ==========================================================================
+    // Foundation
+    // ========================================================================*/
+    /* ベース　*/
+    .contents {
+      max-width: <?php echo get_theme_mod('architect_content_width','1180'); ?>px;
+    }
+
+    .contents p {
+      color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
+    }
+
+    .contents p a {
+      color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
+    }
+
+    .u-color-hover:hover,
+    .contents a:hover {
+      color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>
+    }
+
+    /* ==========================================================================
+    // Layout
+    // ========================================================================*/
+    /* ヘッダー */
     @media screen and (min-width: 767px) {
-      /* ベース　*/
-      .contents p {
-        color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
-      }
-
-      .contents a {
-        color: <?php echo get_theme_mod('architect_text_link_color','#333'); ?>
-      }
-
-      .u-color-hover:hover,
-      .contents a:hover {
-        color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>
-      }
-
-      /* ヘッダー */
       .l-header,
       .l-header--inner  {
         background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
@@ -45,11 +55,6 @@ function mytheme_customize_css(){
     .l-header--inner a:hover {
       /* 画面から設定できるようにすること */
       color: #3E9FD2!important;
-    }
-
-    /* コンテナー幅 */
-    .contents {
-      max-width: <?php echo get_theme_mod('architect_content_width','1180'); ?>px;
     }
 
     /* メイン */
@@ -90,6 +95,9 @@ function mytheme_customize_css(){
       color: <?php echo get_theme_mod('footer_widget_text_color','#FFF') ?>;
     }
 
+    /* ==========================================================================
+    // Object
+    // ========================================================================*/
     /* 文字サイズ（PC） */
     article.p-article p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
     article.p-article h1 { font-size: <?php echo ut\getValOrDef($pc_h1size,$pc_h1size_def); ?>px!important; }
@@ -119,6 +127,12 @@ function mytheme_customize_css(){
       article.p-article h4 { font-size: <?php echo ut\getValOrDef($sm_h4size,$sm_h4size_def); ?>px!important; }
       article.p-article h5 { font-size: <?php echo ut\getValOrDef($sm_h5size,$sm_h5size_def); ?>px!important; }
       article.p-article h6 { font-size: <?php echo ut\getValOrDef($sm_h6size,$sm_h6size_def); ?>px!important; }
+    }
+
+    .p-related .p-related--item .p-related--title:hover,
+    .p-news-card--content h2.p-news-card--title:hover,
+    .p-news-card--content p.p-news-card--description:hover {
+      color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>
     }
   </style>
 

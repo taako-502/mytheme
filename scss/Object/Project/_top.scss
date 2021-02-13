@@ -111,13 +111,13 @@ a.p-recommend--a {
   padding: 0.5em 9px 1.5em 9px;
   text-decoration: none;
 
-  .p-news-card--title {
-    color:vars.$BLACK_3;
+  h2.p-news-card--title {
     margin-bottom: 0.5em;
+    color: vars.$BLACK_3;
   }
 
-  .p-news-card--description {
-    color: vars.$GRAY_6;
+  p.p-news-card--description {
     font-size: 14px;
+    color: vars.$GRAY_6;
   }
 }
