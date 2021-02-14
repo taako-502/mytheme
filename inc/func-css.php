@@ -55,9 +55,32 @@ function mytheme_customize_css(){
       }
     }
 
+    .l-header--inner {
+      <?php
+      $header_layout_titile_align = get_theme_mod('header_layout_titile_align','left');
+      ?>
+      text-align: <?php echo $header_layout_titile_align; ?>;
+    }
+
     .l-header--inner a:hover {
       /* 画面から設定できるようにすること */
       color: #3E9FD2!important;
+    }
+
+    .l-header--logo ,
+    .l-header--description {
+      <?php
+      switch ($header_layout_titile_align) {
+        case 'left':
+          echo 'margin-left: 28px;';
+          break;
+        case 'right':
+          echo 'margin-right: 28px;';
+          break;
+        default:
+          break;
+      }
+      ?>
     }
 
     .l-nav {
