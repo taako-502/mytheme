@@ -60,6 +60,10 @@ function mytheme_customize_css(){
       color: #3E9FD2!important;
     }
 
+    .l-nav {
+      text-align: <?php echo get_theme_mod('header_layout_nav_align','right'); ?>;
+    }
+
     /* メイン */
     .l-main.p-front {
       <?php if(get_theme_mod('architect_layout_col','two-col') == "one-col"){ ?>

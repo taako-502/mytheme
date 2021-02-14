@@ -6,7 +6,7 @@
 function cusHeader( $wp_customize ) {
   // ヘッダー
   $wp_customize->add_panel(
-    'nav',
+    'header',
     array(
       'title'    => 'ヘッダー',
       'priority' => 30,
@@ -14,11 +14,40 @@ function cusHeader( $wp_customize ) {
   );
 
   $wp_customize->add_section(
-    'nav-color',
+    'header_layout',
+    array(
+      'title'    => 'レイアウト',
+      'panel'    => 'header',
+      'priority' => 1,
+    )
+  );
+
+
+  $wp_customize->add_setting( 'header_layout_nav_align' , array(
+    'default'    => 'right',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_header_layout_nav_align',
+    array(
+      'label'    => 'ナビゲーションメニューの位置',
+      'section'  => 'header_layout',
+      'settings' => 'header_layout_nav_align',
+      'type'     => 'radio',
+      'choices'  => array(
+        'left' => '左寄せ',
+        'center' => '中央',
+        'right' => '右寄せ',
+      ),
+    )
+  );
+
+  $wp_customize->add_section(
+    'header_color',
     array(
       'title'    => 'カラー',
-      'panel'    => 'nav',
-      'priority' => 1,
+      'panel'    => 'header',
+      'priority' => 2,
     )
   );
 
@@ -33,7 +62,7 @@ function cusHeader( $wp_customize ) {
       'ctl_nav_text_color',
       array(
         'label'    => 'ナビの文字色',
-        'section'  => 'nav-color',
+        'section'  => 'header_color',
         'settings' => 'nav_text_color',
       )
     )
@@ -50,7 +79,7 @@ function cusHeader( $wp_customize ) {
       'ctl_nav_bg_color',
       array(
         'label'    => 'ナビバーの背景色',
-        'section'  => 'nav-color',
+        'section'  => 'header_color',
         'settings' => 'nav_bg_color',
       )
     )
