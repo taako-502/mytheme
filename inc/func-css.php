@@ -96,6 +96,12 @@ function mytheme_customize_css(){
       <?php } ?>
     }
 
+    @media screen and (max-width: 1179px) {
+      .l-main.p-front {
+        max-width: 100%;
+      }
+    }
+
     /* 背景色 */
     body {
       background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;

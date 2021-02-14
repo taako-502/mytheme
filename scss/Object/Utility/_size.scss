@@ -12,4 +12,7 @@
 
 .u-width-col-2 {
   @include mixin.max-width-content(67%);
+  @include mixin.mq("tab") {
+    @include mixin.max-width-content(100%);
+  }
 }
