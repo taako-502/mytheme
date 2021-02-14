@@ -8,6 +8,18 @@
    (function($) {
     /* ライブプレビューの設定 */
     /* ヘッダー */
+    //ロゴとディスクリプションの位置を変更
+    wp.customize('header_layout_titile_align', function(value) {
+      value.bind(function(newval) {
+        $('.l-header--inner').css('text-align',newval);
+      });
+    });
+    //ナビゲーションメニューの位置を変更
+    wp.customize('header_layout_nav_align', function(value) {
+      value.bind(function(newval) {
+        $('.l-nav').css('text-align',newval);
+      });
+    });
     // リアルタイムにサイトタイトルを変更
     wp.customize('blogname', function(value) {
       value.bind(function(newval) {

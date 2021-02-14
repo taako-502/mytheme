@@ -24,6 +24,7 @@ function cusHeader( $wp_customize ) {
 
   $wp_customize->add_setting( 'header_layout_titile_align' , array(
     'default'    => 'left',
+    'transport' => 'postMessage',
   ));
 
   $wp_customize->add_control(
@@ -43,6 +44,7 @@ function cusHeader( $wp_customize ) {
 
   $wp_customize->add_setting( 'header_layout_nav_align' , array(
     'default'    => 'right',
+    'transport' => 'postMessage',
   ));
 
   $wp_customize->add_control(
