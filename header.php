@@ -34,7 +34,12 @@ global $page_title;
     <div class="l-header--inner">
       <div class="l-header--mobile">
         <a class="l-header--description" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'description' ); ?></a>
-        <a class="l-header--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+        <?php
+        the_custom_logo();
+        if (!has_custom_logo()) {
+          ?>
+          <a class="l-header--logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+        <?php } ?>
         <div class="l-header--toggle">
           <div>
             <span></span>
