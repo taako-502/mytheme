@@ -130,6 +130,10 @@ function mytheme_customize_css(){
       color: <?php echo get_theme_mod('footer_text_color','#FFF') ?>;
     }
 
+    .l-footer a:hover {
+      color: <?php echo get_theme_mod('footer_text_hover_color','#3E9FD2') ?>;
+    }
+
     .l-footer--widgets {
       background-color: <?php echo get_theme_mod('footer_widget_bg_color','#333') ?>;
     }
@@ -137,6 +141,10 @@ function mytheme_customize_css(){
     .l-footer--widgets,
     .l-footer--widgets a {
       color: <?php echo get_theme_mod('footer_widget_text_color','#FFF') ?>;
+    }
+
+    .l-footer--widgets a:hover {
+      color: <?php echo get_theme_mod('footer_widget_text_hover_color','#3E9FD2') ?>;
     }
 
     /* ==========================================================================

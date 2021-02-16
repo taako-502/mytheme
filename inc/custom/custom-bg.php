@@ -21,7 +21,7 @@ function cusBg( $wp_customize ) {
   $wp_customize->add_panel(
    'bg',
    array(
-     'title'    => '背景',
+     'title'    => 'コンテナー（メインエリア、サイドバー）',
      'priority' => 81,
    )
   );
