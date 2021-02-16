@@ -8,7 +8,12 @@
         ?>
       </div>
     </aside>
-    <p class="l-footer--center"><?php echo get_theme_mod('footer_content_copyright',"Copyright © " .date('Y'). " " . get_bloginfo('name') . " Powered by MY THEME."); ?></p>
+    <?php
+    $footer_content_copyright = get_theme_mod('footer_content_copyright','Copyright © ' .date('Y'). ' ' . get_bloginfo('name') . ' Powered by MY THEME.');
+    $footer_content_copyright = str_replace('[#yaer]',date('Y'),$footer_content_copyright);
+    $footer_content_copyright = str_replace('[#title]','<a href='.home_url().'>'.get_bloginfo('name').'</a>',$footer_content_copyright);
+    ?>
+    <p class="l-footer--center"><?php echo $footer_content_copyright; ?></p>
   </footer>
   <p class="c-top-scroll-btn"><a href="#"></a></p>
   <?php wp_footer(); ?>

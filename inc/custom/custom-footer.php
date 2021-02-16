@@ -8,7 +8,7 @@ function cusFooter( $wp_customize ) {
   cusFooterSection($wp_customize);
 
   $wp_customize->add_setting( 'footer_content_copyright',array(
-    'default' => 'Copyright © 2020 ホームページ名 Powered by 管理者.',
+    'default' => 'Copyright © [#year] [#title] Powered by MY THEME.',
     'transport' => 'postMessage',
   ));
 
@@ -16,6 +16,7 @@ function cusFooter( $wp_customize ) {
     'ctl_footer_content_copyright',
     array(
       'label' => 'コピーライト',
+      'description' => 'aタグを含むhtmlタグが使用可能です。[#title]を入力するとサイトタイトル、[#year]を入力すると現在の西暦年が表示されます。',
       'section' => 'footer_content',
       'settings' => 'footer_content_copyright',
       'type' => 'text',
