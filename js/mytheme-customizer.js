@@ -12,6 +12,13 @@
     wp.customize('header_layout_titile_align', function(value) {
       value.bind(function(newval) {
         $('.l-header--inner').css('text-align',newval);
+        if(newval == 'left'){
+          $('.l-header--logo').css('margin-left','28px');
+          $('.l-header--description').css('margin-left','28px');
+        } else if(newval == 'right') {
+          $('.l-header--logo').css('margin-right','28px');
+          $('.l-header--description').css('margin-right','28px');
+        }
       });
     });
     //ナビゲーションメニューの位置を変更
@@ -23,13 +30,23 @@
     // リアルタイムにサイトタイトルを変更
     wp.customize('blogname', function(value) {
       value.bind(function(newval) {
-        $('a.l-header--logo').html(newval);
+        $('.l-header--logo').html(newval);
+      });
+    });
+    wp.customize('header_text_logo_fontsize', function(value) {
+      value.bind(function(newval) {
+        $('.l-header--logo').css('font-size',newval + 'px');
       });
     });
     // リアルタイムにキャッチフレーズを変更
     wp.customize('blogdescription', function(value) {
       value.bind(function(newval) {
-        $('a.l-header--description').html(newval);
+        $('.l-header--description').html(newval);
+      });
+    });
+    wp.customize('header_text_description_fontsize', function(value) {
+      value.bind(function(newval) {
+        $('.l-header--description').css('font-size',newval + 'px');
       });
     });
     /* フロントページ */

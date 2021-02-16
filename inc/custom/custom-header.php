@@ -63,15 +63,51 @@ function cusHeader( $wp_customize ) {
   );
 
   $wp_customize->add_section(
-    'header_color',
+    'header_text',
     array(
-      'title'    => 'カラー',
+      'title'    => 'テキスト',
       'panel'    => 'header',
       'priority' => 2,
     )
   );
 
-  $wp_customize->add_setting( 'nav_text_color' , array(
+  $wp_customize->add_setting( 'header_text_logo_fontsize' , array(
+    'default' => '28',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_header_text_logo_fontsize',
+    array(
+      'label' => 'ロゴのフォントサイズ（px）',
+      'section' => 'header_text',
+      'settings' => 'header_text_logo_fontsize',
+      'type' => 'number',
+      'input_attrs' => array(
+        'step' => '1',
+      ),
+    )
+  );
+
+  $wp_customize->add_setting( 'header_text_description_fontsize' , array(
+    'default' => '13',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_header_text_description_fontsize',
+    array(
+      'label' => 'キャッチフレーズのフォントサイズ（px）',
+      'section' => 'header_text',
+      'settings' => 'header_text_description_fontsize',
+      'type' => 'number',
+      'input_attrs' => array(
+        'step' => '1',
+      ),
+    )
+  );
+
+  $wp_customize->add_setting( 'header_text_color' , array(
     'default'    => '#FFF',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
@@ -79,16 +115,42 @@ function cusHeader( $wp_customize ) {
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
-      'ctl_nav_text_color',
+      'ctl_header_text_color',
       array(
-        'label'    => 'ナビの文字色',
-        'section'  => 'header_color',
-        'settings' => 'nav_text_color',
+        'label'    => '文字色',
+        'section'  => 'header_text',
+        'settings' => 'header_text_color',
       )
     )
   );
 
-  $wp_customize->add_setting( 'nav_bg_color' , array(
+  $wp_customize->add_setting( 'header_text_hover_color' , array(
+    'default'    => '#FFF',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_header_text_hover_color',
+      array(
+        'label'    => 'ホバー時の文字色',
+        'section'  => 'header_text',
+        'settings' => 'header_text_hover_color',
+      )
+    )
+  );
+
+  $wp_customize->add_section(
+    'header_bg',
+    array(
+      'title'    => '背景',
+      'panel'    => 'header',
+      'priority' => 2,
+    )
+  );
+
+  $wp_customize->add_setting( 'header_bg_color' , array(
     'default'    => '#333',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
@@ -96,11 +158,11 @@ function cusHeader( $wp_customize ) {
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
-      'ctl_nav_bg_color',
+      'ctl_header_bg_color',
       array(
-        'label'    => 'ナビバーの背景色',
-        'section'  => 'header_color',
-        'settings' => 'nav_bg_color',
+        'label'    => 'ヘッダーの背景色',
+        'section'  => 'header_bg',
+        'settings' => 'header_bg_color',
       )
     )
   );

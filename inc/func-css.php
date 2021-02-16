@@ -48,10 +48,15 @@ function mytheme_customize_css(){
     @media screen and (min-width: 767px) {
       .l-header,
       .l-header--inner  {
-        background-color: <?php echo get_theme_mod( 'nav_bg_color', $header_bg_color_def ); ?>!important;
+        background-color: <?php echo get_theme_mod( 'header_bg_color', $header_bg_color_def ); ?>!important;
       }
       .l-header--inner a {
-        color: <?php echo get_theme_mod( 'nav_text_color', $nav_txt_color_def); ?>!important;
+        color: <?php echo get_theme_mod( 'header_text_color', $nav_txt_color_def); ?>;
+      }
+
+      .l-header--inner a:hover {
+        /* 画面から設定できるようにすること */
+        color: <?php echo get_theme_mod('header_text_hover_color','#3E9FD2'); ?>;
       }
     }
 
@@ -62,9 +67,12 @@ function mytheme_customize_css(){
       text-align: <?php echo $header_layout_titile_align; ?>;
     }
 
-    .l-header--inner a:hover {
-      /* 画面から設定できるようにすること */
-      color: #3E9FD2!important;
+    .l-header--logo {
+      font-size: <?php echo get_theme_mod('header_text_logo_fontsize','28'); ?>px;
+    }
+
+    .l-header--description {
+      font-size: <?php echo get_theme_mod('header_text_description_fontsize','13'); ?>px;
     }
 
     .l-header--logo ,
