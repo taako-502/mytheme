@@ -184,7 +184,12 @@ function mytheme_customize_css(){
     .p-related .p-related--item .p-related--title:hover,
     .p-news-card--content h2.p-news-card--title:hover,
     .p-news-card--content p.p-news-card--description:hover {
-      color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>
+      color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>;
+    }
+
+    .c-top-scroll-btn a,
+    .c-top-scroll-btn a::after {
+      background-color: <?php echo get_theme_mod('parts_scroll_color','#006EB0'); ?>;
     }
   </style>
 

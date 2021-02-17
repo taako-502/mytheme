@@ -7,6 +7,7 @@ get_template_part('/inc/custom/custom', 'header-img');
 get_template_part('/inc/custom/custom', 'front-page');
 get_template_part('/inc/custom/custom', 'bg');
 get_template_part('/inc/custom/custom', 'footer');
+get_template_part('/inc/custom/custom', 'parts');
 
 /**
  * カスタマイザープレビュー画面 JavaScriptのエンキュー
@@ -47,6 +48,7 @@ add_action( 'customize_controls_enqueue_scripts', 'enqueue_customizer_scripts' )
  * 背景画像・・・80
  * 背景・・・81
  * フッター・・・90
+ * パーツ・・・95
  * メニュー・・・100
  * ウィジェット・・・110
  * ホームページ設定・・・120
@@ -67,6 +69,8 @@ function mytheme_customize( $wp_customize ) {
   cusBg($wp_customize);
   // フッター
   cusFooter($wp_customize);
+  // パーツ
+  cusParts($wp_customize);
   $wp_customize->remove_section('colors');
 }
 add_action( 'customize_register', 'mytheme_customize' );
