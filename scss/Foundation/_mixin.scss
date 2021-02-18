@@ -49,6 +49,6 @@
 
 /* hover時の動き */
 @mixin hoverImg() {
-  opacity: 0.5;
+  transform: scale(1.05);
   transition: 0.2s ease-in-out;
 }
