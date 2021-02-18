@@ -15,10 +15,8 @@ get_template_part('/inc/custom/custom', 'parts');
  */
 function mytheme_customizer_live_preview(){
   wp_enqueue_script(
-    'mytheme-themecustomizer',  //このスクリプトの ID 名
-    get_template_directory_uri().'/js/mytheme-customizer.js', // このファイルの URL
-    array( 'jquery','customize-preview' ),  //　必須の依存ファイル
-    true // フッターに出力する場合 true にします
+    'mytheme-customizer-preview',
+    get_template_directory_uri().'/js/customizer-preview.js',
   );
 }
 add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
@@ -30,10 +28,8 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
  function enqueue_customizer_scripts() {
  	// 設定項目の表示・非表示を切り替える処理
   wp_enqueue_script(
-    'mytheme-themecustomizer',  //このスクリプトの ID 名
-    get_template_directory_uri().'/js/customizer-controls.js', // このファイルの URL
-    array( 'jquery','customize-preview' ),  //　必須の依存ファイル
-    true // フッターに出力する場合 true にします
+    'mytheme-customizer-controls',
+    get_template_directory_uri().'/js/customizer-controls.js',
   );
  }
 add_action( 'customize_controls_enqueue_scripts', 'enqueue_customizer_scripts' );
