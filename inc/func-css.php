@@ -191,6 +191,11 @@ function mytheme_customize_css(){
     .c-top-scroll-btn a::after {
       background-color: <?php echo get_theme_mod('parts_scroll_color','#006EB0'); ?>;
     }
+
+    .c-top-scroll-btn a:hover,
+    .c-top-scroll-btn a:hover::after {
+      background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
+    }
   </style>
 
   <?php

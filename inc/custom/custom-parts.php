@@ -7,9 +7,8 @@ function cusParts( $wp_customize ) {
   cusPartsPanel($wp_customize);
   cusPartsSection($wp_customize);
 
-  //セクションの色
   $wp_customize->add_setting( 'parts_scroll_color' , array(
-   'default'    => '#006EB0',
+   'default'    => '#006EB0',//ブルーアシード
    'sanitize_callback' => 'sanitize_hex_color',
   ));
 
@@ -18,10 +17,28 @@ function cusParts( $wp_customize ) {
      $wp_customize,
      'ctl_parts_scroll_color',
      array(
-       'label' => 'スクロールボタンの色',
+       'label' => '色',
        'description' => '右下にあるスクロールボタンの色を設定する。',
        'section'  => 'parts_scroll',
        'settings' => 'parts_scroll_color',
+     )
+   )
+  );
+
+  $wp_customize->add_setting( 'parts_scroll_hover_color' , array(
+   'default'    => '#3E9FD2',//ブルーアゲート
+   'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+   new WP_Customize_Color_Control(
+     $wp_customize,
+     'ctl_parts_scroll_hover_color',
+     array(
+       'label' => 'ホバー時の色',
+       'description' => '右下にあるスクロールボタンをホバーした時の色を設定する。',
+       'section'  => 'parts_scroll',
+       'settings' => 'parts_scroll_hover_color',
      )
    )
   );
