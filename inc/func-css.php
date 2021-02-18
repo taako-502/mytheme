@@ -110,6 +110,15 @@ function mytheme_customize_css(){
       }
     }
 
+    .l-header--description {
+      margin-top: <?php echo get_theme_mod('header_text_description_margin_top','28'); ?>px;
+    }
+
+    .l-header--logo {
+      margin-top: <?php echo get_theme_mod('header_text_title_margin_top','25'); ?>px;
+      margin-bottom: <?php echo get_theme_mod('header_text_title_margin_bottom','25'); ?>px;
+    }
+
     /* 背景色 */
     body {
       background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;

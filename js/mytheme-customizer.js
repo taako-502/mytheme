@@ -49,6 +49,22 @@
         $('.l-header--description').css('font-size',newval + 'px');
       });
     });
+    //マージン設定
+    wp.customize('header_text_description_margin_top', function(value) {
+      value.bind(function(newval) {
+        $('.l-header--description').css('margin-top',newval + 'px');
+      });
+    });
+    wp.customize('header_text_title_margin_top', function(value) {
+      value.bind(function(newval) {
+        $('.l-header--logo').css('margin-top',newval + 'px');
+      });
+    });
+    wp.customize('header_text_title_margin_bottom', function(value) {
+      value.bind(function(newval) {
+        $('.l-header--logo').css('margin-bottom',newval + 'px');
+      });
+    });
     /* フロントページ */
     wp.customize('front_text_reco', function(value) {
       value.bind(function(newval) {
