@@ -25,6 +25,10 @@ function cusParts( $wp_customize ) {
    )
   );
 
+  $wp_customize->selective_refresh->add_partial( 'parts_scroll_color', array(
+    'selector' => '.c-top-scroll-btn a',
+  ) );
+
   $wp_customize->add_setting( 'parts_scroll_hover_color' , array(
    'default'    => '#3E9FD2',//ブルーアゲート
    'sanitize_callback' => 'sanitize_hex_color',
