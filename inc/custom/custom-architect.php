@@ -115,7 +115,7 @@ function cusArchitect( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'architect_text_link_hover_color' , array(
-    'default' => '#007bbb',//紺碧色（こんぺき色）
+    'default' => '#007BBB',//紺碧色（こんぺき色）
   ));
 
   $wp_customize->add_control(

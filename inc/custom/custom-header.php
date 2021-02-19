@@ -66,7 +66,7 @@ function cusHeader( $wp_customize ) {
       ),
     )
   );
-  
+
   $wp_customize->add_setting( 'header_text_logo_fontsize' , array(
     'default' => '28',
     'transport' => 'postMessage',
@@ -103,7 +103,7 @@ function cusHeader( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'header_text_hover_color' , array(
-    'default'    => '#FFF',
+    'default'    => '#007BBB',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
 

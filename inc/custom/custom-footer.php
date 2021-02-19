@@ -46,7 +46,7 @@ function cusFooter( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'footer_widget_text_hover_color' , array(
-    'default'    => '#FFF',
+    'default'    => '#007BBB',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
 
@@ -99,7 +99,7 @@ function cusFooter( $wp_customize ) {
   );
 
   $wp_customize->add_setting( 'footer_text_hover_color' , array(
-    'default'    => '#FFF',
+    'default'    => '#007BBB',
     'sanitize_callback' => 'sanitize_hex_color',
   ));
 
