@@ -18,7 +18,7 @@ https://www.mytheme.taako-biz.com/
   - BEM
   - [FROCSS](https://github.com/hiloki/flocss)
 
-<hr>
+<hr> 
 
 ## 本テーマを作成するにあたって、参考にしたサイト
 ### WordPressテーマ開発の基礎
