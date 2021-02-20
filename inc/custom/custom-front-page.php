@@ -27,6 +27,44 @@ function cusFront( $wp_customize ) {
   );
 
   /* 見出し */
+  $wp_customize->add_setting( 'front_heading_reco' , array(
+    'default' => 'おすすめ記事',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_heading_reco',
+    array(
+      'label' => 'おすすめ記事の見出し',
+      'section' => 'front_heading',
+      'settings' => 'front_heading_reco',
+      'type' => 'text',
+    )
+  );
+
+  $wp_customize->selective_refresh->add_partial( 'front_heading_reco', array(
+    'selector' => '.p-recommend--h2',
+  ) );
+
+  $wp_customize->add_setting( 'front_heading_news' , array(
+    'default' => '新着記事',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_heading_news',
+    array(
+      'label' => '新着記事の見出し',
+      'section' => 'front_heading',
+      'settings' => 'front_heading_news',
+      'type' => 'text',
+    )
+  );
+
+  $wp_customize->selective_refresh->add_partial( 'front_heading_news', array(
+    'selector' => '.p-news--h2',
+  ) );
+
   $wp_customize->add_setting( 'front_heading_color' , array(
     'default'    => '#333',
     'sanitize_callback' => 'sanitize_hex_color',
@@ -154,45 +192,6 @@ function cusFront( $wp_customize ) {
       )
     )
   );
-
-  /* テキスト */
-  $wp_customize->add_setting( 'front_text_reco' , array(
-    'default' => 'おすすめ記事',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_text_reco',
-    array(
-      'label' => 'おすすめ記事の見出し',
-      'section' => 'front_text',
-      'settings' => 'front_text_reco',
-      'type' => 'text',
-    )
-  );
-
-  $wp_customize->selective_refresh->add_partial( 'front_text_reco', array(
-    'selector' => '.p-recommend--h2',
-  ) );
-
-  $wp_customize->add_setting( 'front_text_news' , array(
-    'default' => '新着記事',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_text_news',
-    array(
-      'label' => '新着記事の見出し',
-      'section' => 'front_text',
-      'settings' => 'front_text_news',
-      'type' => 'text',
-    )
-  );
-
-  $wp_customize->selective_refresh->add_partial( 'front_text_news', array(
-    'selector' => '.p-news--h2',
-  ) );
 }
 
 /**
@@ -230,15 +229,6 @@ function cusFrontSection($wp_customize) {
       'title'    => '見出し',
       'panel'    => 'front',
       'priority' => 11,
-    )
-  );
-
-  $wp_customize->add_section(
-    'front_text',
-    array(
-      'title'    => 'テキスト',
-      'panel'    => 'front',
-      'priority' => 12,
     )
   );
 }

@@ -189,6 +189,7 @@ function mytheme_customize_css(){
       ?>
       .c-heading--main::after {
         border-bottom-color: <?php echo get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
+        margin-left: -<?php echo get_theme_mod('front_heading_padding_left','0.1') ?>em;
       }
       <?php
     }

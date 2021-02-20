@@ -19,7 +19,7 @@ $page_title = "home";
   <?php
   if(get_theme_mod("front_architect_reco_disp","visible") == "visible"){ ?>
   <div class="p-recommend">
-    <h2 class="p-recommend--h2 c-heading--main"><?php echo get_theme_mod("front_text_reco","おすすめ記事"); ?></h2>
+    <h2 class="p-recommend--h2 c-heading--main"><?php echo get_theme_mod("front_heading_reco","おすすめ記事"); ?></h2>
     <div class="p-recommend-area">
       <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recolefturl; ?>">
         <img class="p-recommend--img" src="<?php echo $recoleftimg; ?>" alt="hoge">
@@ -35,7 +35,7 @@ $page_title = "home";
   <?php
   } ?>
   <main class="l-main p-front u-width-col-2">
-    <h2 class="p-news--h2 c-heading--main"><?php echo get_theme_mod("front_text_news","新着記事"); ?></h2>
+    <h2 class="p-news--h2 c-heading--main"><?php echo get_theme_mod("front_heading_news","新着記事"); ?></h2>
     <div class="p-news--list">
       <?php
         /* 記事一覧 */

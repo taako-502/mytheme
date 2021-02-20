@@ -66,12 +66,12 @@
       });
     });
     /* フロントページ */
-    wp.customize('front_text_reco', function(value) {
+    wp.customize('front_heading_reco', function(value) {
       value.bind(function(newval) {
         $('.p-recommend--h2').html(newval);
       });
     });
-    wp.customize('front_text_news', function(value) {
+    wp.customize('front_heading_news', function(value) {
       value.bind(function(newval) {
         $('.p-news--h2').html(newval);
       });
@@ -96,6 +96,7 @@
     wp.customize('front_heading_padding_left', function(value) {
       value.bind(function(newval) {
         $('.c-heading--main').css('padding-left',newval + "em");
+        $('.c-heading--main::after').css('margin-left',"-" + newval + "em");
       });
     });
     /* フッター */
