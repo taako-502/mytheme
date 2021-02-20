@@ -169,13 +169,12 @@ function mytheme_customize_css(){
       $front_heading_border_color = get_theme_mod('front_heading_border_color','skyblue');
       switch ($front_heading_border) {
         case 'border-left':
-          ?>border-left-color: <?php echo $front_heading_border_color;?>;
-          border-left: red;<?php
+          ?>border-left: solid 3px <?php echo $front_heading_border_color;?>;<?php
           break;
 
         case 'border-bottom':
         case 'border-bottom-two-tone':
-          ?>border-bottom-color: <?php echo $front_heading_border_color;?>;<?php
+          ?>border-bottom: solid 3px <?php echo $front_heading_border_color;?>;<?php
           break;
       }
       ?>
@@ -188,8 +187,14 @@ function mytheme_customize_css(){
     if($front_heading_border == "border-bottom-two-tone"){
       ?>
       .c-heading--main::after {
-        border-bottom-color: <?php echo get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
+        border-bottom: solid 3px <?php echo get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
         margin-left: -<?php echo get_theme_mod('front_heading_padding_left','0.1') ?>em;
+      }
+      <?php
+    } else {
+      ?>
+      .c-heading--main::after {
+        border: none;
       }
       <?php
     }

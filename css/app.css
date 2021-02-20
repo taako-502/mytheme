@@ -789,14 +789,12 @@ img {
   position: relative;
   font-size: 25px;
   margin-bottom: 15px;
-  border-bottom: solid 3px skyblue;
   margin-bottom: 15px;
 }
 .c-heading--main:after {
   position: absolute;
   content: " ";
   display: block;
-  border-bottom: solid 3px #FFC778;
   bottom: -3px;
   width: 30%;
 }
@@ -908,14 +906,12 @@ img {
   position: relative;
   font-size: 25px;
   margin-bottom: 15px;
-  border-bottom: solid 3px skyblue;
   margin: 20px 0;
 }
 .p-section H2:after {
   position: absolute;
   content: " ";
   display: block;
-  border-bottom: solid 3px #FFC778;
   bottom: -3px;
   width: 30%;
 }
