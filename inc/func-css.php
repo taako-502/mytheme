@@ -159,6 +159,48 @@ function mytheme_customize_css(){
     /* ==========================================================================
     // Object
     // ========================================================================*/
+    /* Component
+       ----------------------------------------------------------------- */
+    .c-heading--main {
+      color: <?php echo get_theme_mod('front_heading_color','#333'); ?>;
+      background-color: <?php echo get_theme_mod('front_heading_bg_color','transparent'); ?>;
+      <?php
+      $front_heading_border = get_theme_mod('front_heading_border','border-bottom');
+      $front_heading_border_color = get_theme_mod('front_heading_border_color','skyblue');
+      switch ($front_heading_border) {
+        case 'border-left':
+          ?>border-left-color: <?php echo $front_heading_border_color;?>;
+          border-left: red;<?php
+          break;
+
+        case 'border-bottom':
+        case 'border-bottom-two-tone':
+          ?>border-bottom-color: <?php echo $front_heading_border_color;?>;<?php
+          break;
+      }
+      ?>
+    }
+
+    <?php
+    if($front_heading_border == "border-bottom-two-tone"){
+      ?>
+      .c-heading--main::after {
+        border-bottom-color: <?php echo get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
+      }
+      <?php
+    }
+    ?>
+
+    .c-top-scroll-btn a,
+    .c-top-scroll-btn a::after {
+      background-color: <?php echo get_theme_mod('parts_scroll_color','#006EB0'); ?>;
+    }
+
+    .c-top-scroll-btn a:hover,
+    .c-top-scroll-btn a:hover::after {
+      background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
+    }
+
     /* 文字サイズ（PC） */
     article.p-article p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
     article.p-article h1 { font-size: <?php echo ut\getValOrDef($pc_h1size,$pc_h1size_def); ?>px!important; }
@@ -194,16 +236,6 @@ function mytheme_customize_css(){
     .p-news-card--content h2.p-news-card--title:hover,
     .p-news-card--content p.p-news-card--description:hover {
       color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>;
-    }
-
-    .c-top-scroll-btn a,
-    .c-top-scroll-btn a::after {
-      background-color: <?php echo get_theme_mod('parts_scroll_color','#006EB0'); ?>;
-    }
-
-    .c-top-scroll-btn a:hover,
-    .c-top-scroll-btn a:hover::after {
-      background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
     }
   </style>
 

@@ -44,13 +44,16 @@ add_action( 'customize_controls_enqueue_scripts', 'enqueue_customizer_scripts' )
  * 背景画像・・・80
  * 背景・・・81
  * フッター・・・90
- * パーツ・・・95
+ * 部品・・・95
  * メニュー・・・100
  * ウィジェット・・・110
  * ホームページ設定・・・120
  * 追加CSS・・・200
  */
 function mytheme_customize( $wp_customize ) {
+  // Inlcude the Alpha Color Picker.
+  require_once( dirname( __FILE__ ) . '/../lib/alpha-color-picker/alpha-color-picker.php' );
+
   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
   $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';

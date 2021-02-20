@@ -1,27 +1,13 @@
 <?php
 /**
- * ナビゲーションのカスタマイズを行うメソッド
+ * フロントページのカスタマイズを行うメソッド
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
 function cusFront( $wp_customize ) {
-  // ヘッダー
-  $wp_customize->add_panel(
-    'front',
-    array(
-      'title'    => 'トップページ（フロントページ）',
-      'priority' => 25,
-    )
-  );
+  cusFrontSection($wp_customize);
+  cusFrontPanel($wp_customize);
 
-  $wp_customize->add_section(
-    'front_architect',
-    array(
-      'title'    => '構成',
-      'panel'    => 'front',
-      'priority' => 1,
-    )
-  );
-
+  /* 構成 */
   $wp_customize->add_setting( 'front_architect_reco_disp' , array(
     'default' => 'visible',
   ));
@@ -40,15 +26,95 @@ function cusFront( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_section(
-    'front_text',
-    array(
-      'title'    => 'テキスト',
-      'panel'    => 'front',
-      'priority' => 2,
+  /* 見出し */
+  $wp_customize->add_setting( 'front_heading_color' , array(
+    'default'    => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_front_heading_color',
+      array(
+        'label'    => '見出し（H2）の文字色について',
+        'section'   => 'front_heading',
+        'settings'  => 'front_heading_color',
+      )
     )
   );
 
+  $wp_customize->add_setting( 'front_heading_bg_color' , array(
+    'default'    => '#333',
+  ));
+
+  $wp_customize->add_control(
+    new Customize_Alpha_Color_Control(
+      $wp_customize,
+      'ctl_front_heading_bg_color',
+      array(
+        'label'    => '見出し（H2）の背景色について',
+        'section'  => 'front_heading',
+        'settings' => 'front_heading_bg_color',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_heading_border' , array(
+    'default' => 'border-left',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_heading_border',
+    array(
+      'label' => '見出し（H2）のボーダーについて',
+      'section' => 'front_heading',
+      'settings' => 'front_heading_border',
+      'type'     => 'radio',
+      'choices'  => array(
+        'none' => '非表示',
+        'border-left' => '左に線を引く',
+        'border-bottom' => '下に線を引く',
+        'border-bottom-two-tone' => '下に線を引く（ツートンカラー）',
+      ),
+    )
+  );
+
+  $wp_customize->add_setting( 'front_heading_border_color' , array(
+    'default'    => 'skyblue',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_front_heading_border_color',
+      array(
+        'label'    => 'ボーダーの色について',
+        'section'  => 'front_heading',
+        'settings' => 'front_heading_border_color',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_heading_border_color_sub' , array(
+    'default'    => '#FFC778',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'ctl_front_heading_border_color_sub',
+      array(
+        'label'    => 'ボーダーの色について（サブ）',
+        'section'  => 'front_heading',
+        'settings' => 'front_heading_border_color_sub',
+      )
+    )
+  );
+
+  /* テキスト */
   $wp_customize->add_setting( 'front_text_reco' , array(
     'default' => 'おすすめ記事',
     'transport' => 'postMessage',
@@ -86,4 +152,52 @@ function cusFront( $wp_customize ) {
   $wp_customize->selective_refresh->add_partial( 'front_text_news', array(
     'selector' => '.p-news--h2',
   ) );
+}
+
+/**
+ * パネルの設定
+ * @param  [type] $wp_customize [description]
+ * @return [type]               [description]
+ */
+function cusFrontPanel($wp_customize){
+  $wp_customize->add_panel(
+    'front',
+    array(
+      'title'    => 'トップページ（フロントページ）',
+      'priority' => 25,
+    )
+  );
+}
+
+/**
+ * セクションの設定
+ * @return [type] [description]
+ */
+function cusFrontSection($wp_customize) {
+  $wp_customize->add_section(
+    'front_architect',
+    array(
+      'title'    => '構成',
+      'panel'    => 'front',
+      'priority' => 1,
+    )
+  );
+
+  $wp_customize->add_section(
+    'front_heading',
+    array(
+      'title'    => '見出し',
+      'panel'    => 'front',
+      'priority' => 11,
+    )
+  );
+
+  $wp_customize->add_section(
+    'front_text',
+    array(
+      'title'    => 'テキスト',
+      'panel'    => 'front',
+      'priority' => 12,
+    )
+  );
 }
