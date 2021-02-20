@@ -179,6 +179,9 @@ function mytheme_customize_css(){
           break;
       }
       ?>
+      padding-top: <?php echo get_theme_mod('front_heading_padding_top_and_bottom','0.1') ?>em;
+      padding-left: <?php echo get_theme_mod('front_heading_padding_left','0.1') ?>em;
+      padding-bottom: <?php echo get_theme_mod('front_heading_padding_top_and_bottom','0.1') ?>em;
     }
 
     <?php

@@ -86,6 +86,18 @@
         $('.l-main.p-front').css('max-width',newval + "%");
       });
     });
+    //padding設定
+    wp.customize('front_heading_padding_top_and_bottom', function(value) {
+      value.bind(function(newval) {
+        $('.c-heading--main').css('padding-top',newval + "em");
+        $('.c-heading--main').css('padding-bottom',newval + "em");
+      });
+    });
+    wp.customize('front_heading_padding_left', function(value) {
+      value.bind(function(newval) {
+        $('.c-heading--main').css('padding-left',newval + "em");
+      });
+    });
     /* フッター */
     wp.customize('footer_content_copyright', function(value) {
       value.bind(function(newval) {

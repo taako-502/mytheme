@@ -114,6 +114,47 @@ function cusFront( $wp_customize ) {
     )
   );
 
+  //余白
+  $wp_customize->add_setting( 'front_heading_padding_top_and_bottom' , array(
+   'default'    => '0.1',
+   'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_heading_padding_top_and_bottom',
+      array(
+        'label'   => '見出し（H2）上下の余白（em）',
+        'min' => 0,
+        'max' => 3,
+        'step' => 0.05,
+        'section'  => 'front_heading',
+        'settings' => 'front_heading_padding_top_and_bottom',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_heading_padding_left' , array(
+   'default'    => '0.1',
+   'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_heading_padding_left',
+      array(
+        'label'   => '見出し（H2）左側の余白（em）',
+        'min' => 0,
+        'max' => 3,
+        'step' => 0.05,
+        'section'  => 'front_heading',
+        'settings' => 'front_heading_padding_left',
+      )
+    )
+  );
+
   /* テキスト */
   $wp_customize->add_setting( 'front_text_reco' , array(
     'default' => 'おすすめ記事',
