@@ -97,7 +97,7 @@ function mytheme_customize_css(){
 
     /* メイン */
     .l-main.p-front {
-      <?php if(get_theme_mod('architect_layout_col','two-col') == "one-col"){ ?>
+      <?php if(get_theme_mod('front_architect_col','two-col') == "one-col"){ ?>
         margin-left: auto;
         margin-right: auto;
         max-width: <?php echo get_theme_mod('architect_col_one_width','67'); ?>%;

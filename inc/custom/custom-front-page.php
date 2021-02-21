@@ -8,6 +8,58 @@ function cusFront( $wp_customize ) {
   cusFrontPanel($wp_customize);
 
   /* 構成 */
+  $wp_customize->add_setting( 'architect_content_width' , array(
+    'default' => '1180',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_architect_content_width',
+    array(
+      'label' => 'コンテンツ幅（px）',
+      'section' => 'front_architect',
+      'settings' => 'architect_content_width',
+      'type' => 'number',
+      'input_attrs' => array(
+        'step' => '20',
+        'min'  => '400',
+      ),
+    )
+  );
+
+  $wp_customize->add_setting( 'front_architect_col' , array(
+    'default' => 'two-col',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_architect_col',
+    array(
+      'label' => 'フロントページのレイアウト',
+      'section' => 'front_architect',
+      'settings' => 'front_architect_col',
+      'type'     => 'radio',
+      'choices'  => array(
+        'one-col' => '1カラム（サイドバーなし）',
+        'two-col' => '2カラム',
+      ),
+    )
+  );
+
+  $wp_customize->add_setting( 'architect_col_one_width' , array(
+    'default' => '100',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_architect_col_one_width',
+    array(
+      'label' => 'メインエリアの幅（%）:ワンカラムの場合のみ',
+      'section' => 'front_architect',
+      'settings' => 'architect_col_one_width',
+      'type' => 'number',
+    )
+  );
+
   $wp_customize->add_setting( 'front_architect_reco_disp' , array(
     'default' => 'visible',
   ));

@@ -63,7 +63,7 @@ $page_title = "home";
     </div>
   </main>
   <?php
-  if(get_theme_mod('architect_layout_col','two-col') == 'two-col'){
+  if(get_theme_mod('front_architect_col','two-col') == 'two-col'){
     //管理画面で2カラムを設定した場合、サイドバーを表示
     get_sidebar();
   }
