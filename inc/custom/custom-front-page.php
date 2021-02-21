@@ -65,6 +65,27 @@ function cusFront( $wp_customize ) {
     'selector' => '.p-news--h2',
   ) );
 
+  //見出しのフォントサイズ
+  $wp_customize->add_setting( 'front_heading_fontsize' , array(
+   'default'    => '25',
+   'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_heading_fontsize',
+      array(
+        'label'   => '見出し（H2）のサイズ（px）',
+        'min' => 10,
+        'max' => 40,
+        'step' => 1,
+        'section'  => 'front_heading',
+        'settings' => 'front_heading_fontsize',
+      )
+    )
+  );
+
   $wp_customize->add_setting( 'front_heading_color' , array(
     'default'    => '#333',
     'sanitize_callback' => 'sanitize_hex_color',

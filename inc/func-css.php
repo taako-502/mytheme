@@ -163,6 +163,7 @@ function mytheme_customize_css(){
        ----------------------------------------------------------------- */
     .c-heading--main {
       color: <?php echo get_theme_mod('front_heading_color','#333'); ?>;
+      font-size: <?php echo get_theme_mod('front_heading_fontsize','25'); ?>px;
       background-color: <?php echo get_theme_mod('front_heading_bg_color','transparent'); ?>;
       <?php
       $front_heading_border = get_theme_mod('front_heading_border','border-bottom');

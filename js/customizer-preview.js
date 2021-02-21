@@ -76,6 +76,11 @@
         $('.p-news--h2').html(newval);
       });
     });
+    wp.customize('front_heading_fontsize', function(value) {
+      value.bind(function(newval) {
+        $('.c-heading--main').css('font-size',newval + "px");
+      });
+    });
     wp.customize('architect_content_width', function(value) {
       value.bind(function(newval) {
         $('.contents').css('max-width',newval + "px");
