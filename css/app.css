@@ -787,7 +787,7 @@ img {
  */
 .c-heading--main {
   position: relative;
-  font-size: 25;
+  font-size: 25px;
   margin-bottom: 15px;
 }
 .c-heading--main span.cus-border {
