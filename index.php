@@ -16,6 +16,13 @@ global $page_title;
 $page_title = "home";
 ?>
 <section class="contents">
+  <ul class="c-slider-frontpage">
+    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+  </ul>
   <?php
   if(get_theme_mod("front_architect_reco_disp","visible") == "visible"){ ?>
   <div class="p-recommend">

@@ -1,0 +1,19 @@
+.c-slider-frontpage {
+  overflow: none;
+  width: 100%;
+  z-index: 0;
+  padding-left: 0;
+
+  .slick-list {
+    position: relative;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  li {
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+}

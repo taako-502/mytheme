@@ -56,11 +56,14 @@ function main_enqueue_scripts() {
 			$sc->getStructuredData($post->ID);
 		}
 		//CSS
-		wp_enqueue_style( 'font-awesom', esc_url(get_template_directory_uri() . '/lib/fontawesome/css/all.min.css'));
+		wp_enqueue_style( 'font-awesome', esc_url(get_template_directory_uri() . '/lib/fontawesome/css/all.min.css'));
+		wp_enqueue_style( 'slick-theme', esc_url(get_template_directory_uri() . '/lib/slick/slick-theme.css'));
+		wp_enqueue_style( 'slick', esc_url(get_template_directory_uri() . '/lib/slick/slick.css'));
 		wp_enqueue_style( 'main_style', esc_url(get_template_directory_uri() . '/css/app.css'));
 		get_template_part('/inc/func','css');
 		//JavaScript
   	wp_enqueue_script('jquery');
+		wp_enqueue_script('slick',get_template_directory_uri() . '/lib/slick/slick.min.js');
   	wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
   	if ( is_singular() ) {
     	wp_enqueue_script( 'comment-reply' );
