@@ -4,6 +4,15 @@
 @use 'Foundation/mixin';
 
 .c-heading--main {
-  @include mixin.articleHeading(25px);
+  position: relative;
+  font-size: 25;
   margin-bottom: 15px;
+
+  span.cus-border {
+    display: block;
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    bottom: -3px;
+  }
 }

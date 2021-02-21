@@ -186,8 +186,8 @@ function mytheme_customize_css(){
     <?php
     if($front_heading_border == "border-bottom-two-tone"){
       ?>
-      .c-heading--main::after {
-        border-bottom: solid 3px <?php echo get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
+      .c-heading--main span.cus-border {
+        background-color: <?php echo get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
         margin-left: -<?php echo get_theme_mod('front_heading_padding_left','0.1') ?>em;
       }
       <?php

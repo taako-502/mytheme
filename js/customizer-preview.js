@@ -96,7 +96,7 @@
     wp.customize('front_heading_padding_left', function(value) {
       value.bind(function(newval) {
         $('.c-heading--main').css('padding-left',newval + "em");
-        $('.c-heading--main::after').css('margin-left',"-" + newval + "em");
+        $('.c-heading--main span.cus-border').css('margin-left',"-" + newval + "em");
       });
     });
     /* フッター */
