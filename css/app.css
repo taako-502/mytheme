@@ -885,9 +885,10 @@ img {
 }
 
 .c-slider-frontpage {
-  overflow: none;
-  width: 100%;
   z-index: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0;
 }
 .c-slider-frontpage .slick-list {

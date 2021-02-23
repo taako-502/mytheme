@@ -66,6 +66,24 @@
       });
     });
     /* フロントページ */
+    //構成
+    wp.customize('front_architect_content_width', function(value) {
+      value.bind(function(newval) {
+        $('.contents').css('max-width',newval + "px");
+      });
+    });
+    wp.customize('architect_col_one_width', function(value) {
+      value.bind(function(newval) {
+        $('.l-main.p-front').css('max-width',newval + "%");
+      });
+    });
+    //スライダーの設定
+    wp.customize('front_slider_width', function(value) {
+      value.bind(function(newval) {
+        $('.c-slider-frontpage').css('max-width',newval + "px");
+      });
+    });
+    //見出しの設定
     wp.customize('front_heading_reco', function(value) {
       value.bind(function(newval) {
         $('.p-recommend--h2').html(newval);
@@ -79,16 +97,6 @@
     wp.customize('front_heading_fontsize', function(value) {
       value.bind(function(newval) {
         $('.c-heading--main').css('font-size',newval + "px");
-      });
-    });
-    wp.customize('front_architect_content_width', function(value) {
-      value.bind(function(newval) {
-        $('.contents').css('max-width',newval + "px");
-      });
-    });
-    wp.customize('architect_col_one_width', function(value) {
-      value.bind(function(newval) {
-        $('.l-main.p-front').css('max-width',newval + "%");
       });
     });
     //padding設定

@@ -15,14 +15,13 @@ $recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() .
 global $page_title;
 $page_title = "home";
 ?>
-<section class="contents">
   <ul class="c-slider-frontpage">
     <?php
     switch (get_theme_mod('front_slider_type','news')) {
       case 'news':
         // 表示件数の指定
         $args = array(
-          'posts_per_page' => get_theme_mod('ctl_front_slider_all_number','8')
+          'posts_per_page' => get_theme_mod('front_slider_all_number','8')
         );
         $posts = get_posts( $args );
         foreach ( $posts as $post ){
@@ -67,6 +66,7 @@ $page_title = "home";
     }
     ?>
   </ul>
+  <section class="contents">
   <?php
   if(get_theme_mod("front_architect_reco_disp","visible") == "visible"){ ?>
   <div class="p-recommend">

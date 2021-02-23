@@ -211,6 +211,10 @@ function mytheme_customize_css(){
       background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
     }
 
+    .c-slider-frontpage {
+      max-width: <?php echo get_theme_mod('front_slider_width','1180'); ?>px;
+    }
+
     /* 文字サイズ（PC） */
     article.p-article p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
     article.p-article h1 { font-size: <?php echo ut\getValOrDef($pc_h1size,$pc_h1size_def); ?>px!important; }

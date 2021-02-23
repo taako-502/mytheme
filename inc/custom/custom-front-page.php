@@ -147,6 +147,10 @@ function cusFrontArchitect($wp_customize) {
  * @return [type]               [description]
  */
 function cusFrontSlider($wp_customize){
+  $wp_customize->selective_refresh->add_partial( 'front_slider_type', array(
+    'selector' => '.c-slider-frontpage',
+  ) );
+
   $wp_customize->add_setting( 'front_slider_type' , array(
     'default'    => 'news',
     //'transport' => 'postMessage',
@@ -161,6 +165,7 @@ function cusFrontSlider($wp_customize){
       'type'     => 'radio',
       'choices'  => array(
         'news'      => '新着記事',
+        'random' => 'ランダム記事',
         'recommend' => 'おすすめ記事',
         'firstview' => 'ファーストビュー（ジャンボトロン）',
       ),
@@ -206,6 +211,27 @@ function cusFrontSlider($wp_customize){
       )
     )
   );
+
+  $wp_customize->add_setting( 'front_slider_width' , array(
+    'default' => '1180',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_slider_width',
+      array(
+        'label' => 'スライダーの幅（px）',
+        'description' => '本項目の設定は、幅が1180px以上の時に有効。',
+        'min'   => 0,
+        'max'   => 1800,
+        'step'  => 20,
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_width',
+      )
+    )
+  );
 }
 
 /**
@@ -231,7 +257,7 @@ function cusFrontHeading($wp_customize){
 
   $wp_customize->selective_refresh->add_partial( 'front_heading_reco', array(
     'selector' => '.p-recommend--h2',
-  ) );
+  ));
 
   $wp_customize->add_setting( 'front_heading_news' , array(
     'default' => '新着記事',
@@ -250,7 +276,7 @@ function cusFrontHeading($wp_customize){
 
   $wp_customize->selective_refresh->add_partial( 'front_heading_news', array(
     'selector' => '.p-news--h2',
-  ) );
+  ));
 
   //見出しのフォントサイズ
   $wp_customize->add_setting( 'front_heading_fontsize' , array(
