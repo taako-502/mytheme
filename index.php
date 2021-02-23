@@ -17,11 +17,51 @@ $page_title = "home";
 ?>
 <section class="contents">
   <ul class="c-slider-frontpage">
-    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
-    <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+    <?php
+    switch (get_theme_mod('front_slider_type','news')) {
+      case 'news':
+        // 表示件数の指定
+        $args = array(
+          'posts_per_page' => get_theme_mod('ctl_front_slider_all_number','8')
+        );
+        $posts = get_posts( $args );
+        foreach ( $posts as $post ){
+          setup_postdata( $post );
+          ?>
+          <li>
+            <a href="<?php the_permalink(); ?>">
+              <?php
+              if (has_post_thumbnail()){
+                the_post_thumbnail('large');
+              } else {
+                ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="">
+                <?php
+              }
+              ?>
+            </a>
+          </li>
+          <?php
+        }
+        wp_reset_postdata();
+        break;
+      case 'recommend':
+        ?>
+        <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+        <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+        <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+        <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+        <li><img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt=""></li>
+        <?php
+        break;
+      case 'firstview':
+        // code...
+        break;
+      default:
+        // code...
+        break;
+    }
+    ?>
   </ul>
   <?php
   if(get_theme_mod("front_architect_reco_disp","visible") == "visible"){ ?>

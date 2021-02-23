@@ -22,7 +22,7 @@ function mytheme_customize_css(){
     // ========================================================================*/
     /* ベース　*/
     .contents {
-      max-width: <?php echo get_theme_mod('architect_content_width','1180'); ?>px;
+      max-width: <?php echo get_theme_mod('front_architect_content_width','1180'); ?>px;
     }
 
     .contents p {

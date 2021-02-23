@@ -48,14 +48,5 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-    /**
-     * スライダーの設定
-     */
-    $('.c-slider-frontpage').slick({
-      //autoplay:true,
-      //autoplaySpeed:5000,
-      dots:true,
-    });
-
   })(jQuery);
 });

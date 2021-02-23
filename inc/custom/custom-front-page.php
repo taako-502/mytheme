@@ -6,23 +6,85 @@
 function cusFront( $wp_customize ) {
   cusFrontSection($wp_customize);
   cusFrontPanel($wp_customize);
+  /* 全体構成 */
+  cusFrontArchitect($wp_customize);
+  /* スライダー */
+  cusFrontSlider($wp_customize);
+  /* 見出し */
+  cusFrontHeading($wp_customize);
+}
 
+/**
+ * パネルの設定
+ * @param  [type] $wp_customize [description]
+ * @return [type]               [description]
+ */
+function cusFrontPanel($wp_customize){
+  $wp_customize->add_panel(
+    'front',
+    array(
+      'title'    => 'トップページ（フロントページ）',
+      'priority' => 25,
+    )
+  );
+}
+
+/**
+ * セクションの設定
+ * @return [type] [description]
+ */
+function cusFrontSection($wp_customize) {
+  $wp_customize->add_section(
+    'front_architect',
+    array(
+      'title'    => '構成',
+      'panel'    => 'front',
+      'priority' => 1,
+    )
+  );
+
+  $wp_customize->add_section(
+    'front_slider',
+    array(
+      'title'    => 'スライダー',
+      'panel'    => 'front',
+      'priority' => 11,
+    )
+  );
+
+  $wp_customize->add_section(
+    'front_heading',
+    array(
+      'title'    => '見出し',
+      'panel'    => 'front',
+      'priority' => 11,
+    )
+  );
+}
+
+/**
+ * 全体構成の設定
+ * @param  [type] $wp_customize [description]
+ * @return [type]               [description]
+ */
+function cusFrontArchitect($wp_customize) {
   /* 構成 */
-  $wp_customize->add_setting( 'architect_content_width' , array(
+  $wp_customize->add_setting( 'front_architect_content_width' , array(
     'default' => '1180',
     'transport' => 'postMessage',
   ));
 
   $wp_customize->add_control(
-    'ctl_architect_content_width',
+    'ctl_front_architect_content_width',
     array(
       'label' => 'コンテンツ幅（px）',
       'section' => 'front_architect',
-      'settings' => 'architect_content_width',
+      'settings' => 'front_architect_content_width',
       'type' => 'number',
       'input_attrs' => array(
-        'step' => '20',
-        'min'  => '400',
+        'step' => '1',
+        'min'  => '2',
+        'max'  => '10',
       ),
     )
   );
@@ -77,7 +139,80 @@ function cusFront( $wp_customize ) {
       ),
     )
   );
+}
 
+/**
+ * スライダーの設定
+ * @param  [type] $wp_customize [description]
+ * @return [type]               [description]
+ */
+function cusFrontSlider($wp_customize){
+  $wp_customize->add_setting( 'front_slider_type' , array(
+    'default'    => 'news',
+    //'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_type',
+    array(
+      'label'    => 'スライダーの表示',
+      'section'  => 'front_slider',
+      'settings' => 'front_slider_type',
+      'type'     => 'radio',
+      'choices'  => array(
+        'news'      => '新着記事',
+        'recommend' => 'おすすめ記事',
+        'firstview' => 'ファーストビュー（ジャンボトロン）',
+      ),
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_all_number' , array(
+    'default' => '8',
+    //'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_slider_all_number',
+      array(
+        'label' => 'スライドの枚数',
+        'min'   => 2,
+        'max'   => 10,
+        'step'  => 1,
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_all_number',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_disp_number' , array(
+    'default' => '4',
+    //'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_slider_disp_number',
+      array(
+        'label' => '画面に表示するスライダーの枚数',
+        'min'   => 1,
+        'max'   => 5,
+        'step'  => 1,
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_disp_number',
+      )
+    )
+  );
+}
+
+/**
+ * 見出しの設定
+ * @return [type] [description]
+ */
+function cusFrontHeading($wp_customize){
   /* 見出し */
   $wp_customize->add_setting( 'front_heading_reco' , array(
     'default' => 'おすすめ記事',
@@ -263,45 +398,6 @@ function cusFront( $wp_customize ) {
         'section'  => 'front_heading',
         'settings' => 'front_heading_padding_left',
       )
-    )
-  );
-}
-
-/**
- * パネルの設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
- */
-function cusFrontPanel($wp_customize){
-  $wp_customize->add_panel(
-    'front',
-    array(
-      'title'    => 'トップページ（フロントページ）',
-      'priority' => 25,
-    )
-  );
-}
-
-/**
- * セクションの設定
- * @return [type] [description]
- */
-function cusFrontSection($wp_customize) {
-  $wp_customize->add_section(
-    'front_architect',
-    array(
-      'title'    => '構成',
-      'panel'    => 'front',
-      'priority' => 1,
-    )
-  );
-
-  $wp_customize->add_section(
-    'front_heading',
-    array(
-      'title'    => '見出し',
-      'panel'    => 'front',
-      'priority' => 11,
     )
   );
 }

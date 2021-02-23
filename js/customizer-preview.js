@@ -81,7 +81,7 @@
         $('.c-heading--main').css('font-size',newval + "px");
       });
     });
-    wp.customize('architect_content_width', function(value) {
+    wp.customize('front_architect_content_width', function(value) {
       value.bind(function(newval) {
         $('.contents').css('max-width',newval + "px");
       });

@@ -65,6 +65,7 @@ function main_enqueue_scripts() {
   	wp_enqueue_script('jquery');
 		wp_enqueue_script('slick',get_template_directory_uri() . '/lib/slick/slick.min.js');
   	wp_enqueue_script('main',get_template_directory_uri() . '/js/main.js');
+		get_template_part('/inc/func','javascript');
   	if ( is_singular() ) {
     	wp_enqueue_script( 'comment-reply' );
 		}
