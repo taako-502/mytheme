@@ -153,7 +153,6 @@ function cusFrontSlider($wp_customize){
 
   $wp_customize->add_setting( 'front_slider_type' , array(
     'default'    => 'news',
-    //'transport' => 'postMessage',
   ));
 
   $wp_customize->add_control(
@@ -170,6 +169,42 @@ function cusFrontSlider($wp_customize){
         'recommend' => 'おすすめ記事',
         'firstview' => 'ファーストビュー（ジャンボトロン）',
       ),
+    )
+  );
+
+  // Checkbox セッティング
+  $wp_customize->add_setting( 'front_slider_auto', array(
+    'default'   => true,
+    'transport' => 'refresh',
+  ));
+  // Checkbox コントロール
+  $wp_customize->add_control(
+    'ctl_front_slider_auto',
+    array(
+      'label'     => '自動でスライドする',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_auto',
+      'type'      => 'checkbox',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_auto_speed' , array(
+    'default' => '3000',
+    //'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_slider_auto_speed',
+      array(
+        'label' => '自動スライドの速度（ms）',
+        'min'   => 0,
+        'max'   => 10000,
+        'step'  => 1000,
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_auto_speed',
+      )
     )
   );
 
