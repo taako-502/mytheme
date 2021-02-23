@@ -61,6 +61,19 @@ if (!function_exists('getDescription')) {
 }
 
 /**
+ * メタディスクリプションを取得
+ * @param  String  $content 記事情報
+ * @param  Integer $len     文字数
+ * @return String           メタディスクリプション（メタディスクリプションの設定を行っていない場合は、記事からディスクリプションを生成）
+ */
+if (!function_exists('getMetaDescription')) {
+  function getMetaDescription($id,$len){
+    $description = get_post_meta($id, '_meta_description', true);
+    return !isNullOrEmpty($description) ? $description : getDescription($id,$len);
+  }
+}
+
+/**
  * カラーコードをrgbaに変換
  * @param  [type]  $color_code [description]
  * @param  integer $alpha      [description]

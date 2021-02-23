@@ -39,6 +39,10 @@ $page_title = "home";
                 <?php
               }
               ?>
+              <div class="hover-text">
+                <h3><?php the_title(); ?></p>
+                <p><?php echo ut\getMetaDescription($post->ID, 120); ?></p>
+              </div>
             </a>
           </li>
           <?php
