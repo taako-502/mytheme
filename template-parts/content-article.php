@@ -5,8 +5,10 @@
     $cat_name = $category[0]->cat_name;
     $cat_link = get_category_link($category[0]->term_id);
     ?>
-  <a class="p-news-card--category" href="<?php echo $cat_link; ?>"><span><?php echo $cat_name; ?></span></a>
-  <?php } ?>
+    <a class="p-news-card--category" href="<?php echo $cat_link; ?>"><span><?php echo $cat_name; ?></span></a>
+  <?php
+  }
+  ?>
   <a class="c-aspect-9-16" href="<?php echo get_permalink(); ?>">
     <?php
     if ( has_post_thumbnail() ) {

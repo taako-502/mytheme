@@ -14,7 +14,9 @@ $recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() .
 // 読み込み
 global $page_title;
 $page_title = "home";
-?>
+$front_slider_type = get_theme_mod('front_slider_type','news');
+if($front_slider_type != 'none') {
+  ?>
   <ul class="c-slider-frontpage">
     <?php
     switch (get_theme_mod('front_slider_type','news')) {
@@ -66,7 +68,10 @@ $page_title = "home";
     }
     ?>
   </ul>
-  <section class="contents">
+<?php
+}
+?>
+<section class="contents">
   <?php
   if(get_theme_mod("front_architect_reco_disp","visible") == "visible"){ ?>
   <div class="p-recommend">

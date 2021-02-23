@@ -164,6 +164,7 @@ function cusFrontSlider($wp_customize){
       'settings' => 'front_slider_type',
       'type'     => 'radio',
       'choices'  => array(
+        'none'      => '非表示',
         'news'      => '新着記事',
         'random' => 'ランダム記事',
         'recommend' => 'おすすめ記事',
