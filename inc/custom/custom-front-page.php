@@ -233,6 +233,26 @@ function cusFrontSlider($wp_customize){
       )
     )
   );
+
+  $wp_customize->add_setting( 'front_slider_article_margin_side' , array(
+    'default' => '13',
+    'transport' => 'postMessage',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Range(
+      $wp_customize,
+      'ctl_front_slider_article_margin_side',
+      array(
+        'label' => '記事同士の余白幅（px）',
+        'min'   => 0,
+        'max'   => 20,
+        'step'  => 1,
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_article_margin_side',
+      )
+    )
+  );
 }
 
 /**
