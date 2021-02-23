@@ -172,7 +172,6 @@ function cusFrontSlider($wp_customize){
     )
   );
 
-  // Checkbox セッティング
   $wp_customize->add_setting( 'front_slider_auto', array(
     'default'   => true,
     'transport' => 'refresh',
@@ -227,6 +226,177 @@ function cusFrontSlider($wp_customize){
       )
     )
   );
+
+  $wp_customize->add_setting( 'front_slider_url_1', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_1',
+    array(
+      'label'     => 'スライダーに表示する記事①',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_1',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_2', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_2',
+    array(
+      'label'     => 'スライダーに表示する記事②',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_2',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_3', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_3',
+    array(
+      'label'     => 'スライダーに表示する記事③',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_3',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_4', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_4',
+    array(
+      'label'     => 'スライダーに表示する記事④',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_4',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_5', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_5',
+    array(
+      'label'     => 'スライダーに表示する記事⑤',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_5',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_6', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_6',
+    array(
+      'label'     => 'スライダーに表示する記事⑥',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_6',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_7', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_7',
+    array(
+      'label'     => 'スライダーに表示する記事⑦',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_7',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_8', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_8',
+    array(
+      'label'     => 'スライダーに表示する記事⑧',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_8',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_9', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_9',
+    array(
+      'label'     => 'スライダーに表示する記事⑨',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_9',
+      'type'      => 'url',
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_url_10', array(
+    'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_front_slider_url_10',
+    array(
+      'label'     => 'スライダーに表示する記事⑩',
+      'description' => 'URLを入力',
+      'section'   => 'front_slider',
+      'settings'  => 'front_slider_url_10',
+      'type'      => 'url',
+    )
+  );
+
 
   $wp_customize->add_setting( 'front_slider_disp_number' , array(
     'default' => '4',
