@@ -14,16 +14,18 @@ $recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() .
 // 読み込み
 global $page_title;
 $page_title = "home";
-$front_slider_type = get_theme_mod('front_slider_type','news');
+$front_slider_type = get_theme_mod('front_slider_type','date');
 if($front_slider_type != 'none') {
   ?>
   <ul class="c-slider-frontpage">
     <?php
-    switch (get_theme_mod('front_slider_type','news')) {
-      case 'news':
+    switch (get_theme_mod($front_slider_type,'date')) {
+      case 'date':
+      case 'rand':
         // 表示件数の指定
         $args = array(
-          'posts_per_page' => get_theme_mod('front_slider_all_number','8')
+          'posts_per_page' => get_theme_mod('front_slider_all_number','8'),
+          'orderby' => $front_slider_type,
         );
         $posts = get_posts( $args );
         foreach ( $posts as $post ){
@@ -99,6 +101,7 @@ if($front_slider_type != 'none') {
         // 件数をデフォルトに設定
         $args = array(
           'posts_per_page' => '10',
+          'orderby' => 'news',
         );
         $posts = get_posts( $args );
         if ( have_posts() ) {

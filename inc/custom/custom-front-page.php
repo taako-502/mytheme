@@ -165,8 +165,8 @@ function cusFrontSlider($wp_customize){
       'type'     => 'radio',
       'choices'  => array(
         'none'      => '非表示',
-        'news'      => '新着記事',
-        'random' => 'ランダム記事',
+        'date'      => '新着記事',
+        'rand' => 'ランダム記事',
         'recommend' => 'おすすめ記事',
         'firstview' => 'ファーストビュー（ジャンボトロン）',
       ),
