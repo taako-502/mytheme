@@ -41,7 +41,7 @@ if($front_slider_type != 'none') {
               }
               ?>
               <div class="hover-text">
-                <h3><?php the_title(); ?></p>
+                <h3><?php the_title(); ?></h3>
                 <p><?php echo ut\getMetaDescription($post->ID, 120); ?></p>
               </div>
             </a>
