@@ -27,7 +27,7 @@ function customize_js(){
          * スライダーの設定
          */
         $('.c-slider-frontpage').slick({
-          autoplay: <?php echo get_theme_mod('front_slider_auto','true'); ?>,
+          autoplay: <?php echo get_theme_mod('front_slider_auto','true') == "true" ? "true" : "false"; ?>,
           autoplaySpeed: <?php echo get_theme_mod('front_slider_auto_speed','5000'); ?>,
           slidesToShow: <?php echo get_theme_mod('front_slider_disp_number','5'); ?>,
           dots:true,
