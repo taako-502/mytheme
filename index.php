@@ -96,6 +96,11 @@ if($front_slider_type != 'none') {
       <?php
         /* 記事一覧 */
         $cnt = 0;
+        // 件数をデフォルトに設定
+        $args = array(
+          'posts_per_page' => '10',
+        );
+        $posts = get_posts( $args );
         if ( have_posts() ) {
           while ( have_posts() ) {
             the_post();
