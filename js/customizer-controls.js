@@ -11,6 +11,34 @@ jQuery(document).ready(function($) {
 					}
 				});
 			});
+			/* おすすめ記事選択時のみ表示 */
+			wp.customize('front_slider_type', function (value) {
+				value.bind(function (newval) {
+					if(newval != "recommend" ){
+						jQuery("#customize-control-ctl_front_slider_url_1").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_2").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_3").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_4").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_5").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_6").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_7").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_8").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_9").css('display', 'none');
+						jQuery("#customize-control-ctl_front_slider_url_10").css('display', 'none');
+					} else {
+						jQuery("#customize-control-ctl_front_slider_url_1").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_2").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_3").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_4").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_5").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_6").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_7").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_8").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_9").css('display', 'block');
+						jQuery("#customize-control-ctl_front_slider_url_10").css('display', 'block');
+					}
+				});
+			});
 		});
 	})(jQuery);
 });
