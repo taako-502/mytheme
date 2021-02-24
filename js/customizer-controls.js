@@ -1,3 +1,8 @@
+/**
+ * カスタマイザーの可視性制御
+ * @param  {[type]} $ [description]
+ * @return {[type]}   [description]
+ */
 jQuery(document).ready(function($) {
 	(function ($) {
 		wp.customize.bind('ready', function () {
