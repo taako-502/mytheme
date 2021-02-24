@@ -4,8 +4,8 @@
  * JavaScript はコントロールからテーマ設定を取得し、
  * jQuery を使ってページに変更を反映します。
  */
- jQuery(document).ready(function($) {
-   (function($) {
+jQuery(document).ready(function($) {
+  (function($) {
     /* ライブプレビューの設定 */
     /* ヘッダー */
     //ロゴとディスクリプションの位置を変更
