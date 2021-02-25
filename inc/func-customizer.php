@@ -25,7 +25,9 @@ add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
  * カスタマイザーコントロール画面 JavaScriptのエンキュー
  * @var [type]
  */
- function enqueue_customizer_scripts() {
+function enqueue_customizer_scripts() {
+  wp_enqueue_style( 'customizer', esc_url(get_template_directory_uri() . '/css/customizer-css.css'));
+
  	// 設定項目の表示・非表示を切り替える処理
   wp_enqueue_script(
     'mytheme-customizer-controls',
