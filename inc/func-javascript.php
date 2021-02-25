@@ -14,6 +14,8 @@ namespace mytheme;
  * @return [type] [description]
  */
 function customize_js(){
+  $front_slider_disp_number =get_theme_mod('front_slider_disp_number','5');
+  $front_slider_type =get_theme_mod('front_slider_type','date');
   ?>
   <script id="mytheme_customize_js" type="text/javascript">
     /**
@@ -27,10 +29,21 @@ function customize_js(){
          * スライダーの設定
          */
         $('.c-slider-frontpage').slick({
-          autoplay: <?php echo get_theme_mod('front_slider_auto','true') == "true" ? "true" : "false"; ?>,
-          autoplaySpeed: <?php echo get_theme_mod('front_slider_auto_speed','5000'); ?>,
-          slidesToShow: <?php echo get_theme_mod('front_slider_disp_number','5'); ?>,
-          dots:true,
+          <?php
+          if($front_slider_type == "firstview") {
+            ?>
+            arrows: false,
+            <?php
+          } else {
+            ?>
+            autoplay: <?php echo get_theme_mod('front_slider_auto','true') == "true" ? "true" : "false"; ?>,
+            autoplaySpeed: <?php echo get_theme_mod('front_slider_auto_speed','5000'); ?>,
+
+            slidesToShow: <?php echo $front_slider_disp_number; ?>,
+            dots:true,
+            <?php
+          }
+          ?>
         });
 
       })(jQuery);

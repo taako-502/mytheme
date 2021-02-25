@@ -70,7 +70,14 @@ if($front_slider_type != 'none') {
         <?php
         break;
       case 'firstview':
-        // code...
+        for ($i=1; $i <= 5; $i++) {
+          // code...
+          ?>
+          <li>
+            <img src="<?php echo get_theme_mod('front_slider_img_'.$i,''); ?>" alt="">
+          </li>
+          <?php
+        }
         break;
       default:
         // code...

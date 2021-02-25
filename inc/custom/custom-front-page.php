@@ -397,6 +397,95 @@ function cusFrontSlider($wp_customize){
     )
   );
 
+  $wp_customize->add_setting( 'front_slider_img_1', array(
+    //'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'my_front_slider_img_1',
+      array(
+        'label'    => 'スライダーに表示する画像①',
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_img_1',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_img_2', array(
+    //'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'my_front_slider_img_2',
+      array(
+        'label'    => 'スライダーに表示する画像②',
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_img_2',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_img_3', array(
+    //'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'my_front_slider_img_3',
+      array(
+        'label'    => 'スライダーに表示する画像③',
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_img_3',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_img_4', array(
+    //'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'my_front_slider_img_4',
+      array(
+        'label'    => 'スライダーに表示する画像④',
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_img_4',
+      )
+    )
+  );
+
+  $wp_customize->add_setting( 'front_slider_img_5', array(
+    //'default'   => true,
+    'sanitize_callback' => 'esc_url_raw',
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Image_Control(
+      $wp_customize,
+      'my_front_slider_img_5',
+      array(
+        'label'    => 'スライダーに表する画像⑤',
+        'section'  => 'front_slider',
+        'settings' => 'front_slider_img_5',
+      )
+    )
+  );
 
   $wp_customize->add_setting( 'front_slider_disp_number' , array(
     'default' => '4',
