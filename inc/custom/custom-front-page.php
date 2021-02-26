@@ -148,11 +148,11 @@ function cusFrontArchitect($wp_customize) {
  */
 function cusFrontFirstview($wp_customize){
   $wp_customize->selective_refresh->add_partial( 'front_firstview_type', array(
-    'selector' => '.c-slider-firstview',
+    'selector' => '.c-firstview',
   ));
 
   $wp_customize->add_setting( 'front_firstview_type' , array(
-    'default'    => 'news',
+    'default'    => 'none',
   ));
 
   $wp_customize->add_control(
@@ -163,7 +163,8 @@ function cusFrontFirstview($wp_customize){
       'settings' => 'front_firstview_type',
       'type'     => 'radio',
       'choices'  => array(
-        'slider'      => 'スライダー',
+        'none'      => '非表示',
+        'slider'    => 'スライダー',
       ),
     )
   );

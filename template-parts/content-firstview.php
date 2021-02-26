@@ -2,10 +2,14 @@
 /**
  * ファーストビュー
  */
-$parts_header_slider_type = get_theme_mod('parts_header_slider_type','date');
-if($parts_header_slider_type != 'slider') {
+$front_firstview_type = get_theme_mod('front_firstview_type','none');
+if($front_firstview_type == "none"){
+  ?><div></div><?php
+  return;
+}
+if($front_firstview_type == "slider") {
   ?>
-  <ul class="c-slider-frontpage">
+  <ul class="c-firstview">
     <?php
     for ($i=1; $i <= 5; $i++) {
       $front_firstview_img = get_theme_mod('front_firstview_img_'.$i,'');

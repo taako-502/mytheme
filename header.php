@@ -76,7 +76,7 @@ global $page_title;
   <?php
   if(strcmp($page_title , "home")){
     the_header_image_tag("class=l-header--img");
-    get_template_part('template-parts/content','slider-firstview');
+    get_template_part('template-parts/content','firstview');
   }
   get_template_part('template-parts/content','slider-header');
   ?>
