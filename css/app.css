@@ -884,20 +884,20 @@ img {
   list-style: none;
 }
 
-.c-slider-frontpage {
+.c-slider-header {
   z-index: 0;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0;
 }
-.c-slider-frontpage .slick-list {
+.c-slider-header .slick-list {
   position: relative;
 }
-.c-slider-frontpage img {
+.c-slider-header img {
   max-width: 100%;
 }
-.c-slider-frontpage li {
+.c-slider-header li {
   margin-left: 13px;
   margin-right: 13px;
 }

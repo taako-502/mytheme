@@ -14,8 +14,8 @@ namespace mytheme;
  * @return [type] [description]
  */
 function customize_js(){
-  $front_slider_disp_number =get_theme_mod('front_slider_disp_number','5');
-  $front_slider_type =get_theme_mod('front_slider_type','date');
+  $front_firstview_disp_number =get_theme_mod('front_firstview_disp_number','5');
+  $front_firstview_type =get_theme_mod('front_firstview_type','date');
   ?>
   <script id="mytheme_customize_js" type="text/javascript">
     /**
@@ -28,9 +28,9 @@ function customize_js(){
         /**
          * スライダーの設定
          */
-        $('.c-slider-frontpage').slick({
+        $('.c-slider-header').slick({
           <?php
-          if($front_slider_type == "firstview") {
+          if($front_firstview_type == "firstview") {
             ?>
             arrows: false,
             infinite: true,
@@ -40,13 +40,13 @@ function customize_js(){
             <?php
           } else {
             ?>
-            slidesToShow: <?php echo $front_slider_disp_number; ?>,
+            slidesToShow: <?php echo $front_firstview_disp_number; ?>,
             dots:true,
             <?php
           }
           ?>
-          autoplay: <?php echo get_theme_mod('front_slider_auto','true') == "true" ? "true" : "false"; ?>,
-          autoplaySpeed: <?php echo get_theme_mod('front_slider_auto_speed','5000'); ?>,
+          autoplay: <?php echo get_theme_mod('front_firstview_auto','true') == "true" ? "true" : "false"; ?>,
+          autoplaySpeed: <?php echo get_theme_mod('front_firstview_auto_speed','5000'); ?>,
         });
 
       })(jQuery);

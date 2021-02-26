@@ -78,15 +78,15 @@ jQuery(document).ready(function($) {
       });
     });
     //スライダーの設定
-    wp.customize('front_slider_width', function(value) {
+    wp.customize('front_firstview_width', function(value) {
       value.bind(function(newval) {
-        $('.c-slider-frontpage').css('max-width',newval + "px");
+        $('.c-slider-header').css('max-width',newval + "px");
       });
     });
-    wp.customize('front_slider_article_margin_side', function(value) {
+    wp.customize('front_firstview_article_margin_side', function(value) {
       value.bind(function(newval) {
-        $('.c-slider-frontpage li').css('margin-left',newval + "px");
-        $('.c-slider-frontpage li').css('margin-right',newval + "px");
+        $('.c-slider-header li').css('margin-left',newval + "px");
+        $('.c-slider-header li').css('margin-right',newval + "px");
       });
     });
     //見出しの設定

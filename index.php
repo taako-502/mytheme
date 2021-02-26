@@ -15,7 +15,7 @@ $recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() .
 global $page_title;
 $page_title = "home";
 //スライダー
-get_template_part('/template-parts/content','slider');
+get_template_part('template-parts/content','slider-firstview');
 ?>
 <section class="contents">
   <?php
@@ -24,18 +24,19 @@ get_template_part('/template-parts/content','slider');
     <h2 class="p-recommend--h2 c-heading--main"><span class="cus-border"></span><?php echo get_theme_mod("front_heading_reco","おすすめ記事"); ?></h2>
     <div class="p-recommend-area">
       <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recolefturl; ?>">
-        <img class="p-recommend--img" src="<?php echo $recoleftimg; ?>" alt="hoge">
+        <img class="p-recommend--img" src="<?php echo $recoleftimg; ?>" alt="">
       </a>
       <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recocenterurl; ?>">
-        <img class="p-recommend--img" src="<?php echo $recocenterimg; ?>" alt="fuga">
+        <img class="p-recommend--img" src="<?php echo $recocenterimg; ?>" alt="">
       </a>
       <a class="p-recommend--a c-aspect-9-16" href="<?php echo $recorighturl; ?>">
-        <img class="p-recommend--img" src="<?php echo $recorightimg; ?>" alt="fuga">
+        <img class="p-recommend--img" src="<?php echo $recorightimg; ?>" alt="">
       </a>
     </div>
   </div>
   <?php
-  } ?>
+  }
+  ?>
   <main class="l-main p-front u-width-col-2">
     <h2 class="p-news--h2 c-heading--main"><span class="cus-border"></span><?php echo get_theme_mod("front_heading_news","新着記事"); ?></h2>
     <div class="p-news--list">
@@ -45,7 +46,7 @@ get_template_part('/template-parts/content','slider');
         if ( have_posts() ) {
           while ( have_posts() ) {
             the_post();
-            get_template_part('/template-parts/content','article');
+            get_template_part('template-parts/content','article');
             if($cnt % 10 == 2){
               //広告を挿入
               $adsTopCard = get_theme_mod('adsCd-top-card','');;

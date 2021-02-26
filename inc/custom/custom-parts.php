@@ -6,7 +6,9 @@
 function cusParts($wp_customize) {
   cusPartsPanel($wp_customize);
   cusPartsSection($wp_customize);
+  /* ヘッダー下スライダ- */
   cusPartsHeaderSlider($wp_customize);
+  /* スクロールボタン */
   cusPartsScroll($wp_customize);
 }
 
@@ -58,11 +60,11 @@ function cusPartsSection($wp_customize) {
  */
 function cusPartsHeaderSlider($wp_customize) {
   $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
-    'selector' => '.c-slider-frontpage',
+    'selector' => '.c-slider-header',
   ));
 
   $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
-    'selector' => '.c-slider-frontpage',
+    'selector' => '.c-slider-header',
   ));
 
   $wp_customize->add_setting('parts_header_slider_type', array(

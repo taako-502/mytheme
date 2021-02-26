@@ -211,13 +211,13 @@ function mytheme_customize_css(){
       background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
     }
 
-    .c-slider-frontpage {
-      max-width: <?php echo get_theme_mod('front_slider_width','1180'); ?>px;
+    .c-slider-header {
+      max-width: <?php echo get_theme_mod('front_firstview_width','1180'); ?>px;
     }
 
-    .c-slider-frontpage li {
-      margin-left: <?php echo get_theme_mod('front_slider_article_margin_side','13'); ?>px;
-      margin-right: <?php echo get_theme_mod('front_slider_article_margin_side','13'); ?>px;
+    .c-slider-header li {
+      margin-left: <?php echo get_theme_mod('front_firstview_article_margin_side','13'); ?>px;
+      margin-right: <?php echo get_theme_mod('front_firstview_article_margin_side','13'); ?>px;
     }
 
     /* 文字サイズ（PC） */
