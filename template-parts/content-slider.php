@@ -2,19 +2,19 @@
 /**
  * スライダー
  */
-$front_slider_type = get_theme_mod('front_slider_type','date');
-if($front_slider_type != 'none') {
+$parts_header_slider_type = get_theme_mod('parts_header_slider_type','date');
+if($parts_header_slider_type != 'none') {
   ?>
   <ul class="c-slider-frontpage">
     <?php
-    $front_slider_all_number = get_theme_mod('front_slider_all_number','8');
-    switch ($front_slider_type) {
+    $parts_header_slider_all_number = get_theme_mod('parts_header_slider_all_number','8');
+    switch ($parts_header_slider_type) {
       case 'date':
       case 'rand':
         // 表示件数の指定
         $args = array(
-          'posts_per_page' => $front_slider_all_number,
-          'orderby' => $front_slider_type,
+          'posts_per_page' => $parts_header_slider_all_number,
+          'orderby' => $parts_header_slider_type,
         );
         $slider_posts = get_posts( $args );
         foreach ( $slider_posts as $post ){
@@ -43,12 +43,12 @@ if($front_slider_type != 'none') {
         }
         break;
       case 'recommend':
-        for ($i=1; $i <= $front_slider_all_number; $i++) {
-          $front_slider_url = get_theme_mod('front_slider_url_' . $i,'#');
-          $slider_posts = url_to_postid($front_slider_url);
+        for ($i=1; $i <= $parts_header_slider_all_number; $i++) {
+          $parts_header_slider_url = get_theme_mod('parts_header_slider_url_' . $i,'#');
+          $slider_posts = url_to_postid($parts_header_slider_url);
           ?>
           <li>
-            <a href="<?php echo $front_slider_url; ?>">
+            <a href="<?php echo $parts_header_slider_url; ?>">
               <?php
               if (has_post_thumbnail($slider_posts)) {
                 echo get_the_post_thumbnail( $slider_posts , 'large' );
@@ -74,7 +74,7 @@ if($front_slider_type != 'none') {
           // code...
           ?>
           <li>
-            <img src="<?php echo get_theme_mod('front_slider_img_'.$i,''); ?>" alt="">
+            <img src="<?php echo get_theme_mod('parts_header_slider_img_'.$i,''); ?>" alt="">
           </li>
           <?php
         }

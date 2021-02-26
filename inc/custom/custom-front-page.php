@@ -46,7 +46,7 @@ function cusFrontSection($wp_customize) {
   $wp_customize->add_section(
     'front_slider',
     array(
-      'title'    => 'スライダー',
+      'title'    => 'ファーストビュー',
       'panel'    => 'front',
       'priority' => 11,
     )
@@ -147,9 +147,9 @@ function cusFrontArchitect($wp_customize) {
  * @return [type]               [description]
  */
 function cusFrontSlider($wp_customize){
-  $wp_customize->selective_refresh->add_partial( 'front_slider_type', array(
-    'selector' => '.c-slider-frontpage',
-  ) );
+  //$wp_customize->selective_refresh->add_partial( 'front_slider_type', array(
+  //  'selector' => '.c-slider-frontpage',
+  //) );
 
   $wp_customize->add_setting( 'front_slider_type' , array(
     'default'    => 'news',

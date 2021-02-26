@@ -33,17 +33,20 @@ function customize_js(){
           if($front_slider_type == "firstview") {
             ?>
             arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
             <?php
           } else {
             ?>
-            autoplay: <?php echo get_theme_mod('front_slider_auto','true') == "true" ? "true" : "false"; ?>,
-            autoplaySpeed: <?php echo get_theme_mod('front_slider_auto_speed','5000'); ?>,
-
             slidesToShow: <?php echo $front_slider_disp_number; ?>,
             dots:true,
             <?php
           }
           ?>
+          autoplay: <?php echo get_theme_mod('front_slider_auto','true') == "true" ? "true" : "false"; ?>,
+          autoplaySpeed: <?php echo get_theme_mod('front_slider_auto_speed','5000'); ?>,
         });
 
       })(jQuery);
