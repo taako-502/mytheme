@@ -26,27 +26,27 @@ function customize_js(){
     jQuery(document).ready(function($) {
       (function($) {
         /**
-         * スライダーの設定
+         * ファーストビューとして表示するスライダーの設定
+         * @var [type]
+         */
+        $('.c-slider-frontpage').slick({
+          arrows: false,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+          autoplay: true,
+          autoplaySpeed: <?php echo get_theme_mod('front_firstview_auto_speed','5000'); ?>,
+        });
+
+        /**
+         * ヘッダー下スライダーの設定
          */
         $('.c-slider-header').slick({
-          <?php
-          if($front_firstview_type == "firstview") {
-            ?>
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear',
-            <?php
-          } else {
-            ?>
-            slidesToShow: <?php echo $front_firstview_disp_number; ?>,
-            dots:true,
-            <?php
-          }
-          ?>
-          autoplay: <?php echo get_theme_mod('front_firstview_auto','true') == "true" ? "true" : "false"; ?>,
-          autoplaySpeed: <?php echo get_theme_mod('front_firstview_auto_speed','5000'); ?>,
+          slidesToShow: <?php echo $front_firstview_disp_number; ?>,
+          dots:true,
+          autoplay: <?php echo get_theme_mod('parts_header_slider_auto','true') == "true" ? "true" : "false"; ?>,
+          autoplaySpeed: <?php echo get_theme_mod('parts_header_slider_auto_speed','5000'); ?>,
         });
 
       })(jQuery);

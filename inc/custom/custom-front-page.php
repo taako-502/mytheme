@@ -8,8 +8,8 @@ function cusFront( $wp_customize ) {
   cusFrontPanel($wp_customize);
   /* 全体構成 */
   cusFrontArchitect($wp_customize);
-  /* スライダー */
-  cusFrontSlider($wp_customize);
+  /* ファーストビュー */
+  cusFrontFirstview($wp_customize);
   /* 見出し */
   cusFrontHeading($wp_customize);
 }
@@ -142,14 +142,14 @@ function cusFrontArchitect($wp_customize) {
 }
 
 /**
- * スライダーの設定
+ * ファーストビューの設定
  * @param  [type] $wp_customize [description]
  * @return [type]               [description]
  */
-function cusFrontSlider($wp_customize){
-  //$wp_customize->selective_refresh->add_partial( 'front_firstview_type', array(
-  //  'selector' => '.c-slider-header',
-  //) );
+function cusFrontFirstview($wp_customize){
+  $wp_customize->selective_refresh->add_partial( 'front_firstview_type', array(
+    'selector' => '.c-slider-firstview',
+  ));
 
   $wp_customize->add_setting( 'front_firstview_type' , array(
     'default'    => 'news',
@@ -163,27 +163,8 @@ function cusFrontSlider($wp_customize){
       'settings' => 'front_firstview_type',
       'type'     => 'radio',
       'choices'  => array(
-        'none'      => '非表示',
-        'date'      => '新着記事',
-        'rand'      => 'ランダム記事',
-        'recommend' => 'おすすめ記事',
-        'firstview' => 'ファーストビュー（ジャンボトロン）',
+        'slider'      => 'スライダー',
       ),
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_auto', array(
-    'default'   => true,
-    'transport' => 'refresh',
-  ));
-  // Checkbox コントロール
-  $wp_customize->add_control(
-    'ctl_front_firstview_auto',
-    array(
-      'label'     => '自動でスライドする',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_auto',
-      'type'      => 'checkbox',
     )
   );
 
@@ -224,176 +205,6 @@ function cusFrontSlider($wp_customize){
         'section'  => 'front_firstview',
         'settings' => 'front_firstview_all_number',
       )
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_1', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_1',
-    array(
-      'label'     => 'スライダーに表示する記事①',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_1',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_2', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_2',
-    array(
-      'label'     => 'スライダーに表示する記事②',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_2',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_3', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_3',
-    array(
-      'label'     => 'スライダーに表示する記事③',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_3',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_4', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_4',
-    array(
-      'label'     => 'スライダーに表示する記事④',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_4',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_5', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_5',
-    array(
-      'label'     => 'スライダーに表示する記事⑤',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_5',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_6', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_6',
-    array(
-      'label'     => 'スライダーに表示する記事⑥',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_6',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_7', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_7',
-    array(
-      'label'     => 'スライダーに表示する記事⑦',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_7',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_8', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_8',
-    array(
-      'label'     => 'スライダーに表示する記事⑧',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_8',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_9', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_9',
-    array(
-      'label'     => 'スライダーに表示する記事⑨',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_9',
-      'type'      => 'url',
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_url_10', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_front_firstview_url_10',
-    array(
-      'label'     => 'スライダーに表示する記事⑩',
-      'description' => 'URLを入力',
-      'section'   => 'front_firstview',
-      'settings'  => 'front_firstview_url_10',
-      'type'      => 'url',
     )
   );
 
@@ -483,47 +294,6 @@ function cusFrontSlider($wp_customize){
         'label'    => 'スライダーに表する画像⑤',
         'section'  => 'front_firstview',
         'settings' => 'front_firstview_img_5',
-      )
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_disp_number' , array(
-    'default' => '4',
-    //'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Range(
-      $wp_customize,
-      'ctl_front_firstview_disp_number',
-      array(
-        'label' => '画面に表示するスライダーの枚数',
-        'min'   => 1,
-        'max'   => 5,
-        'step'  => 1,
-        'section'  => 'front_firstview',
-        'settings' => 'front_firstview_disp_number',
-      )
-    )
-  );
-
-  $wp_customize->add_setting( 'front_firstview_width' , array(
-    'default' => '1180',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Range(
-      $wp_customize,
-      'ctl_front_firstview_width',
-      array(
-        'label' => 'スライダーの幅（px）',
-        'description' => '本項目の設定は、幅が1180px以上の時に有効。',
-        'min'   => 0,
-        'max'   => 1800,
-        'step'  => 20,
-        'section'  => 'front_firstview',
-        'settings' => 'front_firstview_width',
       )
     )
   );

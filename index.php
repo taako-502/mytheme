@@ -14,8 +14,6 @@ $recorightimg = ut\isNullOrEmpty($recorightimg) ? get_template_directory_uri() .
 // 読み込み
 global $page_title;
 $page_title = "home";
-//スライダー
-get_template_part('template-parts/content','slider-firstview');
 ?>
 <section class="contents">
   <?php
