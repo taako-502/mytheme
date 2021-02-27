@@ -8,6 +8,7 @@ if($parts_header_slider_type != 'none') {
   <ul class="c-slider-header">
     <?php
     $parts_header_slider_all_number = get_theme_mod('parts_header_slider_all_number','8');
+    $parts_header_slider_design = get_theme_mod('parts_header_slider_design','c-slider-design--image');
     switch ($parts_header_slider_type) {
       case 'date':
       case 'rand':
@@ -20,8 +21,8 @@ if($parts_header_slider_type != 'none') {
         foreach ( $slider_posts as $post ){
           setup_postdata( $post );
           ?>
-          <li>
-            <a class="c-aspect-9-16" href="<?php the_permalink(); ?>">
+          <li class="<?php echo $parts_header_slider_design; ?>">
+            <a class="hover-img c-aspect-9-16" href="<?php the_permalink(); ?>">
               <?php
               if (has_post_thumbnail()){
                 the_post_thumbnail('large');
@@ -32,11 +33,9 @@ if($parts_header_slider_type != 'none') {
               }
               ?>
             </a>
-            <a href="<?php the_permalink(); ?>">
-              <div class="hover-text">
-                <h3><?php the_title(); ?></h3>
-                <p><?php echo ut\getMetaDescription($post->ID, 120); ?></p>
-              </div>
+            <a class="hover-text" href="<?php the_permalink(); ?>">
+              <h3><?php the_title(); ?></h3>
+              <p><?php echo ut\getMetaDescription($post->ID, 120); ?></p>
             </a>
           </li>
           <?php
@@ -49,7 +48,7 @@ if($parts_header_slider_type != 'none') {
           $parts_header_slider_url = get_theme_mod('parts_header_slider_url_' . $i,'#');
           $slider_posts = url_to_postid($parts_header_slider_url);
           ?>
-          <li>
+          <li class="<?php echo $parts_header_slider_design; ?>">
             <a class="c-aspect-9-16" href="<?php echo $parts_header_slider_url; ?>">
               <?php
               if (has_post_thumbnail($slider_posts)) {
@@ -72,19 +71,6 @@ if($parts_header_slider_type != 'none') {
         }
         ?>
         <?php
-        break;
-      case 'firstview':
-        for ($i=1; $i <= 5; $i++) {
-          // code...
-          ?>
-          <li>
-            <img src="<?php echo get_theme_mod('parts_header_slider_img_'.$i,''); ?>" alt="">
-          </li>
-          <?php
-        }
-        break;
-      default:
-        // code...
         break;
     }
     ?>

@@ -99,6 +99,24 @@ function cusPartsHeaderSlider($wp_customize) {
     )
   );
 
+  $wp_customize->add_setting('parts_header_slider_design', array(
+    'default'    => 'c-slider-design--image',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_parts_header_slider_design',
+    array(
+      'label'    => 'スライダーのデザイン',
+      'section'  => 'parts_header_slider',
+      'settings' => 'parts_header_slider_design',
+      'type'     => 'radio',
+      'choices'  => array(
+        'c-slider-design--image'      => '画像型',
+        'c-slider-design--article'    => '記事型',
+      ),
+    )
+  );
+
   $wp_customize->add_setting('parts_header_slider_auto', array(
     'default'   => true,
     'transport' => 'refresh',
