@@ -67,6 +67,10 @@ function cusPartsHeaderSlider($wp_customize) {
     'selector' => '.c-slider-header',
   ));
 
+  $wp_customize->selective_refresh->add_partial('parts_header_slider_dot', array(
+    'selector' => '.slick-dots',
+  ));
+
   $wp_customize->add_setting('parts_header_slider_type', array(
     'default'    => 'news',
   ));
@@ -133,6 +137,21 @@ function cusPartsHeaderSlider($wp_customize) {
       'label'     => 'ドットの表示有無',
       'section'   => 'parts_header_slider',
       'settings'  => 'parts_header_slider_dot',
+      'type'      => 'checkbox',
+    )
+  );
+
+  $wp_customize->add_setting('parts_header_slider_centermode', array(
+    'default'   => true,
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_parts_header_slider_centermode',
+    array(
+      'label'     => 'スライダーのセンタリング',
+      'section'   => 'parts_header_slider',
+      'settings'  => 'parts_header_slider_centermode',
       'type'      => 'checkbox',
     )
   );
