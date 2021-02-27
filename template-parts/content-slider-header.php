@@ -8,7 +8,7 @@ if($parts_header_slider_type != 'none') {
   <ul class="c-slider-header">
     <?php
     $parts_header_slider_all_number = get_theme_mod('parts_header_slider_all_number','8');
-    $parts_header_slider_design = get_theme_mod('parts_header_slider_design','c-slider-design--image');
+    $parts_header_slider_design = get_theme_mod('parts_header_slider_design','c-slider-design--img-always');
     switch ($parts_header_slider_type) {
       case 'date':
       case 'rand':

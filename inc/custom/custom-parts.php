@@ -100,7 +100,7 @@ function cusPartsHeaderSlider($wp_customize) {
   );
 
   $wp_customize->add_setting('parts_header_slider_design', array(
-    'default'    => 'c-slider-design--image',
+    'default'    => 'c-slider-design--img-always',
   ));
 
   $wp_customize->add_control(
@@ -111,7 +111,8 @@ function cusPartsHeaderSlider($wp_customize) {
       'settings' => 'parts_header_slider_design',
       'type'     => 'radio',
       'choices'  => array(
-        'c-slider-design--image'      => '画像型',
+        'c-slider-design--img-always'      => '画像型（常にタイトル表示）',
+        'c-slider-design--img-hover'      => '画像型（ホバー時にタイトル表示）',
         'c-slider-design--article'    => '記事型',
       ),
     )

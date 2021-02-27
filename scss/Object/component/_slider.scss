@@ -26,17 +26,34 @@
   }
 }
 
-.c-slider-design--image{
+.c-slider-design--img-always {
   position: relative;
 
-  .hover-img {
-    margin: 0;
-    padding: 0;
-    img {
-      width: 100%;
-      height: 100%;
+  .hover-text {
+    position: absolute;
+    width: 100%;
+    height: 16%;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.65);
+
+    h3 {
+      position: absolute;
+      font-size: 28px;
+      color: white;
+      bottom: 0;
+      left: 0;
+    }
+
+    p {
+      display: none;
     }
   }
+}
+
+.c-slider-design--img-hover {
+  position: relative;
 
   &:hover .hover-text {
     /*不透明にして表示*/
