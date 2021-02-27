@@ -126,6 +126,21 @@ function cusPartsHeaderSlider($wp_customize) {
     )
   );
 
+  $wp_customize->add_setting('parts_header_slider_arrows', array(
+    'default'   => true,
+    'transport' => 'refresh',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_parts_header_slider_arrows',
+    array(
+      'label'     => 'スライダー両端の矢印の表示有無',
+      'section'   => 'parts_header_slider',
+      'settings'  => 'parts_header_slider_arrows',
+      'type'      => 'checkbox',
+    )
+  );
+
   $wp_customize->add_setting('parts_header_slider_dot', array(
     'default'   => true,
     'transport' => 'refresh',
