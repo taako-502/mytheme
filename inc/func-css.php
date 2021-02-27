@@ -213,7 +213,7 @@ function mytheme_customize_css(){
 
     .c-slider-header {
       <?php
-      $content_max_width = get_theme_mod('parts_header_slider_width_maxwindow','px') == "px" ? get_theme_mod('front_architect_content_width','1180') . "px" : "100vw";
+      $content_max_width = get_theme_mod('parts_header_slider_width_maxwindow','px') == "px" ? get_theme_mod('parts_header_slider_width','1180') . "px" : "100vw";
       ?>
       width: 100%;
       max-width: <?php echo $content_max_width; ?>;

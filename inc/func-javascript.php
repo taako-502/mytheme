@@ -43,6 +43,7 @@ function customize_js(){
          * ヘッダー下スライダーの設定
          */
         $('.c-slider-header').slick({
+          adaptiveHeight: false,//高さ固定
           centerMode: <?php echo get_theme_mod('parts_header_slider_centermode','true') == "true" ? "true" : "false"; ?>,
           slidesToShow: <?php echo $parts_header_slider_disp_number; ?>,
           dots: <?php echo get_theme_mod('parts_header_slider_dot','true') == "true" ? "true" : "false"; ?>,
