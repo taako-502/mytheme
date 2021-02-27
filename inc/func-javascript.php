@@ -14,7 +14,7 @@ namespace mytheme;
  * @return [type] [description]
  */
 function customize_js(){
-  $front_firstview_disp_number =get_theme_mod('front_firstview_disp_number','5');
+  $parts_header_slider_disp_number =get_theme_mod('parts_header_slider_disp_number','5');
   $front_firstview_type =get_theme_mod('front_firstview_type','date');
   ?>
   <script id="mytheme_customize_js" type="text/javascript">
@@ -43,8 +43,8 @@ function customize_js(){
          * ヘッダー下スライダーの設定
          */
         $('.c-slider-header').slick({
-          slidesToShow: <?php echo $front_firstview_disp_number; ?>,
-          dots:true,
+          slidesToShow: <?php echo $parts_header_slider_disp_number; ?>,
+          dots: <?php echo get_theme_mod('parts_header_slider_dot','true') == "true" ? "true" : "false"; ?>,
           autoplay: <?php echo get_theme_mod('parts_header_slider_auto','true') == "true" ? "true" : "false"; ?>,
           autoplaySpeed: <?php echo get_theme_mod('parts_header_slider_auto_speed','5000'); ?>,
         });

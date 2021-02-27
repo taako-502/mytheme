@@ -21,7 +21,7 @@ if($parts_header_slider_type != 'none') {
           setup_postdata( $post );
           ?>
           <li>
-            <a href="<?php the_permalink(); ?>">
+            <a class="c-aspect-9-16" href="<?php the_permalink(); ?>">
               <?php
               if (has_post_thumbnail()){
                 the_post_thumbnail('large');
@@ -31,6 +31,8 @@ if($parts_header_slider_type != 'none') {
                 <?php
               }
               ?>
+            </a>
+            <a href="<?php the_permalink(); ?>">
               <div class="hover-text">
                 <h3><?php the_title(); ?></h3>
                 <p><?php echo ut\getMetaDescription($post->ID, 120); ?></p>
@@ -48,16 +50,18 @@ if($parts_header_slider_type != 'none') {
           $slider_posts = url_to_postid($parts_header_slider_url);
           ?>
           <li>
-            <a href="<?php echo $parts_header_slider_url; ?>">
+            <a class="c-aspect-9-16" href="<?php echo $parts_header_slider_url; ?>">
               <?php
               if (has_post_thumbnail($slider_posts)) {
-                echo get_the_post_thumbnail( $slider_posts , 'large' );
+                echo get_the_post_thumbnail( $slider_posts , 'large');
               } else {
                 ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/thumbnail-default.jpg" alt="">
                 <?php
               }
               ?>
+            </a>
+            <a href="<?php echo $parts_header_slider_url; ?>">
               <div class="hover-text">
                 <h3><?php echo get_the_title($slider_posts); ?></h3>
                 <p><?php echo ut\getMetaDescription($slider_posts, 120); ?></p>

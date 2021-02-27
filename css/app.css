@@ -886,6 +886,7 @@ img {
 
 .c-slider-header {
   z-index: 0;
+  display: block;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -894,12 +895,37 @@ img {
 .c-slider-header .slick-list {
   position: relative;
 }
-.c-slider-header img {
-  max-width: 100%;
-}
-.c-slider-header li {
+.c-slider-header .slick-list li {
+  display: block;
+  background-color: white;
   margin-left: 13px;
   margin-right: 13px;
+}
+.c-slider-header .slick-list li a {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+}
+.c-slider-header .slick-list li a img {
+  max-width: 100%;
+}
+.c-slider-header .slick-list li a img:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
+.c-slider-header .slick-list li a .hover-text {
+  padding: 0 1em 0.6em 1em;
+  height: 100%;
+}
+.c-slider-header .slick-list li a .hover-text h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+  font-size: 16px;
+}
+.c-slider-header .slick-list li a .hover-text p {
+  color: #666;
+  font-size: 12px;
 }
 
 .p-category {
