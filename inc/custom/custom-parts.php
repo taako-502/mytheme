@@ -389,6 +389,24 @@ function cusPartsHeaderSlider($wp_customize) {
     )
   );
 
+  $wp_customize->add_setting('parts_header_slider_width_maxwindow', array(
+    'default'    => 'max',
+  ));
+
+  $wp_customize->add_control(
+    'ctl_parts_header_slider_width_maxwindow',
+    array(
+      'label'    => 'スライダーの幅設定',
+      'section'  => 'parts_header_slider',
+      'settings' => 'parts_header_slider_width_maxwindow',
+      'type'     => 'radio',
+      'choices'  => array(
+        'px'      => 'pxで設定する',
+        'max'      => 'ウィンドウの最大幅に合わせる',
+      ),
+    )
+  );
+
   $wp_customize->add_setting('parts_header_slider_width', array(
     'default' => '1180',
     'transport' => 'postMessage',

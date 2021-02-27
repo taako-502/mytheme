@@ -109,6 +109,26 @@ jQuery(document).ready(function($) {
           sliderAooNumberVisible(newval);
         });
       });
+
+      /**
+       * スライダーの横幅をpx指定するための機能の可視性制御
+       * @param  {[type]} newval [description]
+       * @return {[type]}        [description]
+       */
+      function sliderWidthMaxwindowVisible(val) {
+        if (val === "px") {
+          jQuery("#customize-control-ctl_parts_header_slider_width").removeClass('u-display__none');
+        } else {
+          jQuery("#customize-control-ctl_parts_header_slider_width").addClass('u-display__none');
+        }
+      }
+      /* おすすめ記事選択時のみ表示 */
+      wp.customize('parts_header_slider_width_maxwindow', function(value) {
+        sliderWidthMaxwindowVisible(value.get());
+        value.bind(function(newval) {
+          sliderWidthMaxwindowVisible(newval);
+        });
+      });
     });
   })(jQuery);
 });
