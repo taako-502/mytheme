@@ -4,12 +4,32 @@
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
 function cusParts($wp_customize) {
+  cusPartsPartial($wp_customize);
   cusPartsPanel($wp_customize);
   cusPartsSection($wp_customize);
   /* ヘッダー下スライダ- */
   cusPartsHeaderSlider($wp_customize);
   /* スクロールボタン */
   cusPartsScroll($wp_customize);
+}
+
+/**
+ * リンクの設定
+ * @param  [type] $wp_customize [description]
+ * @return [type]               [description]
+ */
+function cusPartsPartial($wp_customize) {
+  $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
+    'selector' => '.c-slider-header',
+  ));
+
+  $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
+    'selector' => '.c-slider-header',
+  ));
+
+  $wp_customize->selective_refresh->add_partial('parts_header_slider_dot', array(
+    'selector' => '.slick-dots',
+  ));
 }
 
 /**
@@ -59,18 +79,6 @@ function cusPartsSection($wp_customize) {
  * @return [type]               [description]
  */
 function cusPartsHeaderSlider($wp_customize) {
-  $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
-    'selector' => '.c-slider-header',
-  ));
-
-  $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
-    'selector' => '.c-slider-header',
-  ));
-
-  $wp_customize->selective_refresh->add_partial('parts_header_slider_dot', array(
-    'selector' => '.slick-dots',
-  ));
-
   $wp_customize->add_setting('parts_header_slider_type', array(
     'default'    => 'news',
   ));
