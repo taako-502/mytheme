@@ -212,12 +212,12 @@ function mytheme_customize_css(){
     }
 
     .c-slider-header {
-      max-width: <?php echo get_theme_mod('front_firstview_width','1180'); ?>px;
+      max-width: <?php echo get_theme_mod('parts_header_slider_width','1180'); ?>px;
     }
 
     .c-slider-header li {
-      margin-left: <?php echo get_theme_mod('front_firstview_article_margin_side','13'); ?>px;
-      margin-right: <?php echo get_theme_mod('front_firstview_article_margin_side','13'); ?>px;
+      margin-left: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
+      margin-right: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
     }
 
     /* 文字サイズ（PC） */
