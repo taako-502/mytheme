@@ -9,7 +9,7 @@ function cusFront( $wp_customize ) {
   /* 全体構成 */
   cusFrontArchitect($wp_customize);
   /* ファーストビュー */
-  cusFrontFirstview($wp_customize);
+  //cusFrontFirstview($wp_customize);
   /* 見出し */
   cusFrontHeading($wp_customize);
 }
@@ -43,7 +43,7 @@ function cusFrontSection($wp_customize) {
     )
   );
 
-  $wp_customize->add_section(
+/* $wp_customize->add_section(
     'front_firstview',
     array(
       'title'    => 'ファーストビュー',
@@ -51,6 +51,7 @@ function cusFrontSection($wp_customize) {
       'priority' => 11,
     )
   );
+*/
 
   $wp_customize->add_section(
     'front_heading',
