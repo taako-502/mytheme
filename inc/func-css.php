@@ -161,6 +161,28 @@ function mytheme_customize_css(){
     // ========================================================================*/
     /* Component
        ----------------------------------------------------------------- */
+    .c-slider-header {
+      <?php
+      $content_max_width = get_theme_mod('parts_header_slider_width_maxwindow','px') == "px" ? get_theme_mod('parts_header_slider_width','1180') . "px" : "100vw";
+      ?>
+      width: 100%;
+      max-width: <?php echo $content_max_width; ?>;
+    }
+
+    .c-slider-header li {
+      margin-left: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
+      margin-right: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
+    }
+
+    .c-article--category:hover {
+      color: <?php echo get_theme_mod('footer_text_hover_color','#3E9FD2') ?>;
+    }
+
+    .hover-text h3:hover,
+    .hover-text p:hover {
+      color: <?php echo get_theme_mod('footer_text_hover_color','#3E9FD2') ?>;
+    }
+
     .c-heading--main {
       color: <?php echo get_theme_mod('front_heading_color','#333'); ?>;
       font-size: <?php echo get_theme_mod('front_heading_fontsize','25'); ?>px;
@@ -211,18 +233,8 @@ function mytheme_customize_css(){
       background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
     }
 
-    .c-slider-header {
-      <?php
-      $content_max_width = get_theme_mod('parts_header_slider_width_maxwindow','px') == "px" ? get_theme_mod('parts_header_slider_width','1180') . "px" : "100vw";
-      ?>
-      width: 100%;
-      max-width: <?php echo $content_max_width; ?>;
-    }
-
-    .c-slider-header li {
-      margin-left: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
-      margin-right: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
-    }
+    /* Project
+       ----------------------------------------------------------------- */
 
     /* 文字サイズ（PC） */
     article.p-article p { font-size: <?php echo ut\getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
