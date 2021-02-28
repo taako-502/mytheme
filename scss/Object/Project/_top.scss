@@ -90,22 +90,6 @@ a.p-recommend--a {
   }
 }
 
-.p-news-card--category {
-  position: absolute;
-  display: inline-block;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.6);
-  top: 6px;
-  right :6px;
-  padding: 0 5px;
-  color: dimgray;
-  z-index: 100;
-
-  span {
-    font-size: 14px;
-  }
-}
-
 .p-news-card--content {
   display: block;
   padding: 0.5em 9px 1.5em 9px;

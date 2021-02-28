@@ -22,6 +22,16 @@ if($parts_header_slider_type != 'none') {
           setup_postdata( $post );
           ?>
           <li class="<?php echo $parts_header_slider_design; ?>">
+            <?php
+            $category = get_the_category();
+            if(isset($category[0])){
+              $cat_name = $category[0]->cat_name;
+              $cat_link = get_category_link($category[0]->term_id);
+              ?>
+              <a class="c-article--category" href="<?php echo $cat_link; ?>"><span><?php echo $cat_name; ?></span></a>
+            <?php
+            }
+            ?>
             <a class="hover-img c-aspect-9-16" href="<?php the_permalink(); ?>">
               <?php
               if (has_post_thumbnail()){
@@ -49,6 +59,16 @@ if($parts_header_slider_type != 'none') {
           $slider_posts = url_to_postid($parts_header_slider_url);
           ?>
           <li class="<?php echo $parts_header_slider_design; ?>">
+            <?php
+            $category = get_the_category();
+            if(isset($category[0])){
+              $cat_name = $category[0]->cat_name;
+              $cat_link = get_category_link($category[0]->term_id);
+              ?>
+              <a class="c-article--category" href="<?php echo $cat_link; ?>"><span><?php echo $cat_name; ?></span></a>
+            <?php
+            }
+            ?>
             <a class="c-aspect-9-16" href="<?php echo $parts_header_slider_url; ?>">
               <?php
               if (has_post_thumbnail($slider_posts)) {
