@@ -1,8 +1,4 @@
 <?php
-get_template_part('utility/utility');
-require_once( plugin_dir_path(__FILE__) . "class/SchemaClass.php");
-require_once( plugin_dir_path(__FILE__) . "class/OgpClass.php");
-
 /**
  * テーマのパス, URI
  */
@@ -12,6 +8,23 @@ define( 'MYTHEME_THEME_URI', get_template_directory_uri() );
 //グローバル変数
 global $value;
 global $error;
+
+/**
+ * CLASSのオートロード
+ */
+spl_autoload_register(
+	function( $classname ) {
+
+		// 名前に Mytheme_Theme がなければオートロードしない。
+		if ( strpos( $classname, 'Mytheme_Theme' ) === false && strpos( $classname, 'Mytheme_Theme' ) === false) return;
+
+		$classname = str_replace( '\\', '/', $classname );
+		$classname = str_replace( 'Mytheme_Theme/', '', $classname );
+		$file      = MYTHEME_THEME_PATH . '/class/' . $classname . '.php';
+
+		if ( file_exists( $file ) ) require $file;
+	}
+);
 
 /**
  * テーマの最新バージョンがないか確認する
@@ -56,10 +69,10 @@ function main_enqueue_scripts() {
   } else {
 		if(isset($post->ID)){
 			//OGP
-			$oc = new OgpClass;
+			$oc = new \Mytheme_Theme\OgpClass;
 			echo $oc->getOgpMeta($post->ID);
 			//構造化マークアップ
-			$sc = new SchemaClass;
+			$sc = new \Mytheme_Theme\SchemaClass;
 			$sc->getStructuredData($post->ID);
 		}
 		//CSS
@@ -119,4 +132,21 @@ add_filter( 'get_the_archive_title', function ($title) {
   }
   return $title;
 });
+
+/**
+ * Mytheme_Theme
+ */
+class Mytheme extends \Mytheme_Theme\Data {
+
+	public function __construct() {
+
+		// データをセット
+		self::init();
+	}
+}
+
+/**
+ * Mytheme start!
+ */
+new \Mytheme();
 ?>

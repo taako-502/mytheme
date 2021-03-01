@@ -1,10 +1,12 @@
 <?php
+namespace Mytheme_Theme\Customizer\Control;
+
 require_once( ABSPATH . WPINC . '/class-wp-customize-control.php' );
 
 /**
  * レンジスライダー
  */
-class WP_Customize_Range extends WP_Customize_Control {
+class WP_Customize_Range extends \WP_Customize_Control {
   public $type = 'range';
 
   public function __construct( $manager, $id, $args = array() ) {

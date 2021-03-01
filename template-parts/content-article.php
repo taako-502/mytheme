@@ -1,3 +1,6 @@
+<?php
+$ut = new \Mytheme_Theme\Utility;
+?>
 <div class="p-news-card">
   <?php
   $category = get_the_category();
@@ -28,7 +31,7 @@
       ?>
     </h2>
     <p class="p-news-card--description">
-      <?php echo ut\getDescription( $post->ID, 120); ?>
+      <?php echo $ut->getDescription( $post->ID, 120); ?>
     </p>
   </a>
 </div>

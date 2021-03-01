@@ -1,6 +1,7 @@
 <?php
+$ut = new \Mytheme_Theme\Utility;
 $analytics_code = get_theme_mod('analytics','');
-if(ut\isNullOrWhitespace(trim($analytics_code))){
+if($ut->isNullOrWhitespace(trim($analytics_code))){
   return;
 }
 ?>

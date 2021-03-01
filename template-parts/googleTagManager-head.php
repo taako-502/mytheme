@@ -1,6 +1,7 @@
 <?php
+$ut = new \Mytheme_Theme\Utility;
 $gtmId = get_theme_mod('gtm-id', '');
-if(ut\isNullOrWhitespace(trim($gtmId))){
+if($ut->isNullOrWhitespace(trim($gtmId))){
   return;
 }
 ?>

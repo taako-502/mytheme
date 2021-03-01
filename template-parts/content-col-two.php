@@ -2,7 +2,7 @@
   <main class="l-main u-width-col-2">
     <?php
     // パンくずリスト
-    $sc = New SchemaClass;
+    $sc = New \Mytheme_Theme\SchemaClass;
     echo $sc->getBreadcrumb();
     if(is_single()) {
       // カテゴリー表示

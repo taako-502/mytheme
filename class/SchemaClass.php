@@ -1,4 +1,6 @@
 <?php
+namespace Mytheme_Theme;
+
 /**
  * 構造化マークアップに関する処理をまとめたクラス
  */
