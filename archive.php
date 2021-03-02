@@ -1,11 +1,14 @@
-<?php get_header(); ?>
+<?php
+$ut = new \Mytheme_Theme\Utility;
+get_header();
+?>
 <section class="contents">
   <main class="l-main u-width-col-2">
     <h1>記事一覧</h1>
     <?php
     $cat_id = get_query_var('cat');
     $tag_id = get_query_var('tag_id');
-    if(!ut\isNullOrWhitespace($cat_id)){
+    if(!$ut->isNullOrWhitespace($cat_id)){
       // カテゴリ検索の場合
       $cat = get_category($cat_id);
       $cat_name = $cat->cat_name;
@@ -15,7 +18,7 @@
         <a href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a>
       </div>
       <?php
-    } elseif(!ut\isNullOrWhitespace($tag_id)){
+    } elseif(!$ut->isNullOrWhitespace($tag_id)){
       // カテゴリ検索の場合
       $tag = get_tag($tag_id);
       $tag_name = $tag->name;
