@@ -1,6 +1,6 @@
 <?php
 require_once( plugin_dir_path(__FILE__) . "../class/MailClass.php");
-$mc = new MailClass;
+$mc = new \Mytheme_Theme\MailClass;
 $results = $mc->selectMailboxAll();
 ?>
 <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/css/admin.css'); ?>">
