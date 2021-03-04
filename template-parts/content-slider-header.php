@@ -1,5 +1,4 @@
 <?php
-$ut = new \Mytheme_Theme\Utility;
 /**
  * スライダー
  */
@@ -46,7 +45,7 @@ if($parts_header_slider_type != 'none') {
             </a>
             <a class="hover-text" href="<?php the_permalink(); ?>">
               <h3><?php the_title(); ?></h3>
-              <p><?php echo $ut->getMetaDescription($post->ID, 120); ?></p>
+              <p><?php echo \Mytheme_Theme\Utility::getMetaDescription($post->ID, 120); ?></p>
             </a>
           </li>
           <?php
@@ -84,7 +83,7 @@ if($parts_header_slider_type != 'none') {
             <a href="<?php echo $parts_header_slider_url; ?>">
               <div class="hover-text">
                 <h3><?php echo get_the_title($slider_posts); ?></h3>
-                <p><?php echo $ut->getMetaDescription($slider_posts, 120); ?></p>
+                <p><?php echo \Mytheme_Theme\Utility::getMetaDescription($slider_posts, 120); ?></p>
               </div>
             </a>
           </li>

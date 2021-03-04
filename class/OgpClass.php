@@ -20,9 +20,9 @@ class OgpClass{
     if (is_singular()){
       //記事ページと固定ページ
       $title = get_post_meta($post->ID, '_ogp_title', true); //手入力
-      $title = $ut->isNullOrEmpty(trim($title)) ? get_the_title() : $title;
+      $title = \Mytheme_Theme\Utility::isNullOrEmpty(trim($title)) ? get_the_title() : $title;
       $description = get_post_meta($post->ID,  '_ogp_description', true); //手入力
-      $description = $ut->isNullOrEmpty($description) ? $ut->getDescription($post->ID,90) : $description;
+      $description = \Mytheme_Theme\Utility::isNullOrEmpty($description) ? \Mytheme_Theme\Utility::getDescription($post->ID,90) : $description;
       $url = get_the_permalink();
     } else {
       $title = get_bloginfo('name');
@@ -38,7 +38,7 @@ class OgpClass{
     if (is_singular()){
       //記事ページと固定ページ
       $ogp_img = get_post_meta($post->ID, '_ogp_img', true);
-      if(! $ut->isNullOrEmpty(trim($ogp_img))) {
+      if(! \Mytheme_Theme\Utility::isNullOrEmpty(trim($ogp_img))) {
         //個別に設定したOGP画像がある場合
         $result .= '<meta property="og:image" content="'.$ogp_img.'">'."\n";
       } else if (has_post_thumbnail()) {

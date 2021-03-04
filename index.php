@@ -1,5 +1,4 @@
 <?php
-$ut = new \Mytheme_Theme\Utility;
 get_header();
 //-wp_optionsテーブルから設定値を取得
 $recoleftimg = get_theme_mod('reco-left-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
@@ -9,9 +8,9 @@ $recocenterurl = get_theme_mod('reco-center-url','#');
 $recorightimg = get_theme_mod('reco-right-img', get_template_directory_uri() ."/images/thumbnail-default.jpg");
 $recorighturl = get_theme_mod('reco-right-url','#');
 //画像がなかった場合にデフォルトを設定
-$recoleftimg = $ut->isNullOrEmpty($recoleftimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recoleftimg;
-$recocenterimg = $ut->isNullOrEmpty($recocenterimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recocenterimg;
-$recorightimg = $ut->isNullOrEmpty($recorightimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recorightimg;
+$recoleftimg = \Mytheme_Theme\Utility::isNullOrEmpty($recoleftimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recoleftimg;
+$recocenterimg = \Mytheme_Theme\Utility::isNullOrEmpty($recocenterimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recocenterimg;
+$recorightimg = \Mytheme_Theme\Utility::isNullOrEmpty($recorightimg) ? get_template_directory_uri() ."/images/thumbnail-default.jpg" : $recorightimg;
 // 読み込み
 global $page_title;
 $page_title = "home";

@@ -1,5 +1,4 @@
 <?php
-$ut = new \Mytheme_Theme\Utility;
 ?>
 <div class="p-news-card">
   <?php
@@ -31,7 +30,7 @@ $ut = new \Mytheme_Theme\Utility;
       ?>
     </h2>
     <p class="p-news-card--description">
-      <?php echo $ut->getDescription( $post->ID, 120); ?>
+      <?php echo \Mytheme_Theme\Utility::getDescription( $post->ID, 120); ?>
     </p>
   </a>
 </div>

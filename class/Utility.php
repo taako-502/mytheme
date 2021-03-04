@@ -13,7 +13,7 @@ class Utility {
   * @param  [type]  $val [description]
   * @return boolean      nullか空白ならtrueを返却
   */
-  public function isNullOrEmpty($obj) {
+  public static function isNullOrEmpty($obj) {
     if($obj === 0 || $obj === "0") {
       return false;
     }
@@ -25,7 +25,7 @@ class Utility {
   * @param  [type]  $obj [description]
   * @return boolean      nullかスペースならtrueを返却
   */
-  public function isNullOrWhitespace($obj) {
+  public static function isNullOrWhitespace($obj) {
     if(self::isNullOrEmpty($obj) === true){
       return true;
     }
@@ -41,7 +41,7 @@ class Utility {
    * @param  String $default デフォルト値
    * @return String          値（空白の場合デフォルト値）
    */
-  public function getValOrDef( $val, $default){
+  public static function getValOrDef( $val, $default){
     return isNullOrWhitespace($val) ? $default : $val ;
   }
 
@@ -51,7 +51,7 @@ class Utility {
    * @param  Integer $len     文字数
    * @return String           ディスクリプション
    */
-  public function getDescription($id,$len){
+  public static function getDescription($id,$len){
     $description = get_post($id)->post_content;
     $description = str_replace(array("\r\n","\r","\n","&nbsp;"),'',$description);
     $description = wp_strip_all_tags($description);
@@ -65,7 +65,7 @@ class Utility {
    * @param  Integer $len     文字数
    * @return String           メタディスクリプション（メタディスクリプションの設定を行っていない場合は、記事からディスクリプションを生成）
    */
-  public function getMetaDescription($id,$len){
+  public static function getMetaDescription($id,$len){
     $description = get_post_meta($id, '_meta_description', true);
     return !self::isNullOrEmpty($description) ? $description : self::getDescription($id,$len);
   }
@@ -76,7 +76,7 @@ class Utility {
    * @param  integer $alpha      [description]
    * @return [type]              [description]
    */
-  public function getConversionRgba($color_code, $alpha = 1) {
+  public static function getConversionRgba($color_code, $alpha = 1) {
     $color_code = preg_replace('/#/', '', $color_code);
 
     if(mb_strlen($color_code) == 6){

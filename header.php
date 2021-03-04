@@ -1,5 +1,4 @@
 <?php
-$ut = new \Mytheme_Theme\Utility;
 //-wp_optionsテーブルから設定値を取得
 $ogpFbAdminId = get_theme_mod('ogp-fb-adminid', '');
 $ogpFbAppId = get_theme_mod('ogp-fb-appid', '');
@@ -7,7 +6,7 @@ $ogpFbImgArticle = get_theme_mod('ogp-fb-img-article', '');
 $ogpFbImgTop = get_theme_mod('ogp-fb-img-top', '');
 //メタディスクリプションの設定
 if(isset($post->ID)){
-  $description = $ut->getMetaDescription($post->ID, 220);
+  $description = \Mytheme_Theme\Utility::getMetaDescription($post->ID, 220);
 }
 //ページ読み込み
 global $page_title;
