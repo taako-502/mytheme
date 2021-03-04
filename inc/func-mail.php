@@ -105,7 +105,7 @@ function send_mail() {
   $from = "sendonly@example.com";
   $headers = "From: {$fromname} <{$from}>" . "\r\n";
   //メールの内容をデータベースに登録
-  $mc = new MailClass;
+  $mc = new \Mytheme_Theme\MailClass;
   $mc->insertMailbox($value['name'],$value['email'],$value['content']);
   //メール送信
   if(MAIL_TEST_FLG){
@@ -162,7 +162,7 @@ function add_custom_mailbox(){
  * @return [type] [description]
  */
 function mailbox_create_table() {
-  $mc = new MailClass;
+  $mc = new \Mytheme_Theme\MailClass;
   $mc->createTableMailbox();
   //バージョン情報を付加
   global $jal_db_version;
