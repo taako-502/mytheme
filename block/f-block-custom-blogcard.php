@@ -1,11 +1,11 @@
 <?php
-
 /**
 * 内部リンクカード（バナータイプ）
 */
 function custom_blogcard_dynamic_render_callback( $attr, $content ) {
+  $ut = new \Mytheme_Theme\Utility;
   $post_id = url_to_postid($attr['url_blogcard']);
-  $description = ut\getDescription($post_id,50);
+  $description = $ut->getDescription($post_id,50);
   $thumbnail_url = has_post_thumbnail()
                   ? get_the_post_thumbnail( $post_id , 'thumbnail' )
                   : "<img width=\"150\" height=\"150\" src=\"" . get_stylesheet_directory_uri() . "/images/thumbnail-default.jpg\" />";
