@@ -90,7 +90,7 @@ function cusBgColor($wp_customize){
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_section_bg_opacity',
       array(
@@ -127,7 +127,7 @@ function cusBgShadow($wp_customize){
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_section_shadow_len',
       array(
@@ -148,7 +148,7 @@ function cusBgShadow($wp_customize){
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_section_shadow_opacity',
       array(

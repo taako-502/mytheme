@@ -372,7 +372,7 @@ function cusFrontHeading($wp_customize){
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_front_heading_fontsize',
       array(
@@ -480,7 +480,7 @@ function cusFrontHeading($wp_customize){
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_front_heading_padding_top_and_bottom',
       array(
@@ -500,7 +500,7 @@ function cusFrontHeading($wp_customize){
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_front_heading_padding_left',
       array(

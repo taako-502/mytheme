@@ -139,7 +139,7 @@ function cusPartsHeaderSlider($wp_customize) {
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_parts_header_slider_auto_speed',
       array(
@@ -204,7 +204,7 @@ function cusPartsHeaderSlider($wp_customize) {
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_parts_header_slider_all_number',
       array(
@@ -394,7 +394,7 @@ function cusPartsHeaderSlider($wp_customize) {
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_parts_header_slider_disp_number',
       array(
@@ -432,7 +432,7 @@ function cusPartsHeaderSlider($wp_customize) {
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_parts_header_slider_width',
       array(
@@ -453,7 +453,7 @@ function cusPartsHeaderSlider($wp_customize) {
   ));
 
   $wp_customize->add_control(
-    new WP_Customize_Range(
+    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
       $wp_customize,
       'ctl_parts_header_slider_article_margin_side',
       array(
