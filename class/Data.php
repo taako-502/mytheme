@@ -199,7 +199,6 @@ class Data {
 		return self::$settings;
 	}
 
-
 	/**
 	 * カスタマイザーのデフォルト値を取得
 	 */

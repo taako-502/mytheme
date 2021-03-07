@@ -84,6 +84,33 @@ trait Default_Data {
 			'post_relation_type'        => 'category',
 			'pn_link_is_same_term'      => false,
 
+			// 管理画面
+			'pc_p_size'                 => '17',
+			'pc_h1_size'                => '25',
+			'pc_h2_size'                => '24',
+			'pc_h3_size'                => '19',
+			'pc_h4_size'                => '18',
+			'pc_h5_size'                => '18',
+			'pc_h6_size'                => '18',
+			'tb_p_size'                 => '17',
+			'tb_h1_size'                => '25',
+			'tb_h2_size'                => '24',
+			'tb_h3_size'                => '19',
+			'tb_h4_size'                => '18',
+			'tb_h5_size'                => '18',
+			'tb_h6_size'                => '18',
+			'sm_p_size'                 => '17',
+			'sm_h1_size'                => '25',
+			'sm_h2_size'                => '24',
+			'sm_h3_size'                => '19',
+			'sm_h4_size'                => '18',
+			'sm_h5_size'                => '18',
+			'sm_h6_size'                => '18',
+			'header_bg_color'           => '#333',
+			'nav_txt_color'             => '#FFF',
+			'bg_color'                  => '#FFF',
+			'section_bg_opacity'        => '100',
+			'relevance_select'          => 'category',
 		);
 	}
 }

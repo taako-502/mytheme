@@ -14,9 +14,6 @@
  */
 function mytheme_customize_css(){
 
-  //変数読み込み
-  require_once( plugin_dir_path(__FILE__) . "../admin/admin-init.php");
-  require_once( plugin_dir_path(__FILE__) . "../utility/variable.php");
   ?>
   <style type="text/css">
     /* ==========================================================================

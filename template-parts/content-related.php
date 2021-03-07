@@ -1,11 +1,6 @@
 <?php
-//require_once( plugin_dir_path(__FILE__) . "../admin/admin-init.php");
 $args = array();
-$relevanceSelect = get_theme_mod('relevance-select','category');
-$relevanceUrl1 = get_theme_mod('relevance-url1','');
-$relevanceUrl2 = get_theme_mod('relevance-url2','');
-$relevanceUrl3 = get_theme_mod('relevance-url3','');
-$relevanceUrl4 = get_theme_mod('relevance-url4','');
+$relevanceSelect = Mytheme::get_setting('relevance-select');
 switch($relevanceSelect){
   case "category":
   case "tag":
@@ -33,10 +28,10 @@ switch($relevanceSelect){
     );
     break;
   case "url":
-    $kwds[0] = isset($relevanceUrl1) ? url_to_postid($relevanceUrl1) : "";
-    $kwds[1] = isset($relevanceUrl2) ? url_to_postid($relevanceUrl2) : "";
-    $kwds[2] = isset($relevanceUrl3) ? url_to_postid($relevanceUrl3) : "";
-    $kwds[3] = isset($relevanceUrl4) ? url_to_postid($relevanceUrl4) : "";
+    $kwds[0] = isset(Mytheme::get_setting('relevance_url1')) ? url_to_postid(Mytheme::get_setting('relevance_url1')) : "";
+    $kwds[1] = isset(Mytheme::get_setting('relevance_url2')) ? url_to_postid(Mytheme::get_setting('relevance_url2')) : "";
+    $kwds[2] = isset(Mytheme::get_setting('relevance_url3')) ? url_to_postid(Mytheme::get_setting('relevance_url3')) : "";
+    $kwds[3] = isset(Mytheme::get_setting('relevance_url4')) ? url_to_postid(Mytheme::get_setting('relevance_url4')) : "";
     $args = array(
       'post_type' => 'post',
       'posts_per_page' => '4',

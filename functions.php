@@ -139,7 +139,6 @@ add_filter( 'get_the_archive_title', function ($title) {
 class Mytheme extends \Mytheme_Theme\Data {
 
 	public function __construct() {
-
 		// データをセット
 		self::init();
 	}
