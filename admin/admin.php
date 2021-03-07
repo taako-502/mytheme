@@ -5,6 +5,7 @@ if(isset($_POST['save'])) {
   foreach (\Mytheme_Theme\Admin::get_admin_key() as $key) {
     set_theme_mod( $key, $_POST[$key]);
   }
+  //wp_optionsに保存したデータをMythemeクラスに読み込み
   Mytheme::set_settings_data();
   echo "データを更新しました。";
 }
