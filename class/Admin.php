@@ -1,7 +1,14 @@
 <?php
 namespace Mytheme_Theme;
 
+/**
+ * 管理画面を制御するクラス
+ */
 class Admin {
+  /**
+   * 管理画面で設定するキーのリスト
+   * @return Array キーの配列
+   */
   public static function get_admin_key() {
     return Array(
       /* 全体設定 */
@@ -54,6 +61,14 @@ class Admin {
       'adsCd_on_content_table',
       'adsCd_top_card',
     );
+  }
+
+  /**
+   * [get_key description]
+   * @return [type] [description]
+   */
+  public static function add_input($type = "", $label = "", $key = ""){
+    return "<label for".$key.">".$label."</label><input type=".$type." id=".$key." class=".$key." name=".$key." value=".\Mytheme::get_setting($key)." placeholder=".\Mytheme::get_default_setting($key).">";
   }
 }
  ?>

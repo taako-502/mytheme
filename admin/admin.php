@@ -31,33 +31,33 @@ if(isset($_POST['save'])) {
       		<p class="p-admin_description">文字の設定</p>
           <div class="setting">
             <h3>PC閲覧時（980px～）</h3>
-            <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc_p_size" value="<?php echo Mytheme::get_setting("pc_p_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_p_size"); ?>"> px</p>
-            <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="pc_h1_size" value="<?php echo Mytheme::get_setting("pc_h1_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h1_size"); ?>"> px</p>
-            <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="pc_h2_size" value="<?php echo Mytheme::get_setting("pc_h2_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h2_size"); ?>"> px</p>
-            <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="pc_h3_size" value="<?php echo Mytheme::get_setting("pc_h3_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h3_size"); ?>"> px</p>
-            <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="pc_h4_size" value="<?php echo Mytheme::get_setting("pc_h4_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h4_size"); ?>"> px</p>
-            <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="pc_h5_size" value="<?php echo Mytheme::get_setting("pc_h5_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h5_size"); ?>"> px</p>
-            <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="pc_h6_size" value="<?php echo Mytheme::get_setting("pc_h6_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h6_size"); ?>"> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","pタグ&ensp;&emsp;","pc_p_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h1タグ&ensp;&emsp;","pc_h1_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h2タグ&ensp;&emsp;","pc_h2_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h3タグ&ensp;&emsp;","pc_h3_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h4タグ&ensp;&emsp;","pc_h4_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h5タグ&ensp;&emsp;","pc_h5_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h6タグ&ensp;&emsp;","pc_h6_size"); ?> px</p>
           </div>
           <div class="setting">
             <h3>タブレット閲覧時（768px～979px）</h3>
-            <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="tb_p_size" value="<?php echo Mytheme::get_setting("tb_p_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_p_size"); ?>"> px</p>
-            <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="tb_h1_size" value="<?php echo Mytheme::get_setting("tb_h1_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_h1_size"); ?>"> px</p>
-            <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="tb_h2_size" value="<?php echo Mytheme::get_setting("tb_h2_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_h2_size"); ?>"> px</p>
-            <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="tb_h3_size" value="<?php echo Mytheme::get_setting("tb_h3_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_h3_size"); ?>"> px</p>
-            <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="tb_h4_size" value="<?php echo Mytheme::get_setting("tb_h4_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_h4_size"); ?>"> px</p>
-            <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="tb_h5_size" value="<?php echo Mytheme::get_setting("tb_h5_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_h5_size"); ?>"> px</p>
-            <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="tb_h6_size" value="<?php echo Mytheme::get_setting("tb_h6_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("tb_h6_size"); ?>"> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","pタグ&ensp;&emsp;","tb_p_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h1タグ&ensp;&emsp;","tb_h1_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h2タグ&ensp;&emsp;","tb_h2_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h3タグ&ensp;&emsp;","tb_h3_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h4タグ&ensp;&emsp;","tb_h4_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h5タグ&ensp;&emsp;","tb_h5_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h6タグ&ensp;&emsp;","tb_h6_size"); ?> px</p>
           </div>
           <div class="setting">
             <h3>スマートフォン閲覧時(~768px)</h3>
-            <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="sm_p_size" value="<?php echo Mytheme::get_setting("sm_p_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_p_size"); ?>"> px</p>
-            <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="sm_h1_size" value="<?php echo Mytheme::get_setting("sm_h1_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_h1_size"); ?>"> px</p>
-            <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="sm_h2_size" value="<?php echo Mytheme::get_setting("sm_h2_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_h2_size"); ?>"> px</p>
-            <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="sm_h3_size" value="<?php echo Mytheme::get_setting("sm_h3_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_h3_size"); ?>"> px</p>
-            <p class="fontsize"><b>h4タグ&emsp;</b><input type="number" name="sm_h4_size" value="<?php echo Mytheme::get_setting("sm_h4_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_h4_size"); ?>"> px</p>
-            <p class="fontsize"><b>h5タグ&emsp;</b><input type="number" name="sm_h5_size" value="<?php echo Mytheme::get_setting("sm_h5_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_h5_size"); ?>"> px</p>
-            <p class="fontsize"><b>h6タグ&emsp;</b><input type="number" name="sm_h6_size" value="<?php echo Mytheme::get_setting("sm_h6_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("sm_h6_size"); ?>"> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","pタグ&ensp;&emsp;","sm_p_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h1タグ&ensp;&emsp;","sm_h1_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h2タグ&ensp;&emsp;","sm_h2_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h3タグ&ensp;&emsp;","sm_h3_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h4タグ&ensp;&emsp;","sm_h4_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h5タグ&ensp;&emsp;","sm_h5_size"); ?> px</p>
+            <p class="fontsize"><?php echo \Mytheme_Theme\Admin::add_input("number","h6タグ&ensp;&emsp;","sm_h6_size"); ?> px</p>
           </div>
     		</li>
     		<li>
