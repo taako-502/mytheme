@@ -68,7 +68,7 @@ class Admin {
    * @return [type] [description]
    */
   public static function add_input($type = "", $label = "", $key = ""){
-    return "<label for".$key.">".$label."</label><input type=".$type." id=".$key." class=".$key." name=".$key." value=".\Mytheme::get_setting($key)." placeholder=".\Mytheme::get_default_setting($key).">";
+    return '<label for="'.$key.'">'.$label.'</label><input type="'.$type.'" id="'.$key.'" class="'.$key.'" name="'.$key.'" value="'.\Mytheme::get_setting($key).'" placeholder="'.\Mytheme::get_default_setting($key).'">';
   }
 }
  ?>

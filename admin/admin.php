@@ -65,17 +65,15 @@ if(isset($_POST['save'])) {
       		<p class="p-admin_description">SEOに関する設定</p>
           <div class="setting">
             <div class="setting">
-              <h2>アナリティクス</h2>
-              <label for="analytics">トラッキングコード：</label><input id="analytics" type="text" name="analytics" value="<?php echo Mytheme::get_setting("analytics"); ?>">
-              <h2>タグマネージャ</h2>
-              <label for="gtm_id">Googleタグマネージャ：</label><input id="gtm_id" type="text" name="gtm_id" value="<?php echo Mytheme::get_setting("gtm_id"); ?>">
+              <h2>アナリティクス</h2><?php echo \Mytheme_Theme\Admin::add_input("text","トラッキングコード：","analytics"); ?>
+              <h2>タグマネージャ</h2><?php echo \Mytheme_Theme\Admin::add_input("text","Googleタグマネージャ：","gtm_id"); ?>
             </div>
           </div>
           <div class="setting">
             <h2>OGP設定</h2>
             <h3>facebook</h3>
-            <p><label for="ogp_fb_adminid">管理者ID</label><input id="ogp_fb_adminid" type="text" name="ogp_fb_adminid" value="<?php echo Mytheme::get_setting("ogp_fb_adminid"); ?>"></p>
-            <p><label for="ogp_fb_appid">アプリID</label><input id="ogp_fb_appid" type="text" name="ogp_fb_appid" value="<?php echo Mytheme::get_setting("ogp_fb_appid"); ?>"></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_input("text","管理者ID：","ogp_fb_adminid"); ?></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_input("text","アプリID：","ogp_fb_appid"); ?></p>
             <p><label for="ogp_fb_img_article">投稿ページ／記事ページ用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp_fb_img_article', Mytheme::get_setting("ogp_fb_img_article")); ?></p>
             <p><label for="ogp_fb_img_top">投稿ページ／記事ページ以外用デフォルトOGP画像</label><?php generate_upload_image_tag('ogp_fb_img_top', Mytheme::get_setting("ogp_fb_img_top")); ?></p>
           </div>
@@ -89,13 +87,13 @@ if(isset($_POST['save'])) {
             <h3>トップページのおすすめ記事に設定する画像</h3>
             <p><b>左おすすめ記事</b></p>
             <p><label for="reco_left_img">画像URL：</label><?php generate_upload_image_tag('reco_left_img', Mytheme::get_setting("reco_left_img")); ?></p>
-            <p><label for="reco_left_url">記事URL：</label><input type="url" name="reco_left_url" value="<?php echo Mytheme::get_setting("reco_left_url"); ?>"></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_input("url","記事URL：","reco_left_url"); ?></p>
             <p><b>中央おすすめ記事</b></p>
             <p><label for="reco_center_img">画像URL：</label><?php generate_upload_image_tag('reco_center_img', Mytheme::get_setting("reco_center_img")); ?></p>
-            <p><label for="reco_center_url">記事URL：</label><input type="url" name="reco_center_url" value="<?php echo Mytheme::get_setting("reco_center_url"); ?>"></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_input("url","記事URL：","reco_center_url"); ?></p>
             <p><b>右おすすめ記事</b></p>
             <p><label for="reco_right_img">画像URL：</label><?php generate_upload_image_tag('reco_right_img', Mytheme::get_setting("reco_right_img")); ?></p>
-            <p><label for="reco_right_url">記事URL：</label><input type="url" name="reco_right_url" value="<?php echo Mytheme::get_setting("reco_right_url"); ?>"></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_input("url","記事URL：","reco_right_url"); ?></p>
           </div>
           <div class="setting">
             <h2>関連記事</h2>
@@ -103,17 +101,17 @@ if(isset($_POST['save'])) {
             <p>
               <label for="relevance_select">関連性：</label>
               <select id="relevance_select" class="relevance_select" name="relevance_select">
-                <option <?php echo Mytheme::get_default_setting("relevance_select") == "category" ? "selected " : ""; ?>value="category">カテゴリ</option>
-                <option <?php echo Mytheme::get_default_setting("relevance_select") == "tag" ? "selected " : ""; ?>value="tag">タグ</option>
-                <option <?php echo Mytheme::get_default_setting("relevance_select") == "url" ? "selected " : ""; ?>value="url">記事指定（４記事）</option>
+                <option <?php echo Mytheme::get_setting("relevance_select") == "category" ? "selected " : ""; ?>value="category">カテゴリ</option>
+                <option <?php echo Mytheme::get_setting("relevance_select") == "tag" ? "selected " : ""; ?>value="tag">タグ</option>
+                <option <?php echo Mytheme::get_setting("relevance_select") == "url" ? "selected " : ""; ?>value="url">記事指定（４記事）</option>
               </select>
             </p>
             <!-- 関連記事に"記事指定（４記事）"を指定した場合、関連記事のURLを指定する。 -->
-            <div class="setting__detail relevance__url-set <?php echo Mytheme::get_default_setting("relevance_select") != "url" ? "u-display__none" : ""; ?>">
-              <p><label for="relevance_url1">関連記事①：</label><input id="relevance_url1" type="url" name="relevance_url1" value="<?php echo Mytheme::get_setting("relevance_url1");?>"></p>
-              <p><label for="relevance_url2">関連記事②：</label><input id="relevance_url2" type="url" name="relevance_url2" value="<?php echo Mytheme::get_setting("relevance_url2");?>"></p>
-              <p><label for="relevance_url3">関連記事③：</label><input id="relevance_url3" type="url" name="relevance_url3" value="<?php echo Mytheme::get_setting("relevance_url3");?>"></p>
-              <p><label for="relevance_url4">関連記事④：</label><input id="relevance_url4" type="url" name="relevance_url4" value="<?php echo Mytheme::get_setting("relevance_url4");?>"></p>
+            <div class="setting__detail relevance__url-set <?php echo Mytheme::get_setting("relevance_select") != "url" ? "u-display__none" : ""; ?>">
+              <p><?php echo \Mytheme_Theme\Admin::add_input("url","関連記事①：","relevance_url1"); ?></p>
+              <p><?php echo \Mytheme_Theme\Admin::add_input("url","関連記事②：","relevance_url2"); ?></p>
+              <p><?php echo \Mytheme_Theme\Admin::add_input("url","関連記事③：","relevance_url3"); ?></p>
+              <p><?php echo \Mytheme_Theme\Admin::add_input("url","関連記事④：","relevance_url4"); ?></p>
             </div>
           </div>
     		</li>

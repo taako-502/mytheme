@@ -17,8 +17,8 @@ jQuery(document).ready(function($) {
     });
 
     // 関連記事プルダウン
-    jQuery(".relevance--select").change(function() {
-    	var val = jQuery(".relevance--select").val();
+    jQuery(".relevance_select").change(function() {
+    	var val = jQuery(".relevance_select").val();
     	if(val == "url") {
         jQuery('.relevance__url-set').removeClass('u-display__none');
     	} else {
