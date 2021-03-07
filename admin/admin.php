@@ -1,96 +1,11 @@
 <?php
-$admin_key_list = Array();
-
 //saveボタンを押したときの処理
 if(isset($_POST['save'])) {
-  //admin.php画面からpostされたデータで、データベースと画面設定値を更新
-  /* 基本設定　*/
-  $pc_psize = $_POST['pc_p_size'];
-  set_theme_mod('pc_p_size',$pc_psize);
-  $pc_h1size = $_POST['pc_h1_size'];
-  set_theme_mod('pc_h1_size',$pc_h1size);
-  $pc_h2size = $_POST['pc_h2_size'];
-  set_theme_mod('pc_h2_size',$pc_h2size);
-  $pc_h3size = $_POST['pc_h3_size'];
-  set_theme_mod('pc_h3_size',$pc_h3size);
-  $pc_h4size = $_POST['pc_h4_size'];
-  set_theme_mod('pc_h4_size',$pc_h4size);
-  $pc_h5size = $_POST['pc_h5_size'];
-  set_theme_mod('pc_h5_size',$pc_h5size);
-  $pc_h6size = $_POST['pc_h6_size'];
-  set_theme_mod('pc_h6_size',$pc_h6size);
-  $tb_psize = $_POST['tb_p_size'];
-  set_theme_mod('tb_p_size',$tb_psize);
-  $tb_h1size = $_POST['tb_h1_size'];
-  set_theme_mod('tb_h1_size',$tb_h1size);
-  $tb_h2size = $_POST['tb_h2_size'];
-  set_theme_mod('tb_h2_size',$tb_h2size);
-  $tb_h3size = $_POST['tb_h3_size'];
-  set_theme_mod('tb_h3_size',$tb_h3size);
-  $tb_h4size = $_POST['tb_h4_size'];
-  set_theme_mod('tb_h4_size',$tb_h4size);
-  $tb_h5size = $_POST['tb_h5_size'];
-  set_theme_mod('tb_h5_size',$tb_h5size);
-  $tb_h6size = $_POST['tb_h6_size'];
-  set_theme_mod('tb_h6_size',$tb_h6size);
-  $sm_psize = $_POST['sm_p_size'];
-  set_theme_mod('sm_p_size',$sm_psize);
-  $sm_h1size = $_POST['sm_h1_size'];
-  set_theme_mod('sm_h1_size',$sm_h1size);
-  $sm_h2size = $_POST['sm_h2_size'];
-  set_theme_mod('sm_h2_size',$sm_h2size);
-  $sm_h3size = $_POST['sm_h3_size'];
-  set_theme_mod('sm_h3_size',$sm_h3size);
-  $sm_h4size = $_POST['sm_h4_size'];
-  set_theme_mod('sm_h4_size',$sm_h4size);
-  $sm_h5size = $_POST['sm_h5_size'];
-  set_theme_mod('sm_h5_size',$sm_h5size);
-  $sm_h6size = $_POST['sm_h6_size'];
-  set_theme_mod('sm_h6_size',$sm_h6size);
-  $analytics = trim($_POST['analytics']);
-  set_theme_mod('analytics',$analytics);
-  $gtmId = trim($_POST['gtm_id']);
-  set_theme_mod('gtm_id', $gtmId);
-  $ogpFbAdminId = $_POST['ogp_fb_adminid'];
-  set_theme_mod('ogp_fb_adminid',$ogpFbAdminId);
-  $ogpFbAppId = $_POST['ogp_fb_appid'];
-  set_theme_mod('ogp_fb_appid',$ogpFbAppId);
-  $ogpFbImgArticle = $_POST['ogp_fb_img_article'];
-  set_theme_mod('ogp_fb_img_article',$ogpFbImgArticle);
-  $ogpFbImgTop = $_POST['ogp_fb_img_top'];
-  set_theme_mod('ogp_fb_img_top',$ogpFbImgTop);
-  /* サイト回遊 */
-  $recoleftimg = $_POST['reco_left_img'];
-  set_theme_mod('reco_left_img',$recoleftimg);
-  $recolefturl = $_POST['reco_left_url'];
-  set_theme_mod('reco_left_url',$recolefturl);
-  $recocenterimg = $_POST['reco_center_img'];
-  set_theme_mod('reco_center_img',$recocenterimg);
-  $recocenterurl = $_POST['reco_center_url'];
-  set_theme_mod('reco_center_url',$recocenterurl);
-  $recorightimg = $_POST['reco_right_img'];
-  set_theme_mod('reco_right_img',$recorightimg);
-  $recorighturl = $_POST['reco_right_url'];
-  set_theme_mod('reco_right_url',$recorighturl);
-  $relevanceSelect = $_POST['relevance_select'];
-  set_theme_mod('relevance_select',$relevanceSelect);
-  $relevanceUrl1 = $_POST['relevance_url1'];
-  set_theme_mod('relevance_url1',$relevanceUrl1);
-  $relevanceUrl2 = $_POST['relevance_url2'];
-  set_theme_mod('relevance_url2',$relevanceUrl2);
-  $relevanceUrl3 = $_POST['relevance_url3'];
-  set_theme_mod('relevance_url3',$relevanceUrl3);
-  $relevanceUrl4 = $_POST['relevance_url4'];
-  set_theme_mod('relevance_url4',$relevanceUrl4);
-  /* アドセンス */
-  $adsCdAuto = $_POST['adsCd_auto'];
-  set_theme_mod('adsCd_auto',$adsCdAuto);
-  $adsTopCard = $_POST['adsCd_top_card'];
-  set_theme_mod('adsCd_top_card',$adsTopCard);
-  $adsCdOnContentTable = $_POST['adsCd_on_content_table'];
-  set_theme_mod('adsCd_on_content_table',$adsCdOnContentTable);
-  $adsBelowPost = $_POST['adsCd_below_post'];
-  set_theme_mod('adsCd_below_post',$adsBelowPost);
+  /* 基本設定 */
+  foreach (\Mytheme_Theme\Admin::get_admin_key() as $key) {
+    set_theme_mod( $key, $_POST[$key]);
+  }
+  Mytheme::set_settings_data();
   echo "データを更新しました。";
 }
 ?>
@@ -116,7 +31,7 @@ if(isset($_POST['save'])) {
       		<p class="p-admin_description">文字の設定</p>
           <div class="setting">
             <h3>PC閲覧時（980px～）</h3>
-            <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc_p_size" value="<?php echo Mytheme::get_setting("pc_p_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_p_size"); ?>"> px</p>
+            <p class="fontsize"><b>pタグ&ensp;&emsp;</b><input type="number" name="pc_p_size" value="<?php echo get_setting("pc_p_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_p_size"); ?>"> px</p>
             <p class="fontsize"><b>h1タグ&emsp;</b><input type="number" name="pc_h1_size" value="<?php echo Mytheme::get_setting("pc_h1_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h1_size"); ?>"> px</p>
             <p class="fontsize"><b>h2タグ&emsp;</b><input type="number" name="pc_h2_size" value="<?php echo Mytheme::get_setting("pc_h2_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h2_size"); ?>"> px</p>
             <p class="fontsize"><b>h3タグ&emsp;</b><input type="number" name="pc_h3_size" value="<?php echo Mytheme::get_setting("pc_h3_size"); ?>" placeholder="<?php echo Mytheme::get_default_setting("pc_h3_size"); ?>"> px</p>
