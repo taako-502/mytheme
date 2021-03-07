@@ -65,9 +65,10 @@ class Admin {
 
   /**
    * inputタグの生成
-   * @param string $type  inputタグのタイプ
-   * @param string $label ラベルテキスト
-   * @param string $key   オプションキー
+   * @param string $type        inputタグのタイプ
+   * @param string $label       ラベルテキスト
+   * @param string $key         オプションキー
+   * @param string $placeholder プレースホルダー
    */
   public static function add_input($type, $label, $key, $placeholder = ""){
     $_placeholder = \Mytheme_Theme\Utility::isNullOrWhitespace($placeholder) ? \Mytheme::get_default_setting($key) : $placeholder ;
@@ -105,10 +106,11 @@ class Admin {
   }
 
   /**
-   * 画像選択項目の生成
+   * HTML入力用テキストエリアの生成
    * @param string $label ラベルテキスト
    * @param string $key   オプションキー
-   * @param array  $arr   キー：value値,バリュー：テキストの連想配列
+   * @param string $rows  テキストエリアの横幅
+   * @param string $cols  テキストエリアの縦幅
    */
   public static function add_textarea_html($label = "", $key = "",$rows = "8", $cols = "80"){
     return '<label for="'.$key.'">'.$label.'</label><br><textarea id="'.$key.'" name="'.$key.'" rows="'.$rows.'" cols="'.$cols.'">'.stripslashes(\Mytheme::get_setting($key)) .'</textarea>';
