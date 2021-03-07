@@ -69,8 +69,9 @@ class Admin {
    * @param string $label ラベルテキスト
    * @param string $key   オプションキー
    */
-  public static function add_input($type = "", $label = "", $key = ""){
-    return '<label for="'.$key.'">'.$label.'</label><input type="'.$type.'" id="'.$key.'" class="'.$key.'" name="'.$key.'" value="'.\Mytheme::get_setting($key).'" placeholder="'.\Mytheme::get_default_setting($key).'">';
+  public static function add_input($type, $label, $key, $placeholder = ""){
+    $_placeholder = \Mytheme_Theme\Utility::isNullOrWhitespace($placeholder) ? \Mytheme::get_default_setting($key) : $placeholder ;
+    return '<label for="'.$key.'">'.$label.'</label><input type="'.$type.'" id="'.$key.'" class="'.$key.'" name="'.$key.'" value="'.\Mytheme::get_setting($key).'" placeholder="'.$_placeholder.'">';
   }
 
   /**

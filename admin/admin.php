@@ -65,7 +65,7 @@ if(isset($_POST['save'])) {
       		<p class="p-admin_description">SEOに関する設定</p>
           <div class="setting">
             <div class="setting">
-              <h2>アナリティクス</h2><?php echo \Mytheme_Theme\Admin::add_input("text","トラッキングコード：","analytics"); ?>
+              <h2>アナリティクス</h2><?php echo \Mytheme_Theme\Admin::add_input("text","トラッキングコード：","analytics","UA-XXXXXXXXX-X"); ?>
               <h2>タグマネージャ</h2><?php echo \Mytheme_Theme\Admin::add_input("text","Googleタグマネージャ：","gtm_id"); ?>
             </div>
           </div>
