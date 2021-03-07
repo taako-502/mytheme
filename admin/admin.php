@@ -74,8 +74,8 @@ if(isset($_POST['save'])) {
             <h3>facebook</h3>
             <p><?php echo \Mytheme_Theme\Admin::add_input("text","管理者ID：","ogp_fb_adminid"); ?></p>
             <p><?php echo \Mytheme_Theme\Admin::add_input("text","アプリID：","ogp_fb_appid"); ?></p>
-            <p><label for="ogp_fb_img_article">投稿ページ／記事ページ用デフォルトOGP画像</label><?php \Mytheme_Theme\Utility::generate_upload_image_tag('ogp_fb_img_article', Mytheme::get_setting("ogp_fb_img_article")); ?></p>
-            <p><label for="ogp_fb_img_top">投稿ページ／記事ページ以外用デフォルトOGP画像</label><?php \Mytheme_Theme\Utility::generate_upload_image_tag('ogp_fb_img_top', Mytheme::get_setting("ogp_fb_img_top")); ?></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_img("投稿ページ／記事ページ用デフォルトOGP画像","ogp_fb_img_article"); ?></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_img("投稿ページ／記事ページ以外用デフォルトOGP画像","ogp_fb_img_top"); ?></p>
           </div>
     		</li>
         <li>
@@ -86,13 +86,13 @@ if(isset($_POST['save'])) {
             <p class="p-admin_description">トップページの設定。</p>
             <h3>トップページのおすすめ記事に設定する画像</h3>
             <p><b>左おすすめ記事</b></p>
-            <p><label for="reco_left_img">画像URL：</label><?php \Mytheme_Theme\Utility::generate_upload_image_tag('reco_left_img', Mytheme::get_setting("reco_left_img")); ?></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_img("画像URL：","reco_left_img"); ?></p>
             <p><?php echo \Mytheme_Theme\Admin::add_input("url","記事URL：","reco_left_url"); ?></p>
             <p><b>中央おすすめ記事</b></p>
-            <p><label for="reco_center_img">画像URL：</label><?php \Mytheme_Theme\Utility::generate_upload_image_tag('reco_center_img', Mytheme::get_setting("reco_center_img")); ?></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_img("画像URL：","reco_center_img"); ?></p>
             <p><?php echo \Mytheme_Theme\Admin::add_input("url","記事URL：","reco_center_url"); ?></p>
             <p><b>右おすすめ記事</b></p>
-            <p><label for="reco_right_img">画像URL：</label><?php \Mytheme_Theme\Utility::generate_upload_image_tag('reco_right_img', Mytheme::get_setting("reco_right_img")); ?></p>
+            <p><?php echo \Mytheme_Theme\Admin::add_img("画像URL：","reco_right_img"); ?></p>
             <p><?php echo \Mytheme_Theme\Admin::add_input("url","記事URL：","reco_right_url"); ?></p>
           </div>
           <div class="setting">

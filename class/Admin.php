@@ -92,5 +92,15 @@ class Admin {
     $html .= '</select>';
     return $html;
   }
+
+  /**
+   * 画像選択項目の生成
+   * @param string $label ラベルテキスト
+   * @param string $key   オプションキー
+   * @param array  $arr   キー：value値,バリュー：テキストの連想配列
+   */
+  public static function add_img($label = "", $key = "", $arr = array()){
+    return '<label for="'.$key.'">'.$label.'</label>'.\Mytheme_Theme\Utility::generate_upload_image_tag($key, \Mytheme::get_setting($key));
+  }
 }
 ?>
