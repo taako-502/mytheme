@@ -102,5 +102,15 @@ class Admin {
   public static function add_img($label = "", $key = "", $arr = array()){
     return '<label for="'.$key.'">'.$label.'</label>'.\Mytheme_Theme\Utility::generate_upload_image_tag($key, \Mytheme::get_setting($key));
   }
+
+  /**
+   * 画像選択項目の生成
+   * @param string $label ラベルテキスト
+   * @param string $key   オプションキー
+   * @param array  $arr   キー：value値,バリュー：テキストの連想配列
+   */
+  public static function add_textarea_html($label = "", $key = "",$rows = "8", $cols = "80"){
+    return '<label for="'.$key.'">'.$label.'</label><br><textarea id="'.$key.'" name="'.$key.'" rows="'.$rows.'" cols="'.$cols.'">'.stripslashes(\Mytheme::get_setting($key)) .'</textarea>';
+  }
 }
 ?>

@@ -114,31 +114,19 @@ if(isset($_POST['save'])) {
           <div class="setting">
             <h2>自動広告</h2>
             <p class="p-admin_description">アドセンスの自動広告用のコードを&lt;head&gt;タグ内に挿入します。</p>
-            <p>
-              <label for="adsCd_auto">アドセンスコード（自動広告）</label><br>
-              <textarea id="adsCd_auto" name="adsCd_auto" rows="8" cols="80"><?php echo stripslashes(Mytheme::get_setting("adsCd_auto")); ?></textarea>
-            </p>
+            <p><?php echo  \Mytheme_Theme\Admin::add_textarea_html("アドセンスコード（自動広告）","adsCd_auto","8","80");?></p>
             <h2>トップページ（カード型）</h2>
             <p class="p-admin_description">
               カード型記事一覧に溶け込むように、アドセンス広告を表示します。<br>
               この設定を行う場合、<a href="<?php echo get_template_directory_uri() . '/../../../wp-admin/options-reading.php'; ?>">「設定＞表示設定＞1ページに表示する最大投稿数」</a>を奇数に変更することを推奨します。
             </p>
-            <p>
-              <label for="adsCd_top_card">アドセンスコード（カード型）</label><br>
-              <textarea id="adsCd_top_card" name="adsCd_top_card" rows="8" cols="80"><?php echo stripslashes(Mytheme::get_setting("adsCd_top_card")); ?></textarea>
-            </p>
+            <p><?php echo  \Mytheme_Theme\Admin::add_textarea_html("アドセンスコード（カード型）","adsCd_top_card","8","80");?></p>
             <h2>もくじ上</h2>
             <p class="p-admin_description">もくじの上にアドセンス広告を表示します。もくじがない画面では表示されません。</p>
-            <p>
-              <label for="adsCd_on_content_table">アドセンスコード（もくじ上）</label><br>
-              <textarea id="adsCd_on_content_table" name="adsCd_on_content_table" rows="8" cols="80"><?php echo stripslashes(Mytheme::get_setting("adsCd_on_content_table")); ?></textarea>
-            </p>
+            <p><?php echo  \Mytheme_Theme\Admin::add_textarea_html("アドセンスコード（もくじ上）","adsCd_on_content_table","8","80");?></p>
             <h2>記事下</h2>
             <p class="p-admin_description">記事の下、コメントエリアの上にアドセンス広告を表示します。</p>
-            <p>
-              <label for="adsCd_below_post">アドセンスコード（記事下）</label><br>
-              <textarea id="adsCd_below_post" name="adsCd_below_post" rows="8" cols="80"><?php echo stripslashes(Mytheme::get_setting("adsCd_below_post")); ?></textarea>
-            </p>
+            <p><?php echo  \Mytheme_Theme\Admin::add_textarea_html("アドセンスコード（記事下）","adsCd_below_post","8","80");?></p>
           </div>
         </li>
     	</ul>
