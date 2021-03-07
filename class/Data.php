@@ -12,7 +12,6 @@ class Data {
 	 */
 	const DB_NAMES = array(
 		'customizer'  => 'mytheme_settings',
-		'licence_key' => 'mytheme_licence_key',
 	);
 
 
@@ -33,15 +32,6 @@ class Data {
 	 * プラグインのデータ
 	 */
 	protected static $plugin_data = array();
-
-
-	/**
-	 * ライセンスキー
-	 */
-	public static $licence_key       = '';
-	public static $licence_data      = array();
-	public static $has_pro_licence   = false;
-	public static $licence_check_url = 'https://looscdn.com/cdn/mytheme/licence/check';
 
 	/**
 	 * プラグイン更新用パス
@@ -120,9 +110,6 @@ class Data {
 			'simple' => __( 'Text type', 'mytheme' ),
 		);
 
-		// ライセンス情報をセット
-		self::set_licence_data();
-
 		// 設定データのデフォルト値をセット
 		self::set_default_data();
 
@@ -136,7 +123,6 @@ class Data {
 
 	}
 
-
 	/**
 	 * テーマバージョンをセット
 	 */
@@ -144,32 +130,6 @@ class Data {
 		$theme_data          = wp_get_theme( 'mytheme' );
 		self::$mytheme_version = $theme_data->get( 'Version' );
 	}
-
-
-	/**
-	 * ライセンス情報をセット
-	 */
-	private static function set_licence_data() {
-
-		// ライセンスキー
-		self::$licence_key = get_option( self::DB_NAMES['licence_key'] ) ?: '';
-
-		// ライセンスキーの指定があれば、ステータスチェック
-		if ( self::$licence_key ) {
-
-			$licence_data       = \Mytheme::get_licence_data( self::$licence_key );
-			self::$licence_data = $licence_data;
-
-			$status = (int) $licence_data['status'];
-
-			// 有効なライセンスキーだった場合
-			if ( 1 === $status || 2 === $status ) {
-				self::$has_pro_licence = true;
-				self::$ex_update_path  = isset( $licence_data['path'] ) ? $licence_data['path'] : '';
-			}
-		}
-	}
-
 
 	/**
 	 * デフォルト値を変数にセット
