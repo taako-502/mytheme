@@ -64,11 +64,33 @@ class Admin {
   }
 
   /**
-   * [get_key description]
-   * @return [type] [description]
+   * inputタグの生成
+   * @param string $type  inputタグのタイプ
+   * @param string $label ラベルテキスト
+   * @param string $key   オプションキー
    */
   public static function add_input($type = "", $label = "", $key = ""){
     return '<label for="'.$key.'">'.$label.'</label><input type="'.$type.'" id="'.$key.'" class="'.$key.'" name="'.$key.'" value="'.\Mytheme::get_setting($key).'" placeholder="'.\Mytheme::get_default_setting($key).'">';
   }
+
+  /**
+   * selectタグの生成
+   * @param string $label ラベルテキスト
+   * @param string $key   オプションキー
+   * @param array  $arr   キー：value値,バリュー：テキストの連想配列
+   */
+  public static function add_select($label = "", $key = "", $arr = array()){
+    $html = '<label for="'.$key.'">'.$label.'</label>';
+    $html .= '<select id="'.$key.'" class="'.$key.'" name="'.$key.'">';
+    foreach ($arr as $value => $text) {
+      if ($value == \Mytheme::get_setting($key)) {
+        $html .= '<option value="'.$value.'" selected>'.$text.'</option>';
+      } else {
+        $html .= '<option value="'.$value.'">'.$text.'</option>';
+      }
+    }
+    $html .= '</select>';
+    return $html;
+  }
 }
- ?>
+?>

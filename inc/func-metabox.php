@@ -67,7 +67,7 @@ function ogp_callback( $post ) {
   </p>
   <textarea id="ogp-description-textarea" name="ogp_description" rows="4">'.$ogpDescription.'</textarea>
 	<p>画像URL</p>';
-	generate_upload_image_tag('ogp_img', $ogpImg);
+	\Mytheme_Theme\Utility::generate_upload_image_tag('ogp_img', $ogpImg);
 }
 
 /**
