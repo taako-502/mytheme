@@ -236,34 +236,34 @@ function mytheme_customize_css(){
        ----------------------------------------------------------------- */
 
     /* 文字サイズ（PC） TODO: コメントアウト */
-    article.p-article p { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_psize,$pc_psize_def); ?>px!important; }
-    article.p-article h1 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_h1size,$pc_h1size_def); ?>px!important; }
-    article.p-article h2 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_h2size,$pc_h2size_def); ?>px!important; }
-    article.p-article h3 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_h3size,$pc_h3size_def); ?>px!important; }
-    article.p-article h4 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_h4size,$pc_h4size_def); ?>px!important; }
-    article.p-article h5 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_h5size,$pc_h5size_def); ?>px!important; }
-    article.p-article h6 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($pc_h6size,$pc_h6size_def); ?>px!important; }
+    article.p-article p { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_p_size','px',true); ?> }
+    article.p-article h1 { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_h1_size','px',true); ?> }
+    article.p-article h2 { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_h2_size','px',true); ?> }
+    article.p-article h3 { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_h3_size','px',true); ?> }
+    article.p-article h4 { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_h4_size','px',true); ?> }
+    article.p-article h5 { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_h5_size','px',true); ?> }
+    article.p-article h6 { <?php echo \Mytheme_Theme\Style::add_style('font-size','pc_h6_size','px',true); ?> }
 
     /* 文字サイズ（タブレット） */
     @media screen and (max-width:980px) {
-      article.p-article p { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_psize,$tb_psize_def); ?>px!important; }
-      article.p-article h1 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_h1size,$tb_h1size_def); ?>px!important; }
-      article.p-article h2 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_h2size,$tb_h2size_def); ?>px!important; }
-      article.p-article h3 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_h3size,$tb_h3size_def); ?>px!important; }
-      article.p-article h4 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_h4size,$tb_h4size_def); ?>px!important; }
-      article.p-article h5 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_h5size,$tb_h5size_def); ?>px!important; }
-      article.p-article h6 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($tb_h6size,$tb_h6size_def); ?>px!important; }
+      article.p-article p { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_p_size','px',true); ?> }
+      article.p-article h1 { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_h1_size','px',true); ?> }
+      article.p-article h2 { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_h2_size','px',true); ?> }
+      article.p-article h3 { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_h3_size','px',true); ?> }
+      article.p-article h4 { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_h4_size','px',true); ?> }
+      article.p-article h5 { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_h5_size','px',true); ?> }
+      article.p-article h6 { <?php echo \Mytheme_Theme\Style::add_style('font-size','tb_h6_size','px',true); ?> }
     }
 
     /* 文字サイズ（スマートフォン） */
     @media (max-width:768px) {
-      article.p-article p { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_psize,$sm_psize_def); ?>px!important; }
-      article.p-article h1 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_h1size,$sm_h1size_def); ?>px!important; }
-      article.p-article h2 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_h2size,$sm_h2size_def); ?>px!important; }
-      article.p-article h3 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_h3size,$sm_h3size_def); ?>px!important; }
-      article.p-article h4 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_h4size,$sm_h4size_def); ?>px!important; }
-      article.p-article h5 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_h5size,$sm_h5size_def); ?>px!important; }
-      article.p-article h6 { font-size: <?php //echo \Mytheme_Theme\Utility::getValOrDef($sm_h6size,$sm_h6size_def); ?>px!important; }
+      article.p-article p { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_p_size','px',true); ?> }
+      article.p-article h1 { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_h1_size','px',true); ?> }
+      article.p-article h2 { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_h2_size','px',true); ?> }
+      article.p-article h3 { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_h3_size','px',true); ?> }
+      article.p-article h4 { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_h4_size','px',true); ?> }
+      article.p-article h5 { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_h5_size','px',true); ?> }
+      article.p-article h6 { <?php echo \Mytheme_Theme\Style::add_style('font-size','sm_h6_size','px',true); ?> }
     }
 
     .p-related .p-related--item .p-related--title:hover,
