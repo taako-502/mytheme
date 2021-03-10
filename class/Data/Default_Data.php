@@ -111,6 +111,59 @@ trait Default_Data {
 			'bg_color'                  => '#FFF',
 			'section_bg_opacity'        => '100',
 			'relevance_select'          => 'category',
+
+			/* カスタマイザー */
+			//全体構成
+			'architect_text_link_hover_color' => '#007bbb',
+			'front_architect_content_width' => '1180',
+			'architect_text_color' => '#333',
+			'architect_text_link_color' => '#04C',
+			'architect_col_one_width' => '67',
+
+			//ヘッダー
+			'header_bg_color' => '',
+			'header_text_color' => '',
+			'header_text_hover_color' => '#3E9FD2',
+			'header_layout_titile_align' => 'left',
+			'header_text_logo_fontsize' => '28',
+			'header_text_description_fontsize' => '13',
+			'header_layout_nav_align' => 'right',
+			'header_text_description_margin_top' => '28',
+			'header_text_title_margin_top' => '25',
+			'header_text_title_margin_bottom' => '25',
+
+			//背景画像
+			'bg_color' => '',
+
+			//フロントページ
+			'front_heading_color' => '#333',
+			'front_heading_fontsize' => '25',
+			'front_heading_bg_color' => 'transparent',
+			'front_heading_border' => 'border-bottom',
+			'front_heading_border_color' => 'skyblue',
+			'front_heading_border_color_sub' => '#FFC778',
+			'front_heading_padding_left' => '0.1',
+			'front_heading_padding_top_and_bottom' => '0.1',
+			'front_architect_col' => 'two-col',
+			'section_bg_color' => '#FFF',
+			'section_shadow_len' => '2',
+			'section_shadow_opacity' => '30',
+
+			//フッター
+			'footer_bg_color' => '#333',
+			'footer_text_color' => '#FFF',
+			'footer_text_hover_color' => '#3E9FD2',
+			'footer_widget_bg_color' => '#333',
+			'footer_widget_text_color' => '#FFF',
+			'footer_widget_text_hover_color' => '#3E9FD2',
+
+			//パーツ
+			'parts_header_slider_width_maxwindow' => 'px',
+			'parts_header_slider_width' => '1180',
+			'parts_header_slider_article_margin_side' => '13',
+			'parts_header_slider_article_margin_side' => '13',
+			'parts_scroll_color' => '#006EB0',
+			'parts_scroll_hover_color' => '#3E9FD2',
 		);
 	}
 }
