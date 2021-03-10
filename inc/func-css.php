@@ -21,23 +21,23 @@ function mytheme_customize_css(){
     // ========================================================================*/
     /* ベース　*/
     .contents {
-      max-width: <?php echo get_theme_mod('front_architect_content_width','1180'); ?>px;
+      <?php echo \Mytheme_Theme\Style::add_style('comax-width','front_architect_content_width','px'); ?>
     }
 
     .contents p {
-      color: <?php echo get_theme_mod('architect_text_color','#333'); ?>
+      <?php echo \Mytheme_Theme\Style::add_style('color','architect_text_color'); ?>
     }
 
     .l-sidebar--widget a,
     .comment-body a,
     .c-breadcrumb a,
     .contents p a {
-      color: <?php echo get_theme_mod('architect_text_link_color','#04C'); ?>
+      <?php echo \Mytheme_Theme\Style::add_style('color','architect_text_link_color'); ?>
     }
 
     .u-color-hover:hover,
     .contents a:hover {
-      color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>
+      <?php echo \Mytheme_Theme\Style::add_style('color','architect_text_link_hover_color'); ?>
     }
 
     /* ==========================================================================
@@ -47,15 +47,15 @@ function mytheme_customize_css(){
     @media screen and (min-width: 767px) {
       .l-header,
       .l-header--inner  {
-        background-color: <?php echo get_theme_mod( 'header_bg_color', $header_bg_color_def ); ?>!important;
+        <?php echo \Mytheme_Theme\Style::add_style('background-color','header_bg_color','',true); ?>
       }
       .l-header--inner a {
-        color: <?php echo get_theme_mod( 'header_text_color', $nav_txt_color_def); ?>;
+        <?php echo \Mytheme_Theme\Style::add_style('color','header_text_color'); ?>
       }
 
       .l-header--inner a:hover {
         /* 画面から設定できるようにすること */
-        color: <?php echo get_theme_mod('header_text_hover_color','#3E9FD2'); ?>;
+        <?php echo \Mytheme_Theme\Style::add_style('color','header_text_hover_color'); ?>
       }
     }
 
@@ -67,11 +67,11 @@ function mytheme_customize_css(){
     }
 
     .l-header--logo {
-      font-size: <?php echo get_theme_mod('header_text_logo_fontsize','28'); ?>px;
+      <?php echo \Mytheme_Theme\Style::add_style('font-size','header_text_logo_fontsize','px'); ?>
     }
 
     .l-header--description {
-      font-size: <?php echo get_theme_mod('header_text_description_fontsize','13'); ?>px;
+      <?php echo \Mytheme_Theme\Style::add_style('font-size','header_text_description_fontsize','px'); ?>
     }
 
     .l-header--logo ,
@@ -91,7 +91,7 @@ function mytheme_customize_css(){
     }
 
     .l-nav {
-      text-align: <?php echo get_theme_mod('header_layout_nav_align','right'); ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('text-align','header_layout_nav_align','px'); ?>
     }
 
     /* メイン */
@@ -110,17 +110,19 @@ function mytheme_customize_css(){
     }
 
     .l-header--description {
-      margin-top: <?php echo get_theme_mod('header_text_description_margin_top','28'); ?>px;
+      <?php echo \Mytheme_Theme\Style::add_style('margin-top','header_text_description_margin_top','px'); ?>
     }
 
     .l-header--logo {
-      margin-top: <?php echo get_theme_mod('header_text_title_margin_top','25'); ?>px;
-      margin-bottom: <?php echo get_theme_mod('header_text_title_margin_bottom','25'); ?>px;
+      <?php
+      echo \Mytheme_Theme\Style::add_style('margin-top','header_text_title_margin_top','px');
+      echo \Mytheme_Theme\Style::add_style('margin-bottom','header_text_title_margin_bottom','px');
+      ?>
     }
 
     /* 背景色 */
     body {
-      background-color: <?php echo get_theme_mod('bg_color',$bg_color_def) ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('background-color:','bg_color'); ?>
     }
 
     .l-main, .l-sidebar , .p-recommend {
@@ -135,24 +137,24 @@ function mytheme_customize_css(){
 
     .l-footer,
     .l-footer a {
-      color: <?php echo get_theme_mod('footer_text_color','#FFF') ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('color','footer_text_color'); ?>
     }
 
     .l-footer a:hover {
-      color: <?php echo get_theme_mod('footer_text_hover_color','#3E9FD2') ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('color','footer_text_hover_color'); ?>
     }
 
     .l-footer--widgets {
-      background-color: <?php echo get_theme_mod('footer_widget_bg_color','#333') ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('background-color:','footer_widget_bg_color'); ?>
     }
 
     .l-footer--widgets,
     .l-footer--widgets a {
-      color: <?php echo get_theme_mod('footer_widget_text_color','#FFF') ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('color','footer_widget_text_color'); ?>
     }
 
     .l-footer--widgets a:hover {
-      color: <?php echo get_theme_mod('footer_widget_text_hover_color','#3E9FD2') ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('color','footer_widget_text_hover_color'); ?>
     }
 
     /* ==========================================================================
@@ -169,24 +171,23 @@ function mytheme_customize_css(){
     }
 
     .c-slider-header li {
-      margin-left: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
-      margin-right: <?php echo get_theme_mod('parts_header_slider_article_margin_side','13'); ?>px;
+      <?php
+      echo \Mytheme_Theme\Style::add_style('color','parts_header_slider_article_margin_side','px');
+      echo \Mytheme_Theme\Style::add_style('color','parts_header_slider_article_margin_side','px');
+      ?>
     }
 
-    .c-article--category:hover {
-      color: <?php echo get_theme_mod('footer_text_hover_color','#3E9FD2') ?>;
-    }
-
+    .c-article--category:hover,
     .hover-text h3:hover,
     .hover-text p:hover {
-      color: <?php echo get_theme_mod('footer_text_hover_color','#3E9FD2') ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('color','footer_text_hover_color'); ?>
     }
 
     .c-heading--main {
-      color: <?php echo get_theme_mod('front_heading_color','#333'); ?>;
-      font-size: <?php echo get_theme_mod('front_heading_fontsize','25'); ?>px;
-      background-color: <?php echo get_theme_mod('front_heading_bg_color','transparent'); ?>;
       <?php
+      echo \Mytheme_Theme\Style::add_style('color','front_heading_color');
+      echo \Mytheme_Theme\Style::add_style('font-size','front_heading_fontsize');
+      echo \Mytheme_Theme\Style::add_style('background-color','front_heading_bg_color');
       $front_heading_border = get_theme_mod('front_heading_border','border-bottom');
       $front_heading_border_color = get_theme_mod('front_heading_border_color','skyblue');
       switch ($front_heading_border) {
@@ -199,10 +200,10 @@ function mytheme_customize_css(){
           ?>border-bottom: solid 3px <?php echo $front_heading_border_color;?>;<?php
           break;
       }
-      ?>
-      padding-top: <?php echo get_theme_mod('front_heading_padding_top_and_bottom','0.1') ?>em;
-      padding-left: <?php echo get_theme_mod('front_heading_padding_left','0.1') ?>em;
-      padding-bottom: <?php echo get_theme_mod('front_heading_padding_top_and_bottom','0.1') ?>em;
+      \Mytheme_Theme\Style::add_style('padding-top','front_heading_padding_top_and_bottom','em');
+      \Mytheme_Theme\Style::add_style('padding-left','front_heading_padding_left','em');
+      \Mytheme_Theme\Style::add_style('padding-bottom','front_heading_padding_top_and_bottom','em');
+      ?>;
     }
 
     <?php
@@ -224,12 +225,12 @@ function mytheme_customize_css(){
 
     .c-top-scroll-btn a,
     .c-top-scroll-btn a::after {
-      background-color: <?php echo get_theme_mod('parts_scroll_color','#006EB0'); ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('background-color','parts_scroll_color'); ?>;
     }
 
     .c-top-scroll-btn a:hover,
     .c-top-scroll-btn a:hover::after {
-      background-color: <?php echo get_theme_mod('parts_scroll_hover_color','#3E9FD2'); ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('background-color','parts_scroll_hover_color'); ?>;
     }
 
     /* Project
@@ -269,7 +270,7 @@ function mytheme_customize_css(){
     .p-related .p-related--item .p-related--title:hover,
     .p-news-card--content h2.p-news-card--title:hover,
     .p-news-card--content p.p-news-card--description:hover {
-      color: <?php echo get_theme_mod('architect_text_link_hover_color','#007bbb'); ?>;
+      <?php echo \Mytheme_Theme\Style::add_style('color','architect_text_link_hover_color'); ?>;
     }
   </style>
 
