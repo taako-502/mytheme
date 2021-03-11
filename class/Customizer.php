@@ -60,32 +60,34 @@ class Customizer {
 		$control_instance = null;
 
 		// 追加処理
-		if ( 'color' === $type ) {
-
-			$control_instance = new Color_Control( $customizer, $customize_id, $control_args );
-
-		} elseif ( 'image' === $type ) {
-
-			$control_instance = new Image_Control( $customizer, $customize_id, $control_args );
-
-		} elseif ( 'media' === $type ) {
-
-			$control_args['mime_type'] = $args['mime_type'];
-			$control_instance          = new Media_Control( $customizer, $customize_id, $control_args );
-
-		} elseif ( 'radio' === $type || 'select' === $type ) {
-
-			$control_args['choices'] = $args['choices'];
-
-		} elseif ( 'number' === $type ) {
-
-			$control_args['input_attrs'] = $args['input_attrs'];
-
-		} elseif ( 'code_editor' === $type ) {
-
-			$control_args['code_type'] = $args['code_type'];
-
-		}
+		switch ($type) {
+      case 'color':
+        $control_instance = new Color_Control( $customizer, $customize_id, $control_args );
+        break;
+      case 'image':
+        $control_instance = new Image_Control( $customizer, $customize_id, $control_args );
+        break;
+      case 'media':
+        $control_args['mime_type'] = $args['mime_type'];
+			  $control_instance          = new Media_Control( $customizer, $customize_id, $control_args );
+        break;
+      case 'range':
+        $control_instance = new WP_Customize_Range( $customizer, $customize_id, $control_args );
+        break;
+      case 'radio':
+      case 'select':
+        $control_args['choices'] = $args['choices'];
+        break;
+      case 'number':
+        $control_args['input_attrs'] = $args['input_attrs'];
+        break;
+      case 'code_editor':
+        $control_args['code_type'] = $args['code_type'];
+        break;
+      default:
+        // code...
+        break;
+    }
 
 		// インスタンスまだなければ Base_Control で生成
 		if ( null === $control_instance  ) $control_instance = new Base_Control( $customizer, $customize_id, $control_args );
