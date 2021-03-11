@@ -80,7 +80,7 @@ function main_enqueue_scripts() {
 		wp_enqueue_style( 'slick-theme', esc_url(MYTHEME_THEME_URI . '/lib/slick/slick-theme.css'));
 		wp_enqueue_style( 'slick', esc_url(MYTHEME_THEME_URI . '/lib/slick/slick.css'));
 		wp_enqueue_style( 'main_style', esc_url(MYTHEME_THEME_URI . '/css/app.css'));
-		get_template_part('/inc/func','css');
+		get_template_part('/inc/func','style');
 		//JavaScript
   	wp_enqueue_script('jquery');
 		wp_enqueue_script('slick',MYTHEME_THEME_URI . '/lib/slick/slick.min.js');
