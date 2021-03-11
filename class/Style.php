@@ -12,7 +12,8 @@ class Style {
    */
   public static function add_style($property,$key,$unit = "",$imporatnt = false){
     $value = get_theme_mod($key, \Mytheme::get_default_setting($key));
-    return $property." : ".$value.$unit.";".($imporatnt ?"!important" : "");
+    echo $property." : ".$value.$unit.";".($imporatnt ?"!important" : "");
+    return;
   }
 }
 ?>
