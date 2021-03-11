@@ -28,10 +28,10 @@ switch($relevanceSelect){
     );
     break;
   case "url":
-    $kwds[0] = isset(Mytheme::get_setting('relevance_url1')) ? url_to_postid(Mytheme::get_setting('relevance_url1')) : "";
-    $kwds[1] = isset(Mytheme::get_setting('relevance_url2')) ? url_to_postid(Mytheme::get_setting('relevance_url2')) : "";
-    $kwds[2] = isset(Mytheme::get_setting('relevance_url3')) ? url_to_postid(Mytheme::get_setting('relevance_url3')) : "";
-    $kwds[3] = isset(Mytheme::get_setting('relevance_url4')) ? url_to_postid(Mytheme::get_setting('relevance_url4')) : "";
+    $kwds[0] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url1')) ? url_to_postid(\Mytheme::get_setting('relevance_url1')) : "";
+    $kwds[1] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url2')) ? url_to_postid(\Mytheme::get_setting('relevance_url2')) : "";
+    $kwds[2] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url3')) ? url_to_postid(\Mytheme::get_setting('relevance_url3')) : "";
+    $kwds[3] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url4')) ? url_to_postid(\Mytheme::get_setting('relevance_url4')) : "";
     $args = array(
       'post_type' => 'post',
       'posts_per_page' => '4',
