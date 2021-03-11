@@ -148,6 +148,14 @@ class Data {
 		self::$settings = array_merge( self::$default_settings, $db_data );
 	}
 
+  /**
+   * カスタマイザーのデータを取得し、ない場合はデフォルト値を取得
+   * @param  string $key キー
+   * @return string      データ
+   */
+	public static function get_setting_without_default( $key = '' ) {
+		return !\Mytheme_Theme\Utility::isNullOrWhitespace(self::get_setting($key)) ? self::get_setting($key) : self::get_setting($key);
+	}
 
 	/**
 	 * カスタマイザーのデータを取得

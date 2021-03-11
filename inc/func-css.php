@@ -60,13 +60,11 @@ function mytheme_customize_css(){
     }
 
     .l-header--inner {
-      <?php
-      $header_layout_titile_align = get_theme_mod('header_layout_titile_align','left');
-      ?>
-      text-align: <?php $header_layout_titile_align; ?>;
+      <?php \Mytheme_Theme\Style::add_style('text-align','header_layout_titile_align'); ?>
     }
 
     .l-header--logo {
+      <?php \Mytheme_Theme\Style::add_style('font-size','header_text_logo_fontsize','px'); ?>
       <?php \Mytheme_Theme\Style::add_style('font-size','header_text_logo_fontsize','px'); ?>
     }
 
@@ -77,7 +75,7 @@ function mytheme_customize_css(){
     .l-header--logo ,
     .l-header--description {
       <?php
-      switch ($header_layout_titile_align) {
+      switch (\Mytheme_Theme\Data::get_setting_without_default('header_layout_titile_align')) {
         case 'left':
           'margin-left: 28px;';
           break;
@@ -96,11 +94,14 @@ function mytheme_customize_css(){
 
     /* メイン */
     .l-main.p-front {
-      <?php if(get_theme_mod('front_architect_col','two-col') == "one-col"){ ?>
+      <?php
+      if(\Mytheme_Theme\Data::get_setting_without_default('front_architect_col') == "one-col"){
+        ?>
         margin-left: auto;
         margin-right: auto;
-        max-width: <?php get_theme_mod('architect_col_one_width','67'); ?>%;
-      <?php } ?>
+        <?php \Mytheme_Theme\Style::add_style('max-widt','architect_col_one_width','%');
+      }
+      ?>
     }
 
     @media screen and (max-width: 1179px) {
@@ -128,13 +129,13 @@ function mytheme_customize_css(){
     .l-main, .l-sidebar , .p-recommend {
       <?php
       \Mytheme_Theme\Style::add_style('background-color','bg_color_section');
-      $section_shadow_len = get_theme_mod('section_shadow_len','2')."px";
+      $section_shadow_len = \Mytheme_Theme\Data::get_setting_without_default('section_shadow_len')."px";
       ?>
-      box-shadow: <?php $section_shadow_len ?> <?php $section_shadow_len ?> <?php $section_shadow_len ?> rgb(0 0 0 / <?php get_theme_mod('section_shadow_opacity','30') ?>%);
+      box-shadow: <?php $section_shadow_len ?> <?php $section_shadow_len ?> <?php $section_shadow_len ?> rgb(0 0 0 / <?php \Mytheme_Theme\Data::get_setting_without_default('section_shadow_opacity') ?>%);
     }
 
     .l-footer {
-      background-color: <?php get_theme_mod('footer_bg_color','#333') ?>;
+      <?php \Mytheme_Theme\Style::add_style('color','footer_bg_color'); ?>
     }
 
     .l-footer,
@@ -166,7 +167,9 @@ function mytheme_customize_css(){
        ----------------------------------------------------------------- */
     .c-slider-header {
       <?php
-      $content_max_width = get_theme_mod('parts_header_slider_width_maxwindow','px') == "px" ? get_theme_mod('parts_header_slider_width','1180') . "px" : "100vw";
+      $content_max_width = \Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_width_maxwindow') == "px"
+                                                                            ? \Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_width') . "px"
+                                                                            : "100vw";
       ?>
       width: 100%;
       max-width: <?php $content_max_width; ?>;
@@ -190,8 +193,8 @@ function mytheme_customize_css(){
       \Mytheme_Theme\Style::add_style('color','front_heading_color');
       \Mytheme_Theme\Style::add_style('font-size','front_heading_fontsize');
       \Mytheme_Theme\Style::add_style('background-color','front_heading_bg_color');
-      $front_heading_border = get_theme_mod('front_heading_border','border-bottom');
-      $front_heading_border_color = get_theme_mod('front_heading_border_color','skyblue');
+      $front_heading_border = \Mytheme_Theme\Data::get_setting_without_default('front_heading_border');
+      $front_heading_border_color = \Mytheme_Theme\Data::get_setting_without_default('front_heading_border_color');
       switch ($front_heading_border) {
         case 'border-left':
           ?>border-left: solid 3px <?php $front_heading_border_color;?>;<?php
@@ -212,8 +215,10 @@ function mytheme_customize_css(){
     if($front_heading_border == "border-bottom-two-tone"){
       ?>
       .c-heading--main span.cus-border {
-        background-color: <?php get_theme_mod('front_heading_border_color_sub','#FFC778');?>;
-        margin-left: -<?php get_theme_mod('front_heading_padding_left','0.1') ?>em;
+        <?php
+        \Mytheme_Theme\Style::add_style('background-color','front_heading_border_color_sub');
+        \Mytheme_Theme\Style::add_style('margin-left','front_heading_padding_left','em');
+         ?>
       }
       <?php
     } else {
