@@ -109,7 +109,6 @@ trait Default_Data {
 			'header_bg_color'           => '#333',
 			'nav_txt_color'             => '#FFF',
 			'bg_color'                  => '#FFF',
-			'section_bg_opacity'        => '100',
 			'relevance_select'          => 'category',
 
 			/* カスタマイザー */
@@ -132,9 +131,6 @@ trait Default_Data {
 			'header_text_title_margin_top' => '25',
 			'header_text_title_margin_bottom' => '25',
 
-			//背景画像
-			'bg_color' => '',
-
 			//フロントページ
 			'front_heading_color' => '#333',
 			'front_heading_fontsize' => '25',
@@ -145,9 +141,11 @@ trait Default_Data {
 			'front_heading_padding_left' => '0.1',
 			'front_heading_padding_top_and_bottom' => '0.1',
 			'front_architect_col' => 'two-col',
-			'section_bg_color' => '#FFF',
+			'bg_color_all' => '#FFF',
+			'bg_color_section' => '#FFF',
 			'section_shadow_len' => '2',
 			'section_shadow_opacity' => '30',
+
 
 			//フッター
 			'footer_bg_color' => '#333',

@@ -36,7 +36,7 @@ function cusBg( $wp_customize ) {
  */
 function cusBgColor($wp_customize){
   $wp_customize->add_section(
-   'bg-color',
+   'bg_color',
    array(
      'title'    => 'カラー',
      'panel'    => 'bg',
@@ -45,9 +45,7 @@ function cusBgColor($wp_customize){
   );
 
   //背景色
-  $wp_customize->add_setting(
-   'bg_color' ,
-   array(
+  $wp_customize->add_setting( 'bg_color_all' , array(
      'default'    => '#FFF',
      'sanitize_callback' => 'sanitize_hex_color',
    )
@@ -56,50 +54,28 @@ function cusBgColor($wp_customize){
   $wp_customize->add_control(
    new WP_Customize_Color_Control(
      $wp_customize,
-     'ctl_bg_color',
+     'ctl_bg_color_all',
      array(
        'label'    => '背景色',
-       'section'  => 'bg-color',
-       'settings' => 'bg_color',
+       'section'  => 'bg_color',
+       'settings' => 'bg_color_all',
      )
    )
   );
 
   //セクションの色
-  $wp_customize->add_setting( 'section_bg_color' , array(
+  $wp_customize->add_setting( 'bg_color_section' , array(
    'default'    => '#FFF',
-   'sanitize_callback' => 'sanitize_hex_color',
   ));
 
   $wp_customize->add_control(
-   new WP_Customize_Color_Control(
-     $wp_customize,
-     'ctl_section_bg_color',
-     array(
-       'label'    => 'セクションの背景色',
-       'section'  => 'bg-color',
-       'settings' => 'section_bg_color',
-     )
-   )
-  );
-
-  //セクションの透明度
-  $wp_customize->add_setting( 'section_bg_opacity' , array(
-   'default'    => '100',
-   //'sanitize_callback' => 'sanitize_hex_color',
-  ));
-
-  $wp_customize->add_control(
-    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
+    new Customize_Alpha_Color_Control(
       $wp_customize,
-      'ctl_section_bg_opacity',
+      'ctl_bg_color_section',
       array(
-        'label'   => 'セクションの透明度',
-        'min' => 0,
-        'max' => 100,
-        'step' => 1,
-        'section'  => 'bg-color',
-        'settings' => 'section_bg_opacity',
+        'label'    => 'セクションの背景色',
+        'section'  => 'bg_color',
+        'settings' => 'bg_color_section',
       )
     )
   );

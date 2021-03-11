@@ -33,30 +33,6 @@ class Utility {
     $description = get_post_meta($id, '_meta_description', true);
     return !self::isNullOrEmpty($description) ? $description : self::getDescription($id,$len);
   }
-
-  /**
-   * カラーコードをrgbaに変換
-   * @param  [type]  $color_code [description]
-   * @param  integer $alpha      [description]
-   * @return [type]              [description]
-   */
-  public static function getConversionRgba($color_code, $alpha = 1) {
-    $color_code = preg_replace('/#/', '', $color_code);
-
-    if(mb_strlen($color_code) == 6){
-      $rgba_code['red']   = hexdec(substr($color_code, 0, 2));
-      $rgba_code['green'] = hexdec(substr($color_code, 2, 2));
-      $rgba_code['blue']  = hexdec(substr($color_code, 4, 2));
-    } else {
-      $rgba_code['red']   = hexdec(substr($color_code, 0, 1).substr($color_code, 0, 1));
-      $rgba_code['green'] = hexdec(substr($color_code, 1, 1).substr($color_code, 1, 1));
-      $rgba_code['blue']  = hexdec(substr($color_code, 2, 1).substr($color_code, 2, 1));
-    }
-    $rgba_code['alpha'] = $alpha;
-    $rgba_code['full']  = implode(',', $rgba_code);
-
-    return $rgba_code;
-  }
 }
 
 ?>

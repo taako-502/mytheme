@@ -122,12 +122,14 @@ function mytheme_customize_css(){
 
     /* 背景色 */
     body {
-      <?php \Mytheme_Theme\Style::add_style('background-color:','bg_color'); ?>
+      <?php \Mytheme_Theme\Style::add_style('background-color','bg_color_all'); ?>
     }
 
     .l-main, .l-sidebar , .p-recommend {
-      background-color: rgba(<?php \Mytheme_Theme\Utility::getConversionRgba(get_theme_mod('section_bg_color','#FFF'),get_theme_mod('section_bg_opacity',$section_bg_opacity_def))['full'];?>%);
-      <?php $section_shadow_len = get_theme_mod('section_shadow_len','2')."px";?>
+      <?php
+      \Mytheme_Theme\Style::add_style('background-color','bg_color_section');
+      $section_shadow_len = get_theme_mod('section_shadow_len','2')."px";
+      ?>
       box-shadow: <?php $section_shadow_len ?> <?php $section_shadow_len ?> <?php $section_shadow_len ?> rgb(0 0 0 / <?php get_theme_mod('section_shadow_opacity','30') ?>%);
     }
 
