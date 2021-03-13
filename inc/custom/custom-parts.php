@@ -1,24 +1,12 @@
 <?php
+use \Mytheme_Theme\Customizer;
+
 /**
  * 部品のカスタマイザー
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
 function cusParts($wp_customize) {
-  cusPartsPartial($wp_customize);
-  cusPartsPanel($wp_customize);
-  cusPartsSection($wp_customize);
-  /* ヘッダー下スライダ- */
-  cusPartsHeaderSlider($wp_customize);
-  /* スクロールボタン */
-  cusPartsScroll($wp_customize);
-}
-
-/**
- * リンクの設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
- */
-function cusPartsPartial($wp_customize) {
+  //リンク
   $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
     'selector' => '.c-slider-header',
   ));
@@ -30,47 +18,46 @@ function cusPartsPartial($wp_customize) {
   $wp_customize->selective_refresh->add_partial('parts_header_slider_dot', array(
     'selector' => '.slick-dots',
   ));
-}
 
-/**
- * パネル設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
- */
-function cusPartsPanel($wp_customize) {
-  // ナビゲーションバーの色設定
+  $wp_customize->selective_refresh->add_partial('parts_scroll_color', array(
+    'selector' => '#c-top-scroll-btn a',
+  ));
+
+  //パネル
+  $panel = 'parts';
   $wp_customize->add_panel(
-    'parts',
+    $panel,
     array(
       'title'    => '部品',
       'priority' => 95,
     )
   );
-}
 
-/**
- * セクション設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
- */
-function cusPartsSection($wp_customize) {
+  //セクション
+  $section_header_slider = 'parts_header_slider';
   $wp_customize->add_section(
-    'parts_header_slider',
+    $section_header_slider,
     array(
       'title'    => 'ヘッダー下スライダー',
-      'panel'    => 'parts',
+      'panel'    => $panel,
+      'priority' => 1,
+    )
+  );
+
+  $section_parts = 'parts_scroll';
+  $wp_customize->add_section(
+    $section_parts,
+    array(
+      'title'    => 'スクロールボタン',
+      'panel'    => $panel,
       'priority' => 2,
     )
   );
 
-  $wp_customize->add_section(
-    'parts_scroll',
-    array(
-      'title'    => 'スクロールボタン',
-      'panel'    => 'parts',
-      'priority' => 2,
-    )
-  );
+  /* ヘッダー下スライダ- */
+  cusPartsHeaderSlider($wp_customize,$section_header_slider);
+  /* スクロールボタン */
+  cusPartsScroll($wp_customize,$section_parts);
 }
 
 /**
@@ -78,17 +65,12 @@ function cusPartsSection($wp_customize) {
  * @param  [type] $wp_customize [description]
  * @return [type]               [description]
  */
-function cusPartsHeaderSlider($wp_customize) {
-  $wp_customize->add_setting('parts_header_slider_type', array(
-    'default'    => 'news',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_type',
+function cusPartsHeaderSlider($wp_customize,$section) {
+  Customizer::add(
+    $section,
+    'parts_header_slider_type',
     array(
       'label'    => 'スライダーの表示',
-      'section'  => 'parts_header_slider',
-      'settings' => 'parts_header_slider_type',
       'type'     => 'radio',
       'choices'  => array(
         'none'      => '非表示',
@@ -99,20 +81,15 @@ function cusPartsHeaderSlider($wp_customize) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_design', array(
-    'default'    => 'c-slider-design--img-always',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_design',
+  Customizer::add(
+    $section,
+    'parts_header_slider_design',
     array(
       'label'    => 'スライダーのデザイン',
-      'section'  => 'parts_header_slider',
-      'settings' => 'parts_header_slider_design',
       'type'     => 'radio',
       'choices'  => array(
-        'c-slider-design--img-always'      => '画像型（常にタイトル表示）',
-        'c-slider-design--img-hover'      => '画像型（ホバー時にタイトル表示）',
+        'c-slider-design--img-always' => '画像型（常にタイトル表示）',
+        'c-slider-design--img-hover'  => '画像型（ホバー時にタイトル表示）',
         'c-slider-design--article'    => '記事型',
       ),
     )
@@ -468,44 +445,28 @@ function cusPartsHeaderSlider($wp_customize) {
   );
 }
 
-function cusPartsScroll($wp_customize) {
-  $wp_customize->add_setting('parts_scroll_color', array(
-   'default'    => '#006EB0',//ブルーアシード
-   'sanitize_callback' => 'sanitize_hex_color',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-     $wp_customize,
-     'ctl_parts_scroll_color',
-     array(
-       'label' => '色',
-       'description' => '右下にあるスクロールボタンの色を設定する。',
-       'section'  => 'parts_scroll',
-       'settings' => 'parts_scroll_color',
-     )
-   )
+/**
+ *スクロールボタン
+ * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
+ */
+function cusPartsScroll($wp_customize,$section) {
+  Customizer::add(
+    $section,
+    'parts_scroll_color',
+    array(
+      'label'    => '色',
+      'description' => '右下にあるスクロールボタンの色を設定する。',
+      'type'     => 'color',
+    )
   );
 
-  $wp_customize->selective_refresh->add_partial('parts_scroll_color', array(
-    'selector' => '.c-top-scroll-btn a',
-  ));
-
-  $wp_customize->add_setting('parts_scroll_hover_color', array(
-    'default'    => '#3E9FD2',//ブルーアゲート
-    'sanitize_callback' => 'sanitize_hex_color',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'ctl_parts_scroll_hover_color',
-      array(
-        'label' => 'ホバー時の色',
-        'description' => '右下にあるスクロールボタンをホバーした時の色を設定する。',
-        'section'  => 'parts_scroll',
-        'settings' => 'parts_scroll_hover_color',
-      )
+  Customizer::add(
+    $section,
+    'parts_scroll_hover_color',
+    array(
+      'label'    => 'ホバー時の色',
+      'description' => '右下にあるスクロールボタンをホバーした時の色を設定する。',
+      'type'     => 'color',
     )
   );
 }

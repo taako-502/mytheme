@@ -8,6 +8,7 @@ trait Default_Data {
 		$azure = '#007BBB';
 		$dark_gray = '#333';
 		$blue_agate = '#3E9FD2';
+		$bleu_acide = '#006EB0';
 		$white = '#FFF';
 
 		return array(
@@ -162,11 +163,13 @@ trait Default_Data {
 			'footer_widget_text_hover_color' => $blue_agate,
 
 			//パーツ
+			'parts_header_slider_type' => 'news',
+			'parts_header_slider_design' => 'c-slider-design--img-always',
 			'parts_header_slider_width_maxwindow' => 'px',
 			'parts_header_slider_width' => '1180',
 			'parts_header_slider_article_margin_side' => '13',
 			'parts_header_slider_article_margin_side' => '13',
-			'parts_scroll_color' => '#006EB0',
+			'parts_scroll_color' => $bleu_acide,
 			'parts_scroll_hover_color' => $blue_agate,
 		);
 	}
