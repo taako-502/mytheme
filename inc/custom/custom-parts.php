@@ -6,23 +6,6 @@ use \Mytheme_Theme\Customizer;
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
 function cusParts($wp_customize) {
-  //リンク
-  $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
-    'selector' => '.c-slider-header',
-  ));
-
-  $wp_customize->selective_refresh->add_partial('parts_header_slider_type', array(
-    'selector' => '.c-slider-header',
-  ));
-
-  $wp_customize->selective_refresh->add_partial('parts_header_slider_dot', array(
-    'selector' => '.slick-dots',
-  ));
-
-  $wp_customize->selective_refresh->add_partial('parts_scroll_color', array(
-    'selector' => '#c-top-scroll-btn a',
-  ));
-
   //パネル
   $panel = 'parts';
   $wp_customize->add_panel(
@@ -78,6 +61,9 @@ function cusPartsHeaderSlider($wp_customize,$section) {
         'rand'      => 'ランダム記事',
         'recommend' => 'おすすめ記事',
       ),
+      'partial'  => array(
+        'selector'  => '.c-slider-header',
+      )
     )
   );
 
@@ -145,18 +131,15 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_dot', array(
-    'default'   => true,
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_dot',
+  Customizer::add(
+    $section,
+    'parts_header_slider_dot',
     array(
-      'label'     => 'ドットの表示有無',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_dot',
-      'type'      => 'checkbox',
+      'label'    => 'ドットの表示有無',
+      'type'     => 'checkbox',
+      'partial'  => array(
+        'selector' => '.slick-dots',
+      ),
     )
   );
 
@@ -457,6 +440,9 @@ function cusPartsScroll($wp_customize,$section) {
       'label'    => '色',
       'description' => '右下にあるスクロールボタンの色を設定する。',
       'type'     => 'color',
+      'partial'  => array(
+        'selector' => '.c-top-scroll-btn a',
+      ),
     )
   );
 

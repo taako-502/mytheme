@@ -12,7 +12,7 @@ function cusFooter( $wp_customize ) {
     $section,
     array(
       'title'    => 'フッター',
-      'priority' => 1,
+      'priority' => 90,
     )
   );
 
@@ -48,9 +48,13 @@ function cusFooter( $wp_customize ) {
     $section,
     'footer_content_copyright',
     array(
-      'label'    => 'フッターのコピーライト',
+      'label'       => 'フッターのコピーライト',
       'description' => 'aタグを含むhtmlタグが使用可能です。[#title]を入力するとサイトタイトル、[#year]を入力すると現在の西暦年が表示されます。',
-      'type'     => 'text',
+      'type'        => 'text',
+      'transport'   => 'postMessage',
+      'partial'     => array(
+        'selector' => '.l-footer--center',
+      ),
     )
   );
 
