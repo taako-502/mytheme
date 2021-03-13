@@ -131,7 +131,7 @@ function mytheme_customize_css(){
       \Mytheme_Theme\Style::add_style('background-color','bg_color_section');
       $section_shadow_len = \Mytheme_Theme\Data::get_setting_without_default('section_shadow_len')."px";
       ?>
-      box-shadow: <?php $section_shadow_len ?> <?php $section_shadow_len ?> <?php $section_shadow_len ?> rgb(0 0 0 / <?php \Mytheme_Theme\Data::get_setting_without_default('section_shadow_opacity') ?>%);
+      box-shadow: <?php echo $section_shadow_len; ?> <?php echo $section_shadow_len; ?> <?php echo $section_shadow_len; ?> rgb(0 0 0 / <?php echo \Mytheme_Theme\Data::get_setting_without_default('section_shadow_opacity'); ?>%);
     }
 
     .l-footer {

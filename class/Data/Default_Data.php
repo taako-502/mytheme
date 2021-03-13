@@ -150,7 +150,7 @@ trait Default_Data {
 			'bg_color_all' => $white,
 			'bg_color_section' => $white,
 			'section_shadow_len' => '2',
-			'section_shadow_opacity' => '30',
+			'section_shadow_opacity' => '100',
 
 			//フッター
 			'footer_content_copyright' => 'Copyright © [#year] [#title] Powered by MY THEME.',

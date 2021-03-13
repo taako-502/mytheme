@@ -6,6 +6,7 @@ use \Mytheme_Theme\Customizer\Control\Base_Control;
 use \Mytheme_Theme\Customizer\Control\Color_Control;
 use \Mytheme_Theme\Customizer\Control\Image_Control;
 use \Mytheme_Theme\Customizer\Control\Media_Control;
+use \Mytheme_Theme\Customizer\Control\WP_Customize_Range;
 
 class Customizer {
 
@@ -30,6 +31,9 @@ class Customizer {
 			'db'          => \Mytheme::DB_NAMES['customizer'],
 			'priority'    => 10,
 			'is_off'      => false,
+      'min'         => 0,
+      'max'         => 10,
+      'step'        => 1,
 		);
 		return array_merge( $defaults, $args );
 	}
@@ -85,6 +89,11 @@ class Customizer {
 			'type'        => $type,
 			'classname'   => $args['classname'],
 			'priority'    => $args['priority'],
+      'min'         => $args['min'],
+			'max'         => $args['max'],
+			'step'        => $args['step'],
+      'choices'     => $args['choices'],
+      'input_attrs' => $args['input_attrs'],
 		);
 
 		$control_instance = null;
@@ -99,7 +108,7 @@ class Customizer {
         break;
       case 'media':
         $control_args['mime_type'] = $args['mime_type'];
-			  $control_instance          = new Media_Control( $customizer, $customize_id, $control_args );
+			  $control_instance = new Media_Control( $customizer, $customize_id, $control_args );
         break;
       case 'range':
         $control_instance = new WP_Customize_Range( $customizer, $customize_id, $control_args );

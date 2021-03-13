@@ -154,7 +154,7 @@ class Data {
    * @return string      データ
    */
 	public static function get_setting_without_default( $key = '' ) {
-		return !\Mytheme_Theme\Utility::isNullOrWhitespace(self::get_setting($key)) ? self::get_setting($key) : self::get_setting($key);
+		return !\Mytheme_Theme\Utility::isNullOrWhitespace(self::get_setting($key)) ? self::get_setting($key) : self::get_default_setting($key);
 	}
 
 	/**

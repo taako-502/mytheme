@@ -34,6 +34,7 @@ add_action( 'customize_controls_enqueue_scripts', '\Mytheme_Theme\enqueue_custom
  *   サイト基本情報・・・20
  *   全体構成・・・22
  *   フロントページ・・・25
+ *   コンテナー・・・28
  *   ヘッダー・・・30
  *   ヘッダー画像・・・60
  *   背景画像・・・80
@@ -52,7 +53,7 @@ function mytheme_customize( $wp_customize ) {
   get_template_part('/inc/custom/custom', 'header');
   get_template_part('/inc/custom/custom', 'header-img');
   get_template_part('/inc/custom/custom', 'front-page');
-  //get_template_part('/inc/custom/custom', 'bg');
+  get_template_part('/inc/custom/custom', 'bg');
   get_template_part('/inc/custom/custom', 'footer');
   get_template_part('/inc/custom/custom', 'parts');
   // カラーピッカー
@@ -69,7 +70,7 @@ function mytheme_customize( $wp_customize ) {
   // ヘッダー
   cusHeader($wp_customize);
   // 背景
-  //cusBg($wp_customize);
+  cusBg($wp_customize);
   // フッター
   cusFooter($wp_customize);
   // パーツ
