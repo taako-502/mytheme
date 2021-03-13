@@ -45,17 +45,11 @@ function cusHeader( $wp_customize ) {
   );
 
   /* レイアウト */
-  $wp_customize->add_setting( 'header_layout_titile_align' , array(
-    'default'    => 'left',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_layout_titile_align',
+  Customizer::add(
+    $section_layout,
+    'header_layout_titile_align',
     array(
       'label'    => 'サイトタイトルの位置',
-      'section'  => 'header_layout',
-      'settings' => 'header_layout_titile_align',
       'type'     => 'radio',
       'choices'  => array(
         'left' => '左寄せ',
@@ -65,17 +59,11 @@ function cusHeader( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'header_layout_nav_align' , array(
-    'default'    => 'right',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_layout_nav_align',
+  Customizer::add(
+    $section_layout,
+    'header_layout_nav_align',
     array(
       'label'    => 'ナビゲーションメニューの位置',
-      'section'  => 'header_layout',
-      'settings' => 'header_layout_nav_align',
       'type'     => 'radio',
       'choices'  => array(
         'left' => '左寄せ',

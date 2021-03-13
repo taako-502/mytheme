@@ -89,7 +89,7 @@ function mytheme_customize_css(){
     }
 
     .l-nav {
-      <?php \Mytheme_Theme\Style::add_style('text-align','header_layout_nav_align','px'); ?>
+      <?php \Mytheme_Theme\Style::add_style('text-align','header_layout_nav_align'); ?>
     }
 
     /* メイン */

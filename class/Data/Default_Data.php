@@ -126,16 +126,16 @@ trait Default_Data {
 			'architect_col_one_width' => '67',
 
 			//ヘッダー
-			'header_bg_color' => '',
+			'header_layout_titile_align' => 'left',
+			'header_layout_nav_align' => 'right',
 			'header_text_color' => '#FFF',
 			'header_text_hover_color' => $blue_agate,
-			'header_layout_titile_align' => 'left',
 			'header_text_logo_fontsize' => '28',
 			'header_text_description_fontsize' => '13',
-			'header_layout_nav_align' => 'right',
 			'header_text_description_margin_top' => '28',
 			'header_text_title_margin_top' => '25',
 			'header_text_title_margin_bottom' => '25',
+			'header_bg_color' => '',
 
 			//フロントページ
 			'front_heading_color' => $dark_gray,
