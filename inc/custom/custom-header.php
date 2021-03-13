@@ -91,10 +91,10 @@ function cusHeader( $wp_customize ) {
     'header_text_logo_fontsize',
     array(
       'label'    => 'ロゴのフォントサイズ（px）',
-      'type'     => 'number',
-      'input_attrs' => array(
-        'step' => '1',
-      ),
+      'type'     => 'range',
+      'min'      => '9',
+      'max'      => '50',
+      'step'     => '1',
     )
   );
 
@@ -121,10 +121,10 @@ function cusHeader( $wp_customize ) {
     'header_text_description_margin_top',
     array(
       'label'    => 'キャッチフレーズ上のマージン（px）',
-      'type'     => 'number',
-      'input_attrs' => array(
-        'step' => '1',
-      ),
+      'type'     => 'range',
+      'min'      => '0',
+      'max'      => '50',
+      'step'     => '1',
     )
   );
 
@@ -133,10 +133,10 @@ function cusHeader( $wp_customize ) {
     'header_text_title_margin_top',
     array(
       'label'    => 'サイトタイトル上のマージン（px）',
-      'type'     => 'number',
-      'input_attrs' => array(
-        'step' => '1',
-      ),
+      'type'     => 'range',
+      'min'      => '0',
+      'max'      => '50',
+      'step'     => '1',
     )
   );
 
@@ -145,10 +145,10 @@ function cusHeader( $wp_customize ) {
     'header_text_title_margin_bottom',
     array(
       'label'    => 'サイトタイトル下のマージン（px）',
-      'type'     => 'number',
-      'input_attrs' => array(
-        'step' => '1',
-      ),
+      'type'     => 'range',
+      'min'      => '0',
+      'max'      => '50',
+      'step'     => '1',
     )
   );
 
