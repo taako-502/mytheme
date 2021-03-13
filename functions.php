@@ -53,6 +53,19 @@ function mytheme_setup(){
 	add_theme_support('customize-selective-refresh-widgets' );
 	add_theme_support('custom-logo');
   register_nav_menu('header-nav', 'Header Navigation');
+
+	//背景画像の設定
+	$defaults = array(
+		'default-color'          => '#FFF',
+		'default-image'          => '',
+		'default-repeat'         => '',
+		'default-position-x'     => '',
+		'default-attachment'     => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => ''
+	);
+	add_theme_support( 'custom-background', $defaults );
 }
 add_action('after_setup_theme','mytheme_setup');
 

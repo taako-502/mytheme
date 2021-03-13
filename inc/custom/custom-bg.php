@@ -2,16 +2,6 @@
 namespace Mytheme_Theme;
 
 /**
- * 背景画像の設定
- * @var array
- */
-$custom_background_defaults = array(
-  'default-color' => '#FFF',
-);
-//公開ボタンが表示されなくなったので、一旦コメントアウト TODO 修正すること
-//add_theme_support( 'custom-background', $custom_background_defaults );
-
-/**
  * 背景の設定
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
