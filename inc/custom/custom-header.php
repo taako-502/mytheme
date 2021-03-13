@@ -79,10 +79,10 @@ function cusHeader( $wp_customize ) {
     'header_text_description_fontsize',
     array(
       'label'    => 'キャッチフレーズのフォントサイズ（px）',
-      'type'     => 'number',
-      'input_attrs' => array(
-        'step' => '1',
-      ),
+      'type'     => 'range',
+      'min'      => '9',
+      'max'      => '30',
+      'step'     => '1',
     )
   );
 
