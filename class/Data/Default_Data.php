@@ -4,12 +4,18 @@ namespace Mytheme_Theme\Data;
 trait Default_Data {
 
 	public static function get_default_settings() {
+		//紺碧色（こんぺき色）
+		$azure = '#007bbb';
+		$dark_gray = '#333';
+		$blue_agate = '#3E9FD2';
+		$white = '#FFF';
+
 		return array(
 			// Colors
 			'color_main'                => '#111',
-			'color_text'                => '#333',
+			'color_text'                => $dark_gray,
 			'color_link'                => '#3fa3ff',
-			'color_bg'                  => '#fff',
+			'color_bg'                  => $white,
 
 			// Content width
 			'container_width'           => 1200,
@@ -106,23 +112,23 @@ trait Default_Data {
 			'sm_h4_size'                => '18',
 			'sm_h5_size'                => '18',
 			'sm_h6_size'                => '18',
-			'header_bg_color'           => '#333',
-			'nav_txt_color'             => '#FFF',
-			'bg_color'                  => '#FFF',
+			'header_bg_color'           => $dark_gray,
+			'nav_txt_color'             => $white,
+			'bg_color'                  => $white,
 			'relevance_select'          => 'category',
 
 			/* カスタマイザー */
 			//全体構成
-			'architect_text_link_hover_color' => '#007bbb',//紺碧色（こんぺき色）
+			'architect_text_link_hover_color' => $azure,
 			'front_architect_content_width' => '1180',
-			'architect_text_color' => '#333',
+			'architect_text_color' => $dark_gray,
 			'architect_text_link_color' => '#04C',
 			'architect_col_one_width' => '67',
 
 			//ヘッダー
 			'header_bg_color' => '',
 			'header_text_color' => '',
-			'header_text_hover_color' => '#3E9FD2',
+			'header_text_hover_color' => $blue_agate,
 			'header_layout_titile_align' => 'left',
 			'header_text_logo_fontsize' => '28',
 			'header_text_description_fontsize' => '13',
@@ -132,7 +138,7 @@ trait Default_Data {
 			'header_text_title_margin_bottom' => '25',
 
 			//フロントページ
-			'front_heading_color' => '#333',
+			'front_heading_color' => $dark_gray,
 			'front_heading_fontsize' => '25',
 			'front_heading_bg_color' => 'transparent',
 			'front_heading_border' => 'border-bottom',
@@ -141,19 +147,19 @@ trait Default_Data {
 			'front_heading_padding_left' => '0.1',
 			'front_heading_padding_top_and_bottom' => '0.1',
 			'front_architect_col' => 'two-col',
-			'bg_color_all' => '#FFF',
-			'bg_color_section' => '#FFF',
+			'bg_color_all' => $white,
+			'bg_color_section' => $white,
 			'section_shadow_len' => '2',
 			'section_shadow_opacity' => '30',
 
 
 			//フッター
-			'footer_bg_color' => '#333',
-			'footer_text_color' => '#FFF',
-			'footer_text_hover_color' => '#3E9FD2',
-			'footer_widget_bg_color' => '#333',
-			'footer_widget_text_color' => '#FFF',
-			'footer_widget_text_hover_color' => '#3E9FD2',
+			'footer_bg_color' => $dark_gray,
+			'footer_text_color' => $white,
+			'footer_text_hover_color' => $blue_agate,
+			'footer_widget_bg_color' => $dark_gray,
+			'footer_widget_text_color' => $white,
+			'footer_widget_text_hover_color' => $blue_agate,
 
 			//パーツ
 			'parts_header_slider_width_maxwindow' => 'px',
@@ -161,7 +167,7 @@ trait Default_Data {
 			'parts_header_slider_article_margin_side' => '13',
 			'parts_header_slider_article_margin_side' => '13',
 			'parts_scroll_color' => '#006EB0',
-			'parts_scroll_hover_color' => '#3E9FD2',
+			'parts_scroll_hover_color' => $blue_agate,
 		);
 	}
 }

@@ -3,8 +3,6 @@ namespace Mytheme_Theme;
 
 use \Mytheme_Theme\Customizer\Sanitize;
 use \Mytheme_Theme\Customizer\Control\Base_Control;
-use \Mytheme_Theme\Customizer\Control\Big_Title;
-use \Mytheme_Theme\Customizer\Control\Sub_Title;
 use \Mytheme_Theme\Customizer\Control\Color_Control;
 use \Mytheme_Theme\Customizer\Control\Image_Control;
 use \Mytheme_Theme\Customizer\Control\Media_Control;
