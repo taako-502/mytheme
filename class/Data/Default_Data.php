@@ -152,7 +152,6 @@ trait Default_Data {
 			'section_shadow_len' => '2',
 			'section_shadow_opacity' => '30',
 
-
 			//フッター
 			'footer_bg_color' => $dark_gray,
 			'footer_text_color' => $white,

@@ -86,36 +86,24 @@ function cusHeader( $wp_customize ) {
   );
 
   /* テキスト */
-  $wp_customize->add_setting( 'header_text_description_fontsize' , array(
-    'default' => '13',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_text_description_fontsize',
+  Customizer::add(
+    $section_text,
+    'header_text_description_fontsize',
     array(
-      'label' => 'キャッチフレーズのフォントサイズ（px）',
-      'section' => 'header_text',
-      'settings' => 'header_text_description_fontsize',
-      'type' => 'number',
+      'label'    => 'キャッチフレーズのフォントサイズ（px）',
+      'type'     => 'number',
       'input_attrs' => array(
         'step' => '1',
       ),
     )
   );
 
-  $wp_customize->add_setting( 'header_text_logo_fontsize' , array(
-    'default' => '28',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_text_logo_fontsize',
+  Customizer::add(
+    $section_text,
+    'header_text_logo_fontsize',
     array(
-      'label' => 'ロゴのフォントサイズ（px）',
-      'section' => 'header_text',
-      'settings' => 'header_text_logo_fontsize',
-      'type' => 'number',
+      'label'    => 'ロゴのフォントサイズ（px）',
+      'type'     => 'number',
       'input_attrs' => array(
         'step' => '1',
       ),
@@ -140,54 +128,36 @@ function cusHeader( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'header_text_description_margin_top' , array(
-    'default' => '28',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_text_description_margin_top',
+  Customizer::add(
+    $section_text,
+    'header_text_description_margin_top',
     array(
-      'label' => 'キャッチフレーズ上のマージン（px）',
-      'section' => 'header_text',
-      'settings' => 'header_text_description_margin_top',
-      'type' => 'number',
+      'label'    => 'キャッチフレーズ上のマージン（px）',
+      'type'     => 'number',
       'input_attrs' => array(
         'step' => '1',
       ),
     )
   );
 
-  $wp_customize->add_setting( 'header_text_title_margin_top' , array(
-    'default' => '25',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_text_title_margin_top',
+  Customizer::add(
+    $section_text,
+    'header_text_title_margin_top',
     array(
-      'label' => 'サイトタイトル上のマージン（px）',
-      'section' => 'header_text',
-      'settings' => 'header_text_title_margin_top',
-      'type' => 'number',
+      'label'    => 'サイトタイトル上のマージン（px）',
+      'type'     => 'number',
       'input_attrs' => array(
         'step' => '1',
       ),
     )
   );
 
-  $wp_customize->add_setting( 'header_text_title_margin_bottom' , array(
-    'default' => '25',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_header_text_title_margin_bottom',
+  Customizer::add(
+    $section_text,
+    'header_text_title_margin_bottom',
     array(
-      'label' => 'サイトタイトル下のマージン（px）',
-      'section' => 'header_text',
-      'settings' => 'header_text_title_margin_bottom',
-      'type' => 'number',
+      'label'    => 'サイトタイトル下のマージン（px）',
+      'type'     => 'number',
       'input_attrs' => array(
         'step' => '1',
       ),
