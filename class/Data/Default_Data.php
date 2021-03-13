@@ -153,6 +153,7 @@ trait Default_Data {
 			'section_shadow_opacity' => '30',
 
 			//フッター
+			'footer_content_copyright' => 'Copyright © [#year] [#title] Powered by MY THEME.',
 			'footer_bg_color' => $dark_gray,
 			'footer_text_color' => $white,
 			'footer_text_hover_color' => $blue_agate,

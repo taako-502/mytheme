@@ -135,7 +135,7 @@ function mytheme_customize_css(){
     }
 
     .l-footer {
-      <?php \Mytheme_Theme\Style::add_style('color','footer_bg_color'); ?>
+      <?php \Mytheme_Theme\Style::add_style('background-color','footer_bg_color'); ?>
     }
 
     .l-footer,
@@ -148,7 +148,7 @@ function mytheme_customize_css(){
     }
 
     .l-footer--widgets {
-      <?php \Mytheme_Theme\Style::add_style('background-color:','footer_widget_bg_color'); ?>
+      <?php \Mytheme_Theme\Style::add_style('background-color','footer_widget_bg_color'); ?>
     }
 
     .l-footer--widgets,
