@@ -113,7 +113,7 @@ trait Default_Data {
 
 			/* カスタマイザー */
 			//全体構成
-			'architect_text_link_hover_color' => '#007bbb',
+			'architect_text_link_hover_color' => '#007bbb',//紺碧色（こんぺき色）
 			'front_architect_content_width' => '1180',
 			'architect_text_color' => '#333',
 			'architect_text_link_color' => '#04C',

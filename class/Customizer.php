@@ -1,8 +1,40 @@
 <?php
+namespace Mytheme_Theme;
+
+use \Mytheme_Theme\Customizer\Sanitize;
+use \Mytheme_Theme\Customizer\Control\Base_Control;
+use \Mytheme_Theme\Customizer\Control\Big_Title;
+use \Mytheme_Theme\Customizer\Control\Sub_Title;
+use \Mytheme_Theme\Customizer\Control\Color_Control;
+use \Mytheme_Theme\Customizer\Control\Image_Control;
+use \Mytheme_Theme\Customizer\Control\Media_Control;
 
 class Customizer {
 
   private function __construct() {}
+
+  /**
+	 * デフォルト値とマージ
+	 */
+	public static function set_args( $args ) {
+
+		$defaults = array(
+			'classname'   => '',
+			'label'       => '',
+			'description' => '',
+			'type'        => '',
+			'mime_type'   => '',
+			'choices'     => array(),
+			'input_attrs' => array(),
+			// 'sanitize' => '',
+			'transport'   => 'refresh',
+			'partial'     => array(),
+			'db'          => \Mytheme::DB_NAMES['customizer'],
+			'priority'    => 10,
+			'is_off'      => false,
+		);
+		return array_merge( $defaults, $args );
+	}
 
   /**
 	 * 設定追加
