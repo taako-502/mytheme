@@ -5,7 +5,7 @@ trait Default_Data {
 
 	public static function get_default_settings() {
 		//紺碧色（こんぺき色）
-		$azure = '#007bbb';
+		$azure = '#007BBB';
 		$dark_gray = '#333';
 		$blue_agate = '#3E9FD2';
 		$white = '#FFF';
@@ -127,7 +127,7 @@ trait Default_Data {
 
 			//ヘッダー
 			'header_bg_color' => '',
-			'header_text_color' => '',
+			'header_text_color' => '#FFF',
 			'header_text_hover_color' => $blue_agate,
 			'header_layout_titile_align' => 'left',
 			'header_text_logo_fontsize' => '28',

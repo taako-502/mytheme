@@ -1,11 +1,48 @@
 <?php
+use \Mytheme_Theme\Customizer;
+
 /**
- * ナビゲーションのカスタマイズを行うメソッド
+* セクション ： ヘッダー
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
  */
 function cusHeader( $wp_customize ) {
-  cusHeaderPanel($wp_customize);
-  cusHeaderSection($wp_customize);
+  $panel = 'header';
+  $section_layout = 'header_layout';
+  $section_text = 'header_text';
+  $section_bg = 'header_bg';
+
+  $wp_customize->add_panel(
+    $panel,
+    array(
+      'title'    => 'ヘッダー',
+      'priority' => 30,
+    )
+  );
+
+  $wp_customize->add_section(
+    $section_layout,
+    array(
+      'title'    => 'レイアウト',
+      'panel'    => $panel,
+      'priority' => 1,
+    )
+  );
+  $wp_customize->add_section(
+    $section_text,
+    array(
+      'title'    => 'テキスト',
+      'panel'    => $panel,
+      'priority' => 2,
+    )
+  );
+  $wp_customize->add_section(
+    $section_bg,
+    array(
+      'title'    => '背景',
+      'panel'    => $panel,
+      'priority' => 3,
+    )
+  );
 
   /* レイアウト */
   $wp_customize->add_setting( 'header_layout_titile_align' , array(
@@ -85,37 +122,21 @@ function cusHeader( $wp_customize ) {
     )
   );
 
-  $wp_customize->add_setting( 'header_text_color' , array(
-    'default'    => '#FFF',
-    'sanitize_callback' => 'sanitize_hex_color',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'ctl_header_text_color',
-      array(
-        'label'    => '文字色',
-        'section'  => 'header_text',
-        'settings' => 'header_text_color',
-      )
+  Customizer::add(
+    $section_text,
+    'header_text_color',
+    array(
+      'label'    => '文字色',
+      'type'     => 'color',
     )
   );
 
-  $wp_customize->add_setting( 'header_text_hover_color' , array(
-    'default'    => '#007BBB',
-    'sanitize_callback' => 'sanitize_hex_color',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'ctl_header_text_hover_color',
-      array(
-        'label'    => 'ホバー時の文字色',
-        'section'  => 'header_text',
-        'settings' => 'header_text_hover_color',
-      )
+  Customizer::add(
+    $section_text,
+    'header_text_hover_color',
+    array(
+      'label'    => 'ホバー時の文字色',
+      'type'     => 'color',
     )
   );
 
@@ -174,69 +195,12 @@ function cusHeader( $wp_customize ) {
   );
 
   /* 背景 */
-  $wp_customize->add_setting( 'header_bg_color' , array(
-    'default'    => '#333',
-    'sanitize_callback' => 'sanitize_hex_color',
-  ));
-
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'ctl_header_bg_color',
-      array(
-        'label'    => 'ヘッダーの背景色',
-        'section'  => 'header_bg',
-        'settings' => 'header_bg_color',
-      )
-    )
-  );
-}
-
-/**
- * パネル設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
- */
-function cusHeaderPanel( $wp_customize ) {
-  // ヘッダー
-  $wp_customize->add_panel(
-    'header',
+  Customizer::add(
+    $section_bg,
+    'header_bg_color',
     array(
-      'title'    => 'ヘッダー',
-      'priority' => 30,
+      'label'    => 'ヘッダーの背景色',
+      'type'     => 'color',
     )
   );
-}
-
-/**
- * セクション設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
- */
-function cusHeaderSection( $wp_customize ) {
-
-    $wp_customize->add_section(
-      'header_layout',
-      array(
-        'title'    => 'レイアウト',
-        'panel'    => 'header',
-        'priority' => 1,
-      )
-    );
-    $wp_customize->add_section(
-      'header_text',
-      array(
-        'title'    => 'テキスト',
-        'panel'    => 'header',
-        'priority' => 2,
-      )
-    );
-    $wp_customize->add_section(
-      'header_bg',
-      array(
-        'title'    => '背景',
-        'panel'    => 'header',
-        'priority' => 3,
-      )
-    );
 }
