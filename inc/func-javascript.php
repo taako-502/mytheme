@@ -1,17 +1,12 @@
 <?php
-namespace mytheme;
+namespace Mytheme_Theme;
 
 /**
  * カスタマイザーや管理画面で設定したCSSを出力
- *
- * @link https://github.com/taako-502/mytheme
- *
- * @package mytheme
  */
 
 /**
  * [mytheme_customize_css description]
- * @return [type] [description]
  */
 function customize_js(){
   $parts_header_slider_disp_number =get_theme_mod('parts_header_slider_disp_number','5');
@@ -58,5 +53,5 @@ function customize_js(){
 
   <?php
 }
-add_action( 'wp_head', '\mytheme\customize_js');
+add_action( 'wp_head', '\Mytheme_Theme\customize_js');
 ?>

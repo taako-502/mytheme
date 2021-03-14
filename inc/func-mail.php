@@ -1,5 +1,5 @@
 <?php
-require_once( plugin_dir_path(__FILE__) . "../class/MailClass.php");
+namespace Mytheme_Theme;
 
 /**
  * ショートコードの登録
@@ -42,7 +42,7 @@ function mailform_init(){
     );
   }
 }
-add_action('init', 'mailform_init');
+add_action('init', '\Mytheme_Theme\mailform_init');
 
 /**
  * Ajaxを使用するための準備
@@ -54,7 +54,7 @@ function add_my_ajaxurl() {
      </script>
  <?php
 }
-add_action( 'wp_head', 'add_my_ajaxurl', 1 );
+add_action( 'wp_head', '\Mytheme_Theme\add_my_ajaxurl', 1 );
 
 /**
  * 送信ボタン押下時の処理
@@ -141,11 +141,11 @@ function add_admin_mail(){
     'メールボックス',//メニュー名
     'manage_options',//権限
     'mailbox',//スラッグ
-    'add_custom_mailbox',//
+    '\Mytheme_Theme\add_custom_mailbox',//コールバック
     'dashicons-email',
     57);
 }
-add_action('admin_menu','add_admin_mail');
+add_action('admin_menu','\Mytheme_Theme\add_admin_mail');
 
 /**
 * メールボックスの読込
@@ -169,6 +169,6 @@ function mailbox_create_table() {
   $mailbox_db_version = '1.0';
   add_option( 'mailbox_db_version', $mailbox_db_version );
 }
-add_action('after_switch_theme','mailbox_create_table');
+add_action('after_switch_theme','\Mytheme_Theme\mailbox_create_table');
 
 ?>

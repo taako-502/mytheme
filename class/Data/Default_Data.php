@@ -125,7 +125,7 @@ trait Default_Data {
 			'architect_text_link_color'       => '#04C',
 
 			/* ヘッダー */
-			'header_layout_titile_align'      => 'left',fffv
+			'header_layout_titile_align'      => 'left',
 			'header_layout_nav_align'         => 'right',
 			'header_text_color'               => '#FFF',
 			'header_text_hover_color'         => $blue_agate,
