@@ -1,4 +1,6 @@
 <?php
+use \Mytheme_Theme\Customizer;
+
 /**
  * フロントページのカスタマイザー
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定

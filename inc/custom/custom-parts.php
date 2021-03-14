@@ -45,8 +45,8 @@ function cusParts($wp_customize) {
 
 /**
  * スライダーの設定
- * @param  [type] $wp_customize [description]
- * @return [type]               [description]
+ * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
+ * @param  String               $section      セクション名
  */
 function cusPartsHeaderSlider($wp_customize,$section) {
   Customizer::add(
@@ -81,53 +81,33 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_auto', array(
-    'default'   => true,
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_auto',
+  Customizer::add(
+    $section,
+    'parts_header_slider_auto',
     array(
-      'label'     => '自動でスライドする',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_auto',
-      'type'      => 'checkbox',
+      'label'    => '自動でスライドする',
+      'type'     => 'checkbox',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_auto_speed', array(
-    'default' => '3000',
-    //'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
-      $wp_customize,
-      'ctl_parts_header_slider_auto_speed',
-      array(
-        'label' => '自動スライドの速度（ms）',
-        'min'   => 0,
-        'max'   => 10000,
-        'step'  => 1000,
-        'section'  => 'parts_header_slider',
-        'settings' => 'parts_header_slider_auto_speed',
-      )
+  Customizer::add(
+    $section,
+    'parts_header_slider_auto_speed',
+    array(
+      'label'    => '自動スライドの速度（ms）',
+      'type'     => 'range',
+      'min'   => 0,
+      'max'   => 10000,
+      'step'  => 1000,
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_arrows', array(
-    'default'   => true,
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_arrows',
+  Customizer::add(
+    $section,
+    'parts_header_slider_arrows',
     array(
-      'label'     => 'スライダー両端の矢印の表示有無',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_arrows',
-      'type'      => 'checkbox',
+      'label'    => 'スライダー両端の矢印の表示有無',
+      'type'     => 'checkbox',
     )
   );
 
@@ -143,38 +123,24 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_centermode', array(
-    'default'   => true,
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_centermode',
+  Customizer::add(
+    $section,
+    'parts_header_slider_centermode',
     array(
-      'label'     => 'スライダーのセンタリング',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_centermode',
-      'type'      => 'checkbox',
+      'label'    => 'スライダーのセンタリング',
+      'type'     => 'checkbox',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_all_number', array(
-    'default' => '8',
-    //'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
-      $wp_customize,
-      'ctl_parts_header_slider_all_number',
-      array(
-        'label' => 'スライドの枚数',
-        'min'   => 2,
-        'max'   => 10,
-        'step'  => 1,
-        'section'  => 'parts_header_slider',
-        'settings' => 'parts_header_slider_all_number',
-      )
+  Customizer::add(
+    $section,
+    'parts_header_slider_all_number',
+    array(
+      'label'    => 'スライドの枚数',
+      'type'     => 'range',
+      'min'   => 2,
+      'max'   => 10,
+      'step'  => 1,
     )
   );
 
@@ -348,36 +314,23 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_disp_number', array(
-    'default' => '4',
-    //'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
-      $wp_customize,
-      'ctl_parts_header_slider_disp_number',
-      array(
-        'label' => '画面に表示するスライダーの枚数',
-        'min'   => 1,
-        'max'   => 5,
-        'step'  => 1,
-        'section'  => 'parts_header_slider',
-        'settings' => 'parts_header_slider_disp_number',
-      )
+  Customizer::add(
+    $section,
+    'parts_header_slider_disp_number',
+    array(
+      'label'    => 'スライドの枚数',
+      'type'     => 'range',
+      'min'   => 1,
+      'max'   => 5,
+      'step'  => 1,
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_width_maxwindow', array(
-    'default'    => 'max',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_width_maxwindow',
+  Customizer::add(
+    $section,
+    'parts_header_slider_width_maxwindow',
     array(
       'label'    => 'スライダーの幅設定',
-      'section'  => 'parts_header_slider',
-      'settings' => 'parts_header_slider_width_maxwindow',
       'type'     => 'radio',
       'choices'  => array(
         'px'      => 'pxで設定する',
@@ -386,51 +339,38 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_width', array(
-    'default' => '1180',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
-      $wp_customize,
-      'ctl_parts_header_slider_width',
-      array(
-        'label' => 'スライダーの幅（px）',
-        'description' => '本項目の設定は、幅が1180px以上の時に有効。',
-        'min'   => 0,
-        'max'   => 1800,
-        'step'  => 20,
-        'section'  => 'parts_header_slider',
-        'settings' => 'parts_header_slider_width',
-      )
+  Customizer::add(
+    $section,
+    'parts_header_slider_width',
+    array(
+      'label'       => 'スライダーの幅（px）',
+      'description' => '本項目の設定は、幅が1180px以上の時に有効。',
+      'type'        => 'range',
+      'min'         => 0,
+      'max'         => 1800,
+      'step'        => 20,
+      'transport'   => 'postMessage',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_article_margin_side', array(
-    'default' => '13',
-    'transport' => 'postMessage',
-  ));
-
-  $wp_customize->add_control(
-    new Mytheme_Theme\Customizer\Control\WP_Customize_Range(
-      $wp_customize,
-      'ctl_parts_header_slider_article_margin_side',
-      array(
-        'label' => '記事同士の余白幅（px）',
-        'min'   => 0,
-        'max'   => 20,
-        'step'  => 1,
-        'section'  => 'parts_header_slider',
-        'settings' => 'parts_header_slider_article_margin_side',
-      )
+  Customizer::add(
+    $section,
+    'parts_header_slider_article_margin_side',
+    array(
+      'label'       => '記事同士の余白幅（px）',
+      'type'        => 'range',
+      'min'         => 0,
+      'max'         => 20,
+      'step'        => 1,
+      'transport'   => 'postMessage',
     )
   );
 }
 
 /**
- *スクロールボタン
+ * スクロールボタン
  * @param  WP_Customize_Manager $wp_customize カスタマイズの設定
+ * @param  String               $section      セクション名
  */
 function cusPartsScroll($wp_customize,$section) {
   Customizer::add(
