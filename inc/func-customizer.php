@@ -38,7 +38,6 @@ add_action( 'customize_controls_enqueue_scripts', '\Mytheme_Theme\enqueue_custom
  *   ヘッダー・・・30
  *   ヘッダー画像・・・60
  *   背景画像・・・80
- *   背景・・・81
  *   フッター・・・90
  *   部品・・・95
  *   メニュー・・・100
