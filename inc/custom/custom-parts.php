@@ -144,173 +144,105 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_1', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_1',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_1',
     array(
-      'label'     => 'スライダーに表示する記事①',
+      'label'       => 'スライダーに表示する記事①',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_1',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_2', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_2',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_2',
     array(
-      'label'     => 'スライダーに表示する記事②',
+      'label'       => 'スライダーに表示する記事②',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_2',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_3', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_3',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_3',
     array(
-      'label'     => 'スライダーに表示する記事③',
+      'label'       => 'スライダーに表示する記事③',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_3',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_4', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_4',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_4',
     array(
-      'label'     => 'スライダーに表示する記事④',
+      'label'       => 'スライダーに表示する記事④',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_4',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_5', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_5',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_5',
     array(
-      'label'     => 'スライダーに表示する記事⑤',
+      'label'       => 'スライダーに表示する記事⑤',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_5',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_6', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
 
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_6',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_6',
     array(
-      'label'     => 'スライダーに表示する記事⑥',
+      'label'       => 'スライダーに表示する記事⑥',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_6',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_7', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
 
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_7',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_7',
     array(
-      'label'     => 'スライダーに表示する記事⑦',
+      'label'       => 'スライダーに表示する記事⑦',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_7',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_8', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_8',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_8',
     array(
-      'label'     => 'スライダーに表示する記事⑧',
+      'label'       => 'スライダーに表示する記事⑧',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_8',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_9', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_9',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_9',
     array(
-      'label'     => 'スライダーに表示する記事⑨',
+      'label'       => 'スライダーに表示する記事⑨',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_9',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
-  $wp_customize->add_setting('parts_header_slider_url_10', array(
-    'default'   => true,
-    'sanitize_callback' => 'esc_url_raw',
-    'transport' => 'refresh',
-  ));
-
-  $wp_customize->add_control(
-    'ctl_parts_header_slider_url_10',
+  Customizer::add(
+    $section,
+    'parts_header_slider_url_10',
     array(
-      'label'     => 'スライダーに表示する記事⑩',
+      'label'       => 'スライダーに表示する記事⑩',
       'description' => 'URLを入力',
-      'section'   => 'parts_header_slider',
-      'settings'  => 'parts_header_slider_url_10',
-      'type'      => 'url',
+      'type'        => 'url',
     )
   );
 
