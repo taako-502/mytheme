@@ -119,7 +119,7 @@ class MailClass {
               . "メールアドレス : \n".$this->email."\n"
               . "お問合せ内容 : \n".$this->content."\n";
     //TODO wordpress@example.comではないアドレスに設定すること
-    $headers = "From: ".get_bloginfo('name')." <wordpress@example.com>"."\r\n";
+    $headers = 'From: '.get_bloginfo('name').'<wordpress@example.jp>' . "\r\n";
     //メールの内容をデータベースに登録
     $this->insertMailbox();
     //メール送信
