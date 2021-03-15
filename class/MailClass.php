@@ -109,7 +109,7 @@ class MailClass {
   }
 
   /**
-  * メールの送信処理
+   * メールの送信処理
    * @return json   $json    実行結果
    */
   public function send() {
@@ -118,8 +118,8 @@ class MailClass {
     $body = "お名前 : \n".$this->name."\n"
               . "メールアドレス : \n".$this->email."\n"
               . "お問合せ内容 : \n".$this->content."\n";
-    $from = ! Utility::isNullOrWhitespace($this->email) ? $ethis->mail : "";
-    $headers = "From: ".get_bloginfo('name')." <{$from}>" . "\r\n";
+    $from = ! Utility::isNullOrWhitespace($this->email) ? $this->email : "";
+    $headers = "From: ".get_bloginfo('name')." <".$from.">" . "\r\n";
     //メールの内容をデータベースに登録
     $this->insertMailbox();
     //メール送信
