@@ -4,7 +4,7 @@ namespace Mytheme_Theme;
 /**
  * ショートコードの登録
  */
-add_shortcode( 'mailForm', 'salcodes_mailform' );
+add_shortcode( 'mailForm', '\Mytheme_Theme\salcodes_mailform' );
 function mailform_init(){
   function salcodes_mailform() {
     //メール送信制御用のJavaScriptファイルを読み込み
@@ -57,80 +57,31 @@ function add_my_ajaxurl() {
 add_action( 'wp_head', '\Mytheme_Theme\add_my_ajaxurl', 1 );
 
 /**
- * 送信ボタン押下時の処理
- * @return [type] [description]
+ * メールを送信（ajax）
  */
-function send_mail() {
-
+function send_mail(){
   global $value, $error;
   $value = array( 'name' => '', 'email' => '', 'content' => '' );
-  $error = false;
-
-  //入力チェック
   foreach ( $value as $key => $val ) {
     if ( isset( $_POST[$key] ) ) {
       $value[$key] = $_POST[$key];
     }
-
-    if ( $value[$key] === "" ) {
-      $json[$key] = array(
-        'msg' => '必須項目です',
-        'res' => '-1'
-      );
-      $error = true;
-    } else if ( $key == "email" && ! is_email( $value[$key] ) ) {
-      $json[$key] = array(
-        'msg' => 'メールアドレスの形式が間違っています',
-        'res' => '-1'
-      );
-      $error = true;
-    }
   }
-  if($error){
-    $json['result'] = array(
-      'msg' => '入力誤りがあります',
-      'res' => '-1'
-    );
+  //インスタンスの作成
+  $mc = new MailClass($value['name'],$value['email'],$value['content']);
+  //入力チェック
+  if($mc->validator($json)){
+    //エラーの場合、処理終了
     echo json_encode( $json );
     wp_die();
-    return;
   }
-  //メール送信処理
-  $to = get_option('admin_email');
-  $subject = "お問合せがありました";
-  $body = "お名前 : \n{$value['name']}\n"
-            . "メールアドレス : \n{$value['email']}\n"
-            . "お問合せ内容 : \n{$value['content']}\n";
-  $fromname = "My Test Site";
-  $from = "sendonly@example.com";
-  $headers = "From: {$fromname} <{$from}>" . "\r\n";
-  //メールの内容をデータベースに登録
-  $mc = new \Mytheme_Theme\MailClass;
-  $mc->insertMailbox($value['name'],$value['email'],$value['content']);
-  //メール送信
-  if(MAIL_TEST_FLG){
-    //テストフラグがtrueなら、trueを返す
-    $res = true;
-  } else {
-    $res = wp_mail( $to, $subject, $body , $headers );
-  }
-  if ( $res ) {
-    $json['result'] = array(
-      'msg' => 'メールを送信しました。',
-      'res' => '0'
-    );
-  } else {
-    $json['result'] = array(
-      'msg' => 'メールの送信に失敗しました。',
-      'res' => '-1'
-    );
-  }
-
+  //メールの送信
+  $json = $mc->send();
   echo json_encode( $json );
   wp_die();
 }
-add_action( 'wp_ajax_send_mail', 'send_mail' );
-add_action( 'wp_ajax_nopriv_send_mail', 'send_mail' );
+add_action( 'wp_ajax_send_mail', '\Mytheme_Theme\send_mail' );
+add_action( 'wp_ajax_nopriv_send_mail', '\Mytheme_Theme\send_mail' );
 
 /**
  * 管理メニューに追加
@@ -162,8 +113,7 @@ function add_custom_mailbox(){
  * @return [type] [description]
  */
 function mailbox_create_table() {
-  $mc = new \Mytheme_Theme\MailClass;
-  $mc->createTableMailbox();
+  \Mytheme_Theme\MailClass::createTableMailbox();
   //バージョン情報を付加
   global $jal_db_version;
   $mailbox_db_version = '1.0';

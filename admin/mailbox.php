@@ -1,7 +1,5 @@
 <?php
-require_once( plugin_dir_path(__FILE__) . "../class/MailClass.php");
-$mc = new \Mytheme_Theme\MailClass;
-$results = $mc->selectMailboxAll();
+$results = \Mytheme_Theme\MailClass::selectMailboxAll();
 ?>
 <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri() . '/css/admin.css'); ?>">
 <main>

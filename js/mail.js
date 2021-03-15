@@ -1,18 +1,13 @@
 /**
- * メールフォームの制御
- * @param  {[type]} $ [description]
- * @return {[type]}   [description]
+ * メールフォーム
  */
 jQuery(document).ready(function($) {
   (function($) {
-    var $response = $('.p-mailform--submit');
-
     /**
-     * サンプル
+     * メール送信ボタン押下時制御
      * @return {[type]} [description]
      */
-    //$( '#submit' ).on( 'click', function(){
-    $response.on('click', function() {
+    $('.p-mailform--submit').on('click', function() {
       $.ajax({
         type: 'POST',
         url: ajaxurl,
