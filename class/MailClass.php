@@ -118,8 +118,11 @@ class MailClass {
     $body = "お名前 : \n".$this->name."\n"
               . "メールアドレス : \n".$this->email."\n"
               . "お問合せ内容 : \n".$this->content."\n";
-    //TODO wordpress@example.comではないアドレスに設定すること
-    $headers = 'From: '.get_bloginfo('name').'<wordpress@example.jp>' . "\r\n";
+    $email = str_replace('http://www.' , '' , get_bloginfo('url') );
+    $email = str_replace('https://www.' , '' , $email );
+    $email = str_replace('http://' , '' , $email);
+    $email = str_replace('https://' , '' , $email );
+     $headers = 'From: '.get_bloginfo('name').'<wordpress@'.$email.'>' . "\r\n";
     //メールの内容をデータベースに登録
     $this->insertMailbox();
     //メール送信
