@@ -122,7 +122,7 @@ class MailClass {
     $email = str_replace('https://www.' , '' , $email );
     $email = str_replace('http://' , '' , $email);
     $email = str_replace('https://' , '' , $email );
-     $headers = 'From: '.get_bloginfo('name').'<wordpress@'.$email.'>' . "\r\n";
+    $headers = 'From: '.get_bloginfo('name').' <wordpress@'.$email.'>' . "\r\n";
     //メールの内容をデータベースに登録
     $this->insertMailbox();
     //メール送信
