@@ -171,7 +171,7 @@ trait Default_Data {
 
 			/* 部品 */
 			// ヘッダー下スライダ-
-			'parts_header_slider_type'        => 'news',
+			'parts_header_slider_type'        => 'date',
 			'parts_header_slider_design'      => 'c-slider-design--img-always',
 			'parts_header_slider_auto'        => 'true',
 			'parts_header_slider_auto_speed'  => '3000',
