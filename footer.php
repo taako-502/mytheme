@@ -9,7 +9,7 @@
       </div>
     </aside>
     <?php
-    $footer_content_copyright = get_theme_mod('footer_content_copyright','Copyright © ' .date('Y'). ' ' . get_bloginfo('name') . ' Powered by MY THEME.');
+    $footer_content_copyright = Mytheme::get_setting_without_default('footer_content_copyright');
     $footer_content_copyright = str_replace('[#year]',date('Y'),$footer_content_copyright);
     $footer_content_copyright = str_replace('[#title]','<a href='.home_url().'>'.get_bloginfo('name').'</a>',$footer_content_copyright);
     ?>
