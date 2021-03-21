@@ -11,8 +11,7 @@ class Data {
 	 * DB名
 	 */
 	const DB_NAMES = array(
-		//'customizer'  => 'mytheme_settings',
-		'customizer'  => 'theme_mods_mytheme',
+		'customizer'  => 'mytheme_settings',
 	);
 
 

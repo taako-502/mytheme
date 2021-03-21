@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
         }
       }
       /* 1カラムの時のみ、メインエリアの横幅を設定可能 */
-      wp.customize('front_architect_col', function(value) {
+      wp.customize('mytheme_settings[front_architect_col]', function(value) {
         oneColWithVisible(value.get());
         value.bind(function(newval) {
           oneColWithVisible(newval);
@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
         }
       }
       /* おすすめ記事選択時のみ表示 */
-      wp.customize('parts_header_slider_type', function(value) {
+      wp.customize('mytheme_settings[parts_header_slider_type]', function(value) {
         sliderTypeVisible(value.get());
         value.bind(function(newval) {
           sliderTypeVisible(newval);
@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
         }
       }
 
-      wp.customize('parts_header_slider_auto', function(value) {
+      wp.customize('mytheme_settings[parts_header_slider_auto]', function(value) {
         sliderAutoVisible(value.get());
         value.bind(function(newval) {
           sliderAutoVisible(newval);
@@ -102,7 +102,7 @@ jQuery(document).ready(function($) {
         }
       }
       /* おすすめ記事選択時のみ表示 */
-      wp.customize('parts_header_slider_all_number', function(value) {
+      wp.customize('mytheme_settings[parts_header_slider_all_number]', function(value) {
         sliderAooNumberVisible(value.get());
         value.bind(function(newval) {
           sliderAooNumberVisible(newval);
@@ -122,7 +122,7 @@ jQuery(document).ready(function($) {
         }
       }
       /* おすすめ記事選択時のみ表示 */
-      wp.customize('parts_header_slider_width_maxwindow', function(value) {
+      wp.customize('mytheme_settings[parts_header_slider_width_maxwindow]', function(value) {
         sliderWidthMaxwindowVisible(value.get());
         value.bind(function(newval) {
           sliderWidthMaxwindowVisible(newval);
