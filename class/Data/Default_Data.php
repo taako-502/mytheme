@@ -13,6 +13,7 @@ trait Default_Data {
 
 		return array(
 			/* 管理画面 */
+			// テキスト
 			'pc_p_size'                 => '17',
 			'pc_h1_size'                => '25',
 			'pc_h2_size'                => '24',
@@ -38,6 +39,18 @@ trait Default_Data {
 			'nav_txt_color'             => $white,
 			'bg_color'                  => $white,
 			'relevance_select'          => 'category',
+			// SEO
+			'ogp_fb_img_article'        => '',
+			'ogp_fb_img_top'            => '',
+			'ogp_fb_adminid'            => '',
+			'ogp_fb_appid'              => '',
+			// 回遊
+			'reco_left_img'             => get_template_directory_uri() ."/images/thumbnail-default.jpg",
+			'reco_center_img'           => get_template_directory_uri() ."/images/thumbnail-default.jpg",
+			'reco_right_img'            => get_template_directory_uri() ."/images/thumbnail-default.jpg",
+			'reco_left_url'             => '#',
+			'reco_center_url'           => '#',
+			'reco_right_url'            => '#',
 
 			/* カスタマイザー */
 			/* 全体構成 */

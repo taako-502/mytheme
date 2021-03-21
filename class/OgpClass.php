@@ -12,9 +12,7 @@ class OgpClass{
    * OGPタグを返却
    * @return String OGPタグ
    */
-  public function getOgpMeta($id){
-    $ut = new \Mytheme_Theme\Utility();
-
+  public static function getOgpMeta($id){
     $post = get_post($id);
     $result = "<meta property=\"og:type\" content=\"blog\">"."\n";
     if (is_singular()){
@@ -51,22 +49,14 @@ class OgpClass{
         $result .= '<meta property="og:image" content="'.$imgurl[2].'">'."\n";
       } else {
         //投稿にサムネイルも画像も無い場合の処理
-        if(isset($ogpFbImgArticle)) {
-          $result .= '<meta property="og:image" content="'. $ogpFbImgArticle .'">'."\n";
-        }
+        $result .= '<meta property="og:image" content="'. \Mytheme::get_setting_without_default('ogp_fb_img_article').'">'."\n";
       }
     } else {
-      if(isset($ogpFbImgTop)) {
-        $result .= "<meta property=\"og:image\" content=\"". $ogpFbImgTop ."\">"."\n";
-      }
+      $result .= "<meta property=\"og:image\" content=\"". \Mytheme::get_setting_without_default('ogp_fb_img_top') ."\">"."\n";
     }
     $result .= "<meta property=\"og:site_name\" content=\"". get_bloginfo('name') ."\">";
-    if(isset($ogpFbAdminId)) {
-      $result .= "<meta property=\"fb:admins\" content=\"". $ogpFbAdminId .">"."\n";
-    }
-    if(isset($ogpFbAppId)) {
-      $result .= "<meta property=\"fb:app_id\" content=\"". $ogpFbAppId .">"."\n";
-    }
+    $result .= "<meta property=\"fb:admins\" content=\"". \Mytheme::get_setting_without_default('ogp_fb_adminid') ."\">"."\n";
+    $result .= "<meta property=\"fb:app_id\" content=\"". \Mytheme::get_setting_without_default('ogp_fb_appid') ."\">"."\n";
     return $result;
   }
 }
