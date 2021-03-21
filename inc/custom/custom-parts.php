@@ -250,11 +250,11 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     $section,
     'parts_header_slider_disp_number',
     array(
-      'label'    => 'スライドの枚数',
-      'type'     => 'range',
-      'min'   => 1,
-      'max'   => 5,
-      'step'  => 1,
+      'label'       => 'スライドの枚数',
+      'type'        => 'range',
+      'min'         => 1,
+      'max'         => 5,
+      'step'        => 1,
     )
   );
 
@@ -265,7 +265,7 @@ function cusPartsHeaderSlider($wp_customize,$section) {
       'label'    => 'スライダーの幅設定',
       'type'     => 'radio',
       'choices'  => array(
-        'px'      => 'pxで設定する',
+        'px'       => 'pxで設定する',
         'max'      => 'ウィンドウの最大幅に合わせる',
       ),
     )
@@ -309,11 +309,11 @@ function cusPartsScroll($wp_customize,$section) {
     $section,
     'parts_scroll_color',
     array(
-      'label'    => '色',
+      'label'       => '色',
       'description' => '右下にあるスクロールボタンの色を設定する。',
-      'type'     => 'color',
-      'partial'  => array(
-        'selector' => '.c-top-scroll-btn a',
+      'type'        => 'color',
+      'partial'     => array(
+        'selector'  => '.c-top-scroll-btn a',
       ),
     )
   );
@@ -322,9 +322,9 @@ function cusPartsScroll($wp_customize,$section) {
     $section,
     'parts_scroll_hover_color',
     array(
-      'label'    => 'ホバー時の色',
+      'label'       => 'ホバー時の色',
       'description' => '右下にあるスクロールボタンをホバーした時の色を設定する。',
-      'type'     => 'color',
+      'type'        => 'color',
     )
   );
 }
