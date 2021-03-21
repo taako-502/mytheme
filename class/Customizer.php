@@ -49,7 +49,7 @@ class Customizer {
 		$args = self::set_args( $args );
 
 		// $args 上書き用フック。 設定を 'is_off' で非表示にしたり、 'priority' いじれるように。
-		$args = apply_filters( 'arkhe_customizer_args', $args, $section, $id, 'setting' );
+		$args = apply_filters( 'mytheme_customizer_args', $args, $section, $id, 'setting' );
 
 		// 設定非表示の場合。
 		if ( $args['is_off'] ) return;
