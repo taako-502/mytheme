@@ -6,17 +6,13 @@ namespace Mytheme_Theme;
  */
 class SchemaClass {
   /**
-   * 構造家データを返却
+   * 構造化データを返却
    */
   public static function getStructuredData($id){
-    $post = get_post($id);
-    // image（画像）の指定のためにアイキャッチ画像の情報を取得します
-    $thumbnail_id = get_post_thumbnail_id($post->ID); // アタッチメントIDの取得
-    $image = wp_get_attachment_image_src( $thumbnail_id, 'full' ); // アイキャッチの情報を取得
-    $src = isset($image) ? get_stylesheet_directory_uri() . '/images/thumbnail-default.jpg' : $image[0];    // URL
-    $width = isset($image) ? 900 : $image[1];  // 横幅
-    $height = isset($image) ? 450 : $image[2]; // 高さ
-    return printf("
+    // アイキャッチの情報を取得
+    $image = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'full' );
+    // 出力
+    printf("
       <script type=\"application/ld+json\">
       {
         \"@context\": \"http://schema.org\",
@@ -48,20 +44,22 @@ class SchemaClass {
             \"height\": 60
           }
         },
-        \"description\": \"". get_the_excerpt() ."\"
+        \"description\": \"%s\"
       }
       </script>"
       ,get_permalink()
       ,get_the_title()
-      ,$src
-      ,$height
-      ,$width
+      ,isset($image) ? get_stylesheet_directory_uri() . '/images/thumbnail-default.jpg' : $image[0] //URL
+      ,isset($image) ? 900 : $image[1]//横幅
+      ,isset($image) ? 450 : $image[2]//高さ
       ,get_the_date(DATE_ISO8601)
       ,get_the_date() != get_the_modified_time() ? get_the_modified_date(DATE_ISO8601) : get_the_date(DATE_ISO8601)
       ,get_the_author_meta('nickname')
       ,get_bloginfo('name')
       ,esc_url(get_template_directory_uri() . '/img/publisher-logo.png')
+      ,Utility::getDescription( $id, 120)
     );
+    return;
   }
 
   /**
