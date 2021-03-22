@@ -12,7 +12,7 @@ class SchemaClass {
     // アイキャッチの情報を取得
     $image = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'full' );
     // 出力
-    printf("
+    return printf("
       <script type=\"application/ld+json\">
       {
         \"@context\": \"http://schema.org\",
@@ -59,7 +59,6 @@ class SchemaClass {
       ,esc_url(get_template_directory_uri() . '/img/publisher-logo.png')
       ,Utility::getDescription( $id, 120)
     );
-    return;
   }
 
   /**

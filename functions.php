@@ -111,7 +111,7 @@ function wp_head_insert_tags(){
 	//OGP
 	echo \Mytheme_Theme\OgpClass::getOgpMeta($post->ID);
 	//構造化マークアップ
-	echo \Mytheme_Theme\SchemaClass::getStructuredData($post->ID);
+	\Mytheme_Theme\SchemaClass::getStructuredData($post->ID);
 }
 add_action('wp_head','wp_head_insert_tags');
 
