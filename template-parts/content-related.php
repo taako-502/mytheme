@@ -1,6 +1,6 @@
 <?php
 $args = array();
-$relevanceSelect = Mytheme::get_setting('relevance-select');
+$relevanceSelect = \Mytheme::get_setting_admin('relevance_select');
 switch($relevanceSelect){
   case "category":
   case "tag":
@@ -28,10 +28,10 @@ switch($relevanceSelect){
     );
     break;
   case "url":
-    $kwds[0] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url1')) ? url_to_postid(\Mytheme::get_setting('relevance_url1')) : "";
-    $kwds[1] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url2')) ? url_to_postid(\Mytheme::get_setting('relevance_url2')) : "";
-    $kwds[2] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url3')) ? url_to_postid(\Mytheme::get_setting('relevance_url3')) : "";
-    $kwds[3] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting('relevance_url4')) ? url_to_postid(\Mytheme::get_setting('relevance_url4')) : "";
+    $kwds[0] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting_admin('relevance_url1')) ? url_to_postid(\Mytheme::get_setting_admin('relevance_url1')) : "";
+    $kwds[1] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting_admin('relevance_url2')) ? url_to_postid(\Mytheme::get_setting_admin('relevance_url2')) : "";
+    $kwds[2] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting_admin('relevance_url3')) ? url_to_postid(\Mytheme::get_setting_admin('relevance_url3')) : "";
+    $kwds[3] = \Mytheme_Theme\Utility::isNullOrWhitespace(\Mytheme::get_setting_admin('relevance_url4')) ? url_to_postid(\Mytheme::get_setting_admin('relevance_url4')) : "";
     $args = array(
       'post_type' => 'post',
       'posts_per_page' => '4',
