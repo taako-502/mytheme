@@ -71,8 +71,8 @@ class Admin {
    * @param string $placeholder プレースホルダー
    */
   public static function add_input($type, $label, $key, $placeholder = ""){
-    $_placeholder = \Mytheme_Theme\Utility::isNullOrWhitespace($placeholder) ? \Mytheme::get_default_setting($key) : $placeholder ;
-    return '<label for="'.$key.'">'.$label.'</label><input type="'.$type.'" id="'.$key.'" class="'.$key.'" name="'.$key.'" value="'.\Mytheme::get_setting($key).'" placeholder="'.$_placeholder.'">';
+    $_placeholder = Utility::isNullOrWhitespace($placeholder) ? \Mytheme::get_default_setting($key) : $placeholder ;
+    return '<label for="'.$key.'">'.$label.'</label><input type="'.$type.'" id="'.$key.'" class="'.$key.'" name="'.$key.'" value="'.\Mytheme::get_setting_admin($key).'" placeholder="'.$_placeholder.'">';
   }
 
   /**
@@ -85,7 +85,7 @@ class Admin {
     $html = '<label for="'.$key.'">'.$label.'</label>';
     $html .= '<select id="'.$key.'" class="'.$key.'" name="'.$key.'">';
     foreach ($arr as $value => $text) {
-      if ($value == \Mytheme::get_setting($key)) {
+      if ($value == \Mytheme::get_setting_admin($key)) {
         $html .= '<option value="'.$value.'" selected>'.$text.'</option>';
       } else {
         $html .= '<option value="'.$value.'">'.$text.'</option>';
@@ -102,7 +102,7 @@ class Admin {
    * @param array  $arr   キー：value値,バリュー：テキストの連想配列
    */
   public static function add_img($label = "", $key = "", $arr = array()){
-    return '<label for="'.$key.'">'.$label.'</label>'.\Mytheme_Theme\Utility::generate_upload_image_tag($key, \Mytheme::get_setting($key));
+    return '<label for="'.$key.'">'.$label.'</label>'.Utility::generate_upload_image_tag($key, \Mytheme::get_setting_admin($key));
   }
 
   /**
@@ -113,7 +113,7 @@ class Admin {
    * @param string $cols  テキストエリアの縦幅
    */
   public static function add_textarea_html($label = "", $key = "",$rows = "8", $cols = "80"){
-    return '<label for="'.$key.'">'.$label.'</label><br><textarea id="'.$key.'" name="'.$key.'" rows="'.$rows.'" cols="'.$cols.'">'.stripslashes(\Mytheme::get_setting($key)) .'</textarea>';
+    return '<label for="'.$key.'">'.$label.'</label><br><textarea id="'.$key.'" name="'.$key.'" rows="'.$rows.'" cols="'.$cols.'">'.stripslashes(\Mytheme::get_setting_admin($key)) .'</textarea>';
   }
 }
 ?>

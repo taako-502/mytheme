@@ -244,34 +244,34 @@ function mytheme_customize_css(){
        ----------------------------------------------------------------- */
 
     /* 文字サイズ（PC） TODO: コメントアウト */
-    article.p-article p { <?php \Mytheme_Theme\Style::add_style('font-size','pc_p_size','px',true); ?> }
-    article.p-article h1 { <?php \Mytheme_Theme\Style::add_style('font-size','pc_h1_size','px',true); ?> }
-    article.p-article h2 { <?php \Mytheme_Theme\Style::add_style('font-size','pc_h2_size','px',true); ?> }
-    article.p-article h3 { <?php \Mytheme_Theme\Style::add_style('font-size','pc_h3_size','px',true); ?> }
-    article.p-article h4 { <?php \Mytheme_Theme\Style::add_style('font-size','pc_h4_size','px',true); ?> }
-    article.p-article h5 { <?php \Mytheme_Theme\Style::add_style('font-size','pc_h5_size','px',true); ?> }
-    article.p-article h6 { <?php \Mytheme_Theme\Style::add_style('font-size','pc_h6_size','px',true); ?> }
+    article.p-article p { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_p_size','px',true); ?> }
+    article.p-article h1 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_h1_size','px',true); ?> }
+    article.p-article h2 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_h2_size','px',true); ?> }
+    article.p-article h3 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_h3_size','px',true); ?> }
+    article.p-article h4 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_h4_size','px',true); ?> }
+    article.p-article h5 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_h5_size','px',true); ?> }
+    article.p-article h6 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','pc_h6_size','px',true); ?> }
 
     /* 文字サイズ（タブレット） */
     @media screen and (max-width:980px) {
-      article.p-article p { <?php \Mytheme_Theme\Style::add_style('font-size','tb_p_size','px',true); ?> }
-      article.p-article h1 { <?php \Mytheme_Theme\Style::add_style('font-size','tb_h1_size','px',true); ?> }
-      article.p-article h2 { <?php \Mytheme_Theme\Style::add_style('font-size','tb_h2_size','px',true); ?> }
-      article.p-article h3 { <?php \Mytheme_Theme\Style::add_style('font-size','tb_h3_size','px',true); ?> }
-      article.p-article h4 { <?php \Mytheme_Theme\Style::add_style('font-size','tb_h4_size','px',true); ?> }
-      article.p-article h5 { <?php \Mytheme_Theme\Style::add_style('font-size','tb_h5_size','px',true); ?> }
-      article.p-article h6 { <?php \Mytheme_Theme\Style::add_style('font-size','tb_h6_size','px',true); ?> }
+      article.p-article p { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_p_size','px',true); ?> }
+      article.p-article h1 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_h1_size','px',true); ?> }
+      article.p-article h2 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_h2_size','px',true); ?> }
+      article.p-article h3 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_h3_size','px',true); ?> }
+      article.p-article h4 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_h4_size','px',true); ?> }
+      article.p-article h5 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_h5_size','px',true); ?> }
+      article.p-article h6 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','tb_h6_size','px',true); ?> }
     }
 
     /* 文字サイズ（スマートフォン） */
     @media (max-width:768px) {
-      article.p-article p { <?php \Mytheme_Theme\Style::add_style('font-size','sm_p_size','px',true); ?> }
-      article.p-article h1 { <?php \Mytheme_Theme\Style::add_style('font-size','sm_h1_size','px',true); ?> }
-      article.p-article h2 { <?php \Mytheme_Theme\Style::add_style('font-size','sm_h2_size','px',true); ?> }
-      article.p-article h3 { <?php \Mytheme_Theme\Style::add_style('font-size','sm_h3_size','px',true); ?> }
-      article.p-article h4 { <?php \Mytheme_Theme\Style::add_style('font-size','sm_h4_size','px',true); ?> }
-      article.p-article h5 { <?php \Mytheme_Theme\Style::add_style('font-size','sm_h5_size','px',true); ?> }
-      article.p-article h6 { <?php \Mytheme_Theme\Style::add_style('font-size','sm_h6_size','px',true); ?> }
+      article.p-article p { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_p_size','px',true); ?> }
+      article.p-article h1 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_h1_size','px',true); ?> }
+      article.p-article h2 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_h2_size','px',true); ?> }
+      article.p-article h3 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_h3_size','px',true); ?> }
+      article.p-article h4 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_h4_size','px',true); ?> }
+      article.p-article h5 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_h5_size','px',true); ?> }
+      article.p-article h6 { <?php \Mytheme_Theme\Style::add_style_admin('font-size','sm_h6_size','px',true); ?> }
     }
 
     .p-related .p-related--item .p-related--title:hover,

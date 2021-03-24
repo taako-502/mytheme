@@ -48,9 +48,13 @@ trait Default_Data {
 			'reco_left_img'             => get_template_directory_uri() ."/images/thumbnail-default.jpg",
 			'reco_center_img'           => get_template_directory_uri() ."/images/thumbnail-default.jpg",
 			'reco_right_img'            => get_template_directory_uri() ."/images/thumbnail-default.jpg",
-			'reco_left_url'             => '#',
-			'reco_center_url'           => '#',
-			'reco_right_url'            => '#',
+			'reco_left_url'             => '',
+			'reco_center_url'           => '',
+			'reco_right_url'            => '',
+			'relevance_url1'            => '',
+			'relevance_url2'            => '',
+			'relevance_url3'            => '',
+			'relevance_url4'            => '',
 
 			/* カスタマイザー */
 			/* 全体構成 */

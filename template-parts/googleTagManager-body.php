@@ -1,5 +1,5 @@
 <?php
-$gtmId = get_theme_mod('gtm-id', '');
+$gtmId = \Mytheme::get_setting_admin('gtm_id');
 if(\Mytheme_Theme\Utility::isNullOrWhitespace(trim($gtmId))){
   return;
 }

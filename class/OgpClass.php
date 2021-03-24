@@ -49,14 +49,14 @@ class OgpClass{
         $result .= '<meta property="og:image" content="'.$imgurl[2].'">'."\n";
       } else {
         //投稿にサムネイルも画像も無い場合の処理
-        $result .= '<meta property="og:image" content="'. \Mytheme::get_setting_without_default('ogp_fb_img_article').'">'."\n";
+        $result .= '<meta property="og:image" content="'. \Mytheme::get_setting_admin('ogp_fb_img_article').'">'."\n";
       }
     } else {
-      $result .= "<meta property=\"og:image\" content=\"". \Mytheme::get_setting_without_default('ogp_fb_img_top') ."\">"."\n";
+      $result .= "<meta property=\"og:image\" content=\"". \Mytheme::get_setting_admin('ogp_fb_img_top') ."\">"."\n";
     }
     $result .= "<meta property=\"og:site_name\" content=\"". get_bloginfo('name') ."\">";
-    $result .= "<meta property=\"fb:admins\" content=\"". \Mytheme::get_setting_without_default('ogp_fb_adminid') ."\">"."\n";
-    $result .= "<meta property=\"fb:app_id\" content=\"". \Mytheme::get_setting_without_default('ogp_fb_appid') ."\">"."\n";
+    $result .= "<meta property=\"fb:admins\" content=\"". \Mytheme::get_setting_admin('ogp_fb_adminid') ."\">"."\n";
+    $result .= "<meta property=\"fb:app_id\" content=\"". \Mytheme::get_setting_admin('ogp_fb_appid') ."\">"."\n";
     return $result;
   }
 }

@@ -1,5 +1,5 @@
 <?php
-$analytics_code = get_theme_mod('analytics','');
+$analytics_code = \Mytheme::get_setting_admin('analytics');
 if(\Mytheme_Theme\Utility::isNullOrWhitespace(trim($analytics_code))){
   return;
 }

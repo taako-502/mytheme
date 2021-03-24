@@ -178,6 +178,14 @@ class Data {
 		return self::$default_settings;
 	}
 
+	/**
+	 * 管理画面で設定した設定値
+	 * @param  string $key 設定キー
+	 * @return string      設定値
+	 */
+	public static function get_setting_admin( $key ) {
+		return get_theme_mod($key, self::get_default_setting($key));
+	}
 
 	/**
 	 * カスタマイザーのデータを上書きするメソッド
@@ -186,7 +194,6 @@ class Data {
 		if ( ! $key ) return;
 		self::$settings[ $key ] = $val;
 	}
-
 
 	/**
 	 * プラグインのデータを取得
@@ -198,7 +205,6 @@ class Data {
 		}
 		return self::$plugin_data;
 	}
-
 
 	/**
 	 * プラグインのデータをセット

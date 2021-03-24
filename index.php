@@ -7,19 +7,19 @@ $page_title = "home";
 ?>
 <section class="contents">
   <?php
-    if(\Mytheme::get_setting_without_default("front_architect_reco_disp") == "visible"){ ?>
+    if(\Mytheme::get_setting_admin("front_architect_reco_disp") == "visible"){ ?>
     <div class="p-recommend">
-      <h2 class="p-recommend--h2 c-heading--main"><span class="cus-border"></span><?php echo \Mytheme::get_setting_without_default("front_heading_reco"); ?></h2>
+      <h2 class="p-recommend--h2 c-heading--main"><span class="cus-border"></span><?php echo \Mytheme::get_setting_admin("front_heading_reco"); ?></h2>
       <div class="p-recommend-area">
         <!-- TODO: ここで設定値が取得できていないため、修正すること -->
-        <a class="p-recommend--a c-aspect-9-16" href="<?php echo \Mytheme::get_setting_without_default('reco_left_url'); ?>">
-          <img class="p-recommend--img" src="<?php echo \Mytheme::get_setting_without_default('reco_left_img'); ?>" alt="">
+        <a class="p-recommend--a c-aspect-9-16" href="<?php echo \Mytheme::get_setting_admin('reco_left_url'); ?>">
+          <img class="p-recommend--img" src="<?php echo \Mytheme::get_setting_admin('reco_left_img'); ?>" alt="">
         </a>
-        <a class="p-recommend--a c-aspect-9-16" href="<?php echo \Mytheme::get_setting_without_default('reco_center_img'); ?>">
-          <img class="p-recommend--img" src="<?php echo \Mytheme::get_setting_without_default('reco_center_url'); ?>" alt="">
+        <a class="p-recommend--a c-aspect-9-16" href="<?php echo \Mytheme::get_setting_admin('reco_center_url'); ?>">
+          <img class="p-recommend--img" src="<?php echo \Mytheme::get_setting_admin('reco_center_img'); ?>" alt="">
         </a>
-        <a class="p-recommend--a c-aspect-9-16" href="<?php echo \Mytheme::get_setting_without_default('reco_right_img'); ?>">
-          <img class="p-recommend--img" src="<?php echo \Mytheme::get_setting_without_default('reco_right_url'); ?>" alt="">
+        <a class="p-recommend--a c-aspect-9-16" href="<?php echo \Mytheme::get_setting_admin('reco_right_url'); ?>">
+          <img class="p-recommend--img" src="<?php echo \Mytheme::get_setting_admin('reco_right_img'); ?>" alt="">
         </a>
       </div>
     </div>
@@ -27,7 +27,7 @@ $page_title = "home";
   }
   ?>
   <main class="l-main p-front u-width-col-2">
-    <h2 class="p-news--h2 c-heading--main"><span class="cus-border"></span><?php echo \Mytheme::get_setting_without_default("front_heading_news"); ?></h2>
+    <h2 class="p-news--h2 c-heading--main"><span class="cus-border"></span><?php echo \Mytheme::get_setting_admin("front_heading_news"); ?></h2>
     <div class="p-news--list">
       <?php
         /* 記事一覧 */
@@ -38,7 +38,7 @@ $page_title = "home";
             get_template_part('template-parts/content','article');
             if($cnt % 10 == 2){
               //広告を挿入
-              $adsTopCard = \Mytheme::get_setting_without_default('adsCd_top_card');
+              $adsTopCard = \Mytheme::get_setting_admin('adsCd_top_card');
               ?>
               <div class="p-news-card">
                 <?php echo stripslashes($adsTopCard); ?>
@@ -55,7 +55,7 @@ $page_title = "home";
     </div>
   </main>
   <?php
-  if(\Mytheme::get_setting_without_default('front_architect_col') == 'two-col'){
+  if(\Mytheme::get_setting_admin('front_architect_col') == 'two-col'){
     //管理画面で2カラムを設定した場合、サイドバーを表示
     get_sidebar();
   }
