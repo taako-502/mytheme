@@ -1,0 +1,96 @@
+# Copyright (C) 2021 taako
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: MY THEME 20210304\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mytheme\n"
+"POT-Creation-Date: 2021-03-26 14:48:05+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/admin.php:135
+msgid "save"
+msgstr ""
+
+#: class/Data.php:108
+msgid "Card type"
+msgstr ""
+
+#: class/Data.php:109
+msgid "List type"
+msgstr ""
+
+#: class/Data.php:110
+msgid "Text type"
+msgstr ""
+
+#: inc/func-admin.php:23
+msgid "mythemeの簡単設定"
+msgstr ""
+
+#: inc/func-admin.php:24
+msgid "mytheme設定"
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
+msgid "View details"
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:77
+msgid "More information about %s"
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:213
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:215
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:217
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:223
+msgid "Unknown update checker status \"%s\""
+msgstr ""
+
+#: lib/plugin-update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "MY THEME"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/taako-502/mytheme"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This theme is compatible with AMP and Gutenberg ."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "taako"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://taako-biz.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "1カラムテンプレート"
+msgstr ""
