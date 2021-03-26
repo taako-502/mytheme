@@ -27,7 +27,7 @@ spl_autoload_register(
 );
 
 /**
- * テーマの最新バージョンがないか確認する
+ * テーマの最新バージョンの有無を確認
  */
 require 'lib/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
@@ -55,7 +55,10 @@ function mytheme_setup(){
 	add_theme_support('custom-logo');
   register_nav_menu('header-nav', 'Header Navigation');
 
-	//背景画像の設定
+	/* 国際化・地域課の設定 */
+	load_theme_textdomain( 'mytheme', get_template_directory() . '/languages' );
+
+	/* 背景画像の設定 */
 	$defaults = array(
 		'default-color'          => '#FFF',
 		'default-image'          => '',
@@ -94,8 +97,7 @@ function main_enqueue_scripts() {
   	wp_enqueue_script( 'comment-reply' );
 	}
 	//アドセンスコード
-	$adsCdAuto = get_theme_mod('adsCd-auto','');
-	echo stripslashes($adsCdAuto);
+	echo stripslashes(\Mytheme::get_setting_admin('adsCd_auto'));
 }
 add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
 

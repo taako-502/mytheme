@@ -8,9 +8,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-03-26 23:58+0900\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja_JP\n"
 
 #: admin/admin.php:135
 msgid "save"
@@ -30,11 +33,11 @@ msgstr ""
 
 #: inc/func-admin.php:23
 msgid "easy to set up"
-msgstr ""
+msgstr "mythemeの簡単設定"
 
 #: inc/func-admin.php:24
 msgid "mytheme setting"
-msgstr ""
+msgstr "mytheme 設定"
 
 #: lib/plugin-update-checker/Puc/v4p10/Plugin/Ui.php:54
 msgid "View details"

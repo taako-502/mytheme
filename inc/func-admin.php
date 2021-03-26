@@ -20,8 +20,8 @@
  */
 function add_admin(){
   add_menu_page(
-    'mythemeの簡単設定',
-    'mytheme設定',
+    __('easy to set up','mytheme'),
+    __('mytheme setting','mytheme'),
     'manage_options',
     'mytheme-admin',
     'add_custom_admin',
