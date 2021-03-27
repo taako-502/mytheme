@@ -1,4 +1,6 @@
 <?php
+namespace Mytheme_Theme;
+
 /**
  * Sample implementation of the Custom Header feature
  *
@@ -26,12 +28,12 @@ function mytheme_custom_header_setup() {
 				'width'              => 1370,
 				'height'             => 300,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'mytheme_header_style',
+				'wp-head-callback'   => '\Mytheme_Theme\mytheme_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'mytheme_custom_header_setup' );
+add_action( 'after_setup_theme', '\Mytheme_Theme\mytheme_custom_header_setup' );
 
 if ( ! function_exists( 'mytheme_header_style' ) ) :
 	/**

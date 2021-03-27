@@ -1,6 +1,8 @@
 <?php
 namespace Mytheme_Theme;
 
+require_once MYTHEME_THEME_PATH . '/inc/custom/custom-header-img.php';
+
 /**
  * カスタマイザープレビュー画面 JavaScriptのエンキュー
  * @see add_action('customize_preview_init',$func)
@@ -50,7 +52,6 @@ function mytheme_customize( $wp_customize ) {
   // ファイルの読み込み
   get_template_part('/inc/custom/custom', 'architect');
   get_template_part('/inc/custom/custom', 'header');
-  get_template_part('/inc/custom/custom', 'header-img');
   get_template_part('/inc/custom/custom', 'front-page');
   get_template_part('/inc/custom/custom', 'bg');
   get_template_part('/inc/custom/custom', 'footer');
