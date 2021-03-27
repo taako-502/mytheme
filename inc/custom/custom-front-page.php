@@ -53,8 +53,8 @@ function cusFrontArchitect($wp_customize,$section) {
     array(
       'label'    => 'コンテンツ幅（px）',
       'type'     => 'range',
-      'min'       => '2',
-      'max'       => '10',
+      'min'       => 2,
+      'max'       => 1800,
       'step'      => '1',
       'transport' => 'postMessage',
     )
