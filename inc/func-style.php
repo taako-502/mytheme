@@ -21,7 +21,7 @@ function mytheme_customize_css(){
     // ========================================================================*/
     /* ベース　*/
     .contents {
-      <?php \Mytheme_Theme\Style::add_style('comax-width','front_architect_content_width','px'); ?>
+      <?php \Mytheme_Theme\Style::add_style('max-width','front_architect_content_width','px'); ?>
     }
 
     .contents p {
