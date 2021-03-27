@@ -75,6 +75,7 @@ img {
 }
 
 .l-footer--widgets {
+  box-sizing: border-box;
   width: 100vw;
   margin-left: auto;
   margin-right: auto;
