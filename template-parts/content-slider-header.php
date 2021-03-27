@@ -2,13 +2,29 @@
 /**
  * スライダー
  */
-$parts_header_slider_type = get_theme_mod('parts_header_slider_type','date');
+//表示制御
+switch (\Mytheme::get_setting_without_default('parts_header_slider_post')) {
+  case 'front-only':
+    if (!is_front_page()) { return; }
+    break;
+  case 'front-except':
+    if (is_front_page()) { return; }
+    break;
+  case 'single-only':
+    if (!is_single()) { return; }
+    break;
+  case 'page-only':
+    if (!is_page()) { return; }
+    break;
+}
+
+$parts_header_slider_type = \Mytheme::get_setting_without_default('parts_header_slider_type');
 if($parts_header_slider_type != 'none') {
   ?>
   <ul class="c-slider-header">
     <?php
-    $parts_header_slider_all_number = get_theme_mod('parts_header_slider_all_number','8');
-    $parts_header_slider_design = get_theme_mod('parts_header_slider_design','c-slider-design--img-always');
+    $parts_header_slider_all_number = \Mytheme::get_setting_without_default('parts_header_slider_all_number');
+    $parts_header_slider_design = \Mytheme::get_setting_without_default('parts_header_slider_design');
     switch ($parts_header_slider_type) {
       case 'date':
       case 'rand':
@@ -55,7 +71,7 @@ if($parts_header_slider_type != 'none') {
         break;
       case 'recommend':
         for ($i=1; $i <= $parts_header_slider_all_number; $i++) {
-          $parts_header_slider_url = get_theme_mod('parts_header_slider_url_' . $i,'#');
+          $parts_header_slider_url = \Mytheme::get_setting_without_default('parts_header_slider_url_' . $i);
           $slider_posts = url_to_postid($parts_header_slider_url);
           ?>
           <li class="<?php echo $parts_header_slider_design; ?>">

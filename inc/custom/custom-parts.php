@@ -53,17 +53,35 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     $section,
     'parts_header_slider_type',
     array(
-      'label'    => 'スライダーの表示',
-      'type'     => 'radio',
-      'choices'  => array(
-        'none'      => '非表示',
-        'date'      => '新着記事',
-        'rand'      => 'ランダム記事',
-        'recommend' => 'おすすめ記事',
+      'label'       => '表示形式',
+      'description' => 'スライダーの表示形式を設定する。',
+      'type'        => 'radio',
+      'choices'     => array(
+        'none'          => '非表示',
+        'date'          => '新着記事',
+        'rand'          => 'ランダム記事',
+        'recommend'     => 'おすすめ記事',
       ),
-      'partial'  => array(
-        'selector'  => '.c-slider-header',
+      'partial'     => array(
+        'selector'      => '.c-slider-header',
       )
+    )
+  );
+
+  Customizer::add(
+    $section,
+    'parts_header_slider_post',
+    array(
+      'label'       => '表示箇所',
+      'description' => 'スライダーを表示する画面の種別を設定する。',
+      'type'        => 'radio',
+      'choices'     => array(
+        'all'           => '全ページ',
+        'front-only'    => 'トップページのみ',
+        'front-except'  => 'トップページ以外',
+        'single-only'   => '投稿ページのみ',
+        'page-only'     => '固定ページのみ',
+      ),
     )
   );
 
