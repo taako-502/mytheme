@@ -404,12 +404,16 @@ img {
   /* コンテンツのスライドアニメーション */
   .contents,
 .l-footer,
-.l-header {
+.l-header,
+.l-header--img,
+.c-slider-header {
     transition: 0.35s ease-in-out;
   }
   .contents.open,
 .l-footer.open,
-.l-header.open {
+.l-header.open,
+.l-header--img.open,
+.c-slider-header.open {
     transform: translateX(-85%);
   }
 
@@ -929,7 +933,7 @@ img {
 .c-slider-design--img-always .hover-text {
   position: absolute;
   box-sizing: border-box;
-  padding: 1px;
+  padding: 4px;
   width: 100%;
   height: 16%;
   bottom: 0;

@@ -303,7 +303,9 @@
   /* コンテンツのスライドアニメーション */
   .contents,
   .l-footer,
-  .l-header {
+  .l-header,
+  .l-header--img,
+  .c-slider-header, {
     -webkit-transition: 0.35s ease-in-out;
     -moz-transition: 0.35s ease-in-out;
     transition: 0.35s ease-in-out;

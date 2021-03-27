@@ -9,6 +9,8 @@ jQuery(document).ready(function($) {
     var $contents = jQuery('.contents');
     var $footer = jQuery('.l-footer');
     var $topScrollBtn = jQuery('.c-top-scroll-btn');
+    var $headerImg = jQuery('.l-header--img');
+    var $sliderHeader = jQuery('.c-slider-header');
 
     /**
      * 下にスクロールすると、画面上部にメニューを表示する
@@ -30,6 +32,8 @@ jQuery(document).ready(function($) {
       $header.toggleClass('open');
       $contents.toggleClass('open');
       $footer.toggleClass('open');
+      $headerImg.toggleClass('open');
+      $sliderHeader.toggleClass('open');
     });
 
     /**
@@ -39,6 +43,8 @@ jQuery(document).ready(function($) {
        $header.removeClass('open');
        $contents.removeClass('open');
        $footer.removeClass('open');
+       $headerImg.removeClass('open');
+       $sliderHeader.removeClass('open');
      });
 
      // ◇ボタンをクリックしたら、スクロールして上に戻る
