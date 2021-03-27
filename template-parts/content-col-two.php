@@ -1,3 +1,8 @@
+<?php
+/**
+ * ２カラム記事
+ */
+?>
 <section class="contents">
   <main class="l-main u-width-col-2">
     <?php

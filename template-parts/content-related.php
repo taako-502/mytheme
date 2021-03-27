@@ -1,4 +1,7 @@
 <?php
+/**
+ * 関連記事
+ */
 $args = array();
 $relevanceSelect = \Mytheme::get_setting_admin('relevance_select');
 switch($relevanceSelect){

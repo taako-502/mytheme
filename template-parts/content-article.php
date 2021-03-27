@@ -1,4 +1,7 @@
 <?php
+/**
+ * 記事カード
+ */
 ?>
 <div class="p-news-card">
   <?php

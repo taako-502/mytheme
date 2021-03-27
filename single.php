@@ -1,6 +1,6 @@
 <?php
 /**
- * 記事ページ
+ * 投稿ページ
  *
  * @package mytheme
  */
