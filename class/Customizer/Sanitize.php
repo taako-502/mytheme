@@ -25,6 +25,8 @@ class Sanitize {
 				return array( '\Mytheme_Theme\Customizer\Sanitize', 'image' );
 			case 'color':
 				return 'sanitize_hex_color';
+			case 'url':
+				return 'esc_url_raw';
 			default: // text | textarea
 				return 'wp_kses_post';
 		}
