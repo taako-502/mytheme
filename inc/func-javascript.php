@@ -23,6 +23,7 @@ function customize_js(){
          */
         $('.c-slider-header').slick({
           adaptiveHeight: false,//高さ固定
+          arrows: false,
           centerMode: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_centermode') == "1" ? "true" : "false"; ?>,
           slidesToShow: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_disp_number'); ?>,
           dots: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_dot') == "1" ? "true" : "false"; ?>,
