@@ -108,14 +108,15 @@ trait Default_Data {
 			'footer_widget_text_hover_color'  => $blue_agate,
 
 			/* 部品 */
-			// ヘッダー下スライダ-
+			/* ヘッダー下スライダ- */
 			'parts_header_slider_type'        => 'date',
 			'parts_header_slider_post'        => 'all',
 			'parts_header_slider_design'      => 'c-slider-design--img-always',
-			'parts_header_slider_auto'        => 'true',
+			'parts_header_slider_auto'        => '01',
 			'parts_header_slider_auto_speed'  => '3000',
-			'parts_header_slider_arrows'      => 'true',
-			'parts_header_slider_centermode'  => 'true',
+			'parts_header_slider_arrows'      => '',
+			'parts_header_slider_dot'         => '',
+			'parts_header_slider_centermode'  => '',
 			'parts_header_slider_all_number'  => '8',
 			'parts_header_slider_url_1'       => 'https://',
 			'parts_header_slider_url_2'       => 'https://',
@@ -127,11 +128,11 @@ trait Default_Data {
 			'parts_header_slider_url_8'       => 'https://',
 			'parts_header_slider_url_9'       => 'https://',
 			'parts_header_slider_url_10'      => 'https://',
-			'parts_header_slider_disp_number' => '4',
-			'parts_header_slider_width_maxwindow' => 'max',
+			'parts_header_slider_disp_number' => '5',
+			'parts_header_slider_width_maxwindow'     => 'max',
 			'parts_header_slider_width'       => '1180',
 			'parts_header_slider_article_margin_side' => '13',
-			// スクロールボタン
+			/* スクロールボタン */
 			'parts_scroll_color'              => $bleu_acide,
 			'parts_scroll_hover_color'        => $blue_agate,
 		);
