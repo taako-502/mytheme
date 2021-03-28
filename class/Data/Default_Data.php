@@ -114,7 +114,6 @@ trait Default_Data {
 			'parts_header_slider_design'      => 'c-slider-design--img-always',
 			'parts_header_slider_auto'        => '01',
 			'parts_header_slider_auto_speed'  => '3000',
-			'parts_header_slider_arrows'      => '',
 			'parts_header_slider_dot'         => '',
 			'parts_header_slider_centermode'  => '',
 			'parts_header_slider_all_number'  => '8',

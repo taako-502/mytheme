@@ -122,15 +122,6 @@ function cusPartsHeaderSlider($wp_customize,$section) {
 
   Customizer::add(
     $section,
-    'parts_header_slider_arrows',
-    array(
-      'label'    => 'スライダー両端の矢印の表示有無',
-      'type'     => 'checkbox',
-    )
-  );
-
-  Customizer::add(
-    $section,
     'parts_header_slider_dot',
     array(
       'label'    => 'ドットの表示有無',

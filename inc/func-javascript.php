@@ -26,7 +26,6 @@ function customize_js(){
           centerMode: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_centermode') == "1" ? "true" : "false"; ?>,
           slidesToShow: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_disp_number'); ?>,
           dots: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_dot') == "1" ? "true" : "false"; ?>,
-          arrows: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_arrows') == "1" ? "true" : "false"; ?>,
           autoplay: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_auto') == "1" ? "true" : "false"; ?>,
           autoplaySpeed: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_auto_speed'); ?>,
         });
