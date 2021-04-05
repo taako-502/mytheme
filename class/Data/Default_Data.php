@@ -85,7 +85,7 @@ trait Default_Data {
 			'front_heading_news'              => '新着記事',
 			'front_heading_fontsize'          => '25',
 			'front_heading_color'             => $dark_gray,
-			'front_heading_bg_color'          => 'transparent',
+			'front_heading_bg_color'          => '#333',
 			'front_heading_border'            => 'border-left',
 			'front_heading_border_color'      => 'skyblue',
 			'front_heading_border_color_sub'  => '#FFC778',

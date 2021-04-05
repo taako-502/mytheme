@@ -156,19 +156,12 @@ function cusFrontHeading($wp_customize,$section){
     )
   );
 
-  $wp_customize->add_setting( 'front_heading_bg_color' , array(
-    'default'    => '#333',
-  ));
-
-  $wp_customize->add_control(
-    new Customize_Alpha_Color_Control(
-      $wp_customize,
-      'ctl_front_heading_bg_color',
-      array(
-        'label'    => '見出し（H2）の背景色について',
-        'section'  => 'front_heading',
-        'settings' => 'front_heading_bg_color',
-      )
+  Customizer::add(
+    $section,
+    'front_heading_bg_color',
+    array(
+      'label'    => '見出し（H2）の背景色について',
+      'type'      => 'alpha_color',
     )
   );
 

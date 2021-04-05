@@ -7,6 +7,7 @@ use \Mytheme_Theme\Customizer\Control\Color_Control;
 use \Mytheme_Theme\Customizer\Control\Image_Control;
 use \Mytheme_Theme\Customizer\Control\Media_Control;
 use \Mytheme_Theme\Customizer\Control\WP_Customize_Range;
+use \Mytheme_Theme\Customizer\Control\Customize_Alpha_Color_Control;
 
 class Customizer {
 
@@ -103,6 +104,9 @@ class Customizer {
       case 'color':
         $control_instance = new Color_Control( $customizer, $customize_id, $control_args );
         break;
+      case 'alpha_color':
+        $control_instance = new Customize_Alpha_Color_Control( $customizer, $customize_id, $control_args );
+        break;
       case 'image':
         $control_instance = new Image_Control( $customizer, $customize_id, $control_args );
         break;
@@ -122,9 +126,6 @@ class Customizer {
         break;
       case 'code_editor':
         $control_args['code_type'] = $args['code_type'];
-        break;
-      default:
-        // code...
         break;
     }
 

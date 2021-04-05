@@ -56,8 +56,6 @@ function mytheme_customize( $wp_customize ) {
   get_template_part('/inc/custom/custom', 'bg');
   get_template_part('/inc/custom/custom', 'footer');
   get_template_part('/inc/custom/custom', 'parts');
-  // カラーピッカー
-  require_once( dirname( __FILE__ ) . '/../lib/alpha-color-picker/alpha-color-picker.php' );
   //自動更新の設定
   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
   $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';

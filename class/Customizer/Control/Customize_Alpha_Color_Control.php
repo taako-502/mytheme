@@ -1,4 +1,6 @@
 <?php
+namespace Mytheme_Theme\Customizer\Control;
+
 /**
  * Alpha Color Picker Customizer Control
  *
@@ -19,7 +21,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this Alpha Color Picker. If not, see <http://www.gnu.org/licenses/>.
  */
-class Customize_Alpha_Color_Control extends WP_Customize_Control {
+class Customize_Alpha_Color_Control extends \WP_Customize_Control {
 
 	/**
 	 * Official control name.
@@ -49,14 +51,14 @@ class Customize_Alpha_Color_Control extends WP_Customize_Control {
 		// テーマに合わせてパスを修正すること
 		wp_enqueue_script(
 			'alpha-color-picker',
-			get_stylesheet_directory_uri() . '/lib/alpha-color-picker/alpha-color-picker.js',
+			get_stylesheet_directory_uri() . '/js/alpha-color-picker.js',
 			array( 'jquery', 'wp-color-picker' ),
 			'1.0.0',
 			true
 		);
 		wp_enqueue_style(
 			'alpha-color-picker',
-			get_stylesheet_directory_uri() . '/lib/alpha-color-picker/alpha-color-picker.css',
+			get_stylesheet_directory_uri() . '/css/alpha-color-picker.css',
 			array( 'wp-color-picker' ),
 			'1.0.0'
 		);
