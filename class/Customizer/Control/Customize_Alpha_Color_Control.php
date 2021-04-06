@@ -69,6 +69,15 @@ class Customize_Alpha_Color_Control extends \WP_Customize_Control {
 	 */
 	public function render_content() {
 
+		// ラベル
+		if ( isset( $this->label ) && '' !== $this->label ) {
+			echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+		}
+		// 説明
+		if ( isset( $this->description ) && '' !== $this->description ) {
+			echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
+		}
+
 		// Process the palette
 		if ( is_array( $this->palette ) ) {
 			$palette = implode( '|', $this->palette );
@@ -82,13 +91,6 @@ class Customize_Alpha_Color_Control extends \WP_Customize_Control {
 
 		// Begin the output. ?>
 		<label>
-			<?php // Output the label and description if they were passed in.
-			if ( isset( $this->label ) && '' !== $this->label ) {
-				echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
-			}
-			if ( isset( $this->description ) && '' !== $this->description ) {
-				echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
-			} ?>
 			<input class="alpha-color-control" type="text" data-show-opacity="<?php echo $show_opacity; ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
 		</label>
 		<?php
