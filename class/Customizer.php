@@ -8,6 +8,7 @@ use \Mytheme_Theme\Customizer\Control\Image_Control;
 use \Mytheme_Theme\Customizer\Control\Media_Control;
 use \Mytheme_Theme\Customizer\Control\WP_Customize_Range;
 use \Mytheme_Theme\Customizer\Control\Customize_Alpha_Color_Control;
+use \Mytheme_Theme\Customizer\Control\Customize_Multiple_Checkbox_Control;
 
 class Customizer {
 
@@ -116,6 +117,9 @@ class Customizer {
         break;
       case 'range':
         $control_instance = new WP_Customize_Range( $customizer, $customize_id, $control_args );
+        break;
+      case 'multiple-check':
+        $control_instance = new Customize_Multiple_Checkbox_Control( $customizer, $customize_id, $control_args );
         break;
       case 'radio':
       case 'select':
