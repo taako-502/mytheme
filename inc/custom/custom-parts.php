@@ -87,6 +87,20 @@ function cusPartsHeaderSlider($wp_customize,$section) {
 
   Customizer::add(
     $section,
+    'parts_header_slider_responsive',
+    array(
+      'label'    => '表示サイズ',
+      'type'     => 'multiple-check',
+      'choices'  => array(
+        'pc'         => 'PCサイズ（1180px以上）',
+        'tab'        => 'タブレットサイズ（1180〜768px）',
+        'sp'         => 'スマホサイズ（767px以下）',
+      )
+    )
+  );
+
+  Customizer::add(
+    $section,
     'parts_header_slider_design',
     array(
       'label'    => 'スライダーのデザイン',

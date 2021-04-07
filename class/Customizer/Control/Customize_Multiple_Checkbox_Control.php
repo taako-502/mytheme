@@ -6,13 +6,10 @@ namespace Mytheme_Theme\Customizer\Control;
  */
 class Customize_Multiple_Checkbox_Control extends \WP_Customize_Control {
 
-	/**
-	 * Official control name.
-	 */
+  //multiple_checkにするとjavascriptが動作しなくなる
 	public $type = 'multiple-check';
 
 	public function enqueue() {
-		// テーマに合わせてパスを修正すること
 		wp_enqueue_script(
 			'customizer-multiple-check',
 			get_stylesheet_directory_uri() . '/js/customizer-multiple-check.js',

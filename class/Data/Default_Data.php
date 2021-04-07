@@ -111,6 +111,7 @@ trait Default_Data {
 			/* ヘッダー下スライダ- */
 			'parts_header_slider_type'        => 'date',
 			'parts_header_slider_post'        => 'all',
+			'parts_header_slider_responsive'  => 'sp,tab,pc',
 			'parts_header_slider_design'      => 'c-slider-design--img-always',
 			'parts_header_slider_auto'        => '01',
 			'parts_header_slider_auto_speed'  => '3000',

@@ -165,15 +165,45 @@ function mytheme_customize_css(){
     // ========================================================================*/
     /* Component
        ----------------------------------------------------------------- */
+    <?php
+    $content_max_width = \Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_width_maxwindow') == "px"
+                                                                             ? \Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_width') . "px"
+                                                                             : "100vw";
+    $parts_header_slider_responsive = explode(",",\Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_responsive'));
+    ?>
     .c-slider-header {
-      <?php
-      $content_max_width = \Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_width_maxwindow') == "px"
-                                                                            ? \Mytheme_Theme\Data::get_setting_without_default('parts_header_slider_width') . "px"
-                                                                            : "100vw";
-      ?>
       width: 100%;
-      max-width: <?php $content_max_width; ?>;
+      max-width: <?php echo $content_max_width; ?>;
     }
+    <?php
+    if(!in_array("pc",$parts_header_slider_responsive,true)){
+      ?>
+      @media screen and (min-width: 1180px){
+        .c-slider-header {
+          display: none;
+        }
+      }
+      <?php
+    }
+    if(!in_array("tab",$parts_header_slider_responsive,true)){
+      ?>
+      @media screen and (min-width: 767px) and (max-width: 1180px) {
+        .c-slider-header {
+          display: none;
+        }
+      }
+      <?php
+    }
+    if(!in_array("sp",$parts_header_slider_responsive,true)){
+      ?>
+      @media screen and (max-width: 767px){
+        .c-slider-header {
+          display: none;
+        }
+      }
+      <?php
+    }
+    ?>
 
     .c-slider-header li {
       <?php
