@@ -89,12 +89,13 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     $section,
     'parts_header_slider_responsive',
     array(
-      'label'    => '表示サイズ',
-      'type'     => 'multiple-check',
-      'choices'  => array(
-        'pc'         => 'PCサイズ（1180px以上）',
-        'tab'        => 'タブレットサイズ（1180〜768px）',
-        'sp'         => 'スマホサイズ（767px以下）',
+      'label'        => '表示サイズ',
+      'description'  => 'ブラウザの幅に応じてスライダーの表示有無を指定できます。',
+      'type'         => 'multiple-check',
+      'choices'      => array(
+        'pc'             => 'PCサイズ（1180px以上）',
+        'tab'            => 'タブレットサイズ（1180〜768px）',
+        'sp'             => 'スマホサイズ（767px以下）',
       )
     )
   );
@@ -138,10 +139,11 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     $section,
     'parts_header_slider_dot',
     array(
-      'label'    => 'ドットの表示有無',
-      'type'     => 'checkbox',
-      'partial'  => array(
-        'selector' => '.slick-dots',
+      'label'       => 'ドットの表示有無',
+      'description' => 'スライダーの下にドットを表示有無を設定できます。',
+      'type'        => 'checkbox',
+      'partial'     => array(
+        'selector'      => '.slick-dots',
       ),
     )
   );
@@ -159,11 +161,12 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     $section,
     'parts_header_slider_all_number',
     array(
-      'label'    => 'スライドの枚数',
-      'type'     => 'range',
-      'min'   => 2,
-      'max'   => 10,
-      'step'  => 1,
+      'label'       => 'スライドの最大枚数',
+      'description' => 'スライダーに表示する全体のスライドの枚数を設定できます。',
+      'type'        => 'range',
+      'min'         => 2,
+      'max'         => 10,
+      'step'        => 1,
     )
   );
 
@@ -216,7 +219,6 @@ function cusPartsHeaderSlider($wp_customize,$section) {
       'type'        => 'url',
     )
   );
-
 
   Customizer::add(
     $section,
@@ -273,7 +275,8 @@ function cusPartsHeaderSlider($wp_customize,$section) {
     $section,
     'parts_header_slider_disp_number',
     array(
-      'label'       => 'スライドの枚数',
+      'label'       => 'スライドの表示枚数',
+      'description' => '画面に表示するスライドの枚数を設定できます。ただし、タブレットサイズの場合は最大４枚、スマートフォンサイズの場合は最大２枚となります。上限を超えていた場合は、自動的に最大枚数に変更されます。',
       'type'        => 'range',
       'min'         => 1,
       'max'         => 5,

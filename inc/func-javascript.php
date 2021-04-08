@@ -9,6 +9,7 @@ namespace Mytheme_Theme;
  * [mytheme_customize_css description]
  */
 function customize_js(){
+  $parts_header_slider_disp_number = \Mytheme::get_setting_without_default('parts_header_slider_disp_number');
   ?>
   <script id="mytheme_customize_js" type="text/javascript">
     /**
@@ -29,6 +30,18 @@ function customize_js(){
           dots: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_dot') == "1" ? "true" : "false"; ?>,
           autoplay: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_auto') == "1" ? "true" : "false"; ?>,
           autoplaySpeed: <?php echo \Mytheme::get_setting_without_default('parts_header_slider_auto_speed'); ?>,
+          slidesToShow: <?php echo $parts_header_slider_disp_number; ?>,
+          responsive: [{
+            breakpoint: 1180,
+            settings: {
+              slidesToShow: <?php echo $parts_header_slider_disp_number <= 4 ? $parts_header_slider_disp_number : "4"; ?>,
+            }
+          }, {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: <?php echo $parts_header_slider_disp_number <= 2 ? $parts_header_slider_disp_number : "2"; ?>,
+            }
+          }]
         });
 
       })(jQuery);
