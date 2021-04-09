@@ -476,6 +476,42 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('cus
 
 /***/ }),
 
+/***/ "./src/block/custom-innerblock.js":
+/*!****************************************!*\
+  !*** ./src/block/custom-innerblock.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('custom/innerblocks', {
+  title: 'innerblocks',
+  description: 'インナーブロックです。',
+  icon: 'admin-page',
+  category: 'layout',
+  keywords: ['inner'],
+  edit: function edit() {
+    var blockProps = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])();
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", blockProps, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"], null));
+  },
+  save: function save() {
+    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save();
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", blockProps, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/block/custom-lastpost.js":
 /*!**************************************!*\
   !*** ./src/block/custom-lastpost.js ***!
@@ -845,8 +881,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _block_custom_lastpost_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block/custom-lastpost.js */ "./src/block/custom-lastpost.js");
 /* harmony import */ var _block_custom_blogcard_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block/custom-blogcard.js */ "./src/block/custom-blogcard.js");
 /* harmony import */ var _block_custom_speechballoon_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block/custom-speechballoon.js */ "./src/block/custom-speechballoon.js");
-/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
-/* harmony import */ var _toolbar_custom_font_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./toolbar/custom-font.js */ "./src/toolbar/custom-font.js");
+/* harmony import */ var _block_custom_innerblock_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-innerblock.js */ "./src/block/custom-innerblock.js");
+/* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
+/* harmony import */ var _toolbar_custom_font_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./toolbar/custom-font.js */ "./src/toolbar/custom-font.js");
 /**
  * Gutenberg Blocks
  *
@@ -857,6 +894,7 @@ __webpack_require__.r(__webpack_exports__);
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+
 
 
 
