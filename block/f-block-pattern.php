@@ -1,4 +1,6 @@
 <?php
+namespace Mytheme_Theme;
+
 /**
  * ブロックパターン
  */

@@ -1,8 +1,11 @@
 <?php
+namespace Mytheme_Theme;
+
 /**
  * ブロックスタイル
  */
 add_action( 'init', function() {
+  //リスト
  	register_block_style(
  		'core/list',
  		[
@@ -17,4 +20,4 @@ add_action( 'init', function() {
       'label' => '点線ブロック',
     ]
   );
- } );
+});

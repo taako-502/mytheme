@@ -1,4 +1,6 @@
 <?php
+namespace Mytheme_Theme;
+
 /**
  * block
  *
@@ -47,4 +49,4 @@ get_template_part('/block/f-block','custom-blogcard');//ブログカード
 //ブロックパターン
 get_template_part('/block/f-block','pattern');
 //ブロックエディタ
-get_template_part('/block/f-block','style-list');
+get_template_part('/block/f-block','style');
