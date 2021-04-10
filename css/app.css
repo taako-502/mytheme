@@ -1652,6 +1652,11 @@ a.p-recommend--a:not(:last-child) {
   border-right: 14px solid #555;
   z-index: 1;
 }
+.editor-styles-wrapper .wp-block-custom-innerblocks,
+.p-section .wp-block-custom-innerblocks {
+  background-color: #FBDAC8;
+  padding: 0.5em 1em;
+}
 
 /*
  * ブロックパターン
