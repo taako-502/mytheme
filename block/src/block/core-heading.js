@@ -125,21 +125,27 @@ addFilter( 'blocks.registerBlockType', 'myblock/add-attr', addAttribute );
 
 /**
  * save関数のルート要素にプロパティ要素（classやid、styleなど）を追加する
+ * @param object   props      プロパティ
+ * @param object   blockType  ブロックのタイプ
+ * @param object   attributes 属性
  * @see addFilter('blocks.getSaveContent.extraProps',$namespace,$func)
  * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-getsavecontent-extraprops
  */
-export function addSaveProps( extraProps, blockType, attributes ) {
+export function addSaveProps( props, blockType, attributes ) {
+	const headingBorderSetting        = attributes.headingBorderSetting;
 	if ( isValidBlockType( blockType.name ) ) {
 		// なしを選択した場合はheadingBorderSetting削除
-		if (attributes.headingBorderSetting === '') {
+		if (headingBorderSetting === '') {
 			delete attributes.headingBorderSetting;
 		}
 	}
-	if('p-heading-border-left' === attributes.headingBorderSetting){
-		extraProps = lodash.assign( extraProps, { style: { paddingLeft: attributes.headingBorderPaddingSetting + "em" } });
+	//スタイルシートの設定
+	const headingBorderPaddingSetting = attributes.headingBorderPaddingSetting;
+	if('p-heading-border-left' === headingBorderSetting){
+		props = lodash.assign( props, { style: { paddingLeft: headingBorderPaddingSetting + "em" } });
 	} else if('p-heading-border-bottom' === attributes.headingBorderSetting) {
-		extraProps = lodash.assign( extraProps, { style: { paddingBottom: attributes.headingBorderPaddingSetting + "em" } });
+		props = lodash.assign( props, { style: { paddingBottom: headingBorderPaddingSetting + "em" } });
 	}
-	return extraProps;
+	return props;
 }
 addFilter( 'blocks.getSaveContent.extraProps', 'myblock/add-props', addSaveProps );
