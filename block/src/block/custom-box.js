@@ -50,10 +50,10 @@ registerBlockType('custom/box',{
       //style: {{ background: attributes.color }},
     });
     const colors = [
-        { name: 'red', color: '#f00' },
+        { name: 'red',   color: '#f00' },
         { name: 'white', color: '#fff' },
-        { name: 'blue', color: '#00f' },
-       ];
+        { name: 'blue',  color: '#00f' },
+    ];
     return (
       <React.Fragment>
         <InspectorControls>
@@ -64,10 +64,10 @@ registerBlockType('custom/box',{
             <PanelRow>
               <ColorPalette
                 colors={ [
-                    { name: 'white', color: '#fff ' },
+                    { name: 'white',  color: '#fff ' },
                     { name: 'orange', color: '#f0bc68' },
-                    { name: 'green', color: '#c4d7d1 ' },
-                    { name: 'blue', color: '#dde1f8 ' },
+                    { name: 'green',  color: '#c4d7d1 ' },
+                    { name: 'blue',   color: '#dde1f8 ' },
                    ] }
                 value={ attributes.color }
                 onChange={ ( color ) => setAttributes( { color } ) }
