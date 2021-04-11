@@ -333,6 +333,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSaveProps", function() { return addSaveProps; });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 
 
 /**
@@ -340,14 +342,12 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @package mytheme
  */
+
 var _lodash = lodash,
     assign = _lodash.assign;
 var __ = wp.i18n.__;
 var Fragment = wp.element.Fragment;
 var addFilter = wp.hooks.addFilter;
-var _wp$components = wp.components,
-    PanelBody = _wp$components.PanelBody,
-    RadioControl = _wp$components.RadioControl;
 var InspectorControls = window.wp.editor.InspectorControls;
 var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
 
@@ -368,11 +368,11 @@ var addBlockControl = createHigherOrderComponent(function (BlockEdit) {
     if (isValidBlockType(props.name) && props.isSelected) {
       // すでにオプション選択されていたら
       var selectOption = props.attributes.headingBorderSetting || '';
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["PanelBody"], {
         title: "\u30DC\u30FC\u30C0\u30FC\u306E\u8A2D\u5B9A",
         initialOpen: false,
         className: "p-settings-heading__border"
-      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RadioControl, {
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["RadioControl"], {
         selected: selectOption,
         options: [{
           label: '非表示',
@@ -409,7 +409,20 @@ var addBlockControl = createHigherOrderComponent(function (BlockEdit) {
             headingBorderSetting: changeOption
           });
         }
-      }))));
+      })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__["RangeControl"], {
+        label: "\u30DC\u30FC\u30C0\u30FC\u3068\u898B\u51FA\u3057\u306E\u8DDD\u96E2\uFF08em\uFF09",
+        value: props.attributes.headingBorderPaddingSetting,
+        min: 0,
+        max: 3,
+        step: 0.05,
+        initialPosition: 0.1,
+        allowReset: true,
+        onChange: function onChange(distance) {
+          props.setAttributes({
+            headingBorderPaddingSetting: distance
+          });
+        }
+      })));
     }
 
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props);
@@ -428,6 +441,10 @@ function addAttribute(settings) {
       headingBorderSetting: {
         type: 'string',
         default: 'p-heading-border-none'
+      },
+      headingBorderPaddingSetting: {
+        type: 'integer',
+        default: '0.1'
       }
     });
   }
@@ -447,6 +464,20 @@ function addSaveProps(extraProps, blockType, attributes) {
     if (attributes.headingBorderSetting === '') {
       delete attributes.headingBorderSetting;
     }
+  }
+
+  if ('p-heading-border-left' === attributes.headingBorderSetting) {
+    extraProps = lodash.assign(extraProps, {
+      style: {
+        paddingLeft: attributes.headingBorderPaddingSetting + "em"
+      }
+    });
+  } else if ('p-heading-border-bottom' === attributes.headingBorderSetting) {
+    extraProps = lodash.assign(extraProps, {
+      style: {
+        paddingBottom: attributes.headingBorderPaddingSetting + "em"
+      }
+    });
   }
 
   return extraProps;
@@ -658,7 +689,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * coreブロックの拡張
- * 
+ *
  * @package mytheme
  */
 var _lodash = lodash,

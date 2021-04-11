@@ -3,14 +3,16 @@
  *
  * @package mytheme
  */
+import {
+	PanelBody,
+	RadioControl,
+	RangeControl
+} from '@wordpress/components';
+
 const { assign } = lodash;
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { addFilter } = wp.hooks;
-const {
-	PanelBody,
-	RadioControl
-} = wp.components;
 
 const {
 	InspectorControls,
@@ -76,6 +78,20 @@ export const addBlockControl = createHigherOrderComponent( ( BlockEdit ) => {
 								} }
 							/>
 						</PanelBody>
+						<RangeControl
+							label="ボーダーと見出しの距離（em）"
+							value={ props.attributes.headingBorderPaddingSetting }
+							min={ 0 }
+							max={ 3 }
+							step={ 0.05 }
+							initialPosition={ 0.1 }
+							allowReset={ true }
+							onChange={ ( distance ) => {
+								props.setAttributes({
+									headingBorderPaddingSetting: distance
+								});
+							} }
+						/>
 					</InspectorControls>
 				</Fragment>
 			);
@@ -97,6 +113,10 @@ export function addAttribute( settings ) {
 				type: 'string',
 				default: 'p-heading-border-none',
 			},
+			headingBorderPaddingSetting: {
+				type: 'integer',
+				default: '0.1',
+			},
 		} );
 	}
 	return settings;
@@ -114,6 +134,11 @@ export function addSaveProps( extraProps, blockType, attributes ) {
 		if (attributes.headingBorderSetting === '') {
 			delete attributes.headingBorderSetting;
 		}
+	}
+	if('p-heading-border-left' === attributes.headingBorderSetting){
+		extraProps = lodash.assign( extraProps, { style: { paddingLeft: attributes.headingBorderPaddingSetting + "em" } });
+	} else if('p-heading-border-bottom' === attributes.headingBorderSetting) {
+		extraProps = lodash.assign( extraProps, { style: { paddingBottom: attributes.headingBorderPaddingSetting + "em" } });
 	}
 	return extraProps;
 }
