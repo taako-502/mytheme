@@ -352,10 +352,15 @@ var InspectorControls = window.wp.editor.InspectorControls;
 var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
 
 var isValidBlockType = function isValidBlockType(name) {
-  var validBlockTypes = ['core/heading' // 見出し
-  ];
+  var validBlockTypes = ['core/heading'];
   return validBlockTypes.includes(name);
 };
+/**
+ * editコンポーネントを変更する
+ * @see addFilter('editor.BlockEdit',$namespace,$func)
+ * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#editor-blockedit
+ */
+
 
 var addBlockControl = createHigherOrderComponent(function (BlockEdit) {
   return function (props) {
@@ -411,6 +416,12 @@ var addBlockControl = createHigherOrderComponent(function (BlockEdit) {
   };
 }, 'addMyCustomBlockControls');
 addFilter('editor.BlockEdit', 'myblock/block-control', addBlockControl);
+/**
+ * ブロック設定をフィルタリングする
+ * @see addFilter('blocks.registerBlockType',$namespace,$func)
+ * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-registerblocktype
+ */
+
 function addAttribute(settings) {
   if (isValidBlockType(settings.name)) {
     settings.attributes = assign(settings.attributes, {
@@ -424,6 +435,12 @@ function addAttribute(settings) {
   return settings;
 }
 addFilter('blocks.registerBlockType', 'myblock/add-attr', addAttribute);
+/**
+ * save関数のルート要素にプロパティ要素（classやid、styleなど）を追加する
+ * @see addFilter('blocks.getSaveContent.extraProps',$namespace,$func)
+ * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-getsavecontent-extraprops
+ */
+
 function addSaveProps(extraProps, blockType, attributes) {
   if (isValidBlockType(blockType.name)) {
     // なしを選択した場合はheadingBorderSetting削除
