@@ -1673,6 +1673,14 @@ section.contents .mb-lg {
   margin-bottom: 8em;
   background: green;
 }
+.edit-post-visual-editor .p-heading-border-left,
+section.contents .p-heading-border-left {
+  border-left: solid 3px #333;
+}
+.edit-post-visual-editor .p-heading-border-bottom,
+section.contents .p-heading-border-bottom {
+  border-bottom: solid 3px #333;
+}
 
 .margin-controle .components-radio-control .components-base-control__field {
   display: flex;

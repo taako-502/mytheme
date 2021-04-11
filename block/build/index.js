@@ -319,6 +319,125 @@ module.exports = _unsupportedIterableToArray;
 
 /***/ }),
 
+/***/ "./src/block/core-heading.js":
+/*!***********************************!*\
+  !*** ./src/block/core-heading.js ***!
+  \***********************************/
+/*! exports provided: addBlockControl, addAttribute, addSaveProps */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBlockControl", function() { return addBlockControl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addAttribute", function() { return addAttribute; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSaveProps", function() { return addSaveProps; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/**
+ * 見出ブロックの拡張
+ *
+ * @package mytheme
+ */
+var _lodash = lodash,
+    assign = _lodash.assign;
+var __ = wp.i18n.__;
+var Fragment = wp.element.Fragment;
+var addFilter = wp.hooks.addFilter;
+var _wp$components = wp.components,
+    PanelBody = _wp$components.PanelBody,
+    RadioControl = _wp$components.RadioControl;
+var InspectorControls = window.wp.editor.InspectorControls;
+var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
+
+var isValidBlockType = function isValidBlockType(name) {
+  var validBlockTypes = ['core/heading' // 見出し
+  ];
+  return validBlockTypes.includes(name);
+};
+
+var addBlockControl = createHigherOrderComponent(function (BlockEdit) {
+  return function (props) {
+    // isValidBlockType で指定したブロックが選択されたら表示
+    if (isValidBlockType(props.name) && props.isSelected) {
+      // すでにオプション選択されていたら
+      var selectOption = props.attributes.headingBorderSetting || '';
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+        title: "\u30DC\u30FC\u30C0\u30FC\u306E\u8A2D\u5B9A",
+        initialOpen: false,
+        className: "p-settings-heading__border"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RadioControl, {
+        selected: selectOption,
+        options: [{
+          label: '非表示',
+          value: 'p-heading-border-none'
+        }, {
+          label: '左に線を引く',
+          value: 'p-heading-border-left'
+        }, {
+          label: '下に線を引く',
+          value: 'p-heading-border-bottom'
+        } //{ label: '下に線を引く（ツートンカラー）', value: 'mb-lg' },
+        ],
+        onChange: function onChange(changeOption) {
+          var newClassName = changeOption; // 高度な設定で入力している場合は追加する
+
+          if (props.attributes.className) {
+            // 付与されているclassを取り出す
+            var inputClassName = props.attributes.className; // スペース区切りを配列に
+
+            inputClassName = inputClassName.split(' '); // 選択されていたオプションの値を削除
+
+            var filterClassName = inputClassName.filter(function (name) {
+              return name !== selectOption;
+            }); // 新しく選択したオプションを追加
+
+            filterClassName.push(changeOption); // 配列を文字列に
+
+            newClassName = filterClassName.join(' ');
+          }
+
+          selectOption = changeOption;
+          props.setAttributes({
+            className: newClassName,
+            headingBorderSetting: changeOption
+          });
+        }
+      }))));
+    }
+
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props);
+  };
+}, 'addMyCustomBlockControls');
+addFilter('editor.BlockEdit', 'myblock/block-control', addBlockControl);
+function addAttribute(settings) {
+  if (isValidBlockType(settings.name)) {
+    settings.attributes = assign(settings.attributes, {
+      headingBorderSetting: {
+        type: 'string',
+        default: 'p-heading-border-none'
+      }
+    });
+  }
+
+  return settings;
+}
+addFilter('blocks.registerBlockType', 'myblock/add-attr', addAttribute);
+function addSaveProps(extraProps, blockType, attributes) {
+  if (isValidBlockType(blockType.name)) {
+    // なしを選択した場合はheadingBorderSetting削除
+    if (attributes.headingBorderSetting === '') {
+      delete attributes.headingBorderSetting;
+    }
+  }
+
+  return extraProps;
+}
+addFilter('blocks.getSaveContent.extraProps', 'myblock/add-props', addSaveProps);
+
+/***/ }),
+
 /***/ "./src/block/custom-blogcard.js":
 /*!**************************************!*\
   !*** ./src/block/custom-blogcard.js ***!
@@ -412,10 +531,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * BLOCK: mytheme-block
+ * boxブロック
  *
- * Registering a basic block with Gutenberg.
- * Simple block, renders and saves the same content without any interactivity.
+ * @package mytheme
  */
 
 
@@ -523,6 +641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * coreブロックの拡張
+ * 
  * @package mytheme
  */
 var _lodash = lodash,
@@ -643,6 +762,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 
 
+/**
+ * インナーブロック
+ *
+ * @package mytheme
+ */
+
 
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('custom/innerblocks', {
   title: 'innerblocks',
@@ -678,6 +803,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
 
+
+/**
+ * 最新の記事ブロック
+ *
+ * @package mytheme
+ */
 
 
 /**
@@ -744,6 +875,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
 
+
+/**
+ * ふきだしブロック
+ *
+ * @package mytheme
+ */
 
 
 
@@ -1034,22 +1171,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _block_custom_innerblock_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block/custom-innerblock.js */ "./src/block/custom-innerblock.js");
 /* harmony import */ var _block_custom_box_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block/custom-box.js */ "./src/block/custom-box.js");
 /* harmony import */ var _block_custom_core_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block/custom-core.js */ "./src/block/custom-core.js");
-/* harmony import */ var _toolbar_custom_font_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./toolbar/custom-font.js */ "./src/toolbar/custom-font.js");
+/* harmony import */ var _block_core_heading_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block/core-heading.js */ "./src/block/core-heading.js");
+/* harmony import */ var _toolbar_custom_font_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./toolbar/custom-font.js */ "./src/toolbar/custom-font.js");
 /**
  * Gutenberg Blocks
  *
- * All blocks related JavaScript files should be imported here.
- * You can create a new block folder in this dir and include code
- * for that block here as well.
- *
- * All blocks should be included here since this is the file that
- * Webpack is compiling as the input file.
+ * @package mytheme
  */
 
+/* オリジナルブロック */
 
 
 
 
+
+
+/* コアブロックの拡張 */
+//見出し
+
+
+/* リッチツールバー */
+//フォント
 
 
 

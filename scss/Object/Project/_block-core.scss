@@ -14,6 +14,15 @@ section.contents {
     margin-bottom: 8em;
     background: green;
   }
+
+  //見出し
+  .p-heading-border-left {
+    border-left: solid 3px #333;
+  }
+
+  .p-heading-border-bottom {
+    border-bottom: solid 3px #333;
+  }
 }
 
 // ラジオボタンをボタンのような表示にする
