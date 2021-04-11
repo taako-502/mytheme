@@ -480,7 +480,7 @@ function addSaveProps(props, blockType, attributes) {
         paddingLeft: headingBorderPaddingSetting + "em"
       }
     });
-  } else if ('p-heading-border-bottom' === attributes.headingBorderSetting) {
+  } else if ('p-heading-border-bottom' === headingBorderSetting) {
     props = lodash.assign(props, {
       style: {
         paddingBottom: headingBorderPaddingSetting + "em"

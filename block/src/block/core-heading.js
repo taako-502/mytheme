@@ -132,7 +132,7 @@ addFilter( 'blocks.registerBlockType', 'myblock/add-attr', addAttribute );
  * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#blocks-getsavecontent-extraprops
  */
 export function addSaveProps( props, blockType, attributes ) {
-	const headingBorderSetting        = attributes.headingBorderSetting;
+	const headingBorderSetting = attributes.headingBorderSetting;
 	if ( isValidBlockType( blockType.name ) ) {
 		// なしを選択した場合はheadingBorderSetting削除
 		if (headingBorderSetting === '') {
@@ -143,7 +143,7 @@ export function addSaveProps( props, blockType, attributes ) {
 	const headingBorderPaddingSetting = attributes.headingBorderPaddingSetting;
 	if('p-heading-border-left' === headingBorderSetting){
 		props = lodash.assign( props, { style: { paddingLeft: headingBorderPaddingSetting + "em" } });
-	} else if('p-heading-border-bottom' === attributes.headingBorderSetting) {
+	} else if('p-heading-border-bottom' === headingBorderSetting) {
 		props = lodash.assign( props, { style: { paddingBottom: headingBorderPaddingSetting + "em" } });
 	}
 	return props;
