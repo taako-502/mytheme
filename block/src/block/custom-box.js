@@ -6,6 +6,7 @@
  */
 
 import { registerBlockType } from '@wordpress/blocks';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 import {
@@ -46,7 +47,10 @@ registerBlockType('custom/box',{
     },
   },
   edit({ className , setAttributes , attributes }) {
-    //const { content, checkboxField, radioField, textField, toggleField, selectField } = attributes;
+    const blockProps = useBlockProps({
+      className: `${className}`,
+      //style: {{ background: attributes.color }},
+    });
     const colors = [
         { name: 'red', color: '#f00' },
         { name: 'white', color: '#fff' },
@@ -73,23 +77,25 @@ registerBlockType('custom/box',{
             </PanelRow>
           </PanelBody>
         </InspectorControls>
-        <RichText
-          tagName='p'
-          className={ className }
+        <div
+          { ...blockProps }
           style={{ background:attributes.color }}
-          onChange={ ( content ) => setAttributes( { content } ) }
-          value={ attributes.content }
-        />
+        >
+          <InnerBlocks />
+        </div>
       </React.Fragment>
     );
   },
   save({ attributes }) {
+    const blockProps = useBlockProps.save();
+
     return (
-      <RichText.Content
-        tagName='p'
+      <div
+        { ...blockProps }
         style={{ background:attributes.color }}
-        value={ attributes.content }
-      />
+      >
+        <InnerBlocks.Content />
+      </div>
     );
   }
 } );
