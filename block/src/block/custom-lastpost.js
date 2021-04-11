@@ -1,3 +1,9 @@
+/**
+ * 最新の記事ブロック
+ *
+ * @package mytheme
+ */
+
 import { registerBlockType } from '@wordpress/blocks';
 import { withSelect } from '@wordpress/data';
 

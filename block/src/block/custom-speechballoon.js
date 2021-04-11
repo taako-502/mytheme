@@ -1,3 +1,9 @@
+/**
+ * ふきだしブロック
+ *
+ * @package mytheme
+ */
+
 import { registerBlockType } from '@wordpress/blocks';
 
 import { __ } from '@wordpress/i18n';
@@ -11,7 +17,6 @@ import {
 
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
-
 
 /**
  * ボックスブロック追加

@@ -1,10 +1,8 @@
 /**
- * BLOCK: mytheme-block
+ * boxブロック
  *
- * Registering a basic block with Gutenberg.
- * Simple block, renders and saves the same content without any interactivity.
+ * @package mytheme
  */
-
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 

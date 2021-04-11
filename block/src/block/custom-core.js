@@ -1,5 +1,6 @@
 /**
  * coreブロックの拡張
+ * 
  * @package mytheme
  */
 const { assign } = lodash;
