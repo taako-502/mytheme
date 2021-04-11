@@ -29,13 +29,6 @@ function custom_blogcard_dynamic() {
   // automatically load dependencies and version
   $asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
-  wp_register_script(
-      'custom-blogcard',
-      plugins_url( 'build/block.js', __FILE__ ),
-      $asset_file['dependencies'],
-      $asset_file['version']
-  );
-
   register_block_type( 'custom/blogcard', array(
       'editor_script' => 'custom-blogcard',
       'render_callback' => 'custom_blogcard_dynamic_render_callback'

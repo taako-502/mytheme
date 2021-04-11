@@ -34,13 +34,6 @@ function custom_lastpost_dynamic() {
   // automatically load dependencies and version
   $asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
-  wp_register_script(
-      'custom-last-post',
-      plugins_url( 'build/block.js', __FILE__ ),
-      $asset_file['dependencies'],
-      $asset_file['version']
-  );
-
   register_block_type( 'custom/last-post', array(
       'editor_script' => 'custom-last-post',
       'render_callback' => 'custom_lastpost_dynamic_render_callback'
