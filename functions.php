@@ -132,11 +132,11 @@ get_template_part('/inc/func','admin');
 //ブロックエディタ
 get_template_part('/inc/func','block');
 //OGP設定
-get_template_part('/inc/func', 'metabox');
+get_template_part('/inc/func','metabox');
 //AMP設定
-get_template_part('/inc/func', 'amp');
+get_template_part('/inc/func','amp');
 //画像アップローダ設定
-get_template_part('/inc/func', 'img');
+get_template_part('/inc/func','img');
 //メールフォーム
 get_template_part('/inc/func','mail');
 //もくじ
