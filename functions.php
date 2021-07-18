@@ -13,17 +13,17 @@ global $error;
  * CLASSのオートロード
  */
 spl_autoload_register(
-	function( $classname ) {
+  function( $classname ) {
 
-		// 名前に Mytheme_Theme がなければオートロードしない。
-		if ( strpos( $classname, 'Mytheme_Theme' ) === false && strpos( $classname, 'Mytheme_Theme' ) === false) return;
+    // 名前に Mytheme_Theme がなければオートロードしない。
+    if ( strpos( $classname, 'Mytheme_Theme' ) === false && strpos( $classname, 'Mytheme_Theme' ) === false) return;
 
-		$classname = str_replace( '\\', '/', $classname );
-		$classname = str_replace( 'Mytheme_Theme/', '', $classname );
-		$file      = MYTHEME_THEME_PATH . '/class/' . $classname . '.php';
+    $classname = str_replace( '\\', '/', $classname );
+    $classname = str_replace( 'Mytheme_Theme/', '', $classname );
+    $file      = MYTHEME_THEME_PATH . '/class/' . $classname . '.php';
 
-		if ( file_exists( $file ) ) require $file;
-	}
+    if ( file_exists( $file ) ) require $file;
+  }
 );
 
 /**
@@ -31,9 +31,9 @@ spl_autoload_register(
  */
 require 'lib/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/taako-502/mytheme/',
-	__FILE__,
-	'mytheme'
+  'https://github.com/taako-502/mytheme/',
+  __FILE__,
+  'mytheme'
 );
 
 /**
@@ -51,25 +51,25 @@ function mytheme_setup(){
   add_theme_support('post-thumbnails');
   add_theme_support('title-tag');
   add_theme_support('automatic-feed-links');
-	add_theme_support('customize-selective-refresh-widgets' );
-	add_theme_support('custom-logo');
+  add_theme_support('customize-selective-refresh-widgets' );
+  add_theme_support('custom-logo');
   register_nav_menu('header-nav', 'Header Navigation');
 
-	/* 国際化・地域課の設定 */
-	load_theme_textdomain( 'mytheme', get_template_directory() . '/languages' );
+  /* 国際化・地域課の設定 */
+  load_theme_textdomain( 'mytheme', get_template_directory() . '/languages' );
 
-	/* 背景画像の設定 */
-	$defaults = array(
-		'default-color'          => '#FFF',
-		'default-image'          => '',
-		'default-repeat'         => '',
-		'default-position-x'     => '',
-		'default-attachment'     => '',
-		'wp-head-callback'       => '_custom_background_cb',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => ''
-	);
-	add_theme_support( 'custom-background', $defaults );
+  /* 背景画像の設定 */
+  $defaults = array(
+    'default-color'          => '#FFF',
+    'default-image'          => '',
+    'default-repeat'         => '',
+    'default-position-x'     => '',
+    'default-attachment'     => '',
+    'wp-head-callback'       => '_custom_background_cb',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => ''
+  );
+  add_theme_support( 'custom-background', $defaults );
 }
 add_action('after_setup_theme','mytheme_setup');
 
@@ -82,22 +82,22 @@ function main_enqueue_scripts() {
     //AMPページ
     return;
   }
-	//CSS
-	wp_enqueue_style( 'font-awesome', esc_url(MYTHEME_THEME_URI . '/lib/fontawesome/css/all.min.css'));
-	wp_enqueue_style( 'slick-theme', esc_url(MYTHEME_THEME_URI . '/lib/slick/slick-theme.css'));
-	wp_enqueue_style( 'slick', esc_url(MYTHEME_THEME_URI . '/lib/slick/slick.css'));
-	wp_enqueue_style( 'main_style', esc_url(MYTHEME_THEME_URI . '/css/app.css'));
-	get_template_part('/inc/func','style');
-	//JavaScript
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('slick',MYTHEME_THEME_URI . '/lib/slick/slick.min.js');
-	wp_enqueue_script('main',MYTHEME_THEME_URI . '/js/main.js');
-	get_template_part('/inc/func','javascript');
-	if ( is_singular() ) {
-  	wp_enqueue_script( 'comment-reply' );
-	}
-	//アドセンスコード
-	echo stripslashes(\Mytheme::get_setting_admin('adsCd_auto'));
+  //CSS
+  wp_enqueue_style( 'font-awesome', esc_url(MYTHEME_THEME_URI . '/lib/fontawesome/css/all.min.css'));
+  wp_enqueue_style( 'slick-theme', esc_url(MYTHEME_THEME_URI . '/lib/slick/slick-theme.css'));
+  wp_enqueue_style( 'slick', esc_url(MYTHEME_THEME_URI . '/lib/slick/slick.css'));
+  wp_enqueue_style( 'main_style', esc_url(MYTHEME_THEME_URI . '/css/app.css'));
+  get_template_part('/inc/func','style');
+  //JavaScript
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('slick',MYTHEME_THEME_URI . '/lib/slick/slick.min.js');
+  wp_enqueue_script('main',MYTHEME_THEME_URI . '/js/main.js');
+  get_template_part('/inc/func','javascript');
+  if ( is_singular() ) {
+    wp_enqueue_script( 'comment-reply' );
+  }
+  //アドセンスコード
+  echo stripslashes(\Mytheme::get_setting_admin('adsCd_auto'));
 }
 add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
 
@@ -106,14 +106,14 @@ add_action( 'wp_enqueue_scripts', 'main_enqueue_scripts' );
  * @see add_action('wp_head',$func)
  */
 function wp_head_insert_tags(){
-	global $post;
-	if(!isset($post->ID)){
-		return;
-	}
-	//OGP
-	echo \Mytheme_Theme\OgpClass::getOgpMeta($post->ID);
-	//構造化マークアップ
-	\Mytheme_Theme\SchemaClass::getStructuredData($post->ID);
+  global $post;
+  if(!isset($post->ID)){
+    return;
+  }
+  //OGP
+  echo \Mytheme_Theme\OgpClass::getOgpMeta($post->ID);
+  //構造化マークアップ
+  \Mytheme_Theme\SchemaClass::getStructuredData($post->ID);
 }
 add_action('wp_head','wp_head_insert_tags');
 
@@ -159,10 +159,10 @@ add_filter( 'get_the_archive_title', function ($title) {
  */
 class Mytheme extends \Mytheme_Theme\Data {
 
-	public function __construct() {
-		// データをセット
-		self::init();
-	}
+  public function __construct() {
+    // データをセット
+    self::init();
+  }
 }
 
 /**
